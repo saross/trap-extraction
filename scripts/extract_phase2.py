@@ -102,7 +102,12 @@ def parse_diary_text(text, file_name):
         'Paper_Recorder': '',
         'Data_Editor': '',
         'Digitiser': '',
-        'Source': file_name
+        'Source': file_name,
+        'Context_Walkers': '',
+        'Context_PDA': '',
+        'Context_Paper': '',
+        'Context_Editor': '',
+        'Context_Digitiser': ''
     }
     
     for line in lines:
@@ -129,7 +134,12 @@ def parse_diary_text(text, file_name):
                     'Paper_Recorder': '',
                     'Data_Editor': '',
                     'Digitiser': '',
-                    'Source': file_name
+                    'Source': file_name,
+                    'Context_Walkers': '',
+                    'Context_PDA': '',
+                    'Context_Paper': '',
+                    'Context_Editor': '',
+                    'Context_Digitiser': ''
                 }
                 date_found = True
                 break
@@ -151,6 +161,7 @@ def parse_diary_text(text, file_name):
                 names = extract_names(parts[1])
                 if names:
                     current_entry['Walkers'] = names
+                    current_entry['Context_Walkers'] = line[:200]  # First 200 chars
         
         # Extract PDA operator
         if re.search(r'\bpda\b', line_lower):
@@ -161,28 +172,33 @@ def parse_diary_text(text, file_name):
                     names = extract_names(parts[1])
                     if names:
                         current_entry['PDA_Operator'] = names
+                        current_entry['Context_PDA'] = line[:200]
             else:
                 names = extract_names(line)
                 if names:
                     current_entry['PDA_Operator'] = names
+                    current_entry['Context_PDA'] = line[:200]
         
         # Extract paper recorder
         if re.search(r'(paper|forms?|recorder|recording)', line_lower):
             names = extract_names(line)
             if names:
                 current_entry['Paper_Recorder'] = names
+                current_entry['Context_Paper'] = line[:200]
         
         # Extract digitiser
         if re.search(r'(digitis|digitiz|enter.*data|attributes)', line_lower):
             names = extract_names(line)
             if names:
                 current_entry['Digitiser'] = names
+                current_entry['Context_Digitiser'] = line[:200]
         
         # Extract geospatial data editor
         if re.search(r'(gis|geospatial|editor|polygon|fix.*polygon)', line_lower):
             names = extract_names(line)
             if names:
                 current_entry['Data_Editor'] = names
+                current_entry['Context_Editor'] = line[:200]
     
     # Don't forget the last entry
     if current_date and current_entry['Date']:

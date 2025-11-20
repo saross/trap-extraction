@@ -89,7 +89,7 @@ def main():
     setup_logging(os.path.join(LOG_DIR, 'consolidation.log'))
     
     logging.info("=" * 80)
-    logging.info("CONSOLIDATION: Merging Phase 1 and Phase 2 data")
+    logging.info("CONSOLIDATION: Merging Phase 1 and Phase 3 (cleaned) data")
     logging.info("=" * 80)
     
     # Load Phase 1 data
@@ -102,20 +102,28 @@ def main():
     df_phase1 = pd.read_csv(phase1_path)
     logging.info(f"Loaded Phase 1 data: {len(df_phase1)} records")
     
-    # Load Phase 2 data
-    phase2_path = os.path.join(OUTPUT_DIR, 'phase2_roles.csv')
-    if not os.path.exists(phase2_path):
-        logging.warning(f"Phase 2 output not found: {phase2_path}")
-        logging.warning("Proceeding with Phase 1 data only")
-        df_phase2 = pd.DataFrame()
+    # Load Phase 3 data (cleaned)
+    phase3_path = os.path.join(OUTPUT_DIR, 'phase3_cleaned.csv')
+    if not os.path.exists(phase3_path):
+        logging.warning(f"Phase 3 output not found: {phase3_path}")
+        logging.warning("Trying Phase 2 data instead...")
+        
+        phase2_path = os.path.join(OUTPUT_DIR, 'phase2_roles.csv')
+        if not os.path.exists(phase2_path):
+            logging.warning(f"Phase 2 output not found either")
+            logging.warning("Proceeding with Phase 1 data only")
+            df_phase_roles = pd.DataFrame()
+        else:
+            df_phase_roles = pd.read_csv(phase2_path)
+            logging.info(f"Loaded Phase 2 data: {len(df_phase_roles)} records")
     else:
-        df_phase2 = pd.read_csv(phase2_path)
-        logging.info(f"Loaded Phase 2 data: {len(df_phase2)} records")
+        df_phase_roles = pd.read_csv(phase3_path)
+        logging.info(f"Loaded Phase 3 cleaned data: {len(df_phase_roles)} records")
     
-    # Merge Phase 1 and Phase 2
-    if not df_phase2.empty:
-        # Rename Phase 2 columns to match final output
-        df_phase2 = df_phase2.rename(columns={
+    # Merge Phase 1 and Phase 3/2
+    if not df_phase_roles.empty:
+        # Rename Phase 3/2 columns to match final output
+        df_phase_roles = df_phase_roles.rename(columns={
             'PDA_Operator': 'PDA operator',
             'Paper_Recorder': 'Paper recorder',
             'Data_Editor': 'Data editor',
@@ -126,10 +134,18 @@ def main():
         # Rename Phase 1 source column
         df_phase1 = df_phase1.rename(columns={'Source': 'SurveySummary_Source'})
         
+        # Select columns to merge
+        merge_cols = ['Date', 'Team', 'Walkers', 'PDA operator', 'Paper recorder', 'Data editor', 'Digitiser', 'Diary_Source']
+        
+        # Add context columns if they exist
+        context_cols = ['Context_Walkers', 'Context_PDA', 'Context_Paper', 'Context_Editor', 'Context_Digitiser']
+        available_context = [col for col in context_cols if col in df_phase_roles.columns]
+        merge_cols.extend(available_context)
+        
         # Merge on Date and Team
         df_merged = pd.merge(
             df_phase1,
-            df_phase2[['Date', 'Team', 'Walkers', 'PDA operator', 'Paper recorder', 'Data editor', 'Digitiser', 'Diary_Source']],
+            df_phase_roles[merge_cols],
             on=['Date', 'Team'],
             how='outer'
         )
@@ -159,7 +175,8 @@ def main():
     final_columns = [
         'Date', 'Team', 'Start Unit', 'End Unit', 'Leader', 'Walkers',
         'PDA operator', 'Paper recorder', 'Data editor', 'Digitiser',
-        'Notes', 'SurveySummary_Source', 'Diary_Source'
+        'Notes', 'SurveySummary_Source', 'Diary_Source',
+        'Context_Walkers', 'Context_PDA', 'Context_Paper', 'Context_Editor', 'Context_Digitiser'
     ]
     
     # Only include columns that exist

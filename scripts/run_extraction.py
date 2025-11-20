@@ -105,7 +105,14 @@ def main():
     results['phase2'] = run_script('extract_phase2.py', 'Phase 2: Diary Document Extraction')
     
     if not results['phase2']:
-        logging.warning("Phase 2 failed. Continuing with Phase 1 data only.")
+        logging.warning("Phase 2 failed. Cannot continue to Phase 3.")
+        results['phase3'] = False
+    else:
+        # Phase 3: Clean noisy extractions
+        results['phase3'] = run_script('extract_phase3.py', 'Phase 3: Clean Noisy Extractions with NLP')
+        
+        if not results['phase3']:
+            logging.warning("Phase 3 failed. Continuing with Phase 2 data.")
     
     # Consolidation
     results['consolidation'] = run_script('consolidate.py', 'Consolidation: Merge and Finalize')
@@ -127,6 +134,7 @@ def main():
     output_dir = os.path.join(os.path.dirname(os.path.dirname(__file__)), "outputs")
     logging.info(f"  - phase1_summary.csv")
     logging.info(f"  - phase2_roles.csv")
+    logging.info(f"  - phase3_cleaned.csv")
     logging.info(f"  - final_attribution.csv (MAIN OUTPUT)")
     logging.info(f"\nAll outputs saved to: {output_dir}")
     logging.info("=" * 80)
