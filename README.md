@@ -1,136 +1,230 @@
 # TRAP Data Extraction Pipeline
 
-This directory contains scripts to extract team composition and role attribution data from TRAP (Tundzha Regional Archaeology Project) survey records from 2009-2011.
+Automated extraction of team composition and attribution data from TRAP (Tundzha Regional Archaeology Project) survey records, 2009-2011.
 
-## Overview
+## Project Summary
 
-The extraction pipeline processes:
-- **Excel files**: SurveySummary spreadsheets with team leaders, dates, and survey units
-- **Word documents**: Team diaries with team composition and role information
-- **PDF files** (fallback): Scanned Daily Progress Forms (only when data is missing from other sources)
+This pipeline extracted walker (team member) attribution data from heterogeneous archaeological field documentation to enable proper credit for survey participants. The extraction processed 23 source documents across multiple formats and languages, achieving **91.1% extraction accuracy** after QA validation.
 
-## Installation
+### Final Results
 
-The virtual environment and dependencies are already set up. If you need to recreate:
+| Metric | Value |
+|--------|-------|
+| Total survey day records | 212 |
+| Leader coverage | 210/212 (99.1%) |
+| Walker coverage | 155/212 (73.1%) |
+| Extraction accuracy | 91.1% |
 
-```bash
-cd /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-2020-04/claude_extraction
-python3 -m venv venv
-./venv/bin/pip install pandas openpyxl xlrd python-docx pdf2image pytesseract Pillow
-```
+### Output
 
-## Usage
+**Primary deliverable:** `outputs/final_attribution_v2_cleaned_edited.csv`
 
-### Run Complete Pipeline
+Submission package prepared for the Archaeological Institute with Museum (AKB), Bulgarian Academy of Sciences.
 
-```bash
-cd /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-2020-04/claude_extraction
-./venv/bin/python3 scripts/run_extraction.py
-```
+---
 
-This runs all phases in sequence:
-1. Phase 1: Extract from Excel files
-2. Phase 2: Extract from Word diaries
-3. Consolidation: Merge and produce final CSV
+## Extraction Pipeline
 
-### Run Individual Phases
+### Phase 1: Excel Survey Summaries
 
-```bash
-# Phase 1 only (Excel extraction)
-./venv/bin/python3 scripts/extract_phase1.py
+Extracted team leaders, dates, and survey unit ranges from SurveySummary spreadsheets.
 
-# Phase 2 only (Diary extraction)
-./venv/bin/python3 scripts/extract_phase2.py
+**Sources:** `ELH09 SurveySummary.xls`, `KAZ10 SurveySummary.xlsx`, etc.
 
-# Consolidation only (requires Phase 1 & 2 outputs)
-./venv/bin/python3 scripts/consolidate.py
-```
+**Script:** `scripts/extract_phase1.py`
+
+### Phase 2: English Diaries (2009 Elhovo)
+
+Extracted walker names from narrative diary entries.
+
+**Sources:** `Diary Team A.doc`, `Diary Team B.doc`, `Diary Team C.doc`
+
+**Scripts:** `scripts/extract_phase2.py`, `scripts/parse_diaries.py`
+
+### Phase 2b: PDF Summaries and Bulgarian Diaries
+
+Extended extraction to cover gaps from Phase 1 and 2.
+
+**PDF Sources:** Daily Progress Forms (`B_2010Summary.pdf`, `C_2011Summary.pdf`, etc.)
+
+**Bulgarian Diary Sources:** `A_2011Diary_BG.doc`, `B_2011Diary_BG.docx`, `D_2011Diary_BG.doc`
+
+**Scripts:**
+- `scripts/extract_phase2b_walkers.py` - PDF form extraction
+- `scripts/parse_bulgarian_diaries_2011.py` - Bulgarian diary parsing
+- `scripts/parse_team_a_2011.py` - Team A narrative format parser
+
+### Phase 3: NLP Cleaning
+
+Natural language processing to clean extracted names and remove noise.
+
+**Script:** `scripts/extract_phase3.py`
+
+### Consolidation
+
+Merged all phases with intelligent priority rules (Phase 2b > Phase 2 > Phase 1).
+
+**Script:** `scripts/consolidate_v2.py`
+
+### QA Validation
+
+Comprehensive quality assurance including:
+- Duplicate detection and merging
+- Narrative text removal (English and Bulgarian)
+- Name pattern validation
+- Spot-check sampling
+- Cyrillic-to-Latin transliteration
+
+**Scripts:** `scripts/qa_validation.py`, `scripts/data_cleanup.py`
+
+---
+
+## Source Documents Processed
+
+| Type | Count | Records |
+|------|-------|---------|
+| English Diaries | 3 | 59 |
+| Bulgarian Diaries | 4 | 30 |
+| PDF Summaries | 16 | 91 |
+| **Total** | **23** | **180** |
+
+### Coverage by Season
+
+- **2009 (Kazanlak spring, Yambol/Elhovo autumn):** 68 records
+- **2010 (Kazanlak spring, Yambol autumn):** 77 records
+- **2011 (Kazanlak autumn):** 67 records
+
+---
 
 ## Output Format
 
-The final output is `outputs/final_attribution.csv` with the following columns:
+The final CSV contains 15 columns:
 
 | Column | Description | Example |
 |--------|-------------|---------|
-| Date | ISO format YYYY-MM-DD | 2009-10-12 |
-| Team | Letter designation | A |
-| Start Unit | 5-digit survey unit number | 60000 |
-| End Unit | 5-digit survey unit number | 60038 |
-| Leader | Team leader name/initials | Adela |
-| Walkers | All team members (pipe-separated) | Adela \| Martin \| Petra |
-| PDA operator | Person who operated PDA in field | Adela |
-| Paper recorder | Person who filled paper forms | Martin |
-| Data editor | Person who edited polygons in GIS | Adela |
-| Digitiser | Person who digitized paper forms | Petra |
-| Notes | Interpolation suggestions and data quality notes | Missing walker data - consider PDF fallback |
-| SurveySummary_Source | Source Excel file | ELH09 SurveySummary.xls |
-| Diary_Source | Source diary file | A_Diary_En.docx |
+| Date | Survey date (M-DD-YY format) | 3-16-09 |
+| Team | Team letter (A-D) | B |
+| Start Unit | First survey unit number | 40001 |
+| End Unit | Last survey unit number | 40025 |
+| Leader | Team leader name | Adela |
+| Walkers_Original | Team members (may include Cyrillic) | Н. Кечева \| В. Генчева |
+| Walkers_Transliterated | Latin script version | N. Kecheva \| V. Gencheva |
+| PDA_Operator | PDA operator if identified | Nadja |
+| Paper_Recorder | Paper form recorder if identified | Vera |
+| Data_Editor | GIS/data editor if identified | - |
+| Author | Form author if identified | Petra |
+| XLS_Source | Source Excel file | ELH09 SurveySummary.xls |
+| PDF_Source | Source PDF/diary file | B_2010Summary.pdf |
+| Extraction_Notes | Extraction quality notes | Extracted from diary |
+| QA_Notes | Quality assessment notes | Complete |
+
+---
 
 ## Directory Structure
 
-```
+```text
 claude_extraction/
 ├── scripts/
-│   ├── utils.py              # Shared utility functions
-│   ├── extract_phase1.py     # Excel extraction
-│   ├── extract_phase2.py     # Diary extraction
-│   ├── consolidate.py        # Data merging
-│   └── run_extraction.py     # Main orchestration
+│   ├── extract_phase1.py          # Excel extraction
+│   ├── extract_phase2.py          # English diary extraction
+│   ├── extract_phase2b_walkers.py # PDF/extended extraction
+│   ├── extract_phase3.py          # NLP cleaning
+│   ├── parse_diaries.py           # Diary parsing utilities
+│   ├── parse_bulgarian_diaries_2011.py
+│   ├── parse_team_a_2011.py       # Team A narrative parser
+│   ├── consolidate_v2.py          # Data merging
+│   ├── qa_validation.py           # Quality assurance
+│   ├── data_cleanup.py            # Narrative text removal
+│   └── run_extraction.py          # Main orchestration
 ├── outputs/
-│   ├── phase1_summary.csv    # Phase 1 output
-│   ├── phase2_roles.csv      # Phase 2 output
-│   └── final_attribution.csv # FINAL OUTPUT
-├── logs/
-│   ├── phase1_extraction.log
-│   ├── phase2_extraction.log
-│   ├── consolidation.log
-│   └── run_extraction.log
-└── venv/                     # Python virtual environment
+│   ├── final_attribution_v2_cleaned_edited.csv  # FINAL OUTPUT
+│   ├── extraction-accuracy-report.md
+│   ├── extraction-summary-report.md
+│   ├── narrative-cleanup-summary.md
+│   ├── qa-validation-report.md
+│   ├── submission-readme.md
+│   └── submission-checklist.md
+└── venv/                          # Python virtual environment
 ```
+
+---
+
+## Installation
+
+```bash
+cd claude_extraction
+python3 -m venv venv
+./venv/bin/pip install pandas openpyxl xlrd python-docx
+```
+
+Additional system dependencies for document conversion:
+- `antiword` - for .doc files
+- `pandoc` - for .docx files
+
+---
 
 ## Known Limitations
 
-1. **Name Extraction**: Uses regex/NLP heuristics to extract names from free text. May occasionally include noise or miss names in unusual formats. Manual review recommended.
+1. **Name Variations:** Mix of full names, initials, and diminutives across sources. Some entries contain "[unclear]" where handwriting was illegible.
 
-2. **KAZ09_SurveySummary.xls**: This file is poorly structured. Extraction attempts are made but results should be verified carefully.
+2. **Role Data:** PDA operator and paper recorder fields are sparsely populated (<5% coverage) due to limited source documentation.
 
-3. **Diary Parsing**: Only English diaries are processed (`*_En.doc`, `*_En.docx`). Bulgarian diaries are skipped.
+3. **Bulgarian Diary Parsing:** Narrative-style entries required specialised parsers. Some location descriptions were initially captured as names and required cleanup.
 
-4. **Role Information**: Role data (PDA operator, Paper recorder, etc.) is sparse in diaries. Many entries will have empty role fields. The Notes column suggests where interpolation might help.
+4. **Missing Data:** 57 survey days (27%) lack walker data due to unavailable source documentation.
 
-5. **PDF Extraction**: Not yet implemented. Currently, PDF fallback is noted in the Notes column but not automatically executed.
+---
 
-## Troubleshooting
+## Quality Assurance
 
-### No output generated
+### Extraction Accuracy: 91.1%
 
-Check the log files in `logs/` for error messages. Common issues:
-- Missing source files
-- Corrupted Excel/Word files
-- Permission issues
+Post-extraction manual review identified:
+- **14 entries** with narrative text fragments incorrectly captured as names
+- **1 entry** with misread handwriting
 
-### Names contain noise words
+All issues corrected in final output. See `outputs/extraction-accuracy-report.md` for details.
 
-The `extract_names()` function in `utils.py` filters common noise words. If you find additional noise patterns, add them to the `noise_patterns` list.
+### Validation Checks Performed
 
-### Dates not parsing correctly
+- No duplicate Date+Team combinations
+- All dates in valid format
+- All team values valid (A-D)
+- No narrative text in walker names
+- Cyrillic names transliterated to Latin script
+- Spot-check sampling (10 random records)
 
-The `normalize_date()` function handles multiple date formats. If you encounter a new format, add a pattern to the function.
+---
 
-### Missing data
+## Documentation
 
-Check the Notes column in the final output for suggestions on where data is missing and might be interpolated or extracted from PDFs.
+| File | Description |
+|------|-------------|
+| `outputs/submission-readme.md` | Complete package documentation for AKB |
+| `outputs/submission-checklist.md` | Submission sign-off checklist |
+| `outputs/extraction-accuracy-report.md` | Accuracy analysis after manual review |
+| `outputs/extraction-summary-report.md` | Technical extraction methodology |
+| `outputs/narrative-cleanup-summary.md` | Log of narrative text cleanup |
+| `outputs/qa-validation-report.md` | QA validation results |
 
-## Version Control
+---
 
-This project uses git for version control. To commit your work:
+## Development History
 
-```bash
-cd /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-2020-04
-git add claude_extraction/
-git commit -m "Your commit message"
-```
+This extraction pipeline was developed collaboratively with Claude Code (Anthropic) over multiple sessions:
+
+1. **Initial pipeline:** Phase 1 (Excel) and Phase 2 (English diaries) extraction
+2. **Phase 2b extension:** PDF summaries and Bulgarian diary extraction
+3. **Consolidation:** Intelligent merging of all data sources
+4. **QA and cleanup:** Narrative text removal, transliteration, validation
+5. **Manual review:** Final corrections and accuracy assessment
+
+**Extraction accuracy achieved:** 91.1% (154/169 entries correct before manual review)
+
+---
 
 ## Contact
 
-For questions about the extraction pipeline, refer to the implementation plan in the Antigravity artifacts.
+**Project Lead:** Dr. Adela Sobotkova
+**Extraction Pipeline:** Claude Code (Anthropic)
+**Completion Date:** November 2025
