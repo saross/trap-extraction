@@ -63,8 +63,8 @@ Extract team composition data from heterogeneous archaeological field documentat
 
 | File | Description | Records |
 |------|-------------|---------|
-| `final_attribution_v2_cleaned_edited.csv` | Primary attribution dataset | 269 |
-| `name-mapping-draft.csv` | Name normalisation mappings | 282 |
+| `attribution.csv` | Primary attribution dataset | 269 |
+| `name-mapping.csv` | Name normalisation mappings | 282 |
 
 ---
 

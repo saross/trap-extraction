@@ -25,7 +25,7 @@ This file tracks outstanding actions that fall outside the core data extraction 
   - Affiliation: Unknown
   - Season: 2009 spring (x in column)
 
-**Location:** `name-mapping-draft.csv` lines 234 and 269
+**Location:** `name-mapping.csv` lines 234 and 269
 
 ---
 
@@ -38,7 +38,7 @@ This file tracks outstanding actions that fall outside the core data extraction 
 **Context:** The name mapping file contains 282 entries. Of these, 59 still require manual review to confirm the canonical name match.
 
 **Action required:**
-- [ ] Review `outputs/name-mapping-draft.csv` entries with `status=review_needed`
+- [ ] Review `outputs/name-mapping.csv` entries with `status=review_needed`
 - [ ] Update status to `confirmed` or `mapped` once verified
 - [ ] Flag any names that cannot be resolved
 

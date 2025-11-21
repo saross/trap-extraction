@@ -2,8 +2,8 @@
 """
 Update Kazanlak 2010 walker data from diary extractions.
 
-This script updates the final_attribution_v2_cleaned_edited.csv with accurate
-walker data extracted from the Kaz 2010 team diaries (BG and EN versions).
+This script updates the attribution.csv with accurate walker data extracted
+from the Kaz 2010 team diaries (BG and EN versions).
 
 Author: Claude Code collaboration
 Date: November 2025
@@ -55,7 +55,7 @@ KAZ2010_DIARY_DATA = {
 
 def update_kaz2010_walkers():
     """Update Kaz 2010 records with diary-extracted walker data."""
-    csv_path = Path(__file__).parent.parent / 'outputs' / 'final_attribution_v2_cleaned_edited.csv'
+    csv_path = Path(__file__).parent.parent / 'outputs' / 'attribution.csv'
 
     # Read current CSV
     with open(csv_path, 'r', encoding='utf-8') as f:

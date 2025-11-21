@@ -18,7 +18,7 @@ The data enables proper credit attribution for all survey participants in the pr
 
 ## Data File
 
-**Filename:** `final_attribution_v2_cleaned_edited.csv`
+**Filename:** `attribution.csv`
 
 **Format:** UTF-8 encoded CSV (Comma-Separated Values)
 
@@ -91,7 +91,7 @@ Walker names appear in various forms across source documents:
 - **Diminutives:** Bara (for Barbora)
 - **Cyrillic:** Н. Кечева (transliterated in Walkers_Transliterated column)
 
-A separate name mapping file (`name-mapping-draft.csv`) documents 282 name variants and their canonical forms.
+A separate name mapping file (`name-mapping.csv`) documents 282 name variants and their canonical forms.
 
 ---
 

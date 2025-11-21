@@ -202,7 +202,7 @@ PDF_AUTHORS = {
 
 def main():
     """Update CSV with Author data from all PDF scans."""
-    input_file = 'outputs/final_attribution_v2_cleaned_edited.csv'
+    input_file = 'outputs/attribution.csv'
 
     # Read existing data
     with open(input_file, 'r', encoding='utf-8') as f:

@@ -115,7 +115,7 @@ ELH2010_ROLES = {
 
 def main():
     """Update CSV with role data from Elhovo 2010 diaries."""
-    input_file = 'outputs/final_attribution_v2_cleaned_edited.csv'
+    input_file = 'outputs/attribution.csv'
 
     # Read existing data
     with open(input_file, 'r', encoding='utf-8') as f:
