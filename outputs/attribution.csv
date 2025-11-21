@@ -7,13 +7,13 @@ Date,Team,Start Unit,End Unit,Leader,Walkers_Original,Walkers_Transliterated,PDA
 2009-03-06,B,,,Adela,"Bryan, Simon, Magda, Adela, Vera",,,,,,,Vera,,B_Summary04Mar-08Mar.pdf,,
 2009-03-06,C,,,Elena,"Charlotte, Shawn, Pesho",,,,,,,"R.Z., CB",,C_2009Summary.pdf,,
 2009-03-07,B,,,Adela,,,,,,,,Vera,,B_Summary04Mar-08Mar.pdf,,
-2009-03-07,A,,,Julia,"Stacey, Tereza, Petra, Youlia",,,,,,,Tereza D.,,A_2009Summary.pdf,,
+2009-03-07,A,,,Julia,"Stacey, Tereza, Petra Janouchová, Youlia",,,,,,,Tereza D.,,A_2009Summary.pdf,,
 2009-03-07,D,,,Georgi Nehrizov,"Georgi N., Lubomir M., Nadezda K., Barbara O.",,,,,,,Barbara Klara Olujic,,D_Summary.pdf,,
 2009-03-07,C,,,Elena,"Elena, Piotr, Shawn, Charlotte",,,,,,,Adela,,C_2009Summary.pdf,,
-2009-03-08,A,,,Julia,"Petra, Tereza, Stacey, Yulia",,,,,,,Tereza,,A_2009Summary.pdf,,
+2009-03-08,A,,,Julia,"Petra Janouchová, Tereza, Stacey, Yulia",,,,,,,Tereza,,A_2009Summary.pdf,,
 2009-03-08,C,,,Acna,"Peter, Charlotte",,,,,,,Hun,,C_2009Summary.pdf,,
 2009-03-09,B,,,Adela,"Bryan, Simon, Magda, Adela, Vera, Martin",,,,,,,Vera,,B_Summary09Mar-16Mar.pdf,,
-2009-03-09,A,,,Julia,"Petra, Tereza, Stacey, Yulia, Timea",,,,,,,Tereza,,A_2009Summary.pdf,,
+2009-03-09,A,,,Julia,"Petra Janouchová, Tereza, Stacey, Yulia, Timea",,,,,,,Tereza,,A_2009Summary.pdf,,
 2009-03-09,C,,,Gena,"Charlotte, Peter",,,,,,,CB,,C_2009Summary.pdf,,
 2009-03-11,C,,,Elena,"Thomas, Katerina, Peter",,,,,,,CB,,C_2009Summary.pdf,,
 2009-03-11,A,,,Julia T.,"SB, YD, TD, PJ, JT, ED",,,,,,,Tereza D.,,A_2009Summary.pdf,,
@@ -60,7 +60,7 @@ Date,Team,Start Unit,End Unit,Leader,Walkers_Original,Walkers_Transliterated,PDA
 2009-03-27,A,,,"Nada, Bara","Petra Tušlová, Stana",,,,,,,Pt.,,A_2009Summary.pdf,,
 2009-03-27,C,,,Maggie,"Maggie, Peter, Bryan",,,,,,,Bryan Zlatos,,C_2009Summary.pdf,,
 2009-03-31,E,,,Shawn Ross,,,,,,,,,,E_Summary.pdf,,
-2009-04-03,E,,,Shawn,"Adela, Charlotte, Barbara, Petra, Brian",,,,,,,P.T.,,E_Summary.pdf,,
+2009-04-03,E,,,Shawn,"Adela, Charlotte, Barbara, Petra Janouchová, Brian",,,,,,,P.T.,,E_Summary.pdf,,
 2009-04-05,B,,,Adela,"Adela, Shawn, Bryan",,,,,,,Stank,,B_Summary25Mar-05Apr.pdf,,
 2009-10-12,A,60000.0,60038.0,Adela,,,,,,,,Adela,ELH09 SurveySummary.xls,Diary Team A.doc,Extracted from Elhovo 2009 diary,No role data available
 2009-10-12,C,80000.0,80026.0,Bara,Bara | Petra Tušlová | Sona | Tereza | Todor | Georgi,Bara | Petra | Sona | Tereza | Todor | Georgi,,,,,,,ELH09 SurveySummary.xls,Diary Team C.doc,Extracted from Elhovo 2009 diary,No role data available
@@ -146,7 +146,7 @@ Date,Team,Start Unit,End Unit,Leader,Walkers_Original,Walkers_Transliterated,PDA
 2010-03-23,D,,,Zhoro,Zhoro | Zhoro | Marten | Petra mi | Renée,Zhoro | Zhoro | Marten | Petra mi | Renée,,,,,,Vera,,D_2010Summary.pdf,"Extracted from page 3, form 1",MISSING: Survey units | No role data available
 2010-03-24,B,21238.0,21272.0,Adela,Adela | Pesho | Dasa | Stana | Renee,Adela | Pesho | Dasa | Stana | Renee,Adela,,,Adela | Dasa,Renee,Renee Gardiner,Kaz10_SurveySummary.xls,"B_2010Summary.pdf, B_2010Diary_En.doc","Extracted from page 3, form 1; Updated from diary",No role data available
 2010-03-24,A,10808.0,10906.0,Tereza,Petra Tušlová | Tereza | Lindsay | Yulia Dimitrova,Petra | Tereza | Lindsay | Yulia Dimitrova,Tereza,,,Petra T.,,Petra Tuslova,Kaz10_SurveySummary.xls,A_2010Diary_BG.doc,Extracted from diary,No role data available
-2010-03-24,D,40545.0,40640.0,Zhoro,Zhoro | Reza | Marten | Petra | Juliet,Zhoro | Reza | Marten | Petra | Juliet,,,,,,Vera,Kaz10_SurveySummary.xls,D_2010Summary.pdf,"Extracted from page 1, form 2",No role data available
+2010-03-24,D,40545.0,40640.0,Zhoro,Zhoro | Reza | Marten | Vera | Juliet,Zhoro | Reza | Marten | Petra | Juliet,,,,,,Vera,Kaz10_SurveySummary.xls,D_2010Summary.pdf,"Extracted from page 1, form 2",No role data available
 2010-03-24,C,30466.0,30496.0,Bara,,,,,,,,Sona,Kaz10_SurveySummary.xls,,,MISSING: Walkers | No role data available
 2010-03-25,A,10907.0,10945.0,Julia T,Julia Tzvetkova | Petra Tušlová | Tereza | Lindsay | Yulia Dimitrova,Julia Tzvetkova | Petra | Tereza | Lindsay | Yulia Dimitrova,Tereza,,,Julia,,Petra Tuslova,Kaz10_SurveySummary.xls,A_2010Diary_BG.doc,Extracted from diary,No role data available
 2010-03-25,B,21273.0,21342.0,Adela,Adela | Pesho | Dasa | Stana | Renee,Adela | Pesho | Dasa | Stana | Renee,,,,,,Dasa,Kaz10_SurveySummary.xls,"B_2010Summary.pdf, B_2010Diary_En.doc","Extracted from page 3, form 2; Updated from diary",No role data available
