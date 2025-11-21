@@ -2,7 +2,7 @@
 
 **Collaborative work between Dr. Adela Sobotkova and Claude Code**
 
-**Last Updated:** November 2025
+**Last Updated:** 21 November 2025
 
 ---
 
@@ -20,8 +20,11 @@ Extract team composition data from heterogeneous archaeological field documentat
 |--------|-------|
 | Total survey day records | 269 |
 | Leader coverage | 267/269 (99.3%) |
-| Walker coverage | 210/269 (78.1%) |
-| Author coverage | 177/269 (65.8%) |
+| Walker coverage | 223/269 (82.9%) |
+| Author coverage | 209/269 (77.7%) |
+| PDA Operator coverage | 23/269 (8.6%) |
+| GPS Operator coverage | 18/269 (6.7%) |
+| Paper Recorder coverage | 9/269 (3.3%) |
 | Name mappings | 282 entries |
 | Mappings resolved | 223 (79%) |
 | Mappings needing review | 59 (21%) |
@@ -32,25 +35,27 @@ Extract team composition data from heterogeneous archaeological field documentat
 
 | Season | Records | Walker Coverage |
 |--------|---------|-----------------|
-| 2009 | 94 | 78.7% |
-| 2010 | 39 | 94.9% |
-| 2011 | 60 | 96.7% |
-| XLS-only | 76 | 53.9% |
-| **Total** | **269** | **78.1%** |
+| 2009 | 125 | 80.8% |
+| 2010 | 77 | 81.8% |
+| 2011 | 67 | 88.1% |
+| **Total** | **269** | **82.9%** |
 
-### Kazanlak 2009 Progress
+### Recent Progress
 
-Recent work focused on Kazanlak 2009 diary extraction:
+**Tier 2 Diary Extraction:**
 
-- **5 team diaries processed** (Teams A-E, Bulgarian and English versions)
-- **33 Kaz 2009 records** with 100% walker coverage
-- **Key ambiguities resolved:**
-  - Helena/Gena/Glena → Elena Bozhinova
-  - Baron → Charlotte Devereux Byron
-  - Chimela/Tomas → Tomáš Chmela
-  - Baba → Bara Weissová
-  - Julia 2/Julia (Small) → Yulia Dimitrova
-  - Meggie/Megi → Meglena Parvin
+- Kazanlak 2009-2011 diaries (Teams A-E, BG and EN versions)
+- Elhovo 2010 Team B diary with full role data
+- Key ambiguities resolved (Helena→Elena, Baron→Charlotte, etc.)
+
+**Tier 3 PDF Extraction (Vision):**
+
+- Kazanlak 2009 PDFs: Teams A-E (16+ forms)
+- Kazanlak 2010 PDFs: Teams A-D (4 summary files)
+- Kazanlak 2011 PDFs: Teams B-C (2 summary files)
+- Elhovo 2010 PDFs: Teams A-B (20+ daily forms)
+- **136 Author entries** extracted via vision analysis
+- **12 new records** updated (gaps not covered by diaries)
 
 ---
 
@@ -65,23 +70,29 @@ Recent work focused on Kazanlak 2009 diary extraction:
 
 ## Extraction Pipeline Summary
 
-### Phase 1: Excel Survey Summaries
+### Phase 1: Excel Survey Summaries (Tier 1)
 
 - **Sources:** 4 Excel files (ELH09, KAZ10, YAM10, KAZ11)
 - **Script:** `extract_phase1.py`
 
-### Phase 2: English Diaries (2009 Elhovo)
+### Phase 2: English Diaries (Tier 2)
 
-- **Sources:** 3 diary files (Team A, B, C)
+- **Sources:** Team diaries from 2009-2011 seasons (BG and EN)
 - **Scripts:** `extract_phase2.py`, `parse_diaries.py`
 
-### Phase 2b: PDF Summaries and Bulgarian Diaries
+### Phase 2b: Role Extraction (Tier 2)
 
-- **PDF Sources:** 20+ Daily Progress Forms
-- **Bulgarian Diaries:** Team diaries across all seasons
-- **Scripts:** `extract_phase2b_walkers.py`, `parse_bulgarian_diaries_2011.py`
+- **Sources:** Elhovo 2010 Team B diary, Kazanlak 2010 Teams A-B diaries
+- **Scripts:** `extract_roles_elh2010.py`, `extract_roles_kaz2010.py`
+- **Data:** PDA_Operator, GPS_Operator, Paper_Recorder, Photographer, Author
 
-### Phase 3: NLP Cleaning and Consolidation
+### Phase 3: PDF Daily Progress Forms (Tier 3)
+
+- **Sources:** Scanned PDFs from Kaz 2009-2011, Elhovo 2010
+- **Script:** `extract_authors_all_pdfs.py` (136 Author entries)
+- **Data:** Author field from handwritten forms (vision extraction)
+
+### Phase 4: NLP Cleaning and Consolidation
 
 - **Script:** `extract_phase3.py`, `consolidate_v2.py`
 
@@ -100,7 +111,9 @@ See `follow-up-actions.md` for items requiring attention:
 
 1. **Silvia Ivanova** - appears in Team E 2009 diary but not in participant list
 2. **59 name mappings** still marked as `review_needed`
-3. **59 survey days** without walker data (XLS-only records)
+3. **46 survey days** without walker data (XLS-only records)
+4. **Elhovo 2009 diaries** - not yet processed (Teams A, B, C)
+5. **Kazanlak 2011 AUS_Diaries** - individual student journals not yet processed
 
 ---
 
@@ -129,4 +142,4 @@ This extraction pipeline was developed collaboratively by:
 
 ---
 
-**Report generated:** November 2025
+**Report generated:** 21 November 2025

@@ -32,16 +32,19 @@ The data enables proper credit attribution for all survey participants in the pr
 |--------|-------|
 | Total survey day records | 269 |
 | Leader coverage | 267/269 (99.3%) |
-| Walker coverage | 210/269 (78.1%) |
-| Author coverage | 177/269 (65.8%) |
+| Walker coverage | 223/269 (82.9%) |
+| Author coverage | 209/269 (77.7%) |
+| PDA Operator coverage | 23/269 (8.6%) |
+| GPS Operator coverage | 18/269 (6.7%) |
+| Paper Recorder coverage | 9/269 (3.3%) |
 
 ### By Season
 
 | Season | Records | Walker Coverage |
 |--------|---------|-----------------|
-| 2009 | 94 | 78.7% |
-| 2010 | 39 | 94.9% |
-| 2011 | 60 | 96.7% |
+| 2009 | 125 | 80.8% |
+| 2010 | 77 | 81.8% |
+| 2011 | 67 | 88.1% |
 
 ---
 
@@ -94,9 +97,9 @@ A separate name mapping file (`name-mapping-draft.csv`) documents 282 name varia
 
 ## Known Limitations
 
-1. **59 records** (22%) lack walker data due to unavailable source documentation (XLS-only records)
+1. **46 records** (17%) lack walker data due to unavailable source documentation (XLS-only records)
 
-2. **Role fields** (PDA_Operator, Paper_Recorder, Data_Editor) have sparse coverage (<5%) due to limited source documentation
+2. **Role fields** (PDA_Operator, GPS_Operator, Paper_Recorder) have limited coverage (3-9%) as this information was only recorded in select diary sources (primarily Elhovo 2010 Team B and Kazanlak 2010 Teams A-B)
 
 3. **Name standardisation** is partial; the data preserves original name forms from source documents
 

@@ -12,7 +12,7 @@ This pipeline extracted walker (team member) attribution data from heterogeneous
 |--------|-------|
 | Total survey day records | 269 |
 | Leader coverage | 267/269 (99.3%) |
-| Walker coverage | 210/269 (78.1%) |
+| Walker coverage | 223/269 (82.9%) |
 | Author coverage | 177/269 (65.8%) |
 | Name mappings | 282 (223 resolved, 59 review needed) |
 
@@ -93,11 +93,10 @@ Comprehensive quality assurance including:
 
 | Season | Records | Walker Coverage |
 |--------|---------|-----------------|
-| 2009 | 94 | 78.7% |
-| 2010 | 39 | 94.9% |
-| 2011 | 60 | 96.7% |
-| Other/XLS only | 76 | 53.9% |
-| **Total** | **269** | **78.1%** |
+| 2009 | 125 | 80.8% |
+| 2010 | 77 | 81.8% |
+| 2011 | 67 | 88.1% |
+| **Total** | **269** | **82.9%** |
 
 ---
 
