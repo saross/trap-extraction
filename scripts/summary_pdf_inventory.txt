@@ -1,0 +1,76 @@
+PDF Summary File Inventory for Walker Extraction
+=================================================
+
+PRIORITY 1: Day_*.pdf Files (8 files)
+--------------------------------------
+Elhovo 2010-12-12/2010/Project Records/Team A/Field Records/
+  - Day_03.pdf
+  - Day_05.pdf
+
+Elhovo 2010-12-12/2010/Project Records/Team B/Field Records/
+  - Day_02.pdf
+  - Day_04.pdf
+  - Day_06.pdf
+  - Day_08.pdf
+  - Day_10.pdf
+  - Day_12.pdf
+
+These should cover 2010 Teams A & B dates (potentially filling gaps in our missing list).
+
+
+PRIORITY 2: Kazanluk 2009 Main Summary Files
+---------------------------------------------
+These could cover October-November 2009 AND March 2009 dates:
+
+Kazanluk/2009/Project Records/TeamA/
+  - A_2009Summary.pdf (MAIN - likely October-November)
+  - A_Summary04Mar-08Mar.pdf
+  - A_Summary09Mar-15Mar.pdf
+  - A_Summary16Mar-23Mar.pdf
+  - A_Summary24Mar-27Mar.pdf
+  - Scans/TeamASummary1.pdf
+  - Scans/TeamASummary2.pdf
+  - Scans/TeamASummary3.pdf
+  - Scans/TeamASummary4.pdf
+
+Kazanluk/2009/Project Records/TeamB/Finalized/
+  - B_2009Summary.pdf (MAIN - likely October-November)
+  - B_Summary04Mar-08Mar.pdf (could cover 2009-03-16, 2009-03-19, 2009-03-20)
+  - B_Summary09Mar-16Mar.pdf
+  - B_Summary19Mar-24Mar.pdf (could cover 2009-03-23, 2009-03-24)
+  - B_Summary25Mar-05Apr.pdf (could cover 2009-03-25, 2009-03-30)
+
+Kazanluk/2009/Project Records/TeamC/
+  - C_2009Summary.pdf (MAIN - likely October-November)
+  - C_Summary04Mar-06Mar.pdf
+  - C_Summary07Mar.pdf
+  - C_Summary08Mar-12Mar.pdf
+  - C_Summary16Mar-20Mar.pdf
+  - C_Summary23Mar-25Mar.pdf
+  - C_Summary26Mar-27Mar.pdf
+
+Kazanluk/2009/Project Records/TeamD/FInalized/
+  - D_Summary.pdf
+
+
+PRIORITY 3: Elhovo 2009 Reports
+---------------------------------
+Elhovo 2010-12-12/2009/Reports/
+  - Day20.pdf
+  - DAY8.pdf
+
+These might be day reports but need to check if they contain walker data.
+
+
+PRIORITY 4: Look for 2011 Team A and Team D Summary Files
+----------------------------------------------------------
+Still missing: Need to search for October-November 2011 summary files for:
+  - Team A (17 dates needed)
+  - Team D (14 dates needed)
+
+
+COVERAGE GAPS AFTER PROCESSING ABOVE:
+======================================
+If all above files are processed, we should still need:
+- Any 2011 Team A/D October-November dates not covered by summary files
+- Individual survey unit forms for scattered 2010 dates
