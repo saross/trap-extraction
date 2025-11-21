@@ -68,6 +68,10 @@ All from **Team A, October-November 2009** - partial sentence fragments missed d
 |-------|-------|------------|
 | Leader specified | 210/212 | 99.1% |
 | Walkers specified | 155/212 | 73.1% |
+| Author specified | 124/212 | 58.5% |
+| PDA_Operator specified | 7/212 | 3.3% |
+| Data_Editor specified | 6/212 | 2.8% |
+| Paper_Recorder specified | 2/212 | 0.9% |
 
 ---
 

@@ -13,6 +13,10 @@ This pipeline extracted walker (team member) attribution data from heterogeneous
 | Total survey day records | 212 |
 | Leader coverage | 210/212 (99.1%) |
 | Walker coverage | 155/212 (73.1%) |
+| Author coverage | 124/212 (58.5%) |
+| PDA_Operator coverage | 7/212 (3.3%) |
+| Data_Editor coverage | 6/212 (2.8%) |
+| Paper_Recorder coverage | 2/212 (0.9%) |
 | Extraction accuracy | 91.1% |
 
 ### Output
