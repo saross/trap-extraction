@@ -10,14 +10,11 @@ This pipeline extracted walker (team member) attribution data from heterogeneous
 
 | Metric | Value |
 |--------|-------|
-| Total survey day records | 212 |
-| Leader coverage | 210/212 (99.1%) |
-| Walker coverage | 155/212 (73.1%) |
-| Author coverage | 124/212 (58.5%) |
-| PDA_Operator coverage | 7/212 (3.3%) |
-| Data_Editor coverage | 6/212 (2.8%) |
-| Paper_Recorder coverage | 2/212 (0.9%) |
-| Extraction accuracy | 91.1% |
+| Total survey day records | 269 |
+| Leader coverage | 267/269 (99.3%) |
+| Walker coverage | 210/269 (78.1%) |
+| Author coverage | 177/269 (65.8%) |
+| Name mappings | 282 (223 resolved, 59 review needed) |
 
 ### Output
 
@@ -85,18 +82,22 @@ Comprehensive quality assurance including:
 
 ## Source Documents Processed
 
-| Type | Count | Records |
-|------|-------|---------|
-| English Diaries | 3 | 59 |
-| Bulgarian Diaries | 4 | 30 |
-| PDF Summaries | 16 | 91 |
-| **Total** | **23** | **180** |
+| Type | Count | Notes |
+|------|-------|-------|
+| Excel Survey Summaries | 4 | ELH09, KAZ10, YAM10, KAZ11 |
+| English Diaries | 8 | 2009 Elhovo + Kazanlak team diaries |
+| Bulgarian Diaries | 9 | Team diaries across all seasons |
+| PDF Summaries | 20+ | Daily progress forms |
 
 ### Coverage by Season
 
-- **2009 (Kazanlak spring, Yambol/Elhovo autumn):** 68 records
-- **2010 (Kazanlak spring, Yambol autumn):** 77 records
-- **2011 (Kazanlak autumn):** 67 records
+| Season | Records | Walker Coverage |
+|--------|---------|-----------------|
+| 2009 | 94 | 78.7% |
+| 2010 | 39 | 94.9% |
+| 2011 | 60 | 96.7% |
+| Other/XLS only | 76 | 53.9% |
+| **Total** | **269** | **78.1%** |
 
 ---
 
@@ -142,12 +143,10 @@ claude_extraction/
 │   └── run_extraction.py          # Main orchestration
 ├── outputs/
 │   ├── final_attribution_v2_cleaned_edited.csv  # FINAL OUTPUT
-│   ├── extraction-accuracy-report.md
-│   ├── extraction-summary-report.md
-│   ├── narrative-cleanup-summary.md
-│   ├── qa-validation-report.md
-│   ├── submission-readme.md
-│   └── submission-checklist.md
+│   ├── name-mapping-draft.csv     # Name normalisation mappings
+│   └── work-summary.md            # Project summary
+├── archive/
+│   └── reports/                   # Point-in-time reports
 └── venv/                          # Python virtual environment
 ```
 
@@ -169,13 +168,13 @@ Additional system dependencies for document conversion:
 
 ## Known Limitations
 
-1. **Name Variations:** Mix of full names, initials, and diminutives across sources. Some entries contain "[unclear]" where handwriting was illegible.
+1. **Name Variations:** Mix of full names, initials, and diminutives across sources. Name mapping file (`name-mapping-draft.csv`) tracks 282 variant forms with 59 still needing review.
 
-2. **Role Data:** PDA operator and paper recorder fields are sparsely populated (<5% coverage) due to limited source documentation.
+2. **Role Data:** PDA operator and paper recorder fields are sparsely populated due to limited source documentation.
 
-3. **Bulgarian Diary Parsing:** Narrative-style entries required specialised parsers. Some location descriptions were initially captured as names and required cleanup.
+3. **Missing Walker Data:** 59 survey days (22%) lack walker data, primarily from XLS-only records without corresponding diary/PDF sources.
 
-4. **Missing Data:** 57 survey days (27%) lack walker data due to unavailable source documentation.
+4. **Participant List Gap:** Silvia Ivanova appears in Team E 2009 diary but is not in the master participant list - requires verification.
 
 ---
 
@@ -204,12 +203,9 @@ All issues corrected in final output. See `outputs/extraction-accuracy-report.md
 
 | File | Description |
 |------|-------------|
-| `outputs/submission-readme.md` | Complete package documentation for AKB |
-| `outputs/submission-checklist.md` | Submission sign-off checklist |
-| `outputs/extraction-accuracy-report.md` | Accuracy analysis after manual review |
-| `outputs/extraction-summary-report.md` | Technical extraction methodology |
-| `outputs/narrative-cleanup-summary.md` | Log of narrative text cleanup |
-| `outputs/qa-validation-report.md` | QA validation results |
+| `outputs/work-summary.md` | Project summary and methodology |
+| `outputs/name-mapping-draft.csv` | Name normalisation mappings |
+| `archive/reports/` | Historical point-in-time reports |
 
 ---
 
@@ -222,8 +218,7 @@ This extraction pipeline was developed collaboratively with Claude Code (Anthrop
 3. **Consolidation:** Intelligent merging of all data sources
 4. **QA and cleanup:** Narrative text removal, transliteration, validation
 5. **Manual review:** Final corrections and accuracy assessment
-
-**Extraction accuracy achieved:** 91.1% (154/169 entries correct before manual review)
+6. **Kazanlak 2009 expansion:** Extracted team compositions from 5 team diaries (BG and EN), resolved name ambiguities, created comprehensive name mapping
 
 ---
 
