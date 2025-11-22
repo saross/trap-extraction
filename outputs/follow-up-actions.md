@@ -8,24 +8,35 @@ This file tracks outstanding actions that fall outside the core data extraction 
 
 ## High Priority
 
-### 1. Add Silvia Ivanova to Participant List
+### 1. Participant List Updates
 
-**Status:** Pending verification
+**Status:** Deferred - batch update required
 
-**Context:** Silvia Ivanova (Силвия Иванова) appears in the Team E 2009 Bulgarian diary but is NOT in `inputs/TRAP-Participants.csv`.
+**Context:** Three participants need to be verified and potentially added to `inputs/TRAP-Participants.csv`:
 
-**Evidence:**
-- Team E diary entry mentions "Силвия Иванова" as a team member
-- No matching entry in the 104-person participant list
+1. **Silvia Ivanova (Силвия Иванова)**
+   - Appears in Team E 2009 Bulgarian diary
+   - Not in the 104-person participant list
+   - Location: `name-mapping.csv` lines 234 and 269
+   - Season: 2009 spring
+
+2. **Lizzy**
+   - Czech volunteer, 2009-autumn
+   - Full name being researched
+   - Currently in attribution.csv as "Lizzy" (uncertain identity)
+   - Once identified, add to participant list
+
+3. **Jiří Musil**
+   - Appears in attribution.csv (2010-04-07, line 181)
+   - Note in name-mapping: "Add: Spring 2010 Kazanlak"
+   - Not confirmed if missing from participant list
+   - Season: 2010 spring
 
 **Action required:**
+- [ ] Research and verify full identity of Lizzy
 - [ ] Verify Silvia Ivanova's participation in TRAP 2009
-- [ ] If confirmed, add to `inputs/TRAP-Participants.csv` with appropriate details:
-  - Role: Field walker
-  - Affiliation: Unknown
-  - Season: 2009 spring (x in column)
-
-**Location:** `name-mapping.csv` lines 234 and 269
+- [ ] Check if Jiří Musil is in participant list, verify participation dates
+- [ ] Add all three to `inputs/TRAP-Participants.csv` in single batch update with complete details
 
 ---
 
@@ -150,8 +161,6 @@ This file tracks outstanding actions that fall outside the core data extraction 
 This file should be updated as actions are completed or new items are identified.
 
 **Outstanding research:**
-- Lizzy (Czech volunteer, 2009-autumn) - Full name being researched
-- Silvia Ivanova - Verify participation and add to participant list if confirmed
-- Jiří Musil - Check if needs to be added to participant list (Spring 2010 Kazanlak)
+- Batch participant list update: Lizzy (full name research), Silvia Ivanova (verify participation), Jiří Musil (verify participation and dates)
 
 **Last updated:** 22 November 2025
