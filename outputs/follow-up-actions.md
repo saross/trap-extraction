@@ -29,29 +29,59 @@ This file tracks outstanding actions that fall outside the core data extraction 
 
 ---
 
-## Medium Priority
+### 2. Disambiguate Adela (Sobotkova vs Dorňáková)
 
-### 2. Review Remaining Name Mappings
+**Status:** Pending investigation
 
-**Status:** 59 entries marked `review_needed`
+**Context:** Two different people named Adela participated in TRAP:
+- **Adela Sobotkova** - Project leader, attended multiple seasons (2009-2011)
+- **Adela Dorňáková** - Field walker, attended 2010-autumn only
 
-**Context:** The name mapping file contains 282 entries. Of these, 59 still require manual review to confirm the canonical name match.
+**Issue:** Generic "Adela" entries in attribution.csv need to be verified to ensure Adela Dorňáková is correctly identified where she participated (2010-autumn), and not confused with Adela Sobotkova.
 
 **Action required:**
-- [ ] Review `outputs/name-mapping.csv` entries with `status=review_needed`
-- [ ] Update status to `confirmed` or `mapped` once verified
-- [ ] Flag any names that cannot be resolved
+- [ ] Search attribution.csv for all "Adela" entries in 2010-autumn
+- [ ] Cross-reference with team compositions and dates
+- [ ] Verify Dorňáková is correctly identified in her season
+- [ ] Update any ambiguous "Adela" entries with full names
 
-**Sample entries needing review:**
-- `Halyar` (Team B, 2009)
-- `Knacfl` (Team B, 2009)
-- `Serena` (Team B, 2009)
-- `Tracy` (Team B, 2009)
-- `Acna` (Team C, 2009)
+**Expected impact:** 2010-autumn records (October-November 2010)
 
 ---
 
-### 3. Investigate XLS-only Records
+## Medium Priority
+
+### 3. Review Remaining Name Mappings
+
+**Status:** ✅ COMPLETED (22 November 2025)
+
+**Context:** The name mapping file contains 283 entries. All entries have been reviewed and processed.
+
+**Completed actions:**
+- [x] Reviewed all 66 `review_needed` entries in `outputs/name-mapping.csv`
+- [x] Applied 58 valid corrections to `attribution.csv` (canonical names)
+- [x] Marked 6 entries as `invalid` (OCR false positives: H., Hun, M, P, Olga, X [leader])
+- [x] Marked 2 entries as `uncertain` (Lizzy/Lisi - Czech volunteer, identity being researched)
+- [x] Updated status for all entries to `corrected`, `invalid`, or `uncertain`
+
+**Results:**
+- 111 name replacements made across 73 attribution records
+- 126 invalid OCR entries cleared from data
+- Detailed report: `outputs/name-corrections-report.md`
+- Scripts: `scripts/apply_name_corrections.py`
+
+**Current status distribution:**
+- `confident`: 84 entries
+- `mapped`: 126 entries
+- `corrected`: 58 entries
+- `confirmed`: 6 entries
+- `uncertain`: 2 entries (Lizzy/Lisi - real person, full name being researched)
+- `invalid`: 6 entries (OCR false positives)
+- `disambiguated`: 1 entry (Petra)
+
+---
+
+### 4. Investigate XLS-only Records
 
 **Status:** 76 records without diary/PDF walker data
 
@@ -66,7 +96,7 @@ This file tracks outstanding actions that fall outside the core data extraction 
 
 ## Low Priority
 
-### 4. Standardise Name Formats
+### 5. Standardise Name Formats
 
 **Status:** Deferred
 
@@ -83,7 +113,7 @@ This file tracks outstanding actions that fall outside the core data extraction 
 
 ---
 
-### 5. Role Field Enhancement
+### 6. Role Field Enhancement
 
 **Status:** Deferred
 
@@ -100,8 +130,14 @@ This file tracks outstanding actions that fall outside the core data extraction 
 - [x] Extract Kazanlak 2009 team compositions from diaries
 - [x] Resolve Helena/Elena ambiguity
 - [x] Resolve Julia older/younger distinction
-- [x] Create comprehensive name mapping file
+- [x] Create comprehensive name mapping file (283 entries)
 - [x] Archive point-in-time reports
+- [x] Review and process all 66 `review_needed` entries (22 November 2025)
+- [x] Apply 58 valid name corrections to attribution.csv
+- [x] Mark 6 invalid OCR entries
+- [x] Disambiguate Petra (Janouchová vs Tušlová)
+- [x] Verify and correct all pdf_sources in name-mapping.csv
+- [x] Fix Lizzy/Lisi typo and clarify identity
 
 ---
 
@@ -109,4 +145,9 @@ This file tracks outstanding actions that fall outside the core data extraction 
 
 This file should be updated as actions are completed or new items are identified.
 
-**Last updated:** November 2025
+**Outstanding research:**
+- Lizzy (Czech volunteer, 2009-autumn) - Full name being researched
+- Silvia Ivanova - Verify participation and add to participant list if confirmed
+- Jiří Musil - Check if needs to be added to participant list (Spring 2010 Kazanlak)
+
+**Last updated:** 22 November 2025
