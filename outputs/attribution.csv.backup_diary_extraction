@@ -113,7 +113,7 @@ Date,Team,Start Unit,End Unit,Leader,Walkers_Original,Walkers_Transliterated,PDA
 2009-11-07,B,71202.0,71257.0,Shawn,Scott | Dasha | Shawn | Stanislav,Scott | Dasha | Shawn | Stanislav,,,,,,Shawn,ELH09 SurveySummary.xls,Diary Team B.doc,Extracted from Elhovo 2009 diary (Four walkers),No role data available
 2009-11-07,A,61080.0,61185.0,Adela,,,,,,,,Adela,ELH09 SurveySummary.xls,Diary Team A.doc,Extracted from Elhovo 2009 diary,No role data available
 2009-11-09,B,71258.0,71313.0,Shawn,Shawn | Zhoro | Lizzy | Simon,Shawn | Zhoro | Lizzy | Simon,,,,,,Shawn,ELH09 SurveySummary.xls,Diary Team B.doc,Extracted from Elhovo 2009 diary (Four walkers),No role data available
-2009-11-09,A,61186.0,61249.0,Adela,Martin | Todor | Ilija | Katya,Martin | Todor | Ilija | Katya,,,,,,,ELH09 SurveySummary.xls,,,MISSING: Walkers | No role data available
+2009-11-09,A,61186.0,61249.0,Adela,,,,,,,,,ELH09 SurveySummary.xls,,,MISSING: Walkers | No role data available
 2009-11-09,C,80796.0,80852.0,Scott,Scott | Stanislav | Jarka | Radko | Javor,Scott | Stanislav | Jarka | Radko | Javor,,,,,,Petra,ELH09 SurveySummary.xls,Diary Team C.doc,Extracted from Elhovo 2009 diary,No role data available
 2009-11-10,C,80853.0,80909.0,Scott,Scott | Stanislav | Jarka | Radko | Zhoro | Jana,Scott | Stanislav | Jarka | Radko | Zhoro | Jana,,,,,,Petra,ELH09 SurveySummary.xls,Diary Team C.doc,Extracted from Elhovo 2009 diary,No role data available
 2009-11-10,B,71314.0,71370.0,Shawn,Shawn | Yavor | Dasha | Lizzy | Simon,Shawn | Yavor | Dasha | Lizzy | Simon,,,,,,Shawn,ELH09 SurveySummary.xls,Diary Team B.doc,Extracted from Elhovo 2009 diary (Five walkers),No role data available
@@ -136,7 +136,7 @@ Date,Team,Start Unit,End Unit,Leader,Walkers_Original,Walkers_Transliterated,PDA
 2010-03-20,B,21032.0,21110.0,Adela,Adela | Petra Tušlová | Pesho | Martin | Tereza | Lindsay,Adela | Petra | Pesho | Martin | Tereza | Lindsay,,,,,,Petra,Kaz10_SurveySummary.xls,"B_2010Summary.pdf, B_2010Diary_En.doc","Extracted from page 2, form 1; Updated from diary",No role data available
 2010-03-20,C,30281.0,30388.0,Bara,Elena | Bistra | Bara | Jana | Sonja,Elena | Bistra | Bara | Jana | Sonja,,,,,,P.H.,Kaz10_SurveySummary.xls,"C_2010Summary.pdf, C_2010Diary_BG.doc","Extracted from page 2, form 1 (Day 4); Walkers partially unclear; Updated from diary",No role data available | UNCERTAIN: Check extraction notes
 2010-03-20,D,40354.0,40432.0,Zhoro,Zhoro | Bogdana | Nadja | Ljubo | Vera,Zhoro | Bogdana | Nadja | Ljubo | Vera,Nadja | Ljubo,,,,,Vera,Kaz10_SurveySummary.xls,D_2010Diary_BG.doc,Extracted from diary,Complete
-2010-03-21,D,40424.0,40482.0,Zhoro,G. Nekhrizov | Yu. Tsvetkova | B. Lilova | N. Kecheva | L. Markovski | Viera,G. Nekhrizov | Yu. Tsvetkova | B. Lilova | N. Kecheva | L. Markovski | Viera,Nadja | Ljubo,,,,,Vera,Kaz10_SurveySummary.xls,,,MISSING: Walkers
+2010-03-21,D,40424.0,40482.0,Zhoro,,,Nadja | Ljubo,,,,,Vera,Kaz10_SurveySummary.xls,,,MISSING: Walkers
 2010-03-21,B,21111.0,21169.0,Adela,Adela | Petra Tušlová | Tereza | Martin | Pesho | Lindsay,Adela | Petra | Tereza | Martin | Pesho | Lindsay,Tereza | Petra,,,Adela,Adela,Petra J.,Kaz10_SurveySummary.xls,B_2010Diary_En.doc,Extracted from diary,Complete
 2010-03-21,C,30389.0,30416.0,Bara,Elena | Bistra | Bara | Sonja | Jana,Elena | Bistra | Bara | Sonja | Jana,,,,,,P.H.,Kaz10_SurveySummary.xls,"C_2010Summary.pdf, C_2010Diary_BG.doc","Extracted from page 2, form 2 (Day 5); Updated from diary",No role data available
 2010-03-22,D,40483.0,40544.0,Zhoro,Tesho | Viktoko | Julia | Marten | Bogdana Lilova | Zhoro,Tesho | Viktoko | Julia | Marten | Bogdana Lilova | Zhoro,,,,,,Vera,Kaz10_SurveySummary.xls,D_2010Summary.pdf,"Extracted from page 1, form 1",No role data available
@@ -147,11 +147,11 @@ Date,Team,Start Unit,End Unit,Leader,Walkers_Original,Walkers_Transliterated,PDA
 2010-03-24,B,21238.0,21272.0,Adela,Adela | Pesho | Dasa | Stana | Renee,Adela | Pesho | Dasa | Stana | Renee,Adela,,,Adela | Dasa,Renee,Renee Gardiner,Kaz10_SurveySummary.xls,"B_2010Summary.pdf, B_2010Diary_En.doc","Extracted from page 3, form 1; Updated from diary",No role data available
 2010-03-24,A,10808.0,10906.0,Tereza,Petra Tušlová | Tereza | Lindsay | Yulia Dimitrova,Petra | Tereza | Lindsay | Yulia Dimitrova,Tereza,,,Petra T.,,Petra Tuslova,Kaz10_SurveySummary.xls,A_2010Diary_BG.doc,Extracted from diary,No role data available
 2010-03-24,D,40545.0,40640.0,Zhoro,Zhoro | Vera Doležálková | Marten | Vera | Yulia Dimitrova,Zhoro | Vera Doležálková | Marten | Petra | Yulia Dimitrova,,,,,,Vera,Kaz10_SurveySummary.xls,D_2010Summary.pdf,"Extracted from page 1, form 2",No role data available
-2010-03-24,C,30466.0,30496.0,Bara,Elena | Bara | Sonya | Todor,Elena | Bara | Sonya | Todor,,,,,,Sona,Kaz10_SurveySummary.xls,,,MISSING: Walkers | No role data available
+2010-03-24,C,30466.0,30496.0,Bara,,,,,,,,Sona,Kaz10_SurveySummary.xls,,,MISSING: Walkers | No role data available
 2010-03-25,A,10907.0,10945.0,Julia T,Julia Tzvetkova | Petra Tušlová | Tereza | Lindsay | Yulia Dimitrova,Julia Tzvetkova | Petra | Tereza | Lindsay | Yulia Dimitrova,Tereza,,,Julia,,Petra Tuslova,Kaz10_SurveySummary.xls,A_2010Diary_BG.doc,Extracted from diary,No role data available
 2010-03-25,B,21273.0,21342.0,Adela,Adela | Pesho | Dasa | Stana | Renee,Adela | Pesho | Dasa | Stana | Renee,,,,,,Dasa,Kaz10_SurveySummary.xls,"B_2010Summary.pdf, B_2010Diary_En.doc","Extracted from page 3, form 2; Updated from diary",No role data available
-2010-03-25,C,30497.0,30516.0,Bara,Elena | Bara | Sonya | Todor | Viki,Elena | Bara | Sonya | Todor | Viki,,,,,,Sona,Kaz10_SurveySummary.xls,,,MISSING: Walkers | No role data available
-2010-03-25,D,40641.0,40676.0,Zhoro,G. Nekhrizov | B. Lilova | N. Kecheva | L. Markovski | Viera,G. Nekhrizov | B. Lilova | N. Kecheva | L. Markovski | Viera,,,,,,Vera,Kaz10_SurveySummary.xls,,,MISSING: Walkers
+2010-03-25,C,30497.0,30516.0,Bara,,,,,,,,Sona,Kaz10_SurveySummary.xls,,,MISSING: Walkers | No role data available
+2010-03-25,D,40641.0,40676.0,Zhoro,,,,,,,,Vera,Kaz10_SurveySummary.xls,,,MISSING: Walkers
 2010-03-26,D,40667.0,40737.0,Zhoro,Zhoro | Vera | Marten | Bogdana Lilova | Zhoro,Zhoro | Vera | Marten | Bogdana Lilova | Zhoro,,,,,,Vera,Kaz10_SurveySummary.xls,D_2010Summary.pdf,"Extracted from page 1, form 3; Some name spellings uncertain",No role data available | UNCERTAIN: Check extraction notes
 2010-03-26,B,21343.0,21407.0,Adela,Adela | Pesho | Dasa | Stana | Renee,Adela | Pesho | Dasa | Stana | Renee,,,,,,Renée G,Kaz10_SurveySummary.xls,"B_2010Summary.pdf, B_2010Diary_En.doc","Extracted from page 3, form 3; Updated from diary",No role data available
 2010-03-26,C,30517.0,30543.0,Bara,Bara | Sonja | Elena | Bara | [unclear],Bara | Sonja | Elena | Bara | [unclear],,,,,,Sonja,Kaz10_SurveySummary.xls,C_2010Summary.pdf,"Extracted from page 4, form 1 (Day 10)",No role data available
@@ -175,15 +175,15 @@ Date,Team,Start Unit,End Unit,Leader,Walkers_Original,Walkers_Transliterated,PDA
 2010-04-01,B,21551.0,21631.0,Adela,Adela | Petra Tušlová | Martin,Adela | Petra | Martin,,,,,,Petra,Kaz10_SurveySummary.xls,"B_2010Summary.pdf, B_2010Diary_En.doc","Extracted from page 5, form 1; Updated from diary",No role data available
 2010-04-01,C,30648.0,30686.0,Bara,Sonja | Bara | Elena | Peter | Todor,Sonja | Bara | Elena | Peter | Todor,,,,,,Sonja,Kaz10_SurveySummary.xls,C_2010Summary.pdf,"Extracted from page 5, form 3 (Day 15); Date is 6 April per form",No role data available
 2010-04-01,D,40878.0,40914.0,Nadezhda Kecheva,Nadja | Yulia Dimitrova | Ljubo | Viki | Lindsay,Nadja | Yulia Dimitrova | Ljubo | Viki | Lindsay,,,,,,Vi,Kaz10_SurveySummary.xls,D_2010Summary.pdf,"Extracted from page 5, form 1; Leader and author names unclear",No role data available | UNCERTAIN: Check extraction notes
-2010-04-02,B,21632.0,21704.0,Adela,Adela | Martin | Pesho | Stana | Petra | Stanislav,Adela | Martin | Pesho | Stana | Petra | Stanislav,,,Martin,,,Adela Sobotkova,Kaz10_SurveySummary.xls,,,MISSING: Walkers
+2010-04-02,B,21632.0,21704.0,Adela,,,,,Martin,,,Adela Sobotkova,Kaz10_SurveySummary.xls,,,MISSING: Walkers
 2010-04-02,C,30687.0,30716.0,Bara,Sonja | Bara | Lindsay | Elena | Todor,Sonja | Bara | Lindsay | Elena | Todor,,,,,,Sonja,Kaz10_SurveySummary.xls,C_2010Summary.pdf,"Extracted from page 6, form 1 (Day 16); Date is 7 April per form",No role data available
 2010-04-06,B,,,,Martin | Adela | Renée | Stana Kučová | Bogdan,Martin | Adela | Renée | Stana Kučová | Bogdan,,,,,,,,B_2010Summary.pdf,"Extracted from page 4, form 1; Leader field unclear",MISSING: Leader | MISSING: Survey units | No role data available | UNCERTAIN: Check extraction notes
-2010-04-07,B,21705.0,21736.0,Adela,Adela | Dasha | Pesho | Stana | Jiri,Adela | Dasha | Pesho | Stana | Jiri,,,,,,Dasa,Kaz10_SurveySummary.xls,B_2010Summary.pdf,"Extracted from page 5, form 3",No role data available
+2010-04-07,B,21705.0,21736.0,Adela,Adela | Stana | Dasa | Peso | Jiří Musil,Adela | Stana | Dasa | Peso | Jiří Musil,,,,,,Dasa,Kaz10_SurveySummary.xls,B_2010Summary.pdf,"Extracted from page 5, form 3",No role data available
 2010-04-07,C,30717.0,30740.0,Bara,,,,,,,,Sonja,Kaz10_SurveySummary.xls,,,MISSING: Walkers | No role data available
 2010-04-07,A,11040.0,11089.0,Petra,,,Petra,,,Stanislav,,Petra Tuslova,Kaz10_SurveySummary.xls,,,MISSING: Walkers | No role data available
 2010-04-08,A,11091.0,11157.0,Petra,,,Petra,,,Stanislav,,Lindsay,Kaz10_SurveySummary.xls,,,MISSING: Walkers | No role data available
 2010-04-08,C,,,Bara,Bara | Sonja | Elena | Todor,Bara | Sonja | Elena | Todor,,,,,,Sonja,,C_2010Summary.pdf,"Extracted from page 6, form 2 (Day 17); Date is 8 April per form",MISSING: Survey units | No role data available
-2010-04-08,B,21737.0,21803.0,Adela,Adela | Dasha | Pesho | Stana | Jiri,Adela | Dasha | Pesho | Stana | Jiri,,,,,,Adela Sobotkova,Kaz10_SurveySummary.xls,,,MISSING: Walkers | No role data available
+2010-04-08,B,21737.0,21803.0,Adela,,,,,,,,Adela Sobotkova,Kaz10_SurveySummary.xls,,,MISSING: Walkers | No role data available
 2010-04-09,C,30774.0,30800.0,Bara,Bara | Sonja | Elena | Todor | [unclear],Bara | Sonja | Elena | Todor | [unclear],,,,,,Sonja,Kaz10_SurveySummary.xls,C_2010Summary.pdf,"Extracted from page 6, form 3 (Day 18); Date is 9 April per form",No role data available
 2010-04-09,B,21804.0,21839.0,Adela,Adela | Petra Tušlová | Peter,Adela | Petra | Peter,,,Hm,,,Adela Sobotkova,Kaz10_SurveySummary.xls,B_2010Summary.pdf,"Extracted from page 6, form 2",Complete
 2010-04-09,A,11158.0,11203.0,Petra,,,Petra,,,Stanislav,,Petra T.,Kaz10_SurveySummary.xls,,,MISSING: Walkers | No role data available
@@ -227,9 +227,9 @@ Date,Team,Start Unit,End Unit,Leader,Walkers_Original,Walkers_Transliterated,PDA
 2011-10-29,A,11751.0,11781.0,JTs,ЮД | ВГ | ГМ | Ал.Р. | ЦЦ,YuD | VG | GM | Al.R. | TsTs,,,,,,,Kaz11_SurveySummary.xlsx,A_2011Diary_BG.doc,Extracted from Bulgarian diary,No role data available
 2011-10-30,A,11782.0,11822.0,GM,ЮД | ВГ | ГМ | Ал.Р. | ЦЦ,YuD | VG | GM | Al.R. | TsTs,,,,,,,Kaz11_SurveySummary.xlsx,A_2011Diary_BG.doc,Extracted from Bulgarian diary,No role data available
 2011-10-31,A,11823.0,11850.0,GM,ЮД | ВГ | ГМ | Ал.Р. | ЦЦ,YuD | VG | GM | Al.R. | TsTs,,,,,,,Kaz11_SurveySummary.xlsx,A_2011Diary_BG.doc,Extracted from Bulgarian diary,No role data available
-2011-11-01,D,41454.0,41470.0,AA,Tsoni Tsonev | Anani Antonov | Oskar | Dzhoel | Dzhordzhiya,Tsoni Tsonev | Anani Antonov | Oskar | Dzhoel | Dzhordzhiya,,,,,,,Kaz11_SurveySummary.xlsx,,,MISSING: Walkers | No role data available
+2011-11-01,D,41454.0,41470.0,AA,,,,,,,,,Kaz11_SurveySummary.xlsx,,,MISSING: Walkers | No role data available
 2011-11-01,A,11851.0,11876.0,GM,ЮД | ВГ | ГМ | Ал.Р. | ЦЦ,YuD | VG | GM | Al.R. | TsTs,,,,,,,Kaz11_SurveySummary.xlsx,A_2011Diary_BG.doc,Extracted from Bulgarian diary,No role data available
-2011-11-02,D,41471.0,41477.0,AA,Tsoni Tsonev | Anani Antonov | Oskar | Sharon.,Tsoni Tsonev | Anani Antonov | Oskar | Sharon.,,,,,,,Kaz11_SurveySummary.xlsx,,,MISSING: Walkers | No role data available
+2011-11-02,D,41471.0,41477.0,AA,,,,,,,,,Kaz11_SurveySummary.xlsx,,,MISSING: Walkers | No role data available
 2011-11-02,A,11877.0,11925.0,GM,ЮД | ВГ | ГМ | Ал.Р. | ЦЦ,YuD | VG | GM | Al.R. | TsTs,,,,,,,Kaz11_SurveySummary.xlsx,A_2011Diary_BG.doc,Extracted from Bulgarian diary,No role data available
 2011-11-02,C,30821.0,30880.0,Shawn R,Corinne | Jodie | Georgia | Eva,Corinne | Jodie | Georgia | Eva,,,,,,Corinne S,Kaz11_SurveySummary.xlsx,C_2011Summary.pdf,"Extracted from page 1, form 1",No role data available
 2011-11-03,C,30881.0,30949.0,Shawn,Jodie | Cecilia,Jodie | Cecilia,,,,,,Corinne,Kaz11_SurveySummary.xlsx,C_2011Summary.pdf,"Extracted from page 1, form 2",No role data available
