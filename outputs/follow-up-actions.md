@@ -31,21 +31,24 @@ This file tracks outstanding actions that fall outside the core data extraction 
 
 ### 2. Disambiguate Adela (Sobotkova vs Dorňáková)
 
-**Status:** Pending investigation
+**Status:** ✅ COMPLETED (22 November 2025)
 
 **Context:** Two different people named Adela participated in TRAP:
 - **Adela Sobotkova** - Project leader, attended multiple seasons (2009-2011)
-- **Adela Dorňáková** - Field walker, attended 2010-autumn only
+- **Adéla Dorňáková** - Field walker, attended 2010-autumn only
 
-**Issue:** Generic "Adela" entries in attribution.csv need to be verified to ensure Adela Dorňáková is correctly identified where she participated (2010-autumn), and not confused with Adela Sobotkova.
+**Completed actions:**
+- [x] Searched attribution.csv for all "Adela" entries in 2010-autumn
+- [x] Cross-referenced with team compositions and dates
+- [x] Verified Dorňáková is correctly identified in her season (Oct 22-24 as "AD" team leader)
+- [x] Updated ambiguous "Adela" entries with full names (Nov 2-3 confirmed as Sobotkova via Day_05.pdf review)
 
-**Action required:**
-- [ ] Search attribution.csv for all "Adela" entries in 2010-autumn
-- [ ] Cross-reference with team compositions and dates
-- [ ] Verify Dorňáková is correctly identified in her season
-- [ ] Update any ambiguous "Adela" entries with full names
-
-**Expected impact:** 2010-autumn records (October-November 2010)
+**Results:**
+- 5 records identified in 2010-autumn:
+  - Oct 22: Both Adelas explicitly named in same record
+  - Oct 23-24: Both identified with initials (AD = Dorňáková, AS = Sobotkova)
+  - Nov 2-3: Generic "Adela" updated to "Adela Sobotkova" after PDF verification
+- All Adela entries in 2010-autumn now correctly disambiguated
 
 ---
 
@@ -138,6 +141,7 @@ This file tracks outstanding actions that fall outside the core data extraction 
 - [x] Disambiguate Petra (Janouchová vs Tušlová)
 - [x] Verify and correct all pdf_sources in name-mapping.csv
 - [x] Fix Lizzy/Lisi typo and clarify identity
+- [x] Disambiguate Adela (Sobotkova vs Dorňáková) in 2010-autumn records
 
 ---
 
