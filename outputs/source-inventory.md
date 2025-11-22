@@ -31,69 +31,69 @@ Narrative records with walker names, roles (PDA, GPS, Forms), and daily activiti
 
 ### Elhovo 2009
 
-| Team | File | Language | Walkers | Roles | Location |
-|------|------|----------|---------|-------|----------|
-| A | Diary Team A.doc | EN | [ ] | [ ] | `Elhovo 2010-12-12/2009/Project Records/Team A/` |
-| A | Diary_Aneta.doc | EN | [ ] | [ ] | `Elhovo 2010-12-12/2009/Project Records/Team A/` |
-| B | DiaryTeamB.doc | EN | [x] | N/A | `Elhovo 2010-12-12/2009/Project Records/Team B/` |
-| B | TeamB_Dnevnik (Ross).doc | BG | [ ] | N/A | `Elhovo 2010-12-12/2009/Project Records/Team B/` |
-| C | The Diary of Team C.doc | EN | [ ] | [ ] | `Elhovo 2010-12-12/2009/Project Records/Team C/` |
-| C | TeamC_Dnevnik.doc | BG | [ ] | [ ] | `Elhovo 2010-12-12/2009/Project Records/Team C/` |
+| Team | File | Language | Walkers | Roles | Version | Location |
+|------|------|----------|---------|-------|---------|----------|
+| A | Diary Team A.doc | EN | [ ] | [ ] | PRIMARY | `Elhovo 2010-12-12/2009/Project Records/Team A/` |
+| A | Diary_Aneta.doc | EN | [ ] | [ ] | SUPPLEMENTAL | `Elhovo 2010-12-12/2009/Project Records/Team A/` |
+| B | DiaryTeamB.doc | EN | [x] | N/A | PRIMARY | `Elhovo 2010-12-12/2009/Project Records/Team B/` |
+| B | TeamB_Dnevnik (Ross).doc | BG | [ ] | N/A | SECONDARY | `Elhovo 2010-12-12/2009/Project Records/Team B/` |
+| C | The Diary of Team C.doc | EN | [ ] | [ ] | PRIMARY | `Elhovo 2010-12-12/2009/Project Records/Team C/` |
+| C | TeamC_Dnevnik.doc | BG | [ ] | [ ] | SECONDARY | `Elhovo 2010-12-12/2009/Project Records/Team C/` |
 
 ### Elhovo 2010
 
-| Team | File | Language | Walkers | Roles | Location |
-|------|------|----------|---------|-------|----------|
-| A | A_Diary.docx | EN | [ ] | [ ] | `Elhovo 2010-12-12/2010/Project Records/Team A/` |
-| B | Team B Diary.docx | EN | [x] | [x] | `Elhovo 2010-12-12/2010/Project Records/Team B/` |
-| B | Team B Journal.docx | EN | [ ] | [ ] | `Elhovo 2010-12-12/2010/Project Records/Team B/` |
-| - | Diary_Adela2010Fall.docx | EN | [ ] | [ ] | `Elhovo 2010-12-12/2010/Project Records/` |
-| GC | Elh10_RSDiary_Bara_RS.docx | EN | [ ] | [ ] | `Elhovo 2010-12-12/2010/Project Records/GC-RS/` |
-| GC | Elh10_RSDiary_Petra.docx | EN | [ ] | [ ] | `Elhovo 2010-12-12/2010/Project Records/GC-RS/` |
-| GC | Elh10_RSdiary_Sona.docx | EN | [ ] | [ ] | `Elhovo 2010-12-12/2010/Project Records/GC-RS/` |
+| Team | File | Language | Walkers | Roles | Version | Location |
+|------|------|----------|---------|-------|---------|----------|
+| A | A_Diary.docx | EN | [ ] | [ ] | PRIMARY | `Elhovo 2010-12-12/2010/Project Records/Team A/` |
+| B | Team B Diary.docx | EN | [x] | [x] | PRIMARY | `Elhovo 2010-12-12/2010/Project Records/Team B/` |
+| B | Team B Diary new.docx | EN | [ ] | [ ] | SECONDARY | `Elhovo 2010-12-12/2010/Project Records/Team B/` |
+| - | Diary_Adela2010Fall.docx | EN | [ ] | [ ] | SUPPLEMENTAL | `Elhovo 2010-12-12/2010/Project Records/` |
+| GC | Elh10_RSDiary_Bara_RS.docx | EN | [ ] | [ ] | - | `Elhovo 2010-12-12/2010/Project Records/GC-RS/` |
+| GC | Elh10_RSDiary_Petra.docx | EN | [ ] | [ ] | - | `Elhovo 2010-12-12/2010/Project Records/GC-RS/` |
+| GC | Elh10_RSdiary_Sona.docx | EN | [ ] | [ ] | - | `Elhovo 2010-12-12/2010/Project Records/GC-RS/` |
 
 ### Kazanlak 2009
 
-| Team | File | Language | Walkers | Roles | Location |
-|------|------|----------|---------|-------|----------|
-| - | Diary March 09.doc | EN | [ ] | N/A | `Kazanluk/2009/` |
-| - | Adela_JournalSurvey.doc | EN | [ ] | N/A | `Kazanluk/2009/Project Records/` |
-| - | Adela_JournalExcav.docx | EN | [ ] | N/A | `Kazanluk/2009/Project Records/` |
-| A | A_Diary_BG.doc | BG | [x] | N/A | `Kazanluk/2009/Project Records/TeamA/` |
-| A | A_Diary_En.doc | EN | [x] | N/A | `Kazanluk/2009/Project Records/TeamA/` |
-| B | B_Diary_BG.doc | BG | [x] | N/A | `Kazanluk/2009/Project Records/TeamB/` |
-| B | B_Diary_En.docx | EN | [x] | N/A | `Kazanluk/2009/Project Records/TeamB/` |
-| B | Adela_JournalApr09.docx | EN | [ ] | N/A | `Kazanluk/2009/Project Records/TeamB/` |
-| C | C_Diary_BG.doc | BG | [x] | N/A | `Kazanluk/2009/Project Records/TeamC/` |
-| C | C_Journal_En.docx | EN | [ ] | N/A | `Kazanluk/2009/Project Records/TeamC/` |
-| C | TeamC_Journal.docx | EN | [ ] | N/A | `Kazanluk/2009/Project Records/TeamC/` |
-| D | D Diary_BG.doc | BG | [x] | N/A | `Kazanluk/2009/Project Records/TeamD/` |
-| D | D_Diary_En.docx | EN | [ ] | N/A | `Kazanluk/2009/Project Records/TeamD/` |
-| E | E Diary_BG.doc | BG | [x] | N/A | `Kazanluk/2009/Project Records/TeamE/` |
+| Team | File | Language | Walkers | Roles | Version | Location |
+|------|------|----------|---------|-------|---------|----------|
+| - | Diary March 09.doc | EN | [ ] | N/A | SUPPLEMENTAL | `Kazanluk/2009/` |
+| - | Adela_JournalSurvey.doc | EN | [ ] | N/A | SUPPLEMENTAL | `Kazanluk/2009/Project Records/` |
+| - | Adela_JournalExcav.docx | EN | [ ] | N/A | SUPPLEMENTAL | `Kazanluk/2009/Project Records/` |
+| A | A_Diary_BG.doc | BG | [x] | N/A | PRIMARY (198 KB) | `Kazanluk/2009/Project Records/TeamA/` |
+| A | A_Diary_En.doc | EN | [x] | N/A | SECONDARY (88 KB) | `Kazanluk/2009/Project Records/TeamA/` |
+| B | B_Diary_BG.doc | BG | [x] | N/A | PRIMARY (152 KB) | `Kazanluk/2009/Project Records/TeamB/` |
+| B | B_Diary_En.docx | EN | [x] | N/A | SECONDARY (62 KB) | `Kazanluk/2009/Project Records/TeamB/` |
+| B | Adela_JournalApr09.docx | EN | [ ] | N/A | SUPPLEMENTAL | `Kazanluk/2009/Project Records/TeamB/` |
+| C | C_Diary_BG.doc | BG | [x] | N/A | PRIMARY (152 KB) | `Kazanluk/2009/Project Records/TeamC/` |
+| C | C_Journal_En.docx | EN | [ ] | N/A | SECONDARY | `Kazanluk/2009/Project Records/TeamC/` |
+| C | TeamC_Journal.docx | EN | [ ] | N/A | SUPPLEMENTAL | `Kazanluk/2009/Project Records/TeamC/` |
+| D | D Diary_BG.doc | BG | [x] | N/A | PRIMARY (222 KB) | `Kazanluk/2009/Project Records/TeamD/` |
+| D | D_Diary_En.docx | EN | [ ] | N/A | SECONDARY | `Kazanluk/2009/Project Records/TeamD/` |
+| E | E Diary_BG.doc | BG | [x] | N/A | PRIMARY (only BG) | `Kazanluk/2009/Project Records/TeamE/` |
 
 ### Kazanlak 2010
 
-| Team | File | Language | Walkers | Roles | Location |
-|------|------|----------|---------|-------|----------|
-| A | A_2010Diary_BG.doc | BG | [x] | N/A | `Kazanluk/2010/Project Records/Team A/` |
-| A | A_2010Diary_En.docx | EN | [x] | [x] | `Kazanluk/2010/Project Records/Team A/` |
-| B | B_2010Diary_BG.docx | BG | [x] | N/A | `Kazanluk/2010/Project Records/Team B/` |
-| B | B_2010Diary_En.doc | EN | [x] | [x] | `Kazanluk/2010/Project Records/Team B/` |
-| C | C_2010Diary_BG.doc | BG | [x] | N/A | `Kazanluk/2010/Project Records/Team C/` |
-| C | C_2010Diary_En.docx | EN | [ ] | N/A | `Kazanluk/2010/Project Records/Team C/` |
-| D | D_2010Diary_BG.doc | BG | [x] | N/A | `Kazanluk/2010/Project Records/Team D/` |
-| D | D_2010Diary_En.docx | EN | [ ] | N/A | `Kazanluk/2010/Project Records/Team D/` |
+| Team | File | Language | Walkers | Roles | Version | Location |
+|------|------|----------|---------|-------|---------|----------|
+| A | A_2010Diary_BG.doc | BG | [x] | N/A | PRIMARY (86 KB) | `Kazanluk/2010/Project Records/Team A/` |
+| A | A_2010Diary_En.docx | EN | [x] | [x] | SECONDARY | `Kazanluk/2010/Project Records/Team A/` |
+| B | B_2010Diary_En.doc | EN | [x] | [x] | PRIMARY (110 KB) | `Kazanluk/2010/Project Records/Team B/` |
+| B | B_2010Diary_BG.docx | BG | [x] | N/A | SECONDARY (42 KB) | `Kazanluk/2010/Project Records/Team B/` |
+| C | C_2010Diary_BG.doc | BG | [x] | N/A | PRIMARY (214 KB) | `Kazanluk/2010/Project Records/Team C/` |
+| C | C_2010Diary_En.docx | EN | [ ] | N/A | SECONDARY | `Kazanluk/2010/Project Records/Team C/` |
+| D | D_2010Diary_BG.doc | BG | [x] | N/A | PRIMARY (127 KB) | `Kazanluk/2010/Project Records/Team D/` |
+| D | D_2010Diary_En.docx | EN | [ ] | N/A | SECONDARY | `Kazanluk/2010/Project Records/Team D/` |
 
 ### Kazanlak 2011
 
-| Team | File | Language | Walkers | Roles | Location |
-|------|------|----------|---------|-------|----------|
-| A | A_2011Diary_BG.doc | BG | [x] | N/A | `Kazanluk/2011-11-30/Project Records/Team A/` |
-| B | B_2011Diary_BG.docx | BG | [x] | N/A | `Kazanluk/2011-11-30/Project Records/Team B/` |
-| B | B_2011Diary_En.docx | EN | [x] | N/A | `Kazanluk/2011-11-30/Project Records/Team B/` |
-| C | C_2011Diary_BG.docx | BG | [x] | N/A | `Kazanluk/2011-11-30/Project Records/Team C/` |
-| C | C_2011Diary_En.docx | EN | [x] | N/A | `Kazanluk/2011-11-30/Project Records/Team C/` |
-| D | D_2011Diary_BG.doc | BG | [x] | N/A | `Kazanluk/2011-11-30/Project Records/Team D/` |
+| Team | File | Language | Walkers | Roles | Version | Location |
+|------|------|----------|---------|-------|---------|----------|
+| A | A_2011Diary_BG.doc | BG | [x] | N/A | PRIMARY (only BG) | `Kazanluk/2011-11-30/Project Records/Team A/` |
+| B | B_2011Diary_En.docx | EN | [x] | N/A | PRIMARY (63 KB) | `Kazanluk/2011-11-30/Project Records/Team B/` |
+| B | B_2011Diary_BG.docx | BG | [x] | N/A | SECONDARY (42 KB) | `Kazanluk/2011-11-30/Project Records/Team B/` |
+| C | C_2011Diary_En.docx | EN | [x] | N/A | PRIMARY (70 KB) | `Kazanluk/2011-11-30/Project Records/Team C/` |
+| C | C_2011Diary_BG.docx | BG | [x] | N/A | SECONDARY (18 KB) | `Kazanluk/2011-11-30/Project Records/Team C/` |
+| D | D_2011Diary_BG.doc | BG | [x] | N/A | PRIMARY (only BG) | `Kazanluk/2011-11-30/Project Records/Team D/` |
 
 ### Kazanlak 2011 - Individual Journals (AUS_Diaries)
 
@@ -117,13 +117,15 @@ Handwritten forms scanned to PDF. Quality varies; OCR prone to errors.
 
 ### Kazanlak 2009 (PDFs)
 
-| Team | Files | Location |
-|------|-------|----------|
-| A | A_2009Summary.pdf, A_Summary04Mar-08Mar.pdf, etc. | `Kazanluk/2009/Project Records/TeamA/` |
-| B | B_2009Summary.pdf, B_Summary04Mar-08Mar.pdf, etc. | `Kazanluk/2009/Project Records/TeamB/Finalized/` |
-| C | C_2009Summary.pdf, C_Summary04Mar-06Mar.pdf, etc. | `Kazanluk/2009/Project Records/TeamC/` |
-| D | D_Summary.pdf | `Kazanluk/2009/Project Records/TeamD/FInalized/` |
-| E | E_Summary.pdf, E_Summary20Mar-25Mar.pdf, etc. | `Kazanluk/2009/Project Records/TeamE/` |
+| Team | Files | Version | Location |
+|------|-------|---------|----------|
+| A | A_2009Summary.pdf, A_Summary04Mar-08Mar.pdf, etc. | - | `Kazanluk/2009/Project Records/TeamA/` |
+| B | B_2009Summary.pdf, B_Summary04Mar-08Mar.pdf, etc. | PRIMARY (Finalized) | `Kazanluk/2009/Project Records/TeamB/Finalized/` |
+| B | B_2009Summary.pdf (scans) | SECONDARY (Scans) | `Kazanluk/2009/Project Records/TeamB/Scans/` |
+| C | C_2009Summary.pdf, C_Summary04Mar-06Mar.pdf, etc. | - | `Kazanluk/2009/Project Records/TeamC/` |
+| D | D_Summary.pdf | PRIMARY (Finalized) | `Kazanluk/2009/Project Records/TeamD/FInalized/` |
+| D | D_Summary.pdf (scans) | SECONDARY (Scans) | `Kazanluk/2009/Project Records/TeamD/Scans/` |
+| E | E_Summary.pdf, E_Summary20Mar-25Mar.pdf, etc. | - | `Kazanluk/2009/Project Records/TeamE/` |
 
 ### Kazanlak 2010 (PDFs)
 
@@ -152,14 +154,42 @@ Daily field records by date (YYYYMMDD format):
 
 ---
 
+## Tier 4: Individual Survey Form PDFs
+
+Individual survey unit forms scanned to PDF. These complement the consolidated Summary PDFs in Tier 3.
+
+### Elhovo 2009 Survey Unit PDFs
+
+| Team | Unit Range | Count | Location |
+|------|------------|-------|----------|
+| A | 60126-61344 | 13 files | `Elhovo 2010-12-12/2009/Project Records/Team A/Field Records/` |
+| B | 70122-71463 | 14 files | `Elhovo 2010-12-12/2009/Project Records/Team B/Field Records/` |
+| C | 80103-81008 | 12 files | `Elhovo 2010-12-12/2009/Project Records/Team C/Field Records/` |
+
+### Elhovo 2010 Dated Survey Form PDFs
+
+| Team | Format | Count | Location |
+|------|--------|-------|----------|
+| A | 20101022.pdf, 20101023.pdf, etc. | Multiple | `Elhovo 2010-12-12/2010/Project Records/Team A/Field Records/` |
+| B | 20101102.pdf, 20101103.pdf, etc. | Multiple | `Elhovo 2010-12-12/2010/Project Records/Team B/Field Records/` |
+
+**Note:** Tier 4 focuses on survey unit field walking forms only. Remote sensing records (GC-RS), object recording PDFs, and total pickup records are excluded from this inventory.
+
+---
+
 ## Priority Rules
 
 When extracting data, apply these priority rules:
 
-1. **Names**: Prefer BG diaries for Bulgarian names, EN diaries for non-Bulgarian names
-2. **Data conflicts**: Tier 2 (diaries) > Tier 3 (scanned PDFs) for walker accuracy
-3. **Roles (PDA, GPS, Forms)**: Only available in Tier 2 diaries
-4. **Dates/Units**: Tier 1 (Excel) is authoritative for survey unit numbers
+1. **Source Version Terminology**:
+   - **PRIMARY**: Preferred version (curated files, larger/more complete diaries, preferred translations)
+   - **SECONDARY**: Alternative version of same document (uncurated scans, smaller diaries, alternative translations)
+   - **SUPPLEMENTAL**: Personal/individual diaries providing additional perspective (not different versions)
+
+2. **Names**: Prefer PRIMARY diaries for extraction; use larger diaries (BG or EN) as they typically contain more detail
+3. **Data conflicts**: Tier 2 (diaries) > Tier 3 (scanned PDFs) > Tier 4 (individual forms) for walker accuracy
+4. **Roles (PDA, GPS, Forms)**: Only available in Tier 2 diaries
+5. **Dates/Units**: Tier 1 (Excel) is authoritative for survey unit numbers
 
 ---
 
@@ -220,4 +250,4 @@ All seasons have SurveySummary files. ✓
 
 ---
 
-**Last updated:** 21 November 2025
+**Last updated:** 22 November 2025
