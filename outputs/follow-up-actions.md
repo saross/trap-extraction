@@ -97,14 +97,28 @@ This file tracks outstanding actions that fall outside the core data extraction 
 
 ### 4. Investigate XLS-only Records
 
-**Status:** 76 records without diary/PDF walker data
+**Status:** ✅ PARTIALLY COMPLETED (22 November 2025)
 
-**Context:** 76 survey day records exist only in the Excel summary files and lack corresponding diary or PDF sources for walker extraction.
+**Context:** Research identified 22 XLS-only records (8.2% of 269 total) that had diary sources but weren't previously extracted. Comprehensive source investigation and extraction were performed.
 
-**Action required:**
-- [ ] Determine if additional source documents exist for these dates
-- [ ] If no sources available, document as known limitation
-- [ ] Consider whether leader-only records are sufficient for attribution
+**Completed actions:**
+- [x] Investigated all 22 XLS-only records for diary sources
+- [x] Updated source-inventory.md with corrections and Tier 4 (39 survey unit PDFs)
+- [x] Developed extraction script for multiple diary formats (EN/BG, narrative/structured)
+- [x] Executed extraction: 10/22 records successfully extracted (49 walker names added)
+- [x] Generated detailed extraction report: diary-extraction-report.md
+
+**Results:**
+- 10 records now have complete walker data (Kazanlak 2010-2011, Elhovo 2009)
+- 12 records failed extraction due to diary format limitations (no daily walker lists)
+- Backup created: attribution.csv.backup_diary_extraction
+
+**Remaining work:**
+- [ ] Investigate 12 failed extractions - diaries may have overall walker lists rather than daily breakdowns
+- [ ] Manual extraction may be needed for records with non-standard diary formats
+- [ ] Remaining 54 records (76 - 22) still need source investigation
+
+**Note:** Date discrepancy flagged for 2010-03-08 (diary shows 18.03.2010) - requires user review
 
 ---
 
@@ -153,6 +167,9 @@ This file tracks outstanding actions that fall outside the core data extraction 
 - [x] Verify and correct all pdf_sources in name-mapping.csv
 - [x] Fix Lizzy/Lisi typo and clarify identity
 - [x] Disambiguate Adela (Sobotkova vs Dorňáková) in 2010-autumn records
+- [x] Update source-inventory.md with Tier 4 and source preferences (PRIMARY/SECONDARY/SUPPLEMENTAL)
+- [x] Develop diary walker extraction script with Bulgarian transliteration
+- [x] Extract walker data from 22 XLS-only records (10/22 successful, 49 names added)
 
 ---
 
@@ -163,4 +180,4 @@ This file should be updated as actions are completed or new items are identified
 **Outstanding research:**
 - Batch participant list update: Lizzy (full name research), Silvia Ivanova (verify participation), Jiří Musil (verify participation and dates)
 
-**Last updated:** 22 November 2025
+**Last updated:** 22 November 2025 (after diary walker extraction)
