@@ -1,8 +1,13 @@
 # TRAP Data Extraction - Follow-up Actions
 
 **Created:** November 2025
+**Last Updated:** 23 November 2025
+**Walker Data Extraction Status:** ✅ **100% COMPLETE** (268/268 records)
+**Project Completion:** 23 November 2025
 
-This file tracks outstanding actions that fall outside the core data extraction work.
+This file tracks outstanding actions that fall outside the core walker data extraction work, which has been completed.
+
+**Note:** All walker extraction tasks have been completed. This document now tracks remaining enhancement and data quality tasks for AKB submission preparation.
 
 ---
 
@@ -284,3 +289,7 @@ This file should be updated as actions are completed or new items are identified
 - Batch participant list update: Lizzy (full name research), Silvia Ivanova (verify participation), Jiří Musil (verify participation and dates)
 
 **Last updated:** 23 November 2025 (after Kazanluk 2011 date error correction)
+
+---
+
+**GitHub Repository:** https://github.com/saross/trap-extraction

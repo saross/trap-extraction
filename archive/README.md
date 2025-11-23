@@ -1,19 +1,25 @@
 # TRAP Attribution Extraction - Archive
 
+**Project Completion:** 23 November 2025
+**Walker Data Coverage:** ✅ 100% Complete (268/268 records)
+
 This directory contains completed work from the collaborative TRAP attribution data extraction project.
 
 ## Archive Structure
 
 ```
 archive/
-├── cc-interactions/          # Exported Claude Code conversation transcripts
+├── cc-interactions/          # Exported Claude Code conversation transcripts (15+ sessions)
 ├── supersession-project/     # Source supersession review and corrections (COMPLETED)
 ├── name-disambiguation/      # Name variant analysis and mappings (COMPLETED)
 ├── diary-extraction/         # Diary extraction planning documents (COMPLETED)
 ├── project-summaries/        # Interim status reports and tracking documents
-├── intermediate-data/        # Intermediate CSV files from extraction phases
-├── outputs/                  # Superseded output files from earlier work
-└── reports/                  # Completed analysis and extraction reports
+├── outputs/
+│   ├── backups/              # 17 timestamped attribution.csv backups
+│   └── documentation/        # 2 historical documentation files
+└── reports/
+    ├── extraction/           # 5 extraction reports from various phases
+    ├── final/                # 2 comprehensive final reports
     └── phase1-extraction/    # Initial extraction phase documentation
 ```
 
@@ -119,6 +125,25 @@ The following files remain in `outputs/` as active working documents:
 - **Status:** COMPLETED - Foundation for supersession project
 - **See:** `diary-extraction/README.md`
 
+### Final Reports (23 November 2025)
+- **Location:** `archive/reports/final/`
+- **Scope:** Comprehensive data quality and extraction resolution documentation
+- **Status:** COMPLETED - Project conclusion documentation
+- **Key files:**
+  - `data-quality-summary.md` - Complete quality assessment (100% walker coverage)
+  - `failed-extractions-resolution-report.md` - How all extraction gaps were resolved
+- **Significance:** Documents achievement of 100% walker data coverage and all quality improvements
+
+### Attribution CSV Backups (20-23 November 2025)
+- **Location:** `archive/outputs/backups/`
+- **Scope:** 17 timestamped backups documenting extraction progress
+- **Status:** Archived - Preserved for provenance
+- **Key backups:**
+  - Phase 1 baseline (76.1% coverage)
+  - Phase 2 improvements (139 leader standardisations)
+  - Date error corrections (2 corrections applied)
+  - Final state (100% coverage achieved)
+
 ## Archive Maintenance
 
 When archiving files:
@@ -129,6 +154,13 @@ When archiving files:
 
 ## Notes
 
-- Backups of `attribution.csv` are kept in `outputs/` with timestamps
+- 17 timestamped backups of `attribution.csv` archived in `outputs/backups/`
 - CC conversation exports are dated in format `YYYY-MM-DD-[a-z].txt`
 - Each archive subdirectory contains a README explaining its contents
+- Final reports in `reports/final/` document 100% walker coverage achievement
+
+---
+
+**Total archived files:** 70+ files across 10 subdirectories
+**Project completion:** 23 November 2025
+**GitHub Repository:** https://github.com/saross/trap-extraction

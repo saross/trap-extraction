@@ -1,8 +1,11 @@
 # Project Summaries and Tracking Archive
 
-**Date:** November 2025
+**Date:** 21-23 November 2025
+**Project Completion:** 23 November 2025 (100% walker coverage achieved)
 
-This archive contains interim project summaries, tracking documents, and analysis reports created during the attribution extraction work.
+This archive contains interim project summaries, tracking documents, and analysis reports created during the attribution extraction work. These documents represent **historical snapshots** from specific points in the extraction process.
+
+**Part of:** TRAP Attribution Extraction Project v1.0.0 (see `../../PROJECT-COMPLETION.md`)
 
 ## Files
 
@@ -25,11 +28,25 @@ This archive contains interim project summaries, tracking documents, and analysi
 
 ## Status
 
-These documents represent interim snapshots and completed analyses. Current project status is maintained in:
-- `outputs/attribution.csv` - Current working data
-- `outputs/manual-extraction-guide.md` - Current methodology and guidance
-- `outputs/source-inventory.md` - Current source catalogue
+**These documents are ARCHIVED SNAPSHOTS from specific dates during the extraction process.**
+
+### Historical Coverage (from work-summary.md, 21 November 2025):
+- 269 records, 82.9% walker coverage (223/269 records)
+- Before supersession project and final extractions
+
+### Final Project Status (23 November 2025):
+- 268 records, **100% walker coverage** (268/268 records)
+- See `../../PROJECT-COMPLETION.md` for complete final report
+
+### Current Working Files:
+- `../../outputs/attribution.csv` - Final dataset (268 records)
+- `../../outputs/follow-up-actions.md` - Outstanding enhancement tasks
+- `../../outputs/source-inventory.md` - Complete source catalogue
 
 ## Notes
 
-The work-summary.md statistics are from 21 November 2025, before the supersession project (23 November 2025) which updated 14 additional records.
+- **work-summary.md:** Snapshot from 21 November 2025 (before supersession project)
+- **follow-up-actions.md:** Historical version; current version in `../../outputs/`
+- **date-discrepancy-analysis.md:** Analysis that led to 2 date error corrections:
+  - 2010-03-08 → 2010-04-08 (Kazanluk 2010, Team C)
+  - 2011-11-10 → 2011-10-21 (Kazanluk 2011, Team D)

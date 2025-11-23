@@ -2,8 +2,12 @@
 
 **Created:** November 2025
 **Last major update:** 23 November 2025
+**Extraction status:** ✅ **100% COMPLETE** (268/268 records with walker data)
+**Project completion:** 23 November 2025
 
 This document catalogues all source documents for the TRAP walker attribution extraction project, organised by priority tier and annotated with version relationships and quality guidance.
+
+**All Tier 2 diaries have been processed and walker data extracted.**
 
 ## Purpose
 
@@ -380,6 +384,11 @@ All seasons have SurveySummary files. ✓
 
 **Created:** November 2025
 **Last major update:** 23 November 2025 (comprehensive version annotations and structural improvements)
+**Project completion:** 23 November 2025
 **Contributors:** Adela Sobotkova, Claude Code
 
 This inventory is a living document. Updates include new source discoveries, version comparisons, and quality notes to support ongoing and future research.
+
+---
+
+**GitHub Repository:** https://github.com/saross/trap-extraction

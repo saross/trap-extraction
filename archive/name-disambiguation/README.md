@@ -1,8 +1,11 @@
 # Name Disambiguation Archive
 
-**Completion Date:** November 2025
+**Completion Date:** 22 November 2025
+**Project Completion:** 23 November 2025 (100% walker coverage achieved)
 
 This archive contains all work related to identifying, reviewing, and resolving ambiguous walker names in the attribution data.
+
+**Part of:** TRAP Attribution Extraction Project v1.0.0 (see `../../PROJECT-COMPLETION.md`)
 
 ## Project Summary
 
@@ -20,10 +23,17 @@ This archive contains all work related to identifying, reviewing, and resolving 
 
 ## Key Outcomes
 
-- Standardised name representation across all records
-- Documented disambiguation decisions for future reference
-- Created authoritative name mapping reference
-- Resolved 79% of mappings, documented remaining 21% needing review
+- **283 name mappings created** - Comprehensive canonical name reference
+- **111 canonical name replacements applied** across 73 attribution records
+- **Standardised name representation** across all records
+- **Documented disambiguation decisions** for future reference
+- **Major disambiguations resolved:**
+  - Helena vs Elena (standardised to "Elena")
+  - Petra (Janouchová vs Tušlová - seasonal attendance patterns)
+  - Adela (Sobotkova vs Dorňáková - 2010-autumn records)
+  - Julia (older Kourilova vs younger Šašinková)
+- **6 OCR false positives** marked as invalid (H., Hun, M, P, Olga, X)
+- **2 uncertain entries** documented (Lizzy/Lisi - real person, full name being researched)
 
 ## Related Files
 

@@ -1,8 +1,11 @@
 # Diary Extraction Planning Archive
 
-**Completion Date:** November 2025
+**Completion Date:** 21 November 2025
+**Project Completion:** 23 November 2025 (100% walker coverage achieved)
 
 This archive contains planning and search documentation for diary-based data extraction across the TRAP project.
+
+**Part of:** TRAP Attribution Extraction Project v1.0.0 (see `../../PROJECT-COMPLETION.md`)
 
 ## Project Summary
 
@@ -18,10 +21,15 @@ This archive contains planning and search documentation for diary-based data ext
 
 ## Key Outcomes
 
-- Complete inventory of diary sources across all teams and seasons
-- Prioritisation framework (Tier 1: Excel → Tier 2: Diaries → Tier 3: PDFs)
-- Extraction methodology for handling inconsistencies
-- Foundation for subsequent supersession project
+- **Complete inventory** of 15+ diary sources across all teams and seasons (2009-2011)
+- **Source hierarchy established:**
+  - Tier 1: Excel SurveySummary (SUPPLEMENTAL - baseline only)
+  - Tier 2: Field diaries (PRIMARY - preferred sources)
+  - Tier 3: Survey unit PDFs (SECONDARY - cross-verification)
+  - Tier 4: Individual survey unit PDFs (39 files identified)
+- **Extraction methodology developed** for handling diary format variations
+- **Foundation for supersession project** - Enabled identification of 14 records needing PRIMARY source updates
+- **Result:** 258/268 records (96.3%) now use PRIMARY diary sources
 
 ## Related Work
 

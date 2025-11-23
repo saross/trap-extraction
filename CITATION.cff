@@ -1,0 +1,199 @@
+cff-version: 1.2.0
+message: "If you use this software or dataset, please cite it as below."
+type: software
+title: "TRAP Attribution Extraction Scripts"
+version: 1.0.0
+date-released: 2025-11-23
+abstract: |
+  Python scripts and dataset for extracting field survey attribution data from
+  TRAP (Tundzha Regional Archaeological Project) diaries and field documentation
+  covering 2009-2011 Kazanluk field seasons. Provides complete attribution for
+  268 survey days with 100% walker data coverage extracted from 15+ field diaries,
+  39 survey unit PDFs, and Excel survey summaries.
+
+authors:
+  - family-names: Ross
+    given-names: Shawn
+    orcid: "https://orcid.org/0000-0003-0074-1245"
+    affiliation: "Macquarie University"
+    email: shawn.ross@mq.edu.au
+  - name: "Claude Code"
+    alias: "Anthropic AI Assistant"
+    website: "https://claude.com/claude-code"
+    affiliation: "Anthropic"
+
+contributors:
+  - family-names: Sobotkova
+    given-names: Adela
+    affiliation: "Macquarie University"
+    role: "TRAP Project Co-Director"
+
+license: Apache-2.0
+license-url: "https://spdx.org/licenses/Apache-2.0"
+
+# Data produced by this software uses a different license
+data-license: CC-BY-4.0
+data-license-url: "https://creativecommons.org/licenses/by/4.0/"
+
+repository-code: "https://github.com/saross/trap-extraction"
+url: "https://github.com/saross/trap-extraction"
+
+keywords:
+  - archaeology
+  - data-extraction
+  - field-survey
+  - attribution
+  - diary-analysis
+  - archaeological-data
+  - TRAP
+  - survey-data
+  - Kazanluk
+  - Bulgaria
+  - Thracian-archaeology
+  - FAIR-data
+  - research-software
+
+# Geographic and temporal coverage
+geographic-coverage:
+  - region: "Kazanluk Valley"
+    country: Bulgaria
+    province: "Stara Zagora Province"
+    description: "Tundzha Regional Archaeological Project survey area"
+
+temporal-coverage:
+  start-date: 2009-03-03
+  end-date: 2011-11-29
+
+# Dataset information
+dataset:
+  title: "TRAP Archaeological Survey Attribution Data (2009-2011)"
+  description: |
+    Complete attribution dataset for 268 survey days from the Tundzha Regional
+    Archaeological Project (TRAP) Kazanluk field seasons (2009-2011). Documents
+    field walker participation, team compositions, leadership, and survey unit
+    assignments extracted from primary source diaries and field documentation.
+  format: CSV
+  size: 268 records
+  coverage: "100% walker data coverage"
+
+# Technical metadata
+programming-languages:
+  - Python
+
+dependencies:
+  - pandas>=1.3.0
+
+runtime-platforms:
+  - Python 3.9+
+
+# Preferred citation formats
+preferred-citation:
+  type: software
+  title: "TRAP Attribution Extraction Scripts and Dataset (v1.0.0)"
+  authors:
+    - family-names: Ross
+      given-names: Shawn
+      orcid: "https://orcid.org/0000-0003-0074-1245"
+      affiliation: "Macquarie University"
+    - name: "Claude Code"
+      affiliation: "Anthropic"
+  year: 2025
+  version: 1.0.0
+  repository-code: "https://github.com/saross/trap-extraction"
+  license: Apache-2.0
+  data-license: CC-BY-4.0
+
+# Alternative citation for the dataset
+references:
+  - type: dataset
+    title: "TRAP Archaeological Survey Attribution Data (2009-2011)"
+    authors:
+      - family-names: Ross
+        given-names: Shawn
+        orcid: "https://orcid.org/0000-0003-0074-1245"
+      - family-names: Sobotkova
+        given-names: Adela
+    year: 2025
+    description: |
+      Attribution dataset documenting field walker participation across 268 survey
+      days from TRAP 2009-2011 Kazanluk field seasons. Extracted from 15+ primary
+      source diaries with complete walker data coverage.
+    license: CC-BY-4.0
+    format: CSV
+    repository: "https://github.com/saross/trap-extraction"
+    filename: outputs/attribution.csv
+
+# Related publications (TRAP project)
+# Note: Full bibliographic integration planned for v1.2.0
+# BibTeX references available but not yet linked to specific records
+
+# Quality metrics
+quality-metrics:
+  walker-coverage: 100%
+  total-records: 268
+  date-coverage: 100%
+  survey-unit-coverage: 93.3%
+  source-documentation: 100%
+
+# Standards compliance
+standards:
+  - name: FAIR Principles
+    url: "https://doi.org/10.1038/sdata.2016.18"
+    compliance: "Substantially compliant"
+  - name: FAIR4RS Principles
+    url: "https://doi.org/10.15497/RDA00068"
+    compliance: "Fully compliant"
+  - name: CodeMeta 2.0
+    url: "https://codemeta.github.io/"
+    implemented: true
+  - name: ISO 8601
+    url: "https://www.iso.org/iso-8601-date-and-time-format.html"
+    applied-to: "Date formatting"
+  - name: RFC 4180
+    url: "https://tools.ietf.org/html/rfc4180"
+    applied-to: "CSV data format"
+
+# Project metadata
+project:
+  name: "Tundzha Regional Archaeological Project (TRAP)"
+  description: |
+    International collaborative archaeological survey project investigating the
+    Kazanluk Valley region of Bulgaria, conducted 2009-2011 under the direction
+    of Shawn Ross and Adela Sobotkova.
+  website: "https://archaeologydataservice.ac.uk/archives/view/trap/"
+
+# Citation examples for users
+citation-examples:
+  software-citation: |
+    Ross, S., & Claude Code. (2025). TRAP Attribution Extraction Scripts (v1.0.0)
+    [Python]. Retrieved from https://github.com/saross/trap-extraction
+
+  dataset-citation: |
+    Ross, S., & Sobotkova, A. (2025). TRAP Archaeological Survey Attribution Data
+    (2009-2011) [Dataset]. Retrieved from https://github.com/saross/trap-extraction
+
+  combined-citation: |
+    Ross, S., Sobotkova, A., & Claude Code. (2025). TRAP Attribution Extraction Scripts
+    and Dataset (v1.0.0). Software licensed under Apache-2.0, data licensed under CC-BY-4.0.
+    Retrieved from https://github.com/saross/trap-extraction
+
+# Usage notes
+usage-notes: |
+  This software produces two types of outputs with different licenses:
+
+  1. **Scripts (Apache-2.0):** Python extraction scripts in scripts/ directory
+     - Freely reusable for any purpose
+     - Attribution required (see LICENSE)
+
+  2. **Data (CC-BY-4.0):** Attribution dataset in outputs/attribution.csv
+     - Freely reusable with attribution
+     - Cite as specified above
+
+  For full documentation, see DATA-DICTIONARY.md and STANDARDS-COMPLIANCE.md
+
+# Contact
+contact:
+  - family-names: Ross
+    given-names: Shawn
+    email: shawn.ross@mq.edu.au
+    affiliation: "Macquarie University"
