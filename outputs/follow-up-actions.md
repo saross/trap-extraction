@@ -8,7 +8,37 @@ This file tracks outstanding actions that fall outside the core data extraction 
 
 ## High Priority
 
-### 1. Participant List Updates
+### 1. Cascade Excel Date Correction to Other Data Copies
+
+**Status:** Pending user action
+
+**Context:** On 23 November 2025, a date error was discovered in the Kazanlak 2010 Survey Summary:
+- **Incorrect**: Row 45 had date 2010-03-08
+- **Correct**: Should be 2010-04-08
+- Survey units 30742-30773 were associated with the wrong date
+
+**Correction applied:**
+- Created corrected file: `Kaz10_SurveySummary-NEW-2025-correction.xlsx`
+- Updated `attribution.csv`:
+  - Deleted 2010-03-08 Team C entry
+  - Added survey units 30742-30773 to 2010-04-08 Team C entry
+  - Verified 2010-03-18 Team C entry is correct
+- Total records: 269 → 268
+
+**Action required:**
+- [ ] Identify all copies of TRAP 2010 data (outside regular backup pipeline)
+- [ ] Apply the date correction (03-08 → 04-08) to each copy
+- [ ] Document locations of corrected copies
+- [ ] Verify data consistency across all copies
+
+**Files to update in other locations:**
+- `Kaz10_SurveySummary.xls` (original Excel file)
+- Any derived CSV or database files containing this data
+- Any analysis outputs that reference the incorrect date
+
+---
+
+### 2. Participant List Updates
 
 **Status:** Deferred - batch update required
 
@@ -40,7 +70,36 @@ This file tracks outstanding actions that fall outside the core data extraction 
 
 ---
 
-### 2. Disambiguate Adela (Sobotkova vs Dorňáková)
+### 2. Resolve Excel Date Error (2010-03-08 → 2010-04-08)
+
+**Status:** ✅ COMPLETED (23 November 2025)
+
+**Context:** Excel SurveySummary contained an incorrect date that cascaded into attribution.csv:
+- Row 45 showed 2010-03-08 but should have been 2010-04-08
+- Row 30 with 2010-03-18 was correct and matched diary/PDF sources
+- The 08 March date was before the survey season started (diary begins 17 March)
+
+**Completed actions:**
+- [x] User created corrected Excel file: `Kaz10_SurveySummary-NEW-2025-correction.xlsx`
+- [x] Verified diary sources:
+  - 18 March entry exists in `C_2010Diary_BG.doc` with walkers
+  - 08 March entry does NOT exist (season started 17 March)
+  - 08 April diary entry missing but PDF exists (`C_20100408.pdf`)
+- [x] Applied corrections to `attribution.csv`:
+  - Deleted incorrect 2010-03-08 Team C entry
+  - Transferred survey units (30742-30773) to correct 2010-04-08 entry
+  - Verified 2010-03-18 entry already correct with walker data
+- [x] Created backup: `attribution.csv.backup_date_correction`
+- [x] Updated documentation with cascade task (see High Priority #1)
+
+**Results:**
+- Total records: 269 → 268 (1 duplicate removed)
+- 2010-04-08 Team C now has complete data (units + walkers from PDF)
+- 2010-03-18 Team C confirmed correct with walker data from diary
+
+---
+
+### 3. Disambiguate Adela (Sobotkova vs Dorňáková)
 
 **Status:** ✅ COMPLETED (22 November 2025)
 
@@ -170,6 +229,7 @@ This file tracks outstanding actions that fall outside the core data extraction 
 - [x] Update source-inventory.md with Tier 4 and source preferences (PRIMARY/SECONDARY/SUPPLEMENTAL)
 - [x] Develop diary walker extraction script with Bulgarian transliteration
 - [x] Extract walker data from 22 XLS-only records (10/22 successful, 49 names added)
+- [x] Resolve Excel date error: Correct 2010-03-08 → 2010-04-08 in attribution.csv (23 November 2025)
 
 ---
 
@@ -180,4 +240,4 @@ This file should be updated as actions are completed or new items are identified
 **Outstanding research:**
 - Batch participant list update: Lizzy (full name research), Silvia Ivanova (verify participation), Jiří Musil (verify participation and dates)
 
-**Last updated:** 22 November 2025 (after diary walker extraction)
+**Last updated:** 23 November 2025 (after Excel date correction)
