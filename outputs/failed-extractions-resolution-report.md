@@ -142,9 +142,9 @@ These records were manually extracted after automated extraction failed, but sti
 
 #### 2011-11-29 Team B
 
-**Issue:** Date is 8 days beyond Team B diary end date
+**Issue:** Date is 4 days beyond Team B diary end date
 
-**Diary coverage:** B_2011Diary_En.docx ends 21 November 2011
+**Diary coverage:** B_2011Diary_BG.docx ends 25 November 2011
 
 **Leader:** AS (from Kaz11_SurveySummary.xlsx)
 
@@ -152,7 +152,7 @@ These records were manually extracted after automated extraction failed, but sti
 
 **Walkers:** None available (no diary coverage)
 
-**QA_Notes:** DIARY COVERAGE GAP: Date beyond diary end date (last entry: 21 Nov)
+**QA_Notes:** DIARY COVERAGE GAP: Date beyond diary end date (last entry: 25 Nov)
 
 **Recommendation:** Check if alternative documentation exists (field forms, other team diaries, project summary)
 
