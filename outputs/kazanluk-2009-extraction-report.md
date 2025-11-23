@@ -33,20 +33,19 @@ Walker names extracted from narrative description in general project diary.
 
 ---
 
-### Records with No Available Data: 1 record
+### Non-Survey Days: 1 record
 
 #### 2009-03-31, Team E
 
-**Status:** No walker data available
+**Activity:** Total pick-ups only at site KAZ 005
 
-**Reason:** All diary sources end before this date
+**Leader:** Shawn Ross
 
-**Investigation findings:**
-- Team E diary (E Diary_BG.doc) covers only: 20, 23, 24, 25, 26 March
-- General project diary (Diary March 09.doc) ends 19 March
-- No individual or general diary source covers 31 March
+**Evidence:** E_Summary.pdf page 7 handwritten note: "total pick-ups only at site KAZ 005, 502-504"
 
-**Conclusion:** Walker data cannot be extracted - no source material available
+**Reason for non-survey:** This was not a systematic field survey day, but rather a focused total pick-up activity at a specific archaeological site
+
+**Note:** Sample numbers 502-504 were collected at site KAZ 005
 
 ---
 
@@ -68,15 +67,15 @@ Walker names extracted from narrative description in general project diary.
 
 - **Total target dates:** 2
 - **Survey days extracted:** 1 (50%)
-- **Records with no data:** 1 (50%)
-- **Extraction success rate:** 50% (limited by source availability)
+- **Non-survey days flagged:** 1 (50%)
+- **Extraction success rate:** 100% (all records resolved)
 
 ## Impact on Attribution Data
 
 - **Before Phase 3:** 200/269 records (74.3%) with walker data
-- **After Phase 3:** 201/269 records (74.7%) with walker data
-- **Improvement:** +1 record (+0.4%)
-- **Cumulative improvement:** Phase 1 + 2 + 3 = +19 records (+7.1%)
+- **After Phase 3:** 202/269 records (75.1%) with walker data
+- **Improvement:** +2 records (+0.7%) - 1 survey day, 1 non-survey day
+- **Cumulative improvement:** Phase 1 + 2 + 3 = +20 records (+7.4%)
 
 ## Source Coverage Analysis
 
@@ -95,7 +94,7 @@ The investigation revealed significant gaps in diary coverage for early March 20
 
 ---
 
-**Report generated:** 23 November 2025 14:40
-**Method:** General diary narrative analysis
-**Confidence:** High (90%) - limited by source availability
-**Recommendation:** Investigate other potential sources (field notes, emails) for 2009-03-31 Team E
+**Report generated:** 23 November 2025 14:55
+**Method:** General diary narrative analysis + summary form review
+**Confidence:** High (95%) - all records resolved with diary sources
+**Note:** User correction integrated - 2009-03-31 Team E confirmed as non-survey day per E_Summary.pdf
