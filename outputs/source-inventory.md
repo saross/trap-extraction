@@ -56,7 +56,7 @@ Narrative records with walker names, roles (PDA, GPS, Forms), and daily activiti
 
 | Team | File | Language | Walkers | Roles | Version | Location |
 |------|------|----------|---------|-------|---------|----------|
-| - | Diary March 09.doc | EN | [ ] | N/A | SUPPLEMENTAL | `Kazanluk/2009/` |
+| - | Diary March 09.doc | EN | [ ] | N/A | SUPPLEMENTAL (47 KB) | `Kazanluk/2009/` |
 | - | Adela_JournalSurvey.doc | EN | [ ] | N/A | SUPPLEMENTAL | `Kazanluk/2009/Project Records/` |
 | - | Adela_JournalExcav.docx | EN | [ ] | N/A | SUPPLEMENTAL | `Kazanluk/2009/Project Records/` |
 | A | A_Diary_BG.doc | BG | [x] | N/A | PRIMARY (198 KB) | `Kazanluk/2009/Project Records/TeamA/` |
@@ -247,7 +247,8 @@ All seasons have SurveySummary files. ✓
 - `.docx` files can be extracted via `unzip -p file.docx word/document.xml`
 - Bulgarian text requires transliteration for the Walkers_Transliterated column
 - PDF quality varies significantly; diary sources are more reliable
+- `Diary March 09.doc` (Kazanlak 2009) is a general expedition diary covering 28 Feb - 19 March 2009, written in narrative style. Contains project-wide activities, training, and daily life but not structured team walker lists. Located in `Kazanluk/2009/` (unusual location - not in Project Records subfolder).
 
 ---
 
-**Last updated:** 22 November 2025
+**Last updated:** 23 November 2025
