@@ -1,11 +1,75 @@
 # TRAP Data Extraction - Source Inventory
 
 **Created:** November 2025
+**Last major update:** 23 November 2025
 
-This document lists all source documents for the walker attribution extraction, organised by priority tier.
+This document catalogues all source documents for the TRAP walker attribution extraction project, organised by priority tier and annotated with version relationships and quality guidance.
+
+## Purpose
+
+This inventory serves dual purposes:
+1. **Extraction workflow guide** - Identifies which sources to use for data extraction
+2. **Reference documentation** - Explains version relationships and source quality for future research
+
+## Scope
+
+**In scope:** Pedestrian surface survey field walking records (2009-2011)
+**Out of scope:** Excavation diaries, Ground Control (GC) monumentalised site records, TRAP 2017-2018, other projects
+
+## File Paths
 
 All paths are relative to:
 `/media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-2020-04/`
+
+## Tier Structure
+
+Sources are organised into five tiers by data type and priority:
+
+- **Tier 1:** Excel SurveySummary files - Authoritative for dates, teams, leaders, survey unit ranges
+- **Tier 2:** Diaries and journals - Primary source for walker names and roles (PDA, GPS, Forms)
+- **Tier 3:** Scanned daily progress form PDFs - Secondary verification source, OCR-prone
+- **Tier 4:** Individual survey unit form PDFs - Supplemental field walking documentation
+- **Tier 5:** Personnel and administrative records - Cross-reference and verification resources
+
+## Version Terminology
+
+**PRIMARY:** Preferred version for extraction
+- Curated/corrected files (vs uncurated scans)
+- More complete/detailed diaries (larger file size)
+- Original working language (usually Bulgarian)
+- Post-season corrected versions (vs field versions)
+
+**SECONDARY:** Alternative version of same document
+- Uncurated scans (when Finalized version exists)
+- Less complete diaries (smaller file size)
+- Translations (when BG original exists)
+- Field versions (when corrected version exists)
+
+**SUPPLEMENTAL:** Additional perspective, not alternative version
+- Personal/individual diaries (vs official team diaries)
+- Project leader expedition journals (overall perspective)
+- Daily journals (when compiled journal exists)
+
+## Language and File Size
+
+**Bulgarian (BG) vs English (EN):**
+- BG diaries are typically PRIMARY (more detailed, original field notes, Bulgarian terminology)
+- EN diaries are usually SECONDARY (translations/summaries for international team)
+- Exceptions exist where EN was the primary working document (see annotations below)
+- File size is reliable indicator: larger file = more complete daily records
+
+**File size ranges:**
+- 150-220 KB: Very detailed, comprehensive daily diaries
+- 60-110 KB: Moderate detail, full season coverage
+- 20-50 KB: Summaries, translations, or incomplete drafts
+- <20 KB: Brief summaries or partial coverage
+
+## Using This Inventory
+
+1. **For extraction:** Use PRIMARY version first; consult SECONDARY if PRIMARY missing or unclear
+2. **For verification:** Cross-reference Tier 2 (diaries) against Tier 3 (PDFs) for walker accuracy
+3. **For name resolution:** Check Tier 5 personnel lists to verify participant names and seasons
+4. **For understanding roles:** See methodology documents (Tier 5) for PDA, GPS, Forms definitions
 
 ---
 
@@ -34,9 +98,9 @@ Narrative records with walker names, roles (PDA, GPS, Forms), and daily activiti
 | Team | File | Language | Walkers | Roles | Version | Location |
 |------|------|----------|---------|-------|---------|----------|
 | A | Diary Team A.doc | EN | [ ] | [ ] | PRIMARY | `Elhovo 2010-12-12/2009/Project Records/Team A/` |
-| A | Diary_Aneta.doc | EN | [ ] | [ ] | SUPPLEMENTAL | `Elhovo 2010-12-12/2009/Project Records/Team A/` |
+| A | Diary_Aneta.doc | EN | [ ] | [ ] | SUPPLEMENTAL (29 KB) | `Elhovo 2010-12-12/2009/Project Records/Team A/` |
 | B | DiaryTeamB.doc | EN | [x] | N/A | PRIMARY | `Elhovo 2010-12-12/2009/Project Records/Team B/` |
-| B | TeamB_Dnevnik (Ross).doc | BG | [ ] | N/A | SECONDARY | `Elhovo 2010-12-12/2009/Project Records/Team B/` |
+| B | TeamB_Dnevnik (Ross).doc | BG | [ ] | N/A | SECONDARY (55 KB) | `Elhovo 2010-12-12/2009/Project Records/Team B/` |
 | C | The Diary of Team C.doc | EN | [ ] | [ ] | PRIMARY | `Elhovo 2010-12-12/2009/Project Records/Team C/` |
 | C | TeamC_Dnevnik.doc | BG | [ ] | [ ] | SECONDARY | `Elhovo 2010-12-12/2009/Project Records/Team C/` |
 
@@ -66,9 +130,9 @@ Narrative records with walker names, roles (PDA, GPS, Forms), and daily activiti
 | B | B_Diary_BG.doc | BG | [x] | N/A | PRIMARY (152 KB) | `Kazanluk/2009/Project Records/TeamB/` |
 | B | B_Diary_En.docx | EN | [x] | N/A | SECONDARY (62 KB) | `Kazanluk/2009/Project Records/TeamB/` |
 | B | Adela_JournalApr09.docx | EN | [ ] | N/A | SUPPLEMENTAL | `Kazanluk/2009/Project Records/TeamB/` |
-| C | C_Diary_BG.doc | BG | [x] | N/A | PRIMARY (152 KB) | `Kazanluk/2009/Project Records/TeamC/` |
-| C | C_Journal_En.docx | EN | [ ] | N/A | SECONDARY | `Kazanluk/2009/Project Records/TeamC/` |
-| C | TeamC_Journal.docx | EN | [ ] | N/A | SUPPLEMENTAL | `Kazanluk/2009/Project Records/TeamC/` |
+| C | C_Diary_BG.doc | BG | [x] | N/A | PRIMARY (215 KB) | `Kazanluk/2009/Project Records/TeamC/` |
+| C | C_Journal_En.docx | EN | [ ] | N/A | SECONDARY (27 KB) | `Kazanluk/2009/Project Records/TeamC/` |
+| C | TeamC_Journal.docx | EN | [ ] | N/A | SUPPLEMENTAL (20 KB) | `Kazanluk/2009/Project Records/TeamC/` |
 | D | D Diary_BG.doc | BG | [x] | N/A | PRIMARY (222 KB) | `Kazanluk/2009/Project Records/TeamD/` |
 | D | D_Diary_En.docx | EN | [ ] | N/A | SECONDARY | `Kazanluk/2009/Project Records/TeamD/` |
 | E | E Diary_BG.doc | BG | [x] | N/A | PRIMARY (only BG) | `Kazanluk/2009/Project Records/TeamE/` |
@@ -79,7 +143,7 @@ Narrative records with walker names, roles (PDA, GPS, Forms), and daily activiti
 |------|------|----------|---------|-------|---------|----------|
 | A | A_2010Diary_BG.doc | BG | [x] | N/A | PRIMARY (86 KB) | `Kazanluk/2010/Project Records/Team A/` |
 | A | A_2010Diary_En.docx | EN | [x] | [x] | SECONDARY | `Kazanluk/2010/Project Records/Team A/` |
-| B | B_2010Diary_En.doc | EN | [x] | [x] | PRIMARY (110 KB) | `Kazanluk/2010/Project Records/Team B/` |
+| B | B_2010Diary_En.doc | EN | [x] | [x] | PRIMARY (108 KB) | `Kazanluk/2010/Project Records/Team B/` |
 | B | B_2010Diary_BG.docx | BG | [x] | N/A | SECONDARY (42 KB) | `Kazanluk/2010/Project Records/Team B/` |
 | C | C_2010Diary_BG.doc | BG | [x] | N/A | PRIMARY (214 KB) | `Kazanluk/2010/Project Records/Team C/` |
 | C | C_2010Diary_En.docx | EN | [ ] | N/A | SECONDARY | `Kazanluk/2010/Project Records/Team C/` |
@@ -179,6 +243,34 @@ Individual survey unit forms scanned to PDF. These complement the consolidated S
 
 ---
 
+## Tier 5: Personnel and Administrative Records
+
+Supporting documents that provide context and verification for walker attribution data.
+
+### Personnel Lists
+
+| Season | File | Location | Purpose |
+|--------|------|----------|---------|
+| ELH 2009 Fall | ParticipantsF09.xls | `Elhovo 2010-12-12/2009/Admin/Personnel/` | Complete participant roster |
+| YAM 2009 Fall | ParticipantsYAMF09.xls | `Elhovo 2010-12-12/2009/Admin/Personnel/` | Complete participant roster |
+| KAZ 2010 Spring | ParticipantsS10.xls | `Kazanluk/2010/Admin/Personnel/` | Complete participant roster |
+| ELH 2010 Fall | ParticipantsF10.xls | `Elhovo 2010-12-12/2010/Admin/Personnel/` | Complete participant roster |
+| KAZ 2011 | Participants.xlsx | `Kazanluk/2011-11-30/Admin/Personnel/` | Complete participant roster |
+| KAZ 2011 | Team_preferences_division.docx | `Kazanluk/2011-11-30/Admin/Personnel/` | Team assignment planning |
+
+**Note:** These files provide verification and cross-referencing for walker names found in diaries and PDFs. May help resolve name ambiguities and identify missing personnel.
+
+### Methodology Documents (Reference Only)
+
+| Document | Locations | Purpose |
+|----------|-----------|---------|
+| Survey Manual.doc | `*/Admin/Work Protocols/Survey/` | Field methodology, role definitions, walker intervals |
+| Roles & Duties.docx | `*/Admin/Work Protocols/Survey/` | Base camp role assignments |
+
+**Note:** These documents explain survey methodology and terminology but do not contain walker attribution data. Useful for understanding role terminology (PDA, GPS, Forms) and team organisation. Survey Manual documents 10-15m walker intervals for intensive survey.
+
+---
+
 ## Priority Rules
 
 When extracting data, apply these priority rules:
@@ -250,8 +342,44 @@ All seasons have SurveySummary files. ✓
 - Bulgarian text requires transliteration for the Walkers_Transliterated column
 - PDF quality varies significantly; diary sources are more reliable
 - `Diary March 09.doc` (Kazanlak 2009) is a general expedition diary covering 28 Feb - 19 March 2009, written in narrative style. Contains project-wide activities, training, and daily life but not structured team walker lists. Located in `Kazanluk/2009/` (unusual location - not in Project Records subfolder).
-- **Elhovo 2010 Team B versions:** Four diary files exist for Team B 2010. File comparison analysis (23 November 2025) determined that "Team B Diary new.docx" (26 KB, March 2011) is PRIMARY as it contains critical post-season data quality corrections including: corrected object numbers, annotations flagging data errors (e.g., "no such artefact brought to base"), and added missing object records. The December 2010 versions represent the original field recordings. "Diary" vs "Journal" naming is meaningless - these are duplicate files with different names. Initial data extraction was performed from "Team B Diary.docx" (SECONDARY); future work should use the PRIMARY version.
+
+### Version Notes and Annotations
+
+**Elhovo 2009:**
+- **Team A:** "Diary Team A.doc" is PRIMARY. "Diary_Aneta.doc" (29 KB, SUPPLEMENTAL) is a personal diary by team member Aneta, providing individual perspective rather than official team record. Duplicate copy exists in `Reports/Otchet/BG Diaries/`.
+- **Team B:** "DiaryTeamB.doc" (EN) is PRIMARY. "TeamB_Dnevnik (Ross).doc" (55 KB BG, SECONDARY) is Bulgarian version by Ross. Duplicate copy exists in `Reports/Otchet/BG Diaries/`.
+
+**Elhovo 2010:**
+- **Team B versions:** Four diary files exist for Team B 2010. File comparison analysis (23 November 2025) determined that "Team B Diary new.docx" (26 KB, March 2011) is PRIMARY as it contains critical post-season data quality corrections including: corrected object numbers, annotations flagging data errors (e.g., "no such artefact brought to base"), and added missing object records. The December 2010 versions represent the original field recordings. "Diary" vs "Journal" naming is meaningless - these are duplicate files with different names. Initial data extraction was performed from "Team B Diary.docx" (SECONDARY); future work should use the PRIMARY version.
+
+**Kazanlak 2009:**
+- **Team A:** BG version (198 KB) is PRIMARY - more than twice the size of EN version (88 KB), indicating significantly more detailed daily entries and complete field notes. BG diaries typically contain fuller narratives and Bulgarian-specific terminology.
+- **Team B:** BG version (152 KB) is PRIMARY - 2.5x larger than EN version (62 KB), suggesting more complete daily records and detail.
+- **Team C - Three versions:** C_Diary_BG.doc (215 KB) is PRIMARY - complete Bulgarian daily diary with detailed field notes. C_Journal_En.docx (27 KB, SECONDARY) is complete English translation/summary of the season. TeamC_Journal.docx (20 KB, SUPPLEMENTAL) is earlier draft of English journal with incomplete entries (missing content for March 12, 20, 23) and uncorrected typos; appears to be working version superseded by C_Journal_En.docx.
+- **Team D:** BG version (222 KB) is PRIMARY - largest diary file for 2009, indicating most detailed field records. EN version provided for accessibility.
+- **Team E:** BG version only (no English translation created). Use transliteration for walker names.
+- **PDF Scans - Teams B & D:** "Finalized" subdirectories contain curated, corrected versions of daily progress forms (PRIMARY). "Scans" subdirectories contain original raw scans (SECONDARY). Use Finalized versions for data extraction.
+
+**Kazanlak 2010:**
+- **Team A:** BG version (86 KB) is PRIMARY - file size indicates more complete daily records than EN version.
+- **Team B - Unusual pattern:** EN version (108 KB, created 9 Aug 2010) is PRIMARY - significantly more complete than BG version (42 KB, created 13 Aug 2010, 4 days later). File comparison shows EN contains full detailed daily entries with author attributions, while BG is structured differently and missing substantial content. This reverses the normal BG=PRIMARY pattern.
+- **Team C:** BG version (214 KB) is PRIMARY - 5x larger than EN version, indicating substantially more detailed field records.
+- **Team D:** BG version (127 KB) is PRIMARY - file size indicates more complete daily narratives than EN version.
+
+**Kazanlak 2011:**
+- **Team A:** BG version only (no English translation created). Use transliteration for walker names.
+- **Team B:** EN version (63 KB) is PRIMARY - 1.5x larger than BG version (42 KB), indicating more complete daily records.
+- **Team C:** EN version (70 KB) is PRIMARY - nearly 4x larger than BG version (18 KB), suggesting substantially more detailed entries.
+- **Team D:** BG version only (no English translation created). Use transliteration for walker names.
+
+**General pattern:** Bulgarian (BG) diaries are typically PRIMARY as they contain more detailed daily entries, complete field observations, and Bulgarian-specific terminology. English (EN) versions are usually translations/summaries created for international team members and publications. Exceptions occur when EN version was the primary working document (e.g., Kazanlak 2010 Team B, Kazanlak 2011 Teams B & C). File size is a reliable indicator of completeness - larger files contain more daily entries and detail.
 
 ---
 
-**Last updated:** 23 November 2025
+## Document History
+
+**Created:** November 2025
+**Last major update:** 23 November 2025 (comprehensive version annotations and structural improvements)
+**Contributors:** Adela Sobotkova, Claude Code
+
+This inventory is a living document. Updates include new source discoveries, version comparisons, and quality notes to support ongoing and future research.
