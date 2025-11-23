@@ -109,7 +109,7 @@ Narrative records with walker names, roles (PDA, GPS, Forms), and daily activiti
 | Team | File | Language | Walkers | Roles | Version | Location |
 |------|------|----------|---------|-------|---------|----------|
 | A | A_Diary.docx | EN | [ ] | [ ] | PRIMARY | `Elhovo 2010-12-12/2010/Project Records/Team A/` |
-| B | Team B Diary new.docx | EN | [ ] | [ ] | PRIMARY (26 KB) | `Elhovo 2010-12-12/2010/Project Records/Team B/` |
+| B | Team B Diary new.docx | EN | [x] | [x] | PRIMARY (26 KB) | `Elhovo 2010-12-12/2010/Project Records/Team B/` |
 | B | Team B Diary.docx | EN | [x] | [x] | SECONDARY (25 KB) | `Elhovo 2010-12-12/2010/Project Records/Team B/` |
 | B | Team B Journal.docx | EN | [ ] | [ ] | SECONDARY (25 KB) | `Elhovo 2010-12-12/2010/Project Records/Team B/` |
 | B | Team B Journal new.docx | EN | [ ] | [ ] | SECONDARY (25 KB) | `Elhovo 2010-12-12/2010/Project Records/Team B/` |
@@ -141,8 +141,8 @@ Narrative records with walker names, roles (PDA, GPS, Forms), and daily activiti
 
 | Team | File | Language | Walkers | Roles | Version | Location |
 |------|------|----------|---------|-------|---------|----------|
-| A | A_2010Diary_BG.doc | BG | [x] | N/A | PRIMARY (86 KB) | `Kazanluk/2010/Project Records/Team A/` |
-| A | A_2010Diary_En.docx | EN | [x] | [x] | SECONDARY | `Kazanluk/2010/Project Records/Team A/` |
+| A | A_2010Diary_BG.doc | BG | [x] | N/A | PRIMARY (86 KB) - Coverage: 17 March to 28 March | `Kazanluk/2010/Project Records/Team A/` |
+| A | A_2010Diary_En.docx | EN | [x] | [x] | co-PRIMARY - Coverage: April entries (7-9 April) | `Kazanluk/2010/Project Records/Team A/` |
 | B | B_2010Diary_En.doc | EN | [x] | [x] | PRIMARY (108 KB) | `Kazanluk/2010/Project Records/Team B/` |
 | B | B_2010Diary_BG.docx | BG | [x] | N/A | SECONDARY (42 KB) | `Kazanluk/2010/Project Records/Team B/` |
 | C | C_2010Diary_BG.doc | BG | [x] | N/A | PRIMARY (214 KB) | `Kazanluk/2010/Project Records/Team C/` |
@@ -350,7 +350,7 @@ All seasons have SurveySummary files. ✓
 - **Team B:** "DiaryTeamB.doc" (EN) is PRIMARY. "TeamB_Dnevnik (Ross).doc" (55 KB BG, SECONDARY) is Bulgarian version by Ross. Duplicate copy exists in `Reports/Otchet/BG Diaries/`.
 
 **Elhovo 2010:**
-- **Team B versions:** Four diary files exist for Team B 2010. File comparison analysis (23 November 2025) determined that "Team B Diary new.docx" (26 KB, March 2011) is PRIMARY as it contains critical post-season data quality corrections including: corrected object numbers, annotations flagging data errors (e.g., "no such artefact brought to base"), and added missing object records. The December 2010 versions represent the original field recordings. "Diary" vs "Journal" naming is meaningless - these are duplicate files with different names. Initial data extraction was performed from "Team B Diary.docx" (SECONDARY); future work should use the PRIMARY version.
+- **Team B versions:** Four diary files exist for Team B 2010. File comparison analysis (23 November 2025) determined that "Team B Diary new.docx" (26 KB, March 2011) is PRIMARY as it contains critical post-season data quality corrections including: corrected object numbers, annotations flagging data errors (e.g., "no such artefact brought to base"), and added missing object records. The December 2010 versions represent the original field recordings. "Diary" vs "Journal" naming is meaningless - these are duplicate files with different names. Initial data extraction was performed from "Team B Diary.docx" (SECONDARY); attribution CSV updated on 23 November 2025 to use PRIMARY version data for all affected records.
 
 **Kazanlak 2009:**
 - **Team A:** BG version (198 KB) is PRIMARY - more than twice the size of EN version (88 KB), indicating significantly more detailed daily entries and complete field notes. BG diaries typically contain fuller narratives and Bulgarian-specific terminology.
