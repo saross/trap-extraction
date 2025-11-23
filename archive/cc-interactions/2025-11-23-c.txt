@@ -1,0 +1,393 @@
+
+╭─── Claude Code v2.0.50 ───────────────────────────────────────────────────────────────────────────────────╮
+│                                       │ Tips for getting started                                          │
+│          Welcome back Shawn!          │ Run /init to create a CLAUDE.md file with instructions for Claude │
+│                                       │ ───────────────────────────────────────────────────────────────── │
+│                ▐▛███▜▌                │ Recent activity                                                   │
+│               ▝▜█████▛▘               │ No recent activity                                                │
+│                 ▘▘ ▝▝                 │                                                                   │
+│                                       │                                                                   │
+│        Sonnet 4.5 · Claude Max        │                                                                   │
+│   /…/synology/Adela/TRAP-WD-2020-04   │                                                                   │
+╰───────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+> Hi CC, you were undertaking the following task when VS Code crashed:\
+\
+I see that in one case the diary you extracted from has been superseded.
+  
+  - PRIMARY: Team B Diary new.docx (26 KB) - Contains March 2011 post-season corrections
+  - SECONDARY: Team B Diary.docx (25 KB) - Original field version, already extracted
+  
+Please update on the new diary, which has not been extracted, and correct the attribution CSV as necessary. 
+  
+Could you also check, have any other sources you used been superseded, as per your new source inventory? If so, provide me a list here so I can 
+review, and then we'll comprehensively update to the newest / best sources in all cases. 
+
+● I'll help you update the extractions based on the superseded diary and check for other superseded sources. Let me create a task plan and begin
+  the work.
+
+● Read(claude_extraction/outputs/source-inventory.md)
+  ⎿  Read 386 lines
+
+● Read(claude_extraction/outputs/attribution.csv)
+  ⎿  Read 270 lines
+
+● Let me check which records in the attribution CSV came from "Team B Diary.docx" and need to be updated.
+
+● Search(pattern: "Team B Diary", path: "claude_extraction/outputs/attribution.csv", output_mode: "content")
+  ⎿  Found 0 lines 
+
+● Read(claude_extraction/outputs/manual-extraction-guide.md)
+  ⎿  Read 389 lines
+
+● Let me check the "Team B Diary new.docx" file to understand what dates and records it covers.
+
+● Bash(unzip -p "/media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-2020-04/Elhovo 2010-12-12/2010/Project Records/Team B/Team B
+      Diary new.docx"…)
+  ⎿  grep: syntax error in subpattern name (missing terminator?)
+
+● Bash(unzip -p "/media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-2020-04/Elhovo 2010-12-12/2010/Project Records/Team B/Team B
+      Diary new.docx"…)
+  ⎿ <?xml version="1.0" encoding="UTF-8" standalone="yes"?>                                                                                       
+    <w:document xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas" xmlns:mc="http://schemas.openxmlformats.org/markup-
+    compatibility/2006" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relations
+    … +268 lines (ctrl+o to expand)
+
+
+
+● Let me get a full list of dates covered in this diary:
+
+● Bash(unzip -p "/media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-2020-04/Elhovo 2010-12-12/2010/Project Records/Team B/Team B
+      Diary new.docx"…)
+  ⎿  3 November 2010              
+     4 November 2010
+     6 November 2010
+     … +3 lines (ctrl+o to expand)
+
+● Bash(unzip -p "/media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-2020-04/Elhovo 2010-12-12/2010/Project Records/Team B/Team B
+      Diary.docx" word…)
+  ⎿  3 November 2010              
+     4 November 2010
+     6 November 2010
+     … +3 lines (ctrl+o to expand)
+
+● Bash(unzip -p "/media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-2020-04/Elhovo 2010-12-12/2010/Project Records/Team B/Team B
+      Diary new.docx"…)
+  ⎿  12 November 2010             
+     14 November 2010
+     15 November 2010
+     … +3 lines (ctrl+o to expand)
+
+● Bash(unzip -p "/media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-2020-04/Elhovo 2010-12-12/2010/Project Records/Team B/Team B
+      Diary new.docx"…)
+  ⎿  </w:r><w:r w:rsidRPr="00385BB0"><w:rPr><w:b/></w:rPr>
+     November 2010
+     </w:r><w:r>
+     … +32 lines (ctrl+o to expand)
+
+● Bash(unzip -p "/media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-2020-04/Elhovo 2010-12-12/2010/Project Records/Team B/Team B
+      Diary new.docx"…)
+  ⎿ </w:r></w:p><w:p w:rsidR="00385BB0" w:rsidRDefault="00385BB0"/><w:p w:rsidR="00F67344" w:rsidRDefault="00F67344"><w:r w:rsidRPr="00385BB0"><w:
+    rPr><w:b/></w:rPr>
+    2
+    … +12 lines (ctrl+o to expand)
+
+
+● Search(pattern: "^2010-11-.*,B,", path: "claude_extraction/outputs/attribution.csv", output_mode: "content")
+  ⎿  Found 8 lines (ctrl+o to expand)
+
+● Now I can see the situation clearly. The attribution CSV currently has Yambol 2010 Team B records extracted from Day_XX.pdf files, but "Team B
+  Diary new.docx" (the PRIMARY source with post-season corrections) contains detailed walker names and roles for dates 2-6, 12, 14, and 15 November
+   2010.
+
+  Let me extract the walker and role data from the PRIMARY diary:
+
+● Bash(cd "/media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-2020-04" && python3 -c "
+      import sys…)
+  ⎿  Date: 2010-11-02                                                                 
+     Walkers: DR(PDA), KL(GPS), VC(PDA), AP(Artifacts), RL(Survey Documents)Leader: Dr
+     ---
+
+● Let me create a more comprehensive extraction:
+
+● Write(claude_extraction/scripts/extract_team_b_diary_new.py)
+  ⎿  Wrote 132 lines to claude_extraction/scripts/extract_team_b_diary_new.py
+     #!/usr/bin/env python3
+     """
+     Extract walker and role data from Team B Diary new.docx (Yambol 2010).
+     This script extracts data from the PRIMARY diary source which contains
+     post-season corrections made in March 2011.
+     """
+     import zipfile
+     import re
+     … +122 lines (ctrl+o to expand)
+
+● Bash(cd "/media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-2020-04" && python3
+      claude_extraction/scripts/extract_team_b_diary_new.py)
+  ⎿  Extracting walker data from Team B Diary new.docx...                            
+     ================================================================================
+
+     Total entries extracted: 0
+
+● Let me debug the extraction by examining the text structure:
+
+● Bash(cd "/media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-2020-04" && python3 << 'EOF'
+      import zipfile…)
+  ⎿ First 2000 characters of extracted text:                                                                                                      
+    YAMBOL 2010, TEAM B Diary2 November 2010, Royce LawrenceNumber of walkers: 5 – DR(PDA), KL(GPS), VC(PDA), AP(Artifacts), RL(Survey Documents)L
+    eader: Dr. RossWeather: Foggy and ColdStart: 0955 End: 1440Spent the better part of an hour trying to find our locationGoals: Our main objecti
+    … +32 lines (ctrl+o to expand)
+
+
+
+● Now I understand the structure. Let me rewrite the extraction script:
+
+● Update(claude_extraction/scripts/extract_team_b_diary_new.py)
+  ⎿  Updated claude_extraction/scripts/extract_team_b_diary_new.py with 10 additions and 23 removals                                         
+       24        """Parse diary entries to extract walker and role data."""
+       25        entries = []
+       26    
+       27 -      # Split into sections by date headings (bold text before "November 2010")
+       28 -      # Look for pattern: number + "November 2010" or just "November 2010"
+       27 +      # Split into sections by date headings
+       28 +      # Pattern: digit(s) + "November 2010" + optional author
+       29 +      # Capture content until next date or end
+       30        date_pattern = re.compile(
+       31 -          r'(\d+)\s+November\s+2010[,\s]*([^N]*?)(?=\d+\s+November\s+2010|\Z)',
+       31 +          r'(\d+)\s+November\s+2010,\s*([^N]+?)Number of [Ww]alkers?:\s*\d+\s*[-–]\s*([^L]+?)Leader:\s*([^WS]+?)(?=Weather:|Start 
+          + Time:|Start:)',
+       32            re.DOTALL | re.IGNORECASE
+       33        )
+       34    
+       35        for match in date_pattern.finditer(text):
+       36            day = match.group(1)
+       37 -          content = match.group(2)
+       37 +          author = match.group(2).strip()
+       38 +          walkers_raw = match.group(3).strip()
+       39 +          leader = match.group(4).strip()
+       40    
+       41            date = f'2010-11-{day.zfill(2)}'
+       42    
+       43 -          # Extract author
+       44 -          author_match = re.search(r'November\s+2010[,\s]+([^N]+?)(?:Number|Leader|Weather|Start)', content)
+       45 -          author = author_match.group(1).strip() if author_match else ''
+       46 -  
+       47 -          # Extract walker information
+       48 -          walker_match = re.search(
+       49 -              r'Number of [Ww]alkers?:\s*\d+\s*[-–]\s*([^L]+?)(?=Leader:|$)',
+       50 -              content,
+       51 -              re.IGNORECASE
+       52 -          )
+       53 -          walkers_raw = walker_match.group(1).strip() if walker_match else ''
+       54 -  
+       55 -          # Extract leader
+       56 -          leader_match = re.search(r'Leader:\s*([^\n]+)', content)
+       57 -          leader = leader_match.group(1).strip() if leader_match else ''
+       58 -  
+       43            # Parse walker roles
+       44            walkers = []
+       45            roles = {
+     ...
+       71                    if not part:
+       72                        continue
+       73    
+       74 -                  # Parse role annotations like "DR(PDA)" or "KL (GPS)"
+       75 -                  role_match = re.search(r'([A-Za-z\s\.]+)\s*\(([^)]+)\)', part)
+       74 +                  # Parse role annotations like "DR(PDA)" or "KL (GPS)" or "ACQ (GPS)"
+       75 +                  role_match = re.search(r'([A-Za-z\s\.]+?)\s*\(([^)]+)\)', part)
+       76                    if role_match:
+       77                        name = role_match.group(1).strip()
+       78                        role = role_match.group(2).strip()
+     ...
+       88                        if 'Artifact' in role:
+       89                            roles['Artifacts'].append(name)
+       90                    else:
+       91 -                      # Name without role annotation
+       91 +                      # Name without role annotation (just initials like "JP")
+       92                        walkers.append(part)
+       93    
+       94            entries.append({
+
+● Bash(cd "/media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-2020-04" && python3
+      claude_extraction/scripts/extract_team_b_diary_new.py)
+  ⎿  Extracting walker data from Team B Diary new.docx...                            
+     ================================================================================
+
+     Total entries extracted: 0
+
+● Let me debug the regex step by step:
+
+● Bash(python3 << 'EOF'
+      import re…)
+  ⎿  Pattern 1: No match          
+
+     Pattern 2: No match
+     … +5 lines (ctrl+o to expand)
+
+● Bash(python3 << 'EOF'
+      import re…)
+  ⎿  Pattern 1: No match          
+
+     Pattern 2: No match
+     … +2 lines (ctrl+o to expand)
+
+● Let me check the exact characters in the text:
+
+● Bash(python3 << 'EOF'
+      import re…)
+  ⎿  Checking 'Number':               
+       Position: 31
+       Context: 'renceNumber of walke'
+     … +17 lines (ctrl+o to expand)
+
+● Now I see the issues! There are no spaces between sections and the dash is an en-dash. Let me write a simpler, more robust extraction:
+
+● Bash(cd "/media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-2020-04" && python3 << 'EOF'
+      import zipfile…)
+  ⎿  Date: 2010-11-716035         
+     Author: Ashley Chee Quee
+     Leader: Dr. Ross
+     … +7 lines (ctrl+o to expand)
+
+● I need to constrain the day number to be 1-2 digits. Let me fix this:
+
+● Bash(cd "/media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-2020-04" && python3 << 'EOF'
+      import zipfile…)
+  ⎿  Found 1 date matches         
+
+     Date: 2010-11-35
+     … +9 lines (ctrl+o to expand)
+
+● Let me check the XML structure more carefully to see how the dates are encoded:
+
+● Bash(cd "/media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-2020-04" && unzip -p "Elhovo 2010-12-12/2010/Project Records/Team
+      B/Team B Diary ne…)
+  ⎿  <w:t>November 2010</w:t>     
+     <w:t>3 November 2010</w:t>
+     <w:t>4 November 2010</w:t>
+     … +7 lines (ctrl+o to expand)
+
+● I see the issue - "2 November 2010" has the "2" in a separate XML node due to superscript formatting. Let me extract directly from the XML,
+  preserving these splits:
+
+● Bash(cd "/media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-2020-04" && unzip -p "Elhovo 2010-12-12/2010/Project Records/Team
+      B/Team B Diary ne…)
+  ⎿ <?xml version="1.0" encoding="UTF-8" standalone="yes"?>                                                                                       
+    <w:document xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas" xmlns:mc="http://schemas.openxmlformats.org/markup-
+    compatibility/2006" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relations
+    … +211 lines (ctrl+o to expand)
+
+
+
+● Given the complexity of the XML structure, let me manually extract the data from the diary since I can see it clearly in the XML. This will be
+  faster and more reliable. Let me compile all the Team B diary entries:
+
+● Write(claude_extraction/outputs/team-b-diary-new-extraction.csv)
+  ⎿  Wrote 6 lines to claude_extraction/outputs/team-b-diary-new-extraction.csv                       
+     Date,Author,Leader,Walkers_Original,PDA_Operator,GPS_Operator,Paper_Recorder,Source
+     2010-11-02,Royce Lawrence,Dr. Ross,DR | KL | VC | AP | RL,DR | VC,KL,RL,Team B Diary new.docx
+     2010-11-03,Royce Lawrence,Dr. Ross,DR | JP | KL | RL | AP,DR,KL,RL,Team B Diary new.docx
+     2010-11-04,Alina Petanec,Dr. Ross,AP | RL | DR | KL | JP,DR,KL,RL,Team B Diary new.docx
+     2010-11-05,Ashley Chee Quee,Dr. Ross,ACQ | JP | DR | RL | AP,DR | RL,ACQ,JP,Team B Diary new.docx
+
+● Let me continue extracting the remaining entries (6, 12, 14, 15 November):
+
+● Bash(cd "/media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-2020-04" && unzip -p "Elhovo 2010-12-12/2010/Project Records/Team
+      B/Team B Diary ne…)
+  ⎿  <w:t>Object Samples: 0</w:t>      
+     <w:t>6 November 2010</w:t>
+     <w:t xml:space="preserve">, </w:t>
+     … +28 lines (ctrl+o to expand)
+
+● Let me get the complete walker information for these entries:
+
+● Bash(cd "/media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-2020-04" && unzip -p "Elhovo 2010-12-12/2010/Project Records/Team
+      B/Team B Diary ne…)
+  ⎿  6 November 2010               
+     </w:r><w:r>
+     ,
+     … +44 lines (ctrl+o to expand)
+
+● Let me get the complete walker data with a different approach:
+
+● Bash(cd "/media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-2020-04" && unzip -p "Elhovo 2010-12-12/2010/Project Records/Team
+      B/Team B Diary ne…)
+  ⎿  Number of walkers: 5 – AP (                 
+     </w:r><w:proofErr w:type="spellStart"/><w:r>
+     artefacts
+     … +37 lines (ctrl+o to expand)
+
+● Bash(cd "/media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-2020-04" && unzip -p "Elhovo 2010-12-12/2010/Project Records/Team
+      B/Team B Diary ne…)
+  ⎿  (No content)
+
+● Bash(cd "/media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-2020-04" && unzip -p "Elhovo 2010-12-12/2010/Project Records/Team
+      B/Team B Diary ne…)
+  ⎿  </w:r><w:proofErr w:type="spellStart"/><w:r>
+     </w:r><w:proofErr w:type="spellStart"/><w:r>
+     </w:r><w:proofErr w:type="spellStart"/><w:r>
+     … +2 lines (ctrl+o to expand)
+
+● Bash(cd "/media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-2020-04" && unzip -p "Elhovo 2010-12-12/2010/Project Records/Team
+      B/Team B Diary ne…)
+  ⎿  </w:r><w:proofErr w:type="spellStart"/><w:r>
+     </w:r><w:proofErr w:type="spellStart"/><w:r>
+     Leader: Petra
+     … +2 lines (ctrl+o to expand)
+
+● Now let me update the extraction file with all the diary data:
+
+● Update(claude_extraction/outputs/team-b-diary-new-extraction.csv)
+  ⎿  Updated claude_extraction/outputs/team-b-diary-new-extraction.csv with 9 additions and 5 removals                                          
+       1 -  Date,Author,Leader,Walkers_Original,PDA_Operator,GPS_Operator,Paper_Recorder,Source
+       2 -  2010-11-02,Royce Lawrence,Dr. Ross,DR | KL | VC | AP | RL,DR | VC,KL,RL,Team B Diary new.docx
+       3 -  2010-11-03,Royce Lawrence,Dr. Ross,DR | JP | KL | RL | AP,DR,KL,RL,Team B Diary new.docx
+       4 -  2010-11-04,Alina Petanec,Dr. Ross,AP | RL | DR | KL | JP,DR,KL,RL,Team B Diary new.docx
+       5 -  2010-11-05,Ashley Chee Quee,Dr. Ross,ACQ | JP | DR | RL | AP,DR | RL,ACQ,JP,Team B Diary new.docx
+       1 +  Date,Author,Leader,Walkers_Original,PDA_Operator,GPS_Operator,Paper_Recorder,Source,Notes
+       2 +  2010-11-02,Royce Lawrence,Dr. Ross,DR | KL | VC | AP | RL,DR | VC,KL,RL,Team B Diary new.docx
+         +  ,PRIMARY source with post-season corrections (March 2011)
+       3 +  2010-11-03,Royce Lawrence,Dr. Ross,DR | JP | KL | RL | AP,DR,KL,RL,Team B Diary new.docx
+         +  ,PRIMARY source with post-season corrections (March 2011)
+       4 +  2010-11-04,Alina Petanec,Dr. Ross,AP | RL | DR | KL | JP,DR,KL,RL,Team B Diary new.docx
+         +  ,PRIMARY source with post-season corrections (March 2011)
+       5 +  2010-11-05,Ashley Chee Quee,Dr. Ross,ACQ | JP | DR | RL | AP,DR | RL,ACQ,JP,Team B Diary new.docx
+         +  ,PRIMARY source with post-season corrections (March 2011)
+       6 +  2010-11-06,Alina Petanec,Dr. Ross training Royce Lawrence,AP | JP | RL | DR | YL,DR | RL,RL,JP,Team B Diary new.docx,PRIMARY source 
+         + with post-season corrections (March 2011); RL has dual role GPS/PDA
+       7 +  2010-11-12,Alina Petanec,Royce Lawrence,DG | EJ | RL | SH | AP,RL,DG,EJ,Team B Diary new.docx,PRIMARY source with post-season 
+         + corrections (March 2011)
+       8 +  2010-11-14,Alina Petanec,Royce Lawrence,DG | EJ | RL | SH | AP | JP,DG | RL,,,Team B Diary new.docx,PRIMARY source with post-season 
+         + corrections (March 2011); 6 walkers; DG has dual role PDA/Paper Records; JP has Paper Records role
+       9 +  2010-11-15,Alina Petanec,Petra,AP | EL | ACQ | SH | PT,PT,ACQ,SH,Team B Diary new.docx,PRIMARY source with post-season corrections 
+         + (March 2011)
+
+● Now let me create a comprehensive report comparing the existing attribution CSV data with the PRIMARY diary source:
+
+● Write(claude_extraction/outputs/team-b-supersession-report.md)
+  ⎿  Wrote 253 lines to claude_extraction/outputs/team-b-supersession-report.md                                                                   
+     # Team B Diary Supersession Report
+     **Date:** 23 November 2025
+     **Issue:** Elhovo 2010 Team B records extracted from SECONDARY source need updating to PRIMARY source
+     ## Background
+     The source inventory indicates that "Team B Diary new.docx" (26 KB, March 2011) is the PRIMARY source for Elhovo/Yambol 2010 Team B,
+     containing post-season data quality corrections. However, the current attribution CSV contains data extracted from PDF files (Day_XX.pdf) 
+     which are less reliable than the diary source.
+     ## Sources
+     … +243 lines (ctrl+o to expand)
+
+● Now let me check the source inventory for other superseded sources:
+
+● Search(pattern: "PRIMARY.*\[x\]|SECONDARY.*\[x\]", path: "claude_extraction/outputs/source-inventory.md", output_mode: "content")
+  ⎿  Found 0 lines 
+
+● Bash(cd "/media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-2020-04/claude_extraction/outputs" && grep -n "| \[x\]"
+      source-inventory.md | head…)
+  ⎿  102:| B | DiaryTeamB.doc | EN | [x] | N/A | PRIMARY | `Elhovo 2010-12-12/2009/Project Records/Team B/` |             
+     113:| B | Team B Diary.docx | EN | [x] | [x] | SECONDARY (25 KB) | `Elhovo 2010-12-12/2010/Project Records/Team B/` |
+     128:| A | A_Diary_BG.doc | BG | [x] | N/A | PRIMARY (198 KB) | `Kazanluk/2009/Project Records/TeamA/` |
+     … +17 lines (ctrl+o to expand)
+
+● Bash(cd "/media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-2020-04/claude_extraction/outputs" && grep -n "PRIMARY.*| \[ \]"
+      source-inventory.m…)
+  ⎿  No matches found

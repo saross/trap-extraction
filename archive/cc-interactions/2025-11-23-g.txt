@@ -1,0 +1,532 @@
+
+╭─── Claude Code v2.0.50 ──────────────────────────────────────────────────────╮
+│                                                │ Tips for getting started    │
+│               Welcome back Shawn!              │ Run /init to create a CLAU… │
+│                                                │ ─────────────────────────── │
+│                     ▐▛███▜▌                    │ Recent activity             │
+│                    ▝▜█████▛▘                   │ No recent activity          │
+│                      ▘▘ ▝▝                     │                             │
+│                                                │                             │
+│            Sonnet 4.5 · Claude Max             │                             │
+│   /…/Adela/TRAP-WD-2020-04/claude_extraction   │                             │
+╰──────────────────────────────────────────────────────────────────────────────╯
+══════════════════ Conversation compacted · ctrl+o for history ═════════════════
+
+> /compact   Session Summary (2025-11-23-f):
+
+  Phase 1 Complete: Elhovo 2009 Team A Narrative Extraction ✅
+
+  Successfully extracted walker data from diary narratives using NLP approach:
+  - ✅ 16 survey days with walker data extracted from narrative text
+  - ✅ 3 non-survey days flagged with evidence (rain days, Halloween party)
+  - ✅ All 19 Elhovo 2009 Team A records (2009-10-12 to 2009-11-10) now complete
+
+  Investigation findings:
+  - 28 records actually missing walker data (not 87 initially reported)
+  - Most "missing" walker data is embedded in diary narratives - extractable via
+ NLP
+  - Plan agent conducted comprehensive diary investigation and created 
+extraction roadmap
+
+  Current data status:
+  - Before: 182/269 records (67.7%) with walker data
+  - After Phase 1: 198/269 records (73.6%) with walker data
+  - Improvement: +16 records (+5.9%)
+
+  Files created:
+  - scripts/extract_narrative_walkers.py - Extraction script with manual 
+extractions
+  - outputs/elhovo-2009-team-a-narrative-extraction-report.md - Detailed 
+evidence report
+  - outputs/attribution.csv - Updated with Phase 1 extractions
+  - Backup: attribution.csv.backup_narrative_20251123_142418
+
+  Next steps:
+  1. IMMEDIATE: Commit Phase 1 work
+  2. Phase 2: Extract Kazanluk 2010 records (3 extractable: 2010-03-30 Team D, 
+2010-04-09 Team A, 2010-04-15 Team C)
+  3. Phase 3: Investigate Kazanluk 2009 March (2 records)
+  4. Phase 4: Extract Kazanluk 2011 records (3 extractable)
+
+  Expected final yield: 200-205/269 records (74-76%) with walker data after all 
+phases
+
+  Key files:
+  - outputs/attribution.csv - Main data file
+  - outputs/manual-extraction-guide.md - Manual extraction documentation
+  - archive/ - Well-organized with comprehensive manifest
+
+  Ready to commit Phase 1 and proceed to Phase 2 (Kazanluk 2010). 
+  ⎿  Compacted (ctrl+o to see full summary)
+  ⎿  Read outputs/elhovo-2009-team-a-narrative-extraction-report.md (218 lines)
+  ⎿  Referenced file outputs/attribution.csv.backup_narrative_20251123_142418
+  ⎿  Read scripts/extract_narrative_walkers.py (308 lines)
+  ⎿  Referenced file ../../../../../../../tmp/team_a_diary_2009.txt
+  ⎿  Referenced file outputs/manual-extraction-guide.md
+
+> please commit and proceed to phase 2 
+
+● I'll commit the Phase 1 work and then proceed to Phase 2.
+
+● Bash(git status)
+  ⎿  On branch master                                               
+     Changes not staged for commit:
+       (use "git add/rm <file>..." to update what will be committed)
+     … +53 lines (ctrl+o to expand)
+
+● Bash(git diff outputs/attribution.csv | head -100)
+  ⎿ diff --git a/claude_extraction/outputs/attribution.csv b/claude_extract
+    ion/outputs/attribution.csv
+    index 00754b5..3266556 100644
+    … +305 lines (ctrl+o to expand)
+
+
+● Bash(git log -3 --oneline)
+  ⎿ 0d18598 feat(data): Complete manual extraction for 7 remaining diary re
+    cords
+    4d2c193 feat(inventory): Transform source inventory into comprehensive
+    … +2 lines (ctrl+o to expand)
+
+
+● I'll commit the Phase 1 work now.
+
+● Bash(git add outputs/attribution.csv scripts/extract_narrative_walkers.py
+      outputs/elhovo-2009-team-a-narrative-extraction-report.md && git rm
+      outputs/ambiguous-names…)
+  ⎿  rm 'claude_extraction/outputs/ambiguous-names-review.md'   
+     rm 'claude_extraction/outputs/date-discrepancy-analysis.md'
+     rm 'claude_extraction/outputs/diary-extraction-plan.md'
+     … +60 lines (ctrl+o to expand)
+
+● Bash(git commit -m "feat(data): Extract Elhovo 2009 Team A walker data from
+      diary narratives…)
+  ⎿ [master 707faae] feat(data): Extract Elhovo 2009 Team A walker data fro
+    m diary narratives
+     13 files changed, 543 insertions(+), 2446 deletions(-)
+    … +27 lines (ctrl+o to expand)
+
+
+● Perfect! Phase 1 committed successfully. Now proceeding to Phase 2 -
+  Kazanluk 2010 extraction.
+
+● Let me locate and read the Kazanluk 2010 diaries for Phase 2 extraction.
+
+● Search(pattern: "**/A_2010Diary_En.docx")
+  ⎿  Found 0 files 
+
+● Search(pattern: "**/D_2010Diary_BG.doc")
+  ⎿  Found 0 files 
+
+● Search(pattern: "**/C_2010Diary_BG.doc")
+  ⎿  Found 0 files 
+
+● Bash(ls -la ../Kazanluk/ 2>/dev/null || echo "Kazanluk directory not found at
+      ../Kazanluk")
+  ⎿  total 284                                      
+     drwxr-x---  5 shawn 1003   4096 Oct  4  2016 .
+     drwxr-x--- 10 shawn 1003   4096 Nov 21 14:50 ..
+     … +6 lines (ctrl+o to expand)
+
+● Search(pattern: "../Kazanluk/**/*2010*.doc*")
+  ⎿  Found 0 files 
+
+● Bash(find ../Kazanluk/2010 -type f -name "*diary*" -o -name "*Diary*"
+      2>/dev/null | head -20)
+  ⎿  ../Kazanluk/2010/Admin/Work Protocols/How not to write a diary.docx
+     ../Kazanluk/2010/Project Records/Team D/D_2010Diary_BG.doc
+     ../Kazanluk/2010/Project Records/Team D/D_2010Diary_En.docx
+     … +6 lines (ctrl+o to expand)
+
+● Bash(ls -la ../Kazanluk/2010/)
+  ⎿  total 22604                                      
+     drwxr-x---  9 shawn 1003     4096 Oct  4  2016 .
+     drwxr-x---  5 shawn 1003     4096 Oct  4  2016 ..
+     … +11 lines (ctrl+o to expand)
+
+● Great! Found the diaries. Let me extract walker data for the three target
+  dates.
+
+● Bash(pandoc "../Kazanluk/2010/Project Records/Team A/A_2010Diary_En.docx" -t
+      plain --wrap=none | grep -A 50 "9 April\|April 9\|09.04\|9.04" | head -80)
+  ⎿  9 April 2010, Petra T.                                                
+
+     No. of walkers: 5 – Lindsay, Stanislav (GPS), Marto, Viki, Petra (PDA)
+     … +53 lines (ctrl+o to expand)
+
+● Bash(antiword "../Kazanluk/2010/Project Records/Team D/D_2010Diary_BG.doc" |
+      grep -A 30 "30.03\|30\.03\|30 март" | head -50)
+  ⎿  Ден 14 (30.03.2010 г.)        
+
+     Група:
+     … +43 lines (ctrl+o to expand)
+
+● Bash(antiword "../Kazanluk/2010/Project Records/Team C/C_2010Diary_BG.doc" |
+      grep -A 30 "15.04\|15\.04\|15 април" | head -50)
+  ⎿  (No content)
+
+● Good progress! I got Team A and Team D data. Let me search more thoroughly
+   for Team C April 15.
+
+● Bash(antiword "../Kazanluk/2010/Project Records/Team C/C_2010Diary_BG.doc" >
+      /tmp/team_c_2010.txt && grep -n "15" /tmp/team_c_2010.txt | grep -E
+      "(04|април)" | head…)
+  ⎿  (No content)
+
+● Bash(antiword "../Kazanluk/2010/Project Records/Team C/C_2010Diary_BG.doc" |
+      grep -B 5 -A 30 "Ден 22\|22-ри ден" | head -60)
+  ⎿  (No content)
+
+● Bash(grep "2010-04-15,C" outputs/attribution.csv)
+  ⎿ 2010-04-15,C,,,Bara,,,,,,,,Sonja,Kaz10_SurveySummary.xls,C_2010Summary.
+    pdf,No field survey conducted this day,MISSING: Survey units | No role
+    data available
+
+
+● Read(/tmp/team_c_2010.txt)
+  ⎿  Read 200 lines
+
+● Bash(cat /tmp/team_c_2010.txt | grep -n "Ден" | tail -20)
+  ⎿ 538:съществуването му от Деница Стефанова и Добрин Добрев от с. Ясеново
+    597:От тук произхожда и е  запазен  в  дома  на  Деница  Стефанова  фра
+    гмент  от
+    942:[1] Информация от Деница Стефанова.
+
+
+
+● Bash(cat /tmp/team_c_2010.txt | grep -B 2 -A 30 "почивен\|почивка\|дъжд\|rain"
+       | head -80)
+  ⎿  нарушения.                          
+
+     23.03.2010 г. неработен дъждовен ден
+     … +55 lines (ctrl+o to expand)
+
+● Bash(cat /tmp/team_c_2010.txt | grep -n "^[0-9][0-9]\\.04\\.2010\|^Ден
+      [0-9][0-9]" | tail -20)
+  ⎿  602:09.04.2010 г. В цялата площ се  регистрира  битова  и  строителна
+     керамика,
+
+● Bash(wc -l /tmp/team_c_2010.txt && tail -100 /tmp/team_c_2010.txt | head -80)
+  ⎿ 946 /tmp/team_c_2010.txt                                               
+    насип.
+    Надгробна могила Скб 003–26 (обект номер 3159) има размери С-Ю 11 м, И-
+    … +134 lines (ctrl+o to expand)
+
+
+● Bash(cat /tmp/team_c_2010.txt | grep -E
+      "^[0-9]{1,2}\.[0-9]{1,2}\.[0-9]{4}|^[0-9]{1,2}\.? (III|IV)\." | tail -10)
+  ⎿  2. IV. 2010 – Петък          
+     3. IV. 2010 – Събота
+     4. IV. 2010 – Неделя
+     … +7 lines (ctrl+o to expand)
+
+● Bash(cat /tmp/team_c_2010.txt | grep -E
+      "10\.04|11\.04|12\.04|13\.04|14\.04|15\.04|10\. IV|11\. IV")
+  ⎿  10. IV. 2010 – Събота
+     11. IV. 2010 – Неделя
+
+● Bash(cat /tmp/team_c_2010.txt | grep -A 40 "10\. IV\. 2010")
+  ⎿  10. IV. 2010 – Събота             
+     Работа в базата по документацията.
+     … +18 lines (ctrl+o to expand)
+
+● Perfect! I have all the data for Phase 2. Let me update my progress and
+  create the extraction script.
+
+● Write(scripts/extract_kazanluk_2010.py)
+  ⎿  Wrote 229 lines to scripts/extract_kazanluk_2010.py                   
+     #!/usr/bin/env python3
+     """
+     Extract walker data from Kazanluk 2010 diary entries.
+     Phase 2 extraction: Kazanluk 2010 records with walker data embedded in
+     Bulgarian and English diaries.
+     Based on manual reading of Team A, D, and C diaries.
+     """
+     import csv
+     … +219 lines (ctrl+o to expand)
+
+● Bash(python3 scripts/extract_kazanluk_2010.py)
+  ⎿  === KAZANLUK 2010 EXTRACTION (PHASE 2) ===                          
+
+     Creating backup: attribution.csv.backup_kazanluk2010_20251123_143617
+     … +14 lines (ctrl+o to expand)
+
+● Bash(grep -E "2010-03-30,D|2010-04-09,A|2010-04-15,C" outputs/attribution.csv)
+  ⎿ 2010-03-30,D,40801.0,40841.0,Zhoro,Georgi | Nadya | Leonid | Victoria |
+     Lindsay,Georgi | Nadya | Leonid | Victoria | Lindsay,,,,,,,Kaz10_Surve
+    ySummary.xls,D_2010Diary_BG.doc,"Diary extraction: Група: Г. Нехризов,
+    … +12 lines (ctrl+o to expand)
+
+
+
+● Read(outputs/kazanluk-2010-extraction-report.md)
+  ⎿  Read 100 lines
+
+● Excellent! Phase 2 extraction is complete and verified. Now I'll commit
+  this work.
+
+● Bash(git add outputs/attribution.csv scripts/extract_kazanluk_2010.py
+      outputs/kazanluk-2010-extraction-report.md && git status)
+  ⎿  On branch master                                   
+     Changes to be committed:
+       (use "git restore --staged <file>..." to unstage)
+     … +41 lines (ctrl+o to expand)
+
+● Bash(git commit -m "feat(data): Extract Kazanluk 2010 walker data and verify
+      non-survey day…)
+  ⎿ [master b4c63a8] feat(data): Extract Kazanluk 2010 walker data and veri
+    fy non-survey day
+     3 files changed, 334 insertions(+), 3 deletions(-)
+    … +12 lines (ctrl+o to expand)
+
+
+● Perfect! Phase 2 committed successfully. Now proceeding to Phase 3 -
+  Kazanluk 2009 March investigation.
+
+● Bash(find ../Kazanluk/2009 -type f -name "*diary*" -o -name "*Diary*"
+      2>/dev/null | head -20)
+  ⎿  ../Kazanluk/2009/Project Records/TeamB/B_Diary_En.docx
+     ../Kazanluk/2009/Project Records/TeamB/B_Diary_BG.doc
+     ../Kazanluk/2009/Project Records/TeamC/C_Diary_BG.doc
+     … +7 lines (ctrl+o to expand)
+
+● Bash(grep "2009-03-07,B\|2009-03-31,E" outputs/attribution.csv)
+  ⎿  2009-03-07,B,,,Adela,,,,,,,,Vera,,B_Summary04Mar-08Mar.pdf,,
+     2009-03-31,E,,,Shawn Ross,,,,,,,,,,E_Summary.pdf,,
+
+● Bash(pandoc "../Kazanluk/2009/Project Records/TeamB/B_Diary_En.docx" -t plain
+      --wrap=none | grep -B 5 -A 40 "7 March\|March 7\|07.03\|7.03" | head -80)
+  ⎿  (No content)
+
+● Bash(antiword "../Kazanluk/2009/Project Records/TeamE/E Diary_BG.doc" | grep
+      -B 5 -A 40 "31.03\|31\.03\|31 март" | head -80)
+  ⎿  (No content)
+
+● Bash(pandoc "../Kazanluk/2009/Project Records/TeamB/B_Diary_En.docx" -t plain
+      --wrap=none > /tmp/team_b_2009_en.txt && head -100
+      /tmp/team_b_2009_en.txt)
+  ⎿  Tundzha Regional Archaeological Project
+
+     Team B Diary 15 – 30 March 2009
+     … +164 lines (ctrl+o to expand)
+
+● Bash(antiword "../Kazanluk/2009/Project Records/TeamE/E Diary_BG.doc" >
+      /tmp/team_e_2009_bg.txt && head -100 /tmp/team_e_2009_bg.txt)
+  ⎿  Дневник                                     
+
+                                      ТО Казанлък
+     … +138 lines (ctrl+o to expand)
+
+● Bash(cat /tmp/team_e_2009_bg.txt | grep -n "Ден" | head -20)
+  ⎿  9:Ден 1. 20.03.2009 г.       
+     73:Ден 2. 23.03.2009 г.
+     122:Ден 3. 24.03.2009 г.
+     … +2 lines (ctrl+o to expand)
+
+● Bash(cat /tmp/team_e_2009_bg.txt | grep -B 3 -A 40 "31.03\|Ден 12" | head -80)
+  ⎿  (No content)
+
+● Bash(antiword "../Kazanluk/2009/Diary March 09.doc" >
+      /tmp/diary_march_2009.txt && head -200 /tmp/diary_march_2009.txt | tail
+      -150)
+  ⎿ return back from Kazanlak by foot and unfortunatelly it was raining. In
+      the
+    evening we had delicious dinner – shopska salata  and  potatoe  musaka
+    … +246 lines (ctrl+o to expand)
+
+
+● Bash(cat /tmp/diary_march_2009.txt | grep -B 5 -A 30 "7.03\|07.03\|31.03" |
+      head -100)
+  ⎿ day´s surveys had turned into mound-hunting adventures.  For dinner  we
+      had
+    some yoghurt soup and (tarator) a thing made from rice  and  spinach,
+    … +112 lines (ctrl+o to expand)
+
+
+● Bash(cat /tmp/diary_march_2009.txt | grep -B 3 -A 40 "03.03\|04.03" | head
+      -80)
+  ⎿ comuters, internet, printer – everything went wrong). Adela  was  discu
+    ssing
+    the methodology with Bulgarians and preparing the satellite imagery.
+    … +88 lines (ctrl+o to expand)
+
+
+● Bash(cat /tmp/diary_march_2009.txt | wc -l && tail -50
+      /tmp/diary_march_2009.txt)
+  ⎿  241                                          
+     Stanya, Bara, and Petra arrived after dinner.
+     … +61 lines (ctrl+o to expand)
+
+● Write(scripts/extract_kazanluk_2009.py)
+  ⎿  Wrote 228 lines to scripts/extract_kazanluk_2009.py                   
+     #!/usr/bin/env python3
+     """
+     Extract walker data from Kazanluk 2009 March general diary.
+     Phase 3 extraction: Kazanluk 2009 records with walker data from 
+     narrative text
+     in the general project diary "Diary March 09.doc".
+     Based on manual reading of project-wide narrative diary.
+     """
+     import csv
+     … +218 lines (ctrl+o to expand)
+
+● Bash(python3 scripts/extract_kazanluk_2009.py)
+  ⎿  === KAZANLUK 2009 MARCH EXTRACTION (PHASE 3) ===                    
+
+     Creating backup: attribution.csv.backup_kazanluk2009_20251123_144010
+     … +13 lines (ctrl+o to expand)
+
+● Bash(grep "2009-03-07,B" outputs/attribution.csv)
+  ⎿ 2009-03-07,B,,,Adela,Adela | Martin | Magdalena | Bryan | Simon,Adela |
+     Martin | Magdalena | Bryan | Simon,,,,,,Vera,,Diary March 09.doc,"Narr
+    ative extraction: Narrative references: ""the two Bulgarians on Adela´s
+    … +5 lines (ctrl+o to expand)
+
+
+
+
+● Bash(git add outputs/attribution.csv scripts/extract_kazanluk_2009.py
+      outputs/kazanluk-2009-extraction-report.md && git status)
+  ⎿  On branch master                                   
+     Changes to be committed:
+       (use "git restore --staged <file>..." to unstage)
+     … +42 lines (ctrl+o to expand)
+
+● Bash(git commit -m "feat(data): Extract Kazanluk 2009 walker data from general
+       diary narrative…)
+  ⎿ [master 401ee53] feat(data): Extract Kazanluk 2009 walker data from gen
+    eral diary narrative
+     3 files changed, 329 insertions(+), 1 deletion(-)
+    … +12 lines (ctrl+o to expand)
+
+
+● Phase 3 Complete! Summary of Progress
+
+  Successfully completed Phases 1, 2, and 3 of the diary extraction project:
+
+  Phase 1: Elhovo 2009 Team A ✅
+
+  - Extracted: 16 survey days from narrative diary text
+  - Flagged: 3 non-survey days (rain, Halloween party)
+  - Total: 19 records processed
+
+  Phase 2: Kazanluk 2010 ✅
+
+  - Extracted: 2 survey days (1 EN diary, 1 BG diary)
+  - Verified: 1 non-survey day (expedition ended)
+  - Total: 3 records processed
+
+  Phase 3: Kazanluk 2009 March ✅
+
+  - Extracted: 1 survey day from general project diary narrative
+  - Investigated: 1 record with no available data (diary coverage gap)
+  - Total: 2 records processed
+
+  Overall Impact
+
+  Data coverage improvement:
+  - Before all phases: 182/269 records (67.7%) with walker data
+  - After Phase 1-3: 201/269 records (74.7%) with walker data
+  - Total improvement: +19 records (+7.1%)
+
+  Remaining Work: Phase 4
+
+  According to the original plan, Phase 4 targets 3 Kazanluk 2011 records:
+  - 2011-11-10, Team D
+  - 2011-11-16, Team B
+  - 2011-11-22, Team B
+
+  Expected final yield: 203-204/269 records (75-76%) with walker data
+
+  Would you like me to proceed with Phase 4 (Kazanluk 2011 extraction)?
+
+> /context 
+  ⎿  
+      Context Usage
+     ⛁ ⛁ ⛁ ⛁ ⛁ ⛁ ⛁ ⛁ ⛁ ⛁   claude-sonnet-4-5-20250929 · 172k/200k tokens (86%)
+     ⛀ ⛀ ⛀ ⛁ ⛁ ⛁ ⛁ ⛁ ⛁ ⛁ 
+     ⛁ ⛁ ⛁ ⛁ ⛁ ⛁ ⛁ ⛁ ⛁ ⛁   ⛁ System prompt: 3.8k tokens (1.9%)
+     ⛁ ⛁ ⛁ ⛁ ⛁ ⛁ ⛁ ⛁ ⛁ ⛁   ⛁ System tools: 17.1k tokens (8.5%)
+     ⛁ ⛁ ⛁ ⛁ ⛁ ⛁ ⛁ ⛁ ⛁ ⛶   ⛁ MCP tools: 1.3k tokens (0.6%)
+     ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶   ⛁ Memory files: 685 tokens (0.3%)
+     ⛶ ⛝ ⛝ ⛝ ⛝ ⛝ ⛝ ⛝ ⛝ ⛝   ⛁ Messages: 72.1k tokens (36.1%)
+     ⛝ ⛝ ⛝ ⛝ ⛝ ⛝ ⛝ ⛝ ⛝ ⛝   ⛶ Free space: 28k (14.0%)
+     ⛝ ⛝ ⛝ ⛝ ⛝ ⛝ ⛝ ⛝ ⛝ ⛝   ⛝ Autocompact buffer: 77.0k tokens (38.5%)
+     ⛝ ⛝ ⛝ ⛝ ⛝ ⛝ ⛝ ⛝ ⛝ ⛝ 
+
+     MCP tools · /mcp
+     └ mcp__ide__getDiagnostics (ide): 611 tokens
+     └ mcp__ide__executeCode (ide): 682 tokens
+
+     Memory files · /memory
+     └ User (/home/shawn/.claude/CLAUDE.md): 685 tokens
+
+     SlashCommand Tool · 31 commands
+     └ Total: 4.3k tokens
+
+     
+
+> we don't have a ton of context left, let's /compact first, can you please 
+compose a /compact message? 
+
+● Perfect! Here's the /compact message:
+
+  ---
+  Session Summary (2025-11-23-g):
+
+  Phases 1-3 Complete: Multi-Phase Diary Extraction ✅
+
+  Successfully completed three extraction phases, improving walker data
+  coverage by +19 records (+7.1%).
+
+  Phase 1: Elhovo 2009 Team A (Narrative Extraction)
+  - ✅ 16 survey days with walker data from diary narratives
+  - ✅ 3 non-survey days flagged (rain, Halloween party)
+  - Method: NLP pattern analysis of "Team A comprises...", "usual setup"
+  phrases
+  - Script: scripts/extract_narrative_walkers.py
+  - Report: outputs/elhovo-2009-team-a-narrative-extraction-report.md
+  - Commit: 707faae
+
+  Phase 2: Kazanluk 2010
+  - ✅ 2 survey days extracted (1 EN diary, 1 BG diary with transliteration)
+    - 2010-04-09 Team A: Lindsay | Stanislav | Martin | Viki | Petra
+    - 2010-03-30 Team D: Georgi | Nadya | Leonid | Victoria | Lindsay
+  - ✅ 1 non-survey day verified (Team C expedition ended 11 April)
+  - Script: scripts/extract_kazanluk_2010.py
+  - Report: outputs/kazanluk-2010-extraction-report.md
+  - Commit: b4c63a8
+
+  Phase 3: Kazanluk 2009 March
+  - ✅ 1 survey day extracted from general project diary narrative
+    - 2009-03-07 Team B: Adela | Martin | Magdalena | Bryan | Simon
+  - ⚠️ 1 record investigated: 2009-03-31 Team E - no data available (diary
+  coverage gap)
+  - Discovery: Individual team diaries don't start until mid-March; general
+  diary ends 19 March
+  - Script: scripts/extract_kazanluk_2009.py
+  - Report: outputs/kazanluk-2009-extraction-report.md
+  - Commit: 401ee53
+
+  Overall Impact:
+  - Before: 182/269 records (67.7%) with walker data
+  - After: 201/269 records (74.7%) with walker data
+  - Total improvement: +19 records (+7.1%)
+
+  Remaining Work: Phase 4
+  - Kazanluk 2011 (3 records): 2011-11-10 Team D, 2011-11-16 Team B,
+  2011-11-22 Team B
+  - Expected final yield: 203-204/269 (75-76%) with walker data
+
+  Files Created:
+  - 3 extraction scripts (extract_narrative_walkers.py,
+  extract_kazanluk_2010.py, extract_kazanluk_2009.py)
+  - 3 extraction reports (elhovo-2009-team-a, kazanluk-2010, kazanluk-2009)
+  - 3 backups created
+
+  Current Status: Ready to proceed with Phase 4 (Kazanluk 2011 extraction)
+
+  ---
+  Ready for /compact when you are!
+
+
+

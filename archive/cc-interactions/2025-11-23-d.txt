@@ -1,0 +1,179 @@
+
+╭─── Claude Code v2.0.50 ──────────────────────────────────────────────────────╮
+│                                                │ Tips for getting started    │
+│               Welcome back Shawn!              │ Run /init to create a CLAU… │
+│                                                │ ─────────────────────────── │
+│                     ▐▛███▜▌                    │ Recent activity             │
+│                    ▝▜█████▛▘                   │ No recent activity          │
+│                      ▘▘ ▝▝                     │                             │
+│                                                │                             │
+│            Sonnet 4.5 · Claude Max             │                             │
+│   /…/Adela/TRAP-WD-2020-04/claude_extraction   │                             │
+╰──────────────────────────────────────────────────────────────────────────────╯
+══════════════════ Conversation compacted · ctrl+o for history ═════════════════
+  ⎿  Read outputs/team-b-supersession-report.md (253 lines)
+  ⎿  Read outputs/team-b-diary-new-extraction.csv (10 lines)
+  ⎿  Read scripts/extract_team_b_diary_new.py (119 lines)
+  ⎿  Referenced file outputs/source-inventory.md
+  ⎿  Read outputs/manual-extraction-guide.md (392 lines)
+  ⎿  Todo list read (7 items)
+
+● I'll continue with the comprehensive supersession check by systematically
+  reviewing the source inventory to identify all other superseded sources.
+
+● Read(outputs/source-inventory.md)
+  ⎿  Read 386 lines
+
+● Search(pattern: "Scans|Finalized", path: "outputs/attribution.csv",
+        output_mode: "content")
+  ⎿  Found 0 lines 
+
+● Search(pattern: "\.pdf", path: "outputs/attribution.csv", output_mode:
+        "content", head_limit: 30)
+  ⎿  Found 30 lines (ctrl+o to expand)
+
+● Search(pattern: "claude_extraction/scripts/*.py")
+  ⎿  Found 0 files 
+
+● Bash(ls -la "/media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/
+      TRAP-WD-2020-04/claude_extraction/scripts/")
+  ⎿  total 320                                     
+     drwxrwxr-x 3 shawn shawn  4096 Nov 23 10:59 .
+     drwxrwxr-x 9 shawn shawn  4096 Nov 23 10:53 ..
+     … +44 lines (ctrl+o to expand)
+
+● Search(pattern: "Finalized|Scans", path: "scripts", output_mode: "content")
+  ⎿  Found 6 lines (ctrl+o to expand)
+
+● Search(pattern: "^2009-.*,[AC],", path: "outputs/attribution.csv",
+        output_mode: "content", head_limit: 40)
+  ⎿  Found 40 lines (ctrl+o to expand)
+
+● Search(pattern: "^2010-10.*,A,|^2010-11.*,A,", path:
+        "outputs/attribution.csv", output_mode: "content")
+  ⎿  Found 5 lines (ctrl+o to expand)
+
+● Write(outputs/superseded-sources-comprehensive-review.md)
+  ⎿  Wrote 223 lines to outputs/superseded-sources-comprehensive-review.md 
+     # Comprehensive Superseded Sources Review
+     **Date:** 23 November 2025
+     **Purpose:** Identify all cases where SECONDARY sources were extracted
+     when PRIMARY sources exist
+     ---
+     ## Summary
+     After comprehensive review of the source inventory and attribution CSV,
+      I identified **2 supersession cases** where data extraction used
+     SECONDARY or lower-tier sources when PRIMARY sources exist:
+
+     … +213 lines (ctrl+o to expand)
+
+● I've completed the comprehensive review of all sources for supersession
+  issues. Here's what I found:
+
+  Superseded Sources Summary
+
+  2 supersession cases identified requiring action:
+
+  1. Yambol 2010 Team B (HIGH PRIORITY - Ready to Update)
+
+  - Status: Extraction complete, ready to update CSV
+  - Issue: Used SECONDARY sources (Team B Diary.docx + Day_XX.pdf files)
+  instead of PRIMARY
+  - PRIMARY source: Team B Diary new.docx (March 2011 corrected version)
+  - Impact: 8 records need updating, 1 missing record (2010-11-06) to add
+  - Benefits: More complete roles, corrected names, post-season data quality
+   fixes
+
+  2. Yambol 2010 Team A (MEDIUM PRIORITY - Needs Extraction)
+
+  - Status: PRIMARY diary not yet extracted
+  - Issue: Used Tier 3 PDFs (Day_XX.pdf) instead of Tier 2 PRIMARY diary
+  - PRIMARY source: A_Diary.docx (diary source more reliable than scanned
+  forms)
+  - Impact: 5+ records affected (2010-10-22, 23, 24, 2010-11-02, 03,
+  possibly more)
+  - Benefits: More accurate walker names, role data, fewer OCR errors
+
+  All Other Sources: No Issues
+
+  I reviewed all PRIMARY/SECONDARY designations in the source inventory:
+  - Kazanlak 2009-2011: PRIMARY sources correctly prioritised (BG diaries
+  used appropriately)
+  - PDF sources: Finalized (PRIMARY) versions correctly used, not Scans
+  (SECONDARY)
+  - Elhovo 2009: PRIMARY diaries correctly used for Teams A, B, C
+  - Language variants: Both BG and EN extracted for reference where
+  appropriate (not supersession)
+
+  Files Created
+
+  1. superseded-sources-comprehensive-review.md - Full analysis with action
+  plan
+  2. team-b-supersession-report.md - Detailed Team B comparison (already
+  created)
+  3. team-b-diary-new-extraction.csv - Extracted PRIMARY data for Team B
+  (already created)
+
+  Recommended Next Steps
+
+  Phase 1 (HIGH): Update attribution CSV for Team B using the extracted data
+  Phase 2 (MEDIUM): Extract A_Diary.docx and update Team A records
+
+  Ready to proceed with Team B updates when you approve, or I can extract
+  Team A diary first if you prefer to review both before updating the CSV.
+
+> /export claude_extraction/archive/cc-interactions/2025-11-23-d.txt 
+  ⎿ Failed to export conversation: ENOENT: no such file or directory, open 
+    '/media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-20
+    20-04/claude_extraction/outputs/claude_extraction/archive/cc-interactions/20
+    25-11-23-d.txt'
+
+> before we proceed, I'd like to /export our conversation, but I need to 
+change the working directory, can you tell me how to do that? 
+
+● To change the working directory in Claude Code, you can use the cd command
+   via bash:
+
+  cd /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-W
+  D-2020-04/claude_extraction
+
+  Or, from your current location in the outputs/ directory, you can go up
+  one level:
+
+  cd ..
+
+  Then the export path would be:
+  /export archive/cc-interactions/2025-11-23-d.txt
+
+  Alternatively, you can stay in your current directory and use the correct
+  relative path for the export:
+  /export ../archive/cc-interactions/2025-11-23-d.txt
+
+  Which approach would you prefer? I can run the cd command for you if you'd
+   like me to change the working directory.
+
+> cd .. 
+
+● Bash(cd ..)
+  ⎿  (No content)
+
+● Bash(pwd)
+  ⎿ /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-W
+    D-2020-04/claude_extraction
+
+
+● Done! The working directory is now:
+  /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-2
+  020-04/claude_extraction
+
+  You can now export the conversation using:
+  /export archive/cc-interactions/2025-11-23-d.txt
+
+> /export claude_extraction/archive/cc-interactions/2025-11-23-d.txt 
+  ⎿ Failed to export conversation: ENOENT: no such file or directory, open 
+    '/media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-20
+    20-04/claude_extraction/claude_extraction/archive/cc-interactions/2025-11-23
+    -d.txt'
+
+
+

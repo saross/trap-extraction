@@ -1,0 +1,13 @@
+Date,Team,Walker_Data,Source,Notes,Status
+2010-03-08,C,,"Resolved - Excel date error","Date was incorrect in Excel SurveySummary Row 45. Should be 2010-04-08. Survey units 30742-30773 transferred to correct date. Corrected 23 Nov 2025",completed
+2009-10-23,C,,"The Diary of Team C.doc","Overall walker list at top of diary",pending
+2009-11-14,A,,"Diary Team A.doc","Same file extracted 11-09 successfully",pending
+2010-04-06,B,,"B_2010Diary_En.doc","Same file extracted other April dates - may be Easter holiday",pending
+2010-04-07,A,,"A_2010Diary_BG.doc","Structured Bulgarian format",pending
+2010-04-07,C,,"C_2010Diary_BG.doc","Same file extracted 03-24/03-25 successfully",pending
+2010-04-08,A,,"A_2010Diary_BG.doc","Structured Bulgarian format",pending
+2010-11-14,B,,"Team B Diary.docx","DOCX format - may need LibreOffice",pending
+2011-10-24,A,,"A_2011Diary_BG.doc","Structured Bulgarian format",pending
+2011-11-08,B,,"B_2011Diary_En.docx","DOCX format - may need LibreOffice",pending
+2011-11-10,D,,"D_2011Diary_BG.doc","Same file extracted 11-01/11-02 successfully",pending
+2011-11-29,B,,"B_2011Diary_En.docx","DOCX format - may need LibreOffice",pending

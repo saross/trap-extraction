@@ -1,0 +1,1295 @@
+
+╭─── Claude Code v2.0.50 ──────────────────────────────────────────────────────╮
+│                                                │ Tips for getting started    │
+│               Welcome back Shawn!              │ Run /init to create a CLAU… │
+│                                                │ ─────────────────────────── │
+│                     ▐▛███▜▌                    │ Recent activity             │
+│                    ▝▜█████▛▘                   │ No recent activity          │
+│                      ▘▘ ▝▝                     │                             │
+│                                                │                             │
+│            Sonnet 4.5 · Claude Max             │                             │
+│   /…/Adela/TRAP-WD-2020-04/claude_extraction   │                             │
+╰──────────────────────────────────────────────────────────────────────────────╯
+══════════════════ Conversation compacted · ctrl+o for history ═════════════════
+
+> /compact   Session Summary: Name Corrections Complete + Adela Disambiguation 
+Started
+
+  Context: Resumed after VS Code crash during /compact. Reviewed 
+archive/cc-interactions/2025-11-22-a.txt to continue from Petra
+  disambiguation completion.
+
+  ---
+  Completed Work
+
+  1. Applied 66 Manual Name Corrections ✅
+
+  Script: scripts/apply_name_corrections.py
+
+  Corrections breakdown:
+  - Valid corrections (58): Applied canonical names to standardise naming
+    - Examples: Halyar→Matyáš Kracík, ED→Evtimka Dimitrova, Timea→Evtimka 
+Dimitrova
+    - Initials expanded: NuF→Julia Tzvetkova, R.Z.→Bryan Zlatos
+  - Invalid entries (6): Cleared OCR false positives
+    - H., Hun, M, P, Olga, X [leader] → removed from attribution.csv
+    - Status changed to 'invalid' in name-mapping.csv
+  - Uncertain entries (2): Lizzy/Lisi
+    - Lisi→Lizzy (same Czech volunteer, full name being researched)
+
+  Impact:
+  - 111 replacements across 73 attribution records
+  - 126 invalid OCR entries cleared
+  - Record count unchanged: 269 records
+  - All verified with before/after checks
+
+  Files modified:
+  - outputs/attribution.csv - corrections applied
+  - outputs/name-mapping.csv - 66 entries updated to corrected/invalid/uncertain
+  - outputs/name-corrections-report.md - comprehensive 300+ line documentation
+  - outputs/attribution.csv.backup - safety backup created
+
+  Commits: c8833e4, 94bb51f
+
+  ---
+  2. Fixed Lizzy Typo ✅
+
+  Issue: Script created "LIzzy" typo instead of "Lizzy"
+
+  Corrections:
+  - Fixed 3 occurrences: 2009-11-09, 2009-11-10, 2009-11-14
+  - Updated name-mapping.csv: Lisi→Lizzy, corrected notes
+  - Clarified: Lizzy is a real Czech volunteer (not "identity not confirmed")
+  - Full name currently being researched
+
+  Commit: 94bb51f
+
+  ---
+  3. Updated follow-up-actions.md ✅
+
+  Changes:
+  - Marked "Review Remaining Name Mappings" as COMPLETED
+  - Added new High Priority: "Disambiguate Adela (Sobotkova vs Dorňáková)"
+  - Updated completed actions list with recent work
+  - Moved Jiří Musil to "Outstanding research" section
+  - Fixed markdown linting issues
+
+  Current name-mapping.csv status (283 entries):
+  - confident: 84
+  - mapped: 126
+  - corrected: 58
+  - confirmed: 6
+  - uncertain: 2 (Lizzy/Lisi)
+  - invalid: 6 (OCR false positives)
+  - disambiguated: 1 (Petra)
+  - review_needed: 0 ✅
+
+  Commit: 2665c5f
+
+  ---
+  In Progress
+
+  4. Adela Disambiguation Investigation 🔄
+
+  Issue: Two people named Adela in 2010-autumn:
+  - Adela Sobotkova - Project leader, attended 2009-2011
+  - Adéla Dorňáková - Field walker, attended 2010-autumn ONLY
+
+  2010-autumn Analysis (5 records):
+
+  | Date       | Status       | Source     | Details                            
+               |
+  |------------|--------------|------------|------------------------------------
+---------------|
+  | 2010-10-22 | ✅ Clear      | Day_03.pdf | Both named: "Adela Sobotkova" + 
+"Adela Dorňáková" |
+  | 2010-10-23 | ✅ Clear      | Day_03.pdf | AD (Dorňáková leader) + AS 
+(Sobotkova)            |
+  | 2010-10-24 | ✅ Clear      | Day_03.pdf | AD (Dorňáková leader) + AS 
+(Sobotkova)            |
+  | 2010-11-02 | ⚠️ AMBIGUOUS | Day_05.pdf | Generic "Adela" - likely Sobotkova 
+               |
+  | 2010-11-03 | ⚠️ AMBIGUOUS | Day_05.pdf | Generic "Adela" - likely Sobotkova 
+               |
+
+  Pattern observed:
+  - Dorňáková was team leader early days (Oct 22-24)
+  - Petra T became leader on Nov 2-3
+  - Generic "Adela" on Nov 2-3 most likely = Sobotkova
+
+  Pending: User reviewing Day_05.pdf to confirm which Adela on Nov 2-3
+
+  ---
+  Outstanding Research Items
+
+  1. Lizzy (Czech volunteer, 2009-autumn) - Full name being researched
+  2. Silvia Ivanova - Appears in Team E 2009 diary, NOT in participant list - 
+needs verification
+  3. Jiří Musil - Note says "Add: Spring 2010 Kazanlak" - check if needs adding 
+to participant list
+  4. Adela Nov 2-3 - Awaiting PDF review to confirm Sobotkova vs Dorňáková
+
+  ---
+  Next Steps
+
+  1. Complete Adela disambiguation based on PDF review
+  2. Create disambiguation script if needed (similar to Petra script)
+  3. Pre-QA checklist - verify data integrity before final QA
+  4. Investigate Jiří Musil and Silvia Ivanova participant list issues
+
+  ---
+  Files to reference:
+  - outputs/name-corrections-report.md - Complete correction documentation
+  - outputs/follow-up-actions.md - Updated action items
+  - scripts/apply_name_corrections.py - Reusable correction script
+  - outputs/attribution.csv.backup - Rollback point
+
+  Commits: c8833e4 (corrections), 94bb51f (Lizzy fix), 2665c5f (docs update) 
+  ⎿  Compacted (ctrl+o to see full summary)
+  ⎿  Read outputs/follow-up-actions.md (154 lines)
+  ⎿  Referenced file outputs/name-mapping.csv
+  ⎿  Referenced file outputs/attribution.csv
+  ⎿  Read outputs/name-corrections-report.md (370 lines)
+  ⎿  Referenced file outputs/attribution.csv.backup
+
+> I have reviewed the forms and spoken with Adela S. and we confirm that the
+ 'Adela' in the Day_05.pdf is Adela Sobotkova. 
+
+● Thank you for confirming! That's helpful - the generic "Adela" entries on
+  Nov 2-3 are indeed Adela Sobotkova.
+
+  Let me check the current state of those records in attribution.csv to see
+  if any corrections are needed:
+
+● Read(outputs/attribution.csv)
+  ⎿  Read 271 lines
+
+● Perfect! Thank you for confirming. Now I'll update those two records (Nov
+  2-3) to explicitly identify "Adela" as "Adela Sobotkova" for clarity.
+
+● Update(outputs/attribution.csv)
+  ⎿  Updated outputs/attribution.csv with 1 addition and 1 removal       
+       192    2010-10-23,A,61424.0,61475.0,Adela D,AD | RL | AS | Emma 
+             Jakobsson | VC,AD | RL | AS | Emma Jakobsson | VC,,,,,,Royce
+              L,Yam10_SurveySummary.xls,Day_03.pdf,Yambol 2010; Extracted
+              from form 2,No role data available
+       193    2010-10-24,A,61476.0,61549.0,Adela D,AS | RL | AD | VC | 
+             Emma Jakobsson,AS | RL | AD | VC | Emma Jakobsson,,,,,,Royce
+              L,Yam10_SurveySummary.xls,Day_03.pdf,Yambol 2010; Extracted
+              from form 3,No role data available
+       194    2010-11-02,B,71470.0,71524.0,Shawn Ross Ross,VC | RL | 
+             Shawn Ross | RL | AP,VC | RL | Shawn Ross | RL | AP,Shawn 
+             Ross | VC,Royce Lawrence,,Kimberly Lowe,,Royce 
+             L,Yam10_SurveySummary.xls,Day_02.pdf,Yambol 2010; Extracted 
+             from form 1,No role data available
+       195 -  2010-11-02,A,61549.0,61586.0,Petra T,Adela 
+           -  | Elena | Drago | Bistra,Adela 
+           -  | Elena | Drago | Bistra,,,,,,Drago 
+           -  G,Yam10_SurveySummary.xls,Day_05.pdf,Yambol 2010; Extracted
+           -   from form 1,No role data available
+       195 +  2010-11-02,A,61549.0,61586.0,Petra T,Adela Sobotkova 
+           +  | Elena | Drago | Bistra,Adela Sobotkova 
+           +  | Elena | Drago | Bistra,,,,,,Drago 
+           +  G,Yam10_SurveySummary.xls,Day_05.pdf,Yambol 2010; Extracted
+           +   from form 1,No role data available
+       196    2010-11-03,A,61587.0,61643.0,Petra,Petra Tušlová | Viktorie
+              Chystyaková | Drago | Adela | Emma,Petra | Viktorie 
+             Chystyaková | Drago | Adela | 
+             Emma,,,,,,Emma,Yam10_SurveySummary.xls,Day_05.pdf,Yambol 
+             2010; Extracted from form 2,No role data available
+       197    2010-11-03,B,71245.0,71583.0,Shawn Ross Ross,Shawn Ross | 
+             AP | JP | RL | KL,Shawn Ross | AP | JP | RL | KL,Shawn 
+             Ross,Royce Lawrence,,Kimberly 
+             Lowe,,Ashley,Yam10_SurveySummary.xls,Day_02.pdf,Yambol 2010;
+              Extracted from form 2,No role data available
+       198    2010-11-04,B,71584.0,71650.0,Shawn Ross Ross,KL | JP | 
+             Shawn Ross | RL | AP,KL | JP | Shawn Ross | RL | AP,Shawn 
+             Ross,Royce Lawrence,,Kimberly Lowe,,Kim 
+             Lowe,Yam10_SurveySummary.xls,Day_04.pdf,Yambol 2010; 
+             Extracted from form 1,No role data available
+
+● Update(outputs/attribution.csv)
+  ⎿  Updated outputs/attribution.csv with 1 addition and 1 removal       
+       193    2010-10-24,A,61476.0,61549.0,Adela D,AS | RL | AD | VC | 
+             Emma Jakobsson,AS | RL | AD | VC | Emma Jakobsson,,,,,,Royce
+              L,Yam10_SurveySummary.xls,Day_03.pdf,Yambol 2010; Extracted
+              from form 3,No role data available
+       194    2010-11-02,B,71470.0,71524.0,Shawn Ross Ross,VC | RL | 
+             Shawn Ross | RL | AP,VC | RL | Shawn Ross | RL | AP,Shawn 
+             Ross | VC,Royce Lawrence,,Kimberly Lowe,,Royce 
+             L,Yam10_SurveySummary.xls,Day_02.pdf,Yambol 2010; Extracted 
+             from form 1,No role data available
+       195    2010-11-02,A,61549.0,61586.0,Petra T,Adela Sobotkova | 
+             Elena | Drago | Bistra,Adela Sobotkova | Elena | Drago | 
+             Bistra,,,,,,Drago 
+             G,Yam10_SurveySummary.xls,Day_05.pdf,Yambol 2010; Extracted 
+             from form 1,No role data available
+       196 -  2010-11-03,A,61587.0,61643.0,Petra,Petra Tušlová | Viktorie
+           -   Chystyaková | Drago | Adela 
+           -  | Emma,Petra | Viktorie Chystyaková | Drago | Adela 
+           -  | Emma,,,,,,Emma,Yam10_SurveySummary.xls,Day_05.pdf,Yambol 
+           -  2010; Extracted from form 2,No role data available
+       196 +  2010-11-03,A,61587.0,61643.0,Petra,Petra Tušlová | Viktorie
+           +   Chystyaková | Drago | Adela Sobotkova 
+           +  | Emma,Petra | Viktorie Chystyaková | Drago | Adela 
+           +  Sobotkova 
+           +  | Emma,,,,,,Emma,Yam10_SurveySummary.xls,Day_05.pdf,Yambol 
+           +  2010; Extracted from form 2,No role data available
+       197    2010-11-03,B,71245.0,71583.0,Shawn Ross Ross,Shawn Ross | 
+             AP | JP | RL | KL,Shawn Ross | AP | JP | RL | KL,Shawn 
+             Ross,Royce Lawrence,,Kimberly 
+             Lowe,,Ashley,Yam10_SurveySummary.xls,Day_02.pdf,Yambol 2010;
+              Extracted from form 2,No role data available
+       198    2010-11-04,B,71584.0,71650.0,Shawn Ross Ross,KL | JP | 
+             Shawn Ross | RL | AP,KL | JP | Shawn Ross | RL | AP,Shawn 
+             Ross,Royce Lawrence,,Kimberly Lowe,,Kim 
+             Lowe,Yam10_SurveySummary.xls,Day_04.pdf,Yambol 2010; 
+             Extracted from form 1,No role data available
+       199    2010-11-05,B,71650.0,71712.0,Shawn Ross Ross,AP | RL | JP |
+              Ashley Chee Quee | Shawn Ross,AP | RL | JP | Ashley Chee 
+             Quee | Shawn Ross,Shawn Ross | Royce Lawrence,Julia 
+             Prazniak,,Ashley Chee 
+             Quee,,Alina,Yam10_SurveySummary.xls,Day_04.pdf,Yambol 2010; 
+             Extracted from form 2,No role data available
+
+● Excellent! I've updated both Nov 2-3 records to explicitly show "Adela
+  Sobotkova" instead of the ambiguous "Adela". Now let me update the
+  follow-up-actions.md to mark this task complete:
+
+● Read(outputs/follow-up-actions.md)
+  ⎿  Read 154 lines
+
+● Update(outputs/follow-up-actions.md)
+  ⎿  Updated outputs/follow-up-actions.md with 13 additions and 10 removals
+       31    
+       32    ### 2. Disambiguate Adela (Sobotkova vs Dorňáková)
+       33    
+       34 -  **Status:** Pending investigation
+       34 +  **Status:** ✅ COMPLETED (22 November 2025)
+       35    
+       36    **Context:** Two different people named Adela participated 
+            in TRAP:
+       37    - **Adela Sobotkova** - Project leader, attended multiple 
+            seasons (2009-2011)
+       38 -  - **Adela
+          -   Dorňáková** - Field walker, attended 2010-autumn only
+       38 +  - **Adéla
+          +   Dorňáková** - Field walker, attended 2010-autumn only
+       39    
+       40 -  **Issue:** Generic "Adela" entries in attribution.csv need 
+          - to be verified to ensure Adela Dorňáková is correctly 
+          - identified where she participated (2010-autumn), and not 
+          - confused with Adela Sobotkova.
+       40 +  **Completed actions:**
+       41 +  - [x] Searched attribution.csv for all "Adela" entries in 
+          + 2010-autumn
+       42 +  - [x] Cross-referenced with team compositions and dates
+       43 +  - [x] Verified Dorňáková is correctly identified in her 
+          + season (Oct 22-24 as "AD" team leader)
+       44 +  - [x] Updated ambiguous "Adela" entries with full names (Nov
+          +  2-3 confirmed as Sobotkova via Day_05.pdf review)
+       45    
+       46 -  **Action required:**
+       47 -  - [ ] Search attribution.csv for all "Adela" entries in 
+          - 2010-autumn
+       48 -  - [ ] Cross-reference with team compositions and dates
+       49 -  - [ ] Verify Dorňáková is correctly identified in her season
+       50 -  - [ ] Update any ambiguous "Adela" entries with full names
+       46 +  **Results:**
+       47 +  - 5 records identified in 2010-autumn:
+       48 +    - Oct 22: Both Adelas explicitly named in same record
+       49 +    - Oct 23-24: Both identified with initials (AD = 
+          + Dorňáková, AS = Sobotkova)
+       50 +    - Nov 2-3: Generic "Adela" updated to "Adela Sobotkova" 
+          + after PDF verification
+       51 +  - All Adela entries in 2010-autumn now correctly 
+          + disambiguated
+       52    
+       53 -  **Expected impact:** 2010-autumn records (October-November 
+          - 2010)
+       54 -  
+       53    ---
+       54    
+       55    ## Medium Priority
+
+● Update(outputs/follow-up-actions.md)
+  ⎿  Updated outputs/follow-up-actions.md with 1 addition          
+       141    - [x] Disambiguate Petra (Janouchová vs Tušlová)
+       142    - [x] Verify and correct all pdf_sources in 
+             name-mapping.csv
+       143    - [x] Fix Lizzy/Lisi typo and clarify identity
+       144 +  - [x] Disambiguate Adela (Sobotkova vs Dorňáková) in 
+           + 2010-autumn records
+       145    
+       146    ---
+       147    
+
+● Perfect! Now let me commit these changes:
+
+● Bash(git add outputs/attribution.csv outputs/follow-up-actions.md && git
+      commit -m "feat(names): Complete Adela disambiguation in 2010-autumn
+      records…)
+  ⎿ [master d8b8dd4] feat(names): Complete Adela disambiguation in 2010-aut
+    umn records
+     2 files changed, 16 insertions(+), 12 deletions(-)
+    … +9 lines (ctrl+o to expand)
+
+  ⎿  Found 10 new diagnostic issues in 1 file (ctrl+o to expand)
+
+● Excellent! The Adela disambiguation is now complete. I've successfully:
+
+  1. Updated attribution.csv - Changed generic "Adela" to "Adela Sobotkova"
+  in 2 records:
+    - 2010-11-02 (attribution.csv:195)
+    - 2010-11-03 (attribution.csv:196)
+  2. Updated follow-up-actions.md - Marked the Adela disambiguation task as
+  ✅ COMPLETED with full details of the verification process
+  3. Committed changes - Commit d8b8dd4
+
+  Summary of 2010-autumn Adela disambiguation:
+
+  All 5 records now correctly identify which Adela:
+  - Oct 22: Both Adelas explicitly named
+  - Oct 23-24: Both identified with initials (AD = Dorňáková, AS =
+  Sobotkova)
+  - Nov 2-3: "Adela" → "Adela Sobotkova" (verified via Day_05.pdf and
+  consultation)
+
+  ---
+  Next Steps
+
+  Looking at follow-up-actions.md, the remaining high-priority items are:
+
+  1. Silvia Ivanova - Verify participation and potentially add to
+  participant list
+  2. XLS-only records (Medium priority) - 76 records without diary/PDF
+  walker data
+  3. Jiří Musil - Check if needs to be added to participant list (Spring
+  2010 Kazanlak)
+
+  Would you like me to:
+  - Investigate the Silvia Ivanova and Jiří Musil participant list issues?
+  - Move to a final QA phase to verify data integrity?
+  - Something else?
+
+> Adding Jiri Musil to the participant list can be deferred, to be completed
+ at the same time as figuring out who 'Lizzy' is and adding Sylvia. Please 
+add to 'follow-up-actions.md'. What sort of review do you suggest for the 
+XLS-only records? Can you begin by characterising them for me? 
+
+● I'll update follow-up-actions.md first, then characterize the XLS-only
+  records for you.
+
+● Read(outputs/follow-up-actions.md)
+  ⎿  Read 50 lines
+
+● Update(outputs/follow-up-actions.md)
+  ⎿  Updated outputs/follow-up-actions.md with 23 additions and 12 removals
+        8    
+        9    ## High Priority
+       10    
+       11 -  ### 1. Add Silvia Ivanova to Participant List
+       11 +  ### 1. Participant List Updates
+       12    
+       13 -  **Status:** Pending verification
+       13 +  **Status:** Deferred - batch update required
+       14    
+       15 -  **Context:** Silvia Ivanova (Силвия Иванова) appears in the 
+          - Team E 2009 Bulgarian diary but is NOT in 
+          - `inputs/TRAP-Participants.csv`.
+       15 +  **Context:** Three participants need to be verified and 
+          + potentially added to `inputs/TRAP-Participants.csv`:
+       16    
+       17 -  **Evidence:**
+       18 -  - Team E diary entry mentions "Силвия Иванова" as a team 
+          - member
+       19 -  - No matching entry in the 104-person participant list
+       17 +  1. **Silvia Ivanova (Силвия Иванова)**
+       18 +     - Appears in Team E 2009 Bulgarian diary
+       19 +     - Not in the 104-person participant list
+       20 +     - Location: `name-mapping.csv` lines 234 and 269
+       21 +     - Season: 2009 spring
+       22    
+       23 +  2. **Lizzy**
+       24 +     - Czech volunteer, 2009-autumn
+       25 +     - Full name being researched
+       26 +     - Currently in attribution.csv as "Lizzy" (uncertain 
+          + identity)
+       27 +     - Once identified, add to participant list
+       28 +  
+       29 +  3. **Jiří Musil**
+       30 +     - Appears in attribution.csv (2010-04-07, line 181)
+       31 +     - Note in name-mapping: "Add: Spring 2010 Kazanlak"
+       32 +     - Not confirmed if missing from participant list
+       33 +     - Season: 2010 spring
+       34 +  
+       35    **Action required:**
+       36 +  - [ ] Research and verify full identity of Lizzy
+       37    - [ ] Verify Silvia Ivanova's participation in TRAP 2009
+       38 -  - [ ] If confirmed, add to `inputs/TRAP-Participants.csv` 
+          - with appropriate details:
+       39 -    - Role: Field walker
+       40 -    - Affiliation: Unknown
+       41 -    - Season: 2009 spring (x in column)
+       38 +  - [ ] Check if Jiří Musil is in participant list, verify 
+          + participation dates
+       39 +  - [ ] Add all three to `inputs/TRAP-Participants.csv` in 
+          + single batch update with complete details
+       40    
+       41 -  **Location:** `name-mapping.csv` lines 234 and 269
+       42 -  
+       41    ---
+       42    
+       43    ### 2. Disambiguate Adela (Sobotkova vs Dorňáková)
+
+● Update(outputs/follow-up-actions.md)
+  ⎿  Updated outputs/follow-up-actions.md with 1 addition and 3 removals 
+       161    This file should be updated as actions are completed or new
+              items are identified.
+       162    
+       163    **Outstanding research:**
+       164 -  - Lizzy (Czech volunteer, 2009-autumn) - Full name being 
+           - researched
+       165 -  - Silvia Ivanova - Verify participation and add to 
+           - participant list if confirmed
+       166 -  - Jiří Musil - Check if needs to be added to participant 
+           - list (Spring 2010 Kazanlak)
+       164 +  - Batch participant list update: Lizzy (full name 
+           + research), Silvia Ivanova (verify participation), Jiří Musil
+           +  (verify participation and dates)
+       165    
+       166    **Last updated:** 22 November 2025
+
+● Now let me characterize the XLS-only records for you:
+
+● Explore(Characterize XLS-only records)
+  ⎿  Done (10 tool uses · 53.4k tokens · 1m 23s)                           
+  ⎿  Found 1 new diagnostic issue in 1 file (ctrl+o to expand)
+
+● Excellent analysis completed! Let me commit the follow-up-actions.md
+  update first, then present the findings:
+
+● Bash(git add outputs/follow-up-actions.md && git commit -m "docs: Consolidate
+      participant list updates into single action item…)
+  ⎿ [master af7dacd] docs: Consolidate participant list updates into single
+     action item
+     1 file changed, 24 insertions(+), 15 deletions(-)
+    … +9 lines (ctrl+o to expand)
+
+
+● XLS-Only Records Characterization
+
+  I've completed the analysis of XLS-only records. Here are the key
+  findings:
+
+  Critical Discovery: Discrepancy in Count
+
+  Found: 22 XLS-only records (8.2% of 269 total)
+
+  However, follow-up-actions.md states "76 records without diary/PDF walker
+  data". This suggests either:
+  - The 76 figure includes records with PDF sources but missing walker data
+  - The count methodology differs
+
+  All 22 XLS-only records share one defining characteristic: 100% are 
+  missing walker data.
+
+  ---
+  Key Patterns
+
+  1. Concentrated in 2010 Spring
+  - 12 records (54.5%) from March-April 2010 Kazanluk campaign
+  - Suggests systematic extraction issue during that season
+
+  2. Temporal clustering
+  - 2009-autumn: 3 records (late season: Oct 23 - Nov 14)
+  - 2010-spring: 12 records (peak: March 8 - April 9) ← LARGEST CLUSTER
+  - 2010-autumn: 1 record (isolated)
+  - 2011-autumn: 6 records (concentrated: Oct 24 - Nov 29)
+
+  3. Data completeness
+  - Leaders: 100% present ✓
+  - Walkers: 0% present (all missing)
+  - Role data: Only 27% have any roles assigned
+
+  4. Team distribution
+  - Fairly even across Teams A, B, C, D (5-6 records each)
+  - Not a team-specific problem but a source-document issue
+
+  ---
+  Suggested Review Strategy
+
+  Option A: Source Document Investigation
+  1. Return to original XLS survey summaries (Kaz10_SurveySummary.xls, etc.)
+  2. Check if walker names exist in those spreadsheets but weren't extracted
+  3. Verify whether this is an extraction failure or genuine data gap
+
+  Option B: Accept as Data Limitation
+  - If walker data genuinely doesn't exist in XLS sources
+  - Mark these 22 records as "walker data not recoverable from available
+  sources"
+  - Document in QA_Notes or Extraction_Notes
+
+  Option C: Prioritized Re-extraction
+  - Tier 1: 2010 Spring cluster (12 records) - largest impact
+  - Tier 2: 2011 Autumn cluster (6 records)
+  - Tier 3: Scattered 2009-2010 records (4 records)
+
+  ---
+  Questions for You
+
+  1. Count clarification: Should I investigate why follow-up-actions.md says
+   76 records? Are we counting records with PDF sources but missing walkers
+  too?
+  2. Review approach: Which option (A, B, or C) would you prefer? Or should
+  I combine approaches?
+  3. Priority: Given that all other name corrections are complete, is
+  addressing these XLS-only records a prerequisite for final QA, or can it
+  be deferred?
+
+> ok, let me see. (1) The 76 figure includes records with PDF sources but 
+missing walker data. (2) I'd start with Option A, then Option C. I want to 
+see if we really are missing this data. Since originally building the 
+spreadsheets we have created a 'source-inventory' markdown file, perhaps we 
+missed sources previously. Plus since then I've noticed that (a) when there 
+are both BG and EN diaries, one is usually *much* more extensive than the 
+other (see file size as a guide), and should be preferred and examined 
+closely, (b) some scans are missing from 'Tier 3' like 'Day_03.pdf' and 
+'Day_05.pdf' for Team A in Autumn 2010 (Elhovo/Yambol), so we need to search
+ again for potential source files, and (c) there are multiple copies of some
+ forms (e.g., in a 'finalised' folder), which we need to map. 
+
+● Perfect! Let me investigate systematically. I'll start by examining the
+  source-inventory.md to understand what sources we have available:
+
+● Read(outputs/source-inventory.md)
+  ⎿  Read 224 lines
+
+● Perfect! Now I can see what sources we have. Let me investigate
+  systematically:
+
+● Explore(Investigate XLS-only records sources)
+  ⎿  Done (33 tool uses · 71.0k tokens · 2m 53s)                           
+
+● Excellent news! The investigation revealed all 22 XLS-only records have 
+  corresponding diary sources that weren't extracted. Here's what we found:
+
+  ---
+  Key Findings
+
+  1. All Diary Sources Exist
+
+  Every single XLS-only record has an available diary source that could
+  provide walker data:
+
+  - Elhovo 2009 (3 records): Team A and C diaries available but not
+  extracted for these dates
+  - Kazanlak 2010 (12 records): All teams (A, B, C, D) have complete diary
+  pairs - LARGEST OPPORTUNITY
+  - Yambol 2010 (1 record): Team B diary available
+  - Kazanlak 2011 (6 records): All have diaries (some BG-only, some have
+  both BG/EN)
+
+  2. BG vs EN Diary File Sizes
+
+  Generally BG diaries are 2-10× larger than EN versions, suggesting more
+  extensive narrative. However:
+
+  Exceptions (prefer EN):
+  - Kazanlak 2010 Team B: EN 110 KB vs BG 42 KB (2.6× larger)
+  - Kazanlak 2011 Team B: EN 63 KB vs BG 42 KB (1.5× larger)
+  - Kazanlak 2011 Team C: EN 70 KB vs BG 18 KB (3.9× larger)
+
+  3. Missing PDFs Status
+
+  Good news: Day_03.pdf and Day_05.pdf exist in Team A Field Records folder.
+   The source-inventory.md is accurate.
+
+  4. Finalized Folders
+
+  Found well-organised date-named PDFs in:
+  - TeamB/Finalized/ - 22 files (individual daily scans + summaries)
+  - TeamD/FInalized/ - 6 files (note typo in folder name)
+
+  These appear to be curated versions, not duplicates.
+
+  ---
+  Recommended Next Steps
+
+  Option A: Systematic Re-extraction (Preferred)
+
+  Extract walker data from the 22 diary sources, prioritising by impact:
+
+  Tier 1: Kazanlak 2010 Spring (12 records - 54% of gap)
+  - Extract from larger diary version for each team:
+    - Team A: Use BG (86 KB)
+    - Team B: Use EN (110 KB) ← Exception
+    - Team C: Use BG (214 KB)
+    - Team D: Use BG (127 KB)
+  - Dates: March 8 - April 9, 2010
+
+  Tier 2: Kazanlak 2011 Autumn (6 records)
+  - Teams A, D: BG-only available
+  - Teams B: Use EN (63 KB) ← Exception
+  - Dates: Oct 24 - Nov 29, 2011
+
+  Tier 3: Elhovo 2009 Autumn (3 records)
+  - Teams A, C: EN diaries available
+  - Dates: Oct 23 - Nov 14, 2009
+
+  Tier 4: Yambol 2010 (1 record)
+  - Team B: Use Team B Diary.docx (larger)
+  - Date: Nov 14, 2010
+
+  Option B: Sample First
+
+  Extract 2-3 records as a test to verify:
+  1. Diary sources contain walker names for these dates
+  2. Quality is sufficient to fill gaps
+  3. Extraction effort is reasonable
+
+  ---
+  Questions
+
+  1. Proceed with re-extraction? Should I start with Tier 1 (Kazanlak 2010
+  Spring - 12 records)?
+  2. Diary preference confirmation: Use the larger file size as the guide,
+  or do you have other criteria?
+  3. Batch vs incremental? Extract all 12 Kazanlak 2010 records in one go,
+  or would you prefer to review results incrementally?
+
+> let's make a proper plan since this is becoming a major task. Please do 
+Option A comprehensively. Please also update the source-inventory for (a) 
+accuracy, (b) comprehensiveness, (c) to indicate preferred files (e.g., the 
+longer diaries whether BG or EN, while still noting the other exists; the 
+'curated' versions of records in, e.g., 'finalized' folders - these are just
+ examnples, whenever you find multiple versions of something compare them 
+and indicate which is superior / more complete while still recording the 
+existence of the inferior version. In cases where overlapping sources 
+complement one another or together make a more complete picture, rather than
+ one being better than the other, then list both and indicate. 
+
+● I'll create a comprehensive plan for this major task. Let me first use an
+  agent to research all the details needed:
+
+● Plan(Plan XLS-only records extraction)
+  ⎿  Done (31 tool uses · 98.2k tokens · 4m 16s)                           
+
+● Excellent research completed! Before I present the final plan, I need to
+  clarify a few decisions:
+                                                                           
+● User answered Claude's questions:
+  ⎿  · Should I add all 31+ individual unit PDFs to source-inventory.md, or 
+     just note their existence in a summary section? → Place individual unit
+      PDFs (by which I assume you mean the actual survey forms, correct me 
+     if I'm wrong) as 'Tier 4', then group them by type/range, no examples 
+     needed.
+
+
+     · For Bulgarian transliteration, which approach should I use? → Match 
+     existing patterns in attribution.csv
+     · The 2010-03-08 record shows '18 March' in the diary. How should I 
+     handle this date discrepancy? → Flag it for your review
+     · Should I extract role data (PDA, GPS, Forms) even though only ~4 
+     records have it available? → Yes, extract when available
+
+● Perfect! Now I have all the information needed. Let me present the
+  comprehensive plan:
+  ⎿  User rejected Claude's plan:
+     ╭─────────────────────────────────────────────────────────────────────────╮
+     │ Comprehensive Plan: Walker Data Re-extraction + Source Inventory Update │
+     │                                                                         │
+     │ Goal: Extract walker data for 22 XLS-only records from diary sources and│
+     │  update source-inventory.md for accuracy and completeness.              │
+     │                                                                         │
+     │ ---                                                                     │
+     │ PHASE 1: Update Source-Inventory.md                                     │
+     │                                                                         │
+     │ 1.1 Add Tier 4 Section - Individual Survey Form PDFs                    │
+     │ - Create new "Tier 4: Individual Survey Forms" section                  │
+     │ - Group by season/team with unit ranges:                                │
+     │   - Elhovo 2009 Team A: Unit PDFs 60126-61344 (13 files)                │
+     │   - Elhovo 2009 Team B: Unit PDFs 70122-71463 (14 files)                │
+     │   - Elhovo 2009 Team C: Unit PDFs 80103-81008 (12 files)                │
+     │   - Plus object/total pickup PDFs where applicable                      │
+     │                                                                         │
+     │ 1.2 Correct Existing Errors                                             │
+     │ - Kazanlak 2009 Team D: Remove "MISSING" status from D Diary_BG.doc     │
+     │ (file exists, 222 KB)                                                   │
+     │ - Elhovo 2010 Team B: Replace "Team B Journal.docx" with actual files:  │
+     │ "Team B Diary.docx" (25 KB) and "Team B Diary new.docx" (26 KB)         │
+     │                                                                         │
+     │ 1.3 Mark Preferred Sources                                              │
+     │ - Finalized folders (Kazanlak 2009 Teams B & D): Mark as PREFERRED over │
+     │ Scans folders                                                           │
+     │ - Diary preferences based on file size:                                 │
+     │   - Kazanlak 2009: BG versions larger (mark as PRIMARY), EN as          │
+     │ supplementary                                                           │
+     │   - Kazanlak 2010 Team B: EN larger (110 KB vs 42 KB) - mark EN as      │
+     │ PRIMARY                                                                 │
+     │   - Kazanlak 2011 Teams B & C: EN larger - mark EN as PRIMARY           │
+     │   - All others: BG as PRIMARY                                           │
+     │ - Multiple EN sources: Mark "Diary Team A.doc" as PRIMARY over          │
+     │ "Diary_Aneta.doc"                                                       │
+     │                                                                         │
+     │ 1.4 Add Missing Files                                                   │
+     │ - Elhovo 2010 GC-RS folder: 10 Ground Control PDFs                      │
+     │ - Individual dated PDFs in Elhovo 2010 Field Records                    │
+     │                                                                         │
+     │ 1.5 Update Last Modified Date                                           │
+     │ - Change from "21 November 2025" to "22 November 2025"                  │
+     │                                                                         │
+     │ ---                                                                     │
+     │ PHASE 2: Develop Walker Extraction Script                               │
+     │                                                                         │
+     │ 2.1 Create scripts/extract_diary_walkers.py                             │
+     │                                                                         │
+     │ Script structure:                                                       │
+     │ # Read attribution.csv, identify 22 XLS-only records                    │
+     │ # For each record:                                                      │
+     │ #   - Identify primary diary source from updated source-inventory       │
+     │ #   - Extract text (.doc via antiword, .docx via python-docx)           │
+     │ #   - Parse for date entry                                              │
+     │ #   - Extract walkers using format-specific patterns:                   │
+     │ #     * EN narrative: "Team X contains [names]"                         │
+     │ #     * EN structured: "walkers: [names]" or numbered lists             │
+     │ #     * BG structured: "Група: [names]"                                 │
+     │ #     * Initials: match to name-mapping.csv                             │
+     │ #   - Extract roles when available (PDA, GPS, Forms patterns)           │
+     │ #   - Transliterate Bulgarian names (match existing attribution.csv     │
+     │ patterns)                                                               │
+     │ #   - Format as pipe-delimited                                          │
+     │ # Create backup: attribution.csv.backup_diary_extraction                │
+     │ # Update attribution.csv                                                │
+     │ # Generate detailed extraction report                                   │
+     │                                                                         │
+     │ 2.2 Transliteration Approach                                            │
+     │ - Analyse existing transliterations in attribution.csv for Bulgarian    │
+     │ names                                                                   │
+     │ - Build transliteration mapping from existing patterns                  │
+     │ - Apply consistently to new extractions                                 │
+     │                                                                         │
+     │ 2.3 Handle Special Cases                                                │
+     │ - Yambol 2010-11-14: Expand initials (DG, EJ, RL, SH, AP, JP) using     │
+     │ name-mapping.csv                                                        │
+     │ - 2010-03-08 date discrepancy: Flag in Extraction_Notes, extract walker │
+     │ data from 18 March entry                                                │
+     │ - Narrative entries: Use NLP patterns to extract names from prose       │
+     │                                                                         │
+     │ 2.4 Role Extraction                                                     │
+     │ - Extract when available (Kazanlak 2010 Team B EN diary, Yambol 2010    │
+     │ Team B diary)                                                           │
+     │ - Update PDA_Operator, GPS_Operator, Paper_Recorder, Data_Editor columns│
+     │ - Estimate ~4-6 records will have role data                             │
+     │                                                                         │
+     │ ---                                                                     │
+     │ PHASE 3: Test Extraction                                                │
+     │                                                                         │
+     │ 3.1 Test on 3 Sample Records                                            │
+     │ - Sample 1: 2009-11-09 Team A (narrative EN format)                     │
+     │ - Sample 2: 2010-04-02 Team B (structured EN with roles)                │
+     │ - Sample 3: 2010-03-21 Team D (structured BG requiring transliteration) │
+     │                                                                         │
+     │ 3.2 Verify Against Existing Patterns                                    │
+     │ - Check transliteration matches existing style                          │
+     │ - Confirm pipe-delimiter formatting                                     │
+     │ - Validate name matching against name-mapping.csv                       │
+     │ - Review role extraction format                                         │
+     │                                                                         │
+     │ 3.3 Generate Test Report                                                │
+     │ - Show before/after for 3 test records                                  │
+     │ - Flag any issues or uncertainties                                      │
+     │ - List names requiring expansion or verification                        │
+     │                                                                         │
+     │ ---                                                                     │
+     │ PHASE 4: Full Extraction                                                │
+     │                                                                         │
+     │ 4.1 Execute Extraction for All 22 Records                               │
+     │                                                                         │
+     │ Tier-by-tier execution:                                                 │
+     │ - Tier 1: Kazanlak 2010 Spring (12 records) - largest impact            │
+     │ - Tier 2: Kazanlak 2011 Autumn (6 records)                              │
+     │ - Tier 3: Elhovo 2009 Autumn (3 records)                                │
+     │ - Tier 4: Yambol 2010 (1 record)                                        │
+     │                                                                         │
+     │ 4.2 Quality Checks                                                      │
+     │ - Verify all 22 records now have walker data                            │
+     │ - Check names against name-mapping.csv canonical forms                  │
+     │ - Flag any initials needing expansion                                   │
+     │ - Confirm transliteration consistency                                   │
+     │                                                                         │
+     │ 4.3 Generate Extraction Report                                          │
+     │                                                                         │
+     │ Report format:                                                          │
+     │ # Diary Walker Extraction Report                                        │
+     │                                                                         │
+     │ ## Summary                                                              │
+     │ - Records processed: 22                                                 │
+     │ - Successfully extracted: [count]                                       │
+     │ - Walkers added: [total names]                                          │
+     │ - Role data added: [count] records                                      │
+     │ - Flags for review: [count]                                             │
+     │                                                                         │
+     │ ## By Record Detail                                                     │
+     │ [Table with: Date, Team, Source, Walkers Extracted, Roles Added, Notes] │
+     │                                                                         │
+     │ ## Issues Flagged                                                       │
+     │ - Date discrepancy: 2010-03-08 (diary shows 18 March)                   │
+     │ - [Any other issues]                                                    │
+     │                                                                         │
+     │ ## Name Expansion Needed                                                │
+     │ [List of initials requiring mapping]                                    │
+     │                                                                         │
+     │ ---                                                                     │
+     │ PHASE 5: Update Documentation                                           │
+     │                                                                         │
+     │ 5.1 Update follow-up-actions.md                                         │
+     │ - Mark "Investigate XLS-only Records" as COMPLETED                      │
+     │ - Document extraction approach and results                              │
+     │ - Note date discrepancy for 2010-03-08 requiring verification           │
+     │                                                                         │
+     │ 5.2 Create outputs/diary-extraction-report.md                           │
+     │ - Comprehensive documentation of extraction process                     │
+     │ - Source mapping for each record                                        │
+     │ - Before/after examples                                                 │
+     │ - Transliteration mapping used                                          │
+     │                                                                         │
+     │ 5.3 Archive Backup                                                      │
+     │ - Keep attribution.csv.backup_diary_extraction                          │
+     │ - Note in follow-up-actions.md                                          │
+     │                                                                         │
+     │ ---                                                                     │
+     │ PHASE 6: Commit Changes                                                 │
+     │                                                                         │
+     │ 6.1 Commit source-inventory.md update                                   │
+     │ docs(sources): Update source-inventory with corrections and Tier 4      │
+     │                                                                         │
+     │ - Add Tier 4: Individual Survey Form PDFs (39 files)                    │
+     │ - Correct D Diary_BG.doc status (file exists, not missing)              │
+     │ - Fix Elhovo 2010 Team B filenames                                      │
+     │ - Mark preferred sources (Finalized folders, larger diaries)            │
+     │ - Add Elhovo 2010 GC-RS files                                           │
+     │                                                                         │
+     │ 6.2 Commit extraction script                                            │
+     │ feat(extraction): Add diary walker extraction script                    │
+     │                                                                         │
+     │ Script extracts walker and role data from diary sources for             │
+     │ 22 XLS-only records. Handles EN narrative, EN structured, and           │
+     │ BG structured formats with transliteration.                             │
+     │                                                                         │
+     │ 6.3 Commit attribution.csv update                                       │
+     │ feat(data): Extract walker data from diaries for 22 XLS-only records    │
+     │                                                                         │
+     │ Filled walker gaps for all 22 records using primary diary sources:      │
+     │ - Elhovo 2009 autumn: 3 records from Team A/C diaries                   │
+     │ - Kazanlak 2010 spring: 12 records from BG/EN diaries                   │
+     │ - Yambol 2010 autumn: 1 record from Team B diary                        │
+     │ - Kazanlak 2011 autumn: 6 records from BG/EN diaries                    │
+     │                                                                         │
+     │ Role data added for 4-6 records where available.                        │
+     │                                                                         │
+     │ 6.4 Commit documentation                                                │
+     │ docs: Document diary walker extraction process and results              │
+     │                                                                         │
+     │ - Add diary-extraction-report.md with full extraction details           │
+     │ - Update follow-up-actions.md (mark XLS-only investigation complete)    │
+     │ - Flag 2010-03-08 date discrepancy for review                           │
+     │                                                                         │
+     │ ---                                                                     │
+     │ DELIVERABLES                                                            │
+     │                                                                         │
+     │ 1. ✅ Updated source-inventory.md with Tier 4, corrections, and         │
+     │ preferences                                                             │
+     │ 2. ✅ scripts/extract_diary_walkers.py (new extraction script)          │
+     │ 3. ✅ Updated attribution.csv with walker data for all 22 records       │
+     │ 4. ✅ outputs/diary-extraction-report.md (comprehensive documentation)  │
+     │ 5. ✅ Updated follow-up-actions.md                                      │
+     │ 6. ✅ 4 git commits with clear documentation                            │
+     │                                                                         │
+     │ ---                                                                     │
+     │ ESTIMATED IMPACT                                                        │
+     │                                                                         │
+     │ - Records enriched: 22 (from 8.2% data gap to 0%)                       │
+     │ - Walker names added: ~80-120 names                                     │
+     │ - Role assignments added: ~4-6 records                                  │
+     │ - Source inventory files catalogued: +50+ files                         │
+     │ - Data quality improvement: All survey day records now have team        │
+     │ composition data                                                        │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     ╰─────────────────────────────────────────────────────────────────────────╯
+
+> Two corrections / modifications:\
+- Multiple EN sources: Mark "Diary Team A.doc" as PRIMARY over 
+"Diary_Aneta.doc" > mark individual diaries like 'Diary_Aneta.doc' as 
+'supplemental' rather than 'secondary' - we want to save primary/secondary 
+for curated/uncurated versions of the same document, preferred/dispreferred 
+translations, and similar situations where we are talking about different 
+versions of, essentially, the same artefact. Personal diaries, on the other 
+hand, are supplemental information not different versions.\
+- This exercise focuses on survey units rather than remote sensing or object
+ recording. Please do not include these other categories of records at this 
+time. 
+
+● Perfect, thank you for those clarifications! Let me revise the plan with
+  those corrections:
+                                                                           
+● User approved Claude's plan
+  ⎿  Comprehensive Plan: Walker Data Re-extraction + Source Inventory Update
+
+     Goal: Extract walker data for 22 XLS-only records from diary sources 
+     and update source-inventory.md for accuracy and completeness.
+
+     ---
+     PHASE 1: Update Source-Inventory.md
+
+     1.1 Add Tier 4 Section - Individual Survey Form PDFs
+     - Create new "Tier 4: Individual Survey Form PDFs" section
+     - Group by season/team with unit ranges (SURVEY UNITS ONLY):
+       - Elhovo 2009 Team A: Unit PDFs 60126-61344 (13 files)
+       - Elhovo 2009 Team B: Unit PDFs 70122-71463 (14 files)
+       - Elhovo 2009 Team C: Unit PDFs 80103-81008 (12 files)
+       - Elhovo 2010 Teams A/B: Individual dated survey form PDFs 
+     (20101022.pdf, etc.)
+
+     1.2 Correct Existing Errors
+     - Kazanlak 2009 Team D: Remove "MISSING" status from D Diary_BG.doc 
+     (file exists, 222 KB)
+     - Elhovo 2010 Team B: Replace "Team B Journal.docx" with actual files: 
+     "Team B Diary.docx" (25 KB) and "Team B Diary new.docx" (26 KB)
+
+     1.3 Mark Preferred Sources
+
+     Use this terminology:
+     - PRIMARY/SECONDARY: Different versions of the same document (curated 
+     vs uncurated, preferred vs alternative translations, etc.)
+     - SUPPLEMENTAL: Individual/personal diaries providing additional 
+     perspective
+
+     Finalized vs Scans folders (Kazanlak 2009 Teams B & D):
+     - Mark Finalized folders as PRIMARY (curated, date-named versions)
+     - Mark Scans folders as SECONDARY (uncurated, generic naming)
+
+     Diary preferences based on file size (different versions of team 
+     diaries):
+     - Kazanlak 2009: BG versions larger → mark BG as PRIMARY, EN as 
+     SECONDARY
+     - Kazanlak 2010 Team B: EN larger (110 KB vs 42 KB) → mark EN as 
+     PRIMARY, BG as SECONDARY
+     - Kazanlak 2011 Teams B & C: EN larger → mark EN as PRIMARY, BG as 
+     SECONDARY
+     - All others: BG as PRIMARY, EN as SECONDARY
+
+     Individual personal diaries:
+     - Elhovo 2009 Team A: Mark "Diary_Aneta.doc" as SUPPLEMENTAL (not 
+     secondary)
+     - Kazanlak 2009 Team C: Compare "C_Journal_En.docx" vs 
+     "TeamC_Journal.docx" - if both are team diaries, mark by size; if one 
+     is personal, mark SUPPLEMENTAL
+
+     1.4 Update Last Modified Date
+     - Change from "21 November 2025" to "22 November 2025"
+
+     ---
+     PHASE 2: Develop Walker Extraction Script
+
+     2.1 Create scripts/extract_diary_walkers.py
+
+     Script structure:
+     # Read attribution.csv, identify 22 XLS-only records
+     # For each record:
+     #   - Identify primary diary source from updated source-inventory
+     #   - Extract text (.doc via antiword, .docx via python-docx)
+     #   - Parse for date entry
+     #   - Extract walkers using format-specific patterns:
+     #     * EN narrative: "Team X contains [names]"
+     #     * EN structured: "walkers: [names]" or numbered lists
+     #     * BG structured: "Група: [names]"
+     #     * Initials: match to name-mapping.csv
+     #   - Extract roles when available (PDA, GPS, Forms patterns)
+     #   - Transliterate Bulgarian names (match existing attribution.csv 
+     patterns)
+     #   - Format as pipe-delimited
+     # Create backup: attribution.csv.backup_diary_extraction
+     # Update attribution.csv
+     # Generate detailed extraction report
+
+     2.2 Transliteration Approach
+     - Analyse existing transliterations in attribution.csv for Bulgarian 
+     names
+     - Build transliteration mapping from existing patterns
+     - Apply consistently to new extractions
+
+     2.3 Handle Special Cases
+     - Yambol 2010-11-14: Expand initials (DG, EJ, RL, SH, AP, JP) using 
+     name-mapping.csv
+     - 2010-03-08 date discrepancy: Flag in Extraction_Notes, extract walker
+      data from 18 March entry
+     - Narrative entries: Use NLP patterns to extract names from prose
+
+     2.4 Role Extraction
+     - Extract when available (Kazanlak 2010 Team B EN diary, Yambol 2010 
+     Team B diary)
+     - Update PDA_Operator, GPS_Operator, Paper_Recorder, Data_Editor 
+     columns
+     - Estimate ~4-6 records will have role data
+
+     ---
+     PHASE 3: Test Extraction
+
+     3.1 Test on 3 Sample Records
+     - Sample 1: 2009-11-09 Team A (narrative EN format)
+     - Sample 2: 2010-04-02 Team B (structured EN with roles)
+     - Sample 3: 2010-03-21 Team D (structured BG requiring transliteration)
+
+     3.2 Verify Against Existing Patterns
+     - Check transliteration matches existing style
+     - Confirm pipe-delimiter formatting
+     - Validate name matching against name-mapping.csv
+     - Review role extraction format
+
+     3.3 Generate Test Report
+     - Show before/after for 3 test records
+     - Flag any issues or uncertainties
+     - List names requiring expansion or verification
+
+     ---
+     PHASE 4: Full Extraction
+
+     4.1 Execute Extraction for All 22 Records
+
+     Tier-by-tier execution:
+     - Tier 1: Kazanlak 2010 Spring (12 records) - largest impact
+     - Tier 2: Kazanlak 2011 Autumn (6 records)
+     - Tier 3: Elhovo 2009 Autumn (3 records)
+     - Tier 4: Yambol 2010 (1 record)
+
+     4.2 Quality Checks
+     - Verify all 22 records now have walker data
+     - Check names against name-mapping.csv canonical forms
+     - Flag any initials needing expansion
+     - Confirm transliteration consistency
+
+     4.3 Generate Extraction Report
+
+     Report format:
+     # Diary Walker Extraction Report
+
+     ## Summary
+     - Records processed: 22
+     - Successfully extracted: [count]
+     - Walkers added: [total names]
+     - Role data added: [count] records
+     - Flags for review: [count]
+
+     ## By Record Detail
+     [Table with: Date, Team, Source, Walkers Extracted, Roles Added, Notes]
+
+     ## Issues Flagged
+     - Date discrepancy: 2010-03-08 (diary shows 18 March)
+     - [Any other issues]
+
+     ## Name Expansion Needed
+     [List of initials requiring mapping]
+
+     ---
+     PHASE 5: Update Documentation
+
+     5.1 Update follow-up-actions.md
+     - Mark "Investigate XLS-only Records" as COMPLETED
+     - Document extraction approach and results
+     - Note date discrepancy for 2010-03-08 requiring verification
+
+     5.2 Create outputs/diary-extraction-report.md
+     - Comprehensive documentation of extraction process
+     - Source mapping for each record
+     - Before/after examples
+     - Transliteration mapping used
+
+     5.3 Archive Backup
+     - Keep attribution.csv.backup_diary_extraction
+     - Note in follow-up-actions.md
+
+     ---
+     PHASE 6: Commit Changes
+
+     6.1 Commit source-inventory.md update
+     docs(sources): Update source-inventory with corrections and Tier 4
+
+     - Add Tier 4: Individual Survey Form PDFs (39 survey unit files)
+     - Correct D Diary_BG.doc status (file exists, not missing)
+     - Fix Elhovo 2010 Team B filenames
+     - Mark preferred sources using PRIMARY/SECONDARY/SUPPLEMENTAL 
+     terminology
+     - Finalized folders marked PRIMARY, Scans as SECONDARY
+     - Larger diary versions marked PRIMARY
+     - Personal diaries marked SUPPLEMENTAL
+
+     6.2 Commit extraction script
+     feat(extraction): Add diary walker extraction script
+
+     Script extracts walker and role data from diary sources for
+     22 XLS-only records. Handles EN narrative, EN structured, and
+     BG structured formats with transliteration.
+
+     6.3 Commit attribution.csv update
+     feat(data): Extract walker data from diaries for 22 XLS-only records
+
+     Filled walker gaps for all 22 records using primary diary sources:
+     - Elhovo 2009 autumn: 3 records from Team A/C diaries
+     - Kazanlak 2010 spring: 12 records from BG/EN diaries
+     - Yambol 2010 autumn: 1 record from Team B diary
+     - Kazanlak 2011 autumn: 6 records from BG/EN diaries
+
+     Role data added for 4-6 records where available.
+
+     6.4 Commit documentation
+     docs: Document diary walker extraction process and results
+
+     - Add diary-extraction-report.md with full extraction details
+     - Update follow-up-actions.md (mark XLS-only investigation complete)
+     - Flag 2010-03-08 date discrepancy for review
+
+     ---
+     DELIVERABLES
+
+     1. ✅ Updated source-inventory.md with Tier 4, corrections, and 
+     preferences (PRIMARY/SECONDARY/SUPPLEMENTAL terminology)
+     2. ✅ scripts/extract_diary_walkers.py (new extraction script)
+     3. ✅ Updated attribution.csv with walker data for all 22 records
+     4. ✅ outputs/diary-extraction-report.md (comprehensive documentation)
+     5. ✅ Updated follow-up-actions.md
+     6. ✅ 4 git commits with clear documentation
+
+     ---
+     SCOPE EXCLUSIONS
+
+     Not included in this extraction:
+     - Remote sensing records (GC-RS files)
+     - Object recording PDFs (A_Objects.pdf, C_Object.pdf, etc.)
+     - Total pickup records (A_TotalPic.pdf)
+     - Focus: Survey unit field walking only
+
+     ---
+     ESTIMATED IMPACT
+
+     - Records enriched: 22 (from 8.2% data gap to 0%)
+     - Walker names added: ~80-120 names
+     - Role assignments added: ~4-6 records
+     - Survey unit source files catalogued: 39 individual unit PDFs
+     - Data quality improvement: All survey day records now have team 
+     composition data
+
+
+
+
+  ⎿  Interrupted · What should Claude do instead?
+
+> apologies for interrupting you, but I see we are low on context, let's 
+/compact. Can you write your plan out to a markdown file and create a 
+complementary /compact message so we can begin in a clean session? 
+
+● Excellent idea! Let me save the plan to a markdown file:
+
+● Write(outputs/diary-extraction-plan.md)
+  ⎿  Wrote 351 lines to outputs/diary-extraction-plan.md                   
+     # Diary Walker Extraction Plan
+     **Created:** 22 November 2025
+     **Status:** Approved - Ready for execution
+     ---
+     ## Goal
+     Extract walker data for 22 XLS-only records from diary sources and
+     update source-inventory.md for accuracy and completeness.
+     … +341 lines (ctrl+o to expand)
+
+● Perfect! The plan is saved to outputs/diary-extraction-plan.md. Here's the
+   /compact message:
+
+  ---
+  Session Summary: Adela Disambiguation + Diary Extraction Plan
+
+  Completed in This Session
+
+  1. Adela Disambiguation (Sobotkova vs Dorňáková) ✅
+  - Investigated 5 records in 2010-autumn where both Adelas appeared
+  - User reviewed Day_05.pdf and confirmed generic "Adela" = Adela Sobotkova
+  - Updated attribution.csv lines 195-196 (Nov 2-3, 2010)
+  - Marked task complete in follow-up-actions.md
+  - Commit: d8b8dd4
+
+  2. Consolidated Participant List Updates
+  - Combined Silvia Ivanova, Lizzy, and Jiří Musil into single deferred
+  batch update
+  - Updated follow-up-actions.md
+  - Commit: af7dacd
+
+  3. XLS-Only Records Investigation
+  - Analysed 22 XLS-only records (8.2% of 269 total)
+  - Critical finding: All 22 have corresponding diary sources with walker
+  data
+  - Verified walker names exist in all diary entries
+  - Characterised by season, team, data completeness
+
+  4. Comprehensive Source File Research
+  - Compared BG vs EN diary file sizes (BG generally 2-10× larger)
+  - Verified Day_03.pdf and Day_05.pdf exist (not missing)
+  - Mapped Finalized vs Scans folders (Finalized = curated versions)
+  - Found 39+ individual survey unit PDFs not in source-inventory
+  - Identified file errors: "Team B Journal.docx" doesn't exist, "D
+  Diary_BG.doc" not missing
+
+  5. Created Comprehensive Extraction Plan
+  - 6-phase plan for extracting walker data from 22 diary sources
+  - Includes source-inventory.md updates with Tier 4 + corrections
+  - Defines PRIMARY/SECONDARY/SUPPLEMENTAL terminology
+  - Plan approved and saved to outputs/diary-extraction-plan.md
+
+  ---
+  Ready to Execute
+
+  Plan saved in: outputs/diary-extraction-plan.md
+
+  Next session starts with Phase 1: Update source-inventory.md with:
+  - New Tier 4: Individual Survey Form PDFs (39 files, grouped by range)
+  - Corrections: D Diary_BG.doc exists, fix Team B filenames
+  - Preferred sources: PRIMARY (Finalized folders, larger diaries),
+  SECONDARY (Scans, smaller diaries), SUPPLEMENTAL (personal diaries)
+
+  Then continue through phases 2-6:
+  - Phase 2: Develop extraction script
+  - Phase 3: Test on 3 samples
+  - Phase 4: Extract all 22 records
+  - Phase 5: Update documentation
+  - Phase 6: Commit changes (4 commits)
+
+  ---
+  Key Context
+
+  Data files:
+  - attribution.csv: 269 records, 22 missing walker data
+  - name-mapping.csv: 283 entries, 0 review_needed remaining
+  - source-inventory.md: Needs updates (last modified 21 Nov)
+
+  Recent commits:
+  - d8b8dd4: Adela disambiguation complete
+  - af7dacd: Consolidated participant list updates
+  - 94bb51f: Lizzy typo fix
+  - c8833e4: Applied 66 name corrections
+
+  Outstanding research:
+  - Lizzy (Czech volunteer) - full name unknown
+  - Silvia Ivanova - verify participation
+  - Jiří Musil - verify participation dates
+  - 2010-03-08 date discrepancy (diary shows 18 March)
+
+  File paths:
+  - Elhovo: /media/shawn/..../Elhovo 2010-12-12/
+  - Kazanluk: /media/shawn/..../Kazanluk/
+
+  ---
+  Ready for /compact. Next session: Execute diary extraction plan starting
+  with Phase 1.
+
+
+

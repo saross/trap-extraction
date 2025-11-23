@@ -1,0 +1,929 @@
+
+╭─── Claude Code v2.0.50 ──────────────────────────────────────────────────────╮
+│                                                │ Tips for getting started    │
+│               Welcome back Shawn!              │ Run /init to create a CLAU… │
+│                                                │ ─────────────────────────── │
+│                     ▐▛███▜▌                    │ Recent activity             │
+│                    ▝▜█████▛▘                   │ No recent activity          │
+│                      ▘▘ ▝▝                     │                             │
+│                                                │                             │
+│            Sonnet 4.5 · Claude Max             │                             │
+│   /…/Adela/TRAP-WD-2020-04/claude_extraction   │                             │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+> Hi CC, welcome back, VS Code crashed during /compact, please review 
+archive/cc-interactions/2025-11-23-e.txt to see where we are. The /compact 
+message is at the end of that conversation. 
+
+● I'll review the conversation file to see where we left off.
+
+● Read(archive/cc-interactions/2025-11-23-e.txt)
+  ⎿  Read 1496 lines
+
+● Perfect! I can confirm:
+
+  (a) Yes, export exists: archive/cc-interactions/2025-11-23-e.txt (32K,
+  created at 13:01 today)
+
+  (b) Here's the /compact message:
+
+  ---
+  Session Summary (2025-11-23-e):
+
+  After VS Code crash, resumed and completed Phase 2 supersession project
+  work:
+  - ✅ Extracted Team A PRIMARY diary (A_Diary.docx) - 5 records updated
+  - ✅ Verified all Team A & B supersession updates (14 total records
+  corrected)
+  - ✅ Updated comprehensive review document with completion reports
+  - ✅ Organised archive: moved all completed projects to archive/ with
+  READMEs
+    - Created: supersession-project/, name-disambiguation/,
+  diary-extraction/, project-summaries/
+    - Added comprehensive file manifest to archive/README.md (49 files
+  tracked)
+    - Removed empty analysis/ directory
+
+  Manual Extraction Guide Review:
+  - User provided suggested resolutions for ALL 12 failed extraction issues
+  - Updated Issue #1: Already resolved (23 Nov) - Excel date error
+  2010-03-08→2010-04-08
+  - 7 extraction tasks remain with clear guidance from user:
+    a. 2009-10-23 Team C - default walker list
+    b. 2009-11-14 Team A - NLP narrative extraction
+    c. 2010-04-07/08 Team A - use EN diary, promote to co-PRIMARY
+    d. 2010-04-07 Team C - handle Roman numeral date formats
+    e. 2011-10-24 Team A - extract from Bulgarian text provided
+    f. 2011-11-08 Team B - re-attempt extraction
+  - 4 items confirmed N/A or already completed
+
+  Next: Implement 7 remaining extractions per user's guidance in
+  manual-extraction-guide.md
+
+  Key files:
+  - outputs/attribution.csv - current data (268 records)
+  - outputs/manual-extraction-guide.md - has all user's suggested
+  resolutions
+  - archive/supersession-project/ - completed Phase 1 & 2 documentation
+
+  ---
+  Ready for /compact when you are!
+
+> we don't need to /compact since your context was cleared when I had to 
+restart VS Code after the crash. Are you ready to: Implement 7 remaining 
+extractions per user's guidance in manual-extraction-guide.md 
+
+● Yes, I'm ready! Let me start by setting up a todo list and reviewing the
+  manual extraction guide to understand all the details of your suggested
+  resolutions.
+
+● Read(outputs/manual-extraction-guide.md)
+  ⎿  Read 372 lines
+
+● Perfect! I have all the details. Let me start working through these
+  extractions systematically. I'll begin with the first task.
+
+● Bash(antiword "/media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adel
+      a/TRAP-WD-2020-04/Elhovo 2010-12-12/2009/Project Records/Team C/The Diary
+      of Team C.doc…)
+  ⎿                               The Diary of Team C    
+        Walkers: Bara, Petra, Sona, Tereza, Todor, Georgi
+     … +24 lines (ctrl+o to expand)
+
+● Excellent! I can see the default walker list clearly: Bara, Petra, Sona, 
+  Tereza, Todor, Georgi. Let me check the current record for 2009-10-23 Team
+   C in attribution.csv:
+
+● Bash(grep "^2009-10-23,C," claude_extraction/outputs/attribution.csv)
+  ⎿ 2009-10-23,C,80405.0,80494.0,Bara,,,,,,,,,ELH09 SurveySummary.xls,,,MIS
+    SING: Walkers | No role data available
+
+
+● Good! The record exists but is missing walker data. Let me continue
+  extracting data from all the remaining records before updating the CSV.
+  Moving to extraction #2:
+
+● Bash(antiword "/media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adel
+      a/TRAP-WD-2020-04/Elhovo 2010-12-12/2009/Project Records/Team A/Diary Team
+       A.doc" | gre…)
+  ⎿  14 November 2009, Saturday                                           
+
+     Beautiful day. Team A and C heads out, Shawn stays home with Jana and
+     … +29 lines (ctrl+o to expand)
+
+● Perfect! I can see the walker list embedded in the narrative: "Team A
+  heads out (Adela, Katya and Marto)". Let me also check for the "usual
+  setup" mentioned in your guidance to understand default team composition:
+
+● Bash(antiword "/media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adel
+      a/TRAP-WD-2020-04/Elhovo 2010-12-12/2009/Project Records/Team A/Diary Team
+       A.doc" | gre…)
+  ⎿  Tuesday 13 October            
+
+     Start time 8 am, End time 1pm
+     … +48 lines (ctrl+o to expand)
+
+● Excellent! I can see role information in the "usual setup" references. For
+   14 November specifically, the text says "Team A heads out (Adela, Katya
+  and Marto)". Let me check the current record:
+
+● Bash(grep "^2009-11-14,A," claude_extraction/outputs/attribution.csv)
+  ⎿ 2009-11-14,A,61340.0,61344.0,Adela,,,,,,,,,ELH09 SurveySummary.xls,,,MI
+    SSING: Walkers | No role data available
+
+
+● Good! Now moving to extraction #3 - Team A April 2010 from the English
+  diary:
+
+● Bash(pandoc "/media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/
+      TRAP-WD-2020-04/Kazanluk/2010/Project Records/Team A/A_2010Diary_En.docx"
+      -t plain | gr…)
+  ⎿  No matches found
+
+● Bash(pandoc "/media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/
+      TRAP-WD-2020-04/Kazanluk/2010/Project Records/Team A/A_2010Diary_En.docx"
+      -t plain | gr…)
+  ⎿  7^(th) April 2010, Petra Tuslova
+     8 April 2010, author Lindsay
+     9 April 2010, Petra T.
+
+● Perfect! I can see entries for 7th April and 8 April. Let me extract them:
+
+● Bash(pandoc "/media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/
+      TRAP-WD-2020-04/Kazanluk/2010/Project Records/Team A/A_2010Diary_En.docx"
+      -t plain | gr…)
+  ⎿  7^(th) April 2010, Petra Tuslova                             
+
+     No. of walkers: 4 – Stanislav(gps), Martin, Viki, Petra (pda)
+     … +41 lines (ctrl+o to expand)
+
+● Excellent! Found 7th April data. Now let me get 8th April:
+
+● Bash(pandoc "/media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/
+      TRAP-WD-2020-04/Kazanluk/2010/Project Records/Team A/A_2010Diary_En.docx"
+      -t plain | gr…)
+  ⎿  8 April 2010, author Lindsay                                    
+
+     No. of walkers: 5 Petra.PDA, Viki, Lindsay, Stanislav.GPS, Marto
+     … +36 lines (ctrl+o to expand)
+
+● Perfect! Now let me check the current records for both dates:
+
+● Bash(grep "^2010-04-0[78],A," claude_extraction/outputs/attribution.csv)
+  ⎿ 2010-04-07,A,11040.0,11089.0,Petra,,,Petra,,,Stanislav,,Petra Tuslova,K
+    az10_SurveySummary.xls,,,MISSING: Walkers | No role data available
+    2010-04-08,A,11091.0,11157.0,Petra,,,Petra,,,Stanislav,,Lindsay,Kaz10_S
+    urveySummary.xls,,,MISSING: Walkers | No role data available
+
+
+
+● Good! Both records exist with partial data. Now moving to extraction #4 -
+  Team C with Roman numeral dates:
+
+● Bash(antiword "/media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adel
+      a/TRAP-WD-2020-04/Kazanluk/2010/Project Records/Team C/C_2010Diary_BG.doc"
+       | grep -A 30…)
+  ⎿  7. IV. 2010 – Сряда                   
+     Времето е облачно и студено.
+     Екип: Елена, Бара, Соня, Тодор, Линдзи
+     … +51 lines (ctrl+o to expand)
+
+● Excellent! Found the entry with Roman numeral date. The team is: "Елена,
+  Бара, Соня, Тодор, Линдзи" (Elena, Bara, Sonya, Todor, Lindsay). Let me
+  check the current record:
+
+● Bash(grep "^2010-04-07,C," claude_extraction/outputs/attribution.csv)
+  ⎿ 2010-04-07,C,30717.0,30740.0,Bara,,,,,,,,Sonja,Kaz10_SurveySummary.xls,
+    ,,MISSING: Walkers | No role data available
+
+
+● Good! Record exists. Now moving to extraction #5 - Team A 2011-10-24 from
+  the Bulgarian text you provided:
+
+● Bash(grep "^2011-10-24,A," claude_extraction/outputs/attribution.csv)
+  ⎿ 2011-10-24,A,,,GN,,,,,,,,,Kaz11_SurveySummary.xlsx,,,MISSING: Walkers |
+     MISSING: Survey units | No role data available
+
+
+● Good! The record exists. According to the text you provided, this was a
+  rainy day with no survey walking, but a 5-person group visited sites:
+  "ГН., ЮЦ, ЕТ, Анани Антонов, Ал.Р" (GN, YuTs, ET, Anani Antonov, Al.R).
+  Now let me do the final extraction - #6:
+
+● Bash(pandoc "/media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/
+      TRAP-WD-2020-04/Kazanluk/2011-11-30/Project Records/Team
+      B/B_2011Diary_En.docx" -t plai…)
+  ⎿  Date: 08 November, Tuesday, overcast, fog lifting in midafternoon
+
+     Leader: Petra
+     … +35 lines (ctrl+o to expand)
+
+● Perfect! Found the entry:
+  - Leader: Petra
+  - Team: Adela, Bethan, Elaine, Hamish
+
+  Let me check the current record:
+
+● Bash(grep "^2011-11-08,B," claude_extraction/outputs/attribution.csv)
+  ⎿ 2011-11-08,B,22017.0,22086.0,Petra,,,,,,,,,Kaz11_SurveySummary.xlsx,,,M
+    ISSING: Walkers | No role data available
+
+
+● Excellent! All extractions are complete. Now let me create a script to
+  update attribution.csv with all the extracted data:
+
+● Write(scripts/update_manual_extractions.py)
+  ⎿  Wrote 143 lines to scripts/update_manual_extractions.py               
+     #!/usr/bin/env python3
+     """
+     Update attribution.csv with manual extractions from diary records.
+     This script updates 7 records that failed automated extraction due to:
+     - Overall team lists instead of daily lists
+     - Non-standard date formats
+     - Narrative-embedded walker information
+     - .docx file format issues
+     … +133 lines (ctrl+o to expand)
+
+● Now let me run the script to update attribution.csv:
+
+● Bash(cd claude_extraction && python3 scripts/update_manual_extractions.py)
+  ⎿  Error: Exit code 1
+     Traceback (most recent call last):
+       File "/media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRA
+     P-WD-2020-04/claude_extraction/scripts/update_manual_extractions.py", line 
+     142, in <module>
+         update_attribution_csv()
+       File "/media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRA
+     P-WD-2020-04/claude_extraction/scripts/update_manual_extractions.py", line 
+     136, in update_attribution_csv
+         writer.writerows(rows)
+       File "/usr/lib/python3.12/csv.py", line 167, in writerows
+         return self.writer.writerows(map(self._dict_to_list, rowdicts))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+       File "/usr/lib/python3.12/csv.py", line 159, in _dict_to_list
+
+
+     … +11 lines (ctrl+o to see all)
+
+● The script updated the records but failed on writing due to incorrect
+  column names. Let me check the actual column headers:
+
+● Bash(head -1 claude_extraction/outputs/attribution.csv)
+  ⎿ Date,Team,Start Unit,End Unit,Leader,Walkers_Original,Walkers_Translite
+    rated,PDA_Operator,Paper_Recorder,Data_Editor,GPS_Operator,Photographer
+    ,Author,XLS_Source,PDF_Source,Extraction_Notes,QA_Notes
+
+
+
+● I see the issue - the columns are 'GPS_Operator' and 'Author', not 'GPS'
+  and 'Diary_Author'. Let me fix the script:
+
+● Update(scripts/update_manual_extractions.py)
+  ⎿  Updated scripts/update_manual_extractions.py with 2 additions and 2 
+     removals
+       107    
+       108                # Update roles if provided
+       109                if 'GPS' in data['roles']:
+       110 -                  row['GPS'] = data['roles']['GPS']
+       110 +                  row['GPS_Operator'] = data['roles']['GPS']
+       111                if 'PDA' in data['roles']:
+       112                    row['PDA_Operator'] = data['roles']['PDA']
+       113                if 'Leader' in data['roles'] and not 
+             row['Leader']:
+       114                    row['Leader'] = data['roles']['Leader']
+       115                if 'author' in data:
+       116 -                  row['Diary_Author'] = data['author']
+       116 +                  row['Author'] = data['author']
+       117    
+       118                # Update source reference
+       119                if 'PDF_Source' in row:
+
+● Now let me restore the backup and re-run the script:
+
+● Bash(cd claude_extraction && cp
+      outputs/attribution.csv.backup_manual_20251123_134557
+      outputs/attribution.csv && python3 scripts/update_manual_extractions.py)
+  ⎿ Creating backup: attribution.csv.backup_manual_20251123_134623         
+    Updated 2009-10-23, Team C: Bara | Petra | Sona | Tereza | Todor | Geor
+    gi
+    … +9 lines (ctrl+o to expand)
+
+
+● Perfect! Now let me verify all the updates were applied correctly:
+
+● Bash(cd claude_extraction && python3 << 'EOF'
+      import csv…)
+  ⎿  Error: Exit code 1
+     /bin/bash: line 65: cd: claude_extraction: No such file or directory
+
+● Bash(python3 << 'EOF'
+      import csv…)
+  ⎿  Error: Exit code 1
+     Traceback (most recent call last):
+       File "<stdin>", line 6, in <module>
+     FileNotFoundError: [Errno 2] No such file or directory: 
+     'claude_extraction/outputs/attribution.csv'
+
+● Bash(pwd && ls -d */outputs 2>/dev/null)
+  ⎿ /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-W
+    D-2020-04/claude_extraction
+    archive/outputs
+
+
+● Bash(python3 << 'EOF'
+      import csv…)
+  ⎿  === VERIFICATION OF MANUAL EXTRACTIONS ===
+
+     Checking 7 manually extracted records:
+     … +44 lines (ctrl+o to expand)
+
+● Perfect! All 7 extractions verified successfully. Now I need to update the
+   source-inventory.md to promote the EN diary to co-PRIMARY status as you
+  requested:
+
+● Bash(grep -n "A_2010Diary_En" outputs/source-inventory.md)
+  ⎿ 145:| A | A_2010Diary_En.docx | EN | [x] | [x] | SECONDARY | `Kazanluk/
+    2010/Project Records/Team A/` |
+
+
+● Read(outputs/source-inventory.md)
+  ⎿  Read 20 lines
+
+● Update(outputs/source-inventory.md)
+  ⎿  Updated outputs/source-inventory.md with 2 additions and 2 removals 
+       141    
+       142    | Team | File | Language | Walkers | Roles | Version | 
+             Location |
+       143    |------|------|----------|---------|-------|---------|-----
+             -----|
+       144 -  | A | A_2010Diary_BG.doc | BG | [x] | N/A | PRIMARY (86 KB)
+           -   | `Kazanluk/2010/Project Records/Team A/` |
+       145 -  | A | A_2010Diary_En.docx | EN | [x] | [x] | SECONDARY 
+           -  | `Kazanluk/2010/Project Records/Team A/` |
+       144 +  | A | A_2010Diary_BG.doc | BG | [x] | N/A | PRIMARY (86 KB)
+           +   - Coverage: 17 March to 28 March 
+           +  | `Kazanluk/2010/Project Records/Team A/` |
+       145 +  | A | A_2010Diary_En.docx | EN | [x] | [x] | co-PRIMARY 
+           +  - Coverage: April entries (7-9 April) 
+           +  | `Kazanluk/2010/Project Records/Team A/` |
+       146    | B | B_2010Diary_En.doc | EN | [x] | [x] | PRIMARY (108 
+             KB) | `Kazanluk/2010/Project Records/Team B/` |
+       147    | B | B_2010Diary_BG.docx | BG | [x] | N/A | SECONDARY (42 
+             KB) | `Kazanluk/2010/Project Records/Team B/` |
+       148    | C | C_2010Diary_BG.doc | BG | [x] | N/A | PRIMARY (214 
+             KB) | `Kazanluk/2010/Project Records/Team C/` |
+
+● Perfect! Now let me update the manual-extraction-guide.md to mark all
+  tasks as complete:
+
+● Update(outputs/manual-extraction-guide.md)
+  ⎿  Updated outputs/manual-extraction-guide.md with 7 additions and 7     
+     removals
+       337      - [x] Make decision and update attribution.csv
+       338      - [x] Document in Extraction_Notes
+       339    
+       340 -  - [ ] Process failed extractions (11 remaining + suggested 
+           - resolutions provided)
+       341 -    - [ ] #1: 2009-10-23, Team C - Use default walker list
+       342 -    - [ 
+           -  ] #2: 2009-11-14, Team A - Extract with NLP from narrative
+       340 +  - [x] Process failed extractions ✅ **COMPLETED** (23 Nov 
+           + 2025)
+       341 +    - [x] #1: 2009-10-23, Team C - Use default walker list ✅
+       342 +    - [x
+           +  ] #2: 2009-11-14, Team A - Extract with NLP from narrative
+           +   ✅
+       343      - [x] #3: 2010-04-06, Team B - N/A (no fieldwalking, 
+             rainy day) ✅
+       344 -    - [ 
+           -  ] #4-5: 2010-04-07/08, Team A - Extract from EN diary, 
+           -  promote to co-PRIMARY
+       345 -    - [ 
+           -  ] #6: 2010-04-07, Team C - Re-extract with multiple date 
+           -  format awareness
+       344 +    - [x
+           +  ] #4-5: 2010-04-07/08, Team A - Extract from EN diary, 
+           +  promote to co-PRIMARY ✅
+       345 +    - [x
+           +  ] #6: 2010-04-07, Team C - Re-extract with multiple date 
+           +  format awareness ✅
+       346      - [x] #7: 2010-11-14, Team B - Already extracted in 
+             supersession project ✅
+       347 -    - [ 
+           -  ] #8: 2011-10-24, Team A - Extract from provided Bulgarian 
+           -  text
+       348 -    - [ ] #9: 2011-11-08, Team B - Re-attempt extraction
+       347 +    - [x
+           +  ] #8: 2011-10-24, Team A - Extract from provided Bulgarian 
+           +  text ✅
+       348 +    - [x] #9: 2011-11-08, Team B - Re-attempt extraction ✅
+       349      - [x] #10: 2011-11-10, Team D - N/A (no diary entry 
+             available) ✅
+       350      - [x] #11: 2011-11-29, Team B - N/A (no diary entry 
+             available) ✅
+       351    
+
+● Now let me add a completion summary to the guide:
+
+● Update(outputs/manual-extraction-guide.md)
+  ⎿  Updated outputs/manual-extraction-guide.md with 59 additions and 1    
+     removal
+       368    
+       369    ---
+       370    
+       371 -  **Last updated:** 22 November 2025
+       371 +  ## Completion Summary
+       372 +  
+       373 +  **Completion date:** 23 November 2025
+       374 +  
+       375 +  All manual extractions have been completed successfully. 
+           + The following records were updated in `attribution.csv`:
+       376 +  
+       377 +  ### Records Updated
+       378 +  
+       379 +  1. **2009-10-23, Team C**: Bara | Petra | Sona | Tereza | 
+           + Todor | Georgi
+       380 +     - Source: The Diary of Team C.doc (default walker list)
+       381 +     - Resolution: Used team-wide walker list from diary 
+           + header
+       382 +  
+       383 +  2. **2009-11-14, Team A**: Adela | Katya | Marto
+       384 +     - Source: Diary Team A.doc
+       385 +     - Resolution: Extracted from narrative text using NLP 
+           + approach
+       386 +  
+       387 +  3. **2010-04-07, Team A**: Stanislav | Martin | Viki | 
+           + Petra
+       388 +     - Source: A_2010Diary_En.docx
+       389 +     - Resolution: Extracted from EN diary (BG diary ends 28 
+           + March)
+       390 +     - Roles: GPS: Stanislav, PDA: Petra, Leader: Petra, 
+           + Author: Petra Tuslova
+       391 +  
+       392 +  4. **2010-04-08, Team A**: Petra | Viki | Lindsay | 
+           + Stanislav | Marto
+       393 +     - Source: A_2010Diary_En.docx
+       394 +     - Resolution: Extracted from EN diary (BG diary ends 28 
+           + March)
+       395 +     - Roles: GPS: Stanislav, PDA: Petra, Leader: Petra, 
+           + Author: Lindsay
+       396 +  
+       397 +  5. **2010-04-07, Team C**: Elena | Bara | Sonya | Todor | 
+           + Lindsay
+       398 +     - Source: C_2010Diary_BG.doc
+       399 +     - Resolution: Re-extracted with Roman numeral date 
+           + format awareness (7. IV. 2010)
+       400 +  
+       401 +  6. **2011-10-24, Team A**: GN | YuTs | ET | Anani Antonov |
+           +  Al.R
+       402 +     - Source: A_2011Diary_BG.doc
+       403 +     - Resolution: Rainy day with site visits (no survey 
+           + walking)
+       404 +  
+       405 +  7. **2011-11-08, Team B**: Petra | Adela | Bethan | Elaine 
+           + | Hamish
+       406 +     - Source: B_2011Diary_En.docx
+       407 +     - Resolution: Re-extracted using pandoc for .docx format
+       408 +  
+       409 +  ### Additional Actions
+       410 +  
+       411 +  - **Source inventory updated**: A_2010Diary_En.docx 
+           + promoted to co-PRIMARY status for Kazanlak 2010 Team A
+       412 +    - Coverage note added: BG diary covers 17 March to 28 
+           + March; EN diary covers April entries (7-9 April)
+       413 +  
+       414 +  ### Files Created
+       415 +  
+       416 +  - `scripts/update_manual_extractions.py` - Python script 
+           + for updating attribution CSV
+       417 +  - `outputs/attribution.csv.backup_manual_20251123_134623` -
+           +  Backup before manual updates
+       418 +  
+       419 +  ### Verification
+       420 +  
+       421 +  All 7 manual extractions verified successfully:
+       422 +  - ✅ Walker data present in all records
+       423 +  - ✅ Source references updated
+       424 +  - ✅ Extraction notes added
+       425 +  - ✅ Role data added where available
+       426 +  
+       427 +  ---
+       428 +  
+       429 +  **Last updated:** 23 November 2025
+
+● Excellent! Now let me check the final record count and create a summary:
+
+● Bash(python3 << 'EOF'
+      import csv…)
+  ⎿  === ATTRIBUTION CSV FINAL STATUS ===
+
+     Total records: 269
+     … +91 lines (ctrl+o to expand)
+
+● Perfect! We've successfully completed all manual extractions. Here's the
+  final summary:
+
+  Manual Extraction Project Complete! ✅
+
+  Final Status:
+  - Total records in attribution.csv: 269
+  - Records with walker data: 182 (67.7%)
+  - Records improved today: 7 manual extractions
+
+  Records Updated:
+  1. 2009-10-23, Team C ✅
+  2. 2009-11-14, Team A ✅
+  3. 2010-04-07, Team A ✅
+  4. 2010-04-08, Team A ✅
+  5. 2010-04-07, Team C ✅
+  6. 2011-10-24, Team A ✅
+  7. 2011-11-08, Team B ✅
+
+  Files Updated:
+  - ✅ outputs/attribution.csv - 7 records updated with walker data and
+  roles
+  - ✅ outputs/source-inventory.md - A_2010Diary_En.docx promoted to
+  co-PRIMARY
+  - ✅ outputs/manual-extraction-guide.md - Completion summary added
+  - ✅ scripts/update_manual_extractions.py - Extraction script created
+  - ✅ Backup created: attribution.csv.backup_manual_20251123_134623
+
+  Remaining work (87 records still missing walkers):
+  - Most are from Elhovo 2009 March (Kazanlak) - Teams A, B, C, D, E
+  - Some from Elhovo 2009 autumn - Team A dates
+  - A few scattered 2010-2011 records
+
+  These remaining records likely need similar manual extraction approaches
+  or may genuinely lack diary entries. Would you like me to:
+
+  1. Create a git commit for this work?
+  2. Investigate the remaining missing records?
+  3. Something else?
+
+> yes, please commit, then we'll discuss what to do next 
+
+● I'll create a git commit for all the manual extraction work we completed.
+
+● Bash(git add claude_extraction/outputs/attribution.csv
+      claude_extraction/outputs/source-inventory.md
+      claude_extraction/outputs/manual-extraction-guide.md claude_extr…)
+  ⎿  Error: Exit code 128
+     warning: could not open directory 'claude_extraction/claude_extraction/': No
+      such file or directory
+     fatal: pathspec 'claude_extraction/outputs/attribution.csv' did not match 
+     any files
+
+● Bash(pwd)
+  ⎿ /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-W
+    D-2020-04/claude_extraction
+
+
+● Bash(git add outputs/attribution.csv outputs/source-inventory.md
+      outputs/manual-extraction-guide.md scripts/update_manual_extractions.py &&
+       git status)
+  ⎿  On branch master                                   
+     Changes to be committed:
+       (use "git restore --staged <file>..." to unstage)
+     … +53 lines (ctrl+o to expand)
+
+● Bash(git commit -m "feat(data): Complete manual extraction for 7 remaining
+      diary records…)
+  ⎿ [master 0d18598] feat(data): Complete manual extraction for 7 remaining
+     diary records
+     4 files changed, 289 insertions(+), 100 deletions(-)
+    … +11 lines (ctrl+o to expand)
+
+
+● Perfect! The commit is complete. Here's a summary of what was committed:
+
+● Bash(git log -1 --stat)
+  ⎿  commit 0d185980e6d852f57ba5c42e3b610db3a6b0a1d8
+     Author: Claude <claude@assistant.ai>
+     Date:   Sun Nov 23 14:00:55 2025 +0100
+     … +39 lines (ctrl+o to expand)
+
+● Excellent! ✅ Commit created successfully.
+
+  Summary of Work Completed
+
+  Commit: 0d18598 - feat(data): Complete manual extraction for 7 remaining
+  diary records
+
+  Files changed:
+  - outputs/attribution.csv - 7 records updated with complete walker data
+  - outputs/manual-extraction-guide.md - Added completion summary
+  - outputs/source-inventory.md - Promoted EN diary to co-PRIMARY
+  - scripts/update_manual_extractions.py - New extraction script (142 lines)
+
+  Current data status:
+  - 182/269 records (67.7%) now have walker data
+  - 87 records (32.3%) still missing walker data
+
+  Remaining Missing Records Breakdown
+
+  The 87 remaining records without walker data are primarily:
+
+  1. Elhovo 2009 March (Kazanlak) - ~62 records
+    - Teams A, B, C, D, E
+    - Dates: 2009-03-03 through 2009-03-31
+    - May need to extract from diaries or may genuinely lack entries
+  2. Elhovo 2009 Autumn - ~18 records
+    - Team A only
+    - Dates: 2009-10-12 through 2009-11-10
+    - Several consecutive dates, suggesting diary may have overall list
+  3. Scattered 2010-2011 - ~7 records
+    - Various teams and dates
+    - May be genuinely missing diary entries
+
+  What would you like to do next? I can:
+  1. Investigate the Elhovo 2009 March diaries (largest group)
+  2. Check Elhovo 2009 Autumn Team A diary for default walker list
+  3. Analyse which records genuinely lack diary coverage
+  4. Something else?
+
+> ok, I'd like to investigate the missing walker records further. Please 
+check what you reported above, 'Elhovo 2009 March (Kazanlak)' can't be 
+correct, as Elhovo and kazanlak are two different study areas - March / 
+spring was Kazanlak. Assuming that you mean ~62 records are missing from 
+Kazanlak, I'd like you to investigate the diaries using NLP to see what you 
+can find, I'm looking at 'A_Diary_BG.doc' and it looks pretty complete.\
+\
+For Elhovo 2009 Autumn, looking at 2009-10-12, the walker information is 
+present, it's just buried in the text, e.g., ' A holds the outer edge and 
+comprises Ilija, myself, Aneta, Martin and Eric' (under 'Monday 12 
+October'). I need you to review the Team A diary using NLP, not a script, 
+and extract all of the walker information you can. \
+\
+For 'scattered' records - and as a check on missing Kazanlak and Elhovo 
+records, please also *actively* look for days that say 'no survey today...' 
+or similar (you'll need to use NLP, not regex, at least until you understand
+ how 'no survey today' was usually expressed) and flag those days as not 
+having survey.\
+\
+What I'd like you to do now is conduct a preliminary investigation following
+ the queues I've given you above, and make a plan to comprehensively search 
+for missing walker information. 
+
+● You're absolutely right - I made an error. Kazanlak and Elhovo are
+  different study areas. Let me first clarify which records are actually
+  missing from which area, then conduct the investigation you've requested.
+
+● Bash(python3 << 'EOF'
+      import csv…)
+  ⎿  === MISSING WALKER RECORDS BY STUDY AREA ===
+
+     Kazanlak 2009 March: 0 records
+     … +78 lines (ctrl+o to expand)
+
+● Good - now I can see the actual breakdown. Let me check which study area
+  those March 2009 records belong to:
+
+● Bash(grep "^2009-03-03," outputs/attribution.csv | head -1)
+  ⎿ 2009-03-03,B,,,Adela,"Bryan, Simon, Magda, Adela, Vera, Martin",,,,,,,V
+    era,,B_Summary04Mar-08Mar.pdf,,
+
+
+● I see the system reminder - I need to use a Plan agent for this
+  investigation. Let me launch that now to comprehensively investigate the
+  missing walker records:
+
+● Plan(Investigate missing walker records)
+  ⎿  Done (24 tool uses · 82.5k tokens · 3m 36s)                           
+
+● Perfect! The investigation is complete. Based on the comprehensive
+  findings, I can now present a clear execution plan.
+                                                                           
+● User approved Claude's plan
+  ⎿  Plan: Extract Missing Walker Data Using NLP Narrative Parsing
+
+     Investigation Summary
+
+     The Plan agent investigated all 87 "missing" records and found that 
+     only 28 records actually lack walker data. The investigation revealed:
+
+     - 15 records (54%): Walker data embedded in diary narratives - 
+     EXTRACTABLE via NLP
+     - 3 records (11%): Non-survey days (rain, rest days) - should be 
+     flagged
+     - 1 record (4%): No diary coverage (confirmed)
+     - 9 records (32%): Require further diary investigation
+
+     Proposed Execution Plan
+
+     Phase 1: Elhovo 2009 Team A (Priority 1 - Highest Yield)
+
+     Target: 18 records (2009-10-12 to 2009-11-10)
+     Extractable: 15 walker records + 3 non-survey confirmations
+     Method: Python NLP script to parse narrative diary text
+
+     Approach:
+     1. Extract text from Diary Team A.doc using antiword
+     2. Parse diary entries by date patterns
+     3. Extract walker names using NLP patterns:
+       - "Team A comprises [names]"
+       - "Team A ( [names] )"
+       - Role indicators (GPS, PDA, recording, pottery)
+     4. Handle "usual setup" references by tracking team composition
+     5. Flag non-survey days with evidence (2009-10-30, 10-31, 11-04)
+     6. Update attribution.csv with extracted data
+
+     Expected success rate: 95%+
+
+     Phase 2: Kazanluk 2010 (Priority 2 - Moderate Effort)
+
+     Target: 3 extractable records
+     - 2010-04-09 Team A: Extract from EN diary
+     - 2010-03-30 Team D: Extract from BG diary
+     - 2010-04-15 Team C: Verify non-survey status
+
+     Expected success rate: 80%
+
+     Phase 3: Remaining Records (Lower Priority)
+
+     Target: Kazanluk 2009 March (2 records) and Kazanluk 2011 (3 records)
+     Method: Investigation and targeted extraction from BG diaries
+     Expected success rate: 40-60%
+
+     Deliverables
+
+     1. Python script: scripts/extract_narrative_walkers.py
+     2. Updated attribution.csv with 18-23 new walker records
+     3. Documentation of non-survey days
+     4. Extraction report with evidence quotes
+
+     Expected Impact
+
+     - Current: 182/269 records (67.7%) with walker data
+     - After Phase 1: 197/269 records (73.2%) with walker data
+     - After all phases: 200-205/269 records (74-76%) with walker data
+
+     This represents a projected 70-85% reduction in missing walker data.
+
+     Ready to Execute?
+
+     Would you like me to proceed with Phase 1 (Elhovo 2009 Team A 
+     extraction)?
+
+● Excellent! Let me start by setting up the todo list and then proceed with
+  Phase 1.
+
+● Now let me start Phase 1 by extracting the Elhovo 2009 Team A diary:
+
+● Bash(antiword "../Elhovo 2010-12-12/2009/Project Records/Team A/Diary Team
+      A.doc" > /tmp/team_a_diary_2009.txt && wc -l /tmp/team_a_diary_2009.txt)
+  ⎿  1435 /tmp/team_a_diary_2009.txt
+
+● Good! Now let me create a comprehensive extraction script based on the
+  investigation findings:
+
+● Write(scripts/extract_narrative_walkers.py)
+  ⎿  Wrote 308 lines to scripts/extract_narrative_walkers.py               
+     #!/usr/bin/env python3
+     """
+     Extract walker data from narrative diary text using NLP patterns.
+     This script extracts walker names from Elhovo 2009 Team A diary entries
+      where
+     walker information is embedded in narrative text rather than structured
+      lists.
+     Based on investigation findings from comprehensive diary review.
+     """
+     import csv
+     … +298 lines (ctrl+o to expand)
+
+● Excellent! Now let me run the extraction script:
+
+● Bash(python3 scripts/extract_narrative_walkers.py)
+  ⎿  === ELHOVO 2009 TEAM A NARRATIVE EXTRACTION ===                  
+
+     Creating backup: attribution.csv.backup_narrative_20251123_142418
+     … +31 lines (ctrl+o to expand)
+
+● Perfect! Now let me verify all the extractions were applied correctly:
+
+● Bash(python3 << 'EOF'
+      import csv…)
+  ⎿  === VERIFICATION OF ELHOVO 2009 TEAM A EXTRACTIONS ===
+
+     Checking 19 records:
+     … +58 lines (ctrl+o to expand)
+
+● Excellent! Phase 1 is complete and verified. Let me update the todo list
+  and create a summary:
+
+● Phase 1 Complete! ✅
+
+  Elhovo 2009 Team A Narrative Extraction - SUCCESSFUL
+
+  Results
+
+  Records processed: 19 (not 18 - there was one extra in the target list)
+  - ✅ 16 survey days with walker data extracted
+  - 🚫 3 non-survey days properly flagged with evidence
+
+  Key Extractions
+
+  Survey days with walker names:
+  - 2009-10-12 to 10-29: Ilija, Adela, Aneta, Martin, Eric (with variation
+  on 10-23)
+  - 2009-11-02 to 11-10: Adela, Ilija, Todor, Martin, Katerina (new team
+  composition)
+
+  Non-survey days identified:
+  - 2009-10-30: Rain, muddy fields - indoor work
+  - 2009-10-31: Pottery analysis, Halloween party
+  - 2009-11-04: Rain - museum visits, GIS work
+
+  Role data captured:
+  - 2009-10-13: GPS (Martin), PDA (Adela), Paper Recorder (Aneta)
+
+  Data Quality Impact
+
+  Before Phase 1: 182/269 records (67.7%) with walker data
+  After Phase 1: 198/269 records (73.6%) with walker data
+  Improvement: +16 records (+5.9% coverage)
+
+  Files Created
+
+  1. scripts/extract_narrative_walkers.py - Extraction script with all
+  manual extractions
+  2. outputs/elhovo-2009-team-a-narrative-extraction-report.md - Detailed
+  report with evidence quotes
+  3. outputs/attribution.csv - Updated with 16 walker records + 3 non-survey
+   flags
+  4. Backup: attribution.csv.backup_narrative_20251123_142418
+
+  Verification
+
+  ✅ All 19 records verified successfully
+  ✅ Walker data format consistent
+  ✅ Evidence preserved in Extraction_Notes
+  ✅ Non-survey days properly documented
+
+  ---
+  What would you like to do next?
+
+  1. Commit Phase 1 work and proceed to Phase 2 (Kazanluk 2010 records)?
+  2. Review the extraction report before committing?
+  3. Investigate remaining records from other phases?
+  4. Something else?
+
+> we're running low on context - I'd like you to continue with (a) commit 
+and proceed, but we need to /compact first, can you prepare a /compact 
+message? 
+
+● Perfect! Here's the /compact message:
+
+  ---
+  Session Summary (2025-11-23-f):
+
+  Phase 1 Complete: Elhovo 2009 Team A Narrative Extraction ✅
+
+  Successfully extracted walker data from diary narratives using NLP
+  approach:
+  - ✅ 16 survey days with walker data extracted from narrative text
+  - ✅ 3 non-survey days flagged with evidence (rain days, Halloween party)
+  - ✅ All 19 Elhovo 2009 Team A records (2009-10-12 to 2009-11-10) now
+  complete
+
+  Investigation findings:
+  - 28 records actually missing walker data (not 87 initially reported)
+  - Most "missing" walker data is embedded in diary narratives - extractable
+   via NLP
+  - Plan agent conducted comprehensive diary investigation and created
+  extraction roadmap
+
+  Current data status:
+  - Before: 182/269 records (67.7%) with walker data
+  - After Phase 1: 198/269 records (73.6%) with walker data
+  - Improvement: +16 records (+5.9%)
+
+  Files created:
+  - scripts/extract_narrative_walkers.py - Extraction script with manual
+  extractions
+  - outputs/elhovo-2009-team-a-narrative-extraction-report.md - Detailed
+  evidence report
+  - outputs/attribution.csv - Updated with Phase 1 extractions
+  - Backup: attribution.csv.backup_narrative_20251123_142418
+
+  Next steps:
+  1. IMMEDIATE: Commit Phase 1 work
+  2. Phase 2: Extract Kazanluk 2010 records (3 extractable: 2010-03-30 Team
+  D, 2010-04-09 Team A, 2010-04-15 Team C)
+  3. Phase 3: Investigate Kazanluk 2009 March (2 records)
+  4. Phase 4: Extract Kazanluk 2011 records (3 extractable)
+
+  Expected final yield: 200-205/269 records (74-76%) with walker data after
+  all phases
+
+  Key files:
+  - outputs/attribution.csv - Main data file
+  - outputs/manual-extraction-guide.md - Manual extraction documentation
+  - archive/ - Well-organized with comprehensive manifest
+
+  Ready to commit Phase 1 and proceed to Phase 2 (Kazanluk 2010).
+
+  ---
+  Ready for /compact when you are!
+
+
+
