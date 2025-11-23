@@ -45,8 +45,10 @@ Narrative records with walker names, roles (PDA, GPS, Forms), and daily activiti
 | Team | File | Language | Walkers | Roles | Version | Location |
 |------|------|----------|---------|-------|---------|----------|
 | A | A_Diary.docx | EN | [ ] | [ ] | PRIMARY | `Elhovo 2010-12-12/2010/Project Records/Team A/` |
-| B | Team B Diary.docx | EN | [x] | [x] | PRIMARY | `Elhovo 2010-12-12/2010/Project Records/Team B/` |
-| B | Team B Diary new.docx | EN | [ ] | [ ] | SECONDARY | `Elhovo 2010-12-12/2010/Project Records/Team B/` |
+| B | Team B Diary new.docx | EN | [ ] | [ ] | PRIMARY (26 KB) | `Elhovo 2010-12-12/2010/Project Records/Team B/` |
+| B | Team B Diary.docx | EN | [x] | [x] | SECONDARY (25 KB) | `Elhovo 2010-12-12/2010/Project Records/Team B/` |
+| B | Team B Journal.docx | EN | [ ] | [ ] | SECONDARY (25 KB) | `Elhovo 2010-12-12/2010/Project Records/Team B/` |
+| B | Team B Journal new.docx | EN | [ ] | [ ] | SECONDARY (25 KB) | `Elhovo 2010-12-12/2010/Project Records/Team B/` |
 | - | Diary_Adela2010Fall.docx | EN | [ ] | [ ] | SUPPLEMENTAL | `Elhovo 2010-12-12/2010/Project Records/` |
 | GC | Elh10_RSDiary_Bara_RS.docx | EN | [ ] | [ ] | - | `Elhovo 2010-12-12/2010/Project Records/GC-RS/` |
 | GC | Elh10_RSDiary_Petra.docx | EN | [ ] | [ ] | - | `Elhovo 2010-12-12/2010/Project Records/GC-RS/` |
@@ -248,6 +250,7 @@ All seasons have SurveySummary files. ✓
 - Bulgarian text requires transliteration for the Walkers_Transliterated column
 - PDF quality varies significantly; diary sources are more reliable
 - `Diary March 09.doc` (Kazanlak 2009) is a general expedition diary covering 28 Feb - 19 March 2009, written in narrative style. Contains project-wide activities, training, and daily life but not structured team walker lists. Located in `Kazanluk/2009/` (unusual location - not in Project Records subfolder).
+- **Elhovo 2010 Team B versions:** Four diary files exist for Team B 2010. File comparison analysis (23 November 2025) determined that "Team B Diary new.docx" (26 KB, March 2011) is PRIMARY as it contains critical post-season data quality corrections including: corrected object numbers, annotations flagging data errors (e.g., "no such artefact brought to base"), and added missing object records. The December 2010 versions represent the original field recordings. "Diary" vs "Journal" naming is meaningless - these are duplicate files with different names. Initial data extraction was performed from "Team B Diary.docx" (SECONDARY); future work should use the PRIMARY version.
 
 ---
 
