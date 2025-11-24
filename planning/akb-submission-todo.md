@@ -1,15 +1,15 @@
 # AKB Submission To-Do List
 
 **Purpose:** Final preparation of attribution.csv for Archaeological Knowledge Base submission
-**Status:** Not started - awaiting execution
+**Status:** In progress - Task 1 completed
 **Priority:** High
-**Estimated completion time:** TBD
+**Last updated:** 2025-11-24
 
 ---
 
-## 1. Fill in Missing Survey Unit Numbers
+## 1. Fill in Missing Survey Unit Numbers ✓
 
-**Task:** Extract and verify survey unit numbers for 18 records flagged with "MISSING: Survey units"
+**Task:** Extract and verify survey unit numbers for 83 records flagged with "MISSING: Survey units"
 
 **Approach:**
 - Check field forms (if available and legible)
@@ -17,9 +17,25 @@
 - Verify unit sequences for gaps or overlaps
 - Check project summary PDFs for unit listings
 
-**Records affected:** 18 (mostly from 2009-2010 seasons)
+**Records affected:** 83 (2009-2011 seasons)
 
-**Status:** ⏸️ Pending
+**Status:** ✓ Completed 2025-11-24
+
+**Results:**
+- Successfully extracted: 54/83 records (65.1%)
+- Fully explained: 28 records (33.7%) - alternative survey methods, weather cancellations, non-survey days
+- Pending investigation: 1 record (1.2%) - six-digit to five-digit unit renumbering mapping
+- Final coverage: 239/268 (89.18%, up from 69.0%)
+
+**Outputs:**
+- `outputs/attribution.csv` updated with 54 extracted survey units
+- `outputs/extraction-report.md` comprehensive extraction documentation
+- `outputs/task-completion-final-summary.md` task completion summary
+- `outputs/survey-unit-coverage-report.txt` coverage verification
+
+**Remaining gaps fully documented:**
+- 28 records explained with alternative survey methods, weather cancellations, or non-survey activities
+- 1 record pending renumbering investigation (2009-03-12 Team C: six-digit to five-digit unit mapping)
 
 ---
 

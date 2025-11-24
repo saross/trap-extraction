@@ -5,9 +5,9 @@
 
 Extraction and curation of field walker attribution data from the Tundzha Regional Archaeological Project (TRAP) survey records covering the 2009, 2010, and 2011 Kazanluk field seasons.
 
-**Project Status:** ✅ **COMPLETE** - 100% walker data coverage achieved (268/268 records)
+**Project Status:** ✅ **COMPLETE** - 100% walker data coverage achieved (268/268 records), 89.18% survey unit coverage (239/268 records)
 
-**Completion Date:** 23 November 2025
+**Completion Date:** 23 November 2025 (walker data), 24 November 2025 (survey units)
 
 **GitHub Repository:** https://github.com/saross/trap-extraction
 
@@ -76,7 +76,7 @@ Extraction methods:
 
 ### Known Limitations
 1. **Role data incomplete:** PDA operator, paper recorder, and other role fields have <50% coverage due to limited source documentation
-2. **Survey units incomplete:** 18 records (6.7%) missing survey unit numbers (not present in source data)
+2. **Survey units incomplete:** 29 records (10.82%) without survey unit numbers: 28 records explained (alternative survey methodologies, weather cancellations, non-survey days), 1 record pending renumbering investigation (six-digit to five-digit unit conversion)
 3. **Pre-FAIR project:** TRAP predates FAIR principles; this extraction applies retrospective data curation
 
 See [DATA-DICTIONARY.md](DATA-DICTIONARY.md) for complete data model documentation.
