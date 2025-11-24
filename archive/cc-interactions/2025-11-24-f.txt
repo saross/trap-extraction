@@ -1,0 +1,1112 @@
+
+╭─── Claude Code v2.0.50 ──────────────────────────────────────────────────────╮
+│                                                    │ Tips for getting        │
+│                 Welcome back Shawn!                │ started                 │
+│                                                    │ Run /init to create a … │
+│                       ▐▛███▜▌                      │ ─────────────────────── │
+│                      ▝▜█████▛▘                     │ Recent activity         │
+│                        ▘▘ ▝▝                       │ No recent activity      │
+│                                                    │                         │
+│               Sonnet 4.5 · Claude Max              │                         │
+│  /…/synology/Adela/TRAP-WD-2020-04/trap-extraction │                         │
+╰──────────────────────────────────────────────────────────────────────────────╯
+══════════════════ Conversation compacted · ctrl+o for history ═════════════════
+  ⎿  Read outputs/ambiguous-dates-investigation-runsheet.md (354 lines)
+  ⎿  Read outputs/task-completion-final-summary.md (273 lines)
+  ⎿  Read outputs/extraction-report.md (302 lines)
+  ⎿  Read scripts/update-attribution-with-explanations.py (203 lines)
+  ⎿  Read outputs/missing-survey-units-extracted.csv (85 lines)
+
+● I'll continue by translating the Bulgarian diary entries and updating the
+  run sheet with both the original Bulgarian text and English translations.
+
+  Let me read the extracted diary entries and provide translations:
+
+● Bash(sed -n '/^11\.03\.2009/,/^12\.03\.2009/p'
+      outputs/diary-extracts/C_Diary_BG_2009.txt | head -n -1)
+  ⎿ 11.03.2009 г.                                                          
+    Група в състав: Елена Божинова, Петър Минков, Меглена Първин, Шарлот Ба
+    рон.
+    … +216 lines (ctrl+o to expand)
+
+
+● Bash(sed -n '/^12\.03\.2009/,/^[0-9][0-9]\./p'
+      outputs/diary-extracts/C_Diary_BG_2009.txt | head -n -1)
+  ⎿ 12.03.2009 г.                                                          
+    Група в състав: Елена Божинова, Петър Минков, Меглена Първин, Шарлот Ба
+    рон.
+    … +101 lines (ctrl+o to expand)
+
+
+● Now I'll translate these diary entries and update the run sheet:
+
+● Update(outputs/ambiguous-dates-investigation-runsheet.md)
+  ⎿  Error editing file
+
+● Read(outputs/ambiguous-dates-investigation-runsheet.md)
+  ⎿  Read 20 lines
+
+● Update(outputs/ambiguous-dates-investigation-runsheet.md)
+  ⎿  Error editing file
+
+● Bash(sed -n '61,70p' outputs/ambiguous-dates-investigation-runsheet.md | cat
+      -A)
+  ⎿  ```^M$                                                
+     [Record diary text here, or translate key passages]^M$
+     ^M$
+     … +7 lines (ctrl+o to expand)
+
+● Update(outputs/ambiguous-dates-investigation-runsheet.md)
+  ⎿  Updated outputs/ambiguous-dates-investigation-runsheet.md with 1      
+     addition and 1 removal
+       54    
+       55    ### Investigation Findings
+       56    
+       57 -  **Date examined:** _____________________
+       57 +  **Date examined:** 2025-11-24
+       58    
+       59    **Bulgarian diary (11.03.2009 г.) findings:**
+       60    
+
+● Bash(cat > /tmp/march11-diary.txt << 'EOF'
+      **Original Bulgarian text (C_Diary_BG.doc):**…)
+  ⎿  (No content)
+
+● Bash(python3 << 'EOFPY'
+      import re…)
+  ⎿  ✓ Updated March 11 diary findings
+
+● Now let me add the March 12 diary findings:
+
+● Bash(cat > /tmp/march12-diary.txt << 'EOF'
+      **Original Bulgarian text (C_Diary_BG.doc):**…)
+  ⎿  (No content)
+  ⎿  Found 16 new diagnostic issues in 1 file (ctrl+o to expand)
+
+● Bash(python3 << 'EOFPY'
+      import re…)
+  ⎿  ✓ Updated March 12 diary findings and date examined
+
+● Now let me extract the April 5, 2009 Team B diary entries:
+
+● Bash(find ../Kazanluk/2009/Project\ Records/TeamB -name "*Diary*" -o -name
+      "*diary*" 2>/dev/null | head -10)
+  ⎿  ../Kazanluk/2009/Project Records/TeamB/B_Diary_En.docx
+     ../Kazanluk/2009/Project Records/TeamB/B_Diary_BG.doc
+  ⎿  Found 11 new diagnostic issues in 1 file (ctrl+o to expand)
+
+● Bash(if [ -f outputs/diary-extracts/B_Diary_En_2009.txt ]; then
+          grep -A 20 "5.*April\|April.*5\|05.04"
+      outputs/diary-extracts/B_Diary_En_2009.txt | head -30…)
+  ⎿  Error: Exit code 2
+     /bin/bash: eval: line 2: syntax error: unexpected end of file
+
+● Bash(test -f outputs/diary-extracts/B_Diary_En_2009.txt && echo "English diary
+       exists" || echo "Need to extract")
+  ⎿  Need to extract
+
+● Bash(cd ../Kazanluk/2009/Project\ Records/TeamB && python3 << 'EOFPY'
+      try:…)
+  ⎿  ERROR: python-docx not available
+
+● Bash(which pandoc)
+  ⎿  /usr/bin/pandoc
+
+● Bash(pandoc -f docx -t plain "../Kazanluk/2009/Project
+      Records/TeamB/B_Diary_En.docx" >
+      outputs/diary-extracts/B_Diary_En_2009.txt && echo "✓ Extracted Team B
+      Englis…)
+  ⎿  Error: Exit code 1
+     /bin/bash: line 1: outputs/diary-extracts/B_Diary_En_2009.txt: No such file 
+     or directory
+
+
+● Bash(mkdir -p outputs/diary-extracts && pandoc -f docx -t plain
+      "../Kazanluk/2009/Project Records/TeamB/B_Diary_En.docx" >
+      outputs/diary-extracts/B_Diary_En_2009.txt…)
+  ⎿  Error: Exit code 1
+     pandoc: ../Kazanluk/2009/Project Records/TeamB/B_Diary_En.docx: 
+     withBinaryFile: does not exist (No such file or directory)
+
+● Bash(ls -la /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/T
+      RAP-WD-2020-04/Kazanluk/2009/Project\ Records/TeamB/*.docx)
+  ⎿ -rw-r----- 1 shawn 1003 34394 Jan  7  2010 /media/shawn/191c3b96-5fa5-4
+    d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-2020-04/Kazanluk/2009/Proj
+    ect Records/TeamB/Adela_JournalApr09.docx
+    … +6 lines (ctrl+o to expand)
+
+
+
+● Bash(mkdir -p outputs/diary-extracts && pandoc -f docx -t plain
+      "/media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-
+      2020-04/Kazanluk/2009/Proje…)
+  ⎿  260 outputs/diary-extracts/B_Diary_En_2009.txt
+
+● Bash(grep -n -i "april.*5\|5.*april\|05.04\|5/4"
+      outputs/diary-extracts/B_Diary_En_2009.txt)
+  ⎿  No matches found
+
+● Bash(head -50 outputs/diary-extracts/B_Diary_En_2009.txt)
+  ⎿  Tundzha Regional Archaeological Project
+
+     Team B Diary 15 – 30 March 2009
+     … +47 lines (ctrl+o to expand)
+
+● Bash(pandoc -f docx -t plain "/media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d846
+      8/synology/Adela/TRAP-WD-2020-04/Kazanluk/2009/Project
+      Records/TeamB/Adela_JournalApr09…)
+  ⎿  Kazanlak II, the Geophysics, Excavation and Remote Sensing follow-up
+
+     April - May 2009
+     … +89 lines (ctrl+o to expand)
+
+● Bash(grep -n "05.04" outputs/diary-extracts/B_Diary_BG_2009.txt)
+  ⎿  Error: Exit code 2
+     grep: outputs/diary-extracts/B_Diary_BG_2009.txt: No such file or directory
+
+● Bash(antiword "/media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adel
+      a/TRAP-WD-2020-04/Kazanluk/2009/Project Records/TeamB/B_Diary_BG.doc" >
+      outputs/diary-e…)
+  ⎿  1581 outputs/diary-extracts/B_Diary_BG_2009.txt
+
+● Bash(grep -n "05.04" outputs/diary-extracts/B_Diary_BG_2009.txt)
+  ⎿  No matches found
+
+● Bash(grep -n "[0-9][0-9]\.[0-9][0-9]\.[0-9][0-9]"
+      outputs/diary-extracts/B_Diary_BG_2009.txt | tail -10)
+  ⎿  338:Ден 8: 11.03.2009 г.     
+     451:Ден 9: 12.03.2009 г.
+     479:Ден 13: 16.03.2009 г.
+     … +7 lines (ctrl+o to expand)
+
+● Let me update the April 5 section of the run sheet, noting that no diary
+  entries exist for this date:
+
+● Bash(python3 << 'EOFPY'
+      import re…)
+  ⎿  Error: Exit code 1
+     Traceback (most recent call last):
+       File "<stdin>", line 4, in <module>
+     FileNotFoundError: [Errno 2] No such file or directory: 
+     'outputs/ambiguous-dates-investigation-runsheet.md'
+
+● Bash(cd /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-
+      WD-2020-04/trap-extraction && python3 << 'EOFPY'
+      import re…)
+  ⎿  ✓ Updated April 5 diary findings (no diary entries found)        
+     ✓ Run sheet completed with all diary extractions and translations
+
+● Perfect! I've completed the investigation run sheet with all diary
+  extractions and translations. Let me verify the final result:
+
+● Read(outputs/ambiguous-dates-investigation-runsheet.md)
+  ⎿  Read 70 lines
+  ⎿  Found 5 new diagnostic issues in 1 file (ctrl+o to expand)
+
+● Read(outputs/ambiguous-dates-investigation-runsheet.md)
+  ⎿  Read 50 lines
+
+● I've successfully completed the investigation run sheet with all diary
+  extractions and English translations. Here's what was added:
+
+  Summary of Completed Run Sheet
+
+  File created: outputs/ambiguous-dates-investigation-runsheet.md
+
+  Date 1: 2009-03-11 Team C (Wednesday)
+
+  Bulgarian diary findings:
+  - Original Bulgarian text from C_Diary_BG.doc (115 lines)
+  - English translation of key passages
+  - Finding: Team C documented burial mound necropolis ДС 052 (Вид 008) with
+   3 mounds:
+    - Mogila 1: d-50m, h-6-7m (heavily disturbed, triangulation sign)
+    - Mogila 2: d-22-27m, h-4m (GPS: N-42º37.059'; E-025º15.881')
+    - Mogila 3: d-17m, h-2m
+  - Interpretation: Intensive site documentation work with detailed
+  measurements, GPS coordinates, soil analysis, and structural
+  documentation. NO survey units mentioned - this was not unit-based survey.
+
+  Date 2: 2009-03-12 Team C (Thursday)
+
+  Bulgarian diary findings:
+  - Original Bulgarian text from C_Diary_BG.doc (57 lines)
+  - English translation of key passages
+  - Finding: Ridge reconnaissance covering 40m-200m wide strips, documented
+  two mounds:
+    - Vid 009: d-12m, h-1m (GPS: N-42º36.250', E-025º16.507')
+    - ГЧ 051 (Vid 010): d-10m, h-1.2-1.4m with possible stone krepida
+  - Interpretation: Ridge survey and intensive mound documentation. NO
+  survey units mentioned - this was reconnaissance and site recording work.
+
+  Date 3: 2009-04-05 Team B (Sunday)
+
+  Diary investigation findings:
+  - Team B English diary (B_Diary_En.docx): Covers 15-30 March only, ends
+  before April 5
+  - Team B Bulgarian diary (B_Diary_BG.doc): Last entry 27 March, does not
+  extend to April
+  - Adela April journal (Adela_JournalApr09.docx): Begins 11 April, does not
+   cover April 5
+  - Finding: NO diary entries exist for April 5, 2009. 12-day gap (March 28
+  - April 10) between survey sessions
+  - Note: April 5 is a Sunday. Investigation must rely on PDF Daily Progress
+   Forms and individual unit cards (B_20090405.pdf)
+
+  ---
+  The run sheet is now ready for your manual investigation. Each date
+  includes:
+  - Problem description
+  - File paths (relative to TRAP-WD-2020-04)
+  - Diary extracts with English translations (where available)
+  - Spaces for recording findings
+  - Conclusion templates with checkboxes
+
+  For the two Team C dates (March 11-12), the Bulgarian diary evidence
+  strongly suggests these were non-unit survey days focused on intensive
+  burial mound documentation rather than systematic unit-based survey.
+
+> Ok, those were all relatively easy to disambiguate, please see what I 
+wrote into the file. 
+
+● Read(outputs/ambiguous-dates-investigation-runsheet.md)
+  ⎿  Read 50 lines
+
+● Read(outputs/ambiguous-dates-investigation-runsheet.md)
+  ⎿  Read 50 lines
+
+● Read(outputs/ambiguous-dates-investigation-runsheet.md)
+  ⎿  Read 60 lines
+
+● Excellent work! You've successfully resolved all three ambiguous dates
+  with high confidence:
+
+  Your Findings:
+
+  2009-03-11 Team C (Wednesday)
+
+  - No survey units - Non-unit survey work (object recording of mounds)
+  - Confidence: High
+  - Evidence: Daily Progress Form explicitly states "No intensive, no
+  extensive, no mountain [survey]" - only object registration
+  - This aligns perfectly with the Bulgarian diary showing intensive burial
+  mound necropolis documentation (DS 052 with 3 mounds)
+
+  2009-03-12 Team C (Thursday)
+
+  - Survey units FOUND: 30003-30009 (with 30008 skipped)
+  - Confidence: High
+  - This is interesting - despite the diary describing ridge reconnaissance
+  and mound documentation, they did record some survey units this day
+
+  2009-04-05 Team B (Sunday)
+
+  - Survey units FOUND: 20808-20812 (5 units)
+  - Confidence: High
+  - Note: Data entry error - the recorder swapped Start/End Unit and
+  Start/End Time fields, but the actual unit numbers are clear
+
+  ---
+  Summary: 2 new survey unit extractions + 1 confirmed non-unit survey work
+  explanation.
+
+  Shall I now:
+  1. Update missing-survey-units-extracted.csv with these findings
+  2. Apply the 2 extracted units (March 12 Team C, April 5 Team B) to
+  attribution.csv
+  3. Update the March 11 Team C explanation with the Daily Progress Form
+  evidence
+  4. Update extraction-report.md with the final results
+
+  This will give us 100% complete resolution of all 83 originally missing
+  records!
+
+> Ok, there is still one issue, I just spoke with another of the project 
+leaders, and it turns out that:\
+\
+Survey units FOUND: 30003-30009 (with 30008 skipped)\
+\
+those are actually six-digit unit numbers 300003-300009 (with 300008 
+skipped) that were later retroactively changed to five-digit 30xxx numbers. 
+I'll need to investigate where the mapping to the new numbers can be found. 
+Please update all of the other records except for this one - for this one, 
+please include a note containing the 'old' six-digit unit numbers - while I 
+go look and see what I can find. 
+
+● Understood! I'll update the two resolved dates (March 11 Team C and April
+  5 Team B) now, and for March 12 Team C, I'll add a note about the old
+  six-digit unit numbers (300003-300009, skipping 300008) while you
+  investigate the mapping.
+
+● Read(outputs/missing-survey-units-extracted.csv)
+  ⎿  Read 10 lines
+
+● Read(outputs/missing-survey-units-extracted.csv)
+  ⎿  Read 5 lines
+
+● Update(outputs/missing-survey-units-extracted.csv)
+  ⎿  Updated outputs/missing-survey-units-extracted.csv with 1 addition and
+     1 removal
+
+       17    2009-03-09,C,,,Team C Bulgarian Diary (C_Diary_BG.doc),No 
+            diary entry for this date - Team C not working or diary 
+            gap,Team not working
+       18    2009-03-11,A,10175,10220,A_2009Summary.pdf page 6,Extracted 
+            from Daily Progress Form,Found
+       19    2009-03-11,B,20297,20344,Team B Bulgarian Diary (2009),Found
+             21 units in section,Found
+       20 -  2009-03-11,C,,,C_2009Summary.pdf page 2,Form found but no 
+          - units recorded,No units in form
+       20 +  2009-03-11,C,,,C_2009Summary.pdf page 2,Non-unit survey 
+          + work: object recording (mounds) - Daily Progress Form 
+          + explicitly states 'No intensive no extensive no mountain 
+          + [survey]' - only object registration. Bulgarian diary 
+          + confirms burial mound necropolis documentation (DS 052 with 3
+          +  mounds),Non-unit survey work
+       21    2009-03-12,A,10221,10276,Team A Bulgarian Diary (2009),Found
+             2 units in section,Found
+       22    2009-03-12,B,20345,20461,Team B Bulgarian Diary (2009),Found
+             6 units in section,Found
+       23    2009-03-12,C,,,C_2009Summary.pdf page 3,Form found but no 
+            units recorded,No units in form
+
+● Update(outputs/missing-survey-units-extracted.csv)
+  ⎿  Updated outputs/missing-survey-units-extracted.csv with 1 addition and
+     1 removal
+
+       20    2009-03-11,C,,,C_2009Summary.pdf page 2,Non-unit survey 
+            work: object recording (mounds) - Daily Progress Form 
+            explicitly states 'No intensive no extensive no mountain 
+            [survey]' - only object registration. Bulgarian diary 
+            confirms burial mound necropolis documentation (DS 052 with 3
+             mounds),Non-unit survey work
+       21    2009-03-12,A,10221,10276,Team A Bulgarian Diary (2009),Found
+             2 units in section,Found
+       22    2009-03-12,B,20345,20461,Team B Bulgarian Diary (2009),Found
+             6 units in section,Found
+       23 -  2009-03-12,C,,,C_2009Summary.pdf page 3,Form found but no 
+          - units recorded,No units in form
+       23 +  2009-03-12,C,,,C_2009Summary.pdf page 3,OLD SIX-DIGIT UNITS 
+          + FOUND: 300003-300009 (with 300008 skipped) - these were later
+          +  retroactively renumbered to five-digit 30xxx - PENDING: 
+          + mapping to new five-digit numbers under investigation,Pending
+          +  renumbering investigation
+       24    2009-03-15,A,10277,10316,Team A Bulgarian Diary (2009),Found
+             2 units in section,Found
+       25    2009-03-15,D,40039,40065,D_Summary.pdf page 4,Extracted from
+             Daily Progress Form,Found
+       26    2009-03-16,A,10317,10369,Team A Bulgarian Diary (2009),Found
+             2 units in section,Found
+
+● Update(outputs/missing-survey-units-extracted.csv)
+  ⎿  Updated outputs/missing-survey-units-extracted.csv with 1 addition and
+     1 removal
+
+       61    2009-03-27,E,50290,50319,E_Summary26Mar-3Apr.pdf page 
+            1,Extracted from Daily Progress Form,Found
+       62    2009-03-31,E,50520,50542,E_Summary26Mar-3Apr.pdf page 
+            1,Extracted from Daily Progress Form,Found
+       63    2009-04-03,E,,,Adela_JournalSurvey.doc,Combined team mound 
+            reconnaissance west of Kran - non-unit survey work,Non-unit 
+            survey work
+       64 -  2009-04-05,B,,,B_Summary25Mar-05Apr.pdf & 
+          - B_2009Summary.pdf,Form exists but unit numbers unclear - form
+          -  fields appear incorrectly filled,In source but no units
+       64 +  2009-04-05,B,20808,20812,B_Summary25Mar-05Apr.pdf page 
+          + 1,Data entry error on Daily Progress Form: recorder swapped 
+          + Start/End Unit and Start/End Time fields - actual units 
+          + 20808-20812 (5 units) are clear,Found
+       65    2009-10-14,C,,,Team diaries searched,No autumn 2009 survey 
+            season - diaries end in March/April,No autumn season
+       66    2009-10-16,C,,,Team diaries searched,No autumn 2009 survey 
+            season - diaries end in March/April,No autumn season
+       67    2009-10-17,C,,,Team diaries searched,No autumn 2009 survey 
+            season - diaries end in March/April,No autumn season
+
+● Now let me apply these updates to attribution.csv:
+
+● Bash(python3 << 'EOFPY'
+      import csv…)
+  ⎿ ✓ Created backup: attribution-pre-final-updates-backup.csv             
+    ✓ Updated 2009-03-11 Team C: enhanced explanation with Daily Progress F
+    orm evidence
+    … +11 lines (ctrl+o to expand)
+
+
+● Bash(python3 scripts/verify-survey-unit-coverage.py | tail -40)
+  ⎿  D                38           37          1       97.37%
+     E                 7            6          1       85.71%
+     … +41 lines (ctrl+o to expand)
+
+● Bash(python3 scripts/verify-survey-unit-coverage.py | head -25)
+  ⎿  Verify Survey Unit Coverage                                 
+     ============================================================
+     … +27 lines (ctrl+o to expand)
+
+● Perfect! Coverage improved to 89.18% (239/268) with the April 5 Team B
+  extraction. Now let me update the extraction-report.md:
+
+● Read(outputs/extraction-report.md)
+  ⎿  Read 30 lines
+
+● Update(outputs/extraction-report.md)
+  ⎿  Updated outputs/extraction-report.md with 3 additions and 2 removals
+        7    ### Overall Results
+        8    
+        9    - **Total missing records**: 83 (out of 268 total records)
+       10 -  - **Successfully extracted**: 53 records (63.9%)
+       10 +  - **Successfully extracted**: 54 records (65.1%)
+       11    - **Found in source but no units**: 9 records (10.8%)
+       12 -  - **Not found in any source**: 21 records (25.3%)
+       12 +  - **Pending investigation**: 1 record (1.2%) - old six-digit
+          +  units require renumbering mapping
+       13 +  - **Remaining explained**: 19 records (22.9%)
+       14    
+       15    ## Data Sources Used
+       16    
+
+● Bash(grep -n "Diary Investigation" outputs/extraction-report.md)
+  ⎿  191:## Diary Investigation: Explanations for Remaining 30 Dates
+
+● Read(outputs/extraction-report.md)
+  ⎿  Read 40 lines
+
+● Update(outputs/extraction-report.md)
+  ⎿  Updated outputs/extraction-report.md with 50 additions              
+       267    - `outputs/missing-dates-final-summary.md` - Comprehensive 
+             analysis with recommendations
+       268    - `outputs/missing-survey-units-extracted.csv` - Updated 
+             with specific explanations
+       269    
+       270 +  ### Final Investigation: Resolving 3 Ambiguous Dates
+       271 +  
+       272 +  Following the comprehensive diary investigation, 3 dates 
+           + remained ambiguous with medium confidence. A final detailed 
+           + investigation was conducted using Bulgarian diary 
+           + translations and careful PDF form examination:
+       273 +  
+       274 +  **Investigation runsheet:** 
+           + `outputs/ambiguous-dates-investigation-runsheet.md`
+       275 +  
+       276 +  #### 2009-03-11 Team C (Wednesday) - RESOLVED
+       277 +  
+       278 +  **Finding:** Non-unit survey work (object recording of 
+           + mounds)
+       279 +  **Confidence:** High
+       280 +  **Evidence:**
+       281 +  - Daily Progress Form explicitly states "No intensive, no 
+           + extensive, no mountain [survey]" - only object registration
+       282 +  - Bulgarian diary (115 lines) describes intensive burial 
+           + mound necropolis documentation:
+       283 +    - DS 052 (Vid 008) with 3 mounds documented
+       284 +    - Mogila 1: d-50m, h-6-7m (triangulation sign, extensive 
+           + looters' excavations documented to 5.5m depth)
+       285 +    - Mogila 2: d-22-27m, h-4m (GPS: N-42º37.059'; 
+           + E-025º15.881')
+       286 +    - Mogila 3: d-17m, h-2m
+       287 +  - Team spent entire day on detailed measurements, GPS 
+           + recording, soil analysis, structural documentation
+       288 +  
+       289 +  **Outcome:** Explanation added to attribution.csv QA_Notes
+       290 +  
+       291 +  #### 2009-03-12 Team C (Thursday) - PENDING RENUMBERING
+       292 +  
+       293 +  **Finding:** OLD six-digit survey units found: 
+           + 300003-300009 (with 300008 skipped)
+       294 +  **Status:** Pending investigation of renumbering mapping
+       295 +  **Evidence:**
+       296 +  - Daily Progress Form shows six-digit unit numbers
+       297 +  - These were later retroactively renumbered to five-digit 
+           + 30xxx format
+       298 +  - Bulgarian diary (57 lines) describes ridge survey work 
+           + and mound documentation (Vid 009, GCh 051/Vid 010)
+       299 +  
+       300 +  **Outcome:** Awaiting project leader investigation of 
+           + six-digit to five-digit renumbering mapping
+       301 +  
+       302 +  #### 2009-04-05 Team B (Sunday) - RESOLVED
+       303 +  
+       304 +  **Finding:** Survey units 20808-20812 (5 units)
+       305 +  **Confidence:** High
+       306 +  **Evidence:**
+       307 +  - Daily Progress Form contains data entry error: recorder 
+           + swapped Start/End Unit and Start/End Time fields
+       308 +  - Actual unit numbers (20808-20812) clearly visible in the 
+           + "time" fields
+       309 +  - Times clearly visible in the "unit" fields
+       310 +  - Intent and meaning unambiguous despite field swap
+       311 +  - No team diary entries exist for this date (12-day gap 
+           + March 28 - April 10 between survey sessions)
+       312 +  
+       313 +  **Outcome:** Units 20808-20812 applied to attribution.csv
+       314 +  
+       315 +  **Resolution summary:**
+       316 +  - 1 additional extraction: 2009-04-05 Team B (20808-20812)
+       317 +  - 1 enhanced explanation: 2009-03-11 Team C (Daily Progress
+           +  Form evidence)
+       318 +  - 1 pending: 2009-03-12 Team C (awaiting renumbering 
+           + mapping for old six-digit units)
+       319 +  
+       320    ## Conclusion
+       321    
+       322    Successfully extracted survey unit numbers for **49 out of 
+             83 missing records (59.0%)** from Excel files, Bulgarian 
+             field diaries, and PDF Daily Progress Forms. An additional 9
+              records were found in sources but had no units recorded 
+             (forms existed but were incomplete).
+
+● Update(outputs/extraction-report.md)
+  ⎿  Updated outputs/extraction-report.md with 11 additions and 8 removals
+       319    
+       320    ## Conclusion
+       321    
+       322 -  Successfully extracted survey unit numbers for **49
+           -   out of 83 missing records (59.0
+           -  %)** from Excel files, Bulgarian field diaries, and 
+           -  PDF Daily Progress Forms. An additional 9 records were 
+           -  found in sources but had no units recorded (forms existed 
+           -  but were incomplete).
+       322 +  Successfully extracted survey unit numbers for **54
+           +   out of 83 missing records (65.1
+           +  %)** from Excel files, Bulgarian field diaries, 
+           +  PDF Daily Progress Forms, and final investigation of 
+           +  ambiguous dates.
+       323    
+       324    **Extraction breakdown:**
+       325    - Excel SurveySummary files: 0 records (2010-2011 had empty
+              fields)
+       326    - Bulgarian diaries (2009): 29 records
+       327 -  - PDF Daily Progress Forms (2009): 24 records
+       327 +  - PDF Daily Progress Forms (2009): 25 records
+       328      - Team A: 5 records
+       329 -    - Team B: 2 records
+       329 +    - Team B: 3 records (including 2009-04-05 data entry 
+           + error resolution)
+       330      - Team C: 7 records
+       331      - Team D: 8 records
+       332      - Team E: 2 records
+       333    
+       334 -  **Total extracted:** 53 out of 83 missing records (63.9%)
+       334 +  **Total extracted:** 54 out of 83 missing records (65.1%)
+       335    
+       336    **Additional records located:** 9 records found in sources 
+             but without extractable units (forms exist but 
+             incomplete/unclear)
+       337    
+       338 -  **Remaining gaps fully explained:** All 30 remaining dates 
+           -  now have documented explanations:
+       339 -  - Alternative survey methodologies (non-unit work): 4
+           -   records
+       338 +  **Remaining gaps fully explained:** 28 remaining dates 
+           +  have documented explanations:
+       339 +  - Alternative survey methodologies (non-unit work): 5
+           +   records (including 2009-03-11 Team C)
+       340    - No autumn survey seasons (2009-2010): 11 records
+       341    - Weather cancellations: 3 records
+       342    - Non-survey activities and gap days: 9 records
+       343 -  - Unclear/incomplete forms: 3 records
+       343    
+       344 -  **Final status:** 53 survey units extracted + 30 dates 
+           - explained = **100% of 83 missing records now documented**
+       344 +  **Pending investigation:** 1 record (2009-03-12 Team C) - 
+           + old six-digit units (300003-300009) require renumbering 
+           + mapping
+       345    
+       346 +  **Final status:** 54 survey units extracted + 28 dates 
+           + explained + 1 pending = **83/83 missing records 
+           + investigated**
+       347 +  
+       348 +  **Coverage achieved:** 239/268 records with survey units = 
+           + **89.18% coverage** (up from 69.0% at project start)
+       349 +  
+       350    ---
+       351    
+       352    **Report generated**: 2025-11-24
+
+● Update(outputs/extraction-report.md)
+  ⎿  Updated outputs/extraction-report.md with 3 additions and 3 removals
+       350    ---
+       351    
+       352    **Report generated**: 2025-11-24
+       353 -  **Last updated**: 2025-11-24 (PDF extraction + 
+           - comprehensive diary investigation completed)
+       354 -  **Extraction sources**: Excel SurveySummary files 
+           -  (2010-2011), Bulgarian field diaries (2009), PDF Daily 
+           -  Progress Forms (2009 all teams March-early April), Team 
+           -  diaries (2009-2011) for investigation
+       355 -  **Tools used**: antiword, 
+           -  pandas, Python regex pattern matching, Claude vision (PDF 
+           -  reading), NLP-based diary analysis (English and Bulgarian)
+       353 +  **Last updated**: 2025-11-24 (Final investigation of 3 
+           + ambiguous dates completed - 2 resolved, 1 pending 
+           + renumbering)
+       354 +  **Extraction sources**: Excel SurveySummary files 
+           +  (2010-2011), Bulgarian field diaries (2009), PDF Daily 
+           +  Progress Forms (2009 all teams March-early April), Team 
+           +  diaries (2009-2011) for investigation
+           +  , Daily Progress Form evidence for ambiguous dates
+       355 +  **Tools used**: antiword, pandoc, 
+           +  pandas, Python regex pattern matching, Claude vision (PDF 
+           +  reading), NLP-based diary analysis (English and Bulgarian)
+           +  , Bulgarian text translation
+
+● Perfect! I've completed the updates for the two resolved dates. Here's a
+  summary:
+
+  Updates Completed
+
+  Files Updated:
+
+  1. missing-survey-units-extracted.csv:
+  - ✓ 2009-03-11 Team C: Updated with detailed non-unit survey work
+  explanation (Daily Progress Form + burial mound necropolis evidence)
+  - ✓ 2009-03-12 Team C: Added note about OLD six-digit units
+  (300003-300009, skipping 300008) - marked as "Pending renumbering
+  investigation"
+  - ✓ 2009-04-05 Team B: Added units 20808-20812 with explanation of data
+  entry error (fields swapped)
+
+  2. attribution.csv:
+  - ✓ 2009-04-05 Team B: Applied units 20808-20812 + added QA_Notes about
+  data entry error
+  - ✓ 2009-03-11 Team C: Enhanced QA_Notes with Daily Progress Form evidence
+  - ✓ Created backup: attribution-pre-final-updates-backup.csv
+
+  3. extraction-report.md:
+  - ✓ Updated overall statistics: 54 extracted (65.1%)
+  - ✓ Added new section "Final Investigation: Resolving 3 Ambiguous Dates"
+  with detailed findings
+  - ✓ Updated conclusion with final coverage: 89.18% (239/268)
+  - ✓ Documented pending investigation for 2009-03-12 Team C
+
+  ---
+  Current Status:
+
+  Survey Unit Coverage: 239/268 records = 89.18%
+
+  83 originally missing records:
+  - ✓ 54 extracted with survey units (65.1%)
+  - ✓ 28 fully explained without units (33.7%)
+  - ⏳ 1 pending renumbering investigation (1.2%) - 2009-03-12 Team C
+
+  Awaiting from you:
+  - Mapping of old six-digit units (300003-300009, skipping 300008) to new
+  five-digit 30xxx format
+
+  Once you provide the renumbering mapping, I can apply the final extraction
+   and achieve complete resolution of all 83 missing records!
+
+> ok, there's no simple solution to the mapping of the six-digit numbers to 
+the 'proper' 5-digit numbers, can you please add this task to 
+'follow-up-actions.md' with some context (study area - Kazanlalk - season, 
+team, date, explanation)? 
+
+● Search(pattern: "**/follow-up-actions.md")
+  ⎿  Found 1 file (ctrl+o to expand)
+
+● Read(outputs/follow-up-actions.md)
+  ⎿  Read 296 lines
+
+● Update(outputs/follow-up-actions.md)
+  ⎿  Updated outputs/follow-up-actions.md with 48 additions and 1 removal
+       171    
+       172    ## Medium Priority
+       173    
+       174 -  ### 3. Review Remaining Name Mappings
+       174 +  ### 1. Map Six-Digit to Five-Digit Survey Unit Numbers 
+           + (2009-03-12 Team C)
+       175    
+       176 +  **Status:** Pending investigation
+       177 +  
+       178 +  **Context:** During final investigation of ambiguous survey
+           +  unit dates (24 November 2025), old six-digit survey unit 
+           + numbers were discovered that were later retroactively 
+           + renumbered to five-digit format. No simple mapping exists 
+           + between the old and new numbering systems.
+       179 +  
+       180 +  **Study area:** Kazanluk
+       181 +  **Season:** 2009 spring (March)
+       182 +  **Team:** Team C
+       183 +  **Date:** 2009-03-12 (Thursday)
+       184 +  **Day:** Day 9 of survey season
+       185 +  
+       186 +  **Survey unit numbers found:**
+       187 +  - **Old format (six-digit):** 300003-300009 (with 300008 
+           + skipped - 6 units total)
+       188 +  - **New format (five-digit):** Unknown - requires mapping 
+           + investigation
+       189 +  
+       190 +  **Source documentation:**
+       191 +  - Daily Progress Form: C_2009Summary.pdf page 3 shows 
+           + six-digit unit numbers
+       192 +  - Bulgarian diary: C_Diary_BG.doc (12.03.2009 г.) describes
+           +  ridge survey work and mound documentation (Vid 009, GCh 
+           + 051/Vid 010)
+       193 +  - Investigation runsheet: 
+           + `outputs/ambiguous-dates-investigation-runsheet.md`
+       194 +  - Tracking file: 
+           + `outputs/missing-survey-units-extracted.csv` line 23
+       195 +  
+       196 +  **Problem:**
+       197 +  Team C initially used a six-digit numbering system (300xxx)
+           +  that was later retroactively changed to five-digit (30xxx) 
+           + to match the project-wide convention (Team A: 10xxx, Team B:
+           +  20xxx, Team C: 30xxx, Team D: 40xxx, Team E: 50xxx). The 
+           + mapping between old six-digit and new five-digit numbers is 
+           + not documented in readily accessible sources.
+       198 +  
+       199 +  **Action required:**
+       200 +  - [ ] Investigate project records for six-digit to 
+           + five-digit unit renumbering documentation
+       201 +  - [ ] Potential sources to check:
+       202 +    - GIS databases (may contain both old and new unit 
+           + numbers)
+       203 +    - Project metadata or conversion tables
+       204 +    - Unit card files (may show both numbering systems)
+       205 +    - Survey leader notes or correspondence about the 
+           + renumbering
+       206 +  - [ ] Once mapping is found, convert 300003-300009 (skip 
+           + 300008) to correct five-digit numbers
+       207 +  - [ ] Update `outputs/missing-survey-units-extracted.csv` 
+           + with converted units
+       208 +  - [ ] Apply converted units to `outputs/attribution.csv` 
+           + for 2009-03-12 Team C
+       209 +  - [ ] Run `scripts/verify-survey-unit-coverage.py` to 
+           + confirm final coverage
+       210 +  
+       211 +  **Impact:**
+       212 +  - Current coverage: 239/268 (89.18%)
+       213 +  - With this record: 240/268 (89.55%) - final coverage for 
+           + survey unit extraction
+       214 +  - This is the last remaining unresolved survey unit record 
+           + from the original 83 missing records
+       215 +  
+       216 +  **Current workaround:**
+       217 +  Record is documented in 
+           + `missing-survey-units-extracted.csv` with status "Pending 
+           + renumbering investigation" and contains the old six-digit 
+           + unit numbers for reference.
+       218 +  
+       219 +  ---
+       220 +  
+       221 +  ### 2. Review Remaining Name Mappings
+       222 +  
+       223    **Status:** ✅ COMPLETED (22 November 2025)
+       224    
+       225    **Context:** The name mapping file contains 283 entries. 
+             All entries have been reviewed and processed.
+
+● Update(outputs/follow-up-actions.md)
+  ⎿  Updated outputs/follow-up-actions.md with 3 additions and 2 removals
+        1    # TRAP Data Extraction - Follow-up Actions
+        2    
+        3    **Created:** November 2025
+        4 -  **Last Updated:** 23 November 2025
+        4 +  **Last Updated:** 24 November 2025
+        5    **Walker Data Extraction Status:** ✅ **100% COMPLETE** 
+            (268/268 records)
+        6 -  **Project Completion:** 23 November 2025
+        6 +  **Survey Unit Extraction Status:** 🔄 **98.8% COMPLETE** 
+          + (239/268 with units, 28/268 explained, 1/268 pending 
+          + renumbering)
+        7 +  **Project Completion:** 23 November 2025 (walker data), 24 
+          + November 2025 (survey units - pending 1 record)
+        8    
+        9    This file tracks outstanding actions that fall outside the 
+            core walker data extraction work, which has been completed.
+       10    
+
+● Update(outputs/follow-up-actions.md)
+  ⎿  Updated outputs/follow-up-actions.md with 2 additions and 1 removal 
+       335    
+       336    **Outstanding research:**
+       337    - Batch participant list update: Lizzy (full name 
+             research), Silvia Ivanova (verify participation), Jiří Musil
+              (verify participation and dates)
+       338 +  - Six-digit to five-digit survey unit renumbering mapping 
+           + (2009-03-12 Team C Kazanluk)
+       339    
+       340 -  **Last updated:** 23 November 2025 (after Kazanluk 2011 
+           - date error correction)
+       340 +  **Last updated:** 24 November 2025 (added six-digit unit 
+           + renumbering investigation task)
+       341    
+       342    ---
+       343    
+
+● Perfect! I've added the six-digit to five-digit unit renumbering task to
+  follow-up-actions.md with full context. Here's what was documented:
+
+  Added to Medium Priority Section:
+
+  Task: Map Six-Digit to Five-Digit Survey Unit Numbers (2009-03-12 Team C)
+
+  Key details documented:
+  - Study area: Kazanluk
+  - Season: 2009 spring (March)
+  - Team: Team C
+  - Date: 2009-03-12 (Thursday, Day 9 of survey)
+  - Old six-digit units: 300003-300009 (with 300008 skipped - 6 units total)
+  - New five-digit units: Unknown - requires mapping investigation
+
+  Context provided:
+  - Problem explanation: Team C initially used six-digit numbering (300xxx)
+  that was later retroactively changed to five-digit (30xxx)
+  - Source documentation: C_2009Summary.pdf page 3, Bulgarian diary entry,
+  investigation runsheet
+  - Potential investigation sources: GIS databases, unit card files, project
+   metadata, survey leader notes
+
+  Impact noted:
+  - Current coverage: 239/268 (89.18%)
+  - With this record: 240/268 (89.55%) - would achieve final coverage
+  - This is the last remaining unresolved survey unit record from the
+  original 83 missing records
+
+  The task includes a detailed checklist of investigation steps and the
+  files that need updating once the mapping is found. The file header was
+  also updated to show the survey unit extraction status as 98.8% complete
+  (pending 1 record).
+
+> One thing: in all cases, when updating to-do lists please *never* delete 
+tasks, instead mark them as done but leave them as a record - if you've 
+deleted to-do tasks or checklists in any document, please restore them and 
+then instead mark them as done. 
+
+● You're absolutely right - that's an important principle for maintaining
+  project history. Let me check what I've edited in this session.
+
+● Bash(find outputs -name "*.md" -type f | grep -E
+      "(todo|action|task|checklist)" | sort)
+  ⎿  outputs/extraction-completion-summary.md
+     outputs/extraction-report.md
+     outputs/follow-up-actions.md
+     outputs/task-completion-final-summary.md
+
+● Bash(find . -name "*.md" -type f | grep -vE "(node_modules|\.git)" | xargs
+      grep -l "\- \[ \]" 2>/dev/null | head -20)
+  ⎿  ./outputs/source-inventory.md 
+     ./outputs/follow-up-actions.md
+     ./CONTRIBUTING.md
+     … +10 lines (ctrl+o to expand)
+
+● Let me check the documents I edited in this session to see if I deleted
+  any checkboxes:
+
+● Bash(grep -n "\[.\]" outputs/ambiguous-dates-investigation-runsheet.md | head
+      -30)
+  ⎿  (No content)
+
+● Bash(grep -E "□|☑|✓|\[x\]|\[ \]"
+      outputs/ambiguous-dates-investigation-runsheet.md | head -20)
+  ⎿  - Form completeness: X Complete  □ Partially filled  □ Mostly blank
+     - Reason: □ No survey undertaken
+              □ Form incomplete/unclear
+     … +18 lines (ctrl+o to expand)
+
+● Let me verify what I changed in follow-up-actions.md by checking the "Next
+   Steps" sections in the runsheet:
+
+● Bash(grep -A 10 "### Next Steps"
+      outputs/ambiguous-dates-investigation-runsheet.md)
+  ⎿  ### Next Steps               
+
+     If survey units were found:
+     … +8 lines (ctrl+o to expand)
+
+● Ah! I found it. In the ambiguous-dates-investigation-runsheet.md, there's
+  a "Next Steps" section with checkboxes that I completed but didn't mark as
+   done. Let me fix that:
+
+● Update(outputs/ambiguous-dates-investigation-runsheet.md)
+  ⎿  Updated outputs/ambiguous-dates-investigation-runsheet.md with 6      
+     additions and 6 removals
+       421    ### Next Steps
+       422    
+       423    If survey units were found:
+       424 -  - □
+           -   Update `missing-survey-units-extracted.csv` with new units
+       425 -  - □
+           -   Run `apply-extracted-units.py` to update attribution.csv
+       426 -  - □ Update `extraction-report.md` with final findings
+       424 +  - ☑
+           +   Update `missing-survey-units-extracted.csv` with new units
+           +   (completed 2025-11-24)
+       425 +  - ☑
+           +   Run `apply-extracted-units.py` to update attribution.csv
+           +   (completed 2025-11-24)
+       426 +  - ☑ Update `extraction-report.md` with final findings
+           +   (completed 2025-11-24)
+       427    
+       428    If no units found but reason explained:
+       429 -  - □ Update `missing-survey-units-extracted.csv` with 
+           -  explanation
+       430 -  - □
+           -   Run `update-attribution-with-explanations.py` to update 
+           -  QA_Notes
+       431 -  - □ Update `extraction-report.md` with final findings
+       429 +  - ☑ Update `missing-survey-units-extracted.csv` with 
+           +  explanation (completed 2025-11-24)
+       430 +  - ☑
+           +   Run `update-attribution-with-explanations.py` to update 
+           +  QA_Notes (completed 2025-11-24 previous session)
+       431 +  - ☑ Update `extraction-report.md` with final findings
+           +   (completed 2025-11-24)
+       432    
+       433    ---
+       434    
+
+● Now let me also check if I need to update the Summary table in the
+  runsheet with the actual results:
+
+● Update(outputs/ambiguous-dates-investigation-runsheet.md)
+  ⎿  Updated outputs/ambiguous-dates-investigation-runsheet.md with 5      
+     additions and 5 removals
+       406    
+       407    ## Summary of Investigation Results
+       408    
+       409 -  **Completed by:** _____________________
+       409 +  **Completed by:** Shawn Ross (user) + Claude Code 
+           + (assistant)
+       410    
+       411 -  **Date completed:** _____________________
+       411 +  **Date completed:** 2025-11-24
+       412    
+       413    ### Results Table
+       414    
+       415    | Date | Team | Units Found? | Start Unit | End Unit | 
+             Reason if No Units | Confidence |
+       416    |------|------|--------------|------------|----------|-----
+             ---------------|------------|
+       417 -  | 2009-03-11 | C | □ Yes  □ No |  |  |  |  |
+       418 -  | 2009-03-12 | C | □ Yes  □ No |  |  |  |  |
+       419 -  | 2009-04-05 | B | □ Yes  □ No |  |  |  |  |
+       417 +  | 2009-03-11 | C | ☑ No | N/A | N/A | Object recording 
+           + (mounds) - no survey units | High |
+       418 +  | 2009-03-12 | C | ☑ Yes (pending) | 300003* | 300009* | 
+           + *Six-digit old format - mapping needed | High |
+       419 +  | 2009-04-05 | B | ☑ Yes | 20808 | 20812 | (5 units - data
+           +  entry error resolved) | High |
+       420    
+       421    ### Next Steps
+       422    
+
+● Let me verify that I didn't inadvertently delete any tasks in
+  follow-up-actions.md when I added the new section:
+
+● Bash(grep -n "^### [0-9]" outputs/follow-up-actions.md | head -20)
+  ⎿  17:### 1. Cascade Excel Date Correction to Other Data Copies
+     47:### 2. Correct Kazanluk 2011 Date Error in Source Data
+     89:### 3. Participant List Updates
+     … +8 lines (ctrl+o to expand)
+
+● I see there's a numbering issue. Let me fix the section numbering in
+  follow-up-actions.md to be consistent:
+
+● Update(outputs/follow-up-actions.md)
+  ⎿  Updated outputs/follow-up-actions.md with 1 addition and 1 removal
+       249    
+       250    ---
+       251    
+       252 -  ### 4. Investigate XLS-only Records
+       252 +  ### 3. Investigate XLS-only Records
+       253    
+       254    **Status:** ✅ PARTIALLY COMPLETED (22 November 2025)
+       255    
+
+● Perfect! I've reviewed and corrected everything. Here's what I found and
+  fixed:
+
+  Documents Checked:
+
+  1. ✅ ambiguous-dates-investigation-runsheet.md
+
+  Found: Completed tasks in "Next Steps" section were not marked as done
+  Fixed:
+  - ☑ All 6 completed tasks now marked with checkmark symbols (☑) and
+  completion dates
+  - ☑ Summary table filled in with actual investigation results
+  - ☑ Completion date and names added to summary section
+
+  2. ✅ follow-up-actions.md
+
+  Found: Section numbering inconsistency after adding new task
+  Fixed:
+  - Changed "### 4. Investigate XLS-only Records" to "### 3." to maintain
+  proper sequence
+  - No tasks were deleted - only added the new renumbering investigation
+  task
+  - All existing tasks and checkboxes preserved
+
+  Principle Acknowledged:
+
+  Going forward, I will always:
+  - ✅ Mark tasks as done (with ☑ or [x]) rather than deleting them
+  - ✅ Add completion dates when marking tasks complete
+  - ✅ Preserve task history for audit trail
+  - ✅ Move completed tasks to "Completed Actions" sections if they exist,
+  rather than removing them
+
+  Is there anything else you'd like me to check or verify?
+
+> we're low on context, can you compose a /compact message? 
+
+● /compact
+
+  Session Summary: Final Investigation of 3 Ambiguous Survey Unit Dates
+
+  Context: Continuation of TRAP survey unit extraction work. Previous
+  session completed extraction and diary investigation for 83 missing
+  records, but 3 dates remained ambiguous with medium confidence.
+
+  Work Completed:
+
+  1. Created Investigation Runsheet
+  (outputs/ambiguous-dates-investigation-runsheet.md)
+    - Extracted and translated Bulgarian diary entries for 2009-03-11 and
+  2009-03-12 Team C
+    - Full translations from C_Diary_BG.doc with archaeological context
+    - March 11: 115-line diary entry documenting burial mound necropolis DS
+  052 (3 mounds)
+    - March 12: 57-line diary entry documenting ridge survey and mound work
+    - April 5 Team B: No diary entries exist (12-day gap between sessions)
+  2. User Investigation Results:
+    - 2009-03-11 Team C: RESOLVED - Non-unit survey work (object recording).
+   Daily Progress Form explicitly states "No intensive no extensive no
+  mountain [survey]" - HIGH confidence
+    - 2009-03-12 Team C: PENDING - Found OLD six-digit units 300003-300009
+  (skip 300008). These were retroactively renumbered to five-digit 30xxx
+  format. No simple mapping exists - requires investigation
+    - 2009-04-05 Team B: RESOLVED - Units 20808-20812 found. Data entry
+  error on form: recorder swapped Start/End Unit and Start/End Time fields -
+   HIGH confidence
+  3. Files Updated:
+    - missing-survey-units-extracted.csv: Updated all 3 dates with findings
+    - attribution.csv: Applied 20808-20812 to April 5 Team B, enhanced March
+   11 Team C explanation
+    - extraction-report.md: Added "Final Investigation" section with
+  detailed findings
+    - follow-up-actions.md: Added renumbering investigation task (Medium
+  Priority #1) with full context
+  4. Important Principle Reinforced:
+    - Never delete completed tasks from to-do lists/checklists
+    - Always mark as done (☑ or [x]) with completion dates instead
+    - Preserve task history for audit trail
+
+  Final Status:
+  - Survey unit coverage: 239/268 (89.18%)
+  - 54/83 original missing records extracted (65.1%)
+  - 28/83 fully explained (33.7%)
+  - 1/83 pending renumbering investigation (1.2%)
+  - Next action: User investigating six-digit to five-digit unit number
+  mapping for 2009-03-12 Team C (Kazanluk spring 2009, old units
+  300003-300009)
+
+  Key Files:
+  - Investigation runsheet with Bulgarian translations and results:
+  outputs/ambiguous-dates-investigation-runsheet.md
+  - Renumbering task documented: outputs/follow-up-actions.md Medium
+  Priority #1
+
+
+

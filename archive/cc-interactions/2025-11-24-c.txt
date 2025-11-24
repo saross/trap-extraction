@@ -1,0 +1,399 @@
+
+╭─── Claude Code v2.0.50 ──────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
+│                                                    │ Tips for getting started                                                        │
+│                 Welcome back Shawn!                │ Run /init to create a CLAUDE.md file with instructions for Claude               │
+│                                                    │ ─────────────────────────────────────────────────────────────────               │
+│                       ▐▛███▜▌                      │ Recent activity                                                                 │
+│                      ▝▜█████▛▘                     │ No recent activity                                                              │
+│                        ▘▘ ▝▝                       │                                                                                 │
+│                                                    │                                                                                 │
+│               Sonnet 4.5 · Claude Max              │                                                                                 │
+│  /…/synology/Adela/TRAP-WD-2020-04/trap-extraction │                                                                                 │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+══════════════════════════════════════════════ Conversation compacted · ctrl+o for history ═════════════════════════════════════════════
+  ⎿  Read outputs/missing-survey-units-extracted.csv (85 lines)
+  ⎿  Read outputs/extraction-report.md (184 lines)
+  ⎿  Referenced file archive/cc-interactions/2025-11-24-a.txt
+  ⎿  Referenced file outputs/source-inventory.md
+  ⎿  Read planning/akb-submission-todo.md (364 lines)
+  ⎿  Todo list read (9 items)
+
+● I'll continue extracting Team D 2009 survey units from where we left off. Let me compile the Team D data I observed in the PDF and
+   update the tracking files.
+
+● Read(/media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-2020-04/trap-extraction/../Kazanluk/2009/Project
+      Records/TeamD/FInalized/D_Summary.pdf)
+  ⎿  Read PDF (279.8KB)
+
+● Excellent! Now I can extract the Team D survey units from the PDF forms. Let me compile the data from all the pages.
+
+● Read(outputs/missing-survey-units-extracted.csv)
+  ⎿  Read 85 lines
+
+● Now let me update the CSV with the Team D extractions. Based on the PDF forms I've examined:
+
+  Team D 2009 Extractions:
+  - 2009-03-04: 40001-40066 (Page 1)
+  - 2009-03-07: 40031-40032 (Pages 2-3)
+  - 2009-03-15: 40039-40065 (Page 4)
+  - 2009-03-23: 40069-40074 and 40091-40094 (Pages 5 & 7 - two forms)
+  - 2009-03-24: 40112-40124 (Page 8)
+  - 2009-03-25: 40125-40211 (Page 9)
+  - 2009-03-26: 40212-40214 (Page 10)
+  - 2009-03-27: 40218-40250 (Page 11)
+
+● Update(outputs/missing-survey-units-extracted.csv)
+  ⎿  Updated outputs/missing-survey-units-extracted.csv with 1 addition and 1 removal                                            
+       2    2009-03-03,B,,,NOT FOUND,No data found in Excel files or Bulgarian diaries,Not in sources
+       3    2009-03-04,A,10001,10017,A_2009Summary.pdf page 1,Training day - forms note: Survey Unit records exist in project GIS
+            only,Found
+       4    2009-03-04,C,30000,30024,C_2009Summary.pdf page 1,Extracted from Daily Progress Form,Found
+       5 -  2009-03-04,D,,,NOT FOUND,No data found in Excel files or Bulgarian diaries,Not in sources
+       5 +  2009-03-04,D,40001,40066,D_Summary.pdf page 1,Extracted from Daily Progress Form,Found
+       6    2009-03-06,A,10000,10000,Team A Bulgarian Diary (2009),Found 1 units in section,Found
+       7    2009-03-06,B,20025,20097,Team B Bulgarian Diary (2009),Found 2 units in section,Found
+       8    2009-03-06,C,30025,30034,C_2009Summary.pdf page 1,Extracted from Daily Progress Form,Found
+
+● Update(outputs/missing-survey-units-extracted.csv)
+  ⎿  Updated outputs/missing-survey-units-extracted.csv with 1 addition and 1 removal                                   
+        9    2009-03-07,A,10054,10087,A_2009Summary.pdf page 3,Extracted from Daily Progress Form,Found
+       10    2009-03-07,B,20098,20138,Team B Bulgarian Diary (2009),Found 2 units in section,Found
+       11    2009-03-07,C,,,NOT FOUND,No data found in Excel files or Bulgarian diaries,Not in sources
+       12 -  2009-03-07,D,,,NOT FOUND,No data found in Excel files or Bulgarian diaries,Not in sources
+       12 +  2009-03-07,D,40031,40032,D_Summary.pdf pages 2-3,Extracted from Daily Progress Form,Found
+       13    2009-03-08,A,10104,10111,Team A Bulgarian Diary (2009),Found 8 units in section,Found
+       14    2009-03-08,C,,,C_2009Summary.pdf page 2,Form found but no units recorded - GPS points only,No units in form
+       15    2009-03-09,A,10197,10197,Team A Bulgarian Diary (2009),Found 1 units in section,Found
+
+● Update(outputs/missing-survey-units-extracted.csv)
+  ⎿  Updated outputs/missing-survey-units-extracted.csv with 1 addition and 1 removal                 
+       22    2009-03-12,B,20345,20461,Team B Bulgarian Diary (2009),Found 6 units in section,Found
+       23    2009-03-12,C,,,C_2009Summary.pdf page 3,Form found but no units recorded,No units in form
+       24    2009-03-15,A,10277,10316,Team A Bulgarian Diary (2009),Found 2 units in section,Found
+       25 -  2009-03-15,D,,,NOT FOUND,No data found in Excel files or Bulgarian diaries,Not in sources
+       25 +  2009-03-15,D,40039,40065,D_Summary.pdf page 4,Extracted from Daily Progress Form,Found
+       26    2009-03-16,A,10317,10369,Team A Bulgarian Diary (2009),Found 2 units in section,Found
+       27    2009-03-16,B,20461,20536,Team B Bulgarian Diary (2009),Found 6 units in section,Found
+       28    2009-03-16,C,,,C_2009Summary.pdf page 3,Form found but no units recorded,No units in form
+
+● Update(outputs/missing-survey-units-extracted.csv)
+  ⎿  Updated outputs/missing-survey-units-extracted.csv with 1 addition and 1 removal                                         
+       38    2009-03-23,A,10410,10503,Team A Bulgarian Diary (2009),Found 4 units in section,Found
+       39    2009-03-23,B,20639,20673,Team B Bulgarian Diary (2009),Found 3 units in section,Found
+       40    2009-03-23,C,30012,30170,C_2009Summary.pdf page 4,Multiple forms this day - combined range: 30012-30170,Found
+       41 -  2009-03-23,D,,,NOT FOUND,No data found in Excel files or Bulgarian diaries,Not in sources
+       41 +  2009-03-23,D,40069,40094,D_Summary.pdf pages 5 & 7,Two forms this day - ranges: 40069-40074 and 40091-40094,Found
+       42    2009-03-23,E,50071,50142,Team E Bulgarian Diary (2009),Found 6 units in section,Found
+       43    2009-03-24,A,10504,10563,Team A Bulgarian Diary (2009),Found 3 units in section,Found
+       44    2009-03-24,B,20674,20722,Team B Bulgarian Diary (2009),Found 11 units in section,Found
+
+● Update(outputs/missing-survey-units-extracted.csv)
+  ⎿  Updated outputs/missing-survey-units-extracted.csv with 1 addition and 1 removal                  
+       43    2009-03-24,A,10504,10563,Team A Bulgarian Diary (2009),Found 3 units in section,Found
+       44    2009-03-24,B,20674,20722,Team B Bulgarian Diary (2009),Found 11 units in section,Found
+       45    2009-03-24,C,30098,30131,C_2009Summary.pdf page 4,Extracted from Daily Progress Form,Found
+       46 -  2009-03-24,D,,,NOT FOUND,No data found in Excel files or Bulgarian diaries,Not in sources
+       46 +  2009-03-24,D,40112,40124,D_Summary.pdf page 8,Extracted from Daily Progress Form,Found
+       47    2009-03-25,A,10564,10610,Team A Bulgarian Diary (2009),Found 2 units in section,Found
+       48    2009-03-25,B,20709,20732,Team B Bulgarian Diary (2009),Found 13 units in section,Found
+       49    2009-03-25,C,,,NOT FOUND,No data found in Excel files or Bulgarian diaries,Not in sources
+
+● Update(outputs/missing-survey-units-extracted.csv)
+  ⎿  Updated outputs/missing-survey-units-extracted.csv with 1 addition and 1 removal                 
+       47    2009-03-25,A,10564,10610,Team A Bulgarian Diary (2009),Found 2 units in section,Found
+       48    2009-03-25,B,20709,20732,Team B Bulgarian Diary (2009),Found 13 units in section,Found
+       49    2009-03-25,C,,,NOT FOUND,No data found in Excel files or Bulgarian diaries,Not in sources
+       50 -  2009-03-25,D,,,NOT FOUND,No data found in Excel files or Bulgarian diaries,Not in sources
+       50 +  2009-03-25,D,40125,40211,D_Summary.pdf page 9,Extracted from Daily Progress Form,Found
+       51    2009-03-25,E,50203,50249,Team E Bulgarian Diary (2009),Found 12 units in section,Found
+       52    2009-03-26,A,10611,10667,Team A Bulgarian Diary (2009),Found 2 units in section,Found
+       53    2009-03-26,B,20729,20783,Team B Bulgarian Diary (2009),Found 9 units in section,Found
+
+● Update(outputs/missing-survey-units-extracted.csv)
+  ⎿  Updated outputs/missing-survey-units-extracted.csv with 1 addition and 1 removal                  
+       52    2009-03-26,A,10611,10667,Team A Bulgarian Diary (2009),Found 2 units in section,Found
+       53    2009-03-26,B,20729,20783,Team B Bulgarian Diary (2009),Found 9 units in section,Found
+       54    2009-03-26,C,30021,30029,C_2009Summary.pdf page 5,Extracted from Daily Progress Form,Found
+       55 -  2009-03-26,D,,,NOT FOUND,No data found in Excel files or Bulgarian diaries,Not in sources
+       55 +  2009-03-26,D,40212,40214,D_Summary.pdf page 10,Extracted from Daily Progress Form,Found
+       56    2009-03-26,E,50247,50289,Team E Bulgarian Diary (2009),Found 3 units in section,Found
+       57    2009-03-27,A,10668,10742,Team A Bulgarian Diary (2009),Found 5 units in section,Found
+       58    2009-03-27,B,,,NOT FOUND,No data found in Excel files or Bulgarian diaries,Not in sources
+
+● Update(outputs/missing-survey-units-extracted.csv)
+  ⎿  Updated outputs/missing-survey-units-extracted.csv with 1 addition and 1 removal                                            
+       57    2009-03-27,A,10668,10742,Team A Bulgarian Diary (2009),Found 5 units in section,Found
+       58    2009-03-27,B,,,NOT FOUND,No data found in Excel files or Bulgarian diaries,Not in sources
+       59    2009-03-27,C,,,C_2009Summary.pdf page 5,Form found but units field empty - comments mention objects only,No units in
+             form
+       60 -  2009-03-27,D,,,NOT FOUND,No data found in Excel files or Bulgarian diaries,Not in sources
+       60 +  2009-03-27,D,40218,40250,D_Summary.pdf page 11,Extracted from Daily Progress Form,Found
+       61    2009-03-27,E,,,NOT FOUND,No data found in Excel files or Bulgarian diaries,Not in sources
+       62    2009-03-31,E,,,NOT FOUND,No data found in Excel files or Bulgarian diaries,Not in sources
+       63    2009-04-03,E,,,NOT FOUND,No data found in Excel files or Bulgarian diaries,Not in sources
+
+● Perfect! All 8 Team D dates extracted. Now let me update the extraction report and mark this task complete.
+
+● Update(outputs/extraction-report.md)
+  ⎿  Updated outputs/extraction-report.md with 2 additions and 2 removals
+        7    ### Overall Results
+        8    
+        9    - **Total missing records**: 83 (out of 268 total records)
+       10 -  - **Successfully extracted**: 36 records (43.4%)
+       10 +  - **Successfully extracted**: 49 records (59.0%)
+       11    - **Found in source but no units**: 9 records (10.8%)
+       12 -  - **Not found in any source**: 38 records (45.8%)
+       12 +  - **Not found in any source**: 25 records (30.1%)
+       13    
+       14    ## Data Sources Used
+       15    
+
+● Update(outputs/extraction-report.md)
+  ⎿  Updated outputs/extraction-report.md with 2 additions and 2 removals             
+       27    Bulgarian diaries provided the bulk of successful extractions for 2009:
+       28    
+       29    - Team A: `A_Diary_BG.doc` → 11 records extracted
+       30 -  - Team B: `B_Diary_BG.doc` → 12 records extracted  
+       30 +  - Team B: `B_Diary_BG.doc` → 12 records extracted
+       31    - Team C: `C_Diary_BG.doc` → 0 records (no unit numbers recorded)
+       32 -  - Team D: `D Diary_BG.doc` → 2 records extracted
+       32 +  - Team D: `D Diary_BG.doc` → 2 records extracted (2009-03-19, 2009-03-20)
+       33    - Team E: `E Diary_BG.doc` → 4 records extracted
+       34    
+       35    **Total from diaries**: 29 records
+
+● Update(outputs/extraction-report.md)
+  ⎿  Updated outputs/extraction-report.md with 10 additions and 1 removal                                    
+       36    
+       37    ### Tier 3: PDF Daily Progress Forms (Manual Vision Extraction)
+       38    
+       39 -  Team C 2009 PDF summaries provided additional unit data using vision-based extraction:
+       39 +  Team A, C, and D 2009 PDF summaries provided additional unit data using vision-based extraction:
+       40    
+       41 +  - `A_2009Summary.pdf` → 5 records extracted
+       42    - `C_2009Summary.pdf` (pages 1-5) → 7 records extracted, 6 forms without units
+       43 +  - `D_Summary.pdf` → 8 records extracted
+       44    
+       45 +  **Team A 2009 PDF Extractions:**
+       46 +  - 2009-03-04: 10001-10017 ✓
+       47 +  - 2009-03-07: 10054-10087 ✓
+       48 +  - 2009-03-11: 10175-10220 ✓
+       49 +  - 2009-03-19: 10370-10387 ✓
+       50 +  - 2009-03-20: 10386-10444 ✓
+       51 +  
+       52    **Team C 2009 PDF Extractions:**
+       53    - 2009-03-04: 30000-30024 ✓
+       54    - 2009-03-06: 30025-30034 ✓
+
+● Update(outputs/extraction-report.md)
+  ⎿  Updated outputs/extraction-report.md with 12 additions                                                             
+       64    - 2009-03-26: 30021-30029 ✓
+       65    - 2009-03-27: Form exists but units field empty
+       66    
+       67 +  **Team D 2009 PDF Extractions:**
+       68 +  - 2009-03-04: 40001-40066 ✓
+       69 +  - 2009-03-07: 40031-40032 ✓
+       70 +  - 2009-03-15: 40039-40065 ✓
+       71 +  - 2009-03-23: 40069-40074 and 40091-40094 ✓ (two forms)
+       72 +  - 2009-03-24: 40112-40124 ✓
+       73 +  - 2009-03-25: 40125-40211 ✓
+       74 +  - 2009-03-26: 40212-40214 ✓
+       75 +  - 2009-03-27: 40218-40250 ✓
+       76 +  
+       77 +  **Total from Team A PDFs**: 5 records
+       78    **Total from Team C PDFs**: 7 records with units, 6 records confirmed as having forms but no units recorded
+       79 +  **Total from Team D PDFs**: 8 records
+       80    
+       81    ## Extraction Results by Year
+       82    
+
+● Update(outputs/extraction-report.md)
+  ⎿  Updated outputs/extraction-report.md with 4 additions and 4 removals                           
+       82    
+       83    ### 2009 Kazanluk (73 missing records)
+       84    
+       85 -  - **Found**: 36 records (49.3%)
+       85 +  - **Found**: 49 records (67.1%)
+       86    - **Found in source but no units**: 6 records (8.2%)
+       87 -  - **Still missing**: 31 records (42.5%)
+       87 +  - **Still missing**: 18 records (24.7%)
+       88    
+       89    #### By Team:
+       90    
+       91 -  - **Team A**: 11/19 found (57.9%)
+       91 +  - **Team A**: 16/19 found (84.2%) - **March PDF extraction completed**
+       92    - **Team B**: 12/18 found (66.7%)
+       93    - **Team C**: 7/19 found (36.8%) + 6 forms without units - **PDF extraction completed**
+       94 -  - **Team D**: 2/10 found (20%)
+       94 +  - **Team D**: 10/10 found (100%) - **PDF extraction completed**
+       95    - **Team E**: 4/7 found (57.1%)
+       96    
+       97    ### 2010 Kazanluk (8 missing records)
+
+● Update(outputs/extraction-report.md)
+  ⎿  Updated outputs/extraction-report.md with 6 additions and 3 removals                                                        
+       187    
+       188    ## Conclusion
+       189    
+       190 -  Successfully extracted survey unit numbers for **36 out of 83 missing records (43.4
+           -  %)** from Excel files, Bulgarian field diaries, and PDF Daily Progress Forms. An additional 9 records were found in
+           -   sources but had no units recorded (forms existed but were incomplete).
+       190 +  Successfully extracted survey unit numbers for **49 out of 83 missing records (59.0
+           +  %)** from Excel files, Bulgarian field diaries, and PDF Daily Progress Forms. An additional 9 records were found in
+           +   sources but had no units recorded (forms existed but were incomplete).
+       191    
+       192    **Extraction breakdown:**
+       193    - Excel SurveySummary files: 0 records (2010-2011 had empty fields)
+       194    - Bulgarian diaries (2009): 29 records
+       195 -  - PDF Daily Progress Forms (2009 Team C): 7 records
+       195 +  - PDF Daily Progress Forms (2009 Teams A, C, D): 20 records
+       196 +    - Team A: 5 records
+       197 +    - Team C: 7 records
+       198 +    - Team D: 8 records
+       199    
+       200 -  **Remaining work:** 38 records still need extraction from other team PDF summaries (Teams A, D, E for specific 
+           -  dates, plus October 2009 Team C dates).
+       200 +  **Remaining work:** 25 records still need extraction from other team PDF summaries (Teams B and E for specific 
+           +  March dates, plus October-November 2009 dates for Teams A, B, C, E).
+       201    
+       202    ---
+       203    
+
+● Update(outputs/extraction-report.md)
+  ⎿  Updated outputs/extraction-report.md with 2 additions and 2 removals                                                       
+       202    ---
+       203    
+       204    **Report generated**: 2025-11-24
+       205 -  **Last updated**: 2025-11-24 (Team C PDF extraction completed)
+       206 -  **Extraction sources**: Excel SurveySummary files (2010-2011), Bulgarian field diaries (2009), PDF Daily Progress 
+           -  Forms (2009 Team C)
+       205 +  **Last updated**: 2025-11-24 (Teams A, C, D PDF extraction completed)
+       206 +  **Extraction sources**: Excel SurveySummary files (2010-2011), Bulgarian field diaries (2009), PDF Daily Progress 
+           +  Forms (2009 Teams A, C, D)
+       207    **Tools used**: antiword, pandas, Python regex pattern matching, Claude vision (PDF reading)
+
+● Excellent progress! I've successfully completed the Team D 2009 PDF extraction. Here's what was accomplished:
+
+  Team D 2009 Extraction Complete
+
+  Extracted 8 missing records from D_Summary.pdf:
+  - 2009-03-04: 40001-40066
+  - 2009-03-07: 40031-40032
+  - 2009-03-15: 40039-40065
+  - 2009-03-23: 40069-40074 and 40091-40094 (two forms this day)
+  - 2009-03-24: 40112-40124
+  - 2009-03-25: 40125-40211 (87 units surveyed!)
+  - 2009-03-26: 40212-40214
+  - 2009-03-27: 40218-40250
+
+  Team D now has 100% coverage (10/10 records found) for all missing dates.
+
+  Overall Progress Update
+
+  - Started with: 83 missing records
+  - Now extracted: 49 records (59.0%)
+  - Remaining: 25 records (30.1%)
+
+  Breakdown by source:
+  - Excel files: 0 records
+  - Bulgarian diaries: 29 records
+  - PDF forms: 20 records (Teams A: 5, C: 7, D: 8)
+
+  Remaining Work
+
+  2009 missing records (18 remaining):
+  - Team A: 3 autumn dates (October-November)
+  - Team B: 6 dates (1 March + 5 autumn dates)
+  - Team C: 4 October dates
+  - Team E: 3 dates (late March + April)
+
+  2010-2011 missing records: 7 remaining
+
+  All updates have been saved to:
+  - outputs/missing-survey-units-extracted.csv
+  - outputs/extraction-report.md
+
+  Ready to proceed with the remaining team PDFs (Teams B and E March dates, plus autumn season dates)?
+
+> Please proceed! 
+
+● I'll proceed with extracting the remaining team PDFs. Let me start by identifying which PDF summaries are available for Teams B
+  and E.
+
+● Bash(find /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-2020-04/Kazanluk/2009/Project\ Records/TeamB/ -name
+       "*.pdf" -type f 2>/dev/null |…)
+  ⎿ /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-2020-04/Kazanluk/2009/Project Records/TeamB/Finalized/
+    B_20090304.pdf
+    /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-2020-04/Kazanluk/2009/Project Records/TeamB/Finalized/
+    … +79 lines (ctrl+o to expand)
+
+
+
+● Bash(find /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-2020-04/Kazanluk/2009/Project\ Records/TeamE/ -name
+       "*.pdf" -type f 2>/dev/null |…)
+  ⎿ /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-2020-04/Kazanluk/2009/Project Records/TeamE/20090323/E
+    _Summary20Mar-25Mar.pdf
+    /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-2020-04/Kazanluk/2009/Project Records/TeamE/20090324/E
+    … +29 lines (ctrl+o to expand)
+
+
+
+● Great! I found PDFs for Team B and Team E. Let me start with Team E's missing March/April dates, then Team B.
+
+  Team E missing dates:
+  - 2009-03-27: E_20090327.pdf ✓
+  - 2009-03-31: Check E_Summary26Mar-3Apr.pdf
+  - 2009-04-03: E_20090403.pdf ✓
+
+  Team B missing March dates:
+  - 2009-03-03: Check B_Summary04Mar-08Mar.pdf or B_2009Summary.pdf
+  - 2009-03-27: Check B_Summary25Mar-05Apr.pdf
+  - 2009-04-05: B_20090405.pdf ✓
+
+  Let me start with Team E's specific date PDFs:
+
+● Read(/media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-2020-04/Kazanluk/2009/Project
+      Records/TeamE/E_20090327.pdf)
+  ⎿  Read PDF (1.8MB)
+
+● This PDF contains intensive survey forms (individual unit cards) rather than Daily Progress Forms with Start/End Unit fields. Let
+  me check the Team E summary PDF instead, which should have the consolidated unit ranges:
+
+● Read(/media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-2020-04/Kazanluk/2009/Project
+      Records/TeamE/E_Summary26Mar-3Apr.pdf)
+  ⎿  Read PDF (111KB)
+
+● Excellent! I can see Team E Daily Progress Forms. Let me extract the data:
+
+  Page 1 shows:
+  1. 2009-03-26: Start Unit: 50247, End Unit: 50289 (already have this from diary)
+  2. 2009-03-31 (shown as "April 0"): Start Unit: 50520, End Unit: 50542 ✓
+  3. 2009-03-27: Start Unit: 50290, End Unit: 50319 ✓
+
+  Now let me check for 2009-04-03:
+
+● Read(/media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-2020-04/Kazanluk/2009/Project
+      Records/TeamE/E_20090403.pdf)
+  ⎿  Read PDF (937.4KB)
+
+● Perfect! I found Team E data in the first summary PDF. The second PDF is individual intensive survey unit cards, not Daily
+  Progress Forms. From the E_Summary26Mar-3Apr.pdf I can see:
+
+  Team E extractions:
+  - 2009-03-27: Start Unit 50290, End Unit 50319 ✓
+  - 2009-03-31: Start Unit 50520, End Unit 50542 ✓
+
+  For 2009-04-03, the E_20090403.pdf shows individual unit cards but no Daily Progress Form with a consolidated range. Let me update
+   the CSV with what I've found and then check Team B.
+
+● Update(outputs/missing-survey-units-extracted.csv)
+  ⎿  Updated outputs/missing-survey-units-extracted.csv with 1 addition and 1 removal                                            
+       58    2009-03-27,B,,,NOT FOUND,No data found in Excel files or Bulgarian diaries,Not in sources
+       59    2009-03-27,C,,,C_2009Summary.pdf page 5,Form found but units field empty - comments mention objects only,No units in
+             form
+       60    2009-03-27,D,40218,40250,D_Summary.pdf page 11,Extracted from Daily Progress Form,Found
+       61 -  2009-03-27,E,,,NOT FOUND,No data found in Excel files or Bulgarian diaries,Not in sources
+       61 +  2009-03-27,E,50290,50319,E_Summary26Mar-3Apr.pdf page 1,Extracted from Daily Progress Form,Found
+       62    2009-03-31,E,,,NOT FOUND,No data found in Excel files or Bulgarian diaries,Not in sources
+       63    2009-04-03,E,,,NOT FOUND,No data found in Excel files or Bulgarian diaries,Not in sources
+       64    2009-04-05,B,,,NOT FOUND,No data found in Excel files or Bulgarian diaries,Not in sources
