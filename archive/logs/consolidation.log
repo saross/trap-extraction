@@ -1,0 +1,134 @@
+2025-11-20 16:51:36,019 - INFO - ================================================================================
+2025-11-20 16:51:36,019 - INFO - CONSOLIDATION: Merging Phase 1 and Phase 2 data
+2025-11-20 16:51:36,019 - INFO - ================================================================================
+2025-11-20 16:51:36,020 - INFO - Loaded Phase 1 data: 192 records
+2025-11-20 16:51:36,020 - WARNING - Phase 2 output not found: /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-2020-04/claude_extraction/outputs/phase2_roles.csv
+2025-11-20 16:51:36,020 - WARNING - Proceeding with Phase 1 data only
+2025-11-20 16:51:36,021 - INFO - Merged data: 192 records
+2025-11-20 16:51:36,022 - INFO - Handling duplicate Date+Team combinations...
+2025-11-20 16:51:36,189 - INFO - After deduplication: 191 records
+2025-11-20 16:51:36,193 - INFO - 
+================================================================================
+2025-11-20 16:51:36,193 - INFO - Consolidation complete!
+2025-11-20 16:51:36,193 - INFO - Final output: 191 records
+2025-11-20 16:51:36,193 - INFO - Saved to: /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-2020-04/claude_extraction/outputs/final_attribution.csv
+2025-11-20 16:51:36,193 - INFO - ================================================================================
+
+2025-11-20 16:51:36,193 - INFO - Data Quality Summary:
+2025-11-20 16:51:36,193 - INFO -   Records with Leader: 191
+2025-11-20 16:51:36,194 - INFO -   Records with Walkers: 0
+2025-11-20 16:51:36,194 - INFO -   Records with Start Unit: 185
+2025-11-20 16:51:36,194 - INFO -   Records with End Unit: 185
+2025-11-20 16:51:36,194 - INFO -   Records with PDA operator: 0
+2025-11-20 16:51:36,194 - INFO -   Records with Paper recorder: 0
+2025-11-20 16:51:36,194 - INFO -   Records with Data editor: 0
+2025-11-20 16:51:36,194 - INFO -   Records with Digitiser: 0
+2025-11-20 16:51:36,194 - INFO - 
+191 records missing walker data (candidates for PDF fallback)
+2025-11-20 16:52:00,109 - INFO - ================================================================================
+2025-11-20 16:52:00,110 - INFO - CONSOLIDATION: Merging Phase 1 and Phase 2 data
+2025-11-20 16:52:00,110 - INFO - ================================================================================
+2025-11-20 16:52:00,111 - INFO - Loaded Phase 1 data: 192 records
+2025-11-20 16:52:00,111 - WARNING - Phase 2 output not found: /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-2020-04/claude_extraction/outputs/phase2_roles.csv
+2025-11-20 16:52:00,111 - WARNING - Proceeding with Phase 1 data only
+2025-11-20 16:52:00,112 - INFO - Merged data: 192 records
+2025-11-20 16:52:00,112 - INFO - Handling duplicate Date+Team combinations...
+2025-11-20 16:52:00,277 - INFO - After deduplication: 191 records
+2025-11-20 16:52:00,282 - INFO - 
+================================================================================
+2025-11-20 16:52:00,282 - INFO - Consolidation complete!
+2025-11-20 16:52:00,282 - INFO - Final output: 191 records
+2025-11-20 16:52:00,282 - INFO - Saved to: /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-2020-04/claude_extraction/outputs/final_attribution.csv
+2025-11-20 16:52:00,282 - INFO - ================================================================================
+
+2025-11-20 16:52:00,282 - INFO - Data Quality Summary:
+2025-11-20 16:52:00,282 - INFO -   Records with Leader: 191
+2025-11-20 16:52:00,282 - INFO -   Records with Walkers: 0
+2025-11-20 16:52:00,282 - INFO -   Records with Start Unit: 185
+2025-11-20 16:52:00,282 - INFO -   Records with End Unit: 185
+2025-11-20 16:52:00,282 - INFO -   Records with PDA operator: 0
+2025-11-20 16:52:00,283 - INFO -   Records with Paper recorder: 0
+2025-11-20 16:52:00,283 - INFO -   Records with Data editor: 0
+2025-11-20 16:52:00,283 - INFO -   Records with Digitiser: 0
+2025-11-20 16:52:00,283 - INFO - 
+191 records missing walker data (candidates for PDF fallback)
+2025-11-20 16:52:26,309 - INFO - ================================================================================
+2025-11-20 16:52:26,309 - INFO - CONSOLIDATION: Merging Phase 1 and Phase 2 data
+2025-11-20 16:52:26,309 - INFO - ================================================================================
+2025-11-20 16:52:26,310 - INFO - Loaded Phase 1 data: 192 records
+2025-11-20 16:52:26,311 - INFO - Loaded Phase 2 data: 68 records
+2025-11-20 16:52:26,313 - INFO - Merged data: 215 records
+2025-11-20 16:52:26,313 - INFO - Handling duplicate Date+Team combinations...
+2025-11-20 16:52:26,489 - INFO - After deduplication: 208 records
+2025-11-20 16:52:26,494 - INFO - 
+================================================================================
+2025-11-20 16:52:26,494 - INFO - Consolidation complete!
+2025-11-20 16:52:26,494 - INFO - Final output: 208 records
+2025-11-20 16:52:26,494 - INFO - Saved to: /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-2020-04/claude_extraction/outputs/final_attribution.csv
+2025-11-20 16:52:26,494 - INFO - ================================================================================
+
+2025-11-20 16:52:26,494 - INFO - Data Quality Summary:
+2025-11-20 16:52:26,494 - INFO -   Records with Leader: 191
+2025-11-20 16:52:26,494 - INFO -   Records with Walkers: 17
+2025-11-20 16:52:26,495 - INFO -   Records with Start Unit: 185
+2025-11-20 16:52:26,495 - INFO -   Records with End Unit: 185
+2025-11-20 16:52:26,495 - INFO -   Records with PDA operator: 8
+2025-11-20 16:52:26,495 - INFO -   Records with Paper recorder: 8
+2025-11-20 16:52:26,495 - INFO -   Records with Data editor: 14
+2025-11-20 16:52:26,495 - INFO -   Records with Digitiser: 0
+2025-11-20 16:52:26,495 - INFO - 
+191 records missing walker data (candidates for PDF fallback)
+2025-11-20 17:45:50,432 - INFO - ================================================================================
+2025-11-20 17:45:50,433 - INFO - CONSOLIDATION: Merging Phase 1 and Phase 3 (cleaned) data
+2025-11-20 17:45:50,433 - INFO - ================================================================================
+2025-11-20 17:45:50,434 - INFO - Loaded Phase 1 data: 192 records
+2025-11-20 17:45:50,434 - WARNING - Phase 3 output not found: /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-2020-04/claude_extraction/outputs/phase3_cleaned.csv
+2025-11-20 17:45:50,434 - WARNING - Trying Phase 2 data instead...
+2025-11-20 17:45:50,435 - INFO - Loaded Phase 2 data: 68 records
+2025-11-20 17:45:50,459 - INFO - Merged data: 215 records
+2025-11-20 17:45:50,460 - INFO - Handling duplicate Date+Team combinations...
+2025-11-20 17:45:50,710 - INFO - After deduplication: 208 records
+2025-11-20 17:45:50,715 - INFO - 
+================================================================================
+2025-11-20 17:45:50,715 - INFO - Consolidation complete!
+2025-11-20 17:45:50,715 - INFO - Final output: 208 records
+2025-11-20 17:45:50,715 - INFO - Saved to: /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-2020-04/claude_extraction/outputs/final_attribution.csv
+2025-11-20 17:45:50,715 - INFO - ================================================================================
+
+2025-11-20 17:45:50,715 - INFO - Data Quality Summary:
+2025-11-20 17:45:50,715 - INFO -   Records with Leader: 191
+2025-11-20 17:45:50,715 - INFO -   Records with Walkers: 17
+2025-11-20 17:45:50,716 - INFO -   Records with Start Unit: 185
+2025-11-20 17:45:50,716 - INFO -   Records with End Unit: 185
+2025-11-20 17:45:50,716 - INFO -   Records with PDA operator: 8
+2025-11-20 17:45:50,716 - INFO -   Records with Paper recorder: 8
+2025-11-20 17:45:50,716 - INFO -   Records with Data editor: 14
+2025-11-20 17:45:50,716 - INFO -   Records with Digitiser: 0
+2025-11-20 17:45:50,716 - INFO - 
+191 records missing walker data (candidates for PDF fallback)
+2025-11-20 17:46:16,175 - INFO - ================================================================================
+2025-11-20 17:46:16,176 - INFO - CONSOLIDATION: Merging Phase 1 and Phase 3 (cleaned) data
+2025-11-20 17:46:16,176 - INFO - ================================================================================
+2025-11-20 17:46:16,177 - INFO - Loaded Phase 1 data: 192 records
+2025-11-20 17:46:16,178 - INFO - Loaded Phase 3 cleaned data: 68 records
+2025-11-20 17:46:16,180 - INFO - Merged data: 215 records
+2025-11-20 17:46:16,180 - INFO - Handling duplicate Date+Team combinations...
+2025-11-20 17:46:16,412 - INFO - After deduplication: 208 records
+2025-11-20 17:46:16,416 - INFO - 
+================================================================================
+2025-11-20 17:46:16,416 - INFO - Consolidation complete!
+2025-11-20 17:46:16,416 - INFO - Final output: 208 records
+2025-11-20 17:46:16,416 - INFO - Saved to: /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-2020-04/claude_extraction/outputs/final_attribution.csv
+2025-11-20 17:46:16,416 - INFO - ================================================================================
+
+2025-11-20 17:46:16,416 - INFO - Data Quality Summary:
+2025-11-20 17:46:16,416 - INFO -   Records with Leader: 191
+2025-11-20 17:46:16,416 - INFO -   Records with Walkers: 29
+2025-11-20 17:46:16,417 - INFO -   Records with Start Unit: 185
+2025-11-20 17:46:16,417 - INFO -   Records with End Unit: 185
+2025-11-20 17:46:16,417 - INFO -   Records with PDA operator: 7
+2025-11-20 17:46:16,417 - INFO -   Records with Paper recorder: 6
+2025-11-20 17:46:16,417 - INFO -   Records with Data editor: 10
+2025-11-20 17:46:16,417 - INFO -   Records with Digitiser: 0
+2025-11-20 17:46:16,417 - INFO - 
+179 records missing walker data (candidates for PDF fallback)
