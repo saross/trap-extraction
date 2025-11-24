@@ -150,6 +150,144 @@ This release marks the completion of walker data extraction from all TRAP 2009-2
 
 ---
 
+## [Post-v1.0.0 Updates] - 2025-11-24
+
+### Survey Unit Number Extraction Completion
+
+**Survey Unit Coverage:** ✅ 89.18% Complete (239/268 records)
+
+Following the v1.0.0 release (100% walker data), this update documents the completion of survey unit number extraction, achieving 89.18% coverage with 100% documentation of all remaining gaps.
+
+### Changed
+
+#### Data Quality Improvements
+- **outputs/attribution.csv** - Updated to 239 records with survey units (89.18% coverage)
+  - Extracted 54 survey unit numbers from Bulgarian diaries and PDF Daily Progress Forms
+  - Added explanatory QA_Notes for 28 records without units (alternative survey methods, weather cancellations, non-survey days)
+  - Documented 1 record pending investigation (six-digit to five-digit unit renumbering for 2009-03-12 Team C)
+  - Coverage improvement: +54 records (+20.2% from initial 69.0% to 89.18%)
+
+#### Documentation Updates
+- **outputs/survey-unit-number-extraction-report.md** - Comprehensive report documenting survey unit extraction phase completion
+- **outputs/extraction-report.md** - Updated with final ambiguous date investigation results
+- **outputs/task-completion-final-summary.md** - Updated with 239/268 coverage statistics
+- **outputs/follow-up-actions.md** - Updated header with 89.18% completion status
+- **planning/akb-submission-todo.md** - Task 1 completion statistics updated
+- **README.md** - Updated with dual completion dates and survey unit coverage
+- **CHANGELOG.md** - This incremental update
+
+### Added
+
+#### Archive Structure
+- **archive/investigation-runsheets/** - New directory for completed investigation runsheets
+- **archive/reports/survey-unit-extraction/** - New directory for interim survey unit extraction reports
+
+#### Investigation Documentation (Archived)
+- **archive/investigation-runsheets/ambiguous-dates-investigation-runsheet.md** - Final investigation of 3 ambiguous dates with Bulgarian diary translations (completed 24 November 2025)
+- **archive/investigation-runsheets/missing-dates-diary-investigation.md** - Initial investigation template
+- **archive/reports/survey-unit-extraction/extraction-completion-summary.md** - Point-in-time extraction results
+- **archive/reports/survey-unit-extraction/missing-dates-investigation-findings.md** - Detailed diary investigation with excerpts
+- **archive/reports/survey-unit-extraction/missing-dates-final-summary.md** - Comprehensive analysis of dates without units
+
+### Survey Unit Extraction Results
+
+**Extraction phase (54 records):**
+- Bulgarian field diaries (2009): 29 records extracted
+- PDF Daily Progress Forms (2009): 25 records extracted
+- Excel SurveySummary files: 0 records (fields empty for missing records)
+
+**Investigation phase (29 records):**
+- Alternative survey methods: 5 records (mound documentation, transect surveys, object recording)
+- No autumn survey seasons: 11 records (2009-2010 diaries end in March/April)
+- Weather cancellations: 3 records (rain days verified in diaries)
+- Non-survey activities: 3 records (base cleanup, remote sensing, grading)
+- Gap days: 3 records (between survey sessions)
+- Team not working: 3 records (no diary entries)
+- Pending investigation: 1 record (six-digit to five-digit unit renumbering for Team C 2009-03-12)
+
+### Key Discoveries
+
+#### Alternative Survey Methodologies
+Investigation revealed that many "missing" survey units represent **legitimate alternative survey methods** rather than missing data:
+
+- **Team C specialisation:** Intensive site investigations (mound documentation, transect surveys, object recording) rather than systematic unit-based surveys
+- **Team C lower coverage explained:** 79.45% coverage due to focus on intensive archaeological recording rather than extensive survey
+- **Examples:** 2009-03-11 (burial mound necropolis DS 052 with 3 mounds documented), 2009-03-25 (transect survey for site GCh-060), 2009-03-27 (9 mounds documented for site GCh-061)
+
+#### Six-Digit to Five-Digit Unit Renumbering Issue
+- **Discovery:** Old six-digit survey units (300003-300009, skip 300008) found on 2009-03-12 Team C Daily Progress Form
+- **Problem:** Team C initially used six-digit numbering (300xxx) later retroactively changed to five-digit (30xxx) format
+- **Status:** Pending investigation of GIS databases, unit cards, or project metadata for renumbering mapping
+- **Documented in:** outputs/follow-up-actions.md Medium Priority #1
+
+#### Data Entry Error Resolution
+- **2009-04-05 Team B:** PDF form had Start/End Unit and Start/End Time fields swapped - units 20808-20812 clearly visible in wrong fields, successfully extracted
+
+### Data Quality Metrics (Post-v1.0.0 Update)
+
+| Metric | Coverage | Count | Change from v1.0.0 |
+|--------|----------|-------|--------------------|
+| **Total records** | 100% | 268 | No change |
+| **Walker data** | 100% | 268/268 | No change |
+| **Leader data** | 100% | 268/268 | No change |
+| **Survey units** | 89.18% | 239/268 | +54 records extracted |
+| **Survey units explained** | 10.82% | 28/268 | +28 explanations added |
+| **Survey units pending** | 0.37% | 1/268 | 1 renumbering investigation |
+| **Date coverage** | 100% | 268/268 | No change |
+| **Team assignment** | 100% | 268/268 | No change |
+| **Source documentation** | 100% | 268/268 | Enhanced with extraction provenance |
+
+### Methodology
+
+**Text extraction:**
+- antiword for Bulgarian .doc files (Cyrillic script)
+- pandoc for English .docx files
+- Python regex for 5-digit unit number pattern matching
+
+**Vision-based extraction:**
+- Claude vision (multimodal LLM) for reading scanned PDF Daily Progress Forms
+- Manual transcription and validation
+
+**NLP analysis:**
+- Bulgarian diary translation and interpretation (~100+ pages examined)
+- Cross-referencing across 11 diary files (2009-2011)
+- Narrative analysis for alternative survey methods
+
+### Outstanding Tasks
+
+From outputs/follow-up-actions.md:
+
+#### High Priority
+- Cascade Excel date corrections to other data copies
+- Participant list updates (Silvia Ivanova, Lizzy, Jiří Musil)
+
+#### Medium Priority
+- Six-digit to five-digit unit renumbering investigation (2009-03-12 Team C Kazanluk)
+- Review 12 failed diary extractions for alternative methods
+
+#### Low Priority
+- Create comprehensive archive README files (added 24 November 2025)
+- Name format standardisation (full names vs initials)
+- Role field enhancement (if additional sources discovered)
+
+### Provenance
+
+**Survey Unit Extraction Period:** 23-24 November 2025 (2-day focused effort following walker data completion)
+
+**Sources examined:**
+- 2010-2011 Excel SurveySummary files (Kaz10, Kaz11)
+- 5 Bulgarian field diaries (Team A, B, C, D, E 2009)
+- 8+ PDF Daily Progress Form compilations (Teams A, B, C, D, E 2009)
+- 11 team diaries for investigation (English and Bulgarian, 2009-2011)
+
+**Tools used:**
+- antiword, pandoc (text extraction)
+- Claude vision (PDF form reading)
+- Claude NLP (Bulgarian diary analysis)
+- pandas, Python (data processing and validation)
+
+---
+
 ## [0.8.0] - 2025-11-22 (Phase 4 Completion)
 
 ### Added
