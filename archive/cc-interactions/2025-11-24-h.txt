@@ -1,0 +1,1572 @@
+
+╭─── Claude Code v2.0.51 ──────────────────────────────────────────────────────╮
+│                                       │ Tips for getting started             │
+│          Welcome back Shawn!          │ Run /init to create a CLAUDE.md fil… │
+│                                       │ ──────────────────────────────────── │
+│                ▐▛███▜▌                │ Recent activity                      │
+│               ▝▜█████▛▘               │ No recent activity                   │
+│                 ▘▘ ▝▝                 │                                      │
+│                                       │                                      │
+│         Opus 4.5 · Claude Max         │                                      │
+│   /…/synology/Adela/TRAP-WD-2020-04   │                                      │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+> Hi CC, welcome back, can you look at 
+archive/cc-interactions/2025-11-24-g.txt and use that to recall what we've 
+been working on? VS Code just crashed during /compact and I'd like to resume
+ the remaining to-do tasks 
+
+● Read(archive/cc-interactions/2025-11-24-g.txt)
+  ⎿  Error reading file
+
+● That file doesn't exist. Let me check what interaction logs are available:
+
+● Search(pattern: "archive/cc-interactions/**/*.txt")
+  ⎿  Found 0 files 
+
+● Bash(ls -la /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/T
+      RAP-WD-2020-04/archive/ 2>/dev/null || echo "No archive directory found")
+  ⎿  No archive directory found
+
+● Bash(ls -la /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/T
+      RAP-WD-2020-04/)
+  ⎿  total 40                                      
+     drwxr-x--- 10 shawn  1003 4096 Nov 24 07:35 .
+     drwxr-x---  6 shawn  1003 4096 Jul  5  2020 ..
+     … +8 lines (ctrl+o to expand)
+
+● Search(pattern: "**/*todo*")
+  ⎿  Found 1 file (ctrl+o to expand)
+
+● Search(pattern: "**/planning/**/*.md")
+  ⎿  Found 3 files (ctrl+o to expand)
+
+● Search(pattern: "trap-extraction/**/*.md")
+  ⎿  Found 57 files (ctrl+o to expand)
+
+● Let me read the current to-do and follow-up files:
+
+● Read(trap-extraction/planning/akb-submission-todo.md)
+  ⎿  Read 380 lines
+
+● Read(trap-extraction/planning/follow-up-actions.md)
+  ⎿  Read 368 lines
+
+● I've reviewed the project status. This is the TRAP Data Extraction project
+   for AKB (Archaeological Knowledge Base) submission. Here's where we
+  stand:
+
+  Completed
+
+  - ✅ Task 1: Survey unit extraction (89.18% coverage - 239/268 with units,
+   28 explained, 1 pending renumbering)
+  - ✅ Walker data extraction (100% - 268/268 records)
+  - ✅ Name disambiguation (Adela, Petra, etc.)
+  - ✅ Date error corrections (2010-03-08, 2011-11-10)
+
+  Remaining Tasks (from akb-submission-todo.md)
+
+  High Priority:
+  1. Task 2: Verify team leader for every day (pending verification)
+  2. Task 3: Standardise all names to name-mapping document
+  3. Task 8: Verify participant name spelling
+
+  Medium Priority:
+  4. Task 4: Extract role information via NLP diary analysis (PDA operator,
+  paper recorder, etc.)
+  5. Task 9: Review and finalise Extraction_Notes
+
+  QA & Submission:
+  6. Task 5: Plan and complete QA exercise
+  7. Task 7: Create data dictionary
+  8. Task 10: Create submission metadata
+  9. Task 6: Package for secondary QA (Gemini)
+
+  Also pending (from follow-up-actions.md):
+  - Six-digit to five-digit survey unit mapping for 2009-03-12 Team C
+  - Participant list updates (Silvia Ivanova, Lizzy, Jiří Musil)
+
+  Which task would you like to resume? The logical next step would be Task 2
+   (verify team leaders) followed by Task 3 (name standardisation), as these
+   are prerequisites for the QA exercise.
+
+> ok, great. I'd like to move on to verifying the team leader wherever we 
+can. This operation will look a lot like the resolution of the missing 
+survey unit numbers. The process will involve going through the scanned 
+Daily Progress Forms and the 'primary' diaries (see source-inventory.md for 
+more information). When we are finished, I will help resolve conflicts, 
+amgibuities, and any remaining records with no leader. Please ask any 
+clarifying questions you have and develop a plan 
+
+● I'll explore the codebase to understand the current state and source
+  structure before developing a plan. Let me launch parallel Explore agents
+  to investigate different aspects.
+
+● 3 Explore agents finished (ctrl+o to expand)
+   ├─ Analyse leader coverage in attribution.csv · 24 tool uses · 37.3k tokens
+   │  ⎿  Done
+   ├─ Understand source hierarchy for leaders · 1 tool use · 16.1k tokens
+   │  ⎿  Done
+   └─ Review extraction methodology and scripts · 14 tool uses · 51.5k tokens
+      ⎿  Done
+
+● Excellent! I now have a clear picture of the current state. Let me
+  summarise what I found:
+
+  Current Leader Data Status
+
+  | Metric         | Count | Notes                                     |
+  |----------------|-------|-------------------------------------------|
+  | Total records  | 268   |                                           |
+  | With leaders   | 267   | 99.6% populated                           |
+  | Missing leader | 1     | 2010-04-06 Team B (non-survey day)        |
+  | Initials only  | 28    | NK (10), JD (6), GM (5), GN (3), etc.     |
+  | Typos found    | ~5    | "Adela Sobstkova", "Georgi Nehmzov", etc. |
+  | Format issues  | 7     | Leading quote marks on "Julia entries     |
+
+  So the task is primarily verification and standardisation rather than
+  extraction from scratch. The main work is:
+  1. Resolving initials to full names (28 records)
+  2. Fixing typos and inconsistencies
+  3. Verifying against source documents
+
+  Before I develop detailed plans, I have some clarifying questions:
+                                                                           
+● User answered Claude's questions:
+  ⎿  · What is the target format for leader names in the final output? → For
+      now, you can keep as-is, the *next* phase is name standardisation.
+     · How should we handle records where the leader cannot be determined 
+     from sources? → Keep existing value if present; if genuinely empty, 
+     flag for manual review.
+     · Should I generate a verification report similar to the survey unit 
+     extraction report? → Yes, full report
+
+● Now I understand the scope. Let me launch planning agents to develop the
+  approach:
+
+● 2 Plan agents finished (ctrl+o to expand)
+   ├─ Plan data-first leader verification · 26 tool uses · 107.4k tokens
+   │  ⎿  Done
+   └─ Plan source-first leader verification · 34 tool uses · 110.4k tokens
+      ⎿  Done
+
+● Excellent! I have two solid perspectives. Let me synthesise and clarify
+  one key trade-off with you:
+
+  Key Finding
+
+  Both approaches discovered that name-mapping.csv already contains mappings
+   for all 28 initials (NK→Nadezhda Kecheva, JD→Yulia Dimitrova, etc.) and
+  the typos. This opens two paths:
+
+  Option A: Apply Existing Mappings (Quick)
+  - Directly apply name-mapping.csv to Leader field
+  - ~31 records updated in one script run
+  - Trusts that previous name-mapping work was correct
+
+  Option B: Full Source Verification (Thorough)
+  - Go through Daily Progress PDFs and primary diaries
+  - Extract leaders from sources independently
+  - Compare against attribution.csv and existing mappings
+  - Matches the survey unit extraction workflow you described
+                                                                           
+● User answered Claude's questions:
+  ⎿  · The name-mapping.csv already has mappings for all leader initials. Do
+      you want independent source verification, or is applying existing 
+     mappings sufficient? → I want to complete extracing the list of team 
+     leaders first, then move on to name mapping / standardisation - we need
+      to be careful with that step so as not to introduce errors, and I'd 
+     like to take it seprately - right now focus on extraction not renaming
+
+
+● Ah, that's an important clarification! The task is extraction and 
+  verification, NOT name standardisation. We're going through sources to:
+  1. Extract/verify the raw leader data
+  2. Fill in any genuinely missing leaders
+  3. Fix obvious typos only if source clearly shows different value
+  4. Leave name standardisation for a separate phase
+
+  Let me write the plan:
+
+● Updated plan
+  ⎿  /plan to preview · ~/.claude/plans/glittery-wondering-spring.md
+
+● I've created the plan at
+  /home/shawn/.claude/plans/glittery-wondering-spring.md. Here's a summary:
+
+  Plan Summary: Leader Extraction and Verification
+
+  Scope: Extract and verify leaders from sources - NOT name standardisation
+  (that's separate)
+
+  Workflow
+
+  1. Generate investigation runsheet - List all 268 records with source
+  files to check
+  2. PDF extraction - Read Daily Progress Forms (have explicit "Leader"
+  field)
+  3. Diary verification - Check primary diaries where PDFs unavailable
+  4. Consolidate and compare - Match extractions against attribution.csv
+  5. Apply verified updates - Fix genuine errors only (not initials→names)
+  6. Generate report - Full documentation with source citations
+
+  Key Decisions
+
+  - PDFs are primary for leaders (explicit field on form)
+  - Leave initials as-is (NK, JD, etc.) - document for standardisation phase
+  - Process by season/team for efficient batch reading
+  - Flag conflicts for your review rather than auto-resolving
+
+  Outputs
+
+  - leader-extraction-pdf.csv - Extracted from PDFs
+  - leader-extraction-diary.csv - Extracted from diaries
+  - leader-comparison.csv - Comparison with current data
+  - leader-verification-report.md - Full report
+  - Updated attribution.csv (with backup)
+
+  Does this plan align with what you had in mind? If so, I'll exit plan mode
+   and we can begin implementation.
+  ⎿  User rejected Claude's plan:
+     ╭─────────────────────────────────────────────────────────────────────────╮
+     │ Role Extraction Plan                                                    │
+     │                                                                         │
+     │ Task: Systematically extract role information from diary sources to     │
+     │ populate attribution.csv                                                │
+     │ Scope: Extraction for empty records only - not verifying existing role  │
+     │ data                                                                    │
+     │ Date: 24 November 2025                                                  │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Objective                                                               │
+     │                                                                         │
+     │ Methodically review ALL available diary sources (PRIMARY, SECONDARY,    │
+     │ SUPPLEMENTAL) to extract role assignments and populate the role fields  │
+     │ in attribution.csv. Focus on records without existing role data.        │
+     │                                                                         │
+     │ Role fields: PDA_Operator, GPS_Operator, Paper_Recorder, Data_Editor,   │
+     │ Photographer, Author                                                    │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Current State                                                           │
+     │                                                                         │
+     │ | Role           | Populated | Empty | Coverage |                       │
+     │ |----------------|-----------|-------|----------|                       │
+     │ | Author         | 210       | 58    | 78.4%    |                       │
+     │ | PDA_Operator   | 30        | 238   | 11.2%    |                       │
+     │ | GPS_Operator   | 25        | 243   | 9.3%     |                       │
+     │ | Paper_Recorder | 11        | 257   | 4.1%     |                       │
+     │ | Data_Editor    | 8         | 260   | 3.0%     |                       │
+     │ | Photographer   | 3         | 265   | 1.1%     |                       │
+     │                                                                         │
+     │ Records needing role data: 175 flagged with "No role data available"    │
+     │                                                                         │
+     │ Coverage by year:                                                       │
+     │ - 2009: ~1% operational roles (125 records)                             │
+     │ - 2010: ~30% operational roles (77 records) - best coverage             │
+     │ - 2011: ~0-7% operational roles (66 records)                            │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Existing Infrastructure                                                 │
+     │                                                                         │
+     │ Scripts already created:                                                │
+     │ - scripts/extract_roles_kaz2010.py - Kazanlak 2010 Teams A & B          │
+     │ - scripts/extract_roles_elh2010.py - Elhovo 2010 Team B                 │
+     │                                                                         │
+     │ These scripts provide patterns for role extraction and can be extended. │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Diary Source Inventory                                                  │
+     │                                                                         │
+     │ Kazanlak 2009 (76 records - ~1% role coverage)                          │
+     │                                                                         │
+     │ | Team | PRIMARY                 | SECONDARY                 |          │
+     │ SUPPLEMENTAL                                        |                   │
+     │ |------|-------------------------|---------------------------|----------│
+     │ -------------------------------------------|                            │
+     │ | A    | A_Diary_BG.doc (198 KB) | A_Diary_En.doc (88 KB)    | -        │
+     │                                            |                            │
+     │ | B    | B_Diary_BG.doc (152 KB) | B_Diary_En.docx (62 KB)   |          │
+     │ Adela_JournalApr09.docx                             |                   │
+     │ | C    | C_Diary_BG.doc (215 KB) | C_Journal_En.docx (27 KB) |          │
+     │ TeamC_Journal.docx (20 KB)                          |                   │
+     │ | D    | D Diary_BG.doc (222 KB) | D_Diary_En.docx           | -        │
+     │                                            |                            │
+     │ | E    | E Diary_BG.doc          | -                         | -        │
+     │                                            |                            │
+     │ | -    | -                       | -                         | Diary    │
+     │ March 09.doc (47 KB), Adela_JournalSurvey.doc |                         │
+     │                                                                         │
+     │ Kazanlak 2010 (70 records - ~30% role coverage)                         │
+     │                                                                         │
+     │ | Team | PRIMARY                     | SECONDARY                   |    │
+     │ |------|-----------------------------|-----------------------------|    │
+     │ | A    | A_2010Diary_BG.doc (86 KB)  | A_2010Diary_En.docx         |    │
+     │ | B    | B_2010Diary_En.doc (108 KB) | B_2010Diary_BG.docx (42 KB) |    │
+     │ | C    | C_2010Diary_BG.doc (214 KB) | C_2010Diary_En.docx         |    │
+     │ | D    | D_2010Diary_BG.doc (127 KB) | D_2010Diary_En.docx         |    │
+     │                                                                         │
+     │ Kazanlak 2011 (60 records - ~0-7% role coverage)                        │
+     │                                                                         │
+     │ | Team | PRIMARY                     | SECONDARY                   |    │
+     │ SUPPLEMENTAL               |                                            │
+     │ |------|-----------------------------|-----------------------------|----│
+     │ ------------------------|                                               │
+     │ | A    | A_2011Diary_BG.doc          | -                           |    │
+     │ AUS_Diaries/* (7 students) |                                            │
+     │ | B    | B_2011Diary_En.docx (63 KB) | B_2011Diary_BG.docx (42 KB) |    │
+     │ AUS_Diaries/*              |                                            │
+     │ | C    | C_2011Diary_En.docx (70 KB) | C_2011Diary_BG.docx (18 KB) |    │
+     │ AUS_Diaries/*              |                                            │
+     │ | D    | D_2011Diary_BG.doc          | -                           |    │
+     │ AUS_Diaries/*              |                                            │
+     │                                                                         │
+     │ AUS_Diaries: Individual student journals - cchoi, gburn, hmorr, hsinc,  │
+     │ jmccl, jserc, owarr                                                     │
+     │                                                                         │
+     │ Elhovo 2009 (35 records - ~1% role coverage)                            │
+     │                                                                         │
+     │ | Team | PRIMARY                 | SECONDARY                        |   │
+     │ SUPPLEMENTAL            |                                               │
+     │ |------|-------------------------|----------------------------------|---│
+     │ ----------------------|                                                 │
+     │ | A    | Diary Team A.doc        | -                                |   │
+     │ Diary_Aneta.doc (29 KB) |                                               │
+     │ | B    | DiaryTeamB.doc          | TeamB_Dnevnik (Ross).doc (55 KB) | - │
+     │                       |                                                 │
+     │ | C    | The Diary of Team C.doc | TeamC_Dnevnik.doc                | - │
+     │                       |                                                 │
+     │                                                                         │
+     │ Elhovo 2010 (27 records - ~30% role coverage)                           │
+     │                                                                         │
+     │ | Team | PRIMARY                       | SECONDARY                      │
+     │                  | SUPPLEMENTAL             |                           │
+     │ |------|-------------------------------|--------------------------------│
+     │ -----------------|--------------------------|                           │
+     │ | A    | A_Diary.docx                  | -                              │
+     │                  | -                        |                           │
+     │ | B    | Team B Diary new.docx (26 KB) | Team B Diary.docx (25 KB), Team│
+     │  B Journal*.docx | Diary_Adela2010Fall.docx |                           │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Workflow                                                                │
+     │                                                                         │
+     │ Phase A: Automated Regex Pass (Low-Hanging Fruit)                       │
+     │                                                                         │
+     │ Run scripted extraction across all diary files to capture               │
+     │ explicit/structured role mentions.                                      │
+     │                                                                         │
+     │ Script: scripts/extract-roles-regex.py                                  │
+     │                                                                         │
+     │ Targets:                                                                │
+     │ - Explicit patterns: "PDA: Name", "GPS operator: Name", "Author: Name"  │
+     │ - Structured headers: "Recorder: Name", "Photographer: Name"            │
+     │ - Role lists at start of diary entries                                  │
+     │                                                                         │
+     │ Output: outputs/role-extractions-regex.csv                              │
+     │                                                                         │
+     │ Expected yield: Low - most diaries are narrative, not structured. But   │
+     │ establishes baseline.                                                   │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Phase B: Manual NLP Review (Season-Team Passes)                         │
+     │                                                                         │
+     │ Systematic manual reading of diaries using NLP comprehension to extract │
+     │ narrative role mentions. Process one season-team at a time.             │
+     │                                                                         │
+     │ Approach per pass:                                                      │
+     │ 1. Read PRIMARY diary for team/season                                   │
+     │ 2. Use NLP to identify role mentions in narrative context               │
+     │ 3. Check SECONDARY diary if PRIMARY lacks detail                        │
+     │ 4. Check SUPPLEMENTAL sources for gaps                                  │
+     │ 5. Record extractions with source citations                             │
+     │ 6. User reviews extractions before next pass                            │
+     │                                                                         │
+     │ Pass sequence (by priority):                                            │
+     │                                                                         │
+     │ | Pass | Season-Team          | Records | Diary Files                   │
+     │     | Notes                           |                                 │
+     │ |------|----------------------|---------|-------------------------------│
+     │ ----|---------------------------------|                                 │
+     │ | B.1  | Kazanlak 2009 Team A | ~15     | A_Diary_BG.doc, A_Diary_En.doc│
+     │     | First pass - establish patterns |                                 │
+     │ | B.2  | Kazanlak 2009 Team B | ~15     | B_Diary_BG.doc,               │
+     │ B_Diary_En.docx   | Refine approach                 |                   │
+     │ | B.3  | Kazanlak 2009 Team C | ~15     | C_Diary_BG.doc,               │
+     │ C_Journal_En.docx |                                 |                   │
+     │ | B.4  | Kazanlak 2009 Team D | ~15     | D Diary_BG.doc,               │
+     │ D_Diary_En.docx   |                                 |                   │
+     │ | B.5  | Kazanlak 2009 Team E | ~16     | E Diary_BG.doc                │
+     │     | BG only                         |                                 │
+     │ | B.6  | Elhovo 2009 Team A   | ~12     | Diary Team A.doc,             │
+     │ Diary_Aneta.doc |                                 |                     │
+     │ | B.7  | Elhovo 2009 Team B   | ~12     | DiaryTeamB.doc,               │
+     │ TeamB_Dnevnik.doc |                                 |                   │
+     │ | B.8  | Elhovo 2009 Team C   | ~11     | The Diary of Team C.doc       │
+     │     |                                 |                                 │
+     │ | B.9  | Kazanlak 2011 Team A | ~15     | A_2011Diary_BG.doc +          │
+     │ AUS_Diaries  |                                 |                        │
+     │ | B.10 | Kazanlak 2011 Team B | ~15     | B_2011Diary_En.docx +         │
+     │ AUS_Diaries |                                 |                         │
+     │ | B.11 | Kazanlak 2011 Team C | ~15     | C_2011Diary_En.docx +         │
+     │ AUS_Diaries |                                 |                         │
+     │ | B.12 | Kazanlak 2011 Team D | ~15     | D_2011Diary_BG.doc +          │
+     │ AUS_Diaries  |                                 |                        │
+     │ | B.13 | Kazanlak 2010 gaps   | ~20     | All 2010 diaries              │
+     │     | Fill remaining gaps             |                                 │
+     │ | B.14 | Elhovo 2010 gaps     | ~10     | All 2010 diaries              │
+     │     | Fill remaining gaps             |                                 │
+     │                                                                         │
+     │ After each pass:                                                        │
+     │ - Record extractions in outputs/role-extractions-[season]-[team].csv    │
+     │ - User reviews before proceeding to next pass                           │
+     │ - Lessons learned inform subsequent passes                              │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Phase C: Consolidate and Apply                                          │
+     │                                                                         │
+     │ After all passes complete:                                              │
+     │                                                                         │
+     │ 1. Consolidate all extraction CSVs into                                 │
+     │ outputs/role-extractions-consolidated.csv                               │
+     │ 2. Review consolidated extractions with user                            │
+     │ 3. Apply to attribution.csv (empty fields only)                         │
+     │ 4. Update Extraction_Notes with source citations                        │
+     │ 5. Generate comprehensive report                                        │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Phase D: Generate Extraction Report                                     │
+     │                                                                         │
+     │ Output: outputs/role-extraction-report.md                               │
+     │                                                                         │
+     │ Contents:                                                               │
+     │ - Summary statistics (before/after coverage by role)                    │
+     │ - Extractions by season and team                                        │
+     │ - Source citations for all extractions                                  │
+     │ - Records with no role data found (documented limitations)              │
+     │ - Patterns observed in different diary styles                           │
+     │ - Recommendations for any remaining gaps                                │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Role Extraction Patterns                                                │
+     │                                                                         │
+     │ Keywords to Search                                                      │
+     │                                                                         │
+     │ PDA_Operator:                                                           │
+     │ - "PDA", "pda operator", "PDA duties"                                   │
+     │ - "entered data", "data entry" (in field context)                       │
+     │ - Names adjacent to device mentions                                     │
+     │                                                                         │
+     │ GPS_Operator:                                                           │
+     │ - "GPS", "GPS operator", "GPS duties"                                   │
+     │ - "coordinates", "waypoints", "positioning"                             │
+     │ - "navigation"                                                          │
+     │                                                                         │
+     │ Paper_Recorder:                                                         │
+     │ - "paper recorder", "paper records"                                     │
+     │ - "form", "forms", "field form"                                         │
+     │ - "notes", "field notes", "recording"                                   │
+     │                                                                         │
+     │ Photographer:                                                           │
+     │ - "photographer", "photo", "photos"                                     │
+     │ - "camera", "pictures", "taking pictures"                               │
+     │ - "visual documentation"                                                │
+     │                                                                         │
+     │ Author:                                                                 │
+     │ - Diary header attributions                                             │
+     │ - "written by", "author", "wrote"                                       │
+     │ - Signature lines in diary entries                                      │
+     │                                                                         │
+     │ Data_Editor:                                                            │
+     │ - "data entry", "data editor"                                           │
+     │ - "transcription", "digitisation"                                       │
+     │ - Post-field processing mentions                                        │
+     │                                                                         │
+     │ Narrative Patterns                                                      │
+     │                                                                         │
+     │ Handle narrative descriptions like:                                     │
+     │ - "Hamish was taking pictures" → Photographer: Hamish                   │
+     │ - "Petra operated the PDA while Nadja recorded" → PDA: Petra, Paper:    │
+     │ Nadja                                                                   │
+     │ - "I (Adela) wrote the diary" → Author: Adela                           │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Processing Order                                                        │
+     │                                                                         │
+     │ | Priority | Season        | Records | Current Coverage | Diary Sources │
+     │                |                                                        │
+     │ |----------|---------------|---------|------------------|---------------│
+     │ ---------------|                                                        │
+     │ | 1        | Kazanlak 2009 | 76      | ~1%              | 12 diaries    │
+     │                |                                                        │
+     │ | 2        | Kazanlak 2011 | 60      | ~0-7%            | 8 team diaries│
+     │  + AUS_Diaries |                                                        │
+     │ | 3        | Elhovo 2009   | 35      | ~1%              | 6 diaries     │
+     │                |                                                        │
+     │ | 4        | Kazanlak 2010 | 70      | ~30%             | 8 diaries     │
+     │ (gaps only)        |                                                    │
+     │ | 5        | Elhovo 2010   | 27      | ~30%             | 5 diaries     │
+     │ (gaps only)        |                                                    │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Expected Outcomes                                                       │
+     │                                                                         │
+     │ Realistic targets:                                                      │
+     │ - Author: 90%+ (currently 78%)                                          │
+     │ - PDA_Operator: 30-50% (currently 11%)                                  │
+     │ - GPS_Operator: 30-50% (currently 9%)                                   │
+     │ - Paper_Recorder: 20-30% (currently 4%)                                 │
+     │ - Photographer: 10-20% (currently 1%)                                   │
+     │ - Data_Editor: 10-15% (currently 3%)                                    │
+     │                                                                         │
+     │ Note: Not all diaries contain role information. Some seasons/teams may  │
+     │ have minimal role documentation. The goal is to extract everything      │
+     │ available, not achieve 100% coverage.                                   │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Scripts to Create/Modify                                                │
+     │                                                                         │
+     │ Phase A:                                                                │
+     │ 1. scripts/extract-roles-regex.py                                       │
+     │   - Automated regex extraction across all diary files                   │
+     │   - Captures explicit/structured role mentions                          │
+     │   - Outputs to role-extractions-regex.csv                               │
+     │                                                                         │
+     │ Phase C:                                                                │
+     │ 2. scripts/consolidate-role-extractions.py                              │
+     │ - Merges all extraction CSVs (regex + manual passes)                    │
+     │ - Groups by (Date, Team)                                                │
+     │ - Outputs consolidated CSV                                              │
+     │                                                                         │
+     │ 3. scripts/apply-role-extractions.py                                    │
+     │   - Applies consolidated extractions to attribution.csv                 │
+     │   - Creates backup                                                      │
+     │   - Updates Extraction_Notes with source citations                      │
+     │ 4. scripts/generate-role-extraction-report.py                           │
+     │   - Creates comprehensive markdown report                               │
+     │                                                                         │
+     │ Note: Phase B (manual NLP review) does not require scripts - extractions│
+     │  recorded directly to per-pass CSV files during manual diary review.    │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Quality Assurance                                                       │
+     │                                                                         │
+     │ - Source citations: Every extraction must cite specific diary and       │
+     │ location                                                                │
+     │ - Confidence levels: Mark extractions as high/medium/low confidence     │
+     │ - Ambiguity flags: Flag unclear role assignments for review             │
+     │ - Cross-reference: Verify names against TRAP-Participants.csv           │
+     │ - No overwrites: Only populate empty fields, don't overwrite existing   │
+     │ data                                                                    │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Success Criteria                                                        │
+     │                                                                         │
+     │ - All 30+ diary sources reviewed                                        │
+     │ - Extraction attempted for all 175 "No role data" records               │
+     │ - Coverage improved for all role columns                                │
+     │ - Comprehensive report with source citations                            │
+     │ - All extractions documented in attribution.csv Extraction_Notes        │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Critical Files                                                          │
+     │                                                                         │
+     │ To read:                                                                │
+     │ - outputs/attribution.csv - Current state                               │
+     │ - outputs/source-inventory.md - Diary locations                         │
+     │ - scripts/extract_roles_kaz2010.py - Existing pattern                   │
+     │ - scripts/extract_roles_elh2010.py - Existing pattern                   │
+     │                                                                         │
+     │ To create/modify:                                                       │
+     │ - outputs/role-extraction-runsheet.md                                   │
+     │ - outputs/role-extractions-raw.csv                                      │
+     │ - outputs/role-extractions-consolidated.csv                             │
+     │ - outputs/role-extraction-report.md                                     │
+     │ - outputs/attribution.csv (with backup)                                 │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     ╰─────────────────────────────────────────────────────────────────────────╯
+
+> With only one record empty, I'd like to defer this work until we undertake
+ a broader QA / verification pass. Please write out your plan under 
+'planning' and we'll use it as the basis of the broader QA pass later. 
+Instead, after you've save the leader plan, I'd like you to make a new plan 
+using a similar approach to populate the *roles* (pda operator, paper 
+records person, etc.). You do not need to verify existing ones in 
+attribution.csv, but I want to very methodically review available sources to
+ populate as many leader roles as possible. In this, the diaries, including 
+secondary and supplemental diaries, will be your main sources of information
+ for records not already populated. 
+
+● Understood! I'll save the leader verification plan to planning/ for future
+   use, then create a new plan for role extraction.
+
+● Write(trap-extraction/planning/leader-verification-plan.md)
+  ⎿  Wrote 166 lines to trap-extraction/planning/leader-verification-plan.m
+
+     # Leader Verification Plan
+     **Status:** Deferred - to be incorporated into broader QA/verification
+     pass
+     **Created:** 24 November 2025
+     **Deferred reason:** Only 1 record with empty leader; 267/268 (99.6%)
+     already populated
+     ---
+     ## Objective
+
+     … +156 lines (ctrl+o to expand)
+
+● Good, the leader plan is saved. Now let me explore the role extraction
+  task:
+
+● 3 Explore agents finished (ctrl+o to expand)
+   ├─ Analyse role coverage in attribution.csv · 8 tool uses · 25.4k tokens
+   │  ⎿  Done
+   ├─ Inventory all diary sources for roles · 1 tool use · 16.1k tokens
+   │  ⎿  Done
+   └─ Review role extraction requirements · 10 tool uses · 44.2k tokens
+      ⎿  Done
+
+● Excellent findings! I have a clear picture now:
+
+  Current Role Coverage
+
+  | Role           | Populated | Coverage |
+  |----------------|-----------|----------|
+  | Author         | 210       | 78.4%    |
+  | PDA_Operator   | 30        | 11.2%    |
+  | GPS_Operator   | 25        | 9.3%     |
+  | Paper_Recorder | 11        | 4.1%     |
+  | Data_Editor    | 8         | 3.0%     |
+  | Photographer   | 3         | 1.1%     |
+
+  Key insights:
+  - 2010 is the only year with meaningful role data
+  - Two extraction scripts already exist (extract_roles_kaz2010.py,
+  extract_roles_elh2010.py)
+  - 30+ diary sources available (PRIMARY, SECONDARY, SUPPLEMENTAL)
+  - 175 records flagged "No role data available"
+
+  Let me update the plan file:
+
+● Updated plan
+  ⎿  /plan to preview · ~/.claude/plans/glittery-wondering-spring.md
+
+● I've created the role extraction plan. Here's a summary:
+
+  Role Extraction Plan Summary
+
+  Goal: Extract role data from 30+ diary sources to improve coverage for
+  PDA_Operator, GPS_Operator, Paper_Recorder, Data_Editor, Photographer, and
+   Author fields.
+
+  Current vs Target Coverage
+
+  | Role           | Current | Target |
+  |----------------|---------|--------|
+  | Author         | 78%     | 90%+   |
+  | PDA_Operator   | 11%     | 30-50% |
+  | GPS_Operator   | 9%      | 30-50% |
+  | Paper_Recorder | 4%      | 20-30% |
+  | Photographer   | 1%      | 10-20% |
+
+  Processing Order (by gap severity)
+
+  1. Kazanlak 2009 - 76 records, ~1% coverage, 12 diaries
+  2. Kazanlak 2011 - 60 records, ~0-7% coverage, 8 diaries + AUS_Diaries
+  3. Elhovo 2009 - 35 records, ~1% coverage, 6 diaries
+  4. Kazanlak 2010 - 70 records, ~30% coverage (fill gaps)
+  5. Elhovo 2010 - 27 records, ~30% coverage (fill gaps)
+
+  Approach
+
+  - Read each diary systematically (PRIMARY → SECONDARY → SUPPLEMENTAL)
+  - Extract role mentions with NLP keyword patterns
+  - Record all extractions with source citations
+  - Apply only to empty fields (no overwrites)
+  - Generate comprehensive report
+
+  Do you have any questions about the plan, or shall I proceed?
+  ⎿  User rejected Claude's plan:
+     ╭─────────────────────────────────────────────────────────────────────────╮
+     │ Role Extraction Plan                                                    │
+     │                                                                         │
+     │ Task: Systematically extract role information from diary sources to     │
+     │ populate attribution.csv                                                │
+     │ Scope: Extraction for empty records only - not verifying existing role  │
+     │ data                                                                    │
+     │ Date: 24 November 2025                                                  │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Objective                                                               │
+     │                                                                         │
+     │ Methodically review ALL available diary sources (PRIMARY, SECONDARY,    │
+     │ SUPPLEMENTAL) to extract role assignments and populate the role fields  │
+     │ in attribution.csv. Focus on records without existing role data.        │
+     │                                                                         │
+     │ Role fields: PDA_Operator, GPS_Operator, Paper_Recorder, Data_Editor,   │
+     │ Photographer, Author                                                    │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Current State                                                           │
+     │                                                                         │
+     │ | Role           | Populated | Empty | Coverage |                       │
+     │ |----------------|-----------|-------|----------|                       │
+     │ | Author         | 210       | 58    | 78.4%    |                       │
+     │ | PDA_Operator   | 30        | 238   | 11.2%    |                       │
+     │ | GPS_Operator   | 25        | 243   | 9.3%     |                       │
+     │ | Paper_Recorder | 11        | 257   | 4.1%     |                       │
+     │ | Data_Editor    | 8         | 260   | 3.0%     |                       │
+     │ | Photographer   | 3         | 265   | 1.1%     |                       │
+     │                                                                         │
+     │ Records needing role data: 175 flagged with "No role data available"    │
+     │                                                                         │
+     │ Coverage by year:                                                       │
+     │ - 2009: ~1% operational roles (125 records)                             │
+     │ - 2010: ~30% operational roles (77 records) - best coverage             │
+     │ - 2011: ~0-7% operational roles (66 records)                            │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Existing Infrastructure                                                 │
+     │                                                                         │
+     │ Scripts already created:                                                │
+     │ - scripts/extract_roles_kaz2010.py - Kazanlak 2010 Teams A & B          │
+     │ - scripts/extract_roles_elh2010.py - Elhovo 2010 Team B                 │
+     │                                                                         │
+     │ These scripts provide patterns for role extraction and can be extended. │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Diary Source Inventory                                                  │
+     │                                                                         │
+     │ Kazanlak 2009 (76 records - ~1% role coverage)                          │
+     │                                                                         │
+     │ | Team | PRIMARY                 | SECONDARY                 |          │
+     │ SUPPLEMENTAL                                        |                   │
+     │ |------|-------------------------|---------------------------|----------│
+     │ -------------------------------------------|                            │
+     │ | A    | A_Diary_BG.doc (198 KB) | A_Diary_En.doc (88 KB)    | -        │
+     │                                            |                            │
+     │ | B    | B_Diary_BG.doc (152 KB) | B_Diary_En.docx (62 KB)   |          │
+     │ Adela_JournalApr09.docx                             |                   │
+     │ | C    | C_Diary_BG.doc (215 KB) | C_Journal_En.docx (27 KB) |          │
+     │ TeamC_Journal.docx (20 KB)                          |                   │
+     │ | D    | D Diary_BG.doc (222 KB) | D_Diary_En.docx           | -        │
+     │                                            |                            │
+     │ | E    | E Diary_BG.doc          | -                         | -        │
+     │                                            |                            │
+     │ | -    | -                       | -                         | Diary    │
+     │ March 09.doc (47 KB), Adela_JournalSurvey.doc |                         │
+     │                                                                         │
+     │ Kazanlak 2010 (70 records - ~30% role coverage)                         │
+     │                                                                         │
+     │ | Team | PRIMARY                     | SECONDARY                   |    │
+     │ |------|-----------------------------|-----------------------------|    │
+     │ | A    | A_2010Diary_BG.doc (86 KB)  | A_2010Diary_En.docx         |    │
+     │ | B    | B_2010Diary_En.doc (108 KB) | B_2010Diary_BG.docx (42 KB) |    │
+     │ | C    | C_2010Diary_BG.doc (214 KB) | C_2010Diary_En.docx         |    │
+     │ | D    | D_2010Diary_BG.doc (127 KB) | D_2010Diary_En.docx         |    │
+     │                                                                         │
+     │ Kazanlak 2011 (60 records - ~0-7% role coverage)                        │
+     │                                                                         │
+     │ | Team | PRIMARY                     | SECONDARY                   |    │
+     │ SUPPLEMENTAL               |                                            │
+     │ |------|-----------------------------|-----------------------------|----│
+     │ ------------------------|                                               │
+     │ | A    | A_2011Diary_BG.doc          | -                           |    │
+     │ AUS_Diaries/* (7 students) |                                            │
+     │ | B    | B_2011Diary_En.docx (63 KB) | B_2011Diary_BG.docx (42 KB) |    │
+     │ AUS_Diaries/*              |                                            │
+     │ | C    | C_2011Diary_En.docx (70 KB) | C_2011Diary_BG.docx (18 KB) |    │
+     │ AUS_Diaries/*              |                                            │
+     │ | D    | D_2011Diary_BG.doc          | -                           |    │
+     │ AUS_Diaries/*              |                                            │
+     │                                                                         │
+     │ AUS_Diaries: Individual student journals - cchoi, gburn, hmorr, hsinc,  │
+     │ jmccl, jserc, owarr                                                     │
+     │                                                                         │
+     │ Elhovo 2009 (35 records - ~1% role coverage)                            │
+     │                                                                         │
+     │ | Team | PRIMARY                 | SECONDARY                        |   │
+     │ SUPPLEMENTAL            |                                               │
+     │ |------|-------------------------|----------------------------------|---│
+     │ ----------------------|                                                 │
+     │ | A    | Diary Team A.doc        | -                                |   │
+     │ Diary_Aneta.doc (29 KB) |                                               │
+     │ | B    | DiaryTeamB.doc          | TeamB_Dnevnik (Ross).doc (55 KB) | - │
+     │                       |                                                 │
+     │ | C    | The Diary of Team C.doc | TeamC_Dnevnik.doc                | - │
+     │                       |                                                 │
+     │                                                                         │
+     │ Elhovo 2010 (27 records - ~30% role coverage)                           │
+     │                                                                         │
+     │ | Team | PRIMARY                       | SECONDARY                      │
+     │                  | SUPPLEMENTAL             |                           │
+     │ |------|-------------------------------|--------------------------------│
+     │ -----------------|--------------------------|                           │
+     │ | A    | A_Diary.docx                  | -                              │
+     │                  | -                        |                           │
+     │ | B    | Team B Diary new.docx (26 KB) | Team B Diary.docx (25 KB), Team│
+     │  B Journal*.docx | Diary_Adela2010Fall.docx |                           │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Workflow                                                                │
+     │                                                                         │
+     │ Phase A: Automated Regex Pass (Low-Hanging Fruit)                       │
+     │                                                                         │
+     │ Run scripted extraction across all diary files to capture               │
+     │ explicit/structured role mentions.                                      │
+     │                                                                         │
+     │ Script: scripts/extract-roles-regex.py                                  │
+     │                                                                         │
+     │ Targets:                                                                │
+     │ - Explicit patterns: "PDA: Name", "GPS operator: Name", "Author: Name"  │
+     │ - Structured headers: "Recorder: Name", "Photographer: Name"            │
+     │ - Role lists at start of diary entries                                  │
+     │                                                                         │
+     │ Output: outputs/role-extractions-regex.csv                              │
+     │                                                                         │
+     │ Expected yield: Low - most diaries are narrative, not structured. But   │
+     │ establishes baseline.                                                   │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Phase B: Manual NLP Review (Season-Team Passes)                         │
+     │                                                                         │
+     │ Systematic manual reading of diaries using NLP comprehension to extract │
+     │ narrative role mentions. Process one season-team at a time.             │
+     │                                                                         │
+     │ Approach per pass:                                                      │
+     │ 1. Read PRIMARY diary for team/season                                   │
+     │ 2. Use NLP to identify role mentions in narrative context               │
+     │ 3. Check SECONDARY diary if PRIMARY lacks detail                        │
+     │ 4. Check SUPPLEMENTAL sources for gaps                                  │
+     │ 5. Record extractions with source citations                             │
+     │ 6. User reviews extractions before next pass                            │
+     │                                                                         │
+     │ Pass sequence (by priority):                                            │
+     │                                                                         │
+     │ | Pass | Season-Team          | Records | Diary Files                   │
+     │     | Notes                           |                                 │
+     │ |------|----------------------|---------|-------------------------------│
+     │ ----|---------------------------------|                                 │
+     │ | B.1  | Kazanlak 2009 Team A | ~15     | A_Diary_BG.doc, A_Diary_En.doc│
+     │     | First pass - establish patterns |                                 │
+     │ | B.2  | Kazanlak 2009 Team B | ~15     | B_Diary_BG.doc,               │
+     │ B_Diary_En.docx   | Refine approach                 |                   │
+     │ | B.3  | Kazanlak 2009 Team C | ~15     | C_Diary_BG.doc,               │
+     │ C_Journal_En.docx |                                 |                   │
+     │ | B.4  | Kazanlak 2009 Team D | ~15     | D Diary_BG.doc,               │
+     │ D_Diary_En.docx   |                                 |                   │
+     │ | B.5  | Kazanlak 2009 Team E | ~16     | E Diary_BG.doc                │
+     │     | BG only                         |                                 │
+     │ | B.6  | Elhovo 2009 Team A   | ~12     | Diary Team A.doc,             │
+     │ Diary_Aneta.doc |                                 |                     │
+     │ | B.7  | Elhovo 2009 Team B   | ~12     | DiaryTeamB.doc,               │
+     │ TeamB_Dnevnik.doc |                                 |                   │
+     │ | B.8  | Elhovo 2009 Team C   | ~11     | The Diary of Team C.doc       │
+     │     |                                 |                                 │
+     │ | B.9  | Kazanlak 2011 Team A | ~15     | A_2011Diary_BG.doc +          │
+     │ AUS_Diaries  |                                 |                        │
+     │ | B.10 | Kazanlak 2011 Team B | ~15     | B_2011Diary_En.docx +         │
+     │ AUS_Diaries |                                 |                         │
+     │ | B.11 | Kazanlak 2011 Team C | ~15     | C_2011Diary_En.docx +         │
+     │ AUS_Diaries |                                 |                         │
+     │ | B.12 | Kazanlak 2011 Team D | ~15     | D_2011Diary_BG.doc +          │
+     │ AUS_Diaries  |                                 |                        │
+     │ | B.13 | Kazanlak 2010 gaps   | ~20     | All 2010 diaries              │
+     │     | Fill remaining gaps             |                                 │
+     │ | B.14 | Elhovo 2010 gaps     | ~10     | All 2010 diaries              │
+     │     | Fill remaining gaps             |                                 │
+     │                                                                         │
+     │ After each pass:                                                        │
+     │ - Record extractions in outputs/role-extractions-[season]-[team].csv    │
+     │ - User reviews before proceeding to next pass                           │
+     │ - Lessons learned inform subsequent passes                              │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Phase C: Consolidate and Apply                                          │
+     │                                                                         │
+     │ After all passes complete:                                              │
+     │                                                                         │
+     │ 1. Consolidate all extraction CSVs into                                 │
+     │ outputs/role-extractions-consolidated.csv                               │
+     │ 2. Review consolidated extractions with user                            │
+     │ 3. Apply to attribution.csv (empty fields only)                         │
+     │ 4. Update Extraction_Notes with source citations                        │
+     │ 5. Generate comprehensive report                                        │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Phase D: Generate Extraction Report                                     │
+     │                                                                         │
+     │ Output: outputs/role-extraction-report.md                               │
+     │                                                                         │
+     │ Contents:                                                               │
+     │ - Summary statistics (before/after coverage by role)                    │
+     │ - Extractions by season and team                                        │
+     │ - Source citations for all extractions                                  │
+     │ - Records with no role data found (documented limitations)              │
+     │ - Patterns observed in different diary styles                           │
+     │ - Recommendations for any remaining gaps                                │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Role Extraction Patterns                                                │
+     │                                                                         │
+     │ Keywords to Search                                                      │
+     │                                                                         │
+     │ PDA_Operator:                                                           │
+     │ - "PDA", "pda operator", "PDA duties"                                   │
+     │ - "entered data", "data entry" (in field context)                       │
+     │ - Names adjacent to device mentions                                     │
+     │                                                                         │
+     │ GPS_Operator:                                                           │
+     │ - "GPS", "GPS operator", "GPS duties"                                   │
+     │ - "coordinates", "waypoints", "positioning"                             │
+     │ - "navigation"                                                          │
+     │                                                                         │
+     │ Paper_Recorder:                                                         │
+     │ - "paper recorder", "paper records"                                     │
+     │ - "form", "forms", "field form"                                         │
+     │ - "notes", "field notes", "recording"                                   │
+     │                                                                         │
+     │ Photographer:                                                           │
+     │ - "photographer", "photo", "photos"                                     │
+     │ - "camera", "pictures", "taking pictures"                               │
+     │ - "visual documentation"                                                │
+     │                                                                         │
+     │ Author:                                                                 │
+     │ - Diary header attributions                                             │
+     │ - "written by", "author", "wrote"                                       │
+     │ - Signature lines in diary entries                                      │
+     │                                                                         │
+     │ Data_Editor:                                                            │
+     │ - "data entry", "data editor"                                           │
+     │ - "transcription", "digitisation"                                       │
+     │ - Post-field processing mentions                                        │
+     │                                                                         │
+     │ Narrative Patterns                                                      │
+     │                                                                         │
+     │ Handle narrative descriptions like:                                     │
+     │ - "Hamish was taking pictures" → Photographer: Hamish                   │
+     │ - "Petra operated the PDA while Nadja recorded" → PDA: Petra, Paper:    │
+     │ Nadja                                                                   │
+     │ - "I (Adela) wrote the diary" → Author: Adela                           │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Processing Order                                                        │
+     │                                                                         │
+     │ | Priority | Season        | Records | Current Coverage | Diary Sources │
+     │                |                                                        │
+     │ |----------|---------------|---------|------------------|---------------│
+     │ ---------------|                                                        │
+     │ | 1        | Kazanlak 2009 | 76      | ~1%              | 12 diaries    │
+     │                |                                                        │
+     │ | 2        | Kazanlak 2011 | 60      | ~0-7%            | 8 team diaries│
+     │  + AUS_Diaries |                                                        │
+     │ | 3        | Elhovo 2009   | 35      | ~1%              | 6 diaries     │
+     │                |                                                        │
+     │ | 4        | Kazanlak 2010 | 70      | ~30%             | 8 diaries     │
+     │ (gaps only)        |                                                    │
+     │ | 5        | Elhovo 2010   | 27      | ~30%             | 5 diaries     │
+     │ (gaps only)        |                                                    │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Expected Outcomes                                                       │
+     │                                                                         │
+     │ Realistic targets:                                                      │
+     │ - Author: 90%+ (currently 78%)                                          │
+     │ - PDA_Operator: 30-50% (currently 11%)                                  │
+     │ - GPS_Operator: 30-50% (currently 9%)                                   │
+     │ - Paper_Recorder: 20-30% (currently 4%)                                 │
+     │ - Photographer: 10-20% (currently 1%)                                   │
+     │ - Data_Editor: 10-15% (currently 3%)                                    │
+     │                                                                         │
+     │ Note: Not all diaries contain role information. Some seasons/teams may  │
+     │ have minimal role documentation. The goal is to extract everything      │
+     │ available, not achieve 100% coverage.                                   │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Scripts to Create/Modify                                                │
+     │                                                                         │
+     │ Phase A:                                                                │
+     │ 1. scripts/extract-roles-regex.py                                       │
+     │   - Automated regex extraction across all diary files                   │
+     │   - Captures explicit/structured role mentions                          │
+     │   - Outputs to role-extractions-regex.csv                               │
+     │                                                                         │
+     │ Phase C:                                                                │
+     │ 2. scripts/consolidate-role-extractions.py                              │
+     │ - Merges all extraction CSVs (regex + manual passes)                    │
+     │ - Groups by (Date, Team)                                                │
+     │ - Outputs consolidated CSV                                              │
+     │                                                                         │
+     │ 3. scripts/apply-role-extractions.py                                    │
+     │   - Applies consolidated extractions to attribution.csv                 │
+     │   - Creates backup                                                      │
+     │   - Updates Extraction_Notes with source citations                      │
+     │ 4. scripts/generate-role-extraction-report.py                           │
+     │   - Creates comprehensive markdown report                               │
+     │                                                                         │
+     │ Note: Phase B (manual NLP review) does not require scripts - extractions│
+     │  recorded directly to per-pass CSV files during manual diary review.    │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Quality Assurance                                                       │
+     │                                                                         │
+     │ - Source citations: Every extraction must cite specific diary and       │
+     │ location                                                                │
+     │ - Confidence levels: Mark extractions as high/medium/low confidence     │
+     │ - Ambiguity flags: Flag unclear role assignments for review             │
+     │ - Cross-reference: Verify names against TRAP-Participants.csv           │
+     │ - No overwrites: Only populate empty fields, don't overwrite existing   │
+     │ data                                                                    │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Success Criteria                                                        │
+     │                                                                         │
+     │ - All 30+ diary sources reviewed                                        │
+     │ - Extraction attempted for all 175 "No role data" records               │
+     │ - Coverage improved for all role columns                                │
+     │ - Comprehensive report with source citations                            │
+     │ - All extractions documented in attribution.csv Extraction_Notes        │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Critical Files                                                          │
+     │                                                                         │
+     │ To read:                                                                │
+     │ - outputs/attribution.csv - Current state                               │
+     │ - outputs/source-inventory.md - Diary locations                         │
+     │ - scripts/extract_roles_kaz2010.py - Existing pattern                   │
+     │ - scripts/extract_roles_elh2010.py - Existing pattern                   │
+     │                                                                         │
+     │ To create/modify:                                                       │
+     │ - outputs/role-extraction-runsheet.md                                   │
+     │ - outputs/role-extractions-raw.csv                                      │
+     │ - outputs/role-extractions-consolidated.csv                             │
+     │ - outputs/role-extraction-report.md                                     │
+     │ - outputs/attribution.csv (with backup)                                 │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     ╰─────────────────────────────────────────────────────────────────────────╯
+
+> /export archive/cc-interactions/2025-11-24-h.txt 
+  ⎿ Failed to export conversation: ENOENT: no such file or directory, open 
+    '/media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-20
+    20-04/archive/cc-interactions/2025-11-24-h.txt'
+
+> /export trap-extraction/archive/cc-interactions/2025-11-24-h.txt 
+  ⎿  Conversation exported to: 
+     trap-extraction/archive/cc-interactions/2025-11-24-h.txt
+
+> ok, a couple of suggestions: while running regex is an acceptable *first 
+step* to get low-hanging fruit, the extraction will *require* you to 
+manually review diaries an use your NLP capabilities to look for roles 
+(based on our experience so far). If it would be more effective, you can 
+break this task up into single season-team passes, especially for your first
+ 2-3 extraction atempts. Perhaps: (a) attempt the scripted regex approach 
+across all files first, then (b) begin review of each season-team 
+combination, one at a time, using your NLP capabilities to manually read the
+ diaries looking for role information. What do you think? 
+
+● That's an excellent refinement. You're right - the regex approach will
+  only catch explicit structured mentions like "PDA: Petra", but diaries are
+   predominantly narrative ("Hamish took photos while we walked the
+  transects"). The two-phase approach makes sense:
+
+  Phase A: Automated regex pass - Quick scan of all files for explicit role
+  mentions (low-hanging fruit)
+
+  Phase B: Manual NLP review - Season-by-season, team-by-team reading of
+  diaries using my comprehension to extract narrative role mentions
+
+  Breaking Phase B into discrete season-team passes is smart because:
+  1. Each diary has different writing styles/conventions to learn
+  2. Allows refinement of extraction patterns as we go
+  3. Manageable chunks with clear progress markers
+  4. You can review/validate extractions after each pass before continuing
+
+  Let me update the plan:
+
+● Updated plan
+  ⎿  /plan to preview · ~/.claude/plans/glittery-wondering-spring.md
+
+● Good, I've updated the workflow. Let me also update the scripts section to
+   match:
+
+● Updated plan
+  ⎿  /plan to preview · ~/.claude/plans/glittery-wondering-spring.md
+
+● I've updated the plan with the two-phase approach. Here's the revised
+  workflow:
+
+  Updated Role Extraction Workflow
+
+  Phase A: Automated Regex Pass
+
+  - Run extract-roles-regex.py across all diary files
+  - Capture explicit patterns like "PDA: Name", "GPS operator: Name"
+  - Expected yield: Low (baseline only)
+
+  Phase B: Manual NLP Review (14 passes)
+
+  Process one season-team at a time:
+
+  | Pass     | Target                  | Notes                             |
+  |----------|-------------------------|-----------------------------------|
+  | B.1-B.5  | Kazanlak 2009 Teams A-E | First passes - establish patterns |
+  | B.6-B.8  | Elhovo 2009 Teams A-C   |                                   |
+  | B.9-B.12 | Kazanlak 2011 Teams A-D | Include AUS_Diaries               |
+  | B.13     | Kazanlak 2010 gaps      | Fill remaining                    |
+  | B.14     | Elhovo 2010 gaps        | Fill remaining                    |
+
+  After each pass: User reviews extractions before proceeding
+
+  Phase C: Consolidate and Apply
+
+  Merge all extractions → User review → Apply to attribution.csv
+
+  Phase D: Generate Report
+
+  Comprehensive documentation of all extractions
+
+  ---
+  This approach lets us:
+  - Get quick wins from regex first
+  - Learn diary patterns progressively
+  - Allow validation checkpoints between passes
+  - Refine extraction approach based on early learnings
+
+  Does this look right? Ready to proceed?
+  ⎿  User rejected Claude's plan:
+     ╭─────────────────────────────────────────────────────────────────────────╮
+     │ Role Extraction Plan                                                    │
+     │                                                                         │
+     │ Task: Systematically extract role information from diary sources to     │
+     │ populate attribution.csv                                                │
+     │ Scope: Extraction for empty records only - not verifying existing role  │
+     │ data                                                                    │
+     │ Date: 24 November 2025                                                  │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Objective                                                               │
+     │                                                                         │
+     │ Methodically review ALL available diary sources (PRIMARY, SECONDARY,    │
+     │ SUPPLEMENTAL) to extract role assignments and populate the role fields  │
+     │ in attribution.csv. Focus on records without existing role data.        │
+     │                                                                         │
+     │ Role fields: PDA_Operator, GPS_Operator, Paper_Recorder, Data_Editor,   │
+     │ Photographer, Author                                                    │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Current State                                                           │
+     │                                                                         │
+     │ | Role           | Populated | Empty | Coverage |                       │
+     │ |----------------|-----------|-------|----------|                       │
+     │ | Author         | 210       | 58    | 78.4%    |                       │
+     │ | PDA_Operator   | 30        | 238   | 11.2%    |                       │
+     │ | GPS_Operator   | 25        | 243   | 9.3%     |                       │
+     │ | Paper_Recorder | 11        | 257   | 4.1%     |                       │
+     │ | Data_Editor    | 8         | 260   | 3.0%     |                       │
+     │ | Photographer   | 3         | 265   | 1.1%     |                       │
+     │                                                                         │
+     │ Records needing role data: 175 flagged with "No role data available"    │
+     │                                                                         │
+     │ Coverage by year:                                                       │
+     │ - 2009: ~1% operational roles (125 records)                             │
+     │ - 2010: ~30% operational roles (77 records) - best coverage             │
+     │ - 2011: ~0-7% operational roles (66 records)                            │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Existing Infrastructure                                                 │
+     │                                                                         │
+     │ Scripts already created:                                                │
+     │ - scripts/extract_roles_kaz2010.py - Kazanlak 2010 Teams A & B          │
+     │ - scripts/extract_roles_elh2010.py - Elhovo 2010 Team B                 │
+     │                                                                         │
+     │ These scripts provide patterns for role extraction and can be extended. │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Diary Source Inventory                                                  │
+     │                                                                         │
+     │ Kazanlak 2009 (76 records - ~1% role coverage)                          │
+     │                                                                         │
+     │ | Team | PRIMARY                 | SECONDARY                 |          │
+     │ SUPPLEMENTAL                                        |                   │
+     │ |------|-------------------------|---------------------------|----------│
+     │ -------------------------------------------|                            │
+     │ | A    | A_Diary_BG.doc (198 KB) | A_Diary_En.doc (88 KB)    | -        │
+     │                                            |                            │
+     │ | B    | B_Diary_BG.doc (152 KB) | B_Diary_En.docx (62 KB)   |          │
+     │ Adela_JournalApr09.docx                             |                   │
+     │ | C    | C_Diary_BG.doc (215 KB) | C_Journal_En.docx (27 KB) |          │
+     │ TeamC_Journal.docx (20 KB)                          |                   │
+     │ | D    | D Diary_BG.doc (222 KB) | D_Diary_En.docx           | -        │
+     │                                            |                            │
+     │ | E    | E Diary_BG.doc          | -                         | -        │
+     │                                            |                            │
+     │ | -    | -                       | -                         | Diary    │
+     │ March 09.doc (47 KB), Adela_JournalSurvey.doc |                         │
+     │                                                                         │
+     │ Kazanlak 2010 (70 records - ~30% role coverage)                         │
+     │                                                                         │
+     │ | Team | PRIMARY                     | SECONDARY                   |    │
+     │ |------|-----------------------------|-----------------------------|    │
+     │ | A    | A_2010Diary_BG.doc (86 KB)  | A_2010Diary_En.docx         |    │
+     │ | B    | B_2010Diary_En.doc (108 KB) | B_2010Diary_BG.docx (42 KB) |    │
+     │ | C    | C_2010Diary_BG.doc (214 KB) | C_2010Diary_En.docx         |    │
+     │ | D    | D_2010Diary_BG.doc (127 KB) | D_2010Diary_En.docx         |    │
+     │                                                                         │
+     │ Kazanlak 2011 (60 records - ~0-7% role coverage)                        │
+     │                                                                         │
+     │ | Team | PRIMARY                     | SECONDARY                   |    │
+     │ SUPPLEMENTAL               |                                            │
+     │ |------|-----------------------------|-----------------------------|----│
+     │ ------------------------|                                               │
+     │ | A    | A_2011Diary_BG.doc          | -                           |    │
+     │ AUS_Diaries/* (7 students) |                                            │
+     │ | B    | B_2011Diary_En.docx (63 KB) | B_2011Diary_BG.docx (42 KB) |    │
+     │ AUS_Diaries/*              |                                            │
+     │ | C    | C_2011Diary_En.docx (70 KB) | C_2011Diary_BG.docx (18 KB) |    │
+     │ AUS_Diaries/*              |                                            │
+     │ | D    | D_2011Diary_BG.doc          | -                           |    │
+     │ AUS_Diaries/*              |                                            │
+     │                                                                         │
+     │ AUS_Diaries: Individual student journals - cchoi, gburn, hmorr, hsinc,  │
+     │ jmccl, jserc, owarr                                                     │
+     │                                                                         │
+     │ Elhovo 2009 (35 records - ~1% role coverage)                            │
+     │                                                                         │
+     │ | Team | PRIMARY                 | SECONDARY                        |   │
+     │ SUPPLEMENTAL            |                                               │
+     │ |------|-------------------------|----------------------------------|---│
+     │ ----------------------|                                                 │
+     │ | A    | Diary Team A.doc        | -                                |   │
+     │ Diary_Aneta.doc (29 KB) |                                               │
+     │ | B    | DiaryTeamB.doc          | TeamB_Dnevnik (Ross).doc (55 KB) | - │
+     │                       |                                                 │
+     │ | C    | The Diary of Team C.doc | TeamC_Dnevnik.doc                | - │
+     │                       |                                                 │
+     │                                                                         │
+     │ Elhovo 2010 (27 records - ~30% role coverage)                           │
+     │                                                                         │
+     │ | Team | PRIMARY                       | SECONDARY                      │
+     │                  | SUPPLEMENTAL             |                           │
+     │ |------|-------------------------------|--------------------------------│
+     │ -----------------|--------------------------|                           │
+     │ | A    | A_Diary.docx                  | -                              │
+     │                  | -                        |                           │
+     │ | B    | Team B Diary new.docx (26 KB) | Team B Diary.docx (25 KB), Team│
+     │  B Journal*.docx | Diary_Adela2010Fall.docx |                           │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Workflow                                                                │
+     │                                                                         │
+     │ Phase A: Automated Regex Pass (Low-Hanging Fruit)                       │
+     │                                                                         │
+     │ Run scripted extraction across all diary files to capture               │
+     │ explicit/structured role mentions.                                      │
+     │                                                                         │
+     │ Script: scripts/extract-roles-regex.py                                  │
+     │                                                                         │
+     │ Targets:                                                                │
+     │ - Explicit patterns: "PDA: Name", "GPS operator: Name", "Author: Name"  │
+     │ - Structured headers: "Recorder: Name", "Photographer: Name"            │
+     │ - Role lists at start of diary entries                                  │
+     │                                                                         │
+     │ Output: outputs/role-extractions-regex.csv                              │
+     │                                                                         │
+     │ Expected yield: Low - most diaries are narrative, not structured. But   │
+     │ establishes baseline.                                                   │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Phase B: Manual NLP Review (Season-Team Passes)                         │
+     │                                                                         │
+     │ Systematic manual reading of diaries using NLP comprehension to extract │
+     │ narrative role mentions. Process one season-team at a time.             │
+     │                                                                         │
+     │ Approach per pass:                                                      │
+     │ 1. Read PRIMARY diary for team/season                                   │
+     │ 2. Use NLP to identify role mentions in narrative context               │
+     │ 3. Check SECONDARY diary if PRIMARY lacks detail                        │
+     │ 4. Check SUPPLEMENTAL sources for gaps                                  │
+     │ 5. Record extractions with source citations                             │
+     │ 6. User reviews extractions before next pass                            │
+     │                                                                         │
+     │ Pass sequence (by priority):                                            │
+     │                                                                         │
+     │ | Pass | Season-Team          | Records | Diary Files                   │
+     │     | Notes                           |                                 │
+     │ |------|----------------------|---------|-------------------------------│
+     │ ----|---------------------------------|                                 │
+     │ | B.1  | Kazanlak 2009 Team A | ~15     | A_Diary_BG.doc, A_Diary_En.doc│
+     │     | First pass - establish patterns |                                 │
+     │ | B.2  | Kazanlak 2009 Team B | ~15     | B_Diary_BG.doc,               │
+     │ B_Diary_En.docx   | Refine approach                 |                   │
+     │ | B.3  | Kazanlak 2009 Team C | ~15     | C_Diary_BG.doc,               │
+     │ C_Journal_En.docx |                                 |                   │
+     │ | B.4  | Kazanlak 2009 Team D | ~15     | D Diary_BG.doc,               │
+     │ D_Diary_En.docx   |                                 |                   │
+     │ | B.5  | Kazanlak 2009 Team E | ~16     | E Diary_BG.doc                │
+     │     | BG only                         |                                 │
+     │ | B.6  | Elhovo 2009 Team A   | ~12     | Diary Team A.doc,             │
+     │ Diary_Aneta.doc |                                 |                     │
+     │ | B.7  | Elhovo 2009 Team B   | ~12     | DiaryTeamB.doc,               │
+     │ TeamB_Dnevnik.doc |                                 |                   │
+     │ | B.8  | Elhovo 2009 Team C   | ~11     | The Diary of Team C.doc       │
+     │     |                                 |                                 │
+     │ | B.9  | Kazanlak 2011 Team A | ~15     | A_2011Diary_BG.doc +          │
+     │ AUS_Diaries  |                                 |                        │
+     │ | B.10 | Kazanlak 2011 Team B | ~15     | B_2011Diary_En.docx +         │
+     │ AUS_Diaries |                                 |                         │
+     │ | B.11 | Kazanlak 2011 Team C | ~15     | C_2011Diary_En.docx +         │
+     │ AUS_Diaries |                                 |                         │
+     │ | B.12 | Kazanlak 2011 Team D | ~15     | D_2011Diary_BG.doc +          │
+     │ AUS_Diaries  |                                 |                        │
+     │ | B.13 | Kazanlak 2010 gaps   | ~20     | All 2010 diaries              │
+     │     | Fill remaining gaps             |                                 │
+     │ | B.14 | Elhovo 2010 gaps     | ~10     | All 2010 diaries              │
+     │     | Fill remaining gaps             |                                 │
+     │                                                                         │
+     │ After each pass:                                                        │
+     │ - Record extractions in outputs/role-extractions-[season]-[team].csv    │
+     │ - User reviews before proceeding to next pass                           │
+     │ - Lessons learned inform subsequent passes                              │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Phase C: Consolidate and Apply                                          │
+     │                                                                         │
+     │ After all passes complete:                                              │
+     │                                                                         │
+     │ 1. Consolidate all extraction CSVs into                                 │
+     │ outputs/role-extractions-consolidated.csv                               │
+     │ 2. Review consolidated extractions with user                            │
+     │ 3. Apply to attribution.csv (empty fields only)                         │
+     │ 4. Update Extraction_Notes with source citations                        │
+     │ 5. Generate comprehensive report                                        │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Phase D: Generate Extraction Report                                     │
+     │                                                                         │
+     │ Output: outputs/role-extraction-report.md                               │
+     │                                                                         │
+     │ Contents:                                                               │
+     │ - Summary statistics (before/after coverage by role)                    │
+     │ - Extractions by season and team                                        │
+     │ - Source citations for all extractions                                  │
+     │ - Records with no role data found (documented limitations)              │
+     │ - Patterns observed in different diary styles                           │
+     │ - Recommendations for any remaining gaps                                │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Role Extraction Patterns                                                │
+     │                                                                         │
+     │ Keywords to Search                                                      │
+     │                                                                         │
+     │ PDA_Operator:                                                           │
+     │ - "PDA", "pda operator", "PDA duties"                                   │
+     │ - "entered data", "data entry" (in field context)                       │
+     │ - Names adjacent to device mentions                                     │
+     │                                                                         │
+     │ GPS_Operator:                                                           │
+     │ - "GPS", "GPS operator", "GPS duties"                                   │
+     │ - "coordinates", "waypoints", "positioning"                             │
+     │ - "navigation"                                                          │
+     │                                                                         │
+     │ Paper_Recorder:                                                         │
+     │ - "paper recorder", "paper records"                                     │
+     │ - "form", "forms", "field form"                                         │
+     │ - "notes", "field notes", "recording"                                   │
+     │                                                                         │
+     │ Photographer:                                                           │
+     │ - "photographer", "photo", "photos"                                     │
+     │ - "camera", "pictures", "taking pictures"                               │
+     │ - "visual documentation"                                                │
+     │                                                                         │
+     │ Author:                                                                 │
+     │ - Diary header attributions                                             │
+     │ - "written by", "author", "wrote"                                       │
+     │ - Signature lines in diary entries                                      │
+     │                                                                         │
+     │ Data_Editor:                                                            │
+     │ - "data entry", "data editor"                                           │
+     │ - "transcription", "digitisation"                                       │
+     │ - Post-field processing mentions                                        │
+     │                                                                         │
+     │ Narrative Patterns                                                      │
+     │                                                                         │
+     │ Handle narrative descriptions like:                                     │
+     │ - "Hamish was taking pictures" → Photographer: Hamish                   │
+     │ - "Petra operated the PDA while Nadja recorded" → PDA: Petra, Paper:    │
+     │ Nadja                                                                   │
+     │ - "I (Adela) wrote the diary" → Author: Adela                           │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Processing Order                                                        │
+     │                                                                         │
+     │ | Priority | Season        | Records | Current Coverage | Diary Sources │
+     │                |                                                        │
+     │ |----------|---------------|---------|------------------|---------------│
+     │ ---------------|                                                        │
+     │ | 1        | Kazanlak 2009 | 76      | ~1%              | 12 diaries    │
+     │                |                                                        │
+     │ | 2        | Kazanlak 2011 | 60      | ~0-7%            | 8 team diaries│
+     │  + AUS_Diaries |                                                        │
+     │ | 3        | Elhovo 2009   | 35      | ~1%              | 6 diaries     │
+     │                |                                                        │
+     │ | 4        | Kazanlak 2010 | 70      | ~30%             | 8 diaries     │
+     │ (gaps only)        |                                                    │
+     │ | 5        | Elhovo 2010   | 27      | ~30%             | 5 diaries     │
+     │ (gaps only)        |                                                    │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Expected Outcomes                                                       │
+     │                                                                         │
+     │ Realistic targets:                                                      │
+     │ - Author: 90%+ (currently 78%)                                          │
+     │ - PDA_Operator: 30-50% (currently 11%)                                  │
+     │ - GPS_Operator: 30-50% (currently 9%)                                   │
+     │ - Paper_Recorder: 20-30% (currently 4%)                                 │
+     │ - Photographer: 10-20% (currently 1%)                                   │
+     │ - Data_Editor: 10-15% (currently 3%)                                    │
+     │                                                                         │
+     │ Note: Not all diaries contain role information. Some seasons/teams may  │
+     │ have minimal role documentation. The goal is to extract everything      │
+     │ available, not achieve 100% coverage.                                   │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Scripts to Create/Modify                                                │
+     │                                                                         │
+     │ Phase A:                                                                │
+     │ 1. scripts/extract-roles-regex.py                                       │
+     │   - Automated regex extraction across all diary files                   │
+     │   - Captures explicit/structured role mentions                          │
+     │   - Outputs to role-extractions-regex.csv                               │
+     │                                                                         │
+     │ Phase C:                                                                │
+     │ 2. scripts/consolidate-role-extractions.py                              │
+     │ - Merges all extraction CSVs (regex + manual passes)                    │
+     │ - Groups by (Date, Team)                                                │
+     │ - Outputs consolidated CSV                                              │
+     │                                                                         │
+     │ 3. scripts/apply-role-extractions.py                                    │
+     │   - Applies consolidated extractions to attribution.csv                 │
+     │   - Creates backup                                                      │
+     │   - Updates Extraction_Notes with source citations                      │
+     │ 4. scripts/generate-role-extraction-report.py                           │
+     │   - Creates comprehensive markdown report                               │
+     │                                                                         │
+     │ Note: Phase B (manual NLP review) does not require scripts - extractions│
+     │  recorded directly to per-pass CSV files during manual diary review.    │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Quality Assurance                                                       │
+     │                                                                         │
+     │ - Source citations: Every extraction must cite specific diary and       │
+     │ location                                                                │
+     │ - Confidence levels: Mark extractions as high/medium/low confidence     │
+     │ - Ambiguity flags: Flag unclear role assignments for review             │
+     │ - Cross-reference: Verify names against TRAP-Participants.csv           │
+     │ - No overwrites: Only populate empty fields, don't overwrite existing   │
+     │ data                                                                    │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Success Criteria                                                        │
+     │                                                                         │
+     │ - All 30+ diary sources reviewed                                        │
+     │ - Extraction attempted for all 175 "No role data" records               │
+     │ - Coverage improved for all role columns                                │
+     │ - Comprehensive report with source citations                            │
+     │ - All extractions documented in attribution.csv Extraction_Notes        │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Critical Files                                                          │
+     │                                                                         │
+     │ To read:                                                                │
+     │ - outputs/attribution.csv - Current state                               │
+     │ - outputs/source-inventory.md - Diary locations                         │
+     │ - scripts/extract_roles_kaz2010.py - Existing pattern                   │
+     │ - scripts/extract_roles_elh2010.py - Existing pattern                   │
+     │                                                                         │
+     │ To create/modify:                                                       │
+     │ - outputs/role-extraction-runsheet.md                                   │
+     │ - outputs/role-extractions-raw.csv                                      │
+     │ - outputs/role-extractions-consolidated.csv                             │
+     │ - outputs/role-extraction-report.md                                     │
+     │ - outputs/attribution.csv (with backup)                                 │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     ╰─────────────────────────────────────────────────────────────────────────╯
+
+> /context 
+  ⎿  
+      Context Usage
+     ⛁ ⛁ ⛁ ⛁ ⛁ ⛁ ⛁ ⛁ ⛁ ⛁   claude-opus-4-5-20251101 · 140k/200k tokens (70%)
+     ⛀ ⛀ ⛁ ⛁ ⛁ ⛁ ⛁ ⛁ ⛁ ⛁ 
+     ⛁ ⛁ ⛁ ⛁ ⛁ ⛁ ⛁ ⛁ ⛁ ⛁   ⛁ System prompt: 2.9k tokens (1.4%)
+     ⛁ ⛁ ⛁ ⛁ ⛁ ⛁ ⛁ ⛁ ⛁ ⛁   ⛁ System tools: 18.1k tokens (9.0%)
+     ⛁ ⛁ ⛁ ⛁ ⛁ ⛁ ⛁ ⛀ ⛶ ⛶   ⛁ MCP tools: 1.3k tokens (0.6%)
+     ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶   ⛁ Memory files: 904 tokens (0.5%)
+     ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶   ⛁ Messages: 71.4k tokens (35.7%)
+     ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛝ ⛝ ⛝   ⛶ Free space: 60k (30.2%)
+     ⛝ ⛝ ⛝ ⛝ ⛝ ⛝ ⛝ ⛝ ⛝ ⛝   ⛝ Autocompact buffer: 45.0k tokens (22.5%)
+     ⛝ ⛝ ⛝ ⛝ ⛝ ⛝ ⛝ ⛝ ⛝ ⛝ 
+
+     MCP tools · /mcp
+     └ mcp__ide__getDiagnostics (ide): 611 tokens
+     └ mcp__ide__executeCode (ide): 682 tokens
+
+     Memory files · /memory
+     └ User (/home/shawn/.claude/CLAUDE.md): 904 tokens
+
+     SlashCommand Tool · 31 commands
+     └ Total: 4.3k tokens
+
+     
+
+
+

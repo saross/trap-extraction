@@ -1,0 +1,23 @@
+date,team,role_type,person_name,source_file,source_location,confidence,notes
+2011-11-03,B,Photographer,Hamish,B_2011Diary_En.docx,"'Hamish was taking the pictures'",high,Explicit photographer assignment
+2011-11-03,B,PDA_Operator,Petra,B_2011Diary_En.docx,"'I was taking the gps points with the Adela's old PDA'",high,Petra operating PDA for GPS points
+2011-11-03,B,PDA_Operator,Joel,B_2011Diary_En.docx,"'Joel was working with the pda on few polygons'",high,Joel operating PDA on some polygons
+2011-11-03,B,Author,Petra,B_2011Diary_En.docx,"Diary written by team leader Petra",high,Explicit diary author
+2011-11-05,B,Paper_Recorder,Bethan,B_2011Diary_En.docx,"'Bethan was doing the paper records'",high,Explicit paper recorder assignment
+2011-11-05,B,Photographer,Hamish,B_2011Diary_En.docx,"'Hamish took the action shots'",high,Explicit photographer assignment
+2011-11-05,B,GPS_Operator,Cecelia,B_2011Diary_En.docx,"'Cecelia was in charge of GPS and tracklog'",high,Explicit GPS operator assignment
+2011-11-05,B,Author,Petra,B_2011Diary_En.docx,"Diary written by team leader Petra",high,Explicit diary author
+2011-11-06,B,Author,Petra,B_2011Diary_En.docx,"Diary continuation by Petra",high,Explicit diary author
+2011-11-07,B,Author,Petra,B_2011Diary_En.docx,"Diary continuation by Petra",high,Explicit diary author
+2011-11-08,B,Author,Petra,B_2011Diary_En.docx,"Diary continuation by Petra - mixed entry style",high,Entry co-authored with team members
+2011-11-09,B,Author,Petra,B_2011Diary_En.docx,"Diary continuation by Petra",high,Explicit diary author
+2011-11-10,B,Author,Petra,B_2011Diary_En.docx,"Diary continuation by Petra",high,Explicit diary author
+2011-11-12,B,Author,Petra,B_2011Diary_En.docx,"Diary continuation by Petra",high,Explicit diary author
+2011-11-13,B,Author,Bara,B_2011Diary_En.docx,"'Team Leader: BARA' - entry written by Bara",high,Bara led team and wrote entry this day
+2011-11-15,B,Author,Petra,B_2011Diary_En.docx,"Diary continuation by Petra",high,Explicit diary author
+2011-11-16,B,Author,Joel,B_2011Diary_En.docx,"'Leader: Joel Sercombe' - Joel led team this day",high,Joel led team and likely wrote entry
+2011-11-17,B,Author,Petra,B_2011Diary_En.docx,"Diary continuation by Petra",high,Explicit diary author
+2011-11-18,B,Author,Petra,B_2011Diary_En.docx,"Diary continuation by Petra",high,Explicit diary author
+2011-11-20,B,Author,Petra,B_2011Diary_En.docx,"Diary continuation - field notes by Adela integrated",medium,Entry includes Adela's field notes
+2011-11-21,B,Author,Adela,B_2011Diary_En.docx,"'Leader: Adela' - Adela led team",high,Adela led team
+2011-11-22,B,Author,Adela,B_2011Diary_En.docx,"'Leader: Adela' - Adela led team",high,Adela led team

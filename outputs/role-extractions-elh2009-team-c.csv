@@ -1,0 +1,26 @@
+date,team,role_type,person_name,source_file,source_location,confidence,notes
+2009-10-12,C,Photographer,Petra,The Diary of Team C.doc,"'Petra took pictures of the holes in the mounds and of all sites'",high,Explicit photographer assignment
+2009-10-13,C,Photographer,Petra,The Diary of Team C.doc,"'Petra also took picture of it... Petra took photos of all sites and GPS points'",high,Explicit photographer assignment
+2009-10-15,C,Photographer,Petra,The Diary of Team C.doc,"'Today Petra only took pictures of some fields because we didn't have any site'",high,Explicit photographer assignment
+2009-10-20,C,PDA_Operator,Petra,The Diary of Team C.doc,"'Petra took another pda for training'",high,Explicit PDA assignment - training
+2009-10-20,C,Paper_Recorder,Sona,The Diary of Team C.doc,"'Sona was doing paper documentation'",high,Explicit paper recorder assignment
+2009-10-20,C,GPS_Operator,Tereza,The Diary of Team C.doc,"'Tereza was walking with GPS'",high,Explicit GPS assignment
+2009-10-20,C,Photographer,Petra,The Diary of Team C.doc,"Petra established as photographer - pattern continues",medium,Inferred from established pattern
+2009-10-21,C,Photographer,Petra,The Diary of Team C.doc,"Petra established as photographer - pattern continues",medium,Inferred from established pattern
+2009-10-22,C,Photographer,Petra,The Diary of Team C.doc,"'Petra took video of that snake hunting'",high,Explicit mention of Petra taking video
+2009-10-23,C,Author,Petra,The Diary of Team C.doc,"'Today written by Petra'",high,Explicit author attribution
+2009-10-26,C,Author,Petra,The Diary of Team C.doc,"'Petra is in charge of diary now'",high,Explicit author assignment
+2009-10-26,C,Photographer,Petra,The Diary of Team C.doc,"Petra established as photographer - pattern continues",medium,Inferred from established pattern
+2009-10-27,C,Author,Petra,The Diary of Team C.doc,"Petra in charge of diary from Oct 26",medium,Inferred from Oct 26 statement
+2009-10-27,C,Photographer,Petra,The Diary of Team C.doc,"Petra established as photographer - pattern continues",medium,Inferred from established pattern
+2009-10-28,C,Author,Petra,The Diary of Team C.doc,"Petra in charge of diary from Oct 26",medium,Inferred from Oct 26 statement
+2009-10-29,C,Author,Petra,The Diary of Team C.doc,"Petra in charge of diary from Oct 26",medium,Inferred from Oct 26 statement
+2009-11-09,C,Paper_Recorder,Jarka,The Diary of Team C.doc,"'Jarka grasped how to do the paper records right away'",high,Explicit paper recorder assignment
+2009-11-09,C,Author,Scott,The Diary of Team C.doc,"Scott takes over as Team C leader and diary author",high,Scott's diary entries begin Nov 9
+2009-11-10,C,Paper_Recorder,Jarka,The Diary of Team C.doc,"Jarka established as paper recorder",medium,Inferred from Nov 9 establishment
+2009-11-10,C,Author,Scott,The Diary of Team C.doc,"Scott's diary entries continue",high,Scott writing diary
+2009-11-12,C,Paper_Recorder,Jarka,The Diary of Team C.doc,"Jarka established as paper recorder",medium,Inferred from Nov 9 establishment
+2009-11-12,C,Author,Scott,The Diary of Team C.doc,"Scott's diary entries continue",high,Scott writing diary
+2009-11-13,C,Paper_Recorder,Jarka,The Diary of Team C.doc,"Jarka established as paper recorder",medium,Inferred from Nov 9 establishment
+2009-11-13,C,Author,Scott,The Diary of Team C.doc,"Scott's diary entries continue",high,Scott writing diary
+2009-11-14,C,Author,Scott,The Diary of Team C.doc,"Scott's diary entries continue",high,Scott writing diary

@@ -1,0 +1,3 @@
+date,team,role_type,person_name,source_file,source_location,confidence,notes
+2009-03-15,A,Author,Stanislava Kučová,A_Diary_En.doc,"Written by Satnislava Kučová: skucova@seznam.cz",high,Explicit author attribution at start of entry (typo in name: Satnislava)
+2009-03-19,A,Author,Petra,A_Diary_En.doc,"Dairy from here written by Petra",high,Explicit author attribution

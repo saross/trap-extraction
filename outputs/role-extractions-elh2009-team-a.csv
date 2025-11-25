@@ -1,0 +1,41 @@
+date,team,role_type,person_name,source_file,source_location,confidence,notes
+2009-10-12,A,PDA_Operator,Adela,Diary Team A.doc,"Oct 13 entry states 'usual setup' - implies same roles on first survey day",medium,Inferred from 'usual setup' reference on Oct 13
+2009-10-12,A,Paper_Recorder,Aneta,Diary Team A.doc,"Oct 13 entry states 'usual setup' - implies same roles on first survey day",medium,Inferred from 'usual setup' reference on Oct 13
+2009-10-12,A,GPS_Operator,Martin,Diary Team A.doc,"Oct 13 entry states 'usual setup' - implies same roles on first survey day",medium,Inferred from 'usual setup' reference on Oct 13
+2009-10-12,A,Author,Adela Sobotkova,Diary Team A.doc,"Diary header: Diary Team A ELHOVO SURVEY FALL 2009 SEASON / Adela Sobotkova",high,Explicit diary author attribution
+2009-10-15,A,PDA_Operator,Adela,Diary Team A.doc,"Oct 13 'usual setup' continues - same team composition on Oct 15",medium,Inferred from team continuity and 'usual setup'
+2009-10-15,A,Paper_Recorder,Aneta,Diary Team A.doc,"Oct 13 'usual setup' continues - same team composition on Oct 15",medium,Inferred from team continuity and 'usual setup'
+2009-10-15,A,GPS_Operator,Martin,Diary Team A.doc,"Oct 13 'usual setup' continues - same team composition on Oct 15",medium,Inferred from team continuity and 'usual setup'
+2009-10-15,A,Author,Adela Sobotkova,Diary Team A.doc,"Diary header attribution",high,Explicit diary author attribution
+2009-10-20,A,PDA_Operator,Adela,Diary Team A.doc,"Same team: Team A ( Adela, Ilija, Martin, Aneta, Eric) - 'usual setup' pattern",medium,Inferred from team composition and established pattern
+2009-10-20,A,Paper_Recorder,Aneta,Diary Team A.doc,"Same team: Team A ( Adela, Ilija, Martin, Aneta, Eric) - 'usual setup' pattern",medium,Inferred from team composition and established pattern
+2009-10-20,A,GPS_Operator,Martin,Diary Team A.doc,"Same team: Team A ( Adela, Ilija, Martin, Aneta, Eric) - 'usual setup' pattern",medium,Inferred from team composition and established pattern
+2009-10-20,A,Author,Adela Sobotkova,Diary Team A.doc,"Diary header attribution",high,Explicit diary author attribution
+2009-10-21,A,PDA_Operator,Adela,Diary Team A.doc,"Same team composition continues - 'usual setup' pattern",medium,Inferred from team composition and established pattern
+2009-10-21,A,Paper_Recorder,Aneta,Diary Team A.doc,"Same team composition continues - 'usual setup' pattern",medium,Inferred from team composition and established pattern
+2009-10-21,A,GPS_Operator,Martin,Diary Team A.doc,"Same team composition continues - 'usual setup' pattern",medium,Inferred from team composition and established pattern
+2009-10-21,A,Author,Adela Sobotkova,Diary Team A.doc,"Diary header attribution",high,Explicit diary author attribution
+2009-10-22,A,PDA_Operator,Adela,Diary Team A.doc,"Same team: Adela, Ilija, Eric, Aneta and Martin - 'usual setup' pattern",medium,Inferred from team composition and established pattern
+2009-10-22,A,Paper_Recorder,Aneta,Diary Team A.doc,"Same team: Adela, Ilija, Eric, Aneta and Martin - 'usual setup' pattern",medium,Inferred from team composition and established pattern
+2009-10-22,A,GPS_Operator,Martin,Diary Team A.doc,"Same team: Adela, Ilija, Eric, Aneta and Martin - 'usual setup' pattern",medium,Inferred from team composition and established pattern
+2009-10-22,A,Author,Adela Sobotkova,Diary Team A.doc,"Diary header attribution",high,Explicit diary author attribution
+2009-10-23,A,PDA_Operator,Adela,Diary Team A.doc,"Team A – Adela, Ilija, Aneta a Eric - Martin is off with Team B - Adela still on PDA",medium,Martin away but Adela remains on PDA
+2009-10-23,A,Paper_Recorder,Aneta,Diary Team A.doc,"Team A – Adela, Ilija, Aneta a Eric - Aneta still present",medium,Aneta still present as recorder
+2009-10-23,A,Author,Adela Sobotkova,Diary Team A.doc,"Diary header attribution",high,Explicit diary author attribution
+2009-10-26,A,PDA_Operator,Adela,Diary Team A.doc,"Team A comprises Adela, Ilija, Aneta, Martin and Tereza (substituting for Eric)",medium,Core roles maintained with substitution
+2009-10-26,A,Paper_Recorder,Aneta,Diary Team A.doc,"Team A comprises Adela, Ilija, Aneta, Martin and Tereza - Aneta present",medium,Aneta still present as recorder
+2009-10-26,A,GPS_Operator,Martin,Diary Team A.doc,"Team A comprises Adela, Ilija, Aneta, Martin and Tereza - Martin present",medium,Martin present for GPS
+2009-10-26,A,Author,Adela Sobotkova,Diary Team A.doc,"Diary header attribution",high,Explicit diary author attribution
+2009-10-27,A,PDA_Operator,Adela,Diary Team A.doc,"Team A in Monday set up - same configuration as Oct 26",medium,Inferred from 'Monday set up' reference
+2009-10-27,A,Paper_Recorder,Aneta,Diary Team A.doc,"Team A in Monday set up - Aneta present",medium,Inferred from 'Monday set up' reference
+2009-10-27,A,GPS_Operator,Martin,Diary Team A.doc,"Team A in Monday set up - Martin present",medium,Inferred from 'Monday set up' reference
+2009-10-27,A,Author,Adela Sobotkova,Diary Team A.doc,"Diary header attribution",high,Explicit diary author attribution
+2009-10-28,A,PDA_Operator,Adela,Diary Team A.doc,"'The PDA keeps crashing but revives' - Adela operating PDA",high,Explicit mention of PDA use by diary author
+2009-10-28,A,Paper_Recorder,Aneta,Diary Team A.doc,"Same team - standard roles continue",medium,Inferred from team continuity
+2009-10-28,A,GPS_Operator,Martin,Diary Team A.doc,"Same team - standard roles continue",medium,Inferred from team continuity
+2009-10-28,A,Photographer,Martin,Diary Team A.doc,"'Martin is too busy taking pictures to keep the line'",high,Explicit mention of Martin taking pictures
+2009-10-28,A,Author,Adela Sobotkova,Diary Team A.doc,"Diary header attribution",high,Explicit diary author attribution
+2009-10-29,A,PDA_Operator,Adela,Diary Team A.doc,"Same team composition - standard roles continue",medium,Inferred from team continuity
+2009-10-29,A,Paper_Recorder,Aneta,Diary Team A.doc,"Same team composition - standard roles continue",medium,Inferred from team continuity
+2009-10-29,A,GPS_Operator,Martin,Diary Team A.doc,"Same team composition - standard roles continue",medium,Inferred from team continuity
+2009-10-29,A,Author,Adela Sobotkova,Diary Team A.doc,"Diary header attribution",high,Explicit diary author attribution

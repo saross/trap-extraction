@@ -1,0 +1,102 @@
+season,team,role_type,person_name,source_file,match_context,confidence
+kaz2009,A,GPS_Operator,координати на мястото,A_Diary_BG.doc,GPS  координати  на  мястото ,high
+kaz2009,A,GPS_Operator,координати на източната и западната граница,A_Diary_BG.doc,GPS координати на източната и  западната  граница ,high
+kaz2009,A,GPS_Operator,координати,A_Diary_BG.doc,GPS  координати ,high
+kaz2009,A,Photographer,included,A_Diary_En.doc,Photo included ,high
+kaz2009,A,Author,Petra,A_Diary_En.doc,written by Petra ,high
+kaz2009,B,GPS_Operator,координати,B_Diary_BG.doc,GPS  координати ,high
+kaz2009,D,GPS_Operator,координати и е,D Diary_BG.doc,GPS  координати  и  е ,high
+kaz2010,A,GPS_Operator,коодинати от,A_2010Diary_BG.doc,GPS коодинати от ,high
+kaz2010,A,GPS_Operator,координати на,A_2010Diary_BG.doc,GPS координати на ,high
+kaz2010,A,GPS_Operator,координати,A_2010Diary_BG.doc,GPS координати ,high
+kaz2010,A,PDA_Operator,"Tereza, Pesho",A_2010Diary_En.docx,"PDA: Tereza, Pesho ",high
+kaz2010,A,GPS_Operator,Petra T,A_2010Diary_En.docx,GPS: Petra T ,high
+kaz2010,A,GPS_Operator,points of the most visible,A_2010Diary_En.docx,GPS points of the most visible ,high
+kaz2010,A,GPS_Operator,points on the most,A_2010Diary_En.docx,GPS points on the most ,high
+kaz2010,A,Author,Petra Tuslova,A_2010Diary_En.docx,author Petra Tuslova ,high
+kaz2010,A,Author,Lindsay,A_2010Diary_En.docx,author Lindsay ,high
+kaz2010,A,GPS_Operator,Petra T,A_2010Diary_En.docx,GPS: Petra T ,high
+kaz2010,A,GPS_Operator,points of the most visible,A_2010Diary_En.docx,GPS points of the most visible ,high
+kaz2010,A,GPS_Operator,points on the most,A_2010Diary_En.docx,GPS points on the most ,high
+kaz2010,B,PDA_Operator,Petra,B_2010Diary_En.doc,"PDA: Petra, ",high
+kaz2010,B,PDA_Operator,Tereza,B_2010Diary_En.doc,"PDA: Tereza, ",high
+kaz2010,B,PDA_Operator,"was variable through the day, the karaoke night before left",B_2010Diary_En.doc,"PDA was variable through the day, the karaoke night before left ",high
+kaz2010,B,GPS_Operator,"Point taken, no sample number, no object number",B_2010Diary_En.doc,"GPS Point taken, no sample number, no object number ",high
+kaz2010,B,Author,Renee Gardiner,B_2010Diary_En.doc,author Renee Gardiner ,high
+kaz2010,B,GPS_Operator,"Point taken, no sample number, no object number",B_2010Diary_En.doc,"GPS Point taken, no sample number, no object number ",high
+kaz2010,C,GPS_Operator,точка,C_2010Diary_BG.doc,GPS  точка ,high
+kaz2010,C,GPS_Operator,точки,C_2010Diary_BG.doc,GPS  точки ,high
+kaz2010,C,GPS_Operator,points at that site,C_2010Diary_En.docx,"GPS points at that site, ",high
+kaz2010,C,GPS_Operator,points at that site,C_2010Diary_En.docx,"GPS points at that site, ",high
+kaz2010,D,GPS_Operator,координати N,D_2010Diary_BG.doc,GPS  координати  N ,high
+kaz2010,D,GPS_Operator,точка от обект Крън,D_2010Diary_BG.doc,GPS  точка  от  обект  Крън ,high
+kaz2010,D,PDA_Operator,"Nadja, Ljubo",D_2010Diary_En.docx,"PDA: Nadja, Ljubo ",high
+kaz2010,D,PDA_Operator,"Nadja, Ljubo",D_2010Diary_En.docx,"PDA: Nadja, Ljubo ",high
+kaz2010,D,PDA_Operator,"Nadja, Ljubo",D_2010Diary_En.docx,"PDA: Nadja, Ljubo ",high
+kaz2010,D,PDA_Operator,"Nadja, Ljubo",D_2010Diary_En.docx,"PDA: Nadja, Ljubo ",high
+kaz2010,D,GPS_Operator,Julia,D_2010Diary_En.docx,GPS: Julia ,high
+kaz2010,D,GPS_Operator,Julia,D_2010Diary_En.docx,GPS: Julia ,high
+kaz2010,D,GPS_Operator,points,D_2010Diary_En.docx,GPS points ,high
+kaz2010,D,GPS_Operator,points,D_2010Diary_En.docx,GPS points ,high
+kaz2010,D,Author,Lindsay,D_2010Diary_En.docx,author: Lindsay ,high
+kaz2010,D,Author,Viki,D_2010Diary_En.docx,author Viki ,high
+kaz2010,D,Author,Viki,D_2010Diary_En.docx,author Viki ,high
+kaz2010,D,GPS_Operator,Julia,D_2010Diary_En.docx,GPS: Julia ,high
+kaz2010,D,GPS_Operator,Julia,D_2010Diary_En.docx,GPS: Julia ,high
+kaz2010,D,GPS_Operator,points,D_2010Diary_En.docx,GPS points ,high
+kaz2010,D,GPS_Operator,points,D_2010Diary_En.docx,GPS points ,high
+kaz2011,B,PDA_Operator,"on few polygons,everyone",B_2011Diary_En.docx,"pda on few polygons,everyone ",high
+kaz2011,B,PDA_Operator,in the morning delayed the Team in undertaking our allocated,B_2011Diary_En.docx,PDA in the morning delayed the Team in undertaking our allocated ,high
+kaz2011,B,PDA_Operator,"maps, landmarks and",B_2011Diary_En.docx,"PDA maps, landmarks and ",high
+kaz2011,B,PDA_Operator,GPS and the PDA itself,B_2011Diary_En.docx,PDA GPS and the PDA itself ,high
+kaz2011,B,GPS_Operator,points,B_2011Diary_En.docx,gps points ,high
+kaz2011,B,GPS_Operator,points and I made on most,B_2011Diary_En.docx,gps points and I made on most ,high
+kaz2011,B,GPS_Operator,and the PDA itself,B_2011Diary_En.docx,GPS and the PDA itself ,high
+kaz2011,B,Paper_Recorder,was missing and the mistake was found the next,B_2011Diary_En.docx,forms was missing and the mistake was found the next ,high
+kaz2011,B,GPS_Operator,points,B_2011Diary_En.docx,gps points ,high
+kaz2011,B,GPS_Operator,points and I made on most,B_2011Diary_En.docx,gps points and I made on most ,high
+kaz2011,B,GPS_Operator,and the PDA itself,B_2011Diary_En.docx,GPS and the PDA itself ,high
+kaz2011,C,PDA_Operator,point,C_2011Diary_En.docx,PDA point |          |          |        |   |           | ,high
+kaz2011,C,GPS_Operator,and,C_2011Diary_En.docx,GPS and   |          |          |        |   |           | ,high
+kaz2011,C,Paper_Recorder,are,C_2011Diary_En.docx,forms are |          |          |        |   |           | ,high
+kaz2011,C,Paper_Recorder,for,C_2011Diary_En.docx,forms for |          |          |        |   |           | ,high
+kaz2011,C,Paper_Recorder,put in,C_2011Diary_En.docx,forms put in   |          |        |              | ,high
+kaz2011,C,Paper_Recorder,and began,C_2011Diary_En.docx,forms and began      |          |        |              | ,high
+kaz2011,C,GPS_Operator,and,C_2011Diary_En.docx,GPS and   |          |          |        |   |           | ,high
+kaz2011,C,GPS_Operator,и попълване на полева,C_2011Diary_BG.docx,GPS и попълване на полева ,high
+kaz2011,D,GPS_Operator,"устройство, както и на топографска карта с",D_2011Diary_BG.doc,"GPS устройство,  както  и  на  топографска  карта  с ",high
+elh2009,A,PDA_Operator,keeps crashing but revives,Diary Team A.doc,PDA keeps crashing but revives ,high
+elh2009,A,GPS_Operator,points and fill in a summary Object,Diary Team A.doc,GPS points and fill in a summary Object ,high
+elh2009,A,GPS_Operator,and,Diary Team A.doc,GPS and ,high
+elh2009,A,GPS_Operator,points turn out an insane mess,Diary Team A.doc,"GPS points turn out an insane mess, ",high
+elh2009,A,GPS_Operator,"points, Object Summary sheet and Team Points files are all",Diary Team A.doc,"GPS points, Object Summary sheet and Team Points files are all ",high
+elh2009,A,GPS_Operator,point at and,Diary Team A.doc,GPS point at and ,high
+elh2009,A,Paper_Recorder,and GPS points turn out an insane mess,Diary Team A.doc,"forms and GPS points turn out an insane mess, ",high
+elh2009,A,Paper_Recorder,are no help as most of the information in them is,Diary Team A.doc,forms are no help as most of the information in them is ,high
+elh2009,A,Paper_Recorder,and gives Lissi a crashcourse on recording,Diary Team A.doc,forms and gives Lissi a crashcourse on recording ,high
+elh2009,A,Paper_Recorder,"literally on her knee, as she has",Diary Team A.doc,"forms literally on her knee, as she has ",high
+elh2009,A,GPS_Operator,points and fill in a summary Object,Diary Team A.doc,GPS points and fill in a summary Object ,high
+elh2009,A,GPS_Operator,and,Diary Team A.doc,GPS and ,high
+elh2009,A,GPS_Operator,points turn out an insane mess,Diary Team A.doc,"GPS points turn out an insane mess, ",high
+elh2009,A,GPS_Operator,"points, Object Summary sheet and Team Points files are all",Diary Team A.doc,"GPS points, Object Summary sheet and Team Points files are all ",high
+elh2009,A,GPS_Operator,point at and,Diary Team A.doc,GPS point at and ,high
+elh2009,B,PDA_Operator,"for much of the day, including when it was acting up, and when we were",DiaryTeamB.doc,"PDA for much of the day, including when it was acting up, and when we were ",high
+elh2009,B,PDA_Operator,"to see what was missing, we covered a gap in the field containing",DiaryTeamB.doc,"PDA to see what was missing, we covered a gap in the field containing ",high
+elh2009,B,GPS_Operator,navigator and map,DiaryTeamB.doc,GPS navigator and map ,high
+elh2009,B,GPS_Operator,"points, but",DiaryTeamB.doc,"GPS points, but ",high
+elh2009,B,Paper_Recorder,I threw together,DiaryTeamB.doc,forms I threw together ,high
+elh2009,B,Paper_Recorder,into Excel in,DiaryTeamB.doc,forms into Excel in ,high
+elh2009,B,GPS_Operator,navigator and map,DiaryTeamB.doc,GPS navigator and map ,high
+elh2009,B,GPS_Operator,"points, but",DiaryTeamB.doc,"GPS points, but ",high
+elh2009,C,PDA_Operator,for,The Diary of Team C.doc,pda for ,high
+elh2009,C,GPS_Operator,points of the sites and mounds and they picked some,The Diary of Team C.doc,GPS points of the sites and mounds and they picked some ,high
+elh2009,C,GPS_Operator,points of the sites and mounds and they picked some,The Diary of Team C.doc,GPS points of the sites and mounds and they picked some ,high
+elh2010,A,PDA_Operator,"stoped working, the PDA which worked",A_Diary.docx,"PDA stoped working, the PDA which worked ",high
+elh2010,A,PDA_Operator,Petra,A_Diary.docx,PDA: Petra ,high
+elh2010,A,PDA_Operator,Petra,A_Diary.docx,PDA: Petra ,high
+elh2010,B,GPS_Operator,Points,Team B Diary new.docx,GPS Points            |                       |                       | ,high
+elh2010,B,GPS_Operator,Points,Team B Diary new.docx,GPS Points            |                       |                       | ,high
+elh2010,B,GPS_Operator,Points,Team B Diary.docx,GPS Points            |                       |                       | ,high
+elh2010,B,GPS_Operator,Points,Team B Diary.docx,GPS Points            |                       |                       | ,high
+elh2010,SUPP,PDA_Operator,"fieldwork, Russian topo maps",Diary_Adela2010Fall.docx,"PDA fieldwork, Russian topo maps, ",high
+elh2010,SUPP,Data_Editor,by the,Diary_Adela2010Fall.docx,data entry by the ,high

@@ -1,0 +1,41 @@
+date,team,role_type,person_name,source_file,source_location,confidence,notes
+2009-10-12,B,Paper_Recorder,Vera,DiaryTeamB.doc,"'have Vera fill out the summary forms' - Oct 12 entry",high,Explicit assignment of Vera to summary forms
+2009-10-12,B,Author,Shawn Ross,DiaryTeamB.doc,"Diary header: Field Journal TRAP Elhovo 2009 Shawn Ross (Team B)",high,Explicit diary author attribution
+2009-10-13,B,Paper_Recorder,Vera,DiaryTeamB.doc,"'Vera worked on entering the details. Vera is doing a good job keeping up with the paperwork'",high,Explicit mention of Vera's paperwork role
+2009-10-13,B,Author,Shawn Ross,DiaryTeamB.doc,"Diary header attribution",high,Explicit diary author attribution
+2009-10-15,B,Paper_Recorder,Vera,DiaryTeamB.doc,"Vera established as paperwork handler - pattern continues",medium,Inferred from established pattern
+2009-10-15,B,Author,Shawn Ross,DiaryTeamB.doc,"Diary header attribution",high,Explicit diary author attribution
+2009-10-20,B,Paper_Recorder,Vera,DiaryTeamB.doc,"Vera established as paperwork handler - pattern continues",medium,Inferred from established pattern
+2009-10-20,B,Author,Shawn Ross,DiaryTeamB.doc,"Diary header attribution",high,Explicit diary author attribution
+2009-10-21,B,Paper_Recorder,Vera,DiaryTeamB.doc,"'Vera is willing to do the rest on the computer in the evening'",high,Explicit mention of Vera doing records
+2009-10-21,B,Author,Shawn Ross,DiaryTeamB.doc,"Diary header attribution",high,Explicit diary author attribution
+2009-10-22,B,PDA_Operator,Scott,DiaryTeamB.doc,"'Scott ran the PDA for much of the day, including when it was acting up'",high,Explicit PDA operator assignment
+2009-10-22,B,Paper_Recorder,Vera,DiaryTeamB.doc,"Vera established as paperwork handler - pattern continues",medium,Inferred from established pattern
+2009-10-22,B,Author,Shawn Ross,DiaryTeamB.doc,"Diary header attribution",high,Explicit diary author attribution
+2009-10-23,B,Paper_Recorder,Vera,DiaryTeamB.doc,"Vera established as paperwork handler - pattern continues",medium,Inferred from established pattern
+2009-10-23,B,Author,Shawn Ross,DiaryTeamB.doc,"Diary header attribution",high,Explicit diary author attribution
+2009-10-26,B,PDA_Operator,Stanislav,DiaryTeamB.doc,"'Stanislav got a chance to run the PDA'",high,Explicit PDA operator assignment
+2009-10-26,B,Paper_Recorder,Vera,DiaryTeamB.doc,"'I taught Vera how to check in data'",high,Vera still handling records
+2009-10-26,B,Author,Shawn Ross,DiaryTeamB.doc,"Diary header attribution",high,Explicit diary author attribution
+2009-10-27,B,Paper_Recorder,Vera,DiaryTeamB.doc,"Vera established as paperwork handler - pattern continues",medium,Inferred from established pattern
+2009-10-27,B,Author,Shawn Ross,DiaryTeamB.doc,"Diary header attribution",high,Explicit diary author attribution
+2009-10-28,B,Paper_Recorder,Vera,DiaryTeamB.doc,"'supervising Vera, Scott, and Stanislav as they did it [documentation]'",high,Vera mentioned with documentation work
+2009-10-28,B,Author,Shawn Ross,DiaryTeamB.doc,"Diary header attribution",high,Explicit diary author attribution
+2009-10-29,B,Paper_Recorder,Vera,DiaryTeamB.doc,"Vera established as paperwork handler - pattern continues",medium,Inferred from established pattern
+2009-10-29,B,Author,Shawn Ross,DiaryTeamB.doc,"Diary header attribution",high,Explicit diary author attribution
+2009-11-02,B,Author,Shawn Ross,DiaryTeamB.doc,"Diary header attribution",high,Explicit diary author attribution
+2009-11-03,B,Author,Shawn Ross,DiaryTeamB.doc,"Diary header attribution",high,Explicit diary author attribution
+2009-11-05,B,Author,Shawn Ross,DiaryTeamB.doc,"Diary header attribution",high,Explicit diary author attribution
+2009-11-06,B,Author,Shawn Ross,DiaryTeamB.doc,"Diary header attribution",high,Explicit diary author attribution
+2009-11-07,B,Paper_Recorder,Dasha,DiaryTeamB.doc,"'We spent the day training Dasha to complete the written forms'",medium,Dasha being trained for forms
+2009-11-07,B,GPS_Operator,Scott,DiaryTeamB.doc,"'Scott and Stanislav to hand off the GPSs to one another (they are at the ends of the line)'",medium,Scott handling GPS at end of line
+2009-11-07,B,GPS_Operator,Stanislav,DiaryTeamB.doc,"'Scott and Stanislav to hand off the GPSs to one another (they are at the ends of the line)'",medium,Stanislav handling GPS at end of line
+2009-11-07,B,Author,Shawn Ross,DiaryTeamB.doc,"Diary header attribution",high,Explicit diary author attribution
+2009-11-09,B,Paper_Recorder,Lizzy,DiaryTeamB.doc,"'Lizzi took over the paper record keeping'",high,Explicit assignment of Lizzy to paper records
+2009-11-09,B,Author,Shawn Ross,DiaryTeamB.doc,"Diary header attribution",high,Explicit diary author attribution
+2009-11-10,B,Paper_Recorder,Lizzy,DiaryTeamB.doc,"Lizzy established as paper recorder after Nov 9",medium,Inferred from Nov 9 assignment
+2009-11-10,B,Author,Shawn Ross,DiaryTeamB.doc,"Diary header attribution",high,Explicit diary author attribution
+2009-11-12,B,Paper_Recorder,Lizzy,DiaryTeamB.doc,"Lizzy established as paper recorder",medium,Inferred from Nov 9 assignment
+2009-11-12,B,Author,Shawn Ross,DiaryTeamB.doc,"Diary header attribution",high,Explicit diary author attribution
+2009-11-13,B,Paper_Recorder,Lizzy,DiaryTeamB.doc,"Lizzy established as paper recorder",medium,Inferred from Nov 9 assignment
+2009-11-13,B,Author,Shawn Ross,DiaryTeamB.doc,"Diary header attribution",high,Explicit diary author attribution
