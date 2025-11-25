@@ -1,7 +1,7 @@
 # TRAP Data Extraction - Follow-up Actions
 
 **Created:** November 2025
-**Last Updated:** 24 November 2025
+**Last Updated:** 25 November 2025
 **Walker Data Extraction Status:** ✅ **100% COMPLETE** (268/268 records)
 **Survey Unit Extraction Status:** ✅ **89.18% COMPLETE** (239/268 with units, 28/268 explained, 1/268 pending renumbering)
 **Project Completion:** 23 November 2025 (walker data), 24 November 2025 (survey unit number extraction)
@@ -110,11 +110,28 @@ This file tracks outstanding actions that fall outside the core walker data extr
    - Not confirmed if missing from participant list
    - Season: 2010 spring
 
+4. **Sharon** (Шарон)
+   - Unidentified participant appearing once in 2011-11-02 Team D
+   - Clearly written as Шарон in Bulgarian diary (`D_2011Diary_BG.doc`)
+   - **Not** Shawn Ross (confirmed by Shawn - he was leading Team C that day)
+   - Appears only once across all TRAP diaries
+   - Possibly a missing participant or day visitor
+   - Research needed: Check photographs, project communications, or other records from November 2011
+
+5. **Yavor L** (YL)
+   - Unidentified participant appearing once in 2010-11-06 Team B (Elhovo)
+   - Clearly written as "Yavor L" on scanned daily progress form (`Day_06.pdf`)
+   - **Not** Yavor Rusev (who would be "YR" and was primarily at Kazanlak)
+   - Appears only once across all TRAP diaries
+   - Research needed: Check photographs, project communications, or other records from November 2010
+
 **Action required:**
 - [ ] Research and verify full identity of Lizzy
-- [ ] Verify Silvia Ivanova's participation in TRAP 2009
+- [x] ~~Verify Silvia Ivanova's participation in TRAP 2009~~ - Added to TRAP-Participants.csv (25 Nov 2025)
 - [ ] Check if Jiří Musil is in participant list, verify participation dates
-- [ ] Add all three to `inputs/TRAP-Participants.csv` in single batch update with complete details
+- [ ] Investigate Sharon identity (2011-11-02 Team D)
+- [ ] Investigate Yavor L identity (2010-11-06 Team B Elhovo)
+- [ ] Add remaining participants to `inputs/TRAP-Participants.csv` in single batch update with complete details
 
 ---
 
