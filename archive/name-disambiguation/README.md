@@ -2,22 +2,26 @@
 
 **Completion Date:** 22 November 2025
 **Project Completion:** 23 November 2025 (100% walker coverage achieved)
+**Last Updated:** 25 November 2025
 
 This archive contains all work related to identifying, reviewing, and resolving ambiguous walker names in the attribution data.
 
 **Part of:** TRAP Attribution Extraction Project v1.0.0 (see `../../PROJECT-COMPLETION.md`)
+
+> **⚠️ Important:** The `name-mapping.csv` file in this directory is a **historical snapshot** from the initial disambiguation phase (282 entries). The **authoritative version** with all 698 mappings is located at `outputs/name-mapping.csv` in the repository root.
 
 ## Project Summary
 
 - **Name variants identified:** Multiple forms of the same person's name across different sources
 - **Ambiguous cases reviewed:** Names that could refer to different people
 - **Status:** COMPLETED - All resolvable ambiguities addressed
+- **Final coverage:** 698 name mappings in authoritative file (25 Nov 2025)
 
 ## Files
 
 - `ambiguous-names-review.md` - Comprehensive review of ambiguous name cases
 - `name-corrections-report.md` - Systematic name correction documentation
-- `name-mapping.csv` - Canonical name mappings (282 entries)
+- `name-mapping.csv` - **HISTORICAL** canonical name mappings (282 entries) - see note above
 - `name-mapping-qa-report.md` - Quality assurance review of mappings
 - `petra-disambiguation-report.md` - Specific analysis of "Petra" variants
 
@@ -37,5 +41,6 @@ This archive contains all work related to identifying, reviewing, and resolving 
 
 ## Related Files
 
-- Current mappings in use: `outputs/attribution.csv`
-- Extraction guide: `outputs/manual-extraction-guide.md`
+- **Authoritative name mappings:** `outputs/name-mapping.csv` (698 entries)
+- **Attribution data:** `outputs/attribution.csv`
+- **Extraction guide:** `archive/old-versions/documentation/manual-extraction-guide.md`
