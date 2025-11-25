@@ -1,0 +1,1719 @@
+
+ ▐▛███▜▌   Claude Code v2.0.53
+▝▜█████▛▘  Opus 4.5 · Claude Max
+  ▘▘ ▝▝    /…/synology/Adela/TRAP-WD-2020-04
+
+> Hi CC, welcome back. I see you are Opus now! Nice to meet you. I look 
+forward to working with you to finish this project. Can you please review 
+trap-extraction/archive/cc-interactions/2025-11-25-a.txt to see where we 
+left off? If you need more context, examine earlier interactions exports. 
+Also please look at the documents in planning/, and let's discuss what to do
+ next. 
+
+● Hello! Nice to meet you too. Let me review where we left off and examine
+  the planning documents.
+
+● Read(trap-extraction/archive/cc-interactions/2025-11-25-a.txt)
+  ⎿  Read 967 lines
+
+● Search(pattern: "planning/**/*", path: "/media/shawn/191c3b96-5fa5-4d0d-8805-0
+        cf05d3d8468/synology/Adela/TRAP-WD-2020-04")
+  ⎿  Found 0 files 
+
+● Let me search for the planning documents - they might be in the
+  trap-extraction subdirectory:
+
+● Search(pattern: "**/planning/**/*", path: "/media/shawn/191c3b96-5fa5-4d0d-880
+        5-0cf05d3d8468/synology/Adela/TRAP-WD-2020-04")
+  ⎿  Found 5 files (ctrl+o to expand)
+
+● Bash(ls -la /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/T
+      RAP-WD-2020-04/)
+  ⎿  total 40                                      
+     drwxr-x--- 10 shawn  1003 4096 Nov 24 07:35 .
+     drwxr-x---  6 shawn  1003 4096 Jul  5  2020 ..
+     … +8 lines (ctrl+o to expand)
+
+● Good, found them. Let me read the planning documents to get a full
+  picture:
+
+● Read(trap-extraction/planning/follow-up-actions.md)
+  ⎿  Read 368 lines
+
+● Read(trap-extraction/planning/akb-submission-todo.md)
+  ⎿  Read 380 lines
+
+● Read(trap-extraction/planning/leader-verification-plan.md)
+  ⎿  Read 166 lines
+
+● Read(trap-extraction/planning/role-extraction-checklist.md)
+  ⎿  Read 200 lines
+
+● Thank you for the warm welcome! I've reviewed the session transcript and
+  planning documents. Here's where we are:
+
+  ---
+  Project Status Summary
+
+  TRAP Data Extraction for AKB Submission
+
+  ✅ Completed Work (from 25 Nov session)
+
+  | Task                                    | Status
+                     |
+  |-----------------------------------------|-------------------------------
+  -------------------|
+  | Walker data extraction                  | 100% (268/268 records)
+                     |
+  | Survey unit extraction                  | 89.18% (239 with units, 28
+  explained, 1 pending) |
+  | Role extraction from diaries            | Complete - 76 new fields
+  populated               |
+  | Date error corrections (Kaz 2010, 2011) | Corrected in attribution.csv
+                     |
+  | Name disambiguation                     | Complete (Adela, Petra, etc.)
+                     |
+
+  📋 Outstanding Tasks (from akb-submission-todo.md)
+
+  High Priority:
+  1. Task 2: Verify team leaders complete (99.6% done - 1 empty record)
+  2. Task 3: Standardise all names to name-mapping document
+  3. Task 5: QA exercise (accuracy and completeness checks)
+
+  Medium Priority:
+  4. Task 7: Create data dictionary
+  5. Task 6: Package for secondary QA (Gemini)
+  6. Task 10: Create submission metadata
+
+  ⚠️ User Actions Pending (from follow-up-actions.md)
+
+  - Cascade date corrections to other data copies
+  - Correct source data (Kaz11_SurveySummary.xlsx)
+  - Participant list updates (Silvia Ivanova, Lizzy identity, Jiří Musil)
+  - Six-digit to five-digit survey unit mapping (one record)
+
+  ---
+  What would you like to focus on next?
+
+  Options I see:
+
+  1. Task 3: Name standardisation - Apply the name-mapping document
+  systematically to all personnel columns
+  2. Task 5: QA exercise - Run comprehensive validation checks
+  3. Task 7: Data dictionary - Document all columns for AKB submission
+  4. Something else - Let me know what's most pressing for the submission
+  timeline
+
+> Let's undertake name standardisation. looking at 'Walkers_Original' in 
+'attribution.csv', I'd suggest first cleaning up the column: deduplicating 
+and ensuring multiple values are separated with pipes ('|'). Only 
+deduplicate exact names, e.g., 'Adela' and 'Adela' in record 1. I'm not sure
+ what purpose 'Walkers_Transliterated' serves, I don't immediately see any 
+entries not already covered in 'Walkers_Original' - can you shed any light 
+on it's purpose or origin? Let's investigate these initial issues first, 
+then make a plan for consolidating names in attribution.csv and writing a 
+new column to that spreadsheet called 'Walkers_Standardised' with the 
+standardised names. Does that make sense? Do you have any suggestions? 
+
+● Good plan! Let me investigate the current state of the walker columns and
+  the name-mapping document to understand what we're working with.
+
+● Read(trap-extraction/outputs/attribution.csv)
+  ⎿  Read 50 lines
+
+● Search(pattern: "**/name-mapping*.csv", path: "trap-extraction")
+  ⎿  Found 2 files (ctrl+o to expand)
+
+● Search(pattern: "**/TRAP-Participants*.csv", path: "trap-extraction")
+  ⎿  Found 1 file (ctrl+o to expand)
+
+● Read(trap-extraction/outputs/name-mapping.csv)
+  ⎿  Read 100 lines
+
+● Read(trap-extraction/inputs/TRAP-Participants.csv)
+  ⎿  Read 105 lines
+
+● Search(pattern: "Walkers_Transliterated", path: "trap-extraction", glob:
+        "*.py")
+  ⎿  Found 12 files (ctrl+o to expand)
+
+● Let me check the origin of the Walkers_Transliterated column by examining
+  one of the scripts that uses it:
+
+● Read(trap-extraction/scripts/extract_diary_walkers.py)
+  ⎿  Read 100 lines
+
+● Bash(cd /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-
+      WD-2020-04/trap-extraction && python3 -c "
+      import csv…)
+  ⎿  Total records: 268            
+     Same: 146
+     Different: 122
+     … +22 lines (ctrl+o to expand)
+
+● Let me investigate the duplication issue more closely:
+
+● Bash(python3 -c "
+      import csv…)
+  ⎿  === Analysis of Walkers_Original column ===
+
+     Separator patterns:
+     … +26 lines (ctrl+o to expand)
+
+● Now I have a clear picture. Let me summarise my findings and ask some
+  clarifying questions:
+
+  ---
+  Investigation Findings
+
+  Walkers_Original column issues:
+
+  1. Mixed separators: 59 records have mixed pipe/comma separators, 202 use
+  pipes only
+  2. Exact duplicates: 30 records have duplicate names - typically the
+  Leader appears twice (once as the first entry, once in the walker list)
+  3. OCR/transcription errors: Names like Adela Sobstkova, Georgi Nehmzov,
+  various initials that need mapping
+
+  Walkers_Transliterated column:
+
+  The analysis reveals this column was intended for Bulgarian Cyrillic→Latin
+   transliteration but has become inconsistent:
+  - 146 records (54%): Identical to Walkers_Original (no transliteration
+  needed)
+  - 60 records (22%): Contains only the Leader name (partial/legacy
+  extraction artefact)
+  - 62 records (24%): Minor variations (e.g., surnames stripped, some
+  transliteration)
+
+  It appears to be a legacy working column that served its purpose during
+  extraction but is now redundant. The transliterated names have already
+  been incorporated into Walkers_Original where needed.
+
+  Name-mapping.csv
+
+  Contains 283 entries mapping extracted names → canonical names from
+  TRAP-Participants.csv (104 people). Statuses include: mapped, corrected,
+  confident, invalid, uncertain.
+
+  ---
+                                                                           
+● User answered Claude's questions:
+  ⎿  · Should we delete the Walkers_Transliterated column since it appears 
+     to be a legacy working column that's now redundant? → So long as the 
+     name(s) in Walkers_Transliterated are present in Walkers_Original, it 
+     can be deleted. If there are any records where Walkers_Transliterated 
+     contains new or additional information NOT in Walkers_Original, those 
+     new names should be copied to Walkers_Original first, and a list of 
+     such instances should be provided to me.
+     · The 30 duplicate entries are the Leader appearing twice (e.g., 'Adela
+      | Bryan, Simon, Magda, Adela, Vera'). Should we remove the Leader from
+      the walker list since they have their own column? → The leader should 
+     appear *once* in the walker list - I want the walker list to be 
+     inclusive of the leader, with the leader also named in his/her own 
+     column.
+     · For Walkers_Standardised, what name format should we use? → Full name
+      (First Last)
+
+● Let me check if Walkers_Transliterated contains any names not already in
+  Walkers_Original:
+
+● Bash(python3 -c "
+      import csv…)
+  ⎿  Records with unique names in Walkers_Transliterated: 63
+
+     Details:
+     … +76 lines (ctrl+o to expand)
+
+● That's a false positive - "Petra" is just a shortened form of "Petra
+  Tušlová" that's already in Original. Let me do a smarter check for
+  genuinely unique names:
+
+● Bash(python3 -c "
+      import csv…)
+  ⎿  Records with genuinely unique names in Walkers_Transliterated: 29
+
+     Details:
+     … +167 lines (ctrl+o to expand)
+
+● Excellent discovery! The Walkers_Transliterated column does contain 
+  valuable data - specifically Latin transliterations of Bulgarian Cyrillic
+  names from the 2011 autumn season. For example:
+  - Н. Кечева → N. Kecheva
+  - Ю. Димитрова → Yu. Dimitrova
+  - ЮЦ → YuTs (Cyrillic initials → Latin)
+
+  These 29 records have Cyrillic in Original and Latin in Transliterated -
+  we need to merge these before deleting the column.
+
+  Let me now write up the implementation plan:
+
+● Updated plan
+  ⎿  /plan to preview · ~/.claude/plans/distributed-seeking-emerson.md
+
+● I've created the plan. Before proceeding, I need to resolve one
+  discrepancy I found:
+                                                                           
+● User answered Claude's questions:
+  ⎿  · For 2010-03-24 Team D, there's a Vera/Petra discrepancy between 
+     columns. Original has 'Vera' but Transliterated has 'Petra'. Which is 
+     correct, or should I check the source diary? → From diary: Б. Лилова, 
+     Н. Кечева, Л. Марковски, Виера, Виктория plus I confirm I can se Vera 
+     in the scanned daily summary sheet, which is hard to read.
+
+● Good - confirmed that Vera is correct (Bulgarian "Виера"). The "Petra" in
+  Walkers_Transliterated was an error. Let me update the plan to reflect
+  this:
+
+● Updated plan
+  ⎿  /plan to preview · ~/.claude/plans/distributed-seeking-emerson.md
+
+● The plan is complete with all questions resolved. Here's a summary:
+
+  ---
+  Plan Summary
+
+  Three phases:
+
+  1. Clean Walkers_Original
+    - Merge 28 Latin transliterations from Cyrillic (2011 autumn records)
+    - Skip 2010-03-24 Team D (Vera is correct, Petra was error)
+    - Normalise all separators to pipes
+    - Deduplicate exact names (keep Leader once in walker list)
+  2. Delete Walkers_Transliterated - after merging unique content
+  3. Create Walkers_Standardised - map names to "First Last" canonical
+  format using:
+    - TRAP-Participants.csv (104 people)
+    - name-mapping.csv (283 mappings)
+
+  Outputs:
+  - Updated attribution.csv
+  - Report listing merged transliterations and unmapped names
+  - New script: scripts/standardise-walkers.py
+
+  ---
+  ⎿  User rejected Claude's plan:
+     ╭─────────────────────────────────────────────────────────────────────────╮
+     │ Name Standardisation Plan for attribution.csv                           │
+     │                                                                         │
+     │ Date: 25 November 2025                                                  │
+     │ Objective: Clean up walker columns and create standardised walker names │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Summary                                                                 │
+     │                                                                         │
+     │ Transform the walker data in attribution.csv through four phases:       │
+     │ 1. Update name-mapping.csv - add 24 missing name variants               │
+     │ (pre-requisite)                                                         │
+     │ 2. Clean Walkers_Original - normalise separators, deduplicate, merge    │
+     │ transliterations                                                        │
+     │ 3. Delete Walkers_Transliterated - after merging unique content         │
+     │ 4. Create Walkers_Standardised - map all names to canonical "First Last"│
+     │  format                                                                 │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Phase 0: Update name-mapping.csv (Pre-requisite)                        │
+     │                                                                         │
+     │ Add the following 24 unmapped names to outputs/name-mapping.csv:        │
+     │                                                                         │
+     │ Placeholders/Invalid                                                    │
+     │                                                                         │
+     │ | extracted_name | canonical_name | status  | notes                     │
+     │                            |                                            │
+     │ |----------------|----------------|---------|---------------------------│
+     │ ---------------------------|                                            │
+     │ | [unclear]      |                | invalid | Placeholder for illegible │
+     │ text - remove from walkers |                                            │
+     │                                                                         │
+     │ Title/Informal Variants                                                 │
+     │                                                                         │
+     │ | extracted_name                   | canonical_name              |      │
+     │ status | notes                                 |                        │
+     │ |----------------------------------|-----------------------------|------│
+     │ --|---------------------------------------|                             │
+     │ | Dr. Ross                         | Shawn Ross                  |      │
+     │ mapped | Title variant                         |                        │
+     │ | Dr. Ross training Royce Lawrence | Shawn Ross | Royce Lawrence |      │
+     │ mapped | Combined entry - split into two names |                        │
+     │                                                                         │
+     │ Typos/OCR Errors                                                        │
+     │                                                                         │
+     │ | extracted_name         | canonical_name | status    | notes           │
+     │          |                                                              │
+     │ |------------------------|----------------|-----------|-----------------│
+     │ ---------|                                                              │
+     │ | Silvia Ivanova Ivanova | Silvia Ivanova | corrected | Double surname  │
+     │ OCR error |                                                             │
+     │ | Leonid                 | Prazak Lindsay | corrected | OCR error for   │
+     │ Линдзи     |                                                            │
+     │ | Peg Meglena Parvin     | Meglena Parvin | corrected | OCR error - Peg │
+     │ prefix   |                                                              │
+     │                                                                         │
+     │ Uncertain Identity (Add to follow-up-actions.md)                        │
+     │                                                                         │
+     │ | extracted_name | canonical_name | status    | notes                   │
+     │                                                                         │
+     │                                                             |           │
+     │ |----------------|----------------|-----------|-------------------------│
+     │ ------------------------------------------------------------------------│
+     │ ------------------------------------------------------------|           │
+     │ | Sharon         | Sharon         | uncertain | Appears once (2011-11-02│
+     │  Team D). Clearly written as Шарон in BG diary. Shawn Ross confirms not │
+     │ him. Requires investigation - possible missing participant. |           │
+     │                                                                         │
+     │ Initials                                                                │
+     │                                                                         │
+     │ | extracted_name | canonical_name    | status | notes                   │
+     │             |                                                           │
+     │ |----------------|-------------------|--------|-------------------------│
+     │ ------------|                                                           │
+     │ | ACQ            | Ashley Chee Quee  | mapped | Initials                │
+     │             |                                                           │
+     │ | Al.R           | Aleksandar Riskov | mapped | Abbreviated initials    │
+     │             |                                                           │
+     │ | YuTs           | Julia Tzvetkova   | mapped | Cyrillic initials ЮЦ    │
+     │ transliterated |                                                        │
+     │                                                                         │
+     │ Abbreviated (Initial.Surname)                                           │
+     │                                                                         │
+     │ | extracted_name | canonical_name     | status | notes             |    │
+     │ |----------------|--------------------|--------|-------------------|    │
+     │ | B. Lilova      | Bogdana Lilova     | mapped | Initial + surname |    │
+     │ | G. Nekhrizov   | Georgi Nekhrizov   | mapped | Initial + surname |    │
+     │ | L. Markovski   | Lyubomir Markovski | mapped | Initial + surname |    │
+     │ | N. Kecheva     | Nadezhda Kecheva   | mapped | Initial + surname |    │
+     │ | Yu. Tsvetkova  | Julia Tzvetkova    | mapped | Initial + surname |    │
+     │                                                                         │
+     │ Diminutives/Variants                                                    │
+     │                                                                         │
+     │ | extracted_name | canonical_name     | status | notes                  │
+     │       |                                                                 │
+     │ |----------------|--------------------|--------|------------------------│
+     │ ------|                                                                 │
+     │ | Lubomir        | Lyubomir Markovski | mapped | Spelling variant of    │
+     │ Lyubomir |                                                              │
+     │ | Nadya          | Nadezhda Kecheva   | mapped | Diminutive of Nadezhda │
+     │       |                                                                 │
+     │ | Viera          | Vera Doležálková   | mapped | Czech spelling variant │
+     │       |                                                                 │
+     │ | Katya          | Katarina Čuláková  | mapped | Diminutive of Katarina │
+     │       |                                                                 │
+     │                                                                         │
+     │ Bulgarian Transliterations                                              │
+     │                                                                         │
+     │ | extracted_name | canonical_name  | status | notes                     │
+     │          |                                                              │
+     │ |----------------|-----------------|--------|---------------------------│
+     │ ---------|                                                              │
+     │ | Dzhoel         | Joel Sercombe   | mapped | Bulgarian transliteration │
+     │ Джоел    |                                                              │
+     │ | Dzhordzhiya    | Georgia Burnett | mapped | Bulgarian transliteration │
+     │ Джорджия |                                                              │
+     │                                                                         │
+     │ Name Variants                                                           │
+     │                                                                         │
+     │ | extracted_name | canonical_name       | status | notes                │
+     │           |                                                             │
+     │ |----------------|----------------------|--------|----------------------│
+     │ ----------|                                                             │
+     │ | Magdalena      | Magda Bolečková      | mapped | Full form of Magda   │
+     │           |                                                             │
+     │ | Victoria       | Viktorie Chystyaková | mapped | English spelling     │
+     │ variant       |                                                         │
+     │ | Oskar          | Oscar Warren         | mapped | German/Scandi        │
+     │ spelling variant |                                                      │
+     │                                                                         │
+     │ Total: 24 new entries to add to name-mapping.csv                        │
+     │                                                                         │
+     │ Also: Add Silvia Ivanova to TRAP-Participants.csv                       │
+     │                                                                         │
+     │ She's a legitimate participant missing from the canonical document. Add │
+     │ to inputs/TRAP-Participants.csv:                                        │
+     │                                                                         │
+     │ | Field       | Value        |                                          │
+     │ |-------------|--------------|                                          │
+     │ | Last name   | Ivanova      |                                          │
+     │ | First name  | Silvia       |                                          │
+     │ | Role        | Field walker |                                          │
+     │ | Affiliation | (unknown)    |                                          │
+     │ | Position    | (unknown)    |                                          │
+     │ | Country     | Bulgaria     |                                          │
+     │ | 2009 spring | x            |                                          │
+     │                                                                         │
+     │ This resolves the follow-up action item from                            │
+     │ planning/follow-up-actions.md.                                          │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Phase 1: Clean Walkers_Original Column                                  │
+     │                                                                         │
+     │ 1.1 Merge Transliterated Content First                                  │
+     │                                                                         │
+     │ Issue: 29 records have Cyrillic names in Walkers_Original with Latin    │
+     │ transliterations in Walkers_Transliterated that must be preserved.      │
+     │                                                                         │
+     │ Action: For these 29 records (mostly 2011 autumn Teams A & D), replace  │
+     │ the Cyrillic names in Walkers_Original with their Latin transliterations│
+     │  from Walkers_Transliterated.                                           │
+     │                                                                         │
+     │ Records affected:                                                       │
+     │ - 2011-10-14 to 2011-11-03, Teams A and D                               │
+     │ - One record 2010-03-24 Team D (Petra vs Vera discrepancy - needs       │
+     │ verification)                                                           │
+     │                                                                         │
+     │ Example transformation:                                                 │
+     │ Before: NK | Н. Кечева | Ю. Димитрова | В. Генчева | Г. Михайлов        │
+     │ After:  NK | N. Kecheva | Yu. Dimitrova | V. Gencheva | G. Mikhaylov    │
+     │                                                                         │
+     │ 1.2 Normalise Separators                                                │
+     │                                                                         │
+     │ Issue: 59 records have mixed pipe/comma separators.                     │
+     │                                                                         │
+     │ Action: Convert all entries to pipe-separated format:                   │
+     │ - Split on pipes first, then on commas within each part                 │
+     │ - Rejoin with | (space-pipe-space)                                      │
+     │                                                                         │
+     │ Example:                                                                │
+     │ Before: Adela | Bryan, Simon, Magda, Adela, Vera, Martin                │
+     │ After:  Adela | Bryan | Simon | Magda | Adela | Vera | Martin           │
+     │                                                                         │
+     │ 1.3 Deduplicate Exact Names                                             │
+     │                                                                         │
+     │ Issue: 30 records have exact duplicate names (typically Leader appearing│
+     │  twice).                                                                │
+     │                                                                         │
+     │ Action: Remove exact duplicates while preserving one instance (Leader   │
+     │ should appear once in walker list).                                     │
+     │                                                                         │
+     │ Example:                                                                │
+     │ Before: Adela | Bryan | Simon | Magda | Adela | Vera | Martin           │
+     │ After:  Adela | Bryan | Simon | Magda | Vera | Martin                   │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Phase 2: Delete Walkers_Transliterated Column                           │
+     │                                                                         │
+     │ Prerequisite: Phase 1.1 must be complete (all unique transliterated     │
+     │ content merged).                                                        │
+     │                                                                         │
+     │ Action: Remove the Walkers_Transliterated column entirely.              │
+     │                                                                         │
+     │ Verification: Generate a report listing all 29 merged records for user  │
+     │ review.                                                                 │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Phase 3: Create Walkers_Standardised Column                             │
+     │                                                                         │
+     │ 3.1 Build Canonical Name Lookup                                         │
+     │                                                                         │
+     │ Sources:                                                                │
+     │ 1. inputs/TRAP-Participants.csv - authoritative list of 104 participants│
+     │ 2. outputs/name-mapping.csv - 283 entries mapping variants to canonical │
+     │ names                                                                   │
+     │                                                                         │
+     │ Lookup structure:                                                       │
+     │ {                                                                       │
+     │     "adela": "Adela Sobotkova",                                         │
+     │     "adela sobotkova": "Adela Sobotkova",                               │
+     │     "a.s.": "Adela Sobotkova",                                          │
+     │     "bara": "Bara Weissová",                                            │
+     │     ...                                                                 │
+     │ }                                                                       │
+     │                                                                         │
+     │ 3.2 Standardisation Logic                                               │
+     │                                                                         │
+     │ For each name in Walkers_Original:                                      │
+     │ 1. Clean whitespace and normalise                                       │
+     │ 2. Look up in canonical name map                                        │
+     │ 3. If found, use canonical name                                         │
+     │ 4. If not found:                                                        │
+     │   - Check if it's initials that map to a full name                      │
+     │   - Flag as "UNMAPPED: [original]" if no match                          │
+     │                                                                         │
+     │ Output format: Pipe-separated list of "First Last" canonical names      │
+     │                                                                         │
+     │ Example:                                                                │
+     │ Original:     Adela | Bryan | Simon | Magda | Vera | Martin             │
+     │ Standardised: Adela Sobotkova | Bryan Zlatos | Simon Connor | Magda     │
+     │ Bolečková | Vera Doležálková | Martin Mladenov                          │
+     │                                                                         │
+     │ 3.3 Handle Edge Cases                                                   │
+     │                                                                         │
+     │ | Case                                 | Handling                       │
+     │           |                                                             │
+     │ |--------------------------------------|--------------------------------│
+     │ ----------|                                                             │
+     │ | Initials only (e.g., "TB", "MK")     | Map via name-mapping.csv where │
+     │ available |                                                             │
+     │ | OCR errors (e.g., "Adela Sobstkova") | Correct via name-mapping.csv   │
+     │           |                                                             │
+     │ | Uncertain identity (e.g., "Lizzy")   | Retain as-is with note         │
+     │           |                                                             │
+     │ | Invalid entries (e.g., "M", "P")     | Remove (marked as invalid OCR) │
+     │           |                                                             │
+     │ | Not in participant list              | Flag as "UNMAPPED: [name]"     │
+     │           |                                                             │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Implementation Script                                                   │
+     │                                                                         │
+     │ File: scripts/standardise-walkers.py                                    │
+     │                                                                         │
+     │ Functions:                                                              │
+     │ 1. merge_transliterations() - Phase 1.1                                 │
+     │ 2. normalise_separators() - Phase 1.2                                   │
+     │ 3. deduplicate_names() - Phase 1.3                                      │
+     │ 4. build_canonical_lookup() - Phase 3.1                                 │
+     │ 5. standardise_names() - Phase 3.2                                      │
+     │ 6. main() - orchestrate all phases                                      │
+     │                                                                         │
+     │ Outputs:                                                                │
+     │ - Updated outputs/attribution.csv with:                                 │
+     │   - Cleaned Walkers_Original                                            │
+     │   - Walkers_Transliterated column removed                               │
+     │   - New Walkers_Standardised column                                     │
+     │ - Report: outputs/walker-standardisation-report.md                      │
+     │   - Records with merged transliterations                                │
+     │   - Unmapped names for review                                           │
+     │   - Statistics                                                          │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Critical Files                                                          │
+     │                                                                         │
+     │ | File                         | Purpose                     |          │
+     │ |------------------------------|-----------------------------|          │
+     │ | outputs/attribution.csv      | Main data file to modify    |          │
+     │ | outputs/name-mapping.csv     | Name variant mappings       |          │
+     │ | inputs/TRAP-Participants.csv | Canonical participant names |          │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Verification Steps                                                      │
+     │                                                                         │
+     │ 1. Pre-flight:                                                          │
+     │   - Create backup: attribution.csv.backup_standardisation               │
+     │   - Verify all 268 records present                                      │
+     │ 2. Phase 1 verification:                                                │
+     │   - Count records with Cyrillic names (should be 0 after merge)         │
+     │   - Count mixed separators (should be 0)                                │
+     │   - Count duplicate names (should be 0)                                 │
+     │ 3. Phase 3 verification:                                                │
+     │   - Count unmapped names (flag for review)                              │
+     │   - Sample check 10 random records                                      │
+     │   - Verify all names in Walkers_Standardised exist in                   │
+     │ TRAP-Participants.csv (except flagged)                                  │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Resolved: 2010-03-24 Team D Discrepancy                                 │
+     │                                                                         │
+     │ Issue: Original has "Vera", Transliterated has "Petra"                  │
+     │ Resolution: Keep "Vera" - confirmed from source diary (Bulgarian        │
+     │ "Виера") and scanned daily summary sheet. The "Petra" in                │
+     │ Walkers_Transliterated was an error.                                    │
+     │                                                                         │
+     │ Action: Skip the transliteration merge for this record; keep Original   │
+     │ as-is.                                                                  │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Success Criteria                                                        │
+     │                                                                         │
+     │ - All 268 records have clean Walkers_Original (pipe-separated, no       │
+     │ duplicates)                                                             │
+     │ - Walkers_Transliterated column removed                                 │
+     │ - New Walkers_Standardised column with "First Last" format              │
+     │ - < 5% unmapped names (flagged for review)                              │
+     │ - Report generated documenting all changes                              │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     ╰─────────────────────────────────────────────────────────────────────────╯
+
+> can you please check if there are any names in attributes.csv that are NOT
+ in the name-mapping document? They should all be covered, but if not, I'd 
+like to resolve ambiguities / omissions first, before we undertake renaming.
+ 
+
+● Good idea - let me check for any names in attribution.csv that aren't
+  covered by the name-mapping document:
+
+● Bash(python3 -c "
+      import csv…)
+  ⎿  Total unique names in Walkers_Original: 240        
+     Names in name-mapping.csv: 283
+     Names in TRAP-Participants.csv: 402 (various forms)
+     … +54 lines (ctrl+o to expand)
+
+● Found 24 unmapped names. Let me categorise them:
+
+  | Category                      | Names
+                                    | Likely Mapping
+                                                    |
+  |-------------------------------|-----------------------------------------
+  ----------------------------------|---------------------------------------
+  --------------------------------------------------|
+  | Placeholder                   | [unclear] (8)
+                                    | Remove or flag
+                                                    |
+  | Title variant                 | Dr. Ross (4)
+                                    | Shawn Ross
+                                                    |
+  | Double surname typo           | Silvia Ivanova Ivanova (4)
+                                    | Silvia Ivanova
+                                                    |
+  | Initials                      | ACQ (2), Al.R (1), YuTs (1)
+                                    | Ashley Chee Quee, Aleksandar Riskov,
+  Julia Tzvetkova                                    |
+  | Abbreviated (Initial.Surname) | B. Lilova, G. Nekhrizov, L. Markovski,
+  N. Kecheva, Yu. Tsvetkova (2 each) | Bogdana Lilova, Georgi Nekhrizov,
+  Lyubomir Markovski, Nadezhda Kecheva, Julia Tzvetkova |
+  | Diminutives                   | Lubomir (2), Nadya (2), Viera (2), Katya
+   (2)                              | Lyubomir Markovski, Nadezhda Kecheva,
+  Vera Doležálková, Katarina Čuláková               |
+  | Bulgarian transliteration     | Dzhoel (1), Dzhordzhiya (1)
+                                    | Joel Sercombe, Georgia Burnett
+                                                    |
+  | Name variants                 | Magdalena (1), Victoria (1), Oskar (2)
+                                    | Magda Bolečková, Viktorie Chystyaková,
+   Oscar Warren                                     |
+  | Combined entries              | Dr. Ross training Royce Lawrence (1),
+  Peg Meglena Parvin (1)              | Need splitting
+                                                      |
+  | Unknown                       | Leonid (1), Sharon. (1)
+                                    | Need investigation
+                                                    |
+
+  ---
+  Questions:
+  1. Leonid (2010-03-30 Team D) - is this a real participant or OCR error?
+  2. Sharon. (2011-11-02 Team D) - typo for Shawn?
+  3. Should I add all these to the name-mapping document before proceeding
+  with standardisation?
+
+> (1) here are the names from the diary for 2010-03039: Г. Нехризов, Н. 
+Кечева, Л. Марковски, Виктория, Линдзи\
+(2) here are the names from the diary for 2011-11-02: Цони Цонев, Анани 
+Антонов, Оскар, Шарон.\
+\
+You can find the canonical names list in inputs/TRAP-Participants.csv\
+\
+Please add all missing original names and their mappings to the name-mapping
+ document, it should represent a comprehensive record of name changes\
+\
+In instances like 'Dr Ross training Royce Lawrence' please extract both 
+'Shawn Ross' and 'Royce Lawrence' and otherwise split combined entries. \
+\
+Please let me know if you have any further questions or if I can help with 
+other disambiguations 
+
+● Thank you for the clarifications! That resolves the unknowns:
+
+  - Leonid → was OCR error for Линдзи = Prazak Lindsay
+  - Sharon. → Bulgarian transliteration Шарон = Shawn Ross
+  - Victoria → Viktorie Chystyaková
+  - Oskar → Oscar Warren
+
+  Let me update the plan to add a pre-requisite phase for updating the
+  name-mapping document:
+
+● Updated plan
+  ⎿  /plan to preview · ~/.claude/plans/distributed-seeking-emerson.md
+
+● I've updated the plan to include Phase 0 with all 24 missing name
+  mappings. The plan now has four phases:
+
+  1. Phase 0: Add 24 missing names to name-mapping.csv
+  2. Phase 1: Clean Walkers_Original (merge transliterations, normalise
+  separators, deduplicate)
+  3. Phase 2: Delete Walkers_Transliterated column
+  4. Phase 3: Create Walkers_Standardised with canonical "First Last" names
+
+  One note on Silvia Ivanova - she's flagged in follow-up-actions.md as "NOT
+   in participant list" and needs to be verified/added. Should I:
+  - Add her to TRAP-Participants.csv as part of this work, or
+  - Keep her as-is in name-mapping and flag for later participant list
+  update?
+                                                                           
+● User answered Claude's questions:
+  ⎿  · Silvia Ivanova appears in 2009 spring Team E data but isn't in 
+     TRAP-Participants.csv. How should we handle her? → If you look at 
+     planning/follow-up-actions.md, you'll see we need to add her to the 
+     participant list, she's a legitimate participant, it's an error in the 
+     'canonical' document
+
+
+● Understood - Silvia Ivanova is a legitimate participant who needs to be
+  added to TRAP-Participants.csv. Let me update the plan:
+
+● Updated plan
+  ⎿  /plan to preview · ~/.claude/plans/distributed-seeking-emerson.md
+
+● The plan is now complete. Summary of what we'll do:
+
+  Phase 0: Pre-requisites
+  - Add 24 missing name mappings to name-mapping.csv
+  - Add Silvia Ivanova to TRAP-Participants.csv
+
+  Phase 1: Clean Walkers_Original
+  - Merge 28 Latin transliterations from Cyrillic (2011 autumn)
+  - Normalise all separators to pipes
+  - Deduplicate exact names (keep Leader once)
+
+  Phase 2: Delete Walkers_Transliterated column
+
+  Phase 3: Create Walkers_Standardised column
+  - Map all names to canonical "First Last" format
+
+  Ready to proceed with implementation?
+  ⎿  User rejected Claude's plan:
+     ╭─────────────────────────────────────────────────────────────────────────╮
+     │ Name Standardisation Plan for attribution.csv                           │
+     │                                                                         │
+     │ Date: 25 November 2025                                                  │
+     │ Objective: Clean up walker columns and create standardised walker names │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Summary                                                                 │
+     │                                                                         │
+     │ Transform the walker data in attribution.csv through four phases:       │
+     │ 1. Update name-mapping.csv - add 24 missing name variants               │
+     │ (pre-requisite)                                                         │
+     │ 2. Clean Walkers_Original - normalise separators, deduplicate, merge    │
+     │ transliterations                                                        │
+     │ 3. Delete Walkers_Transliterated - after merging unique content         │
+     │ 4. Create Walkers_Standardised - map all names to canonical "First Last"│
+     │  format                                                                 │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Phase 0: Update name-mapping.csv (Pre-requisite)                        │
+     │                                                                         │
+     │ Add the following 24 unmapped names to outputs/name-mapping.csv:        │
+     │                                                                         │
+     │ Placeholders/Invalid                                                    │
+     │                                                                         │
+     │ | extracted_name | canonical_name | status  | notes                     │
+     │                            |                                            │
+     │ |----------------|----------------|---------|---------------------------│
+     │ ---------------------------|                                            │
+     │ | [unclear]      |                | invalid | Placeholder for illegible │
+     │ text - remove from walkers |                                            │
+     │                                                                         │
+     │ Title/Informal Variants                                                 │
+     │                                                                         │
+     │ | extracted_name                   | canonical_name              |      │
+     │ status | notes                                 |                        │
+     │ |----------------------------------|-----------------------------|------│
+     │ --|---------------------------------------|                             │
+     │ | Dr. Ross                         | Shawn Ross                  |      │
+     │ mapped | Title variant                         |                        │
+     │ | Dr. Ross training Royce Lawrence | Shawn Ross | Royce Lawrence |      │
+     │ mapped | Combined entry - split into two names |                        │
+     │                                                                         │
+     │ Typos/OCR Errors                                                        │
+     │                                                                         │
+     │ | extracted_name         | canonical_name | status    | notes           │
+     │          |                                                              │
+     │ |------------------------|----------------|-----------|-----------------│
+     │ ---------|                                                              │
+     │ | Silvia Ivanova Ivanova | Silvia Ivanova | corrected | Double surname  │
+     │ OCR error |                                                             │
+     │ | Leonid                 | Prazak Lindsay | corrected | OCR error for   │
+     │ Линдзи     |                                                            │
+     │ | Peg Meglena Parvin     | Meglena Parvin | corrected | OCR error - Peg │
+     │ prefix   |                                                              │
+     │                                                                         │
+     │ Uncertain Identity (Add to follow-up-actions.md)                        │
+     │                                                                         │
+     │ | extracted_name | canonical_name | status    | notes                   │
+     │                                                                         │
+     │                                                             |           │
+     │ |----------------|----------------|-----------|-------------------------│
+     │ ------------------------------------------------------------------------│
+     │ ------------------------------------------------------------|           │
+     │ | Sharon         | Sharon         | uncertain | Appears once (2011-11-02│
+     │  Team D). Clearly written as Шарон in BG diary. Shawn Ross confirms not │
+     │ him. Requires investigation - possible missing participant. |           │
+     │                                                                         │
+     │ Initials                                                                │
+     │                                                                         │
+     │ | extracted_name | canonical_name    | status | notes                   │
+     │             |                                                           │
+     │ |----------------|-------------------|--------|-------------------------│
+     │ ------------|                                                           │
+     │ | ACQ            | Ashley Chee Quee  | mapped | Initials                │
+     │             |                                                           │
+     │ | Al.R           | Aleksandar Riskov | mapped | Abbreviated initials    │
+     │             |                                                           │
+     │ | YuTs           | Julia Tzvetkova   | mapped | Cyrillic initials ЮЦ    │
+     │ transliterated |                                                        │
+     │                                                                         │
+     │ Abbreviated (Initial.Surname)                                           │
+     │                                                                         │
+     │ | extracted_name | canonical_name     | status | notes             |    │
+     │ |----------------|--------------------|--------|-------------------|    │
+     │ | B. Lilova      | Bogdana Lilova     | mapped | Initial + surname |    │
+     │ | G. Nekhrizov   | Georgi Nekhrizov   | mapped | Initial + surname |    │
+     │ | L. Markovski   | Lyubomir Markovski | mapped | Initial + surname |    │
+     │ | N. Kecheva     | Nadezhda Kecheva   | mapped | Initial + surname |    │
+     │ | Yu. Tsvetkova  | Julia Tzvetkova    | mapped | Initial + surname |    │
+     │                                                                         │
+     │ Diminutives/Variants                                                    │
+     │                                                                         │
+     │ | extracted_name | canonical_name     | status | notes                  │
+     │       |                                                                 │
+     │ |----------------|--------------------|--------|------------------------│
+     │ ------|                                                                 │
+     │ | Lubomir        | Lyubomir Markovski | mapped | Spelling variant of    │
+     │ Lyubomir |                                                              │
+     │ | Nadya          | Nadezhda Kecheva   | mapped | Diminutive of Nadezhda │
+     │       |                                                                 │
+     │ | Viera          | Vera Doležálková   | mapped | Czech spelling variant │
+     │       |                                                                 │
+     │ | Katya          | Katarina Čuláková  | mapped | Diminutive of Katarina │
+     │       |                                                                 │
+     │                                                                         │
+     │ Bulgarian Transliterations                                              │
+     │                                                                         │
+     │ | extracted_name | canonical_name  | status | notes                     │
+     │          |                                                              │
+     │ |----------------|-----------------|--------|---------------------------│
+     │ ---------|                                                              │
+     │ | Dzhoel         | Joel Sercombe   | mapped | Bulgarian transliteration │
+     │ Джоел    |                                                              │
+     │ | Dzhordzhiya    | Georgia Burnett | mapped | Bulgarian transliteration │
+     │ Джорджия |                                                              │
+     │                                                                         │
+     │ Name Variants                                                           │
+     │                                                                         │
+     │ | extracted_name | canonical_name       | status | notes                │
+     │           |                                                             │
+     │ |----------------|----------------------|--------|----------------------│
+     │ ----------|                                                             │
+     │ | Magdalena      | Magda Bolečková      | mapped | Full form of Magda   │
+     │           |                                                             │
+     │ | Victoria       | Viktorie Chystyaková | mapped | English spelling     │
+     │ variant       |                                                         │
+     │ | Oskar          | Oscar Warren         | mapped | German/Scandi        │
+     │ spelling variant |                                                      │
+     │                                                                         │
+     │ Total: 24 new entries to add to name-mapping.csv                        │
+     │                                                                         │
+     │ Also: Add Silvia Ivanova to TRAP-Participants.csv                       │
+     │                                                                         │
+     │ She's a legitimate participant missing from the canonical document. Add │
+     │ to inputs/TRAP-Participants.csv:                                        │
+     │                                                                         │
+     │ | Field       | Value        |                                          │
+     │ |-------------|--------------|                                          │
+     │ | Last name   | Ivanova      |                                          │
+     │ | First name  | Silvia       |                                          │
+     │ | Role        | Field walker |                                          │
+     │ | Affiliation | (unknown)    |                                          │
+     │ | Position    | (unknown)    |                                          │
+     │ | Country     | Bulgaria     |                                          │
+     │ | 2009 spring | x            |                                          │
+     │                                                                         │
+     │ This resolves the follow-up action item from                            │
+     │ planning/follow-up-actions.md.                                          │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Phase 1: Clean Walkers_Original Column                                  │
+     │                                                                         │
+     │ 1.1 Merge Transliterated Content First                                  │
+     │                                                                         │
+     │ Issue: 29 records have Cyrillic names in Walkers_Original with Latin    │
+     │ transliterations in Walkers_Transliterated that must be preserved.      │
+     │                                                                         │
+     │ Action: For these 29 records (mostly 2011 autumn Teams A & D), replace  │
+     │ the Cyrillic names in Walkers_Original with their Latin transliterations│
+     │  from Walkers_Transliterated.                                           │
+     │                                                                         │
+     │ Records affected:                                                       │
+     │ - 2011-10-14 to 2011-11-03, Teams A and D                               │
+     │ - One record 2010-03-24 Team D (Petra vs Vera discrepancy - needs       │
+     │ verification)                                                           │
+     │                                                                         │
+     │ Example transformation:                                                 │
+     │ Before: NK | Н. Кечева | Ю. Димитрова | В. Генчева | Г. Михайлов        │
+     │ After:  NK | N. Kecheva | Yu. Dimitrova | V. Gencheva | G. Mikhaylov    │
+     │                                                                         │
+     │ 1.2 Normalise Separators                                                │
+     │                                                                         │
+     │ Issue: 59 records have mixed pipe/comma separators.                     │
+     │                                                                         │
+     │ Action: Convert all entries to pipe-separated format:                   │
+     │ - Split on pipes first, then on commas within each part                 │
+     │ - Rejoin with | (space-pipe-space)                                      │
+     │                                                                         │
+     │ Example:                                                                │
+     │ Before: Adela | Bryan, Simon, Magda, Adela, Vera, Martin                │
+     │ After:  Adela | Bryan | Simon | Magda | Adela | Vera | Martin           │
+     │                                                                         │
+     │ 1.3 Deduplicate Exact Names                                             │
+     │                                                                         │
+     │ Issue: 30 records have exact duplicate names (typically Leader appearing│
+     │  twice).                                                                │
+     │                                                                         │
+     │ Action: Remove exact duplicates while preserving one instance (Leader   │
+     │ should appear once in walker list).                                     │
+     │                                                                         │
+     │ Example:                                                                │
+     │ Before: Adela | Bryan | Simon | Magda | Adela | Vera | Martin           │
+     │ After:  Adela | Bryan | Simon | Magda | Vera | Martin                   │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Phase 2: Delete Walkers_Transliterated Column                           │
+     │                                                                         │
+     │ Prerequisite: Phase 1.1 must be complete (all unique transliterated     │
+     │ content merged).                                                        │
+     │                                                                         │
+     │ Action: Remove the Walkers_Transliterated column entirely.              │
+     │                                                                         │
+     │ Verification: Generate a report listing all 29 merged records for user  │
+     │ review.                                                                 │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Phase 3: Create Walkers_Standardised Column                             │
+     │                                                                         │
+     │ 3.1 Build Canonical Name Lookup                                         │
+     │                                                                         │
+     │ Sources:                                                                │
+     │ 1. inputs/TRAP-Participants.csv - authoritative list of 104 participants│
+     │ 2. outputs/name-mapping.csv - 283 entries mapping variants to canonical │
+     │ names                                                                   │
+     │                                                                         │
+     │ Lookup structure:                                                       │
+     │ {                                                                       │
+     │     "adela": "Adela Sobotkova",                                         │
+     │     "adela sobotkova": "Adela Sobotkova",                               │
+     │     "a.s.": "Adela Sobotkova",                                          │
+     │     "bara": "Bara Weissová",                                            │
+     │     ...                                                                 │
+     │ }                                                                       │
+     │                                                                         │
+     │ 3.2 Standardisation Logic                                               │
+     │                                                                         │
+     │ For each name in Walkers_Original:                                      │
+     │ 1. Clean whitespace and normalise                                       │
+     │ 2. Look up in canonical name map                                        │
+     │ 3. If found, use canonical name                                         │
+     │ 4. If not found:                                                        │
+     │   - Check if it's initials that map to a full name                      │
+     │   - Flag as "UNMAPPED: [original]" if no match                          │
+     │                                                                         │
+     │ Output format: Pipe-separated list of "First Last" canonical names      │
+     │                                                                         │
+     │ Example:                                                                │
+     │ Original:     Adela | Bryan | Simon | Magda | Vera | Martin             │
+     │ Standardised: Adela Sobotkova | Bryan Zlatos | Simon Connor | Magda     │
+     │ Bolečková | Vera Doležálková | Martin Mladenov                          │
+     │                                                                         │
+     │ 3.3 Handle Edge Cases                                                   │
+     │                                                                         │
+     │ | Case                                 | Handling                       │
+     │           |                                                             │
+     │ |--------------------------------------|--------------------------------│
+     │ ----------|                                                             │
+     │ | Initials only (e.g., "TB", "MK")     | Map via name-mapping.csv where │
+     │ available |                                                             │
+     │ | OCR errors (e.g., "Adela Sobstkova") | Correct via name-mapping.csv   │
+     │           |                                                             │
+     │ | Uncertain identity (e.g., "Lizzy")   | Retain as-is with note         │
+     │           |                                                             │
+     │ | Invalid entries (e.g., "M", "P")     | Remove (marked as invalid OCR) │
+     │           |                                                             │
+     │ | Not in participant list              | Flag as "UNMAPPED: [name]"     │
+     │           |                                                             │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Implementation Script                                                   │
+     │                                                                         │
+     │ File: scripts/standardise-walkers.py                                    │
+     │                                                                         │
+     │ Functions:                                                              │
+     │ 1. merge_transliterations() - Phase 1.1                                 │
+     │ 2. normalise_separators() - Phase 1.2                                   │
+     │ 3. deduplicate_names() - Phase 1.3                                      │
+     │ 4. build_canonical_lookup() - Phase 3.1                                 │
+     │ 5. standardise_names() - Phase 3.2                                      │
+     │ 6. main() - orchestrate all phases                                      │
+     │                                                                         │
+     │ Outputs:                                                                │
+     │ - Updated outputs/attribution.csv with:                                 │
+     │   - Cleaned Walkers_Original                                            │
+     │   - Walkers_Transliterated column removed                               │
+     │   - New Walkers_Standardised column                                     │
+     │ - Report: outputs/walker-standardisation-report.md                      │
+     │   - Records with merged transliterations                                │
+     │   - Unmapped names for review                                           │
+     │   - Statistics                                                          │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Critical Files                                                          │
+     │                                                                         │
+     │ | File                         | Purpose                     |          │
+     │ |------------------------------|-----------------------------|          │
+     │ | outputs/attribution.csv      | Main data file to modify    |          │
+     │ | outputs/name-mapping.csv     | Name variant mappings       |          │
+     │ | inputs/TRAP-Participants.csv | Canonical participant names |          │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Verification Steps                                                      │
+     │                                                                         │
+     │ 1. Pre-flight:                                                          │
+     │   - Create backup: attribution.csv.backup_standardisation               │
+     │   - Verify all 268 records present                                      │
+     │ 2. Phase 1 verification:                                                │
+     │   - Count records with Cyrillic names (should be 0 after merge)         │
+     │   - Count mixed separators (should be 0)                                │
+     │   - Count duplicate names (should be 0)                                 │
+     │ 3. Phase 3 verification:                                                │
+     │   - Count unmapped names (flag for review)                              │
+     │   - Sample check 10 random records                                      │
+     │   - Verify all names in Walkers_Standardised exist in                   │
+     │ TRAP-Participants.csv (except flagged)                                  │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Resolved: 2010-03-24 Team D Discrepancy                                 │
+     │                                                                         │
+     │ Issue: Original has "Vera", Transliterated has "Petra"                  │
+     │ Resolution: Keep "Vera" - confirmed from source diary (Bulgarian        │
+     │ "Виера") and scanned daily summary sheet. The "Petra" in                │
+     │ Walkers_Transliterated was an error.                                    │
+     │                                                                         │
+     │ Action: Skip the transliteration merge for this record; keep Original   │
+     │ as-is.                                                                  │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Success Criteria                                                        │
+     │                                                                         │
+     │ - All 268 records have clean Walkers_Original (pipe-separated, no       │
+     │ duplicates)                                                             │
+     │ - Walkers_Transliterated column removed                                 │
+     │ - New Walkers_Standardised column with "First Last" format              │
+     │ - < 5% unmapped names (flagged for review)                              │
+     │ - Report generated documenting all changes                              │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     ╰─────────────────────────────────────────────────────────────────────────╯
+
+> I believe you mapped 'Sharon' (BG) to 'Shawn Ross' - that *may* be OK, but
+ can you search the diaries to see if there are other instances of 'Sharon'?
+ I don't see a 'Sharon' on the TRAP-Participants list, but we have found 
+three other omissions, so it's not impossible. 
+
+● Good catch - let me search for "Sharon" across the diaries to verify:
+
+● Bash(cd /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-
+      WD-2020-04 && grep -r -i "sharon" --include="*.doc" --include="*.docx"
+      --include="*.txt…)
+  ⎿  (No content)
+
+● Bash(cd /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-
+      WD-2020-04 && grep -r -i "шарон" --include="*.doc" --include="*.docx"
+      Kazanluk/ Elhovo\…)
+  ⎿  (No content)
+
+● Grep can't search binary .doc files directly. Let me extract and search
+  the relevant diary:
+
+● Bash(antiword "Kazanluk/2011-11-30/Project Records/Team D/D_2011Diary_BG.doc"
+      2>/dev/null | grep -i -C3 "шарон\|sharon")
+  ⎿  Екип:                                   
+
+     Цони Цонев, Анани Антонов, Оскар, Шарон.
+     … +2 lines (ctrl+o to expand)
+
+● Bash(antiword "Kazanluk/2011-11-30/Project Records/Team D/D_2011Diary_BG.doc"
+      2>/dev/null | grep -i -C3 "shawn\|шон")
+  ⎿  No matches found
+
+● Found it - Шарон appears once in Team D 2011 diary. Let me search more
+  broadly to see how "Shawn" is typically written:
+
+● Bash(antiword "Kazanluk/2011-11-30/Project Records/Team D/D_2011Diary_BG.doc"
+      2>/dev/null | grep -i "шарон\|шон\|ross\|shawn" | head -20)
+  ⎿  Цони Цонев, Анани Антонов, Оскар, Шарон.
+
+● Bash(antiword "Kazanluk/2011-11-30/Project Records/Team C/C_2011Diary_En.docx"
+       2>/dev/null || pandoc -t plain "Kazanluk/2011-11-30/Project Records/Team
+      C/C_2011Diary…)
+  ⎿  | Shawn     |           |          | Nov 2011 |        | a |
+     |
+     | Ross      |           |          |          |        | y |
+     … +31 lines (ctrl+o to expand)
+
+● Bash(grep -i "sharon" outputs/attribution.csv)
+  ⎿  Error: Exit code 2
+     grep: outputs/attribution.csv: No such file or directory
+
+● Bash(grep -i "sharon" /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synolo
+      gy/Adela/TRAP-WD-2020-04/trap-extraction/outputs/attribution.csv)
+  ⎿ 2011-11-02,D,41471.0,41477.0,AA,AA | Tsoni Tsonev | Anani Antonov | Osk
+    ar | Sharon.,AA | Tsoni Tsonev | Anani Antonov | Oskar | Sharon.,,,,,,,
+    Kaz11_SurveySummary.xlsx,,,No role data available
+
+
+
+● Bash(grep "2011-11-02,D" /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/syn
+      ology/Adela/TRAP-WD-2020-04/trap-extraction/outputs/attribution.csv)
+  ⎿ 2011-11-02,D,41471.0,41477.0,AA,AA | Tsoni Tsonev | Anani Antonov | Osk
+    ar | Sharon.,AA | Tsoni Tsonev | Anani Antonov | Oskar | Sharon.,,,,,,,
+    Kaz11_SurveySummary.xlsx,,,No role data available
+
+
+
+● Found it - Sharon. appears exactly once on 2011-11-02 Team D. The diary
+  shows Шарон (with trailing period). Let me check what team Shawn Ross was
+  leading that day:
+
+● Bash(grep "2011-11-02" /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synol
+      ogy/Adela/TRAP-WD-2020-04/trap-extraction/outputs/attribution.csv)
+  ⎿ 2011-11-02,D,41471.0,41477.0,AA,AA | Tsoni Tsonev | Anani Antonov | Osk
+    ar | Sharon.,AA | Tsoni Tsonev | Anani Antonov | Oskar | Sharon.,,,,,,,
+    Kaz11_SurveySummary.xlsx,,,No role data available
+    … +7 lines (ctrl+o to expand)
+
+
+
+● Bash(grep -i "shawn" /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synolog
+      y/Adela/TRAP-WD-2020-04/trap-extraction/outputs/attribution.csv | grep
+      "2011-11")
+  ⎿ 2011-11-02,C,30821.0,30880.0,Shawn R,Shawn R | Corinne | Jodie | Georgi
+    a | Eva,Shawn R | Corinne | Jodie | Georgia | Eva,,,,,,Corinne S,Kaz11_
+    SurveySummary.xlsx,C_2011Summary.pdf,"Extracted from page 1, form 1",No
+    … +57 lines (ctrl+o to expand)
+
+
+
+
+● This is revealing. On 2011-11-02:
+  - Team C: Led by Shawn R with walkers including Shawn himself
+  - Team D: Led by AA with walkers including Sharon.
+
+  So Shawn Ross was leading his own Team C that day - he wasn't on Team D.
+  The Шарон in Team D's Bulgarian diary could be:
+
+  1. A separate person named Sharon (not in participant list)
+  2. A diary error/misspelling
+  3. Someone who joined just for that day
+
+  Also notable: Bulgarian transliteration of "Shawn" would typically be Шон,
+   not Шарон. The spelling Шарон is closer to the female name "Sharon".
+
+  Given this appears only once and Shawn was on a different team that day,
+  I'd mark this as uncertain rather than mapping to Shawn Ross. Should I:
+                                                                           
+● User answered Claude's questions:
+  ⎿  · On 2011-11-02, 'Sharon.' appears on Team D while Shawn Ross was 
+     leading Team C. How should we handle this? → I'm missing a daily 
+     summary sheet for that day - does 'sharon' appear in any diaries from 
+     any other days? 
+
+● Let me search all diaries for "Sharon" or "Шарон":
+
+● Bash(for f in $(find Kazanluk Elhovo\ 2010-12-12 -name "*.doc" -o -name
+      "*.docx" 2>/dev/null); do result=$(antiword "$f" 2>/dev/null | grep -i
+      "шарон\|sharon" | head…)
+  ⎿  Error: Exit code 2
+     /bin/bash: eval: line 1: syntax error near unexpected token `('
+     /bin/bash: eval: line 1: `for f in \$ ( find Kazanluk 'Elhovo 2010-12-12' 
+     -name \*.doc -o -name \*.docx 2>/dev/null ) ; do result\=\$ ( antiword '' 
+     2>/dev/null < /dev/null | grep -i 'шарон\|sharon' | head -3 ) ; if \[ -n '' 
+     \] ; then echo '===  ===' ; echo '' ; echo '' ; fi ; done'
+
+
+● Bash(find /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRA
+      P-WD-2020-04/Kazanluk -name "*.doc" -print0 2>/dev/null | xargs -0 -I {}
+      sh -c 'antiwor…)
+  ⎿ (standard input)                                                       
+    Found in: /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Ad
+    ela/TRAP-WD-2020-04/Kazanluk/2011-11-30/Project Records/Team D/D_2011Di
+    … +2 lines (ctrl+o to expand)
+
+
+
+● Bash(antiword "Kazanluk/2011-11-30/Project Records/Team D/D_2011Diary_BG.doc"
+      2>/dev/null | grep -c -i "шарон")
+  ⎿  1
+
+● Bash(antiword "Kazanluk/2011-11-30/Project Records/Team A/A_2011Diary_BG.doc"
+      2>/dev/null | grep -i "шарон\|sharon")
+  ⎿  No matches found
+
+● Bash(pandoc -t plain "Kazanluk/2011-11-30/Project Records/Team
+      B/B_2011Diary_En.docx" 2>/dev/null | grep -i "sharon")
+  ⎿  No matches found
+
+● Шарон appears exactly once across all diaries - only on 2011-11-02 Team D.
+   Let me check how "Shawn" is typically written elsewhere:
+
+● Bash(antiword "Kazanluk/2011-11-30/Project Records/Team D/D_2011Diary_BG.doc"
+      2>/dev/null | grep -i "шон\|ross\|shawn" | head -10)
+  ⎿  (No content)
+
+● Bash(antiword "Elhovo 2010-12-12/2009/Project Records/Team B/DiaryTeamB.doc"
+      2>/dev/null | grep -i "shawn\|ross" | head -5)
+  ⎿  Shawn Ross (Team B)                               
+     Five walkers: Scott, Vera, Shawn, Yabor, Stanislav
+     Five walkers: Scott, Vera, Shawn, Yabor, Stanislav
+     … +2 lines (ctrl+o to expand)
+
+● Summary of findings:
+
+  Шарон / Sharon.:
+  - Appears exactly once across all TRAP diaries (only 2011-11-02 Team D)
+  - In English diaries, Shawn is consistently written as "Shawn" or "Shawn
+  Ross"
+  - Team D 2011 Bulgarian diary has NO other references to Shawn/Шон/Ross
+  - On that day, Shawn Ross was leading his own Team C (verified in
+  attribution.csv)
+
+  Conclusion: This is ambiguous. It could be:
+  1. A Bulgarian diary author's unusual rendering of "Shawn" (helping Team D
+   for part of that day)
+  2. An unidentified person who joined for just one day
+
+  Given the evidence, I'd recommend marking this as uncertain in the
+  name-mapping until you can verify. Should I update the plan to mark
+  Sharon. as uncertain rather than mapping to Shawn Ross?
+
+● Updated plan
+  ⎿  /plan to preview · ~/.claude/plans/distributed-seeking-emerson.md
+
+● I've updated the plan to mark Sharon. as uncertain rather than mapping to
+  Shawn Ross.
+
+  Updated counts:
+  - 23 name mappings with confident/corrected status
+  - 1 uncertain (Sharon.)
+  - 1 invalid ([unclear])
+
+  The plan is now ready. Any other names you'd like me to investigate before
+   we proceed, or shall I exit plan mode so we can start implementation?
+
+> Yes, do not map to Shawn (I'm Shawn, I don't remember helping a BG team 
+that day, and Bulgarians didn't transliterate my name that way, as you 
+observed). Instead keep as 'Sharon' (it's clearly written in the diary) and 
+add investigation of 'sharon' to 'follow-up-actions.md'.\
+\
+We are low on context, please update your plan and write it out to a MD doc 
+in planning/ so that we can execute it in the next session. After you have 
+done that, compose a /compact message. 
+
+● Updated plan
+  ⎿  /plan to preview · ~/.claude/plans/distributed-seeking-emerson.md
+
+● Reading Plan(~/.claude/plans/distributed-seeking-emerson.md)
+  ⎿  Read 275 lines
+
+● I need to exit plan mode first to write the file to planning/. Let me do
+  that:
+  ⎿  User rejected Claude's plan:
+     ╭─────────────────────────────────────────────────────────────────────────╮
+     │ Name Standardisation Plan for attribution.csv                           │
+     │                                                                         │
+     │ Date: 25 November 2025                                                  │
+     │ Objective: Clean up walker columns and create standardised walker names │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Summary                                                                 │
+     │                                                                         │
+     │ Transform the walker data in attribution.csv through four phases:       │
+     │ 1. Update name-mapping.csv - add 24 missing name variants               │
+     │ (pre-requisite)                                                         │
+     │ 2. Clean Walkers_Original - normalise separators, deduplicate, merge    │
+     │ transliterations                                                        │
+     │ 3. Delete Walkers_Transliterated - after merging unique content         │
+     │ 4. Create Walkers_Standardised - map all names to canonical "First Last"│
+     │  format                                                                 │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Phase 0: Update name-mapping.csv (Pre-requisite)                        │
+     │                                                                         │
+     │ Add the following 24 unmapped names to outputs/name-mapping.csv:        │
+     │                                                                         │
+     │ Placeholders/Invalid                                                    │
+     │                                                                         │
+     │ | extracted_name | canonical_name | status  | notes                     │
+     │                            |                                            │
+     │ |----------------|----------------|---------|---------------------------│
+     │ ---------------------------|                                            │
+     │ | [unclear]      |                | invalid | Placeholder for illegible │
+     │ text - remove from walkers |                                            │
+     │                                                                         │
+     │ Title/Informal Variants                                                 │
+     │                                                                         │
+     │ | extracted_name                   | canonical_name              |      │
+     │ status | notes                                 |                        │
+     │ |----------------------------------|-----------------------------|------│
+     │ --|---------------------------------------|                             │
+     │ | Dr. Ross                         | Shawn Ross                  |      │
+     │ mapped | Title variant                         |                        │
+     │ | Dr. Ross training Royce Lawrence | Shawn Ross | Royce Lawrence |      │
+     │ mapped | Combined entry - split into two names |                        │
+     │                                                                         │
+     │ Typos/OCR Errors                                                        │
+     │                                                                         │
+     │ | extracted_name         | canonical_name | status    | notes           │
+     │          |                                                              │
+     │ |------------------------|----------------|-----------|-----------------│
+     │ ---------|                                                              │
+     │ | Silvia Ivanova Ivanova | Silvia Ivanova | corrected | Double surname  │
+     │ OCR error |                                                             │
+     │ | Leonid                 | Prazak Lindsay | corrected | OCR error for   │
+     │ Линдзи     |                                                            │
+     │ | Peg Meglena Parvin     | Meglena Parvin | corrected | OCR error - Peg │
+     │ prefix   |                                                              │
+     │                                                                         │
+     │ Uncertain Identity (Add to follow-up-actions.md)                        │
+     │                                                                         │
+     │ | extracted_name | canonical_name | status    | notes                   │
+     │                                                                         │
+     │                                                             |           │
+     │ |----------------|----------------|-----------|-------------------------│
+     │ ------------------------------------------------------------------------│
+     │ ------------------------------------------------------------|           │
+     │ | Sharon         | Sharon         | uncertain | Appears once (2011-11-02│
+     │  Team D). Clearly written as Шарон in BG diary. Shawn Ross confirms not │
+     │ him. Requires investigation - possible missing participant. |           │
+     │                                                                         │
+     │ Initials                                                                │
+     │                                                                         │
+     │ | extracted_name | canonical_name    | status | notes                   │
+     │             |                                                           │
+     │ |----------------|-------------------|--------|-------------------------│
+     │ ------------|                                                           │
+     │ | ACQ            | Ashley Chee Quee  | mapped | Initials                │
+     │             |                                                           │
+     │ | Al.R           | Aleksandar Riskov | mapped | Abbreviated initials    │
+     │             |                                                           │
+     │ | YuTs           | Julia Tzvetkova   | mapped | Cyrillic initials ЮЦ    │
+     │ transliterated |                                                        │
+     │                                                                         │
+     │ Abbreviated (Initial.Surname)                                           │
+     │                                                                         │
+     │ | extracted_name | canonical_name     | status | notes             |    │
+     │ |----------------|--------------------|--------|-------------------|    │
+     │ | B. Lilova      | Bogdana Lilova     | mapped | Initial + surname |    │
+     │ | G. Nekhrizov   | Georgi Nekhrizov   | mapped | Initial + surname |    │
+     │ | L. Markovski   | Lyubomir Markovski | mapped | Initial + surname |    │
+     │ | N. Kecheva     | Nadezhda Kecheva   | mapped | Initial + surname |    │
+     │ | Yu. Tsvetkova  | Julia Tzvetkova    | mapped | Initial + surname |    │
+     │                                                                         │
+     │ Diminutives/Variants                                                    │
+     │                                                                         │
+     │ | extracted_name | canonical_name     | status | notes                  │
+     │       |                                                                 │
+     │ |----------------|--------------------|--------|------------------------│
+     │ ------|                                                                 │
+     │ | Lubomir        | Lyubomir Markovski | mapped | Spelling variant of    │
+     │ Lyubomir |                                                              │
+     │ | Nadya          | Nadezhda Kecheva   | mapped | Diminutive of Nadezhda │
+     │       |                                                                 │
+     │ | Viera          | Vera Doležálková   | mapped | Czech spelling variant │
+     │       |                                                                 │
+     │ | Katya          | Katarina Čuláková  | mapped | Diminutive of Katarina │
+     │       |                                                                 │
+     │                                                                         │
+     │ Bulgarian Transliterations                                              │
+     │                                                                         │
+     │ | extracted_name | canonical_name  | status | notes                     │
+     │          |                                                              │
+     │ |----------------|-----------------|--------|---------------------------│
+     │ ---------|                                                              │
+     │ | Dzhoel         | Joel Sercombe   | mapped | Bulgarian transliteration │
+     │ Джоел    |                                                              │
+     │ | Dzhordzhiya    | Georgia Burnett | mapped | Bulgarian transliteration │
+     │ Джорджия |                                                              │
+     │                                                                         │
+     │ Name Variants                                                           │
+     │                                                                         │
+     │ | extracted_name | canonical_name       | status | notes                │
+     │           |                                                             │
+     │ |----------------|----------------------|--------|----------------------│
+     │ ----------|                                                             │
+     │ | Magdalena      | Magda Bolečková      | mapped | Full form of Magda   │
+     │           |                                                             │
+     │ | Victoria       | Viktorie Chystyaková | mapped | English spelling     │
+     │ variant       |                                                         │
+     │ | Oskar          | Oscar Warren         | mapped | German/Scandi        │
+     │ spelling variant |                                                      │
+     │                                                                         │
+     │ Total: 24 new entries to add to name-mapping.csv                        │
+     │                                                                         │
+     │ Also: Add Silvia Ivanova to TRAP-Participants.csv                       │
+     │                                                                         │
+     │ She's a legitimate participant missing from the canonical document. Add │
+     │ to inputs/TRAP-Participants.csv:                                        │
+     │                                                                         │
+     │ | Field       | Value        |                                          │
+     │ |-------------|--------------|                                          │
+     │ | Last name   | Ivanova      |                                          │
+     │ | First name  | Silvia       |                                          │
+     │ | Role        | Field walker |                                          │
+     │ | Affiliation | (unknown)    |                                          │
+     │ | Position    | (unknown)    |                                          │
+     │ | Country     | Bulgaria     |                                          │
+     │ | 2009 spring | x            |                                          │
+     │                                                                         │
+     │ This resolves the follow-up action item from                            │
+     │ planning/follow-up-actions.md.                                          │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Phase 1: Clean Walkers_Original Column                                  │
+     │                                                                         │
+     │ 1.1 Merge Transliterated Content First                                  │
+     │                                                                         │
+     │ Issue: 29 records have Cyrillic names in Walkers_Original with Latin    │
+     │ transliterations in Walkers_Transliterated that must be preserved.      │
+     │                                                                         │
+     │ Action: For these 29 records (mostly 2011 autumn Teams A & D), replace  │
+     │ the Cyrillic names in Walkers_Original with their Latin transliterations│
+     │  from Walkers_Transliterated.                                           │
+     │                                                                         │
+     │ Records affected:                                                       │
+     │ - 2011-10-14 to 2011-11-03, Teams A and D                               │
+     │ - One record 2010-03-24 Team D (Petra vs Vera discrepancy - needs       │
+     │ verification)                                                           │
+     │                                                                         │
+     │ Example transformation:                                                 │
+     │ Before: NK | Н. Кечева | Ю. Димитрова | В. Генчева | Г. Михайлов        │
+     │ After:  NK | N. Kecheva | Yu. Dimitrova | V. Gencheva | G. Mikhaylov    │
+     │                                                                         │
+     │ 1.2 Normalise Separators                                                │
+     │                                                                         │
+     │ Issue: 59 records have mixed pipe/comma separators.                     │
+     │                                                                         │
+     │ Action: Convert all entries to pipe-separated format:                   │
+     │ - Split on pipes first, then on commas within each part                 │
+     │ - Rejoin with | (space-pipe-space)                                      │
+     │                                                                         │
+     │ Example:                                                                │
+     │ Before: Adela | Bryan, Simon, Magda, Adela, Vera, Martin                │
+     │ After:  Adela | Bryan | Simon | Magda | Adela | Vera | Martin           │
+     │                                                                         │
+     │ 1.3 Deduplicate Exact Names                                             │
+     │                                                                         │
+     │ Issue: 30 records have exact duplicate names (typically Leader appearing│
+     │  twice).                                                                │
+     │                                                                         │
+     │ Action: Remove exact duplicates while preserving one instance (Leader   │
+     │ should appear once in walker list).                                     │
+     │                                                                         │
+     │ Example:                                                                │
+     │ Before: Adela | Bryan | Simon | Magda | Adela | Vera | Martin           │
+     │ After:  Adela | Bryan | Simon | Magda | Vera | Martin                   │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Phase 2: Delete Walkers_Transliterated Column                           │
+     │                                                                         │
+     │ Prerequisite: Phase 1.1 must be complete (all unique transliterated     │
+     │ content merged).                                                        │
+     │                                                                         │
+     │ Action: Remove the Walkers_Transliterated column entirely.              │
+     │                                                                         │
+     │ Verification: Generate a report listing all 29 merged records for user  │
+     │ review.                                                                 │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Phase 3: Create Walkers_Standardised Column                             │
+     │                                                                         │
+     │ 3.1 Build Canonical Name Lookup                                         │
+     │                                                                         │
+     │ Sources:                                                                │
+     │ 1. inputs/TRAP-Participants.csv - authoritative list of 104 participants│
+     │ 2. outputs/name-mapping.csv - 283 entries mapping variants to canonical │
+     │ names                                                                   │
+     │                                                                         │
+     │ Lookup structure:                                                       │
+     │ {                                                                       │
+     │     "adela": "Adela Sobotkova",                                         │
+     │     "adela sobotkova": "Adela Sobotkova",                               │
+     │     "a.s.": "Adela Sobotkova",                                          │
+     │     "bara": "Bara Weissová",                                            │
+     │     ...                                                                 │
+     │ }                                                                       │
+     │                                                                         │
+     │ 3.2 Standardisation Logic                                               │
+     │                                                                         │
+     │ For each name in Walkers_Original:                                      │
+     │ 1. Clean whitespace and normalise                                       │
+     │ 2. Look up in canonical name map                                        │
+     │ 3. If found, use canonical name                                         │
+     │ 4. If not found:                                                        │
+     │   - Check if it's initials that map to a full name                      │
+     │   - Flag as "UNMAPPED: [original]" if no match                          │
+     │                                                                         │
+     │ Output format: Pipe-separated list of "First Last" canonical names      │
+     │                                                                         │
+     │ Example:                                                                │
+     │ Original:     Adela | Bryan | Simon | Magda | Vera | Martin             │
+     │ Standardised: Adela Sobotkova | Bryan Zlatos | Simon Connor | Magda     │
+     │ Bolečková | Vera Doležálková | Martin Mladenov                          │
+     │                                                                         │
+     │ 3.3 Handle Edge Cases                                                   │
+     │                                                                         │
+     │ | Case                                 | Handling                       │
+     │           |                                                             │
+     │ |--------------------------------------|--------------------------------│
+     │ ----------|                                                             │
+     │ | Initials only (e.g., "TB", "MK")     | Map via name-mapping.csv where │
+     │ available |                                                             │
+     │ | OCR errors (e.g., "Adela Sobstkova") | Correct via name-mapping.csv   │
+     │           |                                                             │
+     │ | Uncertain identity (e.g., "Lizzy")   | Retain as-is with note         │
+     │           |                                                             │
+     │ | Invalid entries (e.g., "M", "P")     | Remove (marked as invalid OCR) │
+     │           |                                                             │
+     │ | Not in participant list              | Flag as "UNMAPPED: [name]"     │
+     │           |                                                             │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Implementation Script                                                   │
+     │                                                                         │
+     │ File: scripts/standardise-walkers.py                                    │
+     │                                                                         │
+     │ Functions:                                                              │
+     │ 1. merge_transliterations() - Phase 1.1                                 │
+     │ 2. normalise_separators() - Phase 1.2                                   │
+     │ 3. deduplicate_names() - Phase 1.3                                      │
+     │ 4. build_canonical_lookup() - Phase 3.1                                 │
+     │ 5. standardise_names() - Phase 3.2                                      │
+     │ 6. main() - orchestrate all phases                                      │
+     │                                                                         │
+     │ Outputs:                                                                │
+     │ - Updated outputs/attribution.csv with:                                 │
+     │   - Cleaned Walkers_Original                                            │
+     │   - Walkers_Transliterated column removed                               │
+     │   - New Walkers_Standardised column                                     │
+     │ - Report: outputs/walker-standardisation-report.md                      │
+     │   - Records with merged transliterations                                │
+     │   - Unmapped names for review                                           │
+     │   - Statistics                                                          │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Critical Files                                                          │
+     │                                                                         │
+     │ | File                         | Purpose                     |          │
+     │ |------------------------------|-----------------------------|          │
+     │ | outputs/attribution.csv      | Main data file to modify    |          │
+     │ | outputs/name-mapping.csv     | Name variant mappings       |          │
+     │ | inputs/TRAP-Participants.csv | Canonical participant names |          │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Verification Steps                                                      │
+     │                                                                         │
+     │ 1. Pre-flight:                                                          │
+     │   - Create backup: attribution.csv.backup_standardisation               │
+     │   - Verify all 268 records present                                      │
+     │ 2. Phase 1 verification:                                                │
+     │   - Count records with Cyrillic names (should be 0 after merge)         │
+     │   - Count mixed separators (should be 0)                                │
+     │   - Count duplicate names (should be 0)                                 │
+     │ 3. Phase 3 verification:                                                │
+     │   - Count unmapped names (flag for review)                              │
+     │   - Sample check 10 random records                                      │
+     │   - Verify all names in Walkers_Standardised exist in                   │
+     │ TRAP-Participants.csv (except flagged)                                  │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Resolved: 2010-03-24 Team D Discrepancy                                 │
+     │                                                                         │
+     │ Issue: Original has "Vera", Transliterated has "Petra"                  │
+     │ Resolution: Keep "Vera" - confirmed from source diary (Bulgarian        │
+     │ "Виера") and scanned daily summary sheet. The "Petra" in                │
+     │ Walkers_Transliterated was an error.                                    │
+     │                                                                         │
+     │ Action: Skip the transliteration merge for this record; keep Original   │
+     │ as-is.                                                                  │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Success Criteria                                                        │
+     │                                                                         │
+     │ - All 268 records have clean Walkers_Original (pipe-separated, no       │
+     │ duplicates)                                                             │
+     │ - Walkers_Transliterated column removed                                 │
+     │ - New Walkers_Standardised column with "First Last" format              │
+     │ - < 5% unmapped names (flagged for review)                              │
+     │ - Report generated documenting all changes                              │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     ╰─────────────────────────────────────────────────────────────────────────╯
+
+
+
