@@ -1,0 +1,647 @@
+
+ ▐▛███▜▌   Claude Code v2.0.53
+▝▜█████▛▘  Opus 4.5 · Claude Max
+  ▘▘ ▝▝    /…/synology/Adela/TRAP-WD-2020-04/trap-extraction
+══════════════════ Conversation compacted · ctrl+o for history ═════════════════
+
+> /compact   Session Summary - 25 November 2025 (Name Standardisation Execution)
+
+  Completed: Walker Name Standardisation
+
+  Successfully executed the name standardisation plan for attribution.csv:
+
+  Phase 0 - Pre-requisites:
+  - Added 50 new entries to outputs/name-mapping.csv (now 679 total)
+  - Added Silvia Ivanova to inputs/TRAP-Participants.csv (now 105 participants)
+  - Added Sharon and Yavor L investigations to planning/follow-up-actions.md
+
+  Phase 1 - Clean Walkers_Original:
+  - Merged 28 Cyrillic→Latin transliterations (2011 autumn Teams A & D)
+  - Normalised 59 records with mixed pipe/comma separators
+  - Deduplicated 30 records with exact duplicate names
+  - Exception: Kept "Vera" for 2010-03-24 Team D (Petra was error)
+
+  Phase 2: Removed Walkers_Transliterated column
+
+  Phase 3: Created Walkers_Standardised column with canonical "First Last" names
+
+  Results: Only 1 unmapped name remains: Lizzy (Czech volunteer, identity being 
+researched)
+
+  Files created:
+  - scripts/standardise-walkers.py - Reusable standardisation script
+  - outputs/walker-standardisation-report.md
+  - planning/name-standardisation-plan.md (marked COMPLETE)
+  - archive/backups/attribution.csv.backup_pre-standardisation_20251125
+
+  Commits pushed:
+  - 78e125f docs: add session transcript
+  - ebda43b feat(walkers): standardise walker names
+
+  ---
+  Next Task: Leader and Role Column Standardisation
+
+  Apply same name standardisation to:
+  1. Leader column
+  2. Role columns: PDA_Operator, Paper_Recorder, Data_Editor, GPS_Operator, 
+Photographer, Author
+
+  Key differences from walker standardisation:
+  - Don't keep original versions - replace directly with canonical names
+  - Multiple leaders use pipe (|) separators
+  - Add mapping: Baba → Bara → Bara Weissová
+
+  Approach: Modify scripts/standardise-walkers.py or create new script to 
+process these columns using the existing
+  679-entry name mapping. 
+  ⎿  Compacted (ctrl+o to see full summary)
+  ⎿  Read outputs/walker-standardisation-report.md (44 lines)
+  ⎿  Referenced file planning/follow-up-actions.md
+  ⎿  Read planning/name-standardisation-plan.md (295 lines)
+  ⎿  Read scripts/standardise-walkers.py (475 lines)
+  ⎿  Read inputs/TRAP-Participants.csv (106 lines)
+
+> Hi CC, welcome back! Are you ready to plan leader and role name 
+standardisation? As before, please ask any questions you need to. 
+
+● Yes, I'm ready to plan the leader and role name standardisation. Let me
+  first read the existing plan file and explore the current state of the
+  data.
+
+● Reading Plan(~/.claude/plans/distributed-seeking-emerson.md)
+  ⎿  Read 275 lines
+
+● Read(outputs/attribution.csv)
+  ⎿  Error: File content (35266 tokens) exceeds maximum allowed tokens (25000). 
+     Please use offset and limit parameters to read specific portions of the 
+     file, or use the GrepTool to search for specific content.
+
+● Let me read a sample of the attribution.csv to understand the current
+  column structure:
+
+● Read(outputs/attribution.csv)
+  ⎿  Read 50 lines
+
+● Search(pattern: "Baba", path: "outputs", output_mode: "content")
+  ⎿  Found 8 lines (ctrl+o to expand)
+
+● Search(pattern: "Leader", path: "outputs/attribution.csv", output_mode:
+        "content")
+  ⎿  Found 5 lines (ctrl+o to expand)
+
+● Good - I can see the structure. Let me launch explore agents to understand
+   the variety of values in the Leader and Role columns:
+
+● 3 Explore agents finished (ctrl+o to expand)
+   ├─ Explore Leader column values · 23 tool uses · 57.2k tokens
+   │  ⎿ Done
+   ├─ Explore Role column values · 11 tool uses · 50.9k tokens
+   │  ⎿ Done
+   └─ Review existing standardisation script · 20 tool uses · 46.2k tokens
+      ⎿ Done
+
+● Excellent - I now have comprehensive information from the exploration. Let
+   me ask some clarifying questions before finalising the plan:
+                                                                           
+● User answered Claude's questions:
+  ⎿  · Should metadata entries in role columns (Paper_Recorder has 'Images',
+      'Track Log', 'Diary') be removed, kept as-is, or flagged as UNMAPPED? 
+     → Role columns should *only* contain names. If they contain *valuable* 
+     metadata, please move it to a note. Otherwise, delete it (the examples 
+     you provided do not add value).
+     · The Data_Editor column has unclear abbreviations ('As', 'Hm', 'No', 
+     'Note'). How should these be handled? → Map where possible, noting that
+      these columns contain some superfluous words - check against the 
+     walker list to see if the abbreviation could reasonably represent one 
+     of the walkers - all roles *should* be filled by walkers. Present 
+     ambiguous cases to me.
+     · Should I create a new script or extend the existing 
+     standardise-walkers.py to handle Leader and Role columns? → What do you
+      suggest? I'm inclinded towards a general script, but is it worth the 
+     effort? Note we also need to do 'Author' if that's not currently in 
+     this plan.
+
+● Good questions. Regarding the script approach:
+
+  My recommendation: New script (standardise-leaders-roles.py)
+
+  Rationale:
+  1. Walker standardisation is complete and tested - we don't want to risk
+  breaking it
+  2. Different logic needed: Walkers are pipe-separated lists; Leaders are
+  single values or comma-pairs; Roles are single values with occasional
+  pipes
+  3. Shared lookup: Both scripts can use the same name-mapping.csv and
+  TRAP-Participants.csv
+  4. A general script would be overkill for just two standardisation tasks
+
+  Author is definitely in scope - it's the most populated role column
+  (217/268 records, 65 unique values). The role columns I'm planning to
+  standardise are:
+  - Leader
+  - PDA_Operator
+  - Paper_Recorder
+  - Data_Editor
+  - GPS_Operator
+  - Photographer
+  - Author
+
+  Before I write the plan, let me identify the ambiguous Data_Editor cases
+  and check a few other things:
+
+● Search(pattern: "Data_Editor", path: "outputs/attribution.csv", output_mode:
+        "content")
+  ⎿  Found 1 line (ctrl+o to expand)
+
+● Search(pattern: ",As,|,Hm,|,No,|,Note,", path: "outputs/attribution.csv",
+        output_mode: "content")
+  ⎿  Found 6 lines (ctrl+o to expand)
+
+● Good, I can see the Data_Editor cases clearly now. Let me present the
+  ambiguous cases for your decision:
+                                                                           
+● User answered Claude's questions:
+  ⎿  · Data_Editor 'Hm' (2010-04-09 Team B): Walkers were Adela, Petra 
+     Tušlová, Peter. 'Hm' doesn't match any walker. Could be Hamish (not on 
+     team that day) or OCR error. What should we do? → Walkers that day 
+     were: Adela, Dasha, Pesho, Stana (confirmed in diary and daily progress
+      form). 'Hm' is an OCR artefact, but I'm concerned about the apparent 
+     error in walkers.
+
+     · Data_Editor 'Note' and 'No' appear to be placeholders meaning 'no 
+     data editor' rather than names. Should I clear these entries? → Clear 
+     them
+
+● Good catch on the walker discrepancy - that's a separate data quality
+  issue. I'll add it to follow-up-actions.md and clear "Hm" as an OCR
+  artefact.
+
+  Now I have all the information I need. Let me write the plan:
+
+● Updated plan
+  ⎿  /plan to preview · ~/.claude/plans/distributed-seeking-emerson.md
+
+● I've drafted the plan. Before finalising, I have a few uncertain cases to
+  clarify:
+
+● Search(pattern: "Barbora Klánová|Barbara Kl", path: "outputs/attribution.csv",
+         output_mode: "content")
+  ⎿  Found 10 lines (ctrl+o to expand)
+
+● Search(pattern: "P\.H\.|Vitaha", path: "outputs/attribution.csv", output_mode:
+         "content")
+  ⎿  Found 3 lines (ctrl+o to expand)
+
+● Good - I can see the context now:
+
+  1. Barbora Klánová (Author, 2009-03-25 Team D) - This is clearly an OCR
+  variant of "Barbara Klara Olujic" since B.O. was a walker that day. I'll
+  update the mapping.
+  2. P.H. (Author, 2010-03-20 & 21 Team C) - Walkers were Elena, Bistra,
+  Bara, Jana, Sonja. None have initials P.H. Genuinely uncertain.
+  3. Vitaha (Author, 2010-03-27 Team B) - On a non-fieldwork day (base
+  cleanup). Could be a typo for Viktorie?
+                                                                           
+● User answered Claude's questions:
+  ⎿  · Author 'P.H.' appears on 2010-03-20 and 2010-03-21 (Team C under 
+     Bara). Walkers were Elena, Bistra, Bara, Jana, Sonja - none have 
+     initials P.H. Do you recognise this person? → From the diary I have: 
+     Екип: Елена, Бистра, Барбара, Яна, Соня (2010-03-20) and Екип: Елена, 
+     Бистра, Бара, Соня, Яна (2010-03-21). From the scanned summary shets I 
+     have what looks lik 'SH' rather than 'PH', and the maes seem to be 
+     Bara, Elena, Jana, Sonja(?), and Bistra. Does that help?
+      
+
+     · Author 'Vitaha' appears on 2010-03-27 (non-fieldwork day - base 
+     cleanup). Could this be Viktorie or another name? → Which team and I'll
+      look it up?
+
+● That's helpful! If it's "SH" rather than "P.H.", that would be Sona 
+  Holičková (SH initials) - she's listed as "Sonja" in the walker list for
+  those days. I'll map "SH" → Sona Holičková and also "P.H." → Sona
+  Holičková (as a likely OCR error for SH).
+
+  For Vitaha - it's 2010-03-27 Team B under leader Adela. The extraction
+  notes say "Base cleanup and moving day - no fieldwork".
+                                                                         
+● User answered Claude's questions:
+  ⎿  · For 'P.H.' (likely 'SH' per your check) - should I map it to Sona 
+     Holičková? → Yes, map to Sona
+
+● Did you have a chance to check on Vitaha (2010-03-27 Team B, base
+  cleanup/moving day)? Once I have that answer, I can finalise the plan.
+
+> I can't find a source for it for 2010-03-27, as there are no scanned 
+forms, I'm not sure how a misspelled name could have been introduced, I 
+think it's an error - since this is a non-fieldwork day, it doesn't matter, 
+and I would just emilinate it, as I don't see that Viktoria was usually on 
+this team. 
+
+● Understood - I'll mark Vitaha as invalid and clear it. Let me update the
+  plan with all our clarifications:
+
+● Updated plan
+  ⎿  /plan to preview · ~/.claude/plans/distributed-seeking-emerson.md
+
+● Updated plan
+  ⎿  /plan to preview · ~/.claude/plans/distributed-seeking-emerson.md
+
+● The plan is now complete with all clarifications resolved. Here's a
+  summary:
+
+  Plan Summary:
+  - New script: scripts/standardise-leaders-roles.py
+  - Columns to standardise: Leader + 6 role columns (PDA_Operator,
+  Paper_Recorder, Data_Editor, GPS_Operator, Photographer, Author)
+  - ~40 new name mappings to add to name-mapping.csv
+  - Key decisions:
+    - Replace values directly (no "_Original" preservation)
+    - Multiple leaders use pipe separators
+    - Clear metadata entries (Images, Track Log, Diary)
+    - Clear placeholders (No, Note, Hm, Vitaha)
+    - P.H. → Sona Holičková (OCR error for SH)
+    - Add 2010-04-09 walker discrepancy to follow-up-actions.md
+  ⎿  User rejected Claude's plan:
+     ╭─────────────────────────────────────────────────────────────────────────╮
+     │ Leader and Role Standardisation Plan for attribution.csv                │
+     │                                                                         │
+     │ Date: 25 November 2025                                                  │
+     │ Status: Planning                                                        │
+     │ Objective: Standardise Leader and Role columns to canonical "First Last"│
+     │  format                                                                 │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Summary                                                                 │
+     │                                                                         │
+     │ Transform Leader and Role columns in attribution.csv:                   │
+     │ 1. Leader - Standardise to canonical names, handle multiple leaders with│
+     │  pipes                                                                  │
+     │ 2. Role Columns - Standardise PDA_Operator, Paper_Recorder, Data_Editor,│
+     │  GPS_Operator, Photographer, Author                                     │
+     │                                                                         │
+     │ Key differences from walker standardisation:                            │
+     │ - Replace values directly (no "_Original" preservation needed)          │
+     │ - Multiple leaders use pipe separators                                  │
+     │ - Remove non-name entries (metadata, placeholders)                      │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Phase 0: Pre-requisites                                                 │
+     │                                                                         │
+     │ 0.1 Add Missing Name Mappings                                           │
+     │                                                                         │
+     │ Add to outputs/name-mapping.csv:                                        │
+     │                                                                         │
+     │ | extracted_name | canonical_name   | status  | notes                   │
+     │        |                                                                │
+     │ |----------------|------------------|---------|-------------------------│
+     │ -------|                                                                │
+     │ | Baba           | Bara Weissová    | mapped  | Already exists - verify │
+     │        |                                                                │
+     │ | Helena         | Elena Bozhinova  | mapped  | Variant spelling        │
+     │        |                                                                │
+     │ | Sean           | Shawn Ross       | mapped  | Alternate spelling      │
+     │        |                                                                │
+     │ | Cecelia        | Cecilia Choi     | mapped  | Alternate spelling      │
+     │        |                                                                │
+     │ | X              |                  | invalid | Unknown placeholder -   │
+     │ remove   |                                                              │
+     │ | Zhoro          | Georgi Nekhrizov | mapped  | Bulgarian diminutive of │
+     │ Georgi |                                                                │
+     │                                                                         │
+     │ 0.2 Leader-Specific Mappings                                            │
+     │                                                                         │
+     │ | extracted_name  | canonical_name   | status    | notes                │
+     │         |                                                               │
+     │ |-----------------|------------------|-----------|----------------------│
+     │ --------|                                                               │
+     │ | Julia T         | Julia Tzvetkova  | mapped    | Abbreviated surname  │
+     │         |                                                               │
+     │ | Julia T.        | Julia Tzvetkova  | mapped    | Abbreviated surname  │
+     │ with dot |                                                              │
+     │ | JTs             | Julia Tzvetkova  | mapped    | Initials             │
+     │         |                                                               │
+     │ | Shawn R         | Shawn Ross       | mapped    | Abbreviated surname  │
+     │         |                                                               │
+     │ | Adela D.        | Adela Sobotkova  | mapped    | Abbreviated (wrong   │
+     │ initial?) |                                                             │
+     │ | Adela S.        | Adela Sobotkova  | mapped    | Abbreviated surname  │
+     │         |                                                               │
+     │ | Adela Sobstkova | Adela Sobotkova  | corrected | Typo - missing 'o'   │
+     │         |                                                               │
+     │ | Georgi Nehrizov | Georgi Nekhrizov | corrected | Typo - missing 'k'   │
+     │         |                                                               │
+     │ | Georgi Nehmzov  | Georgi Nekhrizov | corrected | OCR error            │
+     │         |                                                               │
+     │ | Georgi Nelinzov | Georgi Nekhrizov | corrected | OCR error            │
+     │         |                                                               │
+     │ | Dr. Ross        | Shawn Ross       | mapped    | Title variant        │
+     │         |                                                               │
+     │                                                                         │
+     │ 0.3 Role-Specific Mappings                                              │
+     │                                                                         │
+     │ | extracted_name | canonical_name       | status    | notes             │
+     │                        |                                                │
+     │ |----------------|----------------------|-----------|-------------------│
+     │ -----------------------|                                                │
+     │ | As             | Adela Sobotkova      | mapped    | Initials in       │
+     │ Data_Editor                  |                                          │
+     │ | Hm             |                      | invalid   | OCR artefact -    │
+     │ clear                     |                                             │
+     │ | No             |                      | invalid   | Placeholder       │
+     │ meaning "none"               |                                          │
+     │ | Note           |                      | invalid   | Metadata entry -  │
+     │ clear                   |                                               │
+     │ | Images         |                      | invalid   | Metadata entry -  │
+     │ clear                   |                                               │
+     │ | Track Log      |                      | invalid   | Metadata entry -  │
+     │ clear                   |                                               │
+     │ | Diary          |                      | invalid   | Metadata entry -  │
+     │ clear                   |                                               │
+     │ | Vi             | Viktorie Chystyaková | mapped    | Abbreviated name  │
+     │                        |                                                │
+     │ | Viki           | Viktorie Chystyaková | mapped    | Diminutive        │
+     │                        |                                                │
+     │ | Renee          | Renee Gardiner       | mapped    | First name only   │
+     │                        |                                                │
+     │ | Renée G        | Renee Gardiner       | mapped    | Abbreviated with  │
+     │ diacritics              |                                               │
+     │ | Corinne S      | Corinne Softley      | mapped    | Abbreviated       │
+     │ surname                      |                                          │
+     │ | P.H.           | Sona Holičková       | corrected | OCR error for SH  │
+     │ initials                |                                               │
+     │ | SH             | Sona Holičková       | mapped    | Initials          │
+     │                        |                                                │
+     │ | Vitaha         |                      | invalid   | Error entry on    │
+     │ non-fieldwork day - clear |                                             │
+     │                                                                         │
+     │ 0.4 Author Full Name Mappings                                           │
+     │                                                                         │
+     │ | extracted_name       | canonical_name       | status    | notes       │
+     │                         |                                               │
+     │ |----------------------|----------------------|-----------|-------------│
+     │ ------------------------|                                               │
+     │ | Petra Tuslova        | Petra Tušlová        | corrected | Missing     │
+     │ diacritics                  |                                           │
+     │ | Petra Tušlová        | Petra Tušlová        | mapped    | With        │
+     │ diacritics                     |                                        │
+     │ | Petra J.             | Petra Janouchová     | mapped    | Abbreviated │
+     │ surname                 |                                               │
+     │ | Ivana Klímová        | Ivana Klímová        | mapped    | Full name   │
+     │                         |                                               │
+     │ | Tereza Blažková      | Tereza Blažková      | mapped    | Full name   │
+     │                         |                                               │
+     │ | Barbora Klánová      | Barbara Klara Olujic | corrected | OCR variant │
+     │ of Barbara Klara Olujic |                                               │
+     │ | Viktoria Chystyakova | Viktorie Chystyaková | corrected | Missing     │
+     │ diacritics                  |                                           │
+     │ | Alina Petanec        | Alina Petanec        | mapped    | Full name   │
+     │                         |                                               │
+     │ | Elaine Lin           | Elaine Lin           | mapped    | Full name   │
+     │                         |                                               │
+     │ | Royce Lawrence       | Royce Lawrence       | mapped    | Full name   │
+     │                         |                                               │
+     │ | Adela Dornakova      | Adéla Dorňáková      | corrected | Missing     │
+     │ diacritics                  |                                           │
+     │ | Bryan Zlatos, CB     |                      | invalid   | Combined    │
+     │ entry - split needed       |                                            │
+     │ | CB, Elena Bozhinova  |                      | invalid   | Combined    │
+     │ entry - split needed       |                                            │
+     │                                                                         │
+     │ 0.5 Follow-up Actions                                                   │
+     │                                                                         │
+     │ Add to planning/follow-up-actions.md:                                   │
+     │ - 2010-04-09 Team B walker discrepancy: CSV shows "Adela | Petra Tušlová│
+     │  | Peter" but diary/form shows "Adela, Dasha, Pesho, Stana". Investigate│
+     │  source.                                                                │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Phase 1: Standardise Leader Column                                      │
+     │                                                                         │
+     │ 1.1 Current State Analysis                                              │
+     │                                                                         │
+     │ - 45 unique values in Leader column                                     │
+     │ - 9 records with multiple leaders (comma-separated like "Julia, Baba")  │
+     │ - Formats: single names, initials, full names, typos                    │
+     │                                                                         │
+     │ 1.2 Processing Logic                                                    │
+     │                                                                         │
+     │ def standardise_leader(leader_value: str, name_mapping: dict) -> str:   │
+     │     """Standardise Leader column value."""                              │
+     │     if not leader_value:                                                │
+     │         return ''                                                       │
+     │                                                                         │
+     │     # Handle multiple leaders (comma-separated within quotes)           │
+     │     if ',' in leader_value:                                             │
+     │         leaders = [l.strip() for l in leader_value.split(',')]          │
+     │         standardised = [map_name(l, name_mapping) for l in leaders]     │
+     │         return ' | '.join([s for s in standardised if s])               │
+     │                                                                         │
+     │     # Single leader                                                     │
+     │     return map_name(leader_value, name_mapping)                         │
+     │                                                                         │
+     │ 1.3 Expected Transformations                                            │
+     │                                                                         │
+     │ | Before         | After                           |                    │
+     │ |----------------|---------------------------------|                    │
+     │ | Adela          | Adela Sobotkova                 |                    │
+     │ | Julia T.       | Julia Tzvetkova                 |                    │
+     │ | "Julia, Baba"  | Julia Tzvetkova | Bara Weissová |                    │
+     │ | Georgi Nehmzov | Georgi Nekhrizov                |                    │
+     │ | Dr. Ross       | Shawn Ross                      |                    │
+     │ | NK             | Nadezhda Kecheva                |                    │
+     │ | X              | (empty - removed)               |                    │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Phase 2: Standardise Role Columns                                       │
+     │                                                                         │
+     │ 2.1 Columns to Process                                                  │
+     │                                                                         │
+     │ | Column         | Records with Values | Action                         │
+     │  |                                                                      │
+     │ |----------------|---------------------|--------------------------------│
+     │ -|                                                                      │
+     │ | PDA_Operator   | 44 (16%)            | Standardise names              │
+     │  |                                                                      │
+     │ | Paper_Recorder | 43 (16%)            | Standardise, remove metadata   │
+     │  |                                                                      │
+     │ | Data_Editor    | 8 (3%)              | Standardise, clear placeholders│
+     │  |                                                                      │
+     │ | GPS_Operator   | 37 (14%)            | Standardise names              │
+     │  |                                                                      │
+     │ | Photographer   | 14 (5%)             | Standardise names              │
+     │  |                                                                      │
+     │ | Author         | 217 (81%)           | Standardise names              │
+     │  |                                                                      │
+     │                                                                         │
+     │ 2.2 Processing Logic                                                    │
+     │                                                                         │
+     │ def standardise_role(role_value: str, name_mapping: dict) -> str:       │
+     │     """Standardise a role column value."""                              │
+     │     if not role_value:                                                  │
+     │         return ''                                                       │
+     │                                                                         │
+     │     # Handle pipe-separated values (e.g., "Nadja | Ljubo")              │
+     │     if '|' in role_value:                                               │
+     │         names = [n.strip() for n in role_value.split('|')]              │
+     │         standardised = [map_name(n, name_mapping) for n in names]       │
+     │         return ' | '.join([s for s in standardised if s])               │
+     │                                                                         │
+     │     # Single name                                                       │
+     │     return map_name(role_value, name_mapping)                           │
+     │                                                                         │
+     │ 2.3 Special Handling                                                    │
+     │                                                                         │
+     │ | Case                                        | Action                  │
+     │  |                                                                      │
+     │ |---------------------------------------------|-------------------------│
+     │ -|                                                                      │
+     │ | Metadata entries (Images, Track Log, Diary) | Clear (return empty)    │
+     │  |                                                                      │
+     │ | Placeholders (No, Note, Hm)                 | Clear (return empty)    │
+     │  |                                                                      │
+     │ | Invalid (mapped to empty)                   | Clear                   │
+     │  |                                                                      │
+     │ | Unmapped names                              | Flag as "UNMAPPED: name"│
+     │  |                                                                      │
+     │ | Combined entries (Bryan Zlatos, CB)         | Split and map separately│
+     │  |                                                                      │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Phase 3: Implementation                                                 │
+     │                                                                         │
+     │ 3.1 Script: scripts/standardise-leaders-roles.py                        │
+     │                                                                         │
+     │ Functions:                                                              │
+     │ 1. load_name_mapping() - Reuse existing pattern from                    │
+     │ standardise-walkers.py                                                  │
+     │ 2. standardise_leader() - Handle single/multiple leader formats         │
+     │ 3. standardise_role() - Handle role column values                       │
+     │ 4. process_attribution_data() - Main processing                         │
+     │ 5. generate_report() - Document changes                                 │
+     │                                                                         │
+     │ 3.2 Column Updates                                                      │
+     │                                                                         │
+     │ | Column         | Change                                |              │
+     │ |----------------|---------------------------------------|              │
+     │ | Leader         | Values replaced with canonical names  |              │
+     │ | PDA_Operator   | Values replaced with canonical names  |              │
+     │ | Paper_Recorder | Values replaced, metadata removed     |              │
+     │ | Data_Editor    | Values replaced, placeholders cleared |              │
+     │ | GPS_Operator   | Values replaced with canonical names  |              │
+     │ | Photographer   | Values replaced with canonical names  |              │
+     │ | Author         | Values replaced with canonical names  |              │
+     │                                                                         │
+     │ 3.3 Report Output                                                       │
+     │                                                                         │
+     │ Generate outputs/leader-role-standardisation-report.md:                 │
+     │ - Summary statistics per column                                         │
+     │ - List of unmapped names with context                                   │
+     │ - Cleared entries (metadata/placeholders)                               │
+     │ - Combined entries that were split                                      │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Critical Files                                                          │
+     │                                                                         │
+     │ | File                          | Purpose                             | │
+     │ |-------------------------------|-------------------------------------| │
+     │ | outputs/attribution.csv       | Main data file to modify            | │
+     │ | outputs/name-mapping.csv      | Name variant mappings (add ~25 new) | │
+     │ | inputs/TRAP-Participants.csv  | Canonical participant names         | │
+     │ | planning/follow-up-actions.md | Add walker discrepancy note         | │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Verification Steps                                                      │
+     │                                                                         │
+     │ 1. Pre-flight:                                                          │
+     │   - Create backup: attribution.csv.backup_leader_role_standardisation   │
+     │   - Verify all 268 records present                                      │
+     │ 2. Post-processing verification:                                        │
+     │   - All Leader values should be canonical names or empty                │
+     │   - No metadata entries in role columns                                 │
+     │   - No placeholder entries in role columns                              │
+     │   - Count and review unmapped names (target: <5%)                       │
+     │ 3. Sample checks:                                                       │
+     │   - Verify 10 random Leader standardisations                            │
+     │   - Verify multiple-leader records (9 total) have pipe separators       │
+     │   - Verify role columns with pipe-separated values handled correctly    │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Success Criteria                                                        │
+     │                                                                         │
+     │ - All Leader values standardised to "First Last" format                 │
+     │ - Multiple leaders use pipe separators                                  │
+     │ - All role columns (6 total) standardised                               │
+     │ - Metadata entries cleared from role columns                            │
+     │ - Placeholder entries cleared from role columns                         │
+     │ - < 5% unmapped names (flagged for review)                              │
+     │ - Report generated documenting all changes                              │
+     │ - Follow-up action added for 2010-04-09 walker discrepancy              │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     ╰─────────────────────────────────────────────────────────────────────────╯
+
+> /context 
+  ⎿  
+      Context Usage
+     ⛁ ⛁ ⛁ ⛁ ⛁ ⛁ ⛁ ⛁ ⛁ ⛁   claude-opus-4-5-20251101 · 139k/200k tokens (70%)
+     ⛀ ⛀ ⛁ ⛁ ⛁ ⛁ ⛁ ⛁ ⛁ ⛁ 
+     ⛁ ⛁ ⛁ ⛁ ⛁ ⛁ ⛁ ⛁ ⛁ ⛁   ⛁ System prompt: 2.9k tokens (1.4%)
+     ⛁ ⛁ ⛁ ⛁ ⛁ ⛁ ⛁ ⛁ ⛁ ⛁   ⛁ System tools: 18.1k tokens (9.0%)
+     ⛁ ⛁ ⛁ ⛁ ⛁ ⛁ ⛁ ⛀ ⛶ ⛶   ⛁ MCP tools: 1.3k tokens (0.6%)
+     ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶   ⛁ Memory files: 904 tokens (0.5%)
+     ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶   ⛁ Messages: 71.2k tokens (35.6%)
+     ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛝ ⛝ ⛝   ⛶ Free space: 61k (30.4%)
+     ⛝ ⛝ ⛝ ⛝ ⛝ ⛝ ⛝ ⛝ ⛝ ⛝   ⛝ Autocompact buffer: 45.0k tokens (22.5%)
+     ⛝ ⛝ ⛝ ⛝ ⛝ ⛝ ⛝ ⛝ ⛝ ⛝ 
+
+     MCP tools · /mcp
+     └ mcp__ide__getDiagnostics (ide): 611 tokens
+     └ mcp__ide__executeCode (ide): 682 tokens
+
+     Memory files · /memory
+     └ User (/home/shawn/.claude/CLAUDE.md): 904 tokens
+
+     SlashCommand Tool · 31 commands
+     └ Total: 4.3k tokens
+
+     
+
+
+

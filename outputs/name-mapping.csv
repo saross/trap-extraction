@@ -331,4 +331,26 @@ VG,,Veronika Gencheva,mapped,A,2011-autumn,,,,"Cyrillic initials ВГ transliter
 Al. Riskov,,Aleksandar Riskov,mapped,A,2011-autumn,,,,"Abbreviated initial + surname",
 Sharon.,,Sharon,uncertain,D,2011-autumn,2011-11-02,,,"With trailing dot - same as Sharon",
 Cecilia Choi i Zack Spielvogel,,Cecilia Choi | Zac Spielvogel,mapped,A,2011-autumn,,,,"Combined entry with Bulgarian 'i' (and) - split into two names",
-Al.R.,,Aleksandar Riskov,mapped,A,2011-autumn,,,,"Abbreviated initials with trailing dot",
+Al.R.,,Aleksandar Riskov,mapped,A,2011-autumn,,,,"Abbreviated initials with trailing dot"
+Julia T.,,Julia Tzvetkova,mapped,A,2009-spring,,,,"Abbreviated surname with dot - Leader variant"
+As,,Adela Sobotkova,mapped,B,2011-autumn,,,,"Initials in Data_Editor column"
+Hm,,,invalid,B,2010-spring,,,,"OCR artefact - clear"
+No,,,invalid,B,2011-autumn,,,,"Placeholder meaning none - clear"
+Note,,,invalid,B,2011-autumn,,,,"Metadata entry - clear"
+Images,,,invalid,B,2011-autumn,,,,"Metadata entry in Paper_Recorder - clear"
+Track Log,,,invalid,B,2011-autumn,,,,"Metadata entry in Paper_Recorder - clear"
+Diary,,,invalid,B,2011-autumn,,,,"Metadata entry in Paper_Recorder - clear"
+Vi,,Viktorie Chystyaková,mapped,D,2010-spring,,,,"Abbreviated name"
+Renee,,Renee Gardiner,mapped,B,2010-autumn,,,,"First name only - Author"
+Renée G,,Renee Gardiner,mapped,B,2010-autumn,,,,"Abbreviated with diacritics - Author"
+Corinne S,,Corinne Softley,mapped,B,2011-autumn,,,,"Abbreviated surname - Author"
+P.H.,,Sona Holičková,corrected,C,2010-spring,2010-03-20 | 2010-03-21,,,"OCR error for SH initials - Author"
+Vitaha,,,invalid,B,2010-spring,2010-03-27,,,"Error entry on non-fieldwork day - clear"
+Petra Tuslova,,Petra Tušlová,corrected,B,2010-spring,,,,"Missing diacritics - Author"
+Petra J.,,Petra Janouchová,mapped,A,2009-spring,,,,"Abbreviated surname - Author"
+Barbora Klánová,,Barbara Klara Olujic,corrected,D,2009-spring,,,,"OCR variant of Barbara Klara Olujic"
+Viktoria Chystyakova,,Viktorie Chystyaková,corrected,B,2011-autumn,,,,"Missing diacritics - Author"
+Adela Dornakova,,Adéla Dorňáková,corrected,A,2010-autumn,,,,"Missing diacritics - Author"
+"Bryan Zlatos, CB",,Bryan Zlatos | Charlotte Devereux Byron,mapped,C,2009-spring,,,,"Combined Author entry - split"
+"CB, Elena Bozhinova",,Charlotte Devereux Byron | Elena Bozhinova,mapped,C,2009-spring,,,,"Combined Author entry - split"
+Helvecia,,Helvecia,uncertain,A,2010-spring,2010-03-28,,,"Unknown Data_Editor entry - not matching any walker. Requires investigation.",

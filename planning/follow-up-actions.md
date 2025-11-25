@@ -187,6 +187,25 @@ This file tracks outstanding actions that fall outside the core walker data extr
 
 ---
 
+### 4. Walker Discrepancy 2010-04-09 Team B
+
+**Status:** Pending investigation
+
+**Context:** Identified during leader and role standardisation (25 November 2025). The walker list in `attribution.csv` does not match diary/form sources.
+
+**Discrepancy:**
+- **CSV shows:** Adela | Petra Tušlová | Peter
+- **Diary/form shows:** Adela, Dasha, Pesho, Stana
+
+**Source:** Discovered when investigating Data_Editor "Hm" entry (OCR artefact - cleared).
+
+**Action required:**
+- [ ] Verify correct walker list from original sources (diary, daily progress form)
+- [ ] Correct `attribution.csv` Walkers_Original and Walkers_Standardised columns for 2010-04-09 Team B
+- [ ] Investigate source of discrepancy (possible extraction error or source confusion)
+
+---
+
 ## Medium Priority
 
 ### 1. Map Six-Digit to Five-Digit Survey Unit Numbers (2009-03-12 Team C)
@@ -377,7 +396,7 @@ This file should be updated as actions are completed or new items are identified
 - Batch participant list update: Lizzy (full name research), Silvia Ivanova (verify participation), Jiří Musil (verify participation and dates)
 - Six-digit to five-digit survey unit renumbering mapping (2009-03-12 Team C Kazanluk)
 
-**Last updated:** 24 November 2025 (added six-digit unit renumbering investigation task)
+**Last updated:** 25 November 2025 (added 2010-04-09 Team B walker discrepancy)
 
 ---
 
