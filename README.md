@@ -37,7 +37,7 @@ This project systematically extracted field walker (team member) attribution dat
 | **Leader coverage** | **268/268 (100%)** | All team leaders documented |
 | **Non-survey days** | **3** | Flagged with activities |
 | **Data sources processed** | **15+ diaries** | English and Bulgarian |
-| **Python scripts created** | **45 total** | 6 key extraction/QA scripts |
+| **Python scripts created** | **51 total** | 6 key extraction/QA scripts |
 | **Date corrections applied** | **2** | Errors identified and fixed |
 
 ### Coverage Improvement
@@ -76,7 +76,7 @@ Extraction methods:
 
 ### Known Limitations
 1. **Role data incomplete:** PDA operator, paper recorder, and other role fields have <50% coverage due to limited source documentation
-2. **Survey units incomplete:** 29 records (10.82%) without survey unit numbers: 28 records explained (alternative survey methodologies, weather cancellations, non-survey days), 1 record pending renumbering investigation (six-digit to five-digit unit conversion)
+2. **Survey units incomplete:** 29 records (10.82%) without survey unit numbers - 239/268 (89.18%) coverage: 28 records explained (alternative survey methodologies, weather cancellations, non-survey days), 1 record pending renumbering investigation (six-digit to five-digit unit conversion)
 3. **Pre-FAIR project:** TRAP predates FAIR principles; this extraction applies retrospective data curation
 
 See [DATA-DICTIONARY.md](DATA-DICTIONARY.md) for complete data model documentation.
@@ -268,7 +268,7 @@ See [scripts/README.md](scripts/README.md) for detailed usage instructions and t
 ## Project Structure
 
 ```text
-claude_extraction/
+trap-extraction/
 ├── README.md                           # This file
 ├── LICENSE                             # Apache 2.0 (code) / CC-BY 4.0 (data)
 ├── CITATION.cff                        # Citation metadata
@@ -289,7 +289,10 @@ claude_extraction/
 │   └── [39 additional utility scripts]
 ├── outputs/
 │   ├── attribution.csv                 # PRIMARY OUTPUT (268 records)
-│   ├── source-inventory.md             # Source documentation
+│   ├── name-mapping.csv                # Canonical name mappings (698 entries)
+│   └── source-inventory.md             # Source documentation
+├── planning/
+│   ├── akb-submission-todo.md          # AKB submission checklist
 │   └── follow-up-actions.md            # Future work recommendations
 ├── archive/
 │   ├── outputs/
@@ -382,16 +385,17 @@ See [CHANGELOG.md](CHANGELOG.md) for detailed project timeline.
 
 ## Future Work
 
-Recommended enhancements documented in [outputs/follow-up-actions.md](outputs/follow-up-actions.md):
+Recommended enhancements documented in [planning/follow-up-actions.md](planning/follow-up-actions.md):
 
-1. **Role data extraction:** Extract PDA operator, GPS operator, photographer, etc. from diaries via thorough NLP analysis
-2. **Survey unit completion:** Fill 18 missing survey unit records from field forms or GIS shapefiles
-3. **Name standardisation:** Apply name-mapping.csv authority file to all personnel columns
+1. ~~**Role data extraction:**~~ ✅ **Completed** - 76 role fields populated (24 Nov 2025)
+2. **Survey unit completion:** 29 records without survey units (28 explained, 1 pending renumbering investigation)
+3. ~~**Name standardisation:**~~ ✅ **Completed** - 698 name mappings applied to all personnel columns (25 Nov 2025)
 4. **DOI registration:** Register persistent identifier via Zenodo for long-term citability
 5. **Publication links:** Add bibtex references to published TRAP papers
 6. **Secondary QA:** Independent quality review by another LLM (Gemini 3)
+7. **Participant research:** Identify remaining uncertain participants (Lizzy, Sharon, Yavor L)
 
-See [akb-submission-todo.md](claude_extraction/akb-submission-todo.md) for AKB submission preparation checklist.
+See [planning/akb-submission-todo.md](planning/akb-submission-todo.md) for AKB submission preparation checklist.
 
 ---
 
@@ -408,7 +412,7 @@ See [akb-submission-todo.md](claude_extraction/akb-submission-todo.md) for AKB s
 | [CONTRIBUTING.md](CONTRIBUTING.md) | How to contribute improvements |
 | [scripts/README.md](scripts/README.md) | Script installation and usage |
 | [outputs/source-inventory.md](outputs/source-inventory.md) | Source documentation |
-| [outputs/follow-up-actions.md](outputs/follow-up-actions.md) | Future work recommendations |
+| [planning/follow-up-actions.md](planning/follow-up-actions.md) | Future work recommendations |
 | [archive/reports/final/data-quality-summary.md](archive/reports/final/data-quality-summary.md) | Comprehensive quality report |
 | [archive/reports/final/failed-extractions-resolution-report.md](archive/reports/final/failed-extractions-resolution-report.md) | How 100% coverage was achieved |
 
@@ -429,6 +433,6 @@ See [akb-submission-todo.md](claude_extraction/akb-submission-todo.md) for AKB s
 
 ---
 
-**Last Updated:** 23 November 2025
+**Last Updated:** 25 November 2025
 **Version:** 1.0.0
-**Status:** ✅ Complete - 100% walker data coverage achieved
+**Status:** ✅ Complete - 100% walker data coverage achieved, names standardised

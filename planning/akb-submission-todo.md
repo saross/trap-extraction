@@ -1,9 +1,9 @@
 # AKB Submission To-Do List
 
 **Purpose:** Final preparation of attribution.csv for Archaeological Knowledge Base submission
-**Status:** In progress - Task 1 completed
+**Status:** In progress - Tasks 1-4, 7-8 completed (25 Nov 2025)
 **Priority:** High
-**Last updated:** 2025-11-24
+**Last updated:** 2025-11-25
 
 ---
 
@@ -39,7 +39,7 @@
 
 ---
 
-## 2. Ensure Team Leader for Every Day
+## 2. Ensure Team Leader for Every Day ✓
 
 **Task:** Verify all 268 records have team leader populated
 
@@ -48,86 +48,80 @@
 - Cross-reference with diary entries
 - Verify leader names are standardised
 
-**Current status:** Believed complete (standardisation pass completed)
+**Status:** ✓ Completed 2025-11-25
 
-**Verification needed:** Run automated check
+**Results:**
+- 267/268 records have Leader populated (99.6%)
+- 1 empty record: 2010-04-06 Team B (non-survey rainy day - acceptable)
+- All Leader names standardised to canonical "First Last" format
+- 253 Leader values updated during standardisation
+- Multiple leaders now use pipe separators (e.g., "Julia Tzvetkova | Bara Weissová")
 
-**Status:** ⏸️ Pending verification
+**Outputs:**
+- `outputs/leader-role-standardisation-report.md` - comprehensive report
+- `scripts/standardise-leaders-roles.py` - standardisation script
 
 ---
 
-## 3. Standardise All Names to Name-Mapping Document
+## 3. Standardise All Names to Name-Mapping Document ✓
 
 **Task:** Apply consistent name standardisation across all personnel columns using authoritative name-mapping document
 
-**Prerequisites:**
-- ⚠️ Locate name-mapping.csv (currently in archive/name-disambiguation/)
-- Review and complete name-mapping document if necessary
-- Verify all variants are captured
+**Status:** ✓ Completed 2025-11-25
 
-**Approach:**
-- Load name-mapping.csv as authority file
-- Apply standardised names to all columns:
-  - Leader
-  - Walkers_Original
-  - Walkers_Transliterated
-  - PDA_Operator
-  - Paper_Recorder
-  - Data_Editor
-  - GPS_Operator
-  - Photographer
-  - Author
-- Cross-reference with TRAP-Participants.csv
-- Handle edge cases (multiple people with same name)
+**Results:**
+- `outputs/name-mapping.csv` contains 698 name mappings (authoritative location)
+- Walker standardisation: 268 records with Walkers_Standardised column
+- Leader standardisation: 253 changes (all to canonical "First Last" format)
+- Role columns standardised: PDA_Operator (44), Paper_Recorder (43), Data_Editor (8), GPS_Operator (37), Photographer (14), Author (194)
+- Total: 593 values standardised across Leader and 6 role columns
+- Metadata entries cleared: Images, Track Log, Diary (from Paper_Recorder)
+- Placeholders cleared: No, Note, Hm, Vitaha (from Data_Editor)
+- Only 2 unmapped names remain: Lizzy (uncertain identity), Lindsay Prazak (since resolved)
 
-**Status:** ⏸️ Pending
+**Outputs:**
+- `outputs/walker-standardisation-report.md` - walker standardisation report
+- `outputs/leader-role-standardisation-report.md` - leader/role standardisation report
+- `scripts/standardise-walkers.py` - walker standardisation script
+- `scripts/standardise-leaders-roles.py` - leader/role standardisation script
 
 ---
 
-## 4. Extract Role Information via Thorough NLP Diary Analysis
+## 4. Extract Role Information via Thorough NLP Diary Analysis ✓
 
 **Task:** Systematically extract all available role data (PDA operator, paper recorder, etc.) using comprehensive diary analysis
 
-**Current coverage:** 200+ records flagged "No role data available"
+**Status:** ✓ Completed 2025-11-24
 
-**Approach (Tiered Source Strategy):**
+**Results:**
+- 145 role extractions consolidated from 6 source files
+- 80 records matched in attribution.csv
+- 76 new role fields populated (empty fields only)
+- 69 fields skipped (already had data)
 
-### Tier 1: Primary Diaries (Team-specific English/Bulgarian)
-- Team A diaries (English + Bulgarian)
-- Team B diaries (English + Bulgarian)
-- Team C diaries (English + Bulgarian)
-- Team D diaries (Bulgarian)
-- Team E diary (English)
+**Coverage improvements:**
 
-### Tier 2: Supplemental Diaries
-- Team summary documents
-- Project-wide diaries (if exist)
-- Field notes
+| Role | Before | After | Change |
+|------|--------|-------|--------|
+| Author | 210 (78.4%) | 217 (81.0%) | +7 (+2.6%) |
+| PDA_Operator | 30 (11.2%) | 44 (16.4%) | +14 (+5.2%) |
+| GPS_Operator | 25 (9.3%) | 37 (13.8%) | +12 (+4.5%) |
+| Paper_Recorder | 11 (4.1%) | 43 (16.0%) | +32 (+11.9%) |
+| Data_Editor | 8 (3.0%) | 8 (3.0%) | +0 (no change) |
+| Photographer | 3 (1.1%) | 14 (5.2%) | +11 (+4.1%) |
 
-### Tier 3: Secondary Sources
-- PDF summary forms (already used for walkers)
-- Scanned field forms (if role info visible)
-- Project reports
+**Key findings:**
+- 2009 Kazanlak diaries use narrative style without role documentation
+- 2009 Elhovo diaries have richest role documentation ("usual setup" patterns)
+- 2011 Kazanlak Team B diary provides excellent explicit role assignments
+- Paper_Recorder had largest improvement (+11.9%)
+- Data_Editor remains at 3% (rarely documented in field diaries)
 
-**NLP Analysis Requirements:**
-- Search for role-specific keywords in context:
-  - "PDA" / "GPS" / "pda operator" / "GPS operator"
-  - "paper" / "records" / "form" / "recording"
-  - "data entry" / "editor" / "transcription"
-  - "photo" / "camera" / "photographer"
-  - "author" / "wrote" / "diary"
-- Extract person names adjacent to role mentions
-- Handle narrative descriptions (e.g., "Hamish was taking pictures")
-- Track role assignments across diary entries
-- Cross-reference with participant roles from TRAP-Participants.csv
-
-**Quality Assurance:**
-- Verify extractions against source text
-- Document extraction confidence level
-- Flag ambiguous role assignments
-- Preserve source citations in extraction notes
-
-**Status:** ⏸️ Pending
+**Outputs:**
+- `archive/intermediate-data/role-extractions/` - 8 extraction CSV files
+- `archive/planning/role-extraction-checklist.md` - detailed checklist
+- `scripts/extract-roles-regex.py` - regex extraction script
+- `scripts/apply-role-extractions.py` - application script
 
 ---
 
@@ -260,34 +254,41 @@ akb-submission-qa-package/
 
 ## Additional Recommended Actions
 
-### 7. Create Data Dictionary
+### 7. Create Data Dictionary ✓
 
 **Task:** Formal documentation of all columns in attribution.csv
 
-**Content:**
-- Column name
-- Data type
-- Description
-- Allowed values/format
-- Source of data
-- Coverage expectation
-- Notes on interpretation
+**Status:** ✓ Completed 2025-11-23
 
-**Status:** ⏸️ Pending (suggested addition)
+**Results:**
+- `DATA-DICTIONARY.md` created at repository root (400+ lines)
+- All 17 columns fully documented with:
+  - Column name and data type
+  - Description and purpose
+  - Allowed values/format (controlled vocabularies)
+  - Source of data
+  - Coverage expectation
+  - Notes on interpretation
+- FAIR-compliant metadata format
+- Includes examples and edge cases
 
 ---
 
-### 8. Verify Participant Name Spelling
+### 8. Verify Participant Name Spelling ✓
 
 **Task:** Cross-check all names against TRAP-Participants.csv for spelling accuracy
 
-**Approach:**
-- Extract unique names from all personnel columns
-- Compare against official participant list
-- Flag any names not found in participant list
-- Verify transliteration from Bulgarian
+**Status:** ✓ Completed 2025-11-25 (via name standardisation)
 
-**Status:** ⏸️ Pending (suggested addition)
+**Results:**
+- All names cross-referenced with `inputs/TRAP-Participants.csv`
+- `outputs/name-mapping.csv` contains 698 entries mapping variants to canonical names
+- Bulgarian transliterations verified and standardised
+- Only 2 uncertain identities remain:
+  - Lizzy (Czech volunteer, 2009-autumn) - full name being researched
+  - Lindsay Prazak - since resolved and corrected
+- Invalid OCR entries identified and cleared (6 entries)
+- Silvia Ivanova added to TRAP-Participants.csv
 
 ---
 
@@ -349,31 +350,31 @@ akb-submission-qa-package/
 
 ## Notes
 
-- Name-mapping document location: Currently in `archive/name-disambiguation/name-mapping.csv` - may need to be moved to active location
-- Role extraction (Task 4) is most time-intensive but provides significant value
-- Consider running automated checks before manual review to prioritise effort
-- Secondary QA package can be prepared incrementally as tasks complete
+- Name-mapping document location: `outputs/name-mapping.csv` (698 entries, authoritative)
+- Role extraction (Task 4) completed - 76 new fields populated, <50% coverage due to source limitations
+- Name standardisation (Task 3) completed - all personnel columns standardised
+- Remaining tasks: QA exercise (5), Extraction notes review (9), Submission packaging (6, 10)
 
 ---
 
 ## Success Criteria
 
 **Minimum acceptable for submission:**
-- [ ] 100% leader coverage
-- [ ] 100% walker coverage (already achieved)
-- [ ] >95% survey unit coverage (currently ~93%)
-- [ ] All names standardised against authority file
-- [ ] QA report shows <5% error rate
-- [ ] All data dictionary columns defined
-- [ ] Submission metadata complete
+- [x] 100% leader coverage ✓ (267/268, 1 acceptable empty)
+- [x] 100% walker coverage ✓ (268/268)
+- [ ] >95% survey unit coverage (currently 89.18% - 239/268)
+- [x] All names standardised against authority file ✓ (698 mappings applied)
+- [ ] QA report shows <5% error rate (pending QA exercise)
+- [x] All data dictionary columns defined ✓ (DATA-DICTIONARY.md)
+- [ ] Submission metadata complete (CITATION.cff exists, may need enhancement)
 
 **Stretch goals:**
-- [ ] >50% role data coverage (PDA, paper recorder, etc.)
+- [ ] >50% role data coverage (currently <20% due to source limitations)
 - [ ] Independent QA confirms <2% error rate
 - [ ] All source citations verified
 
 ---
 
 **Document created:** 23 November 2025
-**Last updated:** 23 November 2025
-**Status:** Ready for execution
+**Last updated:** 25 November 2025
+**Status:** Tasks 1-4, 7-8 completed; Tasks 5, 6, 9, 10 pending

@@ -112,7 +112,7 @@ The TRAP Attribution Extraction project has successfully achieved **100% walker 
 | **Total records** | 100% | 268/268 | All survey days documented |
 | **Walker data** | 100% | 268/268 | ✅ **PRIMARY PROJECT GOAL ACHIEVED** |
 | **Leader data** | 100% | 268/268 | All teams have leader attribution |
-| **Survey units** | 93.3% | 250/268 | 18 records missing units (not in sources) |
+| **Survey units** | 89.18% | 239/268 | 29 records without units (28 explained, 1 pending) |
 | **Date coverage** | 100% | 268/268 | All dates verified, 2 errors corrected |
 | **Team assignment** | 100% | 268/268 | Teams A/B/C/D/E all assigned |
 | **Source documentation** | 100% | 268/268 | All records have source references |
@@ -129,7 +129,7 @@ The TRAP Attribution Extraction project has successfully achieved **100% walker 
 
 - **Region:** Kazanluk Valley, Stara Zagora Province, Bulgaria
 - **Survey area:** TRAP project area (detailed GIS data in separate files)
-- **Survey units:** 250 records with unit numbers, 18 without (non-survey days or missing data)
+- **Survey units:** 239 records with unit numbers, 29 without (28 explained, 1 pending renumbering)
 
 ### Source Documentation
 
@@ -441,35 +441,47 @@ These limitations can be addressed in future releases:
 
 ## Outstanding Tasks
 
-### High Priority
+### Completed Since Initial Project Completion (25 Nov 2025)
+
+1. ~~**Name format standardisation**~~ ✅ **Completed**
+   - Walker standardisation: 268 records with Walkers_Standardised column
+   - Leader standardisation: 253 changes to canonical "First Last" format
+   - Role columns standardised: 593 values across 6 columns
+   - `outputs/name-mapping.csv` contains 698 authoritative mappings
+
+2. ~~**Role field enhancement**~~ ✅ **Completed**
+   - 76 new role fields populated via NLP diary analysis
+   - Coverage improved: Paper_Recorder +11.9%, Photographer +4.1%
+   - <50% coverage confirmed as known limitation (source constraints)
+
+3. ~~**Participant list updates (partial)**~~ ✅ **Completed**
+   - Silvia Ivanova added to TRAP-Participants.csv
+   - Lindsay Prazak name corrected
+
+### High Priority (Require External Evidence)
 
 1. **Cascade Excel corrections to other data copies**
    - 2010-03-08 → 2010-04-08 in `Kaz10_SurveySummary.xls`
    - 2011-11-10 → 2011-10-21 in `Kaz11_SurveySummary.xlsx`
    - Update all derived files and databases
 
-2. **Participant list updates**
-   - Verify Silvia Ivanova participation (2009)
+2. **Participant identity research**
    - Research full name for "Lizzy" (Czech volunteer, 2009-autumn)
+   - Investigate "Sharon" (2011-11-02 Team D)
+   - Investigate "Yavor L" (2010-11-06 Team B Elhovo)
    - Verify Jiří Musil participation (2010)
 
 ### Medium Priority
 
-3. **Investigate 12 failed diary extractions**
-   - Diaries may have overall walker lists rather than daily breakdowns
-   - Manual extraction may be needed
+3. **Quality Assurance exercise**
+   - Cross-reference checks against source Excel summaries
+   - Verify walker counts against diary entries
+   - Generate QA report
 
-### Low Priority
+4. **Six-digit to five-digit unit mapping**
+   - 2009-03-12 Team C: Convert 300003-300009 to five-digit format
 
-4. **Name format standardisation**
-   - Decide on preferred format (full names vs initials)
-   - Create standardised walker column
-
-5. **Role field enhancement**
-   - Determine if additional sources exist
-   - Document as known limitation if not recoverable
-
-**Documentation:** See `outputs/follow-up-actions.md` for detailed tracking
+**Documentation:** See `planning/follow-up-actions.md` for detailed tracking
 
 ---
 

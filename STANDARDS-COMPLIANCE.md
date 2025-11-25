@@ -325,7 +325,7 @@ The following limitations cannot be addressed due to source data constraints:
 These limitations are **documented transparently** in:
 - `DATA-DICTIONARY.md` - Data quality and coverage metrics
 - `QA_Notes` field - Record-level quality flags
-- `outputs/follow-up-actions.md` - Outstanding enhancement tasks
+- `planning/follow-up-actions.md` - Outstanding enhancement tasks
 - This STANDARDS-COMPLIANCE.md document
 
 ---

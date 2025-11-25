@@ -288,6 +288,86 @@ From outputs/follow-up-actions.md:
 
 ---
 
+## [Post-v1.0.0 Updates] - 2025-11-25
+
+### Name Standardisation and Repository Cleanup
+
+**Name Standardisation:** ✅ Complete (698 name mappings applied)
+
+Following the survey unit extraction completion, this update documents comprehensive name standardisation across all personnel columns and repository housekeeping.
+
+### Added
+
+#### Name Standardisation Scripts
+- **scripts/standardise-walkers.py** - Walker name standardisation (268 records)
+- **scripts/standardise-leaders-roles.py** - Leader and role column standardisation (593 values)
+
+#### Standardisation Reports
+- **outputs/walker-standardisation-report.md** - Walker standardisation outcomes
+- **outputs/leader-role-standardisation-report.md** - Leader/role standardisation report
+
+### Changed
+
+#### Data Quality Improvements
+- **outputs/attribution.csv** - Comprehensive name standardisation applied:
+  - Walkers_Standardised column created with canonical "First Last" names
+  - Leader column: 253 values standardised
+  - Role columns: 593 values standardised across 6 columns (PDA_Operator, Paper_Recorder, Data_Editor, GPS_Operator, Photographer, Author)
+  - Metadata entries cleared from role columns (Images, Track Log, Diary)
+  - Placeholders cleared (No, Note, Hm, Vitaha)
+  - Only 2 unmapped names remain (Lizzy - uncertain identity)
+
+- **outputs/name-mapping.csv** - Expanded to 698 entries (from 283)
+  - 22 new entries for leader/role standardisation
+  - Invalid entries mapped for clearing
+
+#### Repository Reorganisation
+- **archive/planning/** - Completed planning documents archived:
+  - name-standardisation-plan.md
+  - role-extraction-checklist.md
+  - leader-verification-plan.md
+- **archive/intermediate-data/role-extractions/** - 8 role extraction CSVs archived
+- **archive/intermediate-data/diary-extracts/** - 6 diary extract text files archived
+
+#### Documentation Updates
+- **planning/akb-submission-todo.md** - Updated: Tasks 1-4, 7-8 marked complete
+- **planning/follow-up-actions.md** - Updated with completed tasks and outstanding items
+- **README.md** - Fixed broken links, updated Future Work section, corrected statistics
+- **PROJECT-COMPLETION.md** - Updated Outstanding Tasks with completed items
+
+### Fixed
+
+#### Path Corrections
+- Fixed `outputs/follow-up-actions.md` → `planning/follow-up-actions.md`
+- Fixed `claude_extraction/akb-submission-todo.md` → `planning/akb-submission-todo.md`
+
+#### Statistics Corrections
+- Survey unit coverage: Corrected from 93.3% to 89.18% (239/268)
+- Script count: Corrected from 45 to 51
+
+### Data Quality Metrics (25 November 2025)
+
+| Metric | Coverage | Count | Change |
+|--------|----------|-------|--------|
+| **Walker standardisation** | 100% | 268/268 | NEW |
+| **Leader standardisation** | 99.6% | 267/268 | 253 values updated |
+| **Role columns standardised** | Variable | 593 values | All 6 columns |
+| **Name mappings** | - | 698 entries | +415 entries |
+| **Intermediate files archived** | - | 14 files | Outputs cleaned |
+| **Planning docs archived** | - | 3 files | Completed plans |
+
+### Provenance
+
+**Standardisation Period:** 25 November 2025
+
+**Work completed:**
+- Walker name standardisation
+- Leader name standardisation
+- Role column standardisation (6 columns)
+- Repository cleanup and documentation updates
+
+---
+
 ## [0.8.0] - 2025-11-22 (Phase 4 Completion)
 
 ### Added
