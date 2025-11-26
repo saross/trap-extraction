@@ -1,0 +1,1764 @@
+
+ ▐▛███▜▌   Claude Code v2.0.53
+▝▜█████▛▘  Opus 4.5 · Claude Max
+  ▘▘ ▝▝    /…/synology/Adela/TRAP-WD-2020-04/trap-extraction
+══════════════════ Conversation compacted · ctrl+o for history ═════════════════
+  ⎿  Referenced file outputs/qa-runsheet-elhovo-2010-autumn.md
+  ⎿  Read docs/qa-guidance.md (178 lines)
+  ⎿  Read docs/qa-discrepancies-log.md (267 lines)
+  ⎿  Read planning/qa-pilot-plan.md (296 lines)
+  ⎿ Read 
+    ../../../../../../../home/shawn/.claude/plans/distributed-seeking-emerson.md
+     (303 lines)
+
+● Looking at the conversation summary, the QA pilot for Elhovo 2010 Autumn
+  is complete. Let me verify the final state of the key files and provide a
+  summary of what was accomplished.
+
+● Read(outputs/qa-runsheet-elhovo-2010-autumn.md)
+  ⎿  Read 772 lines
+
+● Bash(wc -l /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TR
+      AP-WD-2020-04/trap-extraction/outputs/attribution.csv)
+  ⎿ 271 /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TR
+    AP-WD-2020-04/trap-extraction/outputs/attribution.csv
+
+
+● The QA pilot is complete. Let me update the runsheet to reflect the final
+  status and mark all steps as complete.
+
+● Update(outputs/qa-runsheet-elhovo-2010-autumn.md)
+  ⎿  Updated outputs/qa-runsheet-elhovo-2010-autumn.md with 9 additions and
+     4 removals
+
+       761    
+       762    ---
+       763    
+       764 -  ## Next Steps
+       764 +  ## Completion Status
+       765    
+       766    1. [x] Team A verification complete
+       767    2. [x] Walker de-duplication applied (77 records fixed)
+       768    3. [x] Team B verification complete
+       769 -  4. [ ] User review of QA Issues #6-8
+       770 -  5. [ ] Apply accepted corrections to CSV
+       771 -  6. [ ] Update discrepancies log
+       769 +  4. [x] User review of QA Issues #6-10 — All accepted
+       770 +  5. [x] Apply accepted corrections to CSV — Done
+       771 +  6. [x] Update discrepancies log — Done
+       772 +  7. [x] Add missing records (D008, D009) — Done
+       773 +  
+       774 +  **Pilot Status:** COMPLETE
+       775 +  
+       776 +  **Final CSV record count:** 270 records (was 268, added 2 
+           + missing records)
+
+● Update(outputs/qa-runsheet-elhovo-2010-autumn.md)
+  ⎿  Updated outputs/qa-runsheet-elhovo-2010-autumn.md with 3 additions and
+     3 removals
+
+       1    # QA Runsheet: Elhovo 2010 Autumn
+       2    
+       3 -  **Date:** 25 November 2025
+       4 -  **Scope:** 14 records (5 Team A, 9 Team B)
+       5 -  **Status:** Phase 1 Complete (Team A)
+       3 +  **Date:** 25-26 November 2025
+       4 +  **Scope:** 16 records verified (5 Team A, 11 Team B including
+         +  2 missing records discovered)
+       5 +  **Status:** PILOT COMPLETE
+       6    
+       7    ---
+       8    
+
+● QA Pilot Complete: Elhovo 2010 Autumn
+
+  The pilot QA verification is now complete. Here's a summary of what was
+  accomplished:
+
+  Records Verified
+
+  - 16 total records (5 Team A + 11 Team B)
+  - 2 missing records discovered and added (7 Nov, 10 Nov Team B)
+  - CSV now contains 270 records (was 268)
+
+  Issues Found & Corrected
+
+  | Severity | Count | Description                                        |
+  |----------|-------|----------------------------------------------------|
+  | MAJOR    | 5     | 3 unit errors (#6-8), 2 missing records (#9-10)    |
+  | Minor    | 5     | Walker duplicates (#1-5, 77 records de-duplicated) |
+
+  Key Outcomes
+
+  1. Schema improvement: Split Author into Diary_Author and Summary_Author
+  2. Unit continuity: Now perfect across all Team B records
+  3. Source priority validated: PDF PRIMARY for basic info, Diaries PRIMARY
+  for roles
+  4. Documentation complete:
+    - outputs/qa-runsheet-elhovo-2010-autumn.md — Full verification findings
+    - docs/qa-guidance.md — Methodology with rules, heuristics, observations
+    - docs/qa-discrepancies-log.md — All discrepancies with resolutions
+
+  Methodology Validated
+
+  The pilot successfully established:
+  - Source priority hierarchy (PDF > Diary for basic info)
+  - Error severity classification (MAJOR vs minor)
+  - Unit continuity cross-checking (Rule C1)
+  - Source gap tracking protocol
+
+  This methodology is now ready to scale to the remaining 254 unverified
+  records when needed.
+
+> ok, great! Can we please write up a protocol for everything that needs to 
+be recorded when perform QA on a group of records? If needed, please consult
+ our previous conversation in full at 
+archive/cc-interactions/2025-11-26-a.txt. This can go into the 
+qa-guidance.md file if it is not already there. Our goal is to make this QA 
+operation consistent and repeatable. 
+
+● I'll consult the archived conversation and the current guidance document
+  to create a comprehensive, repeatable QA protocol.
+
+● Read(archive/cc-interactions/2025-11-26-a.txt)
+  ⎿  Error: File content (30024 tokens) exceeds maximum allowed tokens (25000). 
+     Please use offset and limit parameters to read specific portions of the 
+     file, or use the GrepTool to search for specific content.
+
+● Read(docs/qa-guidance.md)
+  ⎿  Read 178 lines
+
+● Let me read the archived conversation in sections to capture all the
+  methodology details:
+
+● Read(archive/cc-interactions/2025-11-26-a.txt)
+  ⎿  Read 800 lines
+
+● Read(archive/cc-interactions/2025-11-26-a.txt)
+  ⎿  Read 800 lines
+
+● Read(archive/cc-interactions/2025-11-26-a.txt)
+  ⎿  Read 459 lines
+
+● Now I have a complete picture of the methodology. Let me write a
+  comprehensive QA protocol section for the guidance document:
+
+● Read(docs/qa-guidance.md)
+  ⎿  Read 178 lines
+
+● Now I'll add a comprehensive QA Protocol section that documents everything
+   that needs to be recorded:
+
+● Update(docs/qa-guidance.md)
+  ⎿  Updated docs/qa-guidance.md with 268 additions and 14 removals      
+       137    
+       138    ---
+       139    
+       140 -  ## Quality Checks
+       140 +  ## QA Protocol: Complete Workflow
+       141    
+       142 -  ### Per-Record Verification Workflow
+       142 +  This section documents the full QA process for verifying a 
+           + group of attribution records. Follow this protocol to ensure
+           +  consistent, repeatable verification.
+       143    
+       144 -  ```text
+       145 -  1. EXTRACT record from attribution.csv
+       146 -  2. LOCATE corresponding PDF daily form
+       147 -     - Read/transcribe walker names, units, date, form author
+       148 -  3. LOCATE corresponding diary entry
+       149 -     - Read walker list, roles, any notes
+       150 -  4. COMPARE CSV fields against sources
+       151 -  5. APPLY RULE CHECKS (R1, R2)
+       152 -  6. APPLY HEURISTICS if disambiguation needed (H1, H2)
+       153 -  7. LOG discrepancies with reasoning
+       154 -  8. FLAG issues requiring user review
+       144 +  ### Phase 1: Pre-QA Setup
+       145 +  
+       146 +  Before beginning verification:
+       147 +  
+       148 +  1. **Identify records to verify**
+       149 +     - Filter attribution.csv by study area, season, and/or 
+           + team
+       150 +     - Note total record count and date range
+       151 +  
+       152 +  2. **Locate source documents**
+       153 +     - PDF Daily Progress Forms (check `Field Records/` 
+           + directories)
+       154 +     - Primary diary (check `Project Records/Team X/` 
+           + directories)
+       155 +     - Secondary diary (if applicable — older versions or 
+           + alternate team diaries)
+       156 +  
+       157 +  3. **Create source inventory table**
+       158 +  
+       159 +     ```markdown
+       160 +     | Type | File | Location | Dates Covered |
+       161 +     |------|------|----------|---------------|
+       162 +     | Diary | [filename] | [path] | [dates] |
+       163 +     | PDF | [filename] | [path] | [dates] |
+       164 +     ```
+       165 +  
+       166 +  4. **Note PDF-to-date mapping**
+       167 +     - Day_XX.pdf files may contain multiple forms for 
+           + different dates
+       168 +     - Record which forms appear in which PDF files
+       169 +  
+       170 +  ### Phase 2: Per-Record Verification
+       171 +  
+       172 +  For each record in the target set:
+       173 +  
+       174 +  #### Step 2.1: Extract CSV Record
+       175 +  
+       176 +  Pull the current CSV values for all fields:
+       177 +  
+       178 +  - Date, Team, Start Unit, End Unit
+       179 +  - Leader, Walkers_Original, Walkers_Standardised
+       180 +  - PDA_Operator, Paper_Recorder, GPS_Operator, Photographer
+       181 +  - Diary_Author, Summary_Author
+       182 +  - XLS_Source, PDF_Source
+       183 +  - Extraction_Notes, QA_Notes
+       184 +  
+       185 +  #### Step 2.2: Locate PDF Daily Form
+       186 +  
+       187 +  1. Find the corresponding PDF form for the date
+       188 +  2. Extract from PDF:
+       189 +     - Date (verify match)
+       190 +     - Team designation
+       191 +     - Start Unit, End Unit
+       192 +     - Leader name
+       193 +     - Walker names/initials
+       194 +     - Form Author (→ Summary_Author)
+       195 +  3. **Record PDF availability:** Present / Missing
+       196 +  
+       197 +  #### Step 2.3: Locate Diary Entry
+       198 +  
+       199 +  1. Find the corresponding diary entry for the date
+       200 +  2. Extract from diary:
+       201 +     - Date (verify match)
+       202 +     - Walker count and names
+       203 +     - Role assignments (PDA, GPS, Paper Records, etc.)
+       204 +     - Leader
+       205 +     - Diary Author
+       206 +  3. **If primary diary entry missing:** Check secondary 
+           + diary
+       207 +  4. **Record diary availability:** Present / Missing / 
+           + Secondary Used
+       208 +  
+       209 +  #### Step 2.4: Compare Fields
+       210 +  
+       211 +  Create a comparison table for each record:
+       212 +  
+       213 +  ```markdown
+       214 +  | Field | CSV Value | PDF Value | Diary Value | Status |
+       215 +  |-------|-----------|-----------|-------------|--------|
+       216 +  | Date | | | | CONFIRMED / DISCREPANCY |
+       217 +  | Team | | | | CONFIRMED / DISCREPANCY |
+       218 +  | Start Unit | | | | CONFIRMED / DISCREPANCY / SOURCE GAP |
+       219 +  | End Unit | | | | CONFIRMED / DISCREPANCY / SOURCE GAP |
+       220 +  | Leader | | | | CONFIRMED / DISCREPANCY |
+       221 +  | Walker count | | | | CONFIRMED / DISCREPANCY |
+       222 +  | Walkers | | | | CONFIRMED / PARTIAL / DISCREPANCY |
+       223 +  | Roles | | | | CONFIRMED / SOURCE GAP |
+       224    ```
+       225    
+       226 +  Status values:
+       227 +  
+       228 +  - **CONFIRMED** — CSV matches source(s)
+       229 +  - **DISCREPANCY** — CSV differs from source(s)
+       230 +  - **SOURCE GAP** — Source unavailable for this field
+       231 +  - **PARTIAL** — Some values match, others differ
+       232 +  
+       233 +  #### Step 2.5: Apply Rule Checks
+       234 +  
+       235 +  For each record, verify:
+       236 +  
+       237 +  - [ ] **R1:** All role holders appear in Walkers list
+       238 +  - [ ] **R2:** Leader appears in Walkers list
+       239 +  - [ ] **C1:** Start Unit follows previous day's End Unit 
+           + (±1)
+       240 +  
+       241 +  Document any rule violations.
+       242 +  
+       243 +  #### Step 2.6: Apply Heuristics (If Needed)
+       244 +  
+       245 +  Use heuristics for disambiguation:
+       246 +  
+       247 +  - **H1 (Team stability):** Check nearby days if name 
+           + illegible
+       248 +  - **H2 (One team per day):** Verify walker doesn't appear 
+           + on multiple teams
+       249 +  
+       250 +  #### Step 2.7: Document Findings
+       251 +  
+       252 +  **For CONFIRMED records:** Add to verification summary (no 
+           + issue needed)
+       253 +  
+       254 +  **For DISCREPANCIES:** Create QA Issue in runsheet using 
+           + template:
+       255 +  
+       256 +  ```markdown
+       257 +  ## QA Issue #[N]: [DATE] Team [X] - [FIELD]
+       258 +  
+       259 +  **Problem:** [One sentence describing what's wrong]
+       260 +  
+       261 +  **Fix:** [One sentence describing the correction]
+       262 +  
+       263 +  **Sources consulted:**
+       264 +  1. [PDF filename] — [form/page]
+       265 +  2. [Diary filename] — [date entry]
+       266 +  
+       267 +  **Source evidence:**
+       268 +  - PDF: "[relevant excerpt]"
+       269 +  - Diary: "[relevant excerpt]"
+       270 +  
+       271 +  **Finding:** DISCREPANCY / MISSING / SOURCE GAP
+       272 +  **Recommended value:** [value]
+       273 +  
+       274 +  **Reasoning:**
+       275 +  [Why this value is correct, referencing source priority 
+           + rules]
+       276 +  
+       277 +  ---
+       278 +  **User Decision:** [ ] Accept / [ ] Modify: _______________
+       279 +  ```
+       280 +  
+       281 +  **For MISSING RECORDS:** Always document as MAJOR QA Issue
+       282 +  
+       283 +  ### Phase 3: Cross-Record Checks
+       284 +  
+       285 +  After verifying all individual records:
+       286 +  
+       287 +  #### 3.1: Unit Continuity Check
+       288 +  
+       289 +  Create a unit continuity table for the entire record set:
+       290 +  
+       291 +  ```markdown
+       292 +  | Date | End Unit | Next Date | Start Unit | Gap | Status |
+       293 +  |------|----------|-----------|------------|-----|--------|
+       294 +  | [date] | [end] | [date] | [start] | [+/-N] | ✓ / ⚠ |
+       295 +  ```
+       296 +  
+       297 +  - Gap of +1: Normal (continuous)
+       298 +  - Gap of 0: Overlap (same unit, may be valid)
+       299 +  - Gap > +1: Investigate — may indicate missing records
+       300 +  - Negative gap: Error — units shouldn't go backwards
+       301 +  
+       302 +  **IMPORTANT:** Unit gaps often indicate missing CSV 
+           + records, not missing field days. Always check PDF and diary 
+           + for the gap dates.
+       303 +  
+       304 +  #### 3.2: Source Coverage Matrix
+       305 +  
+       306 +  Document source availability for all records:
+       307 +  
+       308 +  ```markdown
+       309 +  | Date | PDF Form | Primary Diary | Secondary Diary | CSV 
+           + Status | Notes |
+       310 +  |------|----------|---------------|-----------------|------
+           + ------|-------|
+       311 +  | [date] | ✓/✗ | ✓/✗ | ✓/✗/N/A | Present/Missing/Added | 
+           + [notes] |
+       312 +  ```
+       313 +  
+       314 +  #### 3.3: Walker Consistency Check
+       315 +  
+       316 +  - [ ] No duplicate walkers within any record
+       317 +  - [ ] Walker names consistently standardised across records
+       318 +  - [ ] Leaders always included in walker lists
+       319 +  
+       320 +  ### Phase 4: Documentation Outputs
+       321 +  
+       322 +  A complete QA run must produce:
+       323 +  
+       324 +  #### 4.1: QA Runsheet 
+           + (`outputs/qa-runsheet-[area]-[season].md`)
+       325 +  
+       326 +  Required sections:
+       327 +  
+       328 +  1. **Header:** Date, scope (record count), status
+       329 +  2. **Source Documents Consulted:** Table of files used
+       330 +  3. **Per-Record Verification Results:** Comparison tables
+       331 +  4. **QA Issues:** All discrepancies with full issue format
+       332 +  5. **Source Coverage Matrix:** Complete source availability
+       333 +  6. **Unit Continuity Check:** Full continuity table
+       334 +  7. **Summary:** Counts by category, corrections applied
+       335 +  
+       336 +  #### 4.2: Discrepancies Log 
+           + (`docs/qa-discrepancies-log.md`)
+       337 +  
+       338 +  Add entries for:
+       339 +  
+       340 +  - **Value discrepancies (Dxxx):** PDF vs Diary conflicts, 
+           + CSV errors
+       341 +  - **Missing records (Dxxx):** Records that should exist but
+           +  don't
+       342 +  - **Source gaps (Sxxx):** Missing PDF or diary entries
+       343 +  - Each entry must include: source values, resolution, 
+           + reasoning
+       344 +  
+       345 +  #### 4.3: Updated attribution.csv
+       346 +  
+       347 +  After user approval:
+       348 +  
+       349 +  - Apply accepted corrections
+       350 +  - Add missing records (if any)
+       351 +  - Update Extraction_Notes with QA provenance
+       352 +  
+       353 +  ### Phase 5: Summary Statistics
+       354 +  
+       355 +  Record final counts:
+       356 +  
+       357 +  ```markdown
+       358 +  | Metric | Count |
+       359 +  |--------|-------|
+       360 +  | Records verified | [N] |
+       361 +  | MAJOR issues | [N] |
+       362 +  | Minor issues | [N] |
+       363 +  | Corrections applied | [N] |
+       364 +  | Missing records added | [N] |
+       365 +  | Source gaps documented | [N] |
+       366 +  ```
+       367 +  
+       368 +  ---
+       369 +  
+       370 +  ## Checklist: What to Record
+       371 +  
+       372 +  Use this checklist to ensure nothing is missed during QA:
+       373 +  
+       374 +  ### Per Record
+       375 +  
+       376 +  - [ ] Source availability (PDF, primary diary, secondary 
+           + diary)
+       377 +  - [ ] Field-by-field comparison (Date, Team, Units, Leader,
+           +  Walkers, Roles)
+       378 +  - [ ] Rule check results (R1, R2)
+       379 +  - [ ] Any discrepancies with source values and resolution
+       380 +  - [ ] Any source gaps (fields that couldn't be verified)
+       381 +  
+       382 +  ### Per Record Set
+       383 +  
+       384 +  - [ ] Source coverage matrix (all records)
+       385 +  - [ ] Unit continuity table (all consecutive days)
+       386 +  - [ ] Summary of issues by severity (MAJOR vs minor)
+       387 +  - [ ] List of all corrections applied
+       388 +  - [ ] List of any missing records discovered and added
+       389 +  
+       390 +  ### Documentation
+       391 +  
+       392 +  - [ ] QA runsheet created/updated
+       393 +  - [ ] Discrepancies log updated with new entries
+       394 +  - [ ] CSV corrections applied after approval
+       395 +  - [ ] New rules/heuristics/observations added to this 
+           + guidance document
+       396 +  
+       397 +  ---
+       398 +  
+       399 +  ## Quality Checks (Quick Reference)
+       400 +  
+       401    ### Systematic Checks
+       402    
+       403    - [ ] All walkers unique within each record (no duplicates)
+       404    - [ ] All role holders appear in walker list
+       405    - [ ] Leader appears in walker list
+       406 -  - [ ] Unit ranges are plausible (end >
+           -   start, within season range)
+       406 +  - [ ] Unit ranges are plausible (end ≥
+           +   start, within season range)
+       407 +  - [ ] Unit continuity between consecutive days
+       408 +  - [ ] No unexplained gaps (investigate before assuming 
+           + "days off")
+       409    
+       410 +  ### Red Flags
+       411 +  
+       412 +  - Unit gap > 1 between consecutive records → Check for 
+           + missing records
+       413 +  - Walker count mismatch between CSV and sources → Verify 
+           + walker list
+       414 +  - Role holder not in walker list → R1 violation
+       415 +  - Leader not in walker list → R2 violation
+       416 +  - Both PDF and diary missing → Document as source gap; flag
+           +  low confidence
+       417 +  
+       418    ---
+       419    
+       420    ## Future Additions
+
+● Now let me update the document header to reflect the expanded scope:
+
+● Update(docs/qa-guidance.md)
+  ⎿  Updated docs/qa-guidance.md with 12 additions and 1 removal         
+        1    # QA Guidance: Attribution Data Verification
+        2    
+        3    **Created:** 26 November 2025
+        4 -  **Purpose:** Document rules, heuristics, and observations 
+          - for cross-source verification of attribution.csv
+        4 +  **Updated:** 26 November 2025
+        5 +  **Purpose:** Complete protocol for cross-source verification
+          +  of attribution.csv, including rules, heuristics, workflow, 
+          + and documentation requirements
+        6    
+        7 +  ## Document Contents
+        8 +  
+        9 +  1. [Source Priority Rules](#source-priority-rules) — Which 
+          + sources to trust for which data
+       10 +  2. [Error Severity 
+          + Classification](#error-severity-classification) — MAJOR vs 
+          + minor errors
+       11 +  3. [Rules (Must Be True)](#rules-must-be-true) — Logical 
+          + constraints for validation
+       12 +  4. [Heuristics (Usually True)](#heuristics-usually-true) — 
+          + Patterns for disambiguation
+       13 +  5. [Observations](#observations-discovered-during-qa) — 
+          + Discovered patterns
+       14 +  6. [QA Protocol: Complete 
+          + Workflow](#qa-protocol-complete-workflow) — Step-by-step 
+          + verification process
+       15 +  7. [Checklist: What to Record](#checklist-what-to-record) — 
+          + Ensuring completeness
+       16 +  
+       17    ---
+       18    
+       19    ## Source Priority Rules
+
+● Bash(wc -l /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TR
+      AP-WD-2020-04/trap-extraction/docs/qa-guidance.md && grep "^## "
+      /media/shawn/191c3b96-…)
+  ⎿ 442 /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TR
+    AP-WD-2020-04/trap-extraction/docs/qa-guidance.md
+    ## Document Contents
+    … +12 lines (ctrl+o to expand)
+
+
+● The comprehensive QA protocol has been added to docs/qa-guidance.md. The
+  document now includes:
+
+  Protocol Overview (442 lines total)
+
+  Structure
+
+  | Section                          | Purpose
+         |
+  |----------------------------------|--------------------------------------
+  -------|
+  | Document Contents                | Quick navigation to all sections
+         |
+  | Source Priority Rules            | Which sources to trust for which data
+   types |
+  | Error Severity Classification    | MAJOR vs minor error definitions
+         |
+  | Rules (Must Be True)             | R1, R2, C1 — logical constraints
+         |
+  | Heuristics (Usually True)        | H1, H2 — patterns for disambiguation
+         |
+  | Observations                     | O1-O3 — discovered patterns from
+  pilot      |
+  | QA Protocol: Complete Workflow   | NEW — 5-phase step-by-step process
+         |
+  | Checklist: What to Record        | NEW — comprehensive recording
+  requirements  |
+  | Quality Checks (Quick Reference) | NEW — systematic checks and red flags
+         |
+  | References                       | Links to related documents
+         |
+
+  Key Additions
+
+  Phase-based workflow:
+  1. Pre-QA Setup — Identify records, locate sources, create inventory
+  2. Per-Record Verification — 7 steps for each record
+  3. Cross-Record Checks — Unit continuity, source coverage matrix, walker
+  consistency
+  4. Documentation Outputs — Required runsheet, discrepancies log, CSV
+  updates
+  5. Summary Statistics — Final counts and metrics
+
+  Templates provided for:
+  - Source inventory tables
+  - Field comparison tables
+  - QA Issue format
+  - Unit continuity tables
+  - Source coverage matrix
+
+  Checklists for:
+  - Per-record requirements
+  - Per-record-set requirements
+  - Documentation requirements
+  - Red flags to watch for
+
+  This protocol should enable consistent, repeatable QA whether performed by
+   Claude, Gemini, or a human reviewer.
+
+> ok, great, can you list the source problems (missing records or 
+discrepencies) that we're recording? I'll review the document in detail 
+later, but would like a spot-check 
+
+● Read(docs/qa-discrepancies-log.md)
+  ⎿  Read 267 lines
+
+● Here's the complete list of source problems recorded during the QA pilot:
+
+  Value Discrepancies (D001-D007)
+
+  | ID   | Record       | Field          | Issue
+           | Resolution    |
+  |------|--------------|----------------|----------------------------------
+  ---------|---------------|
+  | D001 | 2010-10-23 A | Start Unit     | PDF: 61424, Diary: 61425
+           | PDF (61424) ✅ |
+  | D002 | 2010-10-23 A | End Unit       | PDF: 61475, Diary: 61473
+           | PDF (61475) ✅ |
+  | D003 | 2010-10-24 A | End Unit       | PDF: 61549, Diary: 61349 (typo)
+           | PDF (61549) ✅ |
+  | D004 | 2010-11-02 A | Start Unit     | PDF: 61549, Diary: 61553
+           | PDF (61549) ✅ |
+  | D005 | 2010-11-03 B | Start Unit     | CSV had 71245, should be 71525
+  (280 off!) | Corrected ✅   |
+  | D006 | 2010-11-04 B | End Unit       | PDF: 71649, Diary: 71650
+           | PDF (71649) ✅ |
+  | D007 | 2010-11-06 B | Start/End Unit | CSV empty, sources have
+  71713/71760       | Added ✅       |
+
+  Missing CSV Records (D008-D009)
+
+  | ID   | Record       | Issue                                            |
+   Resolution |
+  |------|--------------|--------------------------------------------------|
+  ------------|
+  | D008 | 2010-11-07 B | Entire record missing — PDF & diary both present |
+   Added ✅    |
+  | D009 | 2010-11-10 B | Entire record missing — PDF & diary both present |
+   Added ✅    |
+
+  Source Gaps (S001-S003)
+
+  | ID   | Record       | Issue                                    | Impact
+                 |
+  |------|--------------|------------------------------------------|--------
+  ---------------|
+  | S001 | 2010-11-11 B | Diary missing (both primary & secondary) | Roles
+  unavailable     |
+  | S002 | 2010-11-12 B | PDF missing                              | No
+  cross-verification |
+  | S003 | 2010-11-14 B | PDF missing                              | No
+  cross-verification |
+
+  Summary
+
+  | Category            | Count | Status                              |
+  |---------------------|-------|-------------------------------------|
+  | Value discrepancies | 7     | All resolved (PDF preferred in 6/7) |
+  | Missing CSV records | 2     | Both added                          |
+  | Source gaps         | 3     | Documented (no action possible)     |
+  | Total issues        | 12    | All addressed                       |
+
+> in the value discrepancies, in which case was the diary preferred over the
+ pdf? 
+
+● You're right to question that — I misstated it. Looking back at the data:
+
+  None. The diary was never preferred over the PDF.
+
+  The breakdown is actually:
+
+  | Scenario                             | Count | Cases
+      |
+  |--------------------------------------|-------|--------------------------
+  ----|
+  | PDF explicitly preferred over diary  | 5     | D001, D002, D003, D004,
+  D006 |
+  | PDF and diary agreed (CSV was wrong) | 2     | D005, D007
+      |
+  | Diary preferred over PDF             | 0     | —
+      |
+
+  My "6/7" was misleading. In all 7 value discrepancies, either:
+  - PDF was chosen over diary (5 cases), or
+  - Both sources agreed and the CSV was simply wrong (2 cases)
+
+  This strongly reinforces observation O1 (PDF more reliable for unit
+  numbers). We haven't yet encountered a case where the diary was correct
+  and the PDF was wrong for basic numeric data.
+
+> Can you plese include this scenario table in the report? If you are going 
+to abbreviate it in the 'Summary', be a little more specific (PDF and diary 
+agree 2/7; PDF preferred 5/7) and make sure that the options add up to the 
+whole (e.g., 7/7) 
+
+● Update(docs/qa-discrepancies-log.md)
+  ⎿  Updated docs/qa-discrepancies-log.md with 14 additions and 3 removals
+       208    
+       209    ## Summary Statistics
+       210    
+       211 -  | Season | Value Discrepancies | Missing Records | Source 
+           -  Gaps | PDF Preferred | Diary Preferred |
+       212 -  |--------|---------------------|-----------------|---------
+           -  ----|---------------|-----------------|
+       213 -  | Elhovo 2010 Autumn | 7 | 2 | 3 | 6 | 0 |
+       211 +  | Season | Value Discrepancies | Missing Records | Source 
+           +  Gaps |
+       212 +  |--------|---------------------|-----------------|---------
+           +  ----|
+       213 +  | Elhovo 2010 Autumn | 7 | 2 | 3 |
+       214    
+       215 +  ### Value Discrepancy Resolution (Elhovo 2010 Autumn)
+       216 +  
+       217 +  | Scenario | Count | Fraction | Cases |
+       218 +  |----------|-------|----------|-------|
+       219 +  | PDF and diary agreed (CSV wrong) | 2 | 2/7 | D005, D007 |
+       220 +  | PDF preferred over diary | 5 | 5/7 | D001, D002, D003, 
+           + D004, D006 |
+       221 +  | Diary preferred over PDF | 0 | 0/7 | — |
+       222 +  | **Total** | **7** | **7/7** | |
+       223 +  
+       224 +  **Interpretation:** In all cases where PDF and diary 
+           + conflicted, the PDF was preferred. This supports observation
+           +  O1 (PDF more reliable for unit numbers).
+       225 +  
+       226    ---
+       227    
+       228    ## Summary by Type
+
+● Done. The discrepancies log now includes the scenario table with explicit
+  fractions that sum to the total:
+
+  ### Value Discrepancy Resolution (Elhovo 2010 Autumn)
+
+  | Scenario | Count | Fraction | Cases |
+  |----------|-------|----------|-------|
+  | PDF and diary agreed (CSV wrong) | 2 | 2/7 | D005, D007 |
+  | PDF preferred over diary | 5 | 5/7 | D001, D002, D003, D004, D006 |
+  | Diary preferred over PDF | 0 | 0/7 | — |
+  | **Total** | **7** | **7/7** | |
+
+  With interpretation noting that in all PDF vs diary conflicts, PDF was
+  preferred — supporting O1.
+
+> Ok, great, I just want to make sure the results are easily interpretable 
+by others - or by me in six months!\
+\
+Next, 'PDF' is a little vague, we have lots of PDFs. Can you change 'PDF' in
+ these to 'DPF scan' (= 'Daily Progress Form scan') 
+
+● Update(docs/qa-discrepancies-log.md)
+  ⎿  Updated docs/qa-discrepancies-log.md with 6 additions and 4 removals
+       216    
+       217    | Scenario | Count | Fraction | Cases |
+       218    |----------|-------|----------|-------|
+       219 -  | PDF and diary agreed (CSV wrong) | 2 | 2/7 | D005, D007 |
+       220 -  | PDF 
+           -  preferred over diary | 5 | 5/7 | D001, D002, D003, D004, 
+           -  D006 |
+       221 -  | Diary preferred over PDF | 0 | 0/7 | — |
+       219 +  | DPF scan 
+           +  and diary agreed (CSV wrong) | 2 | 2/7 | D005, D007 |
+       220 +  | DPF scan 
+           +  preferred over diary | 5 | 5/7 | D001, D002, D003, D004, 
+           +  D006 |
+       221 +  | Diary preferred over DPF scan | 0 | 0/7 | — |
+       222    | **Total** | **7** | **7/7** | |
+       223    
+       224 -  **Interpretation:** In all cases where PDF 
+           -  and diary conflicted, the PDF 
+           -  was preferred. This supports observation O1 (PDF 
+           -  more reliable for unit numbers).
+       224 +  **Interpretation:** In all cases where DPF scan 
+           +  and diary conflicted, the DPF scan 
+           +  was preferred. This supports observation O1 (DPF scans 
+           +  more reliable for unit numbers).
+       225    
+       226 +  **Note:** "DPF scan" = Daily Progress Form scan (the 
+           + scanned PDF of the handwritten daily summary forms).
+       227 +  
+       228    ---
+       229    
+       230    ## Summary by Type
+
+● Now let me update the individual discrepancy entries to use "DPF scan" as
+  well:
+
+● Update(docs/qa-discrepancies-log.md)
+  ⎿  Updated docs/qa-discrepancies-log.md with 3 additions and 3 removals
+       23    
+       24    | Source | Value |
+       25    |--------|-------|
+       26 -  | PDF (Day_03.pdf, Form 2) | 61424 |
+       26 +  | DPF scan (Day_03.pdf, Form 2) | 61424 |
+       27    | Diary (A_Diary.docx) | 61425 |
+       28    | CSV (current) | 61424 |
+       29    
+       30 -  **Resolution:** 61424 (PDF value)
+       30 +  **Resolution:** 61424 (DPF scan value)
+       31    
+       32 -  **Reasoning:** Per source priority rules, PDF Daily 
+          -  Progress Forms 
+          -  are PRIMARY for basic numeric information. The diary value 
+          -  (61425) may be a transcription error or the diary author may
+          -   have misremembered. The PDF form 
+          -  was completed on the day of fieldwork and is more likely to 
+          -  be accurate.
+       32 +  **Reasoning:** Per source priority rules, DPF scans 
+          +  are PRIMARY for basic numeric information. The diary value 
+          +  (61425) may be a transcription error or the diary author may
+          +   have misremembered. The DPF 
+          +  was completed on the day of fieldwork and is more likely to 
+          +  be accurate.
+       33    
+       34    ---
+       35    
+
+● Update(docs/qa-discrepancies-log.md)
+  ⎿  Updated docs/qa-discrepancies-log.md with 3 additions and 3 removals
+       37    
+       38    | Source | Value |
+       39    |--------|-------|
+       40 -  | PDF (Day_03.pdf, Form 2) | 61475 |
+       40 +  | DPF scan (Day_03.pdf, Form 2) | 61475 |
+       41    | Diary (A_Diary.docx) | 61473 |
+       42    | CSV (current) | 61475 |
+       43    
+       44 -  **Resolution:** 61475 (PDF value)
+       44 +  **Resolution:** 61475 (DPF scan value)
+       45    
+       46 -  **Reasoning:** Same as D001. PDF 
+          -  is PRIMARY for unit numbers.
+       46 +  **Reasoning:** Same as D001. DPF scan 
+          +  is PRIMARY for unit numbers.
+       47    
+       48    ---
+       49    
+
+● Update(docs/qa-discrepancies-log.md)
+  ⎿  Updated docs/qa-discrepancies-log.md with 3 additions and 3 removals
+       51    
+       52    | Source | Value |
+       53    |--------|-------|
+       54 -  | PDF (Day_03.pdf, Form 3) | 61549 |
+       54 +  | DPF scan (Day_03.pdf, Form 3) | 61549 |
+       55    | Diary (A_Diary.docx) | 61349 |
+       56    | CSV (current) | 61549 |
+       57    
+       58 -  **Resolution:** 61549 (PDF value)
+       58 +  **Resolution:** 61549 (DPF scan value)
+       59    
+       60 -  **Reasoning:** The diary value "61349" is clearly a typo — 
+          -  it would mean the end unit is lower than the start unit 
+          -  (61476), which is impossible. The PDF 
+          -  value 61549 is logically consistent (61549 > 61476) and 
+          -  matches the total units recorded (73 units from 61476 to 
+          -  61549 inclusive = 74 units, close to "Total Units: 73" on 
+          -  the form).
+       60 +  **Reasoning:** The diary value "61349" is clearly a typo — 
+          +  it would mean the end unit is lower than the start unit 
+          +  (61476), which is impossible. The DPF scan 
+          +  value 61549 is logically consistent (61549 > 61476) and 
+          +  matches the total units recorded (73 units from 61476 to 
+          +  61549 inclusive = 74 units, close to "Total Units: 73" on 
+          +  the form).
+       61    
+       62    ---
+       63    
+
+● Update(docs/qa-discrepancies-log.md)
+  ⎿  Updated docs/qa-discrepancies-log.md with 3 additions and 3 removals
+       65    
+       66    | Source | Value |
+       67    |--------|-------|
+       68 -  | PDF (Day_05.pdf, Form 1) | 61549 |
+       68 +  | DPF scan (Day_05.pdf, Form 1) | 61549 |
+       69    | Diary (A_Diary.docx) | 61553 (stated as "First unit") |
+       70    | CSV (current) | 61549 |
+       71    
+       72 -  **Resolution:** 61549 (PDF value)
+       72 +  **Resolution:** 61549 (DPF scan value)
+       73    
+       74 -  **Reasoning:** The diary states "First unit: 61553" but the 
+          -  unit sample list in the same entry begins with "61549". This
+          -   inconsistency within the diary itself suggests the "61553" 
+          -  was an error. The PDF 
+          -  value 61549 is consistent with the sample list and provides 
+          -  continuity from the previous day's end unit (2010-10-24 
+          -  ended at 61549).
+       74 +  **Reasoning:** The diary states "First unit: 61553" but the 
+          +  unit sample list in the same entry begins with "61549". This
+          +   inconsistency within the diary itself suggests the "61553" 
+          +  was an error. The DPF scan 
+          +  value 61549 is consistent with the sample list and provides 
+          +  continuity from the previous day's end unit (2010-10-24 
+          +  ended at 61549).
+       75    
+       76    **Note:** The continuity of 61549 appearing as both Oct 24 
+            end unit and Nov 2 start unit suggests either: (a) unit 61549
+             was walked on both days, or (b) there's a boundary/overlap 
+            convention. This is not an error, just an observation.
+       77    
+
+● Update(docs/qa-discrepancies-log.md)
+  ⎿  Updated docs/qa-discrepancies-log.md with 2 additions and 2 removals
+       81    
+       82    | Source | Value |
+       83    |--------|-------|
+       84 -  | PDF (Day_02.pdf, Form 2) | 71525 |
+       84 +  | DPF scan (Day_02.pdf, Form 2) | 71525 |
+       85    | Diary (Team B Diary new.docx) | 71525 |
+       86    | CSV (current) | 71245 |
+       87    
+       88 -  **Resolution:** 71525 (PDF and diary agree)
+       88 +  **Resolution:** 71525 (DPF scan and diary agree)
+       89    
+       90    **Reasoning:** Both sources agree on 71525. The CSV value 
+            71245 is incorrect by 280 units — likely a transcription or 
+            OCR error during original extraction. This is not a minor 
+            discrepancy but a significant data error requiring 
+            correction.
+       91    
+
+● Update(docs/qa-discrepancies-log.md)
+  ⎿  Updated docs/qa-discrepancies-log.md with 3 additions and 3 removals
+        95    
+        96    | Source | Value |
+        97    |--------|-------|
+        98 -  | PDF (Day_04.pdf, Form 1) | 71649 |
+        98 +  | DPF scan (Day_04.pdf, Form 1) | 71649 |
+        99    | Diary (Team B Diary new.docx) | 71650 |
+       100    | CSV (current) | 71650 |
+       101    
+       102 -  **Resolution:** 71649 (PDF value)
+       102 +  **Resolution:** 71649 (DPF scan value)
+       103    
+       104 -  **Reasoning:** PDF 
+           -  shows 71649, diary shows 71650. Per source priority rules, 
+           -  PDF 
+           -  takes precedence. Additionally, 71650 is the Start Unit for
+           -   the following day (5 Nov), suggesting the diary copied the
+           -   wrong boundary value. The PDF
+           -  , completed on the day, is more reliable.
+       104 +  **Reasoning:** DPF scan 
+           +  shows 71649, diary shows 71650. Per source priority rules, 
+           +  DPF scan 
+           +  takes precedence. Additionally, 71650 is the Start Unit for
+           +   the following day (5 Nov), suggesting the diary copied the
+           +   wrong boundary value. The DPF
+           +  , completed on the day, is more reliable.
+       105    
+       106    ---
+       107    
+
+● Update(docs/qa-discrepancies-log.md)
+  ⎿  Updated docs/qa-discrepancies-log.md with 1 addition and 1 removal  
+       109    
+       110    | Source | Value |
+       111    |--------|-------|
+       112 -  | PDF (Day_06.pdf, Form 1) | Start: 71713, End: 71760 |
+       112 +  | DPF scan 
+           +  (Day_06.pdf, Form 1) | Start: 71713, End: 71760 |
+       113    | Diary (Team B Diary new.docx) | Start: 71713, End: 71760 
+             |
+       114    | CSV (current) | (empty) |
+       115    
+
+● Update(docs/qa-discrepancies-log.md)
+  ⎿  Updated docs/qa-discrepancies-log.md with 1 addition and 1 removal
+       124    | Source | Status | Data |
+       125    |--------|--------|------|
+       126    | CSV | ✗ MISSING | No record exists |
+       127 -  | PDF 
+           -  (Day_06.pdf, Form 2) | ✓ Present | Units 71761-71800, 
+           -  Leader: SAR/R.L |
+       127 +  | DPF scan 
+           +  (Day_06.pdf, Form 2) | ✓ Present | Units 71761-71800, 
+           +  Leader: SAR/R.L |
+       128    | Primary Diary | ✓ Present | Units 71761-71800, Leader: 
+             Dr. Ross / Royce Lawrence |
+       129    
+       130    **Evidence from diary:**
+
+● Update(docs/qa-discrepancies-log.md)
+  ⎿  Updated docs/qa-discrepancies-log.md with 1 addition and 1 removal
+       141    | Source | Status | Data |
+       142    |--------|--------|------|
+       143    | CSV | ✗ MISSING | No record exists |
+       144 -  | PDF 
+           -  (Day_08.pdf, Form 1) | ✓ Present | Units 71801-71833, 
+           -  Leader: R.L |
+       144 +  | DPF scan 
+           +  (Day_08.pdf, Form 1) | ✓ Present | Units 71801-71833, 
+           +  Leader: R.L |
+       145    | Primary Diary | ✓ Present | Units 71801-71833, Leader: 
+             Royce Lawrence |
+       146    
+       147    **Evidence from diary:**
+
+● Update(docs/qa-discrepancies-log.md)
+  ⎿  Updated docs/qa-discrepancies-log.md with 2 additions and 2 removals
+       174    
+       175    | Source | Status |
+       176    |--------|--------|
+       177 -  | PDF (Day_08.pdf, Form 2) | ✓ Present |
+       177 +  | DPF scan (Day_08.pdf, Form 2) | ✓ Present |
+       178    | Primary Diary (Team B Diary new.docx) | ✗ Missing |
+       179    | Secondary Diary (Team B Diary.docx) | ✗ Missing |
+       180    
+       181 -  **Notes:** Both Team B diaries skip from 10 Nov directly to
+           -   12 Nov. The 11 Nov record was extracted solely from the 
+           -  PDF daily progress form
+           -  . Role information for this day is unavailable.
+       181 +  **Notes:** Both Team B diaries skip from 10 Nov directly to
+           +   12 Nov. The 11 Nov record was extracted solely from the 
+           +  DPF scan. Role information for this day is unavailable.
+       182    
+       183    ---
+       184    
+
+● Update(docs/qa-discrepancies-log.md)
+  ⎿  Updated docs/qa-discrepancies-log.md with 6 additions and 6 removals
+       182    
+       183    ---
+       184    
+       185 -  ### S002: 2010-11-12, Team B — PDF Form Missing
+       185 +  ### S002: 2010-11-12, Team B — DPF Scan Missing
+       186    
+       187    | Source | Status |
+       188    |--------|--------|
+       189 -  | PDF Daily Progress Form | ✗ Missing |
+       189 +  | DPF scan | ✗ Missing |
+       190    | Primary Diary (Team B Diary new.docx) | ✓ Present |
+       191    | Secondary Diary (Team B Diary.docx) | ✓ Present |
+       192    
+       193 -  **Notes:** No PDF daily progress form 
+           -  exists for 12 Nov. Record was extracted from diary. Unit 
+           -  numbers rely on diary alone (no cross-verification 
+           -  possible).
+       193 +  **Notes:** No DPF scan 
+           +  exists for 12 Nov. Record was extracted from diary. Unit 
+           +  numbers rely on diary alone (no cross-verification 
+           +  possible).
+       194    
+       195    ---
+       196    
+       197 -  ### S003: 2010-11-14, Team B — PDF Form Missing
+       197 +  ### S003: 2010-11-14, Team B — DPF Scan Missing
+       198    
+       199    | Source | Status |
+       200    |--------|--------|
+       201 -  | PDF Daily Progress Form | ✗ Missing |
+       201 +  | DPF scan | ✗ Missing |
+       202    | Primary Diary (Team B Diary new.docx) | ✓ Present |
+       203    | Secondary Diary (Team B Diary.docx) | ✓ Present |
+       204    
+       205 -  **Notes:** No PDF daily progress form 
+           -  exists for 14 Nov. Record was extracted from diary. Unit 
+           -  numbers rely on diary alone (no cross-verification 
+           -  possible).
+       205 +  **Notes:** No DPF scan 
+           +  exists for 14 Nov. Record was extracted from diary. Unit 
+           +  numbers rely on diary alone (no cross-verification 
+           +  possible).
+       206    
+       207    ---
+       208    
+
+● Update(docs/qa-discrepancies-log.md)
+  ⎿  Updated docs/qa-discrepancies-log.md with 2 additions and 2 removals
+       233    
+       234    | Type | Count | Records |
+       235    |------|-------|---------|
+       236 -  | PDF vs Diary (minor) | 4 | D001, D002, D004, D006 |
+       236 +  | DPF scan vs Diary (minor) | 4 | D001, D002, D004, D006 |
+       237    | Diary typo | 1 | D003 |
+       238    | CSV extraction error | 1 | D005 |
+       239    | CSV field missing | 1 | D007 |
+     ...
+       249    | Type | Count | Records |
+       250    |------|-------|---------|
+       251    | Diary missing | 1 | S001 (2010-11-11 B) |
+       252 -  | PDF 
+           -  missing | 2 | S002 (2010-11-12 B), S003 (2010-11-14 B) |
+       252 +  | DPF scan 
+           +  missing | 2 | S002 (2010-11-12 B), S003 (2010-11-14 B) |
+       253    
+       254    ### Unit Continuity (D010)
+       255    
+
+● Now let me update the qa-guidance.md to use "DPF scan" consistently as
+  well:
+
+● Update(docs/qa-guidance.md)
+  ⎿  Updated docs/qa-guidance.md with 8 additions and 6 removals         
+       18    
+       19    ## Source Priority Rules
+       20    
+       21 +  **Note:** "DPF scan" = Daily Progress Form scan (the scanned
+          +  PDF of the handwritten daily summary forms completed in the 
+          + field).
+       22 +  
+       23    ### For Basic Information (Walkers, Units, Dates)
+       24    
+       25 -  1. **PDF Daily Progress Forms
+          -  ** — PRIMARY source; more accurate for numeric/factual data
+       25 +  1. **DPF scans
+          +  ** — PRIMARY source; more accurate for numeric/factual data
+       26    2. **Diaries** — Cross-reference for name interpretation and
+             context
+       27    3. **Both together** — Required for high confidence
+       28    
+       29    ### For Role Information (PDA, GPS, Paper Recorder, etc.)
+       30    
+       31    1. **Diaries** — PRIMARY and often ONLY source for role 
+            assignments
+       32 -  2. **PDF Daily Progress Forms
+          -  ** — Do NOT reliably indicate Paper Recorder (see O3 below)
+       32 +  2. **DPF scans
+          +  ** — Do NOT reliably indicate Paper Recorder (see O3 below)
+       33    
+       34    ### Conflict Resolution
+       35    
+       36 -  - PDF summary forms 
+          -  take precedence for basic info when conflicting with diaries
+       36 +  - DPF scans 
+          +  take precedence for basic info when conflicting with diaries
+       37    - Document all conflicts in discrepancies log with reasoning
+       38    - Flag genuinely ambiguous cases for user decision
+       39    
+     ...
+       39    
+       40    For every record, document which sources were available:
+       41    
+       42 -  - **PDF Daily Progress Form:** Present / Missing
+       42 +  - **DPF scan:** Present / Missing
+       43    - **Primary Diary Entry:** Present / Missing
+       44    - **Secondary Diary Entry:** Present / Missing / N/A
+       45    
+     ...
+       51    
+       52    Use this to validate source priority:
+       53    
+       54 -  - If PDF 
+          -  creates a gap/overlap with adjacent days but diary doesn't →
+          -   evidence to prefer diary
+       55 -  - If diary creates a gap/overlap but PDF doesn't → confirms 
+          -  PDF as PRIMARY
+       54 +  - If DPF scan 
+          +  creates a gap/overlap with adjacent days but diary doesn't →
+          +   evidence to prefer diary
+       55 +  - If diary creates a gap/overlap but DPF scan 
+          +  doesn't → confirms DPF scan as PRIMARY
+       56    - Document all continuity anomalies in discrepancies log
+       57    
+       58    ---
+
+● Update(docs/qa-guidance.md)
+  ⎿  Updated docs/qa-guidance.md with 3 additions and 3 removals         
+       116    
+       117    | ID | Observation | Evidence | Implication |
+       118    |----|-------------|----------|-------------|
+       119 -  | **O1** | PDF 
+           -  more reliable for unit numbers | Diary entry for 2010-10-24
+           -   shows "Last unit: 61349" (typo); PDF 
+           -  shows correct value 61549. Similar discrepancies in other 
+           -  records. | Always prefer PDF 
+           -  for Start Unit / End Unit values |
+       120 -  | **O2** | Diary Author ≠ Summary Author | The person who 
+           -  wrote the diary entry (narrative) is often different from 
+           -  the person who filled out the PDF Daily Progress Form
+           -  . These are distinct roles. | Split into separate fields: 
+           -  `Diary_Author` and `Summary_Author` |
+       121 -  | **O3** | Summary Author ≠ Paper Recorder | Tested 
+           -  hypothesis that PDF form 
+           -  "Author" = Paper Recorder. Team B data showed only 2/6 
+           -  matches between diary-assigned "Paper Records" role and PDF
+           -   Author. | Cannot reliably infer Paper_Recorder from PDF
+           -   Author; these appear to be different tasks |
+       119 +  | **O1** | DPF scan 
+           +  more reliable for unit numbers | Diary entry for 2010-10-24
+           +   shows "Last unit: 61349" (typo); DPF scan 
+           +  shows correct value 61549. Similar discrepancies in other 
+           +  records. | Always prefer DPF scan 
+           +  for Start Unit / End Unit values |
+       120 +  | **O2** | Diary Author ≠ Summary Author | The person who 
+           +  wrote the diary entry (narrative) is often different from 
+           +  the person who filled out the DPF
+           +  . These are distinct roles. | Split into separate fields: 
+           +  `Diary_Author` and `Summary_Author` |
+       121 +  | **O3** | Summary Author ≠ Paper Recorder | Tested 
+           +  hypothesis that DPF 
+           +  "Author" = Paper Recorder. Team B data showed only 2/6 
+           +  matches between diary-assigned "Paper Records" role and DPF
+           +   Author. | Cannot reliably infer Paper_Recorder from DPF
+           +   Author; these appear to be different tasks |
+       122    
+       123    ---
+       124    
+
+● Update(docs/qa-guidance.md)
+  ⎿  Updated docs/qa-guidance.md with 6 additions and 6 removals         
+       129    The CSV now uses two distinct author fields:
+       130    
+       131    - **Diary_Author** — Person who wrote the diary/narrative 
+             entry for that day
+       132 -  - **Summary_Author** — Person who filled out the PDF 
+           -  Daily Progress Form
+       132 +  - **Summary_Author** — Person who filled out the DPF (
+           +  Daily Progress Form)
+       133    
+       134    These are often different people. The diary author writes 
+             the detailed narrative; the summary author completes the 
+             standardised form at end of day.
+       135    
+       136    ### O3: Paper Recorder (Disproven Hypothesis)
+       137    
+       138 -  **Initial hypothesis:** PDF form 
+           -  "Author" = Paper Recorder role
+       138 +  **Initial hypothesis:** DPF "Author" = Paper Recorder role
+       139    
+       140 -  **Testing:** Compared Team B diary (which explicitly names 
+           -  "Paper Records" / "Documents" roles) against PDF
+           -   Author field.
+       140 +  **Testing:** Compared Team B diary (which explicitly names 
+           +  "Paper Records" / "Documents" roles) against DPF
+           +   Author field.
+       141    
+       142    **Result:** Only 2 of 6 records matched. The hypothesis is 
+             **not supported**.
+       143    
+       144 -  **Conclusion:** The PDF
+           -   Author and the diary-assigned "Paper Records" role appear 
+           -  to be different tasks:
+       144 +  **Conclusion:** The DPF
+           +   Author and the diary-assigned "Paper Records" role appear 
+           +  to be different tasks:
+       145    
+       146    - **Paper Records role** (diary) — May refer to recording 
+             finds/samples on unit forms during survey
+       147 -  - **PDF
+           -   Author** — Whoever fills out the end-of-day summary form
+       147 +  - **DPF
+           +   Author** — Whoever fills out the end-of-day summary form
+       148    
+       149 -  Do NOT use PDF Author to populate Paper_Recorder column.
+       149 +  Do NOT use DPF Author to populate Paper_Recorder column.
+       150    
+       151    ---
+       152    
+
+● Search(pattern: "PDF", path: "docs/qa-guidance.md", output_mode: "content")
+  ⎿  Found 20 lines (ctrl+o to expand)
+
+● Let me update the remaining PDF references in the QA Protocol section:
+
+● Update(docs/qa-guidance.md)
+  ⎿  Updated docs/qa-guidance.md with 1 addition and 1 removal        
+       67    
+       68    | Type | Description | Example |
+       69    |------|-------------|---------|
+       70 -  | **Missing record** | CSV lacks a record when PDF
+          -  /diary sources exist | D008, D009 |
+       70 +  | **Missing record** | CSV lacks a record when DPF scan
+          +  /diary sources exist | D008, D009 |
+       71    | **Unit number error** | Start/End Unit incorrect or 
+            missing | D005, D007 |
+       72    | **Personnel error** | Wrong/missing walkers, roles, or 
+            leader | — |
+       73    
+
+● Update(docs/qa-guidance.md)
+  ⎿  Updated docs/qa-guidance.md with 4 additions and 4 removals      
+       163       - Note total record count and date range
+       164    
+       165    2. **Locate source documents**
+       166 -     - PDF Daily Progress Forms 
+           -  (check `Field Records/` directories)
+       166 +     - DPF scans (check `Field Records/` directories)
+       167       - Primary diary (check `Project Records/Team X/` 
+             directories)
+       168       - Secondary diary (if applicable — older versions or 
+             alternate team diaries)
+       169    
+     ...
+       173       | Type | File | Location | Dates Covered |
+       174       |------|------|----------|---------------|
+       175       | Diary | [filename] | [path] | [dates] |
+       176 -     | PDF | [filename] | [path] | [dates] |
+       176 +     | DPF scan | [filename] | [path] | [dates] |
+       177       ```
+       178    
+       179 -  4. **Note PDF-to-date mapping**
+       179 +  4. **Note DPF-to-date mapping**
+       180       - Day_XX.pdf files may contain multiple forms for 
+             different dates
+       181 -     - Record which forms appear in which PDF files
+       181 +     - Record which forms appear in which DPF files
+       182    
+       183    ### Phase 2: Per-Record Verification
+       184    
+
+● Update(docs/qa-guidance.md)
+  ⎿  Updated docs/qa-guidance.md with 4 additions and 4 removals
+       195    - XLS_Source, PDF_Source
+       196    - Extraction_Notes, QA_Notes
+       197    
+       198 -  #### Step 2.2: Locate PDF Daily Form
+       198 +  #### Step 2.2: Locate DPF Scan
+       199    
+       200 -  1. Find the corresponding PDF form for the date
+       201 -  2. Extract from PDF:
+       200 +  1. Find the corresponding DPF scan for the date
+       201 +  2. Extract from DPF:
+       202       - Date (verify match)
+       203       - Team designation
+       204       - Start Unit, End Unit
+       205       - Leader name
+       206       - Walker names/initials
+       207       - Form Author (→ Summary_Author)
+       208 -  3. **Record PDF availability:** Present / Missing
+       208 +  3. **Record DPF availability:** Present / Missing
+       209    
+       210    #### Step 2.3: Locate Diary Entry
+       211    
+
+● Update(docs/qa-guidance.md)
+  ⎿  Updated docs/qa-guidance.md with 1 addition and 1 removal        
+       224    Create a comparison table for each record:
+       225    
+       226    ```markdown
+       227 -  | Field | CSV Value | PDF Value | Diary Value | Status |
+       227 +  | Field | CSV Value | DPF Value | Diary Value | Status |
+       228    |-------|-----------|-----------|-------------|--------|
+       229    | Date | | | | CONFIRMED / DISCREPANCY |
+       230    | Team | | | | CONFIRMED / DISCREPANCY |
+
+● Update(docs/qa-guidance.md)
+  ⎿  Updated docs/qa-guidance.md with 2 additions and 2 removals
+       274    **Fix:** [One sentence describing the correction]
+       275    
+       276    **Sources consulted:**
+       277 -  1. [PDF filename] — [form/page]
+       277 +  1. [DPF scan filename] — [form/page]
+       278    2. [Diary filename] — [date entry]
+       279    
+       280    **Source evidence:**
+       281 -  - PDF: "[relevant excerpt]"
+       281 +  - DPF: "[relevant excerpt]"
+       282    - Diary: "[relevant excerpt]"
+       283    
+       284    **Finding:** DISCREPANCY / MISSING / SOURCE GAP
+
+● Update(docs/qa-guidance.md)
+  ⎿  Updated docs/qa-guidance.md with 1 addition and 1 removal       
+       312    - Gap > +1: Investigate — may indicate missing records
+       313    - Negative gap: Error — units shouldn't go backwards
+       314    
+       315 -  **IMPORTANT:** Unit gaps often indicate missing CSV 
+           -  records, not missing field days. Always check PDF 
+           -  and diary for the gap dates.
+       315 +  **IMPORTANT:** Unit gaps often indicate missing CSV 
+           +  records, not missing field days. Always check DPF scan 
+           +  and diary for the gap dates.
+       316    
+       317    #### 3.2: Source Coverage Matrix
+       318    
+
+● Update(docs/qa-guidance.md)
+  ⎿  Updated docs/qa-guidance.md with 1 addition and 1 removal           
+       319    Document source availability for all records:
+       320    
+       321    ```markdown
+       322 -  | Date | PDF Form
+           -   | Primary Diary | Secondary Diary | CSV Status | Notes |
+       322 +  | Date | DPF Scan
+           +   | Primary Diary | Secondary Diary | CSV Status | Notes |
+       323    |------|----------|---------------|-----------------|------
+             ------|-------|
+       324    | [date] | ✓/✗ | ✓/✗ | ✓/✗/N/A | Present/Missing/Added | 
+             [notes] |
+       325    ```
+
+● Update(docs/qa-guidance.md)
+  ⎿  Updated docs/qa-guidance.md with 2 additions and 2 removals         
+       350    
+       351    Add entries for:
+       352    
+       353 -  - **Value discrepancies (Dxxx):** PDF 
+           -  vs Diary conflicts, CSV errors
+       353 +  - **Value discrepancies (Dxxx):** DPF scan 
+           +  vs Diary conflicts, CSV errors
+       354    - **Missing records (Dxxx):** Records that should exist but
+              don't
+       355 -  - **Source gaps (Sxxx):** Missing PDF or diary entries
+       355 +  - **Source gaps (Sxxx):** Missing DPF scan or diary entries
+       356    - Each entry must include: source values, resolution, 
+             reasoning
+       357    
+       358    #### 4.3: Updated attribution.csv
+
+● Update(docs/qa-guidance.md)
+  ⎿  Updated docs/qa-guidance.md with 1 addition and 1 removal           
+       386    
+       387    ### Per Record
+       388    
+       389 -  - [ ] Source availability (PDF
+           -  , primary diary, secondary diary)
+       389 +  - [ ] Source availability (DPF scan
+           +  , primary diary, secondary diary)
+       390    - [ ] Field-by-field comparison (Date, Team, Units, Leader,
+              Walkers, Roles)
+       391    - [ ] Rule check results (R1, R2)
+       392    - [ ] Any discrepancies with source values and resolution
+
+● Let me verify all PDF references have been updated:
+
+● Search(pattern: "PDF", path: "docs/qa-guidance.md", output_mode: "content")
+  ⎿  Found 4 lines (ctrl+o to expand)
+
+● One more reference to fix:
+
+● Update(docs/qa-guidance.md)
+  ⎿  Updated docs/qa-guidance.md with 1 addition and 1 removal         
+       426    - Walker count mismatch between CSV and sources → Verify 
+             walker list
+       427    - Role holder not in walker list → R1 violation
+       428    - Leader not in walker list → R2 violation
+       429 -  - Both PDF 
+           -  and diary missing → Document as source gap; flag low 
+           -  confidence
+       429 +  - Both DPF scan 
+           +  and diary missing → Document as source gap; flag low 
+           +  confidence
+       430    
+       431    ---
+       432    
+
+● Done. All references to "PDF" have been changed to "DPF scan" in both
+  documents (except for PDF_Source which is a column name in the CSV).
+
+  Summary of changes:
+
+  1. docs/qa-discrepancies-log.md:
+    - All 10 discrepancy entries (D001-D009) now use "DPF scan"
+    - All 3 source gap entries (S001-S003) now use "DPF scan"
+    - Summary tables updated
+    - Added definition note: "DPF scan" = Daily Progress Form scan
+  2. docs/qa-guidance.md:
+    - Source Priority Rules section updated
+    - Observations (O1, O2, O3) updated
+    - Full QA Protocol workflow updated
+    - All templates and checklists updated
+    - Added definition note at start of Source Priority Rules
+
+  The terminology is now specific and unambiguous — "DPF scan" clearly
+  refers to the scanned Daily Progress Forms, distinguishing them from other
+   PDFs in the archive.
+
+> ok, great, one final thing - before we started these corrections, I had 
+intended to snapshot the complete-but-uncorrected attribution.csv - could 
+you look at the git history and retrieve that? After we are all done, I want
+ to use it as a comparison, plus I want to run it through Gemini for a 
+comparison between your performance and Gemini 3. Save it...somewhere 
+logical in the archive would be fine, so long as it is clearly named and I 
+can find it. We may in future take additional 'snapshots' like this. 
+
+● Bash(git log --oneline -20 -- outputs/attribution.csv)
+  ⎿ 4955501 chore: repository cleanup and documentation updates (25 Nov 202
+    5)
+    82f2514 feat(attribution): standardise Leader and Role columns to canon
+    … +32 lines (ctrl+o to expand)
+
+
+
+● Bash(git status outputs/attribution.csv)
+  ⎿  On branch master                               
+     Your branch is up to date with 'origin/master'.
+     … +6 lines (ctrl+o to expand)
+
+● The corrections haven't been committed yet, so the version in git (commit
+  4955501) is the pre-correction version. Let me retrieve it and save it to
+  an appropriate archive location:
+
+● Bash(mkdir -p /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela
+      /TRAP-WD-2020-04/trap-extraction/archive/snapshots)
+  ⎿  (No content)
+
+● Bash(git show 4955501:outputs/attribution.csv >
+      archive/snapshots/attribution-2025-11-26-pre-qa-pilot.csv)
+  ⎿  (No content)
+
+● Bash(wc -l archive/snapshots/attribution-2025-11-26-pre-qa-pilot.csv && head
+      -1 archive/snapshots/attribution-2025-11-26-pre-qa-pilot.csv)
+  ⎿ 268 archive/snapshots/attribution-2025-11-26-pre-qa-pilot.csv          
+    Date,Team,Start Unit,End Unit,Leader,Walkers_Original,Walkers_Standardi
+    sed,PDA_Operator,Paper_Recorder,Data_Editor,GPS_Operator,Photographer,A
+    uthor,XLS_Source,PDF_Source,Extraction_Notes,QA_Notes
+
+
+
+● Bash(wc -l outputs/attribution.csv && head -1 outputs/attribution.csv)
+  ⎿ 271 outputs/attribution.csv                                            
+    Date,Team,Start Unit,End Unit,Leader,Walkers_Original,Walkers_Standardi
+    sed,PDA_Operator,Paper_Recorder,Data_Editor,GPS_Operator,Photographer,D
+    … +2 lines (ctrl+o to expand)
+
+
+
+● Now let me create a README for the snapshots directory:
+
+● Write(archive/snapshots/README.md)
+  ⎿  Wrote 56 lines to archive/snapshots/README.md                         
+     # Attribution CSV Snapshots
+     **Purpose:** Preserve point-in-time versions of `attribution.csv` for
+     comparison, testing, and audit purposes.
+     ---
+     ## Naming Convention
+     ```text
+     attribution-YYYY-MM-DD-[description].csv
+     … +46 lines (ctrl+o to expand)
+
+● Done. The pre-correction snapshot is saved at:
+
+  archive/snapshots/attribution-2025-11-26-pre-qa-pilot.csv
+
+  Comparison:
+
+  | Version           | Records | Schema                              |
+  |-------------------|---------|-------------------------------------|
+  | Pre-QA (snapshot) | 267     | Single Author column                |
+  | Post-QA (current) | 270     | Split Diary_Author / Summary_Author |
+
+  Key differences in snapshot:
+  - Walker duplicates present (77 records)
+  - Missing records (7 Nov, 10 Nov Team B)
+  - Unit errors (D005: 71245→71525, D006: 71650→71649, D007:
+  empty→71713/71760)
+
+  I've also created archive/snapshots/README.md documenting the naming
+  convention and how to create future snapshots. This will serve as your
+  baseline for the Gemini comparison.
+
+> in the current version, can you change 'Summary_Author' to 'DPF_Author' so
+ that the terminology matches the change we made a few minutes ago? 
+
+● Bash(head -1 outputs/attribution.csv | sed 's/Summary_Author/DPF_Author/' >
+      /tmp/header.txt && tail -n +2 outputs/attribution.csv >> /tmp/header.txt
+      && mv /tmp/heade…)
+  ⎿  (No content)
+
+● Bash(head -1 outputs/attribution.csv)
+  ⎿ Date,Team,Start Unit,End Unit,Leader,Walkers_Original,Walkers_Standardi
+    sed,PDA_Operator,Paper_Recorder,Data_Editor,GPS_Operator,Photographer,D
+    iary_Author,DPF_Author,XLS_Source,PDF_Source,Extraction_Notes,QA_Notes
+
+
+
+● Now let me update the documentation to match:
+
+● Update(docs/qa-guidance.md)
+  ⎿  Updated docs/qa-guidance.md with 1 addition and 1 removal           
+       117    | ID | Observation | Evidence | Implication |
+       118    |----|-------------|----------|-------------|
+       119    | **O1** | DPF scan more reliable for unit numbers | Diary 
+             entry for 2010-10-24 shows "Last unit: 61349" (typo); DPF 
+             scan shows correct value 61549. Similar discrepancies in 
+             other records. | Always prefer DPF scan for Start Unit / End
+              Unit values |
+       120 -  | **O2** | Diary Author ≠ Summary
+           -   Author | The person who wrote the diary entry (narrative) 
+           -  is often different from the person who filled out the DPF. 
+           -  These are distinct roles. | Split into separate fields: 
+           -  `Diary_Author` and `Summary_Author` |
+       120 +  | **O2** | Diary Author ≠ DPF
+           +   Author | The person who wrote the diary entry (narrative) 
+           +  is often different from the person who filled out the DPF. 
+           +  These are distinct roles. | Split into separate fields: 
+           +  `Diary_Author` and `DPF_Author` |
+       121    | **O3** | Summary Author ≠ Paper Recorder | Tested 
+             hypothesis that DPF "Author" = Paper Recorder. Team B data 
+             showed only 2/6 matches between diary-assigned "Paper 
+             Records" role and DPF Author. | Cannot reliably infer 
+             Paper_Recorder from DPF Author; these appear to be different
+              tasks |
+       122    
+       123    ---
+
+● Update(docs/qa-guidance.md)
+  ⎿  Updated docs/qa-guidance.md with 1 addition and 1 removal           
+       118    |----|-------------|----------|-------------|
+       119    | **O1** | DPF scan more reliable for unit numbers | Diary 
+             entry for 2010-10-24 shows "Last unit: 61349" (typo); DPF 
+             scan shows correct value 61549. Similar discrepancies in 
+             other records. | Always prefer DPF scan for Start Unit / End
+              Unit values |
+       120    | **O2** | Diary Author ≠ DPF Author | The person who wrote
+              the diary entry (narrative) is often different from the 
+             person who filled out the DPF. These are distinct roles. | 
+             Split into separate fields: `Diary_Author` and `DPF_Author` 
+             |
+       121 -  | **O3** | Summary
+           -   Author ≠ Paper Recorder | Tested hypothesis that DPF 
+           -  "Author" = Paper Recorder. Team B data showed only 2/6 
+           -  matches between diary-assigned "Paper Records" role and DPF
+           -   Author. | Cannot reliably infer Paper_Recorder from DPF 
+           -  Author; these appear to be different tasks |
+       121 +  | **O3** | DPF
+           +   Author ≠ Paper Recorder | Tested hypothesis that DPF 
+           +  "Author" = Paper Recorder. Team B data showed only 2/6 
+           +  matches between diary-assigned "Paper Records" role and DPF
+           +   Author. | Cannot reliably infer Paper_Recorder from DPF 
+           +  Author; these appear to be different tasks |
+       122    
+       123    ---
+       124    
+
+● Update(docs/qa-guidance.md)
+  ⎿  Updated docs/qa-guidance.md with 2 additions and 2 removals        
+       129    The CSV now uses two distinct author fields:
+       130    
+       131    - **Diary_Author** — Person who wrote the diary/narrative 
+             entry for that day
+       132 -  - **Summary_Author
+           -  ** — Person who filled out the DPF (Daily Progress Form)
+       132 +  - **DPF_Author
+           +  ** — Person who filled out the DPF (Daily Progress Form)
+       133    
+       134 -  These are often different people. The diary author writes 
+           -  the detailed narrative; the summary
+           -   author completes the standardised form at end of day.
+       134 +  These are often different people. The diary author writes 
+           +  the detailed narrative; the DPF
+           +   author completes the standardised form at end of day.
+       135    
+       136    ### O3: Paper Recorder (Disproven Hypothesis)
+       137    
+
+● Search(pattern: "Summary_Author", path: "docs/qa-guidance.md", output_mode:
+        "content")
+  ⎿  Found 3 lines (ctrl+o to expand)
+
+● Update(docs/qa-guidance.md)
+  ⎿  Updated docs/qa-guidance.md with 1 addition and 1 removal       
+       77    
+       78    | Type | Description | Example |
+       79    |------|-------------|---------|
+       80 -  | **Author error** | Diary_Author or Summary_Author
+          -   incorrect | — |
+       80 +  | **Author error** | Diary_Author or DPF_Author
+          +   incorrect | — |
+       81    | **Source reference** | Wrong PDF_Source or XLS_Source 
+            filename | — |
+       82    
+       83    ### Runsheet Documentation
+
+● Update(docs/qa-guidance.md)
+  ⎿  Updated docs/qa-guidance.md with 1 addition and 1 removal          
+       191    - Date, Team, Start Unit, End Unit
+       192    - Leader, Walkers_Original, Walkers_Standardised
+       193    - PDA_Operator, Paper_Recorder, GPS_Operator, Photographer
+       194 -  - Diary_Author, Summary_Author
+       194 +  - Diary_Author, DPF_Author
+       195    - XLS_Source, PDF_Source
+       196    - Extraction_Notes, QA_Notes
+       197    
+
+● Update(docs/qa-guidance.md)
+  ⎿  Updated docs/qa-guidance.md with 1 addition and 1 removal 
+       204       - Start Unit, End Unit
+       205       - Leader name
+       206       - Walker names/initials
+       207 -     - Form Author (→ Summary_Author)
+       207 +     - Form Author (→ DPF_Author)
+       208    3. **Record DPF availability:** Present / Missing
+       209    
+       210    #### Step 2.3: Locate Diary Entry
+
+● Now let me update the discrepancies log as well:
+
+● Search(pattern: "Summary_Author", path: "docs/qa-discrepancies-log.md",
+        output_mode: "content")
+  ⎿  Found 0 lines 
+
+● Search(pattern: "Summary_Author", path: "docs", output_mode: "content")
+  ⎿  Found 0 lines 
+
+● Search(pattern: "Summary_Author", path: "outputs", output_mode: "content")
+  ⎿  Found 0 lines 
+
+● Done. All references updated:
+
+  CSV:
+  - Column renamed: Summary_Author → DPF_Author
+
+  Documentation (docs/qa-guidance.md):
+  - Observation O2: "Diary Author ≠ DPF Author"
+  - Observation O3: "DPF Author ≠ Paper Recorder"
+  - Field descriptions updated
+  - Error severity table updated
+
+  The terminology is now consistent: "DPF" refers to Daily Progress Forms
+  throughout.
+
+> /export archive/cc-interactions/2025-11-26-b.txt 
+  ⎿  Conversation exported to: archive/cc-interactions/2025-11-26-b.txt
+
+> please compose a /compact message 
+
+● /compact QA Pilot Completion and Protocol Documentation
+
+  Project: TRAP Attribution Extraction QA
+  Session: Continuation of QA pilot, focusing on documentation and
+  terminology standardisation
+
+  ## Work Completed This Session
+
+  1. **Verified pilot completion status**
+     - 16 records verified (5 Team A, 11 Team B including 2 missing records
+  added)
+     - 270 records in attribution.csv (was 268)
+     - All 10 QA issues resolved and corrections applied
+
+  2. **Wrote comprehensive QA Protocol** (`docs/qa-guidance.md`)
+     - 5-phase workflow: Pre-QA Setup → Per-Record Verification →
+  Cross-Record Checks → Documentation Outputs → Summary Statistics
+     - Templates for comparison tables, QA issues, source coverage matrix
+     - Checklists for per-record and per-record-set requirements
+     - Red flags and systematic checks
+
+  3. **Terminology standardisation: "PDF" → "DPF scan"**
+     - Updated all references in `docs/qa-guidance.md`
+     - Updated all references in `docs/qa-discrepancies-log.md`
+     - "DPF scan" = Daily Progress Form scan (scanned PDF of handwritten
+  daily summary forms)
+
+  4. **Column rename: `Summary_Author` → `DPF_Author`**
+     - Updated `outputs/attribution.csv` header
+     - Updated all documentation references
+
+  5. **Added Value Discrepancy Resolution table**
+  (`docs/qa-discrepancies-log.md`)
+     - DPF scan and diary agreed (CSV wrong): 2/7
+     - DPF scan preferred over diary: 5/7
+     - Diary preferred over DPF scan: 0/7
+     - Total: 7/7
+
+  6. **Created pre-correction snapshot** for Gemini comparison
+     - `archive/snapshots/attribution-2025-11-26-pre-qa-pilot.csv`
+     - 267 records, original schema (single `Author` column)
+     - Created `archive/snapshots/README.md` with naming convention
+
+  ## Key Files Modified
+  - `docs/qa-guidance.md` — Now 440+ lines with complete QA protocol
+  - `docs/qa-discrepancies-log.md` — Updated terminology, added resolution
+  table
+  - `outputs/attribution.csv` — Column renamed
+  - `outputs/qa-runsheet-elhovo-2010-autumn.md` — Status marked COMPLETE
+
+  ## Uncommitted Changes
+  - All QA corrections to attribution.csv (unit fixes, missing records,
+  walker dedup, schema changes)
+  - All documentation updates
+  - Snapshot files
+
+  ## Ready For
+  - Git commit of all changes
+  - Gemini comparison using pre-correction snapshot
+  - Scaling QA methodology to remaining ~254 records
+
+
+

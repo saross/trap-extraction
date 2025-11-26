@@ -1,0 +1,2675 @@
+
+ ▐▛███▜▌   Claude Code v2.0.53
+▝▜█████▛▘  Opus 4.5 · Claude Max
+  ▘▘ ▝▝    /…/synology/Adela/TRAP-WD-2020-04/trap-extraction
+══════════════════ Conversation compacted · ctrl+o for history ═════════════════
+  ⎿  Read README.md (439 lines)
+  ⎿  Read STANDARDS-COMPLIANCE.md (388 lines)
+  ⎿  Referenced file CHANGELOG.md
+  ⎿  Referenced file PROJECT-COMPLETION.md
+  ⎿  Read planning/akb-submission-todo.md (381 lines)
+  ⎿  Todo list read (8 items)
+
+● I'll complete the git commit now. Let me first check the current status
+  and then stage and commit all changes.
+
+● Bash(git status)
+  ⎿  On branch master                               
+     Your branch is up to date with 'origin/master'.
+     … +39 lines (ctrl+o to expand)
+
+● Now let me stage all changes and create the commit:
+
+● Bash(git add -A && git status --short)
+  ⎿  M  CHANGELOG.md               
+     M  PROJECT-COMPLETION.md
+     M  README.md
+     … +40 lines (ctrl+o to expand)
+
+● All changes staged. Now creating the commit:
+
+● Bash(git commit -m "chore: repository cleanup and documentation updates (25
+      Nov 2025)…)
+  ⎿ [master 4955501] chore: repository cleanup and documentation updates (2
+    5 Nov 2025)
+     26 files changed, 2578 insertions(+), 402 deletions(-)
+    … +35 lines (ctrl+o to expand)
+
+
+● Commit successful. Let me verify and update the task status:
+
+● Bash(git log -1 --oneline && git status)
+  ⎿ 4955501 chore: repository cleanup and documentation updates (25 Nov 202
+    5)
+    On branch master
+    … +4 lines (ctrl+o to expand)
+
+
+● Repository cleanup complete. All changes committed:
+
+  Commit 4955501: chore: repository cleanup and documentation updates (25
+  Nov 2025)
+
+  Summary of changes (26 files):
+
+  | Category          | Action
+                                                 |
+  |-------------------|-----------------------------------------------------
+  -----------------------------------------------|
+  | Planning docs     | 3 files → archive/planning/
+                                                 |
+  | Intermediate data | 14 files → archive/intermediate-data/
+                                                 |
+  | Documentation     | 5 files updated (README, PROJECT-COMPLETION,
+  CHANGELOG, STANDARDS-COMPLIANCE, akb-submission-todo) |
+  | Data              | Your manual corrections to attribution.csv and
+  name-mapping.csv                                    |
+  | CC logs           | Session transcript added
+                                                 |
+
+  Your branch is 1 commit ahead of origin/master. Ready to push when you're
+  comfortable.
+
+  ---
+  Next steps (from akb-submission-todo.md):
+  - Task 5: QA exercise (pending)
+  - Task 6: Package for secondary QA / Gemini 3 (pending)
+  - Task 9: Review and finalise Extraction_Notes (pending)
+  - Task 10: Create submission metadata (pending)
+
+  Would you like to discuss QA approaches now, or shall I push the commit
+  first?
+
+> please push 
+
+● Bash(git push)
+  ⎿  To github.com:saross/trap-extraction.git
+        82f2514..4955501  master -> master
+
+● Pushed to github.com:saross/trap-extraction.git (82f2514..4955501).
+
+  Repository is now up to date. Ready to discuss QA approaches when you are.
+
+> Great - can you review the structure of the archive/? Do you see any 
+opportunities to improve organisation? I think we've done OK with that, but 
+we haven't looked specifically at it for a whiel 
+
+● Bash(find /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRA
+      P-WD-2020-04/trap-extraction/archive -type f | head -100)
+  ⎿ /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-W
+    D-2020-04/trap-extraction/archive/repo-migration.md
+    /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-W
+    … +250 lines (ctrl+o to expand)
+
+
+
+● Bash(tree -d archive/ && echo "---" && tree archive/ | head -120)
+  ⎿  archive/                       
+     ├── backups
+     ├── cc-interactions
+     … +148 lines (ctrl+o to expand)
+
+● Bash(tree archive/ | tail -50)
+  ⎿  │   └── final_attribution_v2.csv    
+     ├── planning
+     │   ├── documentation-update-plan.md
+     … +47 lines (ctrl+o to expand)
+
+● Good review. Here's what I see:
+
+  Current structure (21 directories, 144 files):
+
+  archive/
+  ├── backups/                   # 3 recent backups (25 Nov)
+  ├── cc-interactions/           # 37 session transcripts ✓ well-organised
+  ├── diary-extraction/          # Methodology docs ✓
+  ├── intermediate-data/         # Working files + recent additions
+  │   ├── diary-extracts/
+  │   └── role-extractions/
+  ├── investigation-runsheets/   # ✓
+  ├── logs/                      # Script logs ✓
+  ├── name-disambiguation/       # Name mapping work
+  ├── outputs/                   # ⚠️ Confusing nested structure
+  │   ├── backups/              # 20 older backups (23 Nov)
+  │   └── documentation/
+  ├── planning/                  # Completed plans ✓
+  ├── project-summaries/         # ✓
+  ├── reports/                   # ✓ well-organised by phase
+  │   ├── extraction/
+  │   ├── final/
+  │   ├── phase1-extraction/
+  │   └── survey-unit-extraction/
+  └── supersession-project/      # ✓
+
+  Issues identified:
+
+  | Issue                      | Location
+    | Recommendation                                                   |
+  |----------------------------|--------------------------------------------
+  --|------------------------------------------------------------------|
+  | Duplicate backup locations | archive/backups/ vs
+  archive/outputs/backups/ | Consolidate all backups into archive/backups/
+                    |
+  | Confusing nested outputs/  | archive/outputs/
+    | Rename to archive/old-versions/ or merge into intermediate-data/ |
+  | Stale name-mapping.csv     |
+  archive/name-disambiguation/name-mapping.csv | Add note that authoritative
+   version is outputs/name-mapping.csv  |
+  | Loose file                 | archive/repo-migration.md
+    | Move to archive/project-summaries/                               |
+
+  What's working well:
+  - cc-interactions/ with date-letter naming
+  - reports/ hierarchy by project phase
+  - intermediate-data/ with logical subdirectories
+  - Most directories have README.md files
+
+  Would you like me to implement these consolidations, or is the current
+  structure acceptable given it's an archive?
+
+> Please do implement your recommendations, I want to make sure the archive 
+is legible. After reorganisation, please update all readmes that need it. 
+  ⎿ API Error: 529 {"type":"error","error":{"type":"overloaded_error","message":
+    "Overloaded"},"request_id":null}
+
+> Please do implement your recommendations, I want to make sure the archive 
+is legible. After reorganisation, please update all readmes that need it. 
+  ⎿ API Error: 529 {"type":"error","error":{"type":"overloaded_error","message":
+    "Overloaded"},"request_id":null}
+
+> Please do implement your recommendations, I want to make sure the archive 
+is legible. After reorganisation, please update all readmes that need it. 
+  ⎿ API Error: 529 {"type":"error","error":{"type":"overloaded_error","message":
+    "Overloaded"},"request_id":null}
+
+> Please do implement your recommendations, I want to make sure the archive 
+is legible. After reorganisation, please update all readmes that need it. 
+
+● Bash(ls -la archive/outputs/backups/)
+  ⎿  total 1168                                    
+     drwxrwxr-x 2 shawn shawn  4096 Nov 24 21:37 .
+     drwxrwxr-x 4 shawn shawn  4096 Nov 23 22:18 ..
+     … +39 lines (ctrl+o to expand)
+
+● Bash(mkdir -p archive/backups/20251122-20251124 && mv
+      archive/outputs/backups/* archive/backups/20251122-20251124/)
+  ⎿  (No content)
+
+● Bash(mkdir -p archive/backups/20251125 && mv
+      archive/backups/attribution.csv.backup_* archive/backups/20251125/)
+  ⎿  (No content)
+
+● Bash(tree archive/backups/ && rmdir archive/outputs/backups/)
+  ⎿  archive/backups/              
+     ├── 20251122-20251124
+     │   ├── attribution.csv.backup
+     … +27 lines (ctrl+o to expand)
+
+● Bash(tree archive/outputs/)
+  ⎿  archive/outputs/                  
+     ├── documentation
+     │   ├── manual-extraction-guide.md
+     … +6 lines (ctrl+o to expand)
+
+● Bash(mv archive/outputs archive/old-versions && tree archive/old-versions/)
+  ⎿  archive/old-versions/             
+     ├── documentation
+     │   ├── manual-extraction-guide.md
+     … +6 lines (ctrl+o to expand)
+
+● Bash(mv archive/repo-migration.md archive/project-summaries/)
+  ⎿  (No content)
+
+● Read(archive/name-disambiguation/README.md)
+  ⎿  Read 42 lines
+
+● Update(archive/name-disambiguation/README.md)
+  ⎿  Updated archive/name-disambiguation/README.md with 5 additions and 1 
+     removal
+        2    
+        3    **Completion Date:** 22 November 2025
+        4    **Project Completion:** 23 November 2025 (100% walker 
+            coverage achieved)
+        5 +  **Last Updated:** 25 November 2025
+        6    
+        7    This archive contains all work related to identifying, 
+            reviewing, and resolving ambiguous walker names in the 
+            attribution data.
+        8    
+        9    **Part of:** TRAP Attribution Extraction Project v1.0.0 (see
+             `../../PROJECT-COMPLETION.md`)
+       10    
+       11 +  > **⚠️ Important:** The `name-mapping.csv` file in this 
+          + directory is a **historical snapshot** from the initial 
+          + disambiguation phase (282 entries). The **authoritative 
+          + version** with all 698 mappings is located at 
+          + `outputs/name-mapping.csv` in the repository root.
+       12 +  
+       13    ## Project Summary
+       14    
+       15    - **Name variants identified:** Multiple forms of the same 
+            person's name across different sources
+       16    - **Ambiguous cases reviewed:** Names that could refer to 
+            different people
+       17    - **Status:** COMPLETED - All resolvable ambiguities 
+            addressed
+       18 +  - **Final coverage:** 698 name mappings in authoritative 
+          + file (25 Nov 2025)
+       19    
+       20    ## Files
+       21    
+       22    - `ambiguous-names-review.md` - Comprehensive review of 
+            ambiguous name cases
+       23    - `name-corrections-report.md` - Systematic name correction 
+            documentation
+       24 -  - `name-mapping.csv` - Canonical name mappings (282 entries)
+       24 +  - `name-mapping.csv` - **HISTORICAL** canonical 
+          +  name mappings (282 entries) - see note above
+       25    - `name-mapping-qa-report.md` - Quality assurance review of 
+            mappings
+       26    - `petra-disambiguation-report.md` - Specific analysis of 
+            "Petra" variants
+       27    
+
+● Update(archive/name-disambiguation/README.md)
+  ⎿  Updated archive/name-disambiguation/README.md with 3 additions and 2 
+     removals
+       41    
+       42    ## Related Files
+       43    
+       44 -  - Current mappings in use: `outputs/attribution.csv`
+       45 -  - Extraction guide: `outputs/manual-extraction-guide.md`
+       44 +  - **Authoritative name mappings:** 
+          + `outputs/name-mapping.csv` (698 entries)
+       45 +  - **Attribution data:** `outputs/attribution.csv`
+       46 +  - **Extraction guide:** `archive/old-versions/documentation/
+          + manual-extraction-guide.md`
+
+● Bash(find archive/ -name "README.md" -type f)
+  ⎿  archive/README.md                     
+     archive/supersession-project/README.md
+     archive/name-disambiguation/README.md
+     … +2 lines (ctrl+o to expand)
+
+● Read(archive/README.md)
+  ⎿  Read 167 lines
+
+● Write(archive/README.md)
+  ⎿  Updated archive/README.md with 96 additions and 116 removals        
+         1    # TRAP Attribution Extraction - Archive
+         2    
+         3    **Project Completion:** 23 November 2025
+         4 +  **Last Reorganised:** 25 November 2025
+         5    **Walker Data Coverage:** ✅ 100% Complete (268/268 
+             records)
+         6    
+         7    This directory contains completed work from the 
+             collaborative TRAP attribution data extraction project.
+         8    
+         9    ## Archive Structure
+        10    
+        11 -  ```
+        11 +  ```text
+        12    archive/
+        13 -  ├── cc-interactions/          # Exported Claude Code 
+           - conversation transcripts (15+ sessions)
+        14 -  ├── supersession-project/     # Source supersession review 
+           - and corrections (COMPLETED)
+        15 -  ├── name-disambiguation/      # Name variant analysis and 
+           - mappings (COMPLETED)
+        13 +  ├── backups/                  # Attribution.csv backups 
+           + organised by date
+        14 +  │   ├── 20251122-20251124/    # 20 backups from initial 
+           + extraction phases
+        15 +  │   └── 20251125/             # 3 backups from name 
+           + standardisation
+        16 +  ├── cc-interactions/          # 37 Claude Code session 
+           + transcripts (20-25 Nov)
+        17    ├── diary-extraction/         # Diary extraction planning 
+             documents (COMPLETED)
+        18 -  ├── project-summaries/        # Interim status reports and 
+           - tracking documents
+        19 -  ├── outputs/
+        20 -  │   ├── backups/              # 17 timestamped 
+           - attribution.csv backups
+        21 -  │   └── documentation/        # 2 historical documentation 
+           - files
+        22 -  └── reports/
+        23 -      ├── extraction/           # 5 extraction reports from 
+           - various phases
+        24 -      ├── final/                # 2 comprehensive final 
+           - reports
+        25 -      └── phase1-extraction/    # Initial extraction phase 
+           - documentation
+        18 +  ├── intermediate-data/        # Working data files from 
+           + extraction phases
+        19 +  │   ├── diary-extracts/       # 6 text extracts from team 
+           + diaries
+        20 +  │   └── role-extractions/     # 8 role extraction CSV files
+        21 +  ├── investigation-runsheets/  # Investigation tracking 
+           + documents
+        22 +  ├── logs/                     # Script execution logs (6 
+           + files)
+        23 +  ├── name-disambiguation/      # Name variant analysis and 
+           + mappings (COMPLETED)
+        24 +  ├── old-versions/             # Superseded output files and
+           +  documentation
+        25 +  │   └── documentation/        # Historical documentation 
+           + files
+        26 +  ├── planning/                 # Completed planning 
+           + documents
+        27 +  ├── project-summaries/        # Status reports and tracking
+           +  documents
+        28 +  ├── reports/                  # Analysis reports by project
+           +  phase
+        29 +  │   ├── extraction/           # 5 extraction reports
+        30 +  │   ├── final/                # 2 comprehensive final 
+           + reports
+        31 +  │   ├── phase1-extraction/    # Initial extraction 
+           + documentation
+        32 +  │   └── survey-unit-extraction/ # Survey unit extraction 
+           + work
+        33 +  └── supersession-project/     # Source supersession review 
+           + (COMPLETED)
+        34    ```
+        35    
+        36 -  ## Complete Archive Manifest
+        36 +  ## Directory Contents
+        37    
+        38 -  ```
+        39 -  archive/
+        40 -  ├── cc-interactions/                          # Claude Code
+           -  conversation exports
+        41 -  │   ├── 2025-11-20-a.txt                      # Initial 
+           - project conversations
+        42 -  │   ├── 2025-11-21-[a-f].txt                  # 21 Nov work
+           -  sessions (6 files)
+        43 -  │   ├── 2025-11-22-[a-c].txt                  # 22 Nov work
+           -  sessions (3 files)
+        44 -  │   └── 2025-11-23-[a-e].txt                  # 23 Nov work
+           -  sessions (5 files)
+        45 -  │
+        46 -  ├── supersession-project/                     # ✅ 
+           - COMPLETED (23 Nov 2025)
+        47 -  │   ├── README.md                             # Project 
+           - documentation and outcomes
+        48 -  │   ├── superseded-sources-comprehensive-review.md  # Main 
+           - project report
+        49 -  │   ├── elhovo-2010-team-b-diary-comparison.md     # 
+           - Initial Team B analysis
+        50 -  │   ├── team-b-supersession-report.md         # Detailed 
+           - Team B comparison
+        51 -  │   ├── team-b-diary-new-extraction.csv       # Team B 
+           - PRIMARY source data
+        52 -  │   ├── team-a-supersession-report.md         # Detailed 
+           - Team A comparison
+        53 -  │   └── team-a-diary-extraction.csv           # Team A 
+           - PRIMARY source data
+        54 -  │
+        55 -  ├── name-disambiguation/                      # ✅ 
+           - COMPLETED (Nov 2025)
+        56 -  │   ├── README.md                             # Project 
+           - documentation and outcomes
+        57 -  │   ├── ambiguous-names-review.md             # 
+           - Comprehensive ambiguity analysis
+        58 -  │   ├── name-corrections-report.md            # Systematic 
+           - correction documentation
+        59 -  │   ├── name-mapping.csv                      # Canonical 
+           - name mappings (282 entries)
+        60 -  │   ├── name-mapping-qa-report.md             # Quality 
+           - assurance review
+        61 -  │   └── petra-disambiguation-report.md        # "Petra" 
+           - variant analysis
+        62 -  │
+        63 -  ├── diary-extraction/                         # ✅ 
+           - COMPLETED (Nov 2025)
+        64 -  │   ├── README.md                             # Project 
+           - documentation
+        65 -  │   ├── diary-extraction-plan.md              # 
+           - Comprehensive extraction strategy
+        66 -  │   ├── diary-extraction-report.md            # Diary 
+           - availability and priorities
+        67 -  │   └── diary-search-results.md               # Catalogue 
+           - of available sources
+        68 -  │
+        69 -  ├── project-summaries/                        # Interim 
+           - status and tracking
+        70 -  │   ├── README.md                             # Section 
+           - documentation
+        71 -  │   ├── work-summary.md                       # Status 
+           - snapshot (21 Nov 2025)
+        72 -  │   ├── follow-up-actions.md                  # Outstanding
+           -  actions tracker
+        73 -  │   └── date-discrepancy-analysis.md          # Date 
+           - inconsistency analysis
+        74 -  │
+        75 -  ├── intermediate-data/                        # 
+           - Intermediate CSV files
+        76 -  │   ├── manual-extraction-work.csv            # Manual 
+           - extraction working file
+        77 -  │   ├── final_attribution_v2_cleaned.csv      # Cleaned v2 
+           - attribution
+        78 -  │   ├── missing_walkers.csv                   # Missing 
+           - walker records
+        79 -  │   ├── phase1_summary.csv                    # Phase 1 
+           - summary data
+        80 -  │   ├── phase2b_pdf_walkers.csv               # Phase 2b 
+           - PDF walker data
+        81 -  │   ├── phase2_roles.csv                      # Phase 2 
+           - role data
+        82 -  │   ├── phase3_cleaned.csv                    # Phase 3 
+           - cleaned data
+        83 -  │   └── team_c_2009_diary_parsed.csv          # Team C 2009
+           -  diary parsing
+        84 -  │
+        85 -  ├── outputs/                                  # Superseded 
+           - output files
+        86 -  │   ├── final_attribution.csv                 # Early 
+           - attribution version
+        87 -  │   ├── final_attribution_v2.csv              # Attribution
+           -  v2
+        88 -  │   └── final_attribution_v2_cleaned.ods      # LibreOffice
+           -  cleaned version
+        89 -  │
+        90 -  └── reports/                                  # Completed 
+           - analysis reports
+        91 -      ├── extraction-accuracy-report.md         # Accuracy 
+           - analysis
+        92 -      └── phase1-extraction/                    # Phase 1 
+           - extraction documentation
+        93 -          ├── extraction-summary-report.md      # Phase 1 
+           - summary
+        94 -          ├── narrative-cleanup-summary.md      # Narrative 
+           - cleanup work
+        95 -          ├── qa-validation-report.md           # QA 
+           - validation
+        96 -          ├── submission-checklist.md           # Submission 
+           - checklist
+        97 -          └── submission-readme.md              # Phase 1 
+           - submission readme
+        98 -  ```
+        38 +  ### backups/
+        39    
+        40 -  **Total archived files:** 49 files across 10 directories
+        40 +  Attribution.csv backups organised into dated 
+           + subdirectories:
+        41    
+        42 -  ## Archive Organisation Principles
+        42 +  - **20251122-20251124/** - 20 backups from initial 
+           + extraction phases
+        43 +    - Phase 1/2 baselines, date corrections, diary 
+           + extraction, leader standardisation
+        44 +  - **20251125/** - 3 backups from name standardisation work
+        45    
+        46 -  Files are archived when they represent:
+        47 -  1. **Completed projects/phases** - Work that has been 
+           - finished and verified
+        48 -  2. **Superseded outputs** - Files replaced by updated 
+           - versions
+        49 -  3. **Interim snapshots** - Status reports from specific 
+           - points in time
+        50 -  4. **Historical documentation** - Records of decisions and 
+           - analyses
+        46 +  ### cc-interactions/
+        47    
+        48 -  ## Current Working Files
+        48 +  37 Claude Code session transcripts documenting the entire 
+           + extraction project:
+        49    
+        50 -  The following files remain in `outputs/` as active working 
+           - documents:
+        51 -  - `attribution.csv` - Main attribution data (current 
+           - version)
+        52 -  - `manual-extraction-guide.md` - Extraction methodology 
+           - reference
+        53 -  - `source-inventory.md` - Source catalogue and status 
+           - tracker
+        54 -  - `submission-readme.md` - Current submission documentation
+        50 +  - `2025-11-20-a.txt` - Initial project setup
+        51 +  - `2025-11-21-[a-f].txt` - 6 sessions
+        52 +  - `2025-11-22-[a-c].txt` - 3 sessions
+        53 +  - `2025-11-23-[a-n].txt` - 14 sessions (100% coverage 
+           + achieved)
+        54 +  - `2025-11-24-[a-i].txt` - 9 sessions (survey unit 
+           + extraction)
+        55 +  - `2025-11-25-[a-d].txt` - 4 sessions (name 
+           + standardisation, cleanup)
+        56    
+        57 +  ### intermediate-data/
+        58 +  
+        59 +  Working data files from extraction phases:
+        60 +  
+        61 +  - **diary-extracts/** - 6 text files extracted from team 
+           + diaries (2009)
+        62 +  - **role-extractions/** - 8 CSV files from role extraction 
+           + work
+        63 +  - Various CSV files from extraction pipeline phases
+        64 +  
+        65 +  ### old-versions/
+        66 +  
+        67 +  Superseded output files replaced by current versions:
+        68 +  
+        69 +  - `final_attribution.csv`, `final_attribution_v2.csv` - 
+           + Earlier attribution versions
+        70 +  - `final_attribution_v2_cleaned.ods` - LibreOffice cleaned 
+           + version
+        71 +  - **documentation/** - Historical extraction guides
+        72 +  
+        73 +  ### planning/
+        74 +  
+        75 +  Completed planning documents:
+        76 +  
+        77 +  - `name-standardisation-plan.md` - Name standardisation 
+           + strategy (completed)
+        78 +  - `role-extraction-checklist.md` - Role extraction 
+           + checklist (completed)
+        79 +  - `leader-verification-plan.md` - Leader verification plan 
+           + (deferred to QA)
+        80 +  - `documentation-update-plan.md` - Documentation update 
+           + planning
+        81 +  
+        82 +  ### reports/
+        83 +  
+        84 +  Analysis reports organised by project phase:
+        85 +  
+        86 +  - **extraction/** - Season-specific extraction reports 
+           + (Kazanluk 2009/2010/2011, Elhovo 2009)
+        87 +  - **final/** - Comprehensive quality summary and resolution
+           +  report
+        88 +  - **phase1-extraction/** - Initial extraction phase 
+           + documentation
+        89 +  - **survey-unit-extraction/** - Survey unit extraction work
+           +  (24 Nov 2025)
+        90 +  
+        91    ## Major Completed Projects
+        92    
+        93    ### Supersession Project (23 November 2025)
+        94 -  - **Location:** `archive/supersession-project/`
+        95 -  - **Scope:** Systematic review and correction of 14 records
+           -  using PRIMARY sources
+        96 -  - **Status:** COMPLETED - All identified issues resolved
+        94 +  
+        95 +  - **Location:** `supersession-project/`
+        96 +  - **Scope:** Systematic review and correction using PRIMARY
+           +  diary sources
+        97 +  - **Status:** COMPLETED
+        98    - **See:** `supersession-project/README.md`
+        99    
+       100 -  ### Name Disambiguation (November 2025)
+       101 -  - **Location:** `archive/name-disambiguation/`
+       100 +  ### Name Disambiguation (22-25 November 2025)
+       101 +  
+       102 +  - **Location:** `name-disambiguation/`
+       103    - **Scope:** Review and resolution of ambiguous walker 
+             names
+       104 -  - **Status:** COMPLETED - 79% resolved, 21% documented for 
+           - review
+       104 +  - **Status:** COMPLETED - 698 mappings in authoritative 
+           + file
+       105 +  - **Note:** `name-mapping.csv` here is historical (282 
+           + entries); authoritative version at 
+           + `outputs/name-mapping.csv`
+       106    - **See:** `name-disambiguation/README.md`
+       107    
+       108    ### Diary Extraction Planning (November 2025)
+       109 -  - **Location:** `archive/diary-extraction/`
+       109 +  
+       110 +  - **Location:** `diary-extraction/`
+       111    - **Scope:** Planning framework for diary-based data 
+             extraction
+       112 -  - **Status:** COMPLETED - Foundation for supersession 
+           - project
+       112 +  - **Status:** COMPLETED
+       113    - **See:** `diary-extraction/README.md`
+       114    
+       115    ### Final Reports (23 November 2025)
+       116 -  - **Location:** `archive/reports/final/`
+       117 -  - **Scope:** Comprehensive data quality and extraction 
+           - resolution documentation
+       118 -  - **Status:** COMPLETED - Project conclusion documentation
+       116 +  
+       117 +  - **Location:** `reports/final/`
+       118    - **Key files:**
+       119      - `data-quality-summary.md` - Complete quality assessment
+              (100% walker coverage)
+       120      - `failed-extractions-resolution-report.md` - How all 
+             extraction gaps were resolved
+       121 -  - **Significance:** Documents achievement of 100% walker 
+           - data coverage and all quality improvements
+       121    
+       122 -  ### Attribution CSV Backups (20-23 November 2025)
+       123 -  - **Location:** `archive/outputs/backups/`
+       124 -  - **Scope:** 17 timestamped backups documenting extraction 
+           - progress
+       125 -  - **Status:** Archived - Preserved for provenance
+       126 -  - **Key backups:**
+       127 -    - Phase 1 baseline (76.1% coverage)
+       128 -    - Phase 2 improvements (139 leader standardisations)
+       129 -    - Date error corrections (2 corrections applied)
+       130 -    - Final state (100% coverage achieved)
+       122 +  ## Current Working Files
+       123    
+       124 +  Active files remain in repository root directories:
+       125 +  
+       126 +  - `outputs/attribution.csv` - Main attribution data (268 
+           + records)
+       127 +  - `outputs/name-mapping.csv` - Authoritative name mappings 
+           + (698 entries)
+       128 +  - `outputs/source-inventory.md` - Source catalogue
+       129 +  - `planning/akb-submission-todo.md` - AKB submission 
+           + checklist
+       130 +  - `planning/follow-up-actions.md` - Future work requiring 
+           + external evidence
+       131 +  
+       132    ## Archive Maintenance
+       133    
+       134    When archiving files:
+       135 +  
+       136    1. Create appropriate subdirectory with README.md 
+             explaining context
+       137    2. Document completion status and key outcomes
+       138    3. Reference related files still in active use
+       139    4. Update this top-level README with new archive sections
+       140    
+       141 -  ## Notes
+       142 -  
+       143 -  - 17 timestamped backups of `attribution.csv` archived in 
+           - `outputs/backups/`
+       144 -  - CC conversation exports are dated in format 
+           - `YYYY-MM-DD-[a-z].txt`
+       145 -  - Each archive subdirectory contains a README explaining 
+           - its contents
+       146 -  - Final reports in `reports/final/` document 100% walker 
+           - coverage achievement
+       147 -  
+       141    ---
+       142    
+       143 -  **Total archived files:** 70+ files across 10 
+           -  subdirectories
+       143 +  **Total archived files:** 144 files across 21 directories
+       144    **Project completion:** 23 November 2025
+       145 +  **Last updated:** 25 November 2025
+       146    **GitHub Repository:** 
+             https://github.com/saross/trap-extraction
+
+● Read(archive/project-summaries/README.md)
+  ⎿  Read 53 lines
+
+● Update(archive/project-summaries/README.md)
+  ⎿  Updated archive/project-summaries/README.md with 10 additions and 1   
+     removal
+       2    
+       3    **Date:** 21-23 November 2025
+       4    **Project Completion:** 23 November 2025 (100% walker 
+           coverage achieved)
+       5 +  **Last Updated:** 25 November 2025
+       6    
+       7    This archive contains interim project summaries, tracking 
+           documents, and analysis reports created during the attribution
+            extraction work. These documents represent **historical 
+           snapshots** from specific points in the extraction process.
+       8    
+     ...
+       10    ## Files
+       11    
+       12    ### Project Status Snapshots
+       13 +  
+       14    - `work-summary.md` - Collaborative work summary snapshot 
+            (21 November 2025)
+       15      - Shows project status at that point in time
+       16      - Coverage statistics: 269 records, 82.9% walker coverage,
+             etc.
+       17      - Now superseded by ongoing work
+       18    
+       19 +  - `repo-migration.md` - Repository migration notes
+       20 +    - Documents migration from original working directory to 
+          + GitHub
+       21 +    - Historical record of repository setup
+       22 +  
+       23    ### Tracking Documents
+       24 -  - `follow-up-actions.md` - Outstanding actions tracker
+       24 +  
+       25 +  - `follow-up-actions.md` - **HISTORICAL** Outstanding 
+          + actions tracker
+       26      - Documents Excel date correction (2010-03-08 → 
+            2010-04-08)
+       27      - Tracks cascading updates needed
+       28      - Historical record of identified issues
+       29 +    - **Note:** Current version at 
+          + `../../planning/follow-up-actions.md`
+       30    
+       31    ### Analysis Reports
+       32 +  
+       33    - `date-discrepancy-analysis.md` - Analysis of date 
+            inconsistencies
+       34      - Cross-reference checking between sources
+       35      - Documented findings and resolutions
+
+● Update(archive/project-summaries/README.md)
+  ⎿  Updated archive/project-summaries/README.md with 2 additions and 1    
+     removal
+       48    - See `../../PROJECT-COMPLETION.md` for complete final 
+            report
+       49    
+       50    ### Current Working Files:
+       51 +  
+       52    - `../../outputs/attribution.csv` - Final dataset (268 
+            records)
+       53 -  - `../../outputs
+          -  /follow-up-actions.md` - Outstanding enhancement tasks
+       53 +  - `../../planning
+          +  /follow-up-actions.md` - Outstanding enhancement tasks
+       54    - `../../outputs/source-inventory.md` - Complete source 
+            catalogue
+       55    
+       56    ## Notes
+
+● Update(archive/project-summaries/README.md)
+  ⎿  Updated archive/project-summaries/README.md with 2 additions and 1    
+     removal
+       56    ## Notes
+       57    
+       58    - **work-summary.md:** Snapshot from 21 November 2025 
+            (before supersession project)
+       59 -  - **follow-up-actions.md:** Historical version; current 
+          -  version in `../../outputs/`
+       59 +  - **follow-up-actions.md:** Historical version; current 
+          +  version in `../../planning/`
+       60 +  - **repo-migration.md:** Moved here from archive root (25 
+          + Nov 2025)
+       61    - **date-discrepancy-analysis.md:** Analysis that led to 2 
+            date error corrections:
+       62      - 2010-03-08 → 2010-04-08 (Kazanluk 2010, Team C)
+       63      - 2011-11-10 → 2011-10-21 (Kazanluk 2011, Team D)
+
+● Bash(for dir in archive/*/; do if [ ! -f "${dir}README.md" ]; then echo
+      "Missing: $dir"; fi; done)
+  ⎿  Missing: archive/backups/          
+     Missing: archive/cc-interactions/
+     Missing: archive/intermediate-data/
+     … +5 lines (ctrl+o to expand)
+
+● Write(archive/backups/README.md)
+  ⎿  Wrote 41 lines to archive/backups/README.md                           
+     # Attribution.csv Backups
+     **Last Updated:** 25 November 2025
+     Timestamped backups of `outputs/attribution.csv` created during the
+     extraction process. These preserve the state of the dataset at key
+     points for provenance documentation.
+     ## Organisation
+     Backups are organised into dated subdirectories:
+     … +31 lines (ctrl+o to expand)
+
+● Write(archive/intermediate-data/README.md)
+  ⎿  Wrote 38 lines to archive/intermediate-data/README.md                 
+     # Intermediate Data Files
+     **Last Updated:** 25 November 2025
+     Working data files generated during extraction pipeline phases. These
+     represent intermediate states between source documents and the final
+     `outputs/attribution.csv`.
+     ## Subdirectories
+     ### diary-extracts/
+     … +28 lines (ctrl+o to expand)
+
+● Write(archive/old-versions/README.md)
+  ⎿  Wrote 30 lines to archive/old-versions/README.md                      
+     # Old Versions
+     **Last Updated:** 25 November 2025
+     **Renamed from:** `archive/outputs/` (25 Nov 2025)
+     Superseded output files that have been replaced by current versions in
+     `outputs/`.
+     ## Files
+     ### Attribution Versions
+
+     … +20 lines (ctrl+o to expand)
+
+● Write(archive/planning/README.md)
+  ⎿  Wrote 30 lines to archive/planning/README.md                        
+     # Completed Planning Documents
+     **Last Updated:** 25 November 2025
+     Planning documents for completed extraction phases. These have been
+     archived after their associated tasks were finished.
+     ## Files
+     - `name-standardisation-plan.md` - Name standardisation strategy
+       - **Status:** COMPLETED (25 Nov 2025)
+     … +20 lines (ctrl+o to expand)
+
+● Write(archive/cc-interactions/README.md)
+  ⎿  Wrote 34 lines to archive/cc-interactions/README.md                   
+     # Claude Code Session Transcripts
+     **Last Updated:** 25 November 2025
+     Exported transcripts from Claude Code sessions documenting the entire
+     TRAP attribution extraction project.
+     ## Naming Convention
+     Files are named `YYYY-MM-DD-[letter].txt` where:
+     … +24 lines (ctrl+o to expand)
+
+● Write(archive/logs/README.md)
+  ⎿  Wrote 23 lines to archive/logs/README.md               
+     # Script Execution Logs
+     **Last Updated:** 25 November 2025
+     Log files from extraction script executions.
+     ## Files
+     - `consolidate_v2.log` - Consolidation script v2 output
+     - `consolidation.log` - Initial consolidation run
+     … +13 lines (ctrl+o to expand)
+
+● Write(archive/investigation-runsheets/README.md)
+  ⎿  Wrote 19 lines to archive/investigation-runsheets/README.md           
+     # Investigation Runsheets
+     **Last Updated:** 25 November 2025
+     Tracking documents for specific investigations into data issues.
+     ## Files
+     - `ambiguous-dates-investigation-runsheet.md` - Investigation of
+     ambiguous date entries
+     - `missing-dates-diary-investigation.md` - Investigation of missing
+     date coverage in diaries
+     … +9 lines (ctrl+o to expand)
+
+● Write(archive/reports/README.md)
+  ⎿  Wrote 48 lines to archive/reports/README.md                           
+     # Analysis Reports
+     **Last Updated:** 25 November 2025
+     Reports documenting extraction work, analysis, and outcomes organised
+     by project phase.
+     ## Subdirectories
+     ### extraction/
+     … +38 lines (ctrl+o to expand)
+
+● Bash(tree -d archive/ && echo "---" && find archive/ -name "README.md" | wc -l
+       && echo "README files")
+  ⎿  archive/                      
+     ├── backups
+     │   ├── 20251122-20251124
+     … +24 lines (ctrl+o to expand)
+
+● Bash(git status --short | head -40)
+  ⎿  M archive/README.md                                                   
+     D archive/backups/attribution.csv.backup_leader_role_standardisation_2
+    0251125_203516
+    … +53 lines (ctrl+o to expand)
+
+
+● Bash(git add -A && git status --short | wc -l && echo "files changed")
+  ⎿  40           
+     files changed
+
+● Bash(git commit -m "chore: reorganise archive structure for improved
+      legibility…)
+  ⎿ [master 5a5c6f3] chore: reorganise archive structure for improved legib
+    ility
+     40 files changed, 374 insertions(+), 393 deletions(-)
+    … +63 lines (ctrl+o to expand)
+
+
+● Bash(git push)
+  ⎿  To github.com:saross/trap-extraction.git
+        4955501..5a5c6f3  master -> master
+
+● Archive reorganisation complete and pushed.
+
+  Summary of changes:
+
+  | Change               | Details
+                  |
+  |----------------------|--------------------------------------------------
+  ----------------|
+  | Backup consolidation | 23 backups now in archive/backups/ with dated
+  subdirectories     |
+  | Renamed directory    | archive/outputs/ → archive/old-versions/
+                  |
+  | Moved file           | repo-migration.md → archive/project-summaries/
+                  |
+  | New READMEs          | 8 created (all directories now documented)
+                  |
+  | Updated READMEs      | 3 updated (main archive, name-disambiguation,
+  project-summaries) |
+
+  Final archive structure:
+
+  archive/
+  ├── backups/                  # 23 backups in dated subdirs
+  │   ├── 20251122-20251124/    # 20 backups
+  │   └── 20251125/             # 3 backups
+  ├── cc-interactions/          # 37 session transcripts
+  ├── diary-extraction/
+  ├── intermediate-data/
+  │   ├── diary-extracts/
+  │   └── role-extractions/
+  ├── investigation-runsheets/
+  ├── logs/
+  ├── name-disambiguation/
+  ├── old-versions/             # Renamed from outputs/
+  │   └── documentation/
+  ├── planning/
+  ├── project-summaries/
+  ├── reports/
+  │   ├── extraction/
+  │   ├── final/
+  │   ├── phase1-extraction/
+  │   └── survey-unit-extraction/
+  └── supersession-project/
+
+  22 directories, 13 README files
+
+  Ready to discuss QA approaches when you are.
+
+> /export archive/cc-interactions/2025-11-25-e.txt 
+  ⎿  Conversation exported to: archive/cc-interactions/2025-11-25-e.txt
+
+> ok, thank you, that's great. Now I'd like you to think about how we should
+ approach QA. You are familiar with the repo and can see the work we've 
+done. You have a prioritised guide to sources. Our principal output is 
+attribution.csv. We need to ensure that attribution.csv is (a) accurate and 
+(b) as complete as our sources allow. I'm excited about this opportunity to 
+undertake QA with you since - aside from the work you and I have done 
+together today - all the work was done by Sonnet, and with your superior 
+capabilities I am optimistic we can improve the quality of this data 
+extraction. I do, however, know there are mistakes - I just corrected three,
+ and often when I go follow up on a question I find an error. So, what I'd 
+like to do is to discuss with you (do not execute anything yet!) how to 
+approach QA. Consider this meta-planning; we need to decide how to break 
+down this large task into managable chunks that you can do with extreme 
+thoroughness, and how to document everything as we go along. I have a few 
+ideas, but I am unfamiliar with your specific capabilities, so I'll just 
+start by saying that I'd like the QA exercise to be repeatable, e.g., I'd 
+like to have the documentation and structure in place to give the task to, 
+say Gemini 3 as well as you. Otherwise, before I offer my thoughts on the 
+specifics of our approach, dDo you have initial thoughts? 
+
+● This is a great discussion to have. Let me share my initial thoughts on
+  the QA challenge and some considerations that might shape our approach.
+
+  Initial Observations
+
+  The nature of the data:
+  - 268 records across 3 years, 5 teams, heterogeneous source quality
+  - Multiple data types: dates, names (two scripts), unit numbers, free-text
+   notes
+  - Complex provenance chain: source document → extraction → standardisation
+   → final CSV
+
+  What "accurate" means here:
+  - Faithful to the best available source (not necessarily the first source
+  consulted)
+  - Correctly disambiguated (names resolved to right people)
+  - Properly formatted (dates, separators, controlled vocabularies)
+
+  What "complete" means:
+  - All extractable data captured
+  - Gaps documented with explanation (not just empty)
+  - No sources overlooked
+
+  Structural Considerations for Repeatability
+
+  For another LLM (or future auditor) to replicate this, we'd need:
+
+  1. Explicit methodology document - What checks to perform, in what order,
+  with what thresholds
+  2. Test specifications - Concrete examples of "pass" vs "fail" for each
+  check type
+  3. Sampling protocol - If spot-checking sources, how to select samples
+  (stratified by year/team? random? risk-based?)
+  4. Error taxonomy - Classification scheme for issues found (typo, wrong
+  source used, extraction missed data, etc.)
+  5. Reporting template - Standardised format for findings
+
+  Potential QA Dimensions
+
+  | Dimension                  | Description
+                        | Checkable by script?         |
+  |----------------------------|--------------------------------------------
+  ----------------------|------------------------------|
+  | Syntactic validity         | Dates valid, team codes in {A,B,C,D,E},
+  names formatted          | Yes                          |
+  | Internal consistency       | Leader ∈ Walkers, unit sequences logical,
+  no duplicate date/team | Yes                          |
+  | Cross-source verification  | Does CSV match what's in the
+  diary/Excel/PDF?                    | No - requires source reading |
+  | Completeness of extraction | Did we capture everything available?
+                        | No - requires source reading |
+  | Name accuracy              | Are names spelled correctly, attributed to
+  right person?         | Partially                    |
+
+  My Limitations to Be Honest About
+
+  - I cannot read the original .docx/.xlsx/.pdf files directly; I rely on
+  text extractions or what you show me
+  - My context window, while large, cannot hold the full attribution.csv
+  plus all source documents simultaneously
+  - For true source verification, we'll need to work through cases together,
+   or I'll need extracted text to compare against
+
+  Questions That Would Shape the Approach
+
+  1. What's our error tolerance? Zero tolerance (every record checked) vs
+  statistical confidence (sample-based)?
+  2. What's the highest-risk area? You mentioned finding errors when
+  following up - is there a pattern (certain teams, seasons, field types)?
+  3. What sources can I access independently? I can work with CSV files,
+  text extracts, and markdown documentation. For Word/Excel/PDF
+  verification, we'd need a workflow.
+  4. How do we handle disputes? If I flag something as potentially wrong,
+  what's the adjudication process?
+
+  ---
+  Those are my initial thoughts. I'm genuinely curious about your ideas,
+  particularly around:
+  - How you envision the chunking (by record, by field, by source type?)
+  - Whether you want scripted checks vs manual review vs combination
+  - What documentation format would work for handoff to Gemini
+
+  What's your thinking?
+
+> Your thoughts mirror mine. I'm particularly interested in:\
+\
+  | Cross-source verification  | Does CSV match what's in the 
+diary/Excel/PDF?                    | No - requires source reading |
+  | Completeness of extraction | Did we capture everything available?       
+                      | No - requires source reading |\
+\
+Regarding your ability to read the documents, I believe you have some skills
+ available to help with DOCX and PDF files, and you've been using antiword 
+and pandoc to read them. \
+\
+Regarding your context window (and, more broadly, focus and attention), I'd 
+propose subdividing the material sufficiently (perhaps by season + team) 
+that you can thoroughly check that chunk against a prioritised list of 
+sources. Or, considering your ability to loop through tasks and the fact 
+that we are not time-constrained, you could even take records one-by-one and
+ check them; you could likely hold all relevant documents in context for 
+that. I'll follow your guidance on chunk granularity, since you know your 
+capabilities best. \
+\
+I will of course be happy to work with you, but I note that your NLP and 
+vision capabilities have proven extremely effective at reading and 
+interpreting the range of source materials we have.\\
+\
+I note that we could, if helpful, develop a skill to support this work. \
+\
+With only 200-300 records, we should check every record. I'd like to submit 
+an accurate dataset, plus this will be very good experience for further work
+ we need to do together to prepare the actual data for publication. The 
+errors I've seen recently are simply the wrong names applied to roles in 
+particular records. Regarding sources, you have successfully extracted text 
+yourself fro DOC, DOCX, XLSX, and non-OCRed PDFs. We'll want to clearly 
+articulate source prioritisation, cross-checking protocols, and conflict 
+resolution. For disputes, what I will need is a report / run sheet from you 
+to facilitate my review. This report should list the error, relevant source 
+documents, evidence for the error plus your reasoning around that evidence, 
+and a simple form for me to respond - we should practice a few in chat to 
+work out a good template. 
+
+● Excellent. This is crystallising into a concrete plan. Let me synthesise
+  and propose a structure.
+
+  Proposed Approach
+
+  Granularity: Season + Team Chunks
+
+  Given the record distribution:
+
+  | Season      | Teams         | Records | Chunks    |
+  |-------------|---------------|---------|-----------|
+  | 2009 Spring | A, B, C, D, E | 63      | 5         |
+  | 2009 Autumn | A, B, C       | 11      | 3         |
+  | 2010 Spring | A, B, C, D    | 46      | 4         |
+  | 2010 Autumn | A, B          | 19      | 2         |
+  | 2011 Autumn | A, B, C, D    | 129     | 4         |
+  | Total       |               | 268     | 18 chunks |
+
+  Each chunk would be ~6-30 records with 1-3 primary source documents. This
+  feels right: large enough to see patterns, small enough to hold in context
+   with sources.
+
+  Source Priority Hierarchy
+
+  I should formalise this from what I understand (please correct):
+
+  1. PRIMARY: Team diaries (English preferred, Bulgarian where English
+  unavailable)
+    - Note: "Team B Diary new.docx" supersedes older Team B diaries for 2010
+  2. SECONDARY: Excel survey summaries (Kaz09/10/11_SurveySummary)
+  3. TERTIARY: PDF summary forms (A/B/C/D_2011Summary.pdf)
+  4. QUATERNARY: Scanned field forms (last resort)
+
+  QA Workflow Per Chunk
+
+  1. Extract relevant records from attribution.csv
+  2. Extract text from primary source document(s)
+  3. For each record:
+     a. Locate corresponding entry in source
+     b. Compare each field: Date, Team, Leader, Walkers, Units, Roles
+     c. Document status: CONFIRMED / DISCREPANCY / SOURCE GAP
+     d. For discrepancies: Record evidence and reasoning
+  4. Produce runsheet for user review
+
+  Runsheet Template (Draft)
+
+  I'm thinking something like this for each flagged issue:
+
+  ## QA Issue: [Date] Team [X] - [Field Name]
+
+  **Record ID:** 2011-10-15, Team B
+  **Field:** Paper_Recorder
+  **Current value:** Илиян Боянов
+  **Source consulted:** B_2011Diary_En.docx (PRIMARY)
+  **Source excerpt:** "15 October: Paper - Ilian, PDA - Nadia..."
+  **Expected value:** Ilian Boyanov (or Илиян Боянов if keeping Cyrillic)
+
+  ### Status: DISCREPANCY - Minor (transliteration)
+
+  ### Evidence
+  The diary clearly states "Paper - Ilian" for this date. Current CSV has 
+  Bulgarian spelling. Should use standardised English form per 
+  name-mapping.csv.
+
+  ### Recommended Action
+  Change `Paper_Recorder` from "Илиян Боянов" to "Ilian Boyanov"
+
+  ---
+  **User Decision:** [ ] Accept / [ ] Reject / [ ] Modify
+  **Notes:** _________________________________
+
+  Pilot Proposal
+
+  Before we systematise this:
+
+  1. Pick a small chunk - Perhaps 2009 Autumn Team A (likely 3-4 records) or
+   similar
+  2. I'll work through it fully - Extract sources, check every field,
+  produce runsheet
+  3. You review - Tell me what works, what's missing, what format changes
+  would help
+  4. Refine template - Iterate on the runsheet format
+  5. Then systematise - Document methodology, potentially create skill,
+  proceed through all chunks
+
+  Questions Before We Start
+
+  1. Does the source priority hierarchy above match your understanding? Are
+  there exceptions I should know about?
+  2. What's in outputs/source-inventory.md? I should read this to ensure I
+  have the full picture.
+  3. For the pilot, which chunk would you like to start with? I'd suggest
+  something small but representative - perhaps a 2009 Autumn team or 2010
+  Autumn team.
+  4. Regarding the skill: I think we should pilot first, then decide if a
+  skill would help codify the workflow. Does that sound right?
+
+  Shall I read the source-inventory.md now, and then we can select a pilot
+  chunk?
+
+> Great! this conversation *is* really helping. Regarding prioritisation:\
+\
+  I should formalise this from what I understand (please correct):
+
+  1. PRIMARY: Team diaries (English preferred, Bulgarian where English 
+unavailable)
+    - Note: "Team B Diary new.docx" supersedes older Team B diaries for 2010
+  2. SECONDARY: Excel survey summaries (Kaz09/10/11_SurveySummary)
+  3. TERTIARY: PDF summary forms (A/B/C/D_2011Summary.pdf)
+  4. QUATERNARY: Scanned field forms (last resort)\
+\
+#3 *is* a scanned, handwritten form, but I *think* the distinction you are 
+making is between the scanned summary forms and the scanned survey unit 
+recording forms. Excel survey summaries were, initially, the *primary* 
+source that we used to construct attribution.csv; I do not think you need to
+ consult them again unless we find ourselves with conflicting or ambiguous 
+information.\
+\
+In my experience so far, however, I've found the PDF summary forms to be 
+more accurate and complete than the diaries for *basic* informaton like 
+survey unit numbers and walker names. The problem is that they are often 
+hard to read, and have to be cross-referenced with the diaries to figure out
+ names (and sometimes the numbers). They also contain occassional minor 
+errors like dates written in survey unit number boxes and vice versa (etc). 
+So they are troublesome to use, but take precedence when they conflict with 
+a diary. For *role* information, you've got to use the diaries, they are the
+ only source. Honestly, in many (most?) cases, to have confidence in the 
+results we simply *must look at both the daily summary forms and the 
+(primary, at least) diaries together*. Regarding run sheets, please always 
+include study area and year (e.g., Kazanlak 2009) to help me with rapid 
+navigation, and provide English translation / transliteration (but also the 
+original cyrillic). For user decision, 'accept' and 'modify' have proven to 
+be enough - I generally can't just reject without giving you instructions 
+about what to do instead. \
+\
+yes, read source-inventory, it has a lot of valuable information about how 
+to choose which source to read for what, noting that I've gradually changed 
+my mind about the prioritisation of the scanned daily summaries (as higher 
+than the diaries for basic info). Let's pilot first before investing in a 
+skill or other scaffolding. Pick a season that isn't the first 2009 Kazanlak
+ season, any of the others should do. 
+
+● Read(outputs/source-inventory.md)
+  ⎿  Read 395 lines
+
+● This is extremely helpful. Let me update my understanding based on both
+  your feedback and the source-inventory.
+
+  Revised Source Priority Understanding
+
+  For basic information (walker names, survey units):
+  1. PDF summary forms (Tier 3) - More accurate/complete for basic data,
+  but:
+    - Hard to read (handwritten)
+    - Occasional errors (dates in wrong boxes, etc.)
+    - Need cross-referencing with diaries for name verification
+  2. Diaries (Tier 2) - Used alongside PDFs for name interpretation and
+  verification
+
+  For role information (PDA, GPS, Forms):
+  - Diaries only - PDFs don't contain role data
+
+  In practice: Look at BOTH PDF summaries and diaries together for
+  confidence.
+
+  Excel SurveySummary (Tier 1): Already used for initial construction;
+  consult only for conflicts/ambiguity.
+
+  Key nuances from source-inventory:
+  - PRIMARY/SECONDARY varies by team (e.g., Kaz 2010 Team B has EN as
+  PRIMARY - reverses usual BG pattern)
+  - "Finalized" subdirectories contain curated versions (PRIMARY) vs "Scans"
+   (SECONDARY)
+  - Some teams have only BG diaries (need transliteration)
+  - Some teams missing PDF scans entirely (ELH 2009, KAZ 2011 Teams A & D)
+
+  Pilot Selection
+
+  I'd propose Kazanlak 2010 Autumn (October-November):
+  - 19 records across 2 teams (A, B)
+  - Has both PDF summaries and diaries
+  - Team B has the interesting EN-as-PRIMARY pattern
+  - Small enough to be thorough, large enough to see patterns
+
+  Alternatively, Kazanlak 2009 Autumn has only 11 records across 3 teams -
+  even smaller.
+
+  Proposed Pilot Workflow
+
+  1. Extract records from attribution.csv for the pilot chunk
+  2. Extract text from relevant diary/diaries
+  3. Read relevant PDF summary (using vision capabilities if needed)
+  4. For each record:
+    - Locate in PDF summary → verify Date, Team, Walker names, Units
+    - Locate in diary → verify Date, Team, Walkers, Roles (if any)
+    - Compare CSV values against sources
+    - Document findings in runsheet format
+  5. Review runsheet with you → iterate on format
+
+  Runsheet Format (Revised)
+
+  ## QA Issue: Kazanlak 2010 Autumn - 2010-10-23 Team B - Paper_Recorder
+
+  **Study Area/Season:** Kazanlak 2010 Autumn
+  **Record:** 2010-10-23, Team B
+  **Field:** Paper_Recorder
+
+  **Current CSV value:** Илиян Боянов
+  **Sources consulted:**
+  1. B_2010Summary.pdf (page 3) - PRIMARY for basic info
+  2. B_2010Diary_En.doc - PRIMARY for roles
+
+  **Source evidence:**
+  - PDF summary (p.3): [excerpt or description]
+  - Diary entry for 23 Oct: "Paper - Ilian, PDA - Nadia..."
+
+  **Finding:** DISCREPANCY
+  **Recommended value:** Ilian Boyanov (English: Ilian Boyanov / Cyrillic: 
+  Илиян Боянов)
+
+  **Reasoning:**
+  [Explanation of why the current value is incorrect and the recommended 
+  value is correct]
+
+  ---
+  **User Decision:** [ ] Accept / [ ] Modify: _______________
+
+  Shall I begin the pilot with Kazanlak 2010 Autumn? If so, I'll:
+  1. Extract the 19 records for that period
+  2. Identify and read the source documents
+  3. Work through records systematically and produce a runsheet
+
+> /export archive/cc-interactions/2025-11-25-f.txt 
+  ⎿  Conversation exported to: archive/cc-interactions/2025-11-25-f.txt
+
+> Why don't you develop a formal plan for Kaz 2010 Autumn? I often find this
+ step helps now that we've finished investigating. 
+
+● Reading Plan(~/.claude/plans/distributed-seeking-emerson.md)
+  ⎿  Read 264 lines
+
+● That's a good idea. The existing plan is for the repository cleanup we
+  already completed. Let me gather the specifics for the QA pilot and write
+  a new plan.
+
+● Bash(head -1 outputs/attribution.csv && grep "2010-10\|2010-11"
+      outputs/attribution.csv | head -30)
+  ⎿ Date,Team,Start Unit,End Unit,Leader,Walkers_Original,Walkers_Standardi
+    sed,PDA_Operator,Paper_Recorder,Data_Editor,GPS_Operator,Photographer,A
+    uthor,XLS_Source,PDF_Source,Extraction_Notes,QA_Notes
+    … +81 lines (ctrl+o to expand)
+
+
+
+● Bash(grep "2010-10\|2010-11" outputs/attribution.csv | wc -l && echo "---" &&
+      grep "2010-10\|2010-11" outputs/attribution.csv | cut -d',' -f1,2,14 |
+      sort)
+  ⎿  14                                  
+     ---
+     2010-10-22,A,Yam10_SurveySummary.xls
+     … +13 lines (ctrl+o to expand)
+
+● I see 14 records (Teams A and B), and the XLS source indicates this is
+  actually Elhovo 2010 (Yam10). Let me verify the source files exist and
+  then write the plan.
+
+● Bash(ls -la "/media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/
+      TRAP-WD-2020-04/Elhovo 2010-12-12/2010/Project Records/Team A/"
+      2>/dev/null | head -10)
+  ⎿  total 44                                     
+     drwxr-x--- 4 shawn 1003  4096 Nov 23 06:32 .
+     drwxr-x--- 7 shawn 1003  4096 Aug 31  2013 ..
+     … +3 lines (ctrl+o to expand)
+
+● Bash(ls -la "/media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/
+      TRAP-WD-2020-04/Elhovo 2010-12-12/2010/Project Records/Team B/"
+      2>/dev/null | head -10)
+  ⎿  total 132                                    
+     drwxr-x--- 4 shawn 1003  4096 Nov 25 16:52 .
+     drwxr-x--- 7 shawn 1003  4096 Aug 31  2013 ..
+     … +7 lines (ctrl+o to expand)
+
+● Bash(ls "/media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP
+      -WD-2020-04/Elhovo 2010-12-12/2010/Project Records/Team A/Field Records/"
+      2>/dev/null |…)
+  ⎿  20101022.pdf                 
+     20101023.pdf
+     20101024.pdf
+     … +5 lines (ctrl+o to expand)
+
+● Bash(ls "/media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP
+      -WD-2020-04/Elhovo 2010-12-12/2010/Project Records/Team B/Field Records/"
+      2>/dev/null |…)
+  ⎿  20101102.pdf                  
+     20101103.pdf
+     20101104.pdf
+     … +12 lines (ctrl+o to expand)
+
+● All sources confirmed. Now let me write the formal plan.
+
+● Updated plan
+  ⎿  /plan to preview · ~/.claude/plans/distributed-seeking-emerson.md
+
+● I've written a comprehensive plan for the QA pilot. One clarification: the
+   records we discussed (Oct-Nov 2010) are actually Elhovo 2010 (per the
+  Yam10_SurveySummary.xls source), not Kazanlak. This is fine since you said
+   "any season that isn't 2009 Kazanlak Spring."
+
+  The plan covers:
+  - 14 records (5 Team A, 9 Team B)
+  - Source documents identified with locations
+  - Priority rules (PDFs for basic info, diaries for roles, both together
+  for confidence)
+  - Runsheet template with study area/season, evidence, reasoning, and
+  Accept/Modify decisions
+  - Phased execution with template refinement after Team A
+
+  If this looks right, I'm ready to begin execution.
+  ⎿  User rejected Claude's plan:
+     ╭─────────────────────────────────────────────────────────────────────────╮
+     │ QA Pilot Plan: Elhovo 2010 Autumn                                       │
+     │                                                                         │
+     │ Date: 25 November 2025                                                  │
+     │ Status: Ready for execution                                             │
+     │ Objective: Cross-source verification of 14 attribution records to       │
+     │ validate accuracy and completeness                                      │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Pilot Scope                                                             │
+     │                                                                         │
+     │ Records                                                                 │
+     │                                                                         │
+     │ 14 records from Elhovo 2010 Autumn (October-November 2010):             │
+     │                                                                         │
+     │ | Team | Records | Dates              |                                 │
+     │ |------|---------|--------------------|                                 │
+     │ | A    | 5       | 22-24 Oct, 2-3 Nov |                                 │
+     │ | B    | 9       | 2-6 Nov, 11-15 Nov |                                 │
+     │                                                                         │
+     │ Purpose                                                                 │
+     │                                                                         │
+     │ 1. Validate QA methodology before applying to full dataset (268 records)│
+     │ 2. Develop runsheet template through iterative refinement               │
+     │ 3. Establish source cross-referencing protocols                         │
+     │ 4. Create repeatable documentation for future QA (e.g., by Gemini)      │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Source Documents                                                        │
+     │                                                                         │
+     │ Team A                                                                  │
+     │                                                                         │
+     │ | Type                 | File                   | Location              │
+     │                          | Role                   |                     │
+     │ |----------------------|------------------------|-----------------------│
+     │ -------------------------|------------------------|                     │
+     │ | Diary                | A_Diary.docx           | Elhovo                │
+     │ 2010-12-12/2010/Project Records/Team A/ | PRIMARY for roles      |      │
+     │ | Daily Progress Forms | Day_03.pdf, Day_05.pdf | Team A/Field Records/ │
+     │                          | PRIMARY for basic info |                     │
+     │                                                                         │
+     │ Team B                                                                  │
+     │                                                                         │
+     │ | Type                 | File                                           │
+     │             | Location                                       | Role     │
+     │                                |                                        │
+     │ |----------------------|------------------------------------------------│
+     │ ------------|------------------------------------------------|----------│
+     │ -------------------------------|                                        │
+     │ | Diary                | Team B Diary new.docx                          │
+     │             | Elhovo 2010-12-12/2010/Project Records/Team B/ | PRIMARY  │
+     │ (March 2011 corrected)          |                                       │
+     │ | Diary                | Team B Diary.docx                              │
+     │             | Same                                           | SECONDARY│
+     │  (December 2010 field version) |                                        │
+     │ | Daily Progress Forms | Day_02.pdf, Day_04.pdf, Day_06.pdf, Day_08.pdf,│
+     │  Day_12.pdf | Team B/Field Records/                          | PRIMARY  │
+     │ for basic info                  |                                       │
+     │                                                                         │
+     │ Note on PDF Dates                                                       │
+     │                                                                         │
+     │ The Day_XX.pdf files contain dates within their content (mostly         │
+     │ legible), so date correlation can be read directly from the forms rather│
+     │  than requiring external mapping.                                       │
+     │                                                                         │
+     │ Base Path                                                               │
+     │                                                                         │
+     │ /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD│
+     │ -2020-04/                                                               │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Source Priority Rules                                                   │
+     │                                                                         │
+     │ For Basic Information (Walkers, Units, Dates)                           │
+     │                                                                         │
+     │ 1. PDF daily summary forms - More accurate for basic data               │
+     │ 2. Diaries - Cross-reference for name interpretation                    │
+     │ 3. Both together for confidence                                         │
+     │                                                                         │
+     │ For Role Information (PDA, GPS, Paper, etc.)                            │
+     │                                                                         │
+     │ 1. Diaries only - PDFs don't contain role data                          │
+     │                                                                         │
+     │ Conflict Resolution                                                     │
+     │                                                                         │
+     │ - PDF summary forms take precedence for basic info when conflicting with│
+     │  diaries                                                                │
+     │ - Document conflicts in runsheet with evidence from both sources        │
+     │ - Flag for user decision if ambiguous                                   │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Rules & Heuristics                                                      │
+     │                                                                         │
+     │ Logical constraints that govern the data and help with                  │
+     │ validation/disambiguation. This list will grow as we discover more      │
+     │ during QA.                                                              │
+     │                                                                         │
+     │ Rules (Must Be True)                                                    │
+     │                                                                         │
+     │ | Rule                 | Description                                    │
+     │                                                                         │
+     │      | Use                                                              │
+     │             |                                                           │
+     │ |----------------------|------------------------------------------------│
+     │ ------------------------------------------------------------------------│
+     │ -----|------------------------------------------------------------------│
+     │ ------------|                                                           │
+     │ | R1: Roles ⊆ Walkers  | All role holders (Leader, PDA_Operator,        │
+     │ Paper_Recorder, GPS_Operator, Photographer, Author) must appear in the  │
+     │ Walkers list | Validation check; if a role holder isn't a walker, one or│
+     │  the other is wrong |                                                   │
+     │ | R2: Leader ∈ Walkers | The team leader must be included in the walker │
+     │ list                                                                    │
+     │      | Validation check (special case of R1)                            │
+     │             |                                                           │
+     │                                                                         │
+     │ Heuristics (Usually True, Helpful for Disambiguation)                   │
+     │                                                                         │
+     │ | Heuristic            | Description                                    │
+     │              | Use                                                      │
+     │                                   |                                     │
+     │ |----------------------|------------------------------------------------│
+     │ -------------|----------------------------------------------------------│
+     │ ----------------------------------|                                     │
+     │ | H1: Team stability   | Teams are generally stable over a season (but  │
+     │ not entirely) | If a name is illegible, check nearby days for the same  │
+     │ team to complete the walker list    |                                   │
+     │ | H2: One team per day | A walker is typically on only one team per day │
+     │              | If unsure which team someone was on, check that they     │
+     │ don't appear on another team that day |                                 │
+     │                                                                         │
+     │ Discovered During QA                                                    │
+     │                                                                         │
+     │ (Add new rules/heuristics here as they emerge)                          │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Verification Workflow                                                   │
+     │                                                                         │
+     │ Per-Record Process                                                      │
+     │                                                                         │
+     │ 1. EXTRACT record from attribution.csv                                  │
+     │ 2. LOCATE corresponding PDF daily form                                  │
+     │    - Read/transcribe walker names, units, date                          │
+     │ 3. LOCATE corresponding diary entry                                     │
+     │    - Read walker list, roles, any notes                                 │
+     │ 4. COMPARE CSV fields against sources:                                  │
+     │    - Date: CONFIRMED / DISCREPANCY                                      │
+     │    - Team: CONFIRMED / DISCREPANCY                                      │
+     │    - Start Unit: CONFIRMED / DISCREPANCY / SOURCE GAP                   │
+     │    - End Unit: CONFIRMED / DISCREPANCY / SOURCE GAP                     │
+     │    - Leader: CONFIRMED / DISCREPANCY                                    │
+     │    - Walkers: CONFIRMED / DISCREPANCY / PARTIAL                         │
+     │    - Roles (PDA, Paper, GPS, etc.): CONFIRMED / DISCREPANCY / SOURCE GAP│
+     │ 5. APPLY RULE CHECKS:                                                   │
+     │    - R1: Are all role holders in the Walkers list?                      │
+     │    - R2: Is the Leader in the Walkers list?                             │
+     │ 6. APPLY HEURISTICS if disambiguation needed:                           │
+     │    - H1: Check nearby days for team composition                         │
+     │    - H2: Verify walker isn't on multiple teams same day                 │
+     │ 7. DOCUMENT findings in runsheet                                        │
+     │ 8. FLAG issues requiring user review                                    │
+     │                                                                         │
+     │ Chunking Strategy                                                       │
+     │                                                                         │
+     │ Process by team within season:                                          │
+     │ 1. Team A (5 records) - Complete before moving to Team B                │
+     │ 2. Team B (9 records) - Complete and produce final runsheet             │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Runsheet Template                                                       │
+     │                                                                         │
+     │ Format for Each Issue Found                                             │
+     │                                                                         │
+     │ ## QA Issue: Elhovo 2010 Autumn - [DATE] Team [X] - [FIELD]             │
+     │                                                                         │
+     │ **Study Area/Season:** Elhovo 2010 Autumn                               │
+     │ **Record:** [DATE], Team [TEAM]                                         │
+     │ **Field:** [FIELD_NAME]                                                 │
+     │                                                                         │
+     │ **Current CSV value:** [value]                                          │
+     │ **Sources consulted:**                                                  │
+     │ 1. [PDF filename] - [page/section if applicable]                        │
+     │ 2. [Diary filename] - [date entry]                                      │
+     │                                                                         │
+     │ **Source evidence:**                                                    │
+     │ - PDF: "[excerpt or description]"                                       │
+     │ - Diary: "[excerpt or description]"                                     │
+     │                                                                         │
+     │ **Finding:** [DISCREPANCY / CONFIRMED / SOURCE GAP]                     │
+     │ **Recommended value:**                                                  │
+     │ - English: [recommended value]                                          │
+     │ - Cyrillic: [if applicable]                                             │
+     │                                                                         │
+     │ **Reasoning:**                                                          │
+     │ [Explanation of evidence and why change is recommended]                 │
+     │                                                                         │
+     │ ---                                                                     │
+     │ **User Decision:** [ ] Accept / [ ] Modify: _______________             │
+     │                                                                         │
+     │ Summary Section (End of Runsheet)                                       │
+     │                                                                         │
+     │ ## Summary: Elhovo 2010 Autumn QA                                       │
+     │                                                                         │
+     │ | Metric | Count |                                                      │
+     │ |--------|-------|                                                      │
+     │ | Records checked | 14 |                                                │
+     │ | Fields verified | [count] |                                           │
+     │ | Issues found | [count] |                                              │
+     │ | Recommended corrections | [count] |                                   │
+     │ | Source gaps documented | [count] |                                    │
+     │                                                                         │
+     │ ### Issues by Category                                                  │
+     │ - Name errors: [count]                                                  │
+     │ - Unit errors: [count]                                                  │
+     │ - Role errors: [count]                                                  │
+     │ - Other: [count]                                                        │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Execution Plan                                                          │
+     │                                                                         │
+     │ Phase 1: Team A (5 records)                                             │
+     │                                                                         │
+     │ | Step | Action                                            |            │
+     │ |------|---------------------------------------------------|            │
+     │ | 1.1  | Extract text from A_Diary.docx                    |            │
+     │ | 1.2  | Read PDF forms (20101022-24.pdf, 20101102-03.pdf) |            │
+     │ | 1.3  | For each of 5 records: compare CSV vs sources     |            │
+     │ | 1.4  | Document findings in runsheet draft               |            │
+     │ | 1.5  | Present to user for template feedback             |            │
+     │                                                                         │
+     │ Phase 2: Refine Template                                                │
+     │                                                                         │
+     │ Based on user feedback from Phase 1:                                    │
+     │ - Adjust runsheet format as needed                                      │
+     │ - Clarify any ambiguous protocols                                       │
+     │ - Confirm conflict resolution approach                                  │
+     │                                                                         │
+     │ Phase 3: Team B (9 records)                                             │
+     │                                                                         │
+     │ | Step | Action                                        |                │
+     │ |------|-----------------------------------------------|                │
+     │ | 3.1  | Extract text from Team B Diary new.docx       |                │
+     │ | 3.2  | Read PDF forms (20101102-15.pdf)              |                │
+     │ | 3.3  | For each of 9 records: compare CSV vs sources |                │
+     │ | 3.4  | Document findings using refined template      |                │
+     │                                                                         │
+     │ Phase 4: Produce Final Runsheet                                         │
+     │                                                                         │
+     │ - Compile all findings into single QA runsheet document                 │
+     │ - Include summary statistics                                            │
+     │ - Present to user for review and decisions                              │
+     │                                                                         │
+     │ Phase 5: Apply Corrections                                              │
+     │                                                                         │
+     │ After user review:                                                      │
+     │ - Apply accepted corrections to attribution.csv                         │
+     │ - Document changes in Extraction_Notes field                            │
+     │ - Update QA_Notes as appropriate                                        │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Output Deliverables                                                     │
+     │                                                                         │
+     │ 1. QA Runsheet - outputs/qa-runsheet-elhovo-2010-autumn.md              │
+     │   - All issues found with evidence                                      │
+     │   - User decision checkboxes                                            │
+     │   - Summary statistics                                                  │
+     │ 2. Methodology Document (if pilot successful)                           │
+     │   - Formalised QA protocol                                              │
+     │   - Repeatable by other LLMs                                            │
+     │   - Source priority rules                                               │
+     │ 3. Updated attribution.csv                                              │
+     │   - Corrections applied after user approval                             │
+     │   - Extraction_Notes updated with QA provenance                         │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Success Criteria                                                        │
+     │                                                                         │
+     │ Pilot Success                                                           │
+     │                                                                         │
+     │ - All 14 records verified against sources                               │
+     │ - Runsheet template refined and approved                                │
+     │ - Source cross-referencing protocol validated                           │
+     │ - User comfortable with methodology                                     │
+     │                                                                         │
+     │ Quality Metrics                                                         │
+     │                                                                         │
+     │ - Every field checked against at least one source                       │
+     │ - All discrepancies documented with evidence                            │
+     │ - All recommendations include reasoning                                 │
+     │ - Format suitable for user review                                       │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Notes                                                                   │
+     │                                                                         │
+     │ Known Considerations                                                    │
+     │                                                                         │
+     │ 1. PDF readability - Handwritten forms may be difficult; will note      │
+     │ legibility issues                                                       │
+     │ 2. Name variations - Cross-reference with name-mapping.csv for          │
+     │ standardisation                                                         │
+     │ 3. Role coverage - Elhovo 2010 diaries have good role documentation per │
+     │ source-inventory.md                                                     │
+     │ 4. Team B "new" vs original - Use "Team B Diary new.docx" as PRIMARY    │
+     │ (post-season corrections)                                               │
+     │                                                                         │
+     │ Tools                                                                   │
+     │                                                                         │
+     │ - antiword for .doc files                                               │
+     │ - unzip -p file.docx word/document.xml for .docx files                  │
+     │ - PDF reading via vision capabilities or pdftotext                      │
+     │ - outputs/name-mapping.csv for name standardisation reference           │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Timeline                                                                │
+     │                                                                         │
+     │ This is a pilot - no time estimates, but logical sequence:              │
+     │                                                                         │
+     │ 1. Team A verification → Template refinement → Team B verification →    │
+     │ Final runsheet → User review → Corrections                              │
+     │                                                                         │
+     │ Each phase depends on completion of prior phase.                        │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Future Tasks (Post-Pilot)                                               │
+     │                                                                         │
+     │ - Update source-inventory.md - Clarify varied file naming conventions   │
+     │ across seasons:                                                         │
+     │   - Kazanlak: Consolidated X_YYYYSummary.pdf files                      │
+     │   - Elhovo 2010: Individual Day_XX.pdf files (day numbers, not dates)   │
+     │   - Document mapping between naming conventions and actual daily        │
+     │ progress forms                                                          │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     ╰─────────────────────────────────────────────────────────────────────────╯
+
+> I'm happy we did a formal plan and review, I see there is still some 
+confustion about which scanned forms to use. The forms we want to look at in
+ almost all cases are surface survey 'Daily Progress Forms' like 
+'A_2010Summary.pdf'. I have not found it very useful to consult the 
+individual survey unit forms. All of the Daily Progress Forms *should* be 
+listed in the source-inventory if they exist. 
+
+● Thank you for that clarification. Let me check what Daily Progress Summary
+   PDFs exist for Elhovo 2010 specifically, since the source-inventory
+  listed individual dated PDFs rather than consolidated summaries.
+
+● Bash(find "/media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TR
+      AP-WD-2020-04/Elhovo 2010-12-12/2010/Project Records" -name "*Summary*" -o
+       -name "*summ…)
+  ⎿ /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-W
+    D-2020-04/Elhovo 2010-12-12/2010/Project Records/MasterRecords/~$m10_Po
+    lygonSummary.rtf
+    … +9 lines (ctrl+o to expand)
+
+
+
+● I don't find any consolidated Daily Progress Form Summary PDFs (like
+  A_2010Summary.pdf) for Elhovo 2010. The source-inventory shows Elhovo 2010
+   only has:
+  - Individual dated PDFs (20101022.pdf, 20101103.pdf, etc.)
+  - Day_XX.pdf files
+
+  These might be daily progress forms with date-based naming rather than
+  consolidated summaries, or they could be individual survey unit forms.
+
+  This raises a question: Should we choose a different pilot season that has
+   the consolidated Summary PDFs?
+
+  Looking at source-inventory, the seasons with consolidated Daily Progress
+  Form Summary PDFs are:
+  - Kazanlak 2009 - A/B/C/D/E_2009Summary.pdf
+  - Kazanlak 2010 - A/B/C/D_2010Summary.pdf
+  - Kazanlak 2011 - B/C_2011Summary.pdf (Teams A & D missing)
+
+  Would you prefer I switch the pilot to Kazanlak 2010 Spring or Kazanlak 
+  2009 Autumn where we have the proper consolidated Summary PDFs? Or should
+  we examine the Elhovo 2010 dated PDFs to determine if they're usable daily
+   progress forms?
+
+> I'm looking at Elhovo / Yambol 2010 now, and the forms are called 
+filenames like 'Day_03.pdf' and 'Day_05.pdf' - are those on the 
+source-inventory list? 
+
+● Yes! Looking back at source-inventory.md, they are listed under "Elhovo
+  2010 (PDFs)":
+
+  ### Elhovo 2010 (PDFs)
+
+  Daily field records by date (YYYYMMDD format):
+
+  | Team | Files | Location |
+  |------|-------|----------|
+  | A | Day_03.pdf, Day_05.pdf, 20101022.pdf, etc. | `.../Team A/Field
+  Records/` |
+  | B | Day_02.pdf, Day_04.pdf, ..., Day_12.pdf, 20101102.pdf, etc. | 
+  `.../Team B/Field Records/` |
+
+  So the Day_XX.pdf files ARE documented. If these are the Daily Progress
+  Forms (just with day-number naming rather than consolidated summaries),
+  then Elhovo 2010 is viable for the pilot.
+
+  Should I update the plan to use the Day_XX.pdf files as the Daily Progress
+   Forms for cross-verification? I'd need to map the day numbers to actual
+  dates to match them to the attribution.csv records.
+
+> Yes, update the plan - and we should update the source-inventory so that 
+the varied file naming conventions from season-to-season are less confusing,
+ but put that on a to-do list for later. 
+
+● Updated plan
+  ⎿  /plan to preview · ~/.claude/plans/distributed-seeking-emerson.md
+
+● Updated plan
+  ⎿  /plan to preview · ~/.claude/plans/distributed-seeking-emerson.md
+
+● Plan updated with:
+  1. Corrected source documents to use Day_XX.pdf Daily Progress Forms
+  2. Added note about day number to date mapping requirement
+  3. Added future task to update source-inventory.md for naming convention
+  clarity
+
+  The plan is ready for execution. Key first step will be establishing the
+  day number to date mapping using the diaries, then proceeding with
+  verification.
+  ⎿  User rejected Claude's plan:
+     ╭─────────────────────────────────────────────────────────────────────────╮
+     │ QA Pilot Plan: Elhovo 2010 Autumn                                       │
+     │                                                                         │
+     │ Date: 25 November 2025                                                  │
+     │ Status: Ready for execution                                             │
+     │ Objective: Cross-source verification of 14 attribution records to       │
+     │ validate accuracy and completeness                                      │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Pilot Scope                                                             │
+     │                                                                         │
+     │ Records                                                                 │
+     │                                                                         │
+     │ 14 records from Elhovo 2010 Autumn (October-November 2010):             │
+     │                                                                         │
+     │ | Team | Records | Dates              |                                 │
+     │ |------|---------|--------------------|                                 │
+     │ | A    | 5       | 22-24 Oct, 2-3 Nov |                                 │
+     │ | B    | 9       | 2-6 Nov, 11-15 Nov |                                 │
+     │                                                                         │
+     │ Purpose                                                                 │
+     │                                                                         │
+     │ 1. Validate QA methodology before applying to full dataset (268 records)│
+     │ 2. Develop runsheet template through iterative refinement               │
+     │ 3. Establish source cross-referencing protocols                         │
+     │ 4. Create repeatable documentation for future QA (e.g., by Gemini)      │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Source Documents                                                        │
+     │                                                                         │
+     │ Team A                                                                  │
+     │                                                                         │
+     │ | Type                 | File                   | Location              │
+     │                          | Role                   |                     │
+     │ |----------------------|------------------------|-----------------------│
+     │ -------------------------|------------------------|                     │
+     │ | Diary                | A_Diary.docx           | Elhovo                │
+     │ 2010-12-12/2010/Project Records/Team A/ | PRIMARY for roles      |      │
+     │ | Daily Progress Forms | Day_03.pdf, Day_05.pdf | Team A/Field Records/ │
+     │                          | PRIMARY for basic info |                     │
+     │                                                                         │
+     │ Team B                                                                  │
+     │                                                                         │
+     │ | Type                 | File                                           │
+     │             | Location                                       | Role     │
+     │                                |                                        │
+     │ |----------------------|------------------------------------------------│
+     │ ------------|------------------------------------------------|----------│
+     │ -------------------------------|                                        │
+     │ | Diary                | Team B Diary new.docx                          │
+     │             | Elhovo 2010-12-12/2010/Project Records/Team B/ | PRIMARY  │
+     │ (March 2011 corrected)          |                                       │
+     │ | Diary                | Team B Diary.docx                              │
+     │             | Same                                           | SECONDARY│
+     │  (December 2010 field version) |                                        │
+     │ | Daily Progress Forms | Day_02.pdf, Day_04.pdf, Day_06.pdf, Day_08.pdf,│
+     │  Day_12.pdf | Team B/Field Records/                          | PRIMARY  │
+     │ for basic info                  |                                       │
+     │                                                                         │
+     │ Note on PDF Dates                                                       │
+     │                                                                         │
+     │ The Day_XX.pdf files contain dates within their content (mostly         │
+     │ legible), so date correlation can be read directly from the forms rather│
+     │  than requiring external mapping.                                       │
+     │                                                                         │
+     │ Base Path                                                               │
+     │                                                                         │
+     │ /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD│
+     │ -2020-04/                                                               │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Source Priority Rules                                                   │
+     │                                                                         │
+     │ For Basic Information (Walkers, Units, Dates)                           │
+     │                                                                         │
+     │ 1. PDF daily summary forms - More accurate for basic data               │
+     │ 2. Diaries - Cross-reference for name interpretation                    │
+     │ 3. Both together for confidence                                         │
+     │                                                                         │
+     │ For Role Information (PDA, GPS, Paper, etc.)                            │
+     │                                                                         │
+     │ 1. Diaries only - PDFs don't contain role data                          │
+     │                                                                         │
+     │ Conflict Resolution                                                     │
+     │                                                                         │
+     │ - PDF summary forms take precedence for basic info when conflicting with│
+     │  diaries                                                                │
+     │ - Document conflicts in runsheet with evidence from both sources        │
+     │ - Flag for user decision if ambiguous                                   │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Rules & Heuristics                                                      │
+     │                                                                         │
+     │ Logical constraints that govern the data and help with                  │
+     │ validation/disambiguation. This list will grow as we discover more      │
+     │ during QA.                                                              │
+     │                                                                         │
+     │ Rules (Must Be True)                                                    │
+     │                                                                         │
+     │ | Rule                 | Description                                    │
+     │                                                                         │
+     │      | Use                                                              │
+     │             |                                                           │
+     │ |----------------------|------------------------------------------------│
+     │ ------------------------------------------------------------------------│
+     │ -----|------------------------------------------------------------------│
+     │ ------------|                                                           │
+     │ | R1: Roles ⊆ Walkers  | All role holders (Leader, PDA_Operator,        │
+     │ Paper_Recorder, GPS_Operator, Photographer, Author) must appear in the  │
+     │ Walkers list | Validation check; if a role holder isn't a walker, one or│
+     │  the other is wrong |                                                   │
+     │ | R2: Leader ∈ Walkers | The team leader must be included in the walker │
+     │ list                                                                    │
+     │      | Validation check (special case of R1)                            │
+     │             |                                                           │
+     │                                                                         │
+     │ Heuristics (Usually True, Helpful for Disambiguation)                   │
+     │                                                                         │
+     │ | Heuristic            | Description                                    │
+     │              | Use                                                      │
+     │                                   |                                     │
+     │ |----------------------|------------------------------------------------│
+     │ -------------|----------------------------------------------------------│
+     │ ----------------------------------|                                     │
+     │ | H1: Team stability   | Teams are generally stable over a season (but  │
+     │ not entirely) | If a name is illegible, check nearby days for the same  │
+     │ team to complete the walker list    |                                   │
+     │ | H2: One team per day | A walker is typically on only one team per day │
+     │              | If unsure which team someone was on, check that they     │
+     │ don't appear on another team that day |                                 │
+     │                                                                         │
+     │ Discovered During QA                                                    │
+     │                                                                         │
+     │ (Add new rules/heuristics here as they emerge)                          │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Verification Workflow                                                   │
+     │                                                                         │
+     │ Per-Record Process                                                      │
+     │                                                                         │
+     │ 1. EXTRACT record from attribution.csv                                  │
+     │ 2. LOCATE corresponding PDF daily form                                  │
+     │    - Read/transcribe walker names, units, date                          │
+     │ 3. LOCATE corresponding diary entry                                     │
+     │    - Read walker list, roles, any notes                                 │
+     │ 4. COMPARE CSV fields against sources:                                  │
+     │    - Date: CONFIRMED / DISCREPANCY                                      │
+     │    - Team: CONFIRMED / DISCREPANCY                                      │
+     │    - Start Unit: CONFIRMED / DISCREPANCY / SOURCE GAP                   │
+     │    - End Unit: CONFIRMED / DISCREPANCY / SOURCE GAP                     │
+     │    - Leader: CONFIRMED / DISCREPANCY                                    │
+     │    - Walkers: CONFIRMED / DISCREPANCY / PARTIAL                         │
+     │    - Roles (PDA, Paper, GPS, etc.): CONFIRMED / DISCREPANCY / SOURCE GAP│
+     │ 5. APPLY RULE CHECKS:                                                   │
+     │    - R1: Are all role holders in the Walkers list?                      │
+     │    - R2: Is the Leader in the Walkers list?                             │
+     │ 6. APPLY HEURISTICS if disambiguation needed:                           │
+     │    - H1: Check nearby days for team composition                         │
+     │    - H2: Verify walker isn't on multiple teams same day                 │
+     │ 7. DOCUMENT findings in runsheet                                        │
+     │ 8. FLAG issues requiring user review                                    │
+     │                                                                         │
+     │ Chunking Strategy                                                       │
+     │                                                                         │
+     │ Process by team within season:                                          │
+     │ 1. Team A (5 records) - Complete before moving to Team B                │
+     │ 2. Team B (9 records) - Complete and produce final runsheet             │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Runsheet Template                                                       │
+     │                                                                         │
+     │ Format for Each Issue Found                                             │
+     │                                                                         │
+     │ ## QA Issue: Elhovo 2010 Autumn - [DATE] Team [X] - [FIELD]             │
+     │                                                                         │
+     │ **Study Area/Season:** Elhovo 2010 Autumn                               │
+     │ **Record:** [DATE], Team [TEAM]                                         │
+     │ **Field:** [FIELD_NAME]                                                 │
+     │                                                                         │
+     │ **Current CSV value:** [value]                                          │
+     │ **Sources consulted:**                                                  │
+     │ 1. [PDF filename] - [page/section if applicable]                        │
+     │ 2. [Diary filename] - [date entry]                                      │
+     │                                                                         │
+     │ **Source evidence:**                                                    │
+     │ - PDF: "[excerpt or description]"                                       │
+     │ - Diary: "[excerpt or description]"                                     │
+     │                                                                         │
+     │ **Finding:** [DISCREPANCY / CONFIRMED / SOURCE GAP]                     │
+     │ **Recommended value:**                                                  │
+     │ - English: [recommended value]                                          │
+     │ - Cyrillic: [if applicable]                                             │
+     │                                                                         │
+     │ **Reasoning:**                                                          │
+     │ [Explanation of evidence and why change is recommended]                 │
+     │                                                                         │
+     │ ---                                                                     │
+     │ **User Decision:** [ ] Accept / [ ] Modify: _______________             │
+     │                                                                         │
+     │ Summary Section (End of Runsheet)                                       │
+     │                                                                         │
+     │ ## Summary: Elhovo 2010 Autumn QA                                       │
+     │                                                                         │
+     │ | Metric | Count |                                                      │
+     │ |--------|-------|                                                      │
+     │ | Records checked | 14 |                                                │
+     │ | Fields verified | [count] |                                           │
+     │ | Issues found | [count] |                                              │
+     │ | Recommended corrections | [count] |                                   │
+     │ | Source gaps documented | [count] |                                    │
+     │                                                                         │
+     │ ### Issues by Category                                                  │
+     │ - Name errors: [count]                                                  │
+     │ - Unit errors: [count]                                                  │
+     │ - Role errors: [count]                                                  │
+     │ - Other: [count]                                                        │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Execution Plan                                                          │
+     │                                                                         │
+     │ Phase 1: Team A (5 records)                                             │
+     │                                                                         │
+     │ | Step | Action                                            |            │
+     │ |------|---------------------------------------------------|            │
+     │ | 1.1  | Extract text from A_Diary.docx                    |            │
+     │ | 1.2  | Read PDF forms (20101022-24.pdf, 20101102-03.pdf) |            │
+     │ | 1.3  | For each of 5 records: compare CSV vs sources     |            │
+     │ | 1.4  | Document findings in runsheet draft               |            │
+     │ | 1.5  | Present to user for template feedback             |            │
+     │                                                                         │
+     │ Phase 2: Refine Template                                                │
+     │                                                                         │
+     │ Based on user feedback from Phase 1:                                    │
+     │ - Adjust runsheet format as needed                                      │
+     │ - Clarify any ambiguous protocols                                       │
+     │ - Confirm conflict resolution approach                                  │
+     │                                                                         │
+     │ Phase 3: Team B (9 records)                                             │
+     │                                                                         │
+     │ | Step | Action                                        |                │
+     │ |------|-----------------------------------------------|                │
+     │ | 3.1  | Extract text from Team B Diary new.docx       |                │
+     │ | 3.2  | Read PDF forms (20101102-15.pdf)              |                │
+     │ | 3.3  | For each of 9 records: compare CSV vs sources |                │
+     │ | 3.4  | Document findings using refined template      |                │
+     │                                                                         │
+     │ Phase 4: Produce Final Runsheet                                         │
+     │                                                                         │
+     │ - Compile all findings into single QA runsheet document                 │
+     │ - Include summary statistics                                            │
+     │ - Present to user for review and decisions                              │
+     │                                                                         │
+     │ Phase 5: Apply Corrections                                              │
+     │                                                                         │
+     │ After user review:                                                      │
+     │ - Apply accepted corrections to attribution.csv                         │
+     │ - Document changes in Extraction_Notes field                            │
+     │ - Update QA_Notes as appropriate                                        │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Output Deliverables                                                     │
+     │                                                                         │
+     │ 1. QA Runsheet - outputs/qa-runsheet-elhovo-2010-autumn.md              │
+     │   - All issues found with evidence                                      │
+     │   - User decision checkboxes                                            │
+     │   - Summary statistics                                                  │
+     │ 2. Methodology Document (if pilot successful)                           │
+     │   - Formalised QA protocol                                              │
+     │   - Repeatable by other LLMs                                            │
+     │   - Source priority rules                                               │
+     │ 3. Updated attribution.csv                                              │
+     │   - Corrections applied after user approval                             │
+     │   - Extraction_Notes updated with QA provenance                         │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Success Criteria                                                        │
+     │                                                                         │
+     │ Pilot Success                                                           │
+     │                                                                         │
+     │ - All 14 records verified against sources                               │
+     │ - Runsheet template refined and approved                                │
+     │ - Source cross-referencing protocol validated                           │
+     │ - User comfortable with methodology                                     │
+     │                                                                         │
+     │ Quality Metrics                                                         │
+     │                                                                         │
+     │ - Every field checked against at least one source                       │
+     │ - All discrepancies documented with evidence                            │
+     │ - All recommendations include reasoning                                 │
+     │ - Format suitable for user review                                       │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Notes                                                                   │
+     │                                                                         │
+     │ Known Considerations                                                    │
+     │                                                                         │
+     │ 1. PDF readability - Handwritten forms may be difficult; will note      │
+     │ legibility issues                                                       │
+     │ 2. Name variations - Cross-reference with name-mapping.csv for          │
+     │ standardisation                                                         │
+     │ 3. Role coverage - Elhovo 2010 diaries have good role documentation per │
+     │ source-inventory.md                                                     │
+     │ 4. Team B "new" vs original - Use "Team B Diary new.docx" as PRIMARY    │
+     │ (post-season corrections)                                               │
+     │                                                                         │
+     │ Tools                                                                   │
+     │                                                                         │
+     │ - antiword for .doc files                                               │
+     │ - unzip -p file.docx word/document.xml for .docx files                  │
+     │ - PDF reading via vision capabilities or pdftotext                      │
+     │ - outputs/name-mapping.csv for name standardisation reference           │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Timeline                                                                │
+     │                                                                         │
+     │ This is a pilot - no time estimates, but logical sequence:              │
+     │                                                                         │
+     │ 1. Team A verification → Template refinement → Team B verification →    │
+     │ Final runsheet → User review → Corrections                              │
+     │                                                                         │
+     │ Each phase depends on completion of prior phase.                        │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Future Tasks (Post-Pilot)                                               │
+     │                                                                         │
+     │ - Update source-inventory.md - Clarify varied file naming conventions   │
+     │ across seasons:                                                         │
+     │   - Kazanlak: Consolidated X_YYYYSummary.pdf files                      │
+     │   - Elhovo 2010: Individual Day_XX.pdf files (day numbers, not dates)   │
+     │   - Document mapping between naming conventions and actual daily        │
+     │ progress forms                                                          │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     ╰─────────────────────────────────────────────────────────────────────────╯
+
+> /export archive/cc-interactions/2025-11-25-f.txt 
+  ⎿  Conversation exported to: archive/cc-interactions/2025-11-25-f.txt
+
+> sorry to interrupt again, but one minor clarification: the scanned PDF 
+forms contain dates as part of their content, and they seem mostly legible, 
+you should be able to read them. \
+\
+Also, would it be helpful for you to have some constraints, such as the fact
+ that once walkers are established, the all roles (including leader) must be
+ one of the walkers? I forgot about rules like that that logically govern 
+the data, my apologies. We should, in fact, record such rules or heuristics 
+as we encounter them. Others include:\
+- Heuristic: teams are generally stable over the course of a season (but not
+ entirely), so if, e.g., a name is illegible on one day and the diary 
+doesn't help, you can look at nearby days to complete the walker list.\
+- Rule: all roles are held by walkers, including leader.\
+- Heuristic: walkers are only on one team per day (e.g., if someone is on 
+team A, they won't be on team B, that can help eliminate options sometimes)\
+As we resolve problems, other rules / heuristics will likely come to mind or
+ be discovered - let's record them, they can really help. 
+
+● These are excellent clarifications - especially the rules/heuristics.
+  These logical constraints are invaluable for both validation and resolving
+   ambiguities. Let me add them to the plan.
+
+● Updated plan
+  ⎿  /plan to preview · ~/.claude/plans/distributed-seeking-emerson.md
+
+● Updated plan
+  ⎿  /plan to preview · ~/.claude/plans/distributed-seeking-emerson.md
+
+● Updated plan
+  ⎿  /plan to preview · ~/.claude/plans/distributed-seeking-emerson.md
+
+● Plan updated with:
+
+  1. Simplified PDF date handling - dates are readable from the forms
+  2. Rules & Heuristics section with:
+    - R1: All roles must be walkers
+    - R2: Leader must be a walker
+    - H1: Team stability across season
+    - H2: One team per walker per day
+    - Placeholder for discoveries during QA
+  3. Updated workflow - now includes rule validation and heuristic
+  application steps
+
+  This is a solid framework. The rules section will be particularly valuable
+   for both catching errors and documenting the logic for future QA by other
+   LLMs.
+
+  Ready to proceed?
+  ⎿  User rejected Claude's plan:
+     ╭─────────────────────────────────────────────────────────────────────────╮
+     │ QA Pilot Plan: Elhovo 2010 Autumn                                       │
+     │                                                                         │
+     │ Date: 25 November 2025                                                  │
+     │ Status: Ready for execution                                             │
+     │ Objective: Cross-source verification of 14 attribution records to       │
+     │ validate accuracy and completeness                                      │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Pilot Scope                                                             │
+     │                                                                         │
+     │ Records                                                                 │
+     │                                                                         │
+     │ 14 records from Elhovo 2010 Autumn (October-November 2010):             │
+     │                                                                         │
+     │ | Team | Records | Dates              |                                 │
+     │ |------|---------|--------------------|                                 │
+     │ | A    | 5       | 22-24 Oct, 2-3 Nov |                                 │
+     │ | B    | 9       | 2-6 Nov, 11-15 Nov |                                 │
+     │                                                                         │
+     │ Purpose                                                                 │
+     │                                                                         │
+     │ 1. Validate QA methodology before applying to full dataset (268 records)│
+     │ 2. Develop runsheet template through iterative refinement               │
+     │ 3. Establish source cross-referencing protocols                         │
+     │ 4. Create repeatable documentation for future QA (e.g., by Gemini)      │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Source Documents                                                        │
+     │                                                                         │
+     │ Team A                                                                  │
+     │                                                                         │
+     │ | Type                 | File                   | Location              │
+     │                          | Role                   |                     │
+     │ |----------------------|------------------------|-----------------------│
+     │ -------------------------|------------------------|                     │
+     │ | Diary                | A_Diary.docx           | Elhovo                │
+     │ 2010-12-12/2010/Project Records/Team A/ | PRIMARY for roles      |      │
+     │ | Daily Progress Forms | Day_03.pdf, Day_05.pdf | Team A/Field Records/ │
+     │                          | PRIMARY for basic info |                     │
+     │                                                                         │
+     │ Team B                                                                  │
+     │                                                                         │
+     │ | Type                 | File                                           │
+     │             | Location                                       | Role     │
+     │                                |                                        │
+     │ |----------------------|------------------------------------------------│
+     │ ------------|------------------------------------------------|----------│
+     │ -------------------------------|                                        │
+     │ | Diary                | Team B Diary new.docx                          │
+     │             | Elhovo 2010-12-12/2010/Project Records/Team B/ | PRIMARY  │
+     │ (March 2011 corrected)          |                                       │
+     │ | Diary                | Team B Diary.docx                              │
+     │             | Same                                           | SECONDARY│
+     │  (December 2010 field version) |                                        │
+     │ | Daily Progress Forms | Day_02.pdf, Day_04.pdf, Day_06.pdf, Day_08.pdf,│
+     │  Day_12.pdf | Team B/Field Records/                          | PRIMARY  │
+     │ for basic info                  |                                       │
+     │                                                                         │
+     │ Note on PDF Dates                                                       │
+     │                                                                         │
+     │ The Day_XX.pdf files contain dates within their content (mostly         │
+     │ legible), so date correlation can be read directly from the forms rather│
+     │  than requiring external mapping.                                       │
+     │                                                                         │
+     │ Base Path                                                               │
+     │                                                                         │
+     │ /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD│
+     │ -2020-04/                                                               │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Source Priority Rules                                                   │
+     │                                                                         │
+     │ For Basic Information (Walkers, Units, Dates)                           │
+     │                                                                         │
+     │ 1. PDF daily summary forms - More accurate for basic data               │
+     │ 2. Diaries - Cross-reference for name interpretation                    │
+     │ 3. Both together for confidence                                         │
+     │                                                                         │
+     │ For Role Information (PDA, GPS, Paper, etc.)                            │
+     │                                                                         │
+     │ 1. Diaries only - PDFs don't contain role data                          │
+     │                                                                         │
+     │ Conflict Resolution                                                     │
+     │                                                                         │
+     │ - PDF summary forms take precedence for basic info when conflicting with│
+     │  diaries                                                                │
+     │ - Document conflicts in runsheet with evidence from both sources        │
+     │ - Flag for user decision if ambiguous                                   │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Rules & Heuristics                                                      │
+     │                                                                         │
+     │ Logical constraints that govern the data and help with                  │
+     │ validation/disambiguation. This list will grow as we discover more      │
+     │ during QA.                                                              │
+     │                                                                         │
+     │ Rules (Must Be True)                                                    │
+     │                                                                         │
+     │ | Rule                 | Description                                    │
+     │                                                                         │
+     │      | Use                                                              │
+     │             |                                                           │
+     │ |----------------------|------------------------------------------------│
+     │ ------------------------------------------------------------------------│
+     │ -----|------------------------------------------------------------------│
+     │ ------------|                                                           │
+     │ | R1: Roles ⊆ Walkers  | All role holders (Leader, PDA_Operator,        │
+     │ Paper_Recorder, GPS_Operator, Photographer, Author) must appear in the  │
+     │ Walkers list | Validation check; if a role holder isn't a walker, one or│
+     │  the other is wrong |                                                   │
+     │ | R2: Leader ∈ Walkers | The team leader must be included in the walker │
+     │ list                                                                    │
+     │      | Validation check (special case of R1)                            │
+     │             |                                                           │
+     │                                                                         │
+     │ Heuristics (Usually True, Helpful for Disambiguation)                   │
+     │                                                                         │
+     │ | Heuristic            | Description                                    │
+     │              | Use                                                      │
+     │                                   |                                     │
+     │ |----------------------|------------------------------------------------│
+     │ -------------|----------------------------------------------------------│
+     │ ----------------------------------|                                     │
+     │ | H1: Team stability   | Teams are generally stable over a season (but  │
+     │ not entirely) | If a name is illegible, check nearby days for the same  │
+     │ team to complete the walker list    |                                   │
+     │ | H2: One team per day | A walker is typically on only one team per day │
+     │              | If unsure which team someone was on, check that they     │
+     │ don't appear on another team that day |                                 │
+     │                                                                         │
+     │ Discovered During QA                                                    │
+     │                                                                         │
+     │ (Add new rules/heuristics here as they emerge)                          │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Verification Workflow                                                   │
+     │                                                                         │
+     │ Per-Record Process                                                      │
+     │                                                                         │
+     │ 1. EXTRACT record from attribution.csv                                  │
+     │ 2. LOCATE corresponding PDF daily form                                  │
+     │    - Read/transcribe walker names, units, date                          │
+     │ 3. LOCATE corresponding diary entry                                     │
+     │    - Read walker list, roles, any notes                                 │
+     │ 4. COMPARE CSV fields against sources:                                  │
+     │    - Date: CONFIRMED / DISCREPANCY                                      │
+     │    - Team: CONFIRMED / DISCREPANCY                                      │
+     │    - Start Unit: CONFIRMED / DISCREPANCY / SOURCE GAP                   │
+     │    - End Unit: CONFIRMED / DISCREPANCY / SOURCE GAP                     │
+     │    - Leader: CONFIRMED / DISCREPANCY                                    │
+     │    - Walkers: CONFIRMED / DISCREPANCY / PARTIAL                         │
+     │    - Roles (PDA, Paper, GPS, etc.): CONFIRMED / DISCREPANCY / SOURCE GAP│
+     │ 5. APPLY RULE CHECKS:                                                   │
+     │    - R1: Are all role holders in the Walkers list?                      │
+     │    - R2: Is the Leader in the Walkers list?                             │
+     │ 6. APPLY HEURISTICS if disambiguation needed:                           │
+     │    - H1: Check nearby days for team composition                         │
+     │    - H2: Verify walker isn't on multiple teams same day                 │
+     │ 7. DOCUMENT findings in runsheet                                        │
+     │ 8. FLAG issues requiring user review                                    │
+     │                                                                         │
+     │ Chunking Strategy                                                       │
+     │                                                                         │
+     │ Process by team within season:                                          │
+     │ 1. Team A (5 records) - Complete before moving to Team B                │
+     │ 2. Team B (9 records) - Complete and produce final runsheet             │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Runsheet Template                                                       │
+     │                                                                         │
+     │ Format for Each Issue Found                                             │
+     │                                                                         │
+     │ ## QA Issue: Elhovo 2010 Autumn - [DATE] Team [X] - [FIELD]             │
+     │                                                                         │
+     │ **Study Area/Season:** Elhovo 2010 Autumn                               │
+     │ **Record:** [DATE], Team [TEAM]                                         │
+     │ **Field:** [FIELD_NAME]                                                 │
+     │                                                                         │
+     │ **Current CSV value:** [value]                                          │
+     │ **Sources consulted:**                                                  │
+     │ 1. [PDF filename] - [page/section if applicable]                        │
+     │ 2. [Diary filename] - [date entry]                                      │
+     │                                                                         │
+     │ **Source evidence:**                                                    │
+     │ - PDF: "[excerpt or description]"                                       │
+     │ - Diary: "[excerpt or description]"                                     │
+     │                                                                         │
+     │ **Finding:** [DISCREPANCY / CONFIRMED / SOURCE GAP]                     │
+     │ **Recommended value:**                                                  │
+     │ - English: [recommended value]                                          │
+     │ - Cyrillic: [if applicable]                                             │
+     │                                                                         │
+     │ **Reasoning:**                                                          │
+     │ [Explanation of evidence and why change is recommended]                 │
+     │                                                                         │
+     │ ---                                                                     │
+     │ **User Decision:** [ ] Accept / [ ] Modify: _______________             │
+     │                                                                         │
+     │ Summary Section (End of Runsheet)                                       │
+     │                                                                         │
+     │ ## Summary: Elhovo 2010 Autumn QA                                       │
+     │                                                                         │
+     │ | Metric | Count |                                                      │
+     │ |--------|-------|                                                      │
+     │ | Records checked | 14 |                                                │
+     │ | Fields verified | [count] |                                           │
+     │ | Issues found | [count] |                                              │
+     │ | Recommended corrections | [count] |                                   │
+     │ | Source gaps documented | [count] |                                    │
+     │                                                                         │
+     │ ### Issues by Category                                                  │
+     │ - Name errors: [count]                                                  │
+     │ - Unit errors: [count]                                                  │
+     │ - Role errors: [count]                                                  │
+     │ - Other: [count]                                                        │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Execution Plan                                                          │
+     │                                                                         │
+     │ Phase 1: Team A (5 records)                                             │
+     │                                                                         │
+     │ | Step | Action                                            |            │
+     │ |------|---------------------------------------------------|            │
+     │ | 1.1  | Extract text from A_Diary.docx                    |            │
+     │ | 1.2  | Read PDF forms (20101022-24.pdf, 20101102-03.pdf) |            │
+     │ | 1.3  | For each of 5 records: compare CSV vs sources     |            │
+     │ | 1.4  | Document findings in runsheet draft               |            │
+     │ | 1.5  | Present to user for template feedback             |            │
+     │                                                                         │
+     │ Phase 2: Refine Template                                                │
+     │                                                                         │
+     │ Based on user feedback from Phase 1:                                    │
+     │ - Adjust runsheet format as needed                                      │
+     │ - Clarify any ambiguous protocols                                       │
+     │ - Confirm conflict resolution approach                                  │
+     │                                                                         │
+     │ Phase 3: Team B (9 records)                                             │
+     │                                                                         │
+     │ | Step | Action                                        |                │
+     │ |------|-----------------------------------------------|                │
+     │ | 3.1  | Extract text from Team B Diary new.docx       |                │
+     │ | 3.2  | Read PDF forms (20101102-15.pdf)              |                │
+     │ | 3.3  | For each of 9 records: compare CSV vs sources |                │
+     │ | 3.4  | Document findings using refined template      |                │
+     │                                                                         │
+     │ Phase 4: Produce Final Runsheet                                         │
+     │                                                                         │
+     │ - Compile all findings into single QA runsheet document                 │
+     │ - Include summary statistics                                            │
+     │ - Present to user for review and decisions                              │
+     │                                                                         │
+     │ Phase 5: Apply Corrections                                              │
+     │                                                                         │
+     │ After user review:                                                      │
+     │ - Apply accepted corrections to attribution.csv                         │
+     │ - Document changes in Extraction_Notes field                            │
+     │ - Update QA_Notes as appropriate                                        │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Output Deliverables                                                     │
+     │                                                                         │
+     │ 1. QA Runsheet - outputs/qa-runsheet-elhovo-2010-autumn.md              │
+     │   - All issues found with evidence                                      │
+     │   - User decision checkboxes                                            │
+     │   - Summary statistics                                                  │
+     │ 2. Methodology Document (if pilot successful)                           │
+     │   - Formalised QA protocol                                              │
+     │   - Repeatable by other LLMs                                            │
+     │   - Source priority rules                                               │
+     │ 3. Updated attribution.csv                                              │
+     │   - Corrections applied after user approval                             │
+     │   - Extraction_Notes updated with QA provenance                         │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Success Criteria                                                        │
+     │                                                                         │
+     │ Pilot Success                                                           │
+     │                                                                         │
+     │ - All 14 records verified against sources                               │
+     │ - Runsheet template refined and approved                                │
+     │ - Source cross-referencing protocol validated                           │
+     │ - User comfortable with methodology                                     │
+     │                                                                         │
+     │ Quality Metrics                                                         │
+     │                                                                         │
+     │ - Every field checked against at least one source                       │
+     │ - All discrepancies documented with evidence                            │
+     │ - All recommendations include reasoning                                 │
+     │ - Format suitable for user review                                       │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Notes                                                                   │
+     │                                                                         │
+     │ Known Considerations                                                    │
+     │                                                                         │
+     │ 1. PDF readability - Handwritten forms may be difficult; will note      │
+     │ legibility issues                                                       │
+     │ 2. Name variations - Cross-reference with name-mapping.csv for          │
+     │ standardisation                                                         │
+     │ 3. Role coverage - Elhovo 2010 diaries have good role documentation per │
+     │ source-inventory.md                                                     │
+     │ 4. Team B "new" vs original - Use "Team B Diary new.docx" as PRIMARY    │
+     │ (post-season corrections)                                               │
+     │                                                                         │
+     │ Tools                                                                   │
+     │                                                                         │
+     │ - antiword for .doc files                                               │
+     │ - unzip -p file.docx word/document.xml for .docx files                  │
+     │ - PDF reading via vision capabilities or pdftotext                      │
+     │ - outputs/name-mapping.csv for name standardisation reference           │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Timeline                                                                │
+     │                                                                         │
+     │ This is a pilot - no time estimates, but logical sequence:              │
+     │                                                                         │
+     │ 1. Team A verification → Template refinement → Team B verification →    │
+     │ Final runsheet → User review → Corrections                              │
+     │                                                                         │
+     │ Each phase depends on completion of prior phase.                        │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Future Tasks (Post-Pilot)                                               │
+     │                                                                         │
+     │ - Update source-inventory.md - Clarify varied file naming conventions   │
+     │ across seasons:                                                         │
+     │   - Kazanlak: Consolidated X_YYYYSummary.pdf files                      │
+     │   - Elhovo 2010: Individual Day_XX.pdf files (day numbers, not dates)   │
+     │   - Document mapping between naming conventions and actual daily        │
+     │ progress forms                                                          │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     ╰─────────────────────────────────────────────────────────────────────────╯
+
+> We are almost out of context - before we start a major piece of work like 
+this, let's (a) write the plan out to a MD doc, (b) compose a compact 
+message that will set us up for the next session. 
+
+● Reading Plan(~/.claude/plans/distributed-seeking-emerson.md)
+  ⎿  Read 303 lines
+
+● Write(planning/qa-pilot-plan.md)
+  ⎿  Wrote 296 lines to planning/qa-pilot-plan.md                          
+     # QA Pilot Plan: Elhovo 2010 Autumn
+     **Date:** 25 November 2025
+     **Status:** Ready for execution
+     **Objective:** Cross-source verification of 14 attribution records to
+     validate accuracy and completeness
+     ---
+     ## Pilot Scope
+     … +286 lines (ctrl+o to expand)
+
+● Done. Plan saved to planning/qa-pilot-plan.md. Here's your compact handoff
+   message for the next session:
+
+  ---
+  Session Handoff: QA Pilot Execution
+
+  Project: TRAP Attribution Extraction QA
+  Task: Execute QA pilot on Elhovo 2010 Autumn (14 records)
+
+  Read first:
+  - planning/qa-pilot-plan.md - Full methodology and workflow
+  - outputs/source-inventory.md - Source document reference
+  - outputs/attribution.csv - Data to verify (filter: 2010-10 and 2010-11
+  dates)
+
+  Source files (base path /media/shawn/.../TRAP-WD-2020-04/Elhovo 
+  2010-12-12/2010/Project Records/):
+  - Team A: A_Diary.docx, Team A/Field Records/Day_03.pdf, Day_05.pdf
+  - Team B: Team B Diary new.docx (PRIMARY), Team B/Field 
+  Records/Day_02.pdf, Day_04.pdf, Day_06.pdf, Day_08.pdf, Day_12.pdf
+
+  Key rules:
+  - R1: All role holders must be in Walkers list
+  - R2: Leader must be in Walkers list
+  - PDF forms are PRIMARY for basic info; diaries PRIMARY for roles
+  - PDFs contain dates in content (readable)
+
+  Start with: Phase 1 - Team A (5 records), then refine runsheet template
+  before Team B.
+
+  Output: outputs/qa-runsheet-elhovo-2010-autumn.md
+
+  ---
+  You can copy this into your next session prompt. Would you like me to
+  commit the plan file before we close?
+
+
+
