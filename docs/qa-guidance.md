@@ -430,7 +430,177 @@ Use this checklist to ensure nothing is missed during QA:
 
 ---
 
+## Tier 4 Sources: Survey Unit (SU) Forms
+
+Individual survey unit forms (scanned PDFs) provide field-level data recorded at the time of survey. These are a fallback verification source when primary sources (DPF scans, diaries) are unavailable or suspicious.
+
+### When to Use SU Forms
+
+**Use SU forms when diary data looks suspicious:**
+
+- Unexpected walker changes (single day differs from surrounding days)
+- Unit number gaps or discontinuities
+- Date mismatches between CSV and diary
+- Walker count inconsistencies
+
+**Do NOT routinely check SU forms if diary data is coherent:**
+
+- Continuous unit numbers across days
+- Consistent walker composition (expected team stability)
+- Dates match between sources
+- No unexplained anomalies
+
+SU forms are **high-effort to interpret** (handwritten, 4 forms per page, variable legibility). Only use when needed.
+
+### What SU Forms Provide
+
+| Data | Reliability | Location on Form |
+|------|-------------|------------------|
+| Unit numbers | ✓ Direct | "Survey unit:" field |
+| Walker names | ✓ Good | Bottom-left position boxes (1-5) |
+| Walker count | ✓ Good | Count non-Xed columns |
+| Dates | ✓ Good | "Date:" field (often abbreviated) |
+| Role assignments | ✗ Poor | Occasional marginal notes only |
+
+### Reading SU Forms
+
+**Form layout:**
+- 4 forms per page, arranged vertically
+- **Bottom form = first unit** (fieldwalkers work upward on the page)
+- Walker names in numbered position boxes (bottom-left corner)
+
+**Visual cues:**
+- **X through column(s):** Area not surveyed → fewer walkers
+- **Hand-drawn extra columns:** More than 5 walkers
+- **Count non-Xed columns:** Actual walker count
+
+**Marginal notes:**
+- Often archaeological observations (materials found, site conditions)
+- Occasionally contain role assignments — examine but don't rely on
+- Look for keywords: "PDA", "GPS", "forms", "recorder"
+
+### SU Forms for Seasons Without DPF Scans
+
+For seasons like **Elhovo 2009** where no DPF scans exist, SU forms become the **only primary field source** to cross-verify unit numbers against diary entries. The unit number on each SU form is recorded in the field at the time of survey, making it definitive.
+
+### Protocol: Investigating Unit Gaps/Overlaps with SU Forms
+
+This protocol applies when unit continuity analysis reveals a gap, overlap, or other discrepancy that cannot be resolved from diaries and DPF scans alone. It is **labour-intensive** — only invoke when necessary.
+
+**Trigger conditions:**
+
+- Unit gap > 1 between consecutive survey days
+- Unit overlap (same unit on different days)
+- Diary and CSV disagree on Start/End Unit
+
+#### Step 1: Assess the Situation
+
+Before diving into SU forms, consider:
+
+1. **Does the CSV maintain continuity?** If CSV is continuous but diary claims a gap, the diary may have a transcription error. Approach with an open mind — either could be correct.
+
+2. **Is there a DPF scan?** Check first; DPF scans are easier to read than SU forms.
+
+3. **What is the exact discrepancy?** Document precisely: "Diary says Oct 21 starts at 60196; CSV says 60195; Oct 20 ends at 60194."
+
+#### Step 2: Locate Relevant SU Form Files
+
+1. **List all SU form PDFs** for the team/season:
+
+   ```bash
+   ls -la "[Team]/FieldRecords/*.pdf"
+   ```
+
+2. **Check filename convention:**
+   - Some seasons use date-based naming (e.g., `Oct21.pdf`) — use these directly
+   - Some seasons use unit-based or batch naming (e.g., `60192.pdf`) — requires manual investigation
+
+3. **If filenames do not contain dates:** You must sample each file to identify date coverage.
+
+#### Step 3: Sample Files to Identify Date Coverage
+
+For each PDF file with unclear naming:
+
+1. **Read the first form** (page 1, bottom form) — note the date and unit number
+2. **Read a middle form** (mid-document) — note the date
+3. **Read the last form** (final page, top form) — note the date and unit number
+
+Create an SU Form Index:
+
+```markdown
+| File | First Date | Last Date | Unit Range | Pages |
+|------|------------|-----------|------------|-------|
+| 60192.pdf | Oct 20 | Oct 20 | 60127-60194 | 18 |
+| [next file] | ... | ... | ... | ... |
+```
+
+**Record this index** in source-inventory.md for future reference — this effort should not be repeated.
+
+#### Step 4: Narrow Down to Relevant Files
+
+Using your index, identify which file(s) should contain the disputed units:
+
+- For a gap between Oct 20 (ends 60194) and Oct 21 (starts 60195 or 60196?), find the file covering Oct 21
+
+#### Step 5: Careful Reading with Open Mind
+
+**Critical:** Do not assume you know the answer. Either the diary or the CSV could be correct.
+
+1. **Read the relevant file thoroughly** — pages may not be in order
+2. **Find the specific unit(s) in question** — e.g., look for unit 60195
+3. **Note the date on that form** — this is the definitive answer
+4. **Record walker names** if relevant to other discrepancies
+
+#### Step 6: Document Findings
+
+Whether the SU form confirms or refutes your initial assumption:
+
+1. **Update the discrepancy log** with SU form evidence
+2. **Note the file, page, and specific data** found
+3. **If diary was wrong:** Document as "Diary transcription error — SU form confirms [value]"
+4. **If CSV was wrong:** Document correction needed
+
+#### Step 7: Update Source Inventory
+
+Add any newly discovered file-to-date mappings to `source-inventory.md`:
+
+```markdown
+**ELH 2009 SU Forms:** File naming does not follow date convention.
+Manual date identification required. Page numbers are season-continuous.
+
+| File | Date(s) | Unit Range |
+|------|---------|------------|
+| 60192.pdf | Oct 20 | 60127-60194 |
+```
+
+### Lessons Learned: SU Form Investigation
+
+**From D015 (Elhovo 2009 Team A, Oct 21):**
+
+The diary stated "First unit: 60196" but the CSV had 60195. Initial QA assumed the diary was correct based on:
+
+- Blank forms observed after unit 60194 in one PDF file
+- Confirmation bias — evidence was interpreted as supporting the diary
+
+**Resolution:** User-directed SU form review found unit 60195 on a form dated 21 October, proving:
+
+- CSV value (60195) was **correct**
+- Diary value (60196) was a **transcription error**
+
+**Key lessons:**
+
+1. **Trust continuity as a prior** — CSV value 60195 maintained unit continuity; diary value created a gap
+2. **Search exhaustively** — the relevant form was in a different file than initially examined
+3. **Record negative findings** — "File X does not contain unit Y" is useful information
+4. **Keep an open mind** — do not assume diary is correct; SU forms are the primary field record
+
+---
+
 ## Future Additions
+
+### Potential Future Tasks
+
+1. **Dedicated SU form scan for role data:** Systematically review SU form marginal notes across all available PDFs to extract occasional role assignments. High effort but could yield some role data for records currently missing this information.
 
 *Add new rules, heuristics, or observations here as QA progresses*
 
@@ -438,7 +608,9 @@ Use this checklist to ensure nothing is missed during QA:
 
 ## References
 
+- `docs/qa-issue-template.md` — Standard format for QA issues requiring user approval
+- `docs/qa-discrepancies-log.md` — Record of source conflicts and resolutions
 - `outputs/source-inventory.md` — Source document locations and reliability notes
 - `outputs/name-mapping.csv` — Name standardisation reference
-- `outputs/qa-runsheet-elhovo-2010-autumn.md` — Detailed verification findings
-- `docs/qa-discrepancies-log.md` — Record of source conflicts and resolutions
+- `outputs/qa-runsheet-elhovo-2010-autumn.md` — Detailed verification findings (ELH 2010)
+- `outputs/qa-runsheet-elhovo-2009-autumn-a.md` — Detailed verification findings (ELH 2009 Team A)

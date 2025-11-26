@@ -396,7 +396,10 @@ This file should be updated as actions are completed or new items are identified
 - Batch participant list update: Lizzy (full name research), Silvia Ivanova (verify participation), Jiří Musil (verify participation and dates)
 - Six-digit to five-digit survey unit renumbering mapping (2009-03-12 Team C Kazanluk)
 
-**Last updated:** 25 November 2025 (added 2010-04-09 Team B walker discrepancy)
+**Data quality observations:**
+- **Tereza Blažková — 2009 autumn presence unexplained:** TRAP-Participants.csv marks her as present in 2009 autumn (column 10 = "x"), but she does not appear in any walker records for that season. Tereza Dobrovodská is clearly documented on Team C (Oct 12-22) and Team A (Oct 26-29 as Eric's substitute). T. Blažková may have had a specialist role (ceramics, bioarchaeology, finds processing) rather than field walking that season. No action required unless participant list accuracy review is undertaken. (Discovered during D016 QA, 26 Nov 2025)
+
+**Last updated:** 26 November 2025 (added Tereza Blažková 2009-autumn observation)
 
 ---
 

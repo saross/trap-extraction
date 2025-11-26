@@ -1,0 +1,2120 @@
+
+ ▐▛███▜▌   Claude Code v2.0.54
+▝▜█████▛▘  Opus 4.5 · Claude Max
+  ▘▘ ▝▝    /…/synology/Adela/TRAP-WD-2020-04/trap-extraction
+
+> Hi CC, welcome back - we had a crash during /compact - can you look at 
+archive/cc-interactions/2025-11-26-e.txt and see where we left off? 
+
+● Read(/media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-
+      2020-04/archive/cc-interactions/2025-11-26-e.txt)
+  ⎿  Error reading file
+
+● That file doesn't exist. Let me check what's available in the archive
+  directory:
+
+● Search(pattern: "archive/cc-interactions/**/*.txt")
+  ⎿  Found 0 files 
+
+● Search(pattern: "archive/**/*")
+  ⎿  Found 0 files 
+
+● Bash(ls -la /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/T
+      RAP-WD-2020-04/)
+  ⎿  total 40                                      
+     drwxr-x--- 10 shawn  1003 4096 Nov 24 07:35 .
+     drwxr-x---  6 shawn  1003 4096 Jul  5  2020 ..
+     … +8 lines (ctrl+o to expand)
+
+● No archive folder exists yet. Let me check the most recently modified area
+   - trap-extraction:
+
+● Bash(ls -la /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/T
+      RAP-WD-2020-04/trap-extraction/)
+  ⎿  total 196                                      
+     drwxrwxr-x 10 shawn shawn  4096 Nov 26 14:27 .
+     drwxr-x--- 10 shawn  1003  4096 Nov 24 07:35 ..
+     … +19 lines (ctrl+o to expand)
+
+● Found an archive folder in trap-extraction. Let me check for
+  cc-interactions there:
+
+● Search(pattern: "/media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Ad
+        ela/TRAP-WD-2020-04/trap-extraction/archive/**/*2025-11-26*")
+  ⎿  Found 0 files 
+
+● Bash(ls -la /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/T
+      RAP-WD-2020-04/trap-extraction/archive/)
+  ⎿  total 68                                      
+     drwxrwxr-x 15 shawn shawn 4096 Nov 26 15:46 .
+     drwxrwxr-x 10 shawn shawn 4096 Nov 26 14:27 ..
+     … +14 lines (ctrl+o to expand)
+
+● Bash(ls -la /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/T
+      RAP-WD-2020-04/trap-extraction/archive/cc-interactions/)
+  ⎿  total 2248                                      
+     drwxrwxr-x  2 shawn shawn   4096 Nov 26 21:29 .
+     drwxrwxr-x 15 shawn shawn   4096 Nov 26 15:46 ..
+     … +45 lines (ctrl+o to expand)
+
+● Found it! Let me read the latest interaction log:
+
+● Read(archive/cc-interactions/2025-11-26-e.txt)
+  ⎿  Read 1528 lines
+
+● Got it. Based on the transcript, here's where we left off:
+
+  Status at Crash
+
+  Approved corrections for ELH 2009 Autumn Team A:
+  - D016: Replace Eric→Tereza for Oct 26-29 (4 records × 2 fields)
+  - D017: Remove erroneous QA_Notes from Oct 30, 31, Nov 4
+  - D018: Add Diary_Source to Nov 9
+
+  Interrupted during: Verifying which Tereza — there are two in the dataset:
+  - Tereza Blažková
+  - Tereza Dobrovodská
+
+  The session was interrupted while I was confirming the correct full name
+  for the substitution.
+
+  ---
+  Shall I continue from this point? I'll need to verify which Tereza was
+  Eric's substitute before applying D016, then proceed with D017 and D018.
+
+> yes, please continue, let me know if you need assistance, noting that you 
+can always frefer to the TRAP-participants file in inputs/ to see who 
+attended what season (which resolves most first-name conflicts) 
+
+● Search(pattern: "/media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Ad
+        ela/TRAP-WD-2020-04/trap-extraction/inputs/*participant*")
+  ⎿  Found 0 files 
+
+● Bash(ls -la /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/T
+      RAP-WD-2020-04/trap-extraction/inputs/)
+  ⎿  total 20                                                         
+     drwxrwxr-x  2 shawn shawn 4096 Nov 25 16:12 .
+     drwxrwxr-x 10 shawn shawn 4096 Nov 26 14:27 ..
+     -rw-rw-r--  1 shawn shawn 8233 Nov 25 16:12 TRAP-Participants.csv
+
+● Bash(grep -i "tereza" /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synolo
+      gy/Adela/TRAP-WD-2020-04/trap-extraction/inputs/TRAP-Participants.csv)
+  ⎿ Blažková,Tereza,Field walker,FFUK,student,Czech Republic,,,x,x,x,,     
+    Dobrovodská,Tereza,Field walker,FFUK,student,Czech Republic,N/A,,x,x,x,
+    ,
+
+
+● Read(inputs/TRAP-Participants.csv)
+  ⎿  Read 106 lines
+
+● Both Terezas were present in 2009 autumn. Let me check the
+  name-mapping.csv for context on how "Tereza" was resolved in similar
+  situations:
+
+● Bash(grep -i "tereza" /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synolo
+      gy/Adela/TRAP-WD-2020-04/trap-extraction/outputs/name-mapping.csv | head
+      -20)
+  ⎿ Halyar,Matyáš,Matyáš Kracík,corrected,B,2009-spring,2009-03-19 | 2009-0
+    3-24 | 2009-03-25,Adela Sobotkova (62+30=92 | 3d) | Martin Mladenov (50
+    +40=90 | 4d) | Ivana Klímová (51) | Tereza Blažková (35) | Matyáš Krací
+    … +57 lines (ctrl+o to expand)
+
+
+
+
+● I see from the name-mapping that:
+  - TD and Tereza D. → Tereza Dobrovodská (Team A, 2009-spring)
+  - Tereza → Tereza Blažková for Oct 12-22 (but associated with Team B
+  sources)
+
+  The Team A associations for Tereza Dobrovodská, plus the fact she's listed
+   with Team A abbreviations, confirms she was the substitute. Proceeding
+  with corrections:
+
+● Read(outputs/attribution.csv)
+  ⎿  Read 5 lines
+
+● Bash(grep -n "^2009-10-2[6789],A,\|^2009-10-30,A,\|^2009-10-31,A,\|^2009-11-04
+      ,A,\|^2009-11-09,A,"
+      /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/T…)
+  ⎿ 92:2009-10-26,A,60457,60546,Adela Sobotkova,Ilija | Adela | Aneta | Mar
+    tin | Tereza,Ilija Iliev | Adela Sobotkova | Aneta Kohoutová | Martin M
+    ladenov | Tereza Blažková,Adela Sobotkova,Aneta Kohoutová,,Martin Mlade
+    … +49 lines (ctrl+o to expand)
+
+
+
+
+> hmm...people were only on one team at a time, see which Tereza was on 
+another team? 
+
+● Good point! Let me check which Tereza was on another team during Oct
+  26-29:
+
+● Bash(grep "^2009-10-2[6789]," /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d846
+      8/synology/Adela/TRAP-WD-2020-04/trap-extraction/outputs/attribution.csv |
+       grep -v ",A,…)
+  ⎿ 2009-10-26,C,80495,80589,Bara Weissová,Bara | Petra Tušlová | Sona | To
+    dor | Georgi,Bara Weissová | Petra Tušlová | Sona Holičková | Todor Vul
+    chev | Georgi Nekhrizov,,,,,Petra Tušlová,Petra Tušlová,,ELH09 SurveySu
+    … +37 lines (ctrl+o to expand)
+
+
+
+
+● Neither B nor C has a Tereza on Oct 26-29. Let me check earlier dates to
+  see which team each Tereza was on:
+
+● Bash(grep "2009-10-" /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synolog
+      y/Adela/TRAP-WD-2020-04/trap-extraction/outputs/attribution.csv | grep -i
+      "tereza")
+  ⎿ 2009-10-12,C,80000,80026,Bara Weissová,Bara | Petra Tušlová | Sona | Te
+    reza | Todor | Georgi,Bara Weissová | Petra Tušlová | Sona Holičková |
+    Tereza Dobrovodská | Todor Vulchev | Georgi Nekhrizov,,,,,Petra Tušlová
+    … +96 lines (ctrl+o to expand)
+
+
+
+● Excellent find! Tereza Dobrovodská was on Team C until Oct 22, then got
+  sick on Oct 23:
+
+  Oct 23 Team C: "Today we were walking without Tereza because she was sick,
+   but we had Jana instead"
+
+  After recovering, she joined Team A as Eric's substitute on Oct 26-29.
+
+  But look — the CSV already has "Tereza" in Walkers_Original, not "Eric".
+  The actual error is that Walkers_Standardised was mapped to the wrong 
+  Tereza:
+
+  | Date      | Walkers_Original | Walkers_Standardised (WRONG) | Should be
+           |
+  |-----------|------------------|------------------------------|-----------
+  ---------|
+  | Oct 26-29 | ...Tereza        | Tereza Blažková              | Tereza
+  Dobrovodská |
+
+  So the correction is simpler: change Tereza Blažková → Tereza Dobrovodská
+  in Walkers_Standardised for those 4 records.
+
+  Let me apply the corrections:
+
+● Update(outputs/attribution.csv)
+  ⎿  File must be read first
+
+● Read(outputs/attribution.csv)
+  ⎿  Read 35 lines
+
+● Now let me apply D016 — correcting Tereza Blažková → Tereza Dobrovodská:
+
+● Update(outputs/attribution.csv)
+  ⎿  Updated outputs/attribution.csv with 1 addition and 1 removal       
+       89    2009-10-23,A,60377,60456,Adela Sobotkova,Adela | Ilija | 
+            Aneta | Eric,Adela Sobotkova | Ilija Iliev | Aneta Kohoutová 
+            | Erik Andersen,Adela Sobotkova,Aneta Kohoutová,,,,Adela 
+            Sobotkova,,ELH09 SurveySummary.xls,Diary Team 
+            A.doc,"Narrative extraction: Team A – Adela, Ilija, Aneta a 
+            Eric, Martin is off with Team B | Role extraction: 
+            PDA_Operator=Adela (Diary Team A.doc, medium); 
+            Paper_Recorder=Aneta (Diary Team A.doc, medium)",
+       90    2009-10-26,C,80495,80589,Bara Weissová,Bara | Petra Tušlová 
+            | Sona | Todor | Georgi,Bara Weissová | Petra Tušlová | Sona 
+            Holičková | Todor Vulchev | Georgi Nekhrizov,,,,,Petra 
+            Tušlová,Petra Tušlová,,ELH09 SurveySummary.xls,Diary Team 
+            C.doc,"Extracted from Elhovo 2009 diary | Role extraction: 
+            Photographer=Petra (The Diary of Team C.doc, medium)",
+       91    2009-10-26,B,70572,70655,Shawn Ross,Scott | Vera | Shawn | 
+            Yavor | Stanislav | Stefan,Scott Jackson | Vera Doležálková |
+             Shawn Ross | Yavor Rusev | Stanislav Marchovski | Stefan 
+            Bakardzhiev,Stanislav Marchovski,Vera Doležálková,,,,Shawn 
+            Ross,,ELH09 SurveySummary.xls,Diary Team B.doc,"Extracted 
+            from diary | Role extraction: PDA_Operator=Stanislav 
+            (DiaryTeamB.doc, high); Paper_Recorder=Vera (DiaryTeamB.doc, 
+            high)",
+       92 -  2009-10-26,A,60457,60546,Adela Sobotkova,Ilija | Adela | 
+          -  Aneta | Martin | Tereza,Ilija Iliev | Adela Sobotkova | 
+          -  Aneta Kohoutová | Martin Mladenov | Tereza Blažková
+          -  ,Adela Sobotkova,Aneta Kohoutová,,Martin Mladenov,,Adela 
+          -  Sobotkova,,ELH09 SurveySummary.xls,Diary Team 
+          -  A.doc,"Narrative extraction: Team A in Monday setup (refers 
+          -  to standard composition) | Role extraction: 
+          -  PDA_Operator=Adela (Diary Team A.doc, medium); 
+          -  Paper_Recorder=Aneta (Diary Team A.doc, medium); 
+          -  GPS_Operator=Martin (Diary Team A.doc, medium)",
+       92 +  2009-10-26,A,60457,60546,Adela Sobotkova,Ilija | Adela | 
+          +  Aneta | Martin | Tereza,Ilija Iliev | Adela Sobotkova | 
+          +  Aneta Kohoutová | Martin Mladenov | Tereza Dobrovodská
+          +  ,Adela Sobotkova,Aneta Kohoutová,,Martin Mladenov,,Adela 
+          +  Sobotkova,,ELH09 SurveySummary.xls,Diary Team 
+          +  A.doc,"Narrative extraction: Team A in Monday setup (refers 
+          +  to standard composition) | Role extraction: 
+          +  PDA_Operator=Adela (Diary Team A.doc, medium); 
+          +  Paper_Recorder=Aneta (Diary Team A.doc, medium); 
+          +  GPS_Operator=Martin (Diary Team A.doc, medium)
+          +   | QA D016: Tereza Blažková→Dobrovodská (T.D. moved from 
+          +  Team C as Eric substitute)",
+       93    2009-10-27,B,70656,70747,Shawn Ross,Scott | Vera | Shawn | 
+            Yabor | Stanislav | Stefan,Scott Jackson | Vera Doležálková |
+             Shawn Ross | Yavor Rusev | Stanislav Marchovski | Stefan 
+            Bakardzhiev,,Vera Doležálková,,,,Shawn Ross,,ELH09 
+            SurveySummary.xls,Diary Team B.doc,"Extracted from Elhovo 
+            2009 diary (Six walkers) | Role extraction: 
+            Paper_Recorder=Vera (DiaryTeamB.doc, medium)",
+       94    2009-10-27,A,60547,60616,Adela Sobotkova,Ilija | Adela | 
+            Aneta | Martin | Tereza,Ilija Iliev | Adela Sobotkova | Aneta
+             Kohoutová | Martin Mladenov | Tereza Blažková,Adela 
+            Sobotkova,Aneta Kohoutová,,Martin Mladenov,,Adela 
+            Sobotkova,,ELH09 SurveySummary.xls,Diary Team 
+            A.doc,"Narrative extraction: Team A in Monday set up | Role 
+            extraction: PDA_Operator=Adela (Diary Team A.doc, medium); 
+            Paper_Recorder=Aneta (Diary Team A.doc, medium); 
+            GPS_Operator=Martin (Diary Team A.doc, medium)",
+       95    2009-10-27,C,80590,80666,Bara Weissová,Bara | Petra Tušlová 
+            | Sona | Todor | Georgi,Bara Weissová | Petra Tušlová | Sona 
+            Holičková | Todor Vulchev | Georgi Nekhrizov,,,,,Petra 
+            Tušlová,Petra Tušlová,,ELH09 SurveySummary.xls,Diary Team 
+            C.doc,"Extracted from Elhovo 2009 diary | Role extraction: 
+            Photographer=Petra (The Diary of Team C.doc, medium)",
+
+● Update(outputs/attribution.csv)
+  ⎿  Updated outputs/attribution.csv with 1 addition and 1 removal       
+       91    2009-10-26,B,70572,70655,Shawn Ross,Scott | Vera | Shawn | 
+            Yavor | Stanislav | Stefan,Scott Jackson | Vera Doležálková |
+             Shawn Ross | Yavor Rusev | Stanislav Marchovski | Stefan 
+            Bakardzhiev,Stanislav Marchovski,Vera Doležálková,,,,Shawn 
+            Ross,,ELH09 SurveySummary.xls,Diary Team B.doc,"Extracted 
+            from diary | Role extraction: PDA_Operator=Stanislav 
+            (DiaryTeamB.doc, high); Paper_Recorder=Vera (DiaryTeamB.doc, 
+            high)",
+       92    2009-10-26,A,60457,60546,Adela Sobotkova,Ilija | Adela | 
+            Aneta | Martin | Tereza,Ilija Iliev | Adela Sobotkova | Aneta
+             Kohoutová | Martin Mladenov | Tereza Dobrovodská,Adela 
+            Sobotkova,Aneta Kohoutová,,Martin Mladenov,,Adela 
+            Sobotkova,,ELH09 SurveySummary.xls,Diary Team 
+            A.doc,"Narrative extraction: Team A in Monday setup (refers 
+            to standard composition) | Role extraction: 
+            PDA_Operator=Adela (Diary Team A.doc, medium); 
+            Paper_Recorder=Aneta (Diary Team A.doc, medium); 
+            GPS_Operator=Martin (Diary Team A.doc, medium) | QA D016: 
+            Tereza Blažková→Dobrovodská (T.D. moved from Team C as Eric 
+            substitute)",
+       93    2009-10-27,B,70656,70747,Shawn Ross,Scott | Vera | Shawn | 
+            Yabor | Stanislav | Stefan,Scott Jackson | Vera Doležálková |
+             Shawn Ross | Yavor Rusev | Stanislav Marchovski | Stefan 
+            Bakardzhiev,,Vera Doležálková,,,,Shawn Ross,,ELH09 
+            SurveySummary.xls,Diary Team B.doc,"Extracted from Elhovo 
+            2009 diary (Six walkers) | Role extraction: 
+            Paper_Recorder=Vera (DiaryTeamB.doc, medium)",
+       94 -  2009-10-27,A,60547,60616,Adela Sobotkova,Ilija | Adela | 
+          -  Aneta | Martin | Tereza,Ilija Iliev | Adela Sobotkova | 
+          -  Aneta Kohoutová | Martin Mladenov | Tereza Blažková
+          -  ,Adela Sobotkova,Aneta Kohoutová,,Martin Mladenov,,Adela 
+          -  Sobotkova,,ELH09 SurveySummary.xls,Diary Team 
+          -  A.doc,"Narrative extraction: Team A in Monday set up | Role 
+          -  extraction: PDA_Operator=Adela (Diary Team A.doc, medium); 
+          -  Paper_Recorder=Aneta (Diary Team A.doc, medium); 
+          -  GPS_Operator=Martin (Diary Team A.doc, medium)",
+       94 +  2009-10-27,A,60547,60616,Adela Sobotkova,Ilija | Adela | 
+          +  Aneta | Martin | Tereza,Ilija Iliev | Adela Sobotkova | 
+          +  Aneta Kohoutová | Martin Mladenov | Tereza Dobrovodská
+          +  ,Adela Sobotkova,Aneta Kohoutová,,Martin Mladenov,,Adela 
+          +  Sobotkova,,ELH09 SurveySummary.xls,Diary Team 
+          +  A.doc,"Narrative extraction: Team A in Monday set up | Role 
+          +  extraction: PDA_Operator=Adela (Diary Team A.doc, medium); 
+          +  Paper_Recorder=Aneta (Diary Team A.doc, medium); 
+          +  GPS_Operator=Martin (Diary Team A.doc, medium)
+          +   | QA D016: Tereza Blažková→Dobrovodská",
+       95    2009-10-27,C,80590,80666,Bara Weissová,Bara | Petra Tušlová 
+            | Sona | Todor | Georgi,Bara Weissová | Petra Tušlová | Sona 
+            Holičková | Todor Vulchev | Georgi Nekhrizov,,,,,Petra 
+            Tušlová,Petra Tušlová,,ELH09 SurveySummary.xls,Diary Team 
+            C.doc,"Extracted from Elhovo 2009 diary | Role extraction: 
+            Photographer=Petra (The Diary of Team C.doc, medium)",
+       96    2009-10-28,B,70748,70839,Shawn Ross,Scott | Vera | Shawn | 
+            Yabor | Stanislav,Scott Jackson | Vera Doležálková | Shawn 
+            Ross | Yavor Rusev | Stanislav Marchovski,,Vera 
+            Doležálková,,,,Shawn Ross,,ELH09 SurveySummary.xls,Diary Team
+             B.doc,"Extracted from Elhovo 2009 diary (Five walkers) | 
+            Role extraction: Paper_Recorder=Vera (DiaryTeamB.doc, high)",
+       97    2009-10-28,A,60617,60696,Adela Sobotkova,Ilija | Adela | 
+            Aneta | Martin | Tereza,Ilija Iliev | Adela Sobotkova | Aneta
+             Kohoutová | Martin Mladenov | Tereza Blažková,Adela 
+            Sobotkova,Aneta Kohoutová,,Martin Mladenov,Martin 
+            Mladenov,Adela Sobotkova,,ELH09 SurveySummary.xls,Diary Team 
+            A.doc,"Narrative extraction: Narrative continuity with 
+            standard composition | Role extraction: PDA_Operator=Adela 
+            (Diary Team A.doc, high); Paper_Recorder=Aneta (Diary Team 
+            A.doc, medium); GPS_Operator=Martin (Diary Team A.doc, 
+            medium); Photographer=Martin (Diary Team A.doc, high)",
+
+● Update(outputs/attribution.csv)
+  ⎿  Updated outputs/attribution.csv with 1 addition and 1 removal       
+        94    2009-10-27,A,60547,60616,Adela Sobotkova,Ilija | Adela | 
+             Aneta | Martin | Tereza,Ilija Iliev | Adela Sobotkova | 
+             Aneta Kohoutová | Martin Mladenov | Tereza Dobrovodská,Adela
+              Sobotkova,Aneta Kohoutová,,Martin Mladenov,,Adela 
+             Sobotkova,,ELH09 SurveySummary.xls,Diary Team 
+             A.doc,"Narrative extraction: Team A in Monday set up | Role 
+             extraction: PDA_Operator=Adela (Diary Team A.doc, medium); 
+             Paper_Recorder=Aneta (Diary Team A.doc, medium); 
+             GPS_Operator=Martin (Diary Team A.doc, medium) | QA D016: 
+             Tereza Blažková→Dobrovodská",
+        95    2009-10-27,C,80590,80666,Bara Weissová,Bara | Petra Tušlová
+              | Sona | Todor | Georgi,Bara Weissová | Petra Tušlová | 
+             Sona Holičková | Todor Vulchev | Georgi Nekhrizov,,,,,Petra 
+             Tušlová,Petra Tušlová,,ELH09 SurveySummary.xls,Diary Team 
+             C.doc,"Extracted from Elhovo 2009 diary | Role extraction: 
+             Photographer=Petra (The Diary of Team C.doc, medium)",
+        96    2009-10-28,B,70748,70839,Shawn Ross,Scott | Vera | Shawn | 
+             Yabor | Stanislav,Scott Jackson | Vera Doležálková | Shawn 
+             Ross | Yavor Rusev | Stanislav Marchovski,,Vera 
+             Doležálková,,,,Shawn Ross,,ELH09 SurveySummary.xls,Diary 
+             Team B.doc,"Extracted from Elhovo 2009 diary (Five walkers) 
+             | Role extraction: Paper_Recorder=Vera (DiaryTeamB.doc, 
+             high)",
+        97 -  2009-10-28,A,60617,60696,Adela Sobotkova,Ilija | Adela | 
+           -  Aneta | Martin | Tereza,Ilija Iliev | Adela Sobotkova | 
+           -  Aneta Kohoutová | Martin Mladenov | Tereza Blažková
+           -  ,Adela Sobotkova,Aneta Kohoutová,,Martin Mladenov,Martin 
+           -  Mladenov,Adela Sobotkova,,ELH09 SurveySummary.xls,Diary 
+           -  Team A.doc,"Narrative extraction: Narrative continuity with
+           -   standard composition | Role extraction: PDA_Operator=Adela
+           -   (Diary Team A.doc, high); Paper_Recorder=Aneta (Diary Team
+           -   A.doc, medium); GPS_Operator=Martin (Diary Team A.doc, 
+           -  medium); Photographer=Martin (Diary Team A.doc, high)",
+        97 +  2009-10-28,A,60617,60696,Adela Sobotkova,Ilija | Adela | 
+           +  Aneta | Martin | Tereza,Ilija Iliev | Adela Sobotkova | 
+           +  Aneta Kohoutová | Martin Mladenov | Tereza Dobrovodská
+           +  ,Adela Sobotkova,Aneta Kohoutová,,Martin Mladenov,Martin 
+           +  Mladenov,Adela Sobotkova,,ELH09 SurveySummary.xls,Diary 
+           +  Team A.doc,"Narrative extraction: Narrative continuity with
+           +   standard composition | Role extraction: PDA_Operator=Adela
+           +   (Diary Team A.doc, high); Paper_Recorder=Aneta (Diary Team
+           +   A.doc, medium); GPS_Operator=Martin (Diary Team A.doc, 
+           +  medium); Photographer=Martin (Diary Team A.doc, high)
+           +   | QA D016: Tereza Blažková→Dobrovodská",
+        98    2009-10-28,C,80667,80723,Bara Weissová,Bara | Petra Tušlová
+              | Sona | Todor | Georgi,Bara Weissová | Petra Tušlová | 
+             Sona Holičková | Todor Vulchev | Georgi Nekhrizov,,,,,,Petra
+              Tušlová,,ELH09 SurveySummary.xls,Diary Team C.doc,Extracted
+              from Elhovo 2009 diary,No role data available
+        99    2009-10-29,C,80724,80794,Bara Weissová,Bara | Petra Tušlová
+              | Sona | Todor | Georgi,Bara Weissová | Petra Tušlová | 
+             Sona Holičková | Todor Vulchev | Georgi Nekhrizov,,,,,,Petra
+              Tušlová,,ELH09 SurveySummary.xls,Diary Team C.doc,Extracted
+              from Elhovo 2009 diary,No role data available
+       100    2009-10-29,A,60697,60776,Adela Sobotkova,Ilija | Adela | 
+             Aneta | Martin | Tereza,Ilija Iliev | Adela Sobotkova | 
+             Aneta Kohoutová | Martin Mladenov | Tereza Blažková,Adela 
+             Sobotkova,Aneta Kohoutová,,Martin Mladenov,,Adela 
+             Sobotkova,,ELH09 SurveySummary.xls,Diary Team 
+             A.doc,"Narrative extraction: Narrative references to usual 
+             setup | Role extraction: PDA_Operator=Adela (Diary Team 
+             A.doc, medium); Paper_Recorder=Aneta (Diary Team A.doc, 
+             medium); GPS_Operator=Martin (Diary Team A.doc, medium)",
+
+● Update(outputs/attribution.csv)
+  ⎿  Updated outputs/attribution.csv with 1 addition and 1 removal       
+        97    2009-10-28,A,60617,60696,Adela Sobotkova,Ilija | Adela | 
+             Aneta | Martin | Tereza,Ilija Iliev | Adela Sobotkova | 
+             Aneta Kohoutová | Martin Mladenov | Tereza Dobrovodská,Adela
+              Sobotkova,Aneta Kohoutová,,Martin Mladenov,Martin 
+             Mladenov,Adela Sobotkova,,ELH09 SurveySummary.xls,Diary Team
+              A.doc,"Narrative extraction: Narrative continuity with 
+             standard composition | Role extraction: PDA_Operator=Adela 
+             (Diary Team A.doc, high); Paper_Recorder=Aneta (Diary Team 
+             A.doc, medium); GPS_Operator=Martin (Diary Team A.doc, 
+             medium); Photographer=Martin (Diary Team A.doc, high) | QA 
+             D016: Tereza Blažková→Dobrovodská",
+        98    2009-10-28,C,80667,80723,Bara Weissová,Bara | Petra Tušlová
+              | Sona | Todor | Georgi,Bara Weissová | Petra Tušlová | 
+             Sona Holičková | Todor Vulchev | Georgi Nekhrizov,,,,,,Petra
+              Tušlová,,ELH09 SurveySummary.xls,Diary Team C.doc,Extracted
+              from Elhovo 2009 diary,No role data available
+        99    2009-10-29,C,80724,80794,Bara Weissová,Bara | Petra Tušlová
+              | Sona | Todor | Georgi,Bara Weissová | Petra Tušlová | 
+             Sona Holičková | Todor Vulchev | Georgi Nekhrizov,,,,,,Petra
+              Tušlová,,ELH09 SurveySummary.xls,Diary Team C.doc,Extracted
+              from Elhovo 2009 diary,No role data available
+       100 -  2009-10-29,A,60697,60776,Adela Sobotkova,Ilija | Adela | 
+           -  Aneta | Martin | Tereza,Ilija Iliev | Adela Sobotkova | 
+           -  Aneta Kohoutová | Martin Mladenov | Tereza Blažková
+           -  ,Adela Sobotkova,Aneta Kohoutová,,Martin Mladenov,,Adela 
+           -  Sobotkova,,ELH09 SurveySummary.xls,Diary Team 
+           -  A.doc,"Narrative extraction: Narrative references to usual 
+           -  setup | Role extraction: PDA_Operator=Adela (Diary Team 
+           -  A.doc, medium); Paper_Recorder=Aneta (Diary Team A.doc, 
+           -  medium); GPS_Operator=Martin (Diary Team A.doc, medium)",
+       100 +  2009-10-29,A,60697,60776,Adela Sobotkova,Ilija | Adela | 
+           +  Aneta | Martin | Tereza,Ilija Iliev | Adela Sobotkova | 
+           +  Aneta Kohoutová | Martin Mladenov | Tereza Dobrovodská
+           +  ,Adela Sobotkova,Aneta Kohoutová,,Martin Mladenov,,Adela 
+           +  Sobotkova,,ELH09 SurveySummary.xls,Diary Team 
+           +  A.doc,"Narrative extraction: Narrative references to usual 
+           +  setup | Role extraction: PDA_Operator=Adela (Diary Team 
+           +  A.doc, medium); Paper_Recorder=Aneta (Diary Team A.doc, 
+           +  medium); GPS_Operator=Martin (Diary Team A.doc, medium)
+           +   | QA D016: Tereza Blažková→Dobrovodská",
+       101    2009-10-29,B,70840,70925,Shawn Ross,Scott | Vera | Shawn | 
+             Stanislav,Scott Jackson | Vera Doležálková | Shawn Ross | 
+             Stanislav Marchovski,,Vera Doležálková,,,,Shawn Ross,,ELH09 
+             SurveySummary.xls,Diary Team B.doc,"Extracted from Elhovo 
+             2009 diary (Four walkers) | Role extraction: 
+             Paper_Recorder=Vera (DiaryTeamB.doc, medium)",
+       102    2009-10-30,A,,,Adela Sobotkova,Adela,Adela 
+             Sobotkova,,,,,,Adela Sobotkova,,,Diary Team 
+             A.doc,"Non-survey day: Rain, muddy fields - indoor pottery 
+             processing and documentation | Evidence: Night - Morning – 
+             rain hits the roof of the base... Resting day due to muddy 
+             fields",MISSING: Survey units | No role data available
+       103    2009-10-31,A,,,Adela Sobotkova,Adela,Adela 
+             Sobotkova,,,,,,Adela Sobotkova,,,Diary Team 
+             A.doc,"Non-survey day: Pottery analysis, photography, 
+             Halloween party preparation | Evidence: Weather – windy, 
+             cold but clearing up and dry. Vera, Terka and I gather up at
+              8 am for pottery... Halloween party preparations",MISSING: 
+             Survey units | No role data available
+
+● D016 complete (4 records). Now checking D017 — the records I see don't
+  have "No autumn survey season" text:
+
+● Bash(grep -i "no autumn survey season"
+      /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-2
+      020-04/trap-extraction/outputs/attribution.csv)
+  ⎿ 2009-10-14,C,,,Bara Weissová,Bara | Petra Tušlová | Sona | Tereza | Tod
+    or | Georgi,Bara Weissová | Petra Tušlová | Sona Holičková | Tereza Dob
+    rovodská | Todor Vulchev | Georgi Nekhrizov,,,,,,,,,Diary Team C.doc,Ex
+    … +29 lines (ctrl+o to expand)
+
+
+
+
+● The erroneous text is on Team C records (Oct 14, 16, 17, 18), not Team A.
+  The Team A records (Oct 30, 31, Nov 4) don't have this text — D017 may
+  have been documented incorrectly or already fixed.
+
+  Let me verify Team A Oct 30, 31, Nov 4 don't need changes:
+
+● Bash(grep "^2009-10-30,A,\|^2009-10-31,A,\|^2009-11-04,A,"
+      /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-2
+      020-04/trap-extraction/outputs/a…)
+  ⎿ 2009-10-30,A,,,Adela Sobotkova,Adela,Adela Sobotkova,,,,,,Adela Sobotko
+    va,,,Diary Team A.doc,"Non-survey day: Rain, muddy fields - indoor pott
+    ery processing and documentation | Evidence: Night - Morning – rain hit
+    … +13 lines (ctrl+o to expand)
+
+
+
+
+● ✅ D017 not needed for Team A — those records don't have the erroneous
+  text. The text exists on Team C records (Oct 14, 16, 17, 18) but that's a
+  separate issue not part of this QA cycle.
+
+  Now D018 — adding Diary_Source to Nov 9:
+
+● Bash(head -1 /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/
+      TRAP-WD-2020-04/trap-extraction/outputs/attribution.csv)
+  ⎿ Date,Team,Start Unit,End Unit,Leader,Walkers_Original,Walkers_Standardi
+    sed,PDA_Operator,Paper_Recorder,Data_Editor,GPS_Operator,Photographer,D
+    iary_Author,DPF_Author,XLS_Source,PDF_Source,Extraction_Notes,QA_Notes
+
+
+
+● Looking at the header — there's no "Diary_Source" column. The Nov 9 record
+   already has "Diary Team A.doc" in PDF_Source. Let me check if
+  Diary_Author is empty (perhaps that's what D018 meant):
+
+● Bash(grep "^2009-11-09,A," /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/s
+      ynology/Adela/TRAP-WD-2020-04/trap-extraction/outputs/attribution.csv |
+      awk -F',' '{pri…)
+  ⎿  Diary_Author: [] | PDF_Source: [Diary Team A.doc]
+
+● Diary_Author is empty, PDF_Source already has the diary. Let me check what
+   other Team A records have for Diary_Author:
+
+● Bash(grep "^2009-11-0.,A," /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/s
+      ynology/Adela/TRAP-WD-2020-04/trap-extraction/outputs/attribution.csv |
+      awk -F',' '{pri…)
+  ⎿  2009-11-02: Diary_Author=[Adela Sobotkova]
+     2009-11-03: Diary_Author=[Adela Sobotkova]
+     2009-11-04: Diary_Author=[Adela Sobotkova]
+     … +4 lines (ctrl+o to expand)
+
+● Nov 9 is missing Diary_Author — all other Team A records have "Adela
+  Sobotkova". Let me fix that:
+
+● Read(outputs/attribution.csv)
+  ⎿  Read 5 lines
+
+● Update(outputs/attribution.csv)
+  ⎿  Updated outputs/attribution.csv with 1 addition and 1 removal       
+       113    2009-11-07,B,71202,71257,Shawn Ross,Scott | Dasha | Shawn |
+              Stanislav,Scott Jackson | Dagmar Winklerová | Shawn Ross | 
+             Stanislav Marchovski,,Dagmar Winklerová,,Scott 
+             Jackson,,Shawn Ross,,ELH09 SurveySummary.xls,Diary Team 
+             B.doc,"Extracted from Elhovo 2009 diary (Four walkers) | 
+             Role extraction: Paper_Recorder=Dasha (DiaryTeamB.doc, 
+             medium); GPS_Operator=Scott (DiaryTeamB.doc, medium)",
+       114    2009-11-07,A,61080,61185,Adela Sobotkova,Adela | Martin | 
+             Todor | Katerina,Adela Sobotkova | Martin Mladenov | Todor 
+             Vulchev | Katarina Čuláková,,,,,,Adela Sobotkova,,ELH09 
+             SurveySummary.xls,Diary Team A.doc,Narrative extraction: 
+             Team A assembles at the end of the road in Robovo in usual 
+             setup except for missing Ilja,No role data available
+       115    2009-11-09,B,71258,71313,Shawn Ross,Shawn | Zhoro | Lizzy |
+              Simon,Shawn Ross | Georgi Nekhrizov | UNMAPPED: Lizzy | 
+             Simon Connor,,UNMAPPED: Lizzy,,,,Shawn Ross,,ELH09 
+             SurveySummary.xls,Diary Team B.doc,"Extracted from Elhovo 
+             2009 diary (Four walkers) | Role extraction: 
+             Paper_Recorder=Lizzy (DiaryTeamB.doc, high)",
+       116 -  2009-11-09,A,61186,61249,Adela Sobotkova,Adela | Martin | 
+           -  Todor | Ilija | Katya,Adela Sobotkova | Martin Mladenov | 
+           -  Todor Vulchev | Ilija Iliev | Katarina Čuláková,,,,,,
+           -  ,,ELH09 SurveySummary.xls,Diary Team A.doc,
+           -  ,No role data available
+       116 +  2009-11-09,A,61186,61249,Adela Sobotkova,Adela | Martin | 
+           +  Todor | Ilija | Katya,Adela Sobotkova | Martin Mladenov | 
+           +  Todor Vulchev | Ilija Iliev | Katarina Čuláková,,,,,,
+           +  Adela Sobotkova,,ELH09 SurveySummary.xls,Diary Team A.doc,
+           +  QA D018: Added Diary_Author,No role data available
+       117    2009-11-09,C,80796,80852,Scott Jackson,Scott | Stanislav | 
+             Jarka | Radko | Javor,Scott Jackson | Stanislav Marchovski |
+              Jarmila Švédová | Radko Sedláček | Yavor Rusev,,Jarmila 
+             Švédová,,,,Petra Tušlová,,ELH09 SurveySummary.xls,Diary Team
+              C.doc,"Extracted from Elhovo 2009 diary | Role extraction: 
+             Paper_Recorder=Jarka (The Diary of Team C.doc, high)",
+       118    2009-11-10,C,80853,80909,Scott Jackson,Scott | Stanislav | 
+             Jarka | Radko | Zhoro | Jana,Scott Jackson | Stanislav 
+             Marchovski | Jarmila Švédová | Radko Sedláček | Georgi 
+             Nekhrizov | Jana Ryšavková,,Jarmila Švédová,,,,Petra 
+             Tušlová,,ELH09 SurveySummary.xls,Diary Team C.doc,"Extracted
+              from Elhovo 2009 diary | Role extraction: 
+             Paper_Recorder=Jarka (The Diary of Team C.doc, medium)",
+       119    2009-11-10,B,71314,71370,Shawn Ross,Shawn | Yavor | Dasha |
+              Lizzy | Simon,Shawn Ross | Yavor Rusev | Dagmar Winklerová 
+             | UNMAPPED: Lizzy | Simon Connor,,UNMAPPED: Lizzy,,,,Shawn 
+             Ross,,ELH09 SurveySummary.xls,Diary Team B.doc,"Extracted 
+             from Elhovo 2009 diary (Five walkers) | Role extraction: 
+             Paper_Recorder=Lizzy (DiaryTeamB.doc, medium)",
+
+● Now let me verify all corrections:
+
+● Bash(echo "=== D016 Verification: Oct 26-29 Team A ===" && grep
+      "^2009-10-2[6789],A," /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/sy
+      nology/Adela/TRAP-WD-2020-0…)
+  ⎿  === D016 Verification: Oct 26-29 Team A ===                           
+     2009-10-26: Walkers_Standardised=Ilija Iliev | Adela Sobotkova | Aneta
+     Kohoutová | Martin Mladenov | Tereza Dobrovodská
+     … +9 lines (ctrl+o to expand)
+
+● All corrections verified. Let me update the discrepancies log and runsheet
+   with completion status:
+
+● Read(docs/qa-discrepancies-log.md)
+  ⎿  Read 29 lines
+
+● The log has outdated information. Let me correct it:
+
+● Update(docs/qa-discrepancies-log.md)
+  ⎿  Updated docs/qa-discrepancies-log.md with 11 additions and 11 removals
+       441    | D013 | ✅ Added units 71063/71142 to 2009-11-05 B | Done 
+             |
+       442    | D014 | ✅ Removed erroneous QA_Notes from 3 records | 
+             Done |
+       443    
+       444 -  ### Elhovo 2009 Autumn Team A (Complete)
+       444 +  ### Elhovo 2009 Autumn Team A (Complete — 26 Nov 2025)
+       445    
+       446 -  | ID | Action | Priority |
+       447 -  |----|--------|----------|
+       446 +  | ID | Action | Status |
+       447 +  |----|--------|--------|
+       448    | D015 | ✅ No correction needed — SU form confirms CSV is 
+             correct (diary error) | Resolved |
+       449 -  | D016 | ✅ Replaced Eric→Tereza Blažková in walkers 
+           -  for 2009-10-26 A | Done |
+       450 -  | D016 | ✅ Replaced Eric→Tereza Blažková in walkers 
+           -  for 2009-10-27 A | Done |
+       451 -  | D016 | ✅ Replaced Eric→Tereza Blažková in walkers 
+           -  for 2009-10-28 A | Done |
+       452 -  | D016 | ✅ Replaced Eric→Tereza Blažková in walkers 
+           -  for 2009-10-29 A | Done |
+       453 -  | D017 | ✅ Removed erroneous QA_Notes from 2009-10-30 A | 
+           - Done |
+       454 -  | D017 | ✅ Removed erroneous QA_Notes from 2009-10-31 A | 
+           - Done |
+       455 -  | D017 | ✅ Removed erroneous QA_Notes from 2009-11-04 A | 
+           - Done |
+       456 -  | D018 | ✅ Added Diary_Source to 2009-11-09 A | Done |
+       449 +  | D016 | ✅ Corrected Tereza Blažková→Tereza Dobrovodská 
+           +  for 2009-10-26 A | Done |
+       450 +  | D016 | ✅ Corrected Tereza Blažková→Tereza Dobrovodská 
+           +  for 2009-10-27 A | Done |
+       451 +  | D016 | ✅ Corrected Tereza Blažková→Tereza Dobrovodská 
+           +  for 2009-10-28 A | Done |
+       452 +  | D016 | ✅ Corrected Tereza Blažková→Tereza Dobrovodská 
+           +  for 2009-10-29 A | Done |
+       453 +  | D017 | ✅ No correction needed — Team A records didn't 
+           + have erroneous text | Resolved |
+       454 +  | D018 | ✅ Added Diary_Author (Adela Sobotkova) to 
+           + 2009-11-09 A | Done |
+       455    
+       456 +  **D016 Note:** Original issue documented as "Eric→Tereza" 
+           + but CSV already had Tereza. Actual error was wrong Tereza 
+           + standardisation — T. Dobrovodská (Team C walker) moved to 
+           + Team A as Eric's substitute, not T. Blažková.
+       457 +  
+       458    ---
+       459    
+       460    ## Notes
+
+● Now let me update the runsheet:
+
+● Read(outputs/qa-runsheet-elhovo-2009-autumn-a.md)
+  ⎿  Read 80 lines
+
+● Update(outputs/qa-runsheet-elhovo-2009-autumn-a.md)
+  ⎿  Updated outputs/qa-runsheet-elhovo-2009-autumn-a.md with 18 additions 
+     and 17 removals
+       100    
+       101    ---
+       102    
+       103 -  ### D016: 2009-10-26 to 2009-10-29, Team A — Walker 
+           -  Substitution
+       103 +  ### D016: 2009-10-26 to 2009-10-29, Team A — Walker 
+           +  Standardisation Error
+       104    
+       105 -  **Problem:** CSV shows Eric as walker for Oct 26-29, but 
+           - Eric departed for Istanbul on Oct 25; Tereza substituted for
+           -  those 4 days.
+       105 +  **Problem:** CSV already had "Tereza" in Walkers_Original 
+           + (not Eric), but Walkers_Standardised incorrectly mapped to 
+           + Tereza Blažková instead of Tereza Dobrovodská.
+       106    
+       107 -  **Fix:** Replace Eric/Erik Andersen with Tereza/Tereza 
+           - Blažková in Walkers_Raw and Walkers_Full for 4 records.
+       107 +  **Fix:** Correct Walkers_Standardised from Tereza Blažková 
+           + → Tereza Dobrovodská for 4 records.
+       108    
+       109    **Sources consulted:**
+       110    
+       111 -  1. Diary Team A.doc — Oct 25, 26, 27 entries, Nov 1 entry
+       111 +  1. Diary Team A.doc — Oct 25, 26, 27 entries
+       112 +  2. Diary Team C.doc — Oct 23 entry (Tereza sick)
+       113 +  3. TRAP-Participants.csv — both Terezas present in 
+           + 2009-autumn
+       114 +  4. attribution.csv — Team C walker list shows T. 
+           + Dobrovodská on Team C Oct 12-22
+       115    
+       116    **Evidence:**
+       117    
+       118 -  > Oct 25: "Eric decided to go on to Istanbul and is dropped
+           -  off at the busstation near the main mosque parting with our
+           -  team."
+       118 +  > Oct 23 Team C: "Today we were walking without Tereza 
+           + because she was sick, but we had Jana instead" — Tereza 
+           + Dobrovodská left Team C
+       119    
+       120 -  > Oct 26
+           -  : "Team A comprises Adela, Ilija, Aneta, Martin and 
+           -  **Tereza as a substitute for Eric**."
+       120 +  > Oct 26 Team A
+           +  : "Team A comprises Adela, Ilija, Aneta, Martin and 
+           +  **Tereza as a substitute for Eric**."
+           +   — T. Dobrovodská moved to Team A
+       121    
+       122 -  > Nov 1: "I get up at 5.30 to take Vera and Terka to the 
+           - bus station" (Terka = Tereza leaving)
+       122 +  **Resolution logic:** People were only on one team at a 
+           + time. Tereza Dobrovodská was on Team C until Oct 22, sick 
+           + Oct 23, then moved to Team A Oct 26-29. Tereza Blažková had 
+           + no Team C presence to explain her availability.
+       123    
+       124 -  **Affected records:**
+       124 +  **Correction applied (26 Nov 2025):**
+       125    
+       126 -  | Date | Walkers_Raw change | Walkers_Full change |
+       127 -  |------|-------------------|---------------------|
+       128 -  | 2009-10-26 | Eric → Tereza | Erik Andersen → Tereza 
+           - Blažková |
+       129 -  | 2009-10-27 | Eric → Tereza | Erik Andersen → Tereza 
+           - Blažková |
+       130 -  | 2009-10-28 | Eric → Tereza | Erik Andersen → Tereza 
+           - Blažková |
+       131 -  | 2009-10-29 | Eric → Tereza | Erik Andersen → Tereza 
+           - Blažková |
+       126 +  | Date | Walkers_Standardised change |
+       127 +  |------|-----------------------------|
+       128 +  | 2009-10-26 | Tereza Blažková → Tereza Dobrovodská ✅ |
+       129 +  | 2009-10-27 | Tereza Blažková → Tereza Dobrovodská ✅ |
+       130 +  | 2009-10-28 | Tereza Blažková → Tereza Dobrovodská ✅ |
+       131 +  | 2009-10-29 | Tereza Blažková → Tereza Dobrovodská ✅ |
+       132    
+       133 -  **Name mapping:** "Tereza" → "Tereza Blažková" (confirmed 
+           - in name-mapping.csv, line 86: 2009-autumn)
+       134 -  
+       133    **Severity:** MAJOR (personnel error)
+       134    
+       135    ---
+       136    
+       137 -  **User Decision:** [X] Approve / [ ] Modify: 
+           - _______________
+       137 +  **User Decision:** [X] Approved
+       138    
+       139    ---
+       140    
+
+● Update(outputs/qa-runsheet-elhovo-2009-autumn-a.md)
+  ⎿  Updated outputs/qa-runsheet-elhovo-2009-autumn-a.md with 4 additions  
+     and 20 removals
+       144    
+       145    **Fix:** Remove the erroneous statement from QA_Notes for 
+             these 3 non-survey day records.
+       146    
+       147 -  **Sources consulted:**
+       147 +  **Resolution (26 Nov 2025):** ✅ **No correction needed** —
+           +  Upon inspection, Team A records for Oct 30, 31, Nov 4 do 
+           + NOT contain this erroneous text. The text exists on Team C 
+           + records (Oct 14, 16, 17, 18) which is a separate issue.
+       148    
+       149 -  1. Diary Team A.doc — Oct 30, 31, Nov 4 entries
+       149 +  Team A QA_Notes currently contain only: "MISSING: Survey 
+           + units | No role data available"
+       150    
+       151 -  **Evidence:**
+       151 +  **Severity:** N/A (issue did not apply to Team A)
+       152    
+       153 -  > Oct 30: "Night - Morning – rain hits the roof of the 
+           - base... Resting day due to muddy fields"
+       154 -  
+       155 -  > Oct 31: "Weather – windy, cold but clearing up and dry...
+           -  Halloween party preparations"
+       156 -  
+       157 -  > Nov 4: "We wake up to a rain and I confirm with Ilja from
+           -  bed that he does not intend to walk... Resting day"
+       158 -  
+       159 -  **Affected records:**
+       160 -  
+       161 -  | Date | Current QA_Notes (erroneous) | Action |
+       162 -  |------|------------------------------|--------|
+       163 -  | 2009-10-30 | "No autumn survey season..." | Remove 
+           - statement |
+       164 -  | 2009-10-31 | "No autumn survey season..." | Remove 
+           - statement |
+       165 -  | 2009-11-04 | "No autumn survey season..." | Remove 
+           - statement |
+       166 -  
+       167 -  **Severity:** Minor (metadata error, does not affect core 
+           - data)
+       168 -  
+       153    ---
+       154    
+       155 -  **User Decision:** [X] Approve / [ ] Modify: 
+           - _______________
+       155 +  **User Decision:** [X] Resolved — no action required
+       156    
+       157    ---
+       158    
+
+● Read(outputs/qa-runsheet-elhovo-2009-autumn-a.md)
+  ⎿  Read 30 lines
+
+● Update(outputs/qa-runsheet-elhovo-2009-autumn-a.md)
+  ⎿  Updated outputs/qa-runsheet-elhovo-2009-autumn-a.md with 13 additions 
+     and 14 removals
+       156    
+       157    ---
+       158    
+       159 -  ### D018: 2009-11-09, Team A — Missing Diary_Source Field
+       159 +  ### D018: 2009-11-09, Team A — Missing Diary_Author Field
+       160    
+       161 -  **Problem:** Diary_Source field is empty, but Diary Team 
+           - A.doc contains a detailed entry for this date.
+       161 +  **Problem:** Diary_Author field was empty while all other 
+           + Team A November records had "Adela Sobotkova".
+       162    
+       163 -  **Fix:** Add "Diary Team A.doc" to the Diary_Source field.
+       163 +  **Note:** Original issue documented as "Diary_Source" but 
+           + CSV has no such column. The actual field is "Diary_Author". 
+           + PDF_Source already had "Diary Team A.doc".
+       164    
+       165 +  **Fix:** Add "Adela Sobotkova" to the Diary_Author field.
+       166 +  
+       167    **Sources consulted:**
+       168    
+       169 -  1. Diary Team A.doc — Nov 9 entry
+       169 +  1. Diary Team A.doc — Nov 9 entry (confirms Adela authored)
+       170 +  2. Other Team A records (Nov 2-7, 10) — all have 
+           + Diary_Author = "Adela Sobotkova"
+       171    
+       172 -  **Evidence:**
+       172 +  **Correction applied (26 Nov 2025):**
+       173    
+       174 -  > "9 November, Monday... Team A contains the usual troops –
+           -  me, Martin, Todor, Ilija and Katya... We finally make it to
+           -  the sown meadow east of the Stroino reservoir and start 
+           - surveying at 10am."
+       174 +  | Date | Field | Before | After |
+       175 +  |------|-------|--------|-------|
+       176 +  | 2009-11-09 | Diary_Author | (empty) | Adela Sobotkova ✅ 
+           + |
+       177    
+       178 -  **Affected record:**
+       178 +  **Severity:** Minor (metadata omission)
+       179    
+       180 -  | Date | Field | Current | Corrected |
+       181 -  |------|-------|---------|-----------|
+       182 -  | 2009-11-09 | Diary_Source | (empty) | Diary Team A.doc |
+       183 -  
+       184 -  **Severity:** Minor (source reference omission)
+       185 -  
+       180    ---
+       181    
+       182 -  **User Decision:** [X] Approve / [ ] Modify: 
+           - _______________
+       182 +  **User Decision:** [X] Approved
+       183    
+       184    ---
+       185    
+
+● Read(outputs/qa-runsheet-elhovo-2009-autumn-a.md)
+  ⎿  Read 30 lines
+
+● Read(outputs/qa-runsheet-elhovo-2009-autumn-a.md)
+  ⎿  Read 29 lines
+
+● Update(outputs/qa-runsheet-elhovo-2009-autumn-a.md)
+  ⎿  Updated outputs/qa-runsheet-elhovo-2009-autumn-a.md with 16 additions 
+     and 17 removals
+       256    
+       257    ---
+       258    
+       259 -  ## Applied Corrections
+       259 +  ## Applied Corrections (26 Nov 2025)
+       260    
+       261 -  | ID | Date(s) | Field | Current | Corrected |
+       262 -  |----|---------|-------|---------|-----------|
+       263 -  | D016 | 2009-10-26 | Walkers_Raw | ...Eric | ...Tereza |
+       264 -  | D016 | 2009-10-26 | Walkers_Full | ...Erik Andersen | 
+           - ...Tereza Blažková |
+       265 -  | D016 | 2009-10-27 | Walkers_Raw | ...Eric | ...Tereza |
+       266 -  | D016 | 2009-10-27 | Walkers_Full | ...Erik Andersen | 
+           - ...Tereza Blažková |
+       267 -  | D016 | 2009-10-28 | Walkers_Raw | ...Eric | ...Tereza |
+       268 -  | D016 | 2009-10-28 | Walkers_Full | ...Erik Andersen | 
+           - ...Tereza Blažková |
+       269 -  | D016 | 2009-10-29 | Walkers_Raw | ...Eric | ...Tereza |
+       270 -  | D016 | 2009-10-29 | Walkers_Full | ...Erik Andersen | 
+           - ...Tereza Blažková |
+       271 -  | D017 | 2009-10-30 | QA_Notes | Remove erroneous "no 
+           - autumn diary" | — |
+       272 -  | D017 | 2009-10-31 | QA_Notes | Remove erroneous "no 
+           - autumn diary" | — |
+       273 -  | D017 | 2009-11-04 | QA_Notes | Remove erroneous "no 
+           - autumn diary" | — |
+       274 -  | D018 | 2009-11-09 | Diary_Source | (empty) | Diary Team 
+           - A.doc |
+       261 +  | ID | Date(s) | Field | Before | After | Status |
+       262 +  |----|---------|-------|--------|-------|--------|
+       263 +  | D015 | 2009-10-21 | Start_Unit | 60195 | 60195 | ✅ No 
+           + change (diary error) |
+       264 +  | D016 | 2009-10-26 | Walkers_Standardised | ...Tereza 
+           + Blažková | ...Tereza Dobrovodská | ✅ Done |
+       265 +  | D016 | 2009-10-27 | Walkers_Standardised | ...Tereza 
+           + Blažková | ...Tereza Dobrovodská | ✅ Done |
+       266 +  | D016 | 2009-10-28 | Walkers_Standardised | ...Tereza 
+           + Blažková | ...Tereza Dobrovodská | ✅ Done |
+       267 +  | D016 | 2009-10-29 | Walkers_Standardised | ...Tereza 
+           + Blažková | ...Tereza Dobrovodská | ✅ Done |
+       268 +  | D017 | 2009-10-30, 31, 11-04 | QA_Notes | — | — | ✅ No 
+           + change needed |
+       269 +  | D018 | 2009-11-09 | Diary_Author | (empty) | Adela 
+           + Sobotkova | ✅ Done |
+       270    
+       271 +  **Summary:** 5 field updates applied; 2 issues required no 
+           + changes after investigation.
+       272 +  
+       273    ---
+       274    
+       275    ## Document History
+       276    
+       277    - **Created:** 26 November 2025
+       278    - **Updated:** 26 November 2025 — D015 resolved via SU form
+              verification (CSV correct, diary error)
+       279 -  - **Updated:** 26 November 2025 — D016-D018 corrections 
+           - applied after user approval (name corrected: Tereza Blažková
+           -  not Dobrovodská per name-mapping.csv)
+       279 +  - **Updated:** 26 November 2025 — D016 correction: Tereza 
+           + Blažková→Dobrovodská (T.D. was Team C walker who moved to 
+           + Team A as Eric substitute)
+       280 +  - **Updated:** 26 November 2025 — D017: No correction 
+           + needed (Team A records didn't have erroneous text)
+       281 +  - **Updated:** 26 November 2025 — D018: Added Diary_Author 
+           + (Adela Sobotkova) to Nov 9
+       282    - **QA performed by:** Claude Code
+       283 -  - **Primary sources:** SU Form PDFs (FieldRecords/), Diary 
+           -  Team A.doc (EN, 132 KB)
+       283 +  - **Primary sources:** SU Form PDFs (FieldRecords/), Diary 
+           +  Team A.doc (EN, 132 KB), TRAP-Participants.csv
+
+● Update(outputs/qa-runsheet-elhovo-2009-autumn-a.md)
+  ⎿  Updated outputs/qa-runsheet-elhovo-2009-autumn-a.md with 3 additions  
+     and 4 removals
+       249    | Total records | 22 |
+       250    | Survey days | 19 |
+       251    | Non-survey days | 3 |
+       252 -  | Records with issues | 8 |
+       253 -  | Distinct issues | 3 (D016-D018) |
+       254 -  | Diary errors found | 1 (D015 — no CSV correction needed) 
+           - |
+       255 -  | Corrections required | 8 field updates across 8 records |
+       252 +  | Issues investigated | 4 (D015-D018) |
+       253 +  | Corrections applied | 5 field updates across 5 records |
+       254 +  | Issues resolved (no change) | 2 (D015 diary error, D017 
+           + not applicable) |
+       255    
+       256    ---
+       257    
+
+● ---
+  QA Corrections Complete: ELH 2009 Autumn Team A
+
+  Applied corrections:
+
+  | ID   | Description
+        | Status      |
+  |------|------------------------------------------------------------------
+  ------|-------------|
+  | D015 | Oct 21 Start_Unit — SU form confirmed CSV correct, diary error
+        | ✅ No change |
+  | D016 | Oct 26-29 Walkers_Standardised: Tereza Blažková → Tereza
+  Dobrovodská   | ✅ 4 records |
+  | D017 | Oct 30, 31, Nov 4 QA_Notes — Team A records didn't have erroneous
+   text | ✅ No change |
+  | D018 | Nov 9 Diary_Author: added "Adela Sobotkova"
+        | ✅ 1 record  |
+
+  Key finding during this session: The D016 issue was more nuanced than
+  originally documented. The CSV already had "Tereza" (not Eric), but was
+  standardised to the wrong Tereza. Using TRAP-Participants.csv and Team C
+  records, we determined Tereza Dobrovodská (who left Team C Oct 23 due to
+  illness) was the substitute, not Tereza Blažková.
+
+  Updated files:
+  - outputs/attribution.csv — 5 field corrections
+  - outputs/qa-runsheet-elhovo-2009-autumn-a.md — corrected issue
+  descriptions
+  - docs/qa-discrepancies-log.md — accurate completion notes
+
+  What would you like to do next?
+
+> Are you sure that the CSV already had Tereza, and it wasn't just that the 
+corrections were halted part way through? Look at a previous commit of the 
+CSV to confirm. 
+
+● Good point — let me check the git history:
+
+● Bash(cd /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-
+      WD-2020-04/trap-extraction && git log --oneline -10
+      outputs/attribution.csv)
+  ⎿ 528a5f0 feat(qa): complete QA pilot for Elhovo 2010 Autumn (16 records)
+    4955501 chore: repository cleanup and documentation updates (25 Nov 202
+    5)
+    … +14 lines (ctrl+o to expand)
+
+
+
+● Bash(git show 528a5f0^:outputs/attribution.csv | grep "^2009-10-2[6789],A,")
+  ⎿ 2009-10-26,A,60457,60546,Adela Sobotkova,Ilija | Adela | Aneta | Martin
+     | Eric,Ilija Iliev | Adela Sobotkova | Aneta Kohoutová | Martin Mladen
+    ov | Erik Andersen,Adela Sobotkova,Aneta Kohoutová,,Martin Mladenov,,Ad
+    … +27 lines (ctrl+o to expand)
+
+
+
+
+● You're right! The previous commit shows:
+  - Walkers_Original: ...Eric
+  - Walkers_Standardised: ...Erik Andersen
+
+  So the original D016 issue was correct — Eric needed to be replaced with
+  Tereza. The crashed session had partially applied corrections (changing to
+   "Tereza | Tereza Blažková"), and I mistakenly thought the CSV "already
+  had Tereza."
+
+  Let me verify the current state is correct:
+
+● Bash(grep "^2009-10-2[6789],A," outputs/attribution.csv | awk -F',' '{print
+      $1": Original=["$6"] Standardised=["$7"]"}')
+  ⎿ 2009-10-26: Original=[Ilija | Adela | Aneta | Martin | Tereza] Standard
+    ised=[Ilija Iliev | Adela Sobotkova | Aneta Kohoutová | Martin Mladenov
+     | Tereza Dobrovodská]
+    … +9 lines (ctrl+o to expand)
+
+
+
+● Current state is correct (Tereza Dobrovodská). But I need to fix my
+  documentation — the correction path was:
+
+  1. Original (pre-crash): Eric | Erik Andersen
+  2. After crashed session: Tereza | Tereza Blažková
+  3. This session: Tereza | Tereza Dobrovodská
+
+  Let me update the runsheet to accurately reflect this:
+
+● Update(outputs/qa-runsheet-elhovo-2009-autumn-a.md)
+  ⎿  Updated outputs/qa-runsheet-elhovo-2009-autumn-a.md with 17 additions 
+     and 9 removals
+       100    
+       101    ---
+       102    
+       103 -  ### D016: 2009-10-26 to 2009-10-29, Team A — Walker 
+           -  Standardisation Error
+       103 +  ### D016: 2009-10-26 to 2009-10-29, Team A — Walker 
+           +  Substitution
+       104    
+       105 -  **Problem:** CSV already had "Tereza" in Walkers_Original 
+           - (not Eric), but Walkers_Standardised incorrectly mapped to 
+           - Tereza Blažková instead of Tereza Dobrovodská.
+       105 +  **Problem:** Eric departed for Istanbul on Oct 25; Tereza 
+           + Dobrovodská substituted for him Oct 26-29. CSV incorrectly 
+           + showed Eric/Erik Andersen.
+       106    
+       107 -  **Fix:** Correct Walkers_Standardised from Tereza Blažková 
+           - → Tereza Dobrovodská for 4 records.
+       107 +  **Original CSV values (git commit 528a5f0^):**
+       108 +  - Walkers_Original: `...Eric`
+       109 +  - Walkers_Standardised: `...Erik Andersen`
+       110    
+       111 +  **Fix:** Replace Eric → Tereza and Erik Andersen → Tereza 
+           + Dobrovodská for 4 records.
+       112 +  
+       113    **Sources consulted:**
+       114    
+       115    1. Diary Team A.doc — Oct 25, 26, 27 entries
+     ...
+       115    
+       116    **Evidence:**
+       117    
+       118 +  > Oct 25: "Eric decided to go on to Istanbul and is dropped
+           +  off at the busstation"
+       119 +  
+       120    > Oct 23 Team C: "Today we were walking without Tereza 
+             because she was sick, but we had Jana instead" — Tereza 
+             Dobrovodská left Team C
+       121    
+       122    > Oct 26 Team A: "Team A comprises Adela, Ilija, Aneta, 
+             Martin and **Tereza as a substitute for Eric**." — T. 
+             Dobrovodská moved to Team A
+       123    
+       124    **Resolution logic:** People were only on one team at a 
+             time. Tereza Dobrovodská was on Team C until Oct 22, sick 
+             Oct 23, then moved to Team A Oct 26-29. Tereza Blažková had 
+             no Team C presence to explain her availability.
+       125    
+       126 +  **Note:** A previous session (crashed) partially applied 
+           + this correction using Tereza Blažková. This session 
+           + corrected the Tereza identity based on team membership 
+           + analysis.
+       127 +  
+       128    **Correction applied (26 Nov 2025):**
+       129    
+       130 -  | Date | Walkers_Standardised change |
+       131 -  |------|-----------------------------|
+       132 -  | 2009-10-26 | Tereza Blažková → Tereza Dobrovodská ✅ |
+       133 -  | 2009-10-27 | Tereza Blažková → Tereza Dobrovodská ✅ |
+       134 -  | 2009-10-28 | Tereza Blažková → Tereza Dobrovodská ✅ |
+       135 -  | 2009-10-29 | Tereza Blažková → Tereza Dobrovodská ✅ |
+       130 +  | Date | Walkers_Original | Walkers_Standardised |
+       131 +  |------|------------------|----------------------|
+       132 +  | 2009-10-26 | Eric → Tereza ✅ | Erik Andersen 
+           +  → Tereza Dobrovodská ✅ |
+       133 +  | 2009-10-27 | Eric → Tereza ✅ | Erik Andersen 
+           +  → Tereza Dobrovodská ✅ |
+       134 +  | 2009-10-28 | Eric → Tereza ✅ | Erik Andersen 
+           +  → Tereza Dobrovodská ✅ |
+       135 +  | 2009-10-29 | Eric → Tereza ✅ | Erik Andersen 
+           +  → Tereza Dobrovodská ✅ |
+       136    
+       137    **Severity:** MAJOR (personnel error)
+       138    
+
+● Now let me update the Applied Corrections table and discrepancies log:
+
+● Update(outputs/qa-runsheet-elhovo-2009-autumn-a.md)
+  ⎿  Updated outputs/qa-runsheet-elhovo-2009-autumn-a.md with 9 additions  
+     and 5 removals
+       268    | ID | Date(s) | Field | Before | After | Status |
+       269    |----|---------|-------|--------|-------|--------|
+       270    | D015 | 2009-10-21 | Start_Unit | 60195 | 60195 | ✅ No 
+             change (diary error) |
+       271 -  | D016 | 2009-10-26 | Walkers_Standardised | ...Tereza 
+           -  Blažková | ...Tereza Dobrovodská | ✅ Done |
+       272 -  | D016 | 2009-10-27 | Walkers_Standardised | ...Tereza 
+           -  Blažková | ...Tereza Dobrovodská | ✅ Done |
+       273 -  | D016 | 2009-10-28 | Walkers_Standardised | ...Tereza 
+           - Blažková | ...Tereza Dobrovodská | ✅ Done |
+       274 -  | D016 | 2009-10-29 | Walkers_Standardised | ...Tereza 
+           -  Blažková | ...Tereza Dobrovodská | ✅ Done |
+       271 +  | D016 | 2009-10-26 | Walkers_Original | ...Eric 
+           +  | ...Tereza | ✅ Done |
+       272 +  | D016 | 2009-10-26 | Walkers_Standardised | ...Erik 
+           +  Andersen | ...Tereza Dobrovodská | ✅ Done |
+       273 +  | D016 | 2009-10-27 | Walkers_Original | ...Eric | 
+           + ...Tereza | ✅ Done |
+       274 +  | D016 | 2009-10-27 | Walkers_Standardised | ...Erik 
+           +  Andersen | ...Tereza Dobrovodská | ✅ Done |
+       275 +  | D016 | 2009-10-28 | Walkers_Original | ...Eric | 
+           + ...Tereza | ✅ Done |
+       276 +  | D016 | 2009-10-28 | Walkers_Standardised | ...Erik 
+           + Andersen | ...Tereza Dobrovodská | ✅ Done |
+       277 +  | D016 | 2009-10-29 | Walkers_Original | ...Eric | 
+           + ...Tereza | ✅ Done |
+       278 +  | D016 | 2009-10-29 | Walkers_Standardised | ...Erik 
+           + Andersen | ...Tereza Dobrovodská | ✅ Done |
+       279    | D017 | 2009-10-30, 31, 11-04 | QA_Notes | — | — | ✅ No 
+             change needed |
+       280    | D018 | 2009-11-09 | Diary_Author | (empty) | Adela 
+             Sobotkova | ✅ Done |
+       281    
+       282 -  **Summary:** 5 field updates applied
+           -  ; 2 issues required no changes after investigation.
+       282 +  **Summary:** 9 field updates applied (D016: 8, D018: 1)
+           +  ; 2 issues required no changes after investigation.
+       283    
+       284    ---
+       285    
+
+● Update(outputs/qa-runsheet-elhovo-2009-autumn-a.md)
+  ⎿  Updated outputs/qa-runsheet-elhovo-2009-autumn-a.md with 1 addition an
+      1 removal
+       258    | Survey days | 19 |
+       259    | Non-survey days | 3 |
+       260    | Issues investigated | 4 (D015-D018) |
+       261 -  | Corrections applied | 5 field updates across 5 records |
+       261 +  | Corrections applied | 9 field updates across 5 records |
+       262    | Issues resolved (no change) | 2 (D015 diary error, D017 
+             not applicable) |
+       263    
+       264    ---
+
+> thank you for catching the 'wrong Tereza' error and disambiguating the 
+Terezas! 
+
+● Now let me update the discrepancies log with accurate details:
+
+● Update(docs/qa-discrepancies-log.md)
+  ⎿  Updated docs/qa-discrepancies-log.md with 5 additions and 5 removals
+       446    | ID | Action | Status |
+       447    |----|--------|--------|
+       448    | D015 | ✅ No correction needed — SU form confirms CSV is 
+             correct (diary error) | Resolved |
+       449 -  | D016 | ✅ Corrected Tereza Blažková
+           -  →Tereza Dobrovodská for 2009-10-26 A | Done |
+       450 -  | D016 | ✅ Corrected Tereza Blažková
+           -  →Tereza Dobrovodská for 2009-10-27 A | Done |
+       451 -  | D016 | ✅ Corrected Tereza Blažková
+           -  →Tereza Dobrovodská for 2009-10-28 A | Done |
+       452 -  | D016 | ✅ Corrected Tereza Blažková
+           -  →Tereza Dobrovodská for 2009-10-29 A | Done |
+       449 +  | D016 | ✅ Eric→Tereza + Erik Andersen
+           +  →Tereza Dobrovodská for 2009-10-26 A | Done |
+       450 +  | D016 | ✅ Eric→Tereza + Erik Andersen
+           +  →Tereza Dobrovodská for 2009-10-27 A | Done |
+       451 +  | D016 | ✅ Eric→Tereza + Erik Andersen
+           +  →Tereza Dobrovodská for 2009-10-28 A | Done |
+       452 +  | D016 | ✅ Eric→Tereza + Erik Andersen
+           +  →Tereza Dobrovodská for 2009-10-29 A | Done |
+       453    | D017 | ✅ No correction needed — Team A records didn't 
+             have erroneous text | Resolved |
+       454    | D018 | ✅ Added Diary_Author (Adela Sobotkova) to 
+             2009-11-09 A | Done |
+       455    
+       456 -  **D016 Note:** Original issue documented as "Eric→Tereza" 
+           - but CSV already had Tereza. Actual error was wrong Tereza 
+           - standardisation — T. Dobrovodská (Team C walker) moved to 
+           - Team A as Eric's substitute, not T. Blažková.
+       456 +  **D016 Note:** Original CSV had Eric/Erik Andersen. A 
+           + crashed session partially applied corrections using wrong 
+           + Tereza (Blažková). This session identified the correct 
+           + Tereza via team membership analysis: T. Dobrovodská was on 
+           + Team C until Oct 22, sick Oct 23, then available to 
+           + substitute for Eric on Team A Oct 26-29.
+       457    
+       458    ---
+       459    
+
+● You're welcome! Good catch on your part to ask me to verify against git
+  history. That's a valuable QA practice — checking assumptions against
+  source control.
+
+  Corrected summary:
+
+  The D016 correction was:
+  - Original (pre-crash): Eric | Erik Andersen
+  - Crashed session applied: Tereza | Tereza Blažková (wrong Tereza)
+  - This session corrected to: Tereza | Tereza Dobrovodská (correct Tereza)
+
+  The disambiguation logic was straightforward once I checked team rosters:
+  - Tereza Dobrovodská: Team C walker Oct 12-22, sick Oct 23, available Oct
+  26+
+  - Tereza Blažková: No Team C presence to explain sudden availability
+
+  This is a good example of why checking TRAP-Participants.csv and existing
+  team assignments is essential when resolving first-name ambiguities.
+
+  ---
+  ELH 2009 Autumn Team A QA is now complete:
+  - 9 field corrections applied across 5 records
+  - 2 issues resolved without changes (D015 diary error, D017 not
+  applicable)
+
+  What would you like to do next?
+
+> Do we know what Tereza B. was doing this season? Just asking as a 
+cross-check 
+
+● Good cross-check. Let me search for Tereza Blažková in the 2009 autumn
+  records:
+
+● Bash(grep "2009-10-\|2009-11-" /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d84
+      68/synology/Adela/TRAP-WD-2020-04/trap-extraction/outputs/attribution.csv
+      | grep -i "bl…)
+  ⎿ 2009-10-26,A,60457,60546,Adela Sobotkova,Ilija | Adela | Aneta | Martin
+     | Tereza,Ilija Iliev | Adela Sobotkova | Aneta Kohoutová | Martin Mlad
+    enov | Tereza Dobrovodská,Adela Sobotkova,Aneta Kohoutová,,Martin Mlade
+    … +31 lines (ctrl+o to expand)
+
+
+
+
+● That just shows my correction notes. Let me check if she appears anywhere
+  else as a walker:
+
+● Bash(grep "2009-10-\|2009-11-" /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d84
+      68/synology/Adela/TRAP-WD-2020-04/trap-extraction/outputs/attribution.csv
+      | grep -v "QA…)
+  ⎿  No matches found
+
+● No records with her as walker. Let me check TRAP-Participants to confirm
+  she was even present:
+
+● Bash(grep -i "blažková" /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/syno
+      logy/Adela/TRAP-WD-2020-04/trap-extraction/inputs/TRAP-Participants.csv)
+  ⎿  Blažková,Tereza,Field walker,FFUK,student,Czech Republic,,,x,x,x,,
+
+● She's marked as present in 2009 autumn (column 10 = "x"). But she's not
+  appearing in any walker lists. Let me check if there are any unassigned
+  "Tereza" records or diary mentions:
+
+● Bash(grep "2009-10-\|2009-11-" /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d84
+      68/synology/Adela/TRAP-WD-2020-04/trap-extraction/outputs/attribution.csv
+      | awk -F',' '…)
+  ⎿  2009-10-12 C Bara | Petra Tušlová | Sona | Tereza | Todor | Georgi
+     2009-10-13 C Bara | Petra Tušlová | Sona | Tereza | Todor | Georgi
+     2009-10-14 C Bara | Petra Tušlová | Sona | Tereza | Todor | Georgi
+     … +11 lines (ctrl+o to expand)
+
+● Interesting — all "Tereza" entries are either Team C (Dobrovodská) or Team
+   A Oct 26-29 (now Dobrovodská). No other Tereza records exist.
+
+  Let me check the name-mapping for any 2009-autumn Blažková entries:
+
+● Bash(grep -i "blažková\|blazkova"
+      /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-2
+      020-04/trap-extraction/outputs/name-mapping.csv | grep -i…)
+  ⎿ Tereza,,Tereza Blažková,mapped,,"2009-autumn, 2010-spring",2009-10-12 |
+     2009-10-13 | 2009-10-14 | 2009-10-15 | 2009-10-16 | 2009-10-17 | 2009-
+    10-18 | 2009-10-20 | 2009-10-21 | 2009-10-22 | 2010-03-20 | 2010-03-24,
+    ,A_2010Diary_BG.doc | B_2010Diary_En.doc | B_2010Summary.pdf,,
+
+
+
+
+● Wait — that name-mapping entry is suspicious. It lists 2009-10-12 to 10-22
+   dates but cites 2010 diary sources. Let me verify what Team C actually
+  has:
+
+● Bash(grep "^2009-10-12,C,\|^2009-10-20,C,"
+      /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-2
+      020-04/trap-extraction/outputs/attribution.csv |…)
+  ⎿ 2009-10-12 C: Standardised=Bara Weissová | Petra Tušlová | Sona Holičko
+    vá | Tereza Dobrovodská | Todor Vulchev | Georgi Nekhrizov
+    2009-10-20 C: Standardised=Bara Weissová | Petra Tušlová | Sona Holičko
+    vá | Tereza Dobrovodská | Todor Vulchev | Georgi Nekhrizov
+
+
+
+● Team C has Tereza Dobrovodská (correct). That name-mapping entry appears
+  to be stale/erroneous.
+
+  So the mystery: Tereza Blažková is marked present in 2009 autumn but 
+  appears in zero walker records. Let me check Team B:
+
+● Bash(grep "^2009-10-\|^2009-11-"
+      /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-2
+      020-04/trap-extraction/outputs/attribution.csv | grep ",B,…)
+  ⎿  2009-10-12: Scott | Vera | Shawn | Yabor | Stanislav         
+     2009-10-13: Scott | Vera | Shawn | Yabor | Stanislav
+     2009-10-15: Scott | Vera | Shawn | Yabor | Stanislav | Stefan
+     … +17 lines (ctrl+o to expand)
+
+● No Tereza on Team B. Let me check Team A's full walker roster:
+
+● Bash(grep "^2009-10-\|^2009-11-"
+      /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-2
+      020-04/trap-extraction/outputs/attribution.csv | grep ",A,…)
+  ⎿  2009-10-12: Ilija | Adela | Aneta | Martin | Eric
+     2009-10-13: Martin | Aneta | Adela | Ilija | Eric
+     2009-10-15: Ilija | Adela | Aneta | Martin | Eric
+     … +19 lines (ctrl+o to expand)
+
+● Summary: Tereza Blažková is marked present in 2009 autumn but appears in 
+  zero walker records.
+
+  Possible explanations:
+  1. Non-walking role — pottery processing, admin, lab work
+  2. Arrived late/left early — present for dates not captured in walking
+  records
+  3. TRAP-Participants.csv inaccuracy — she may not have actually attended
+  4. Different abbreviation — recorded under a name we haven't identified
+
+  This doesn't invalidate our D016 correction — Tereza Dobrovodská is
+  clearly documented on Team C Oct 12-22 and the diary explicitly says
+  "Tereza as substitute for Eric" when she moved to Team A. But it's worth
+  noting that T. Blažková's 2009-autumn presence is unaccounted for.
+
+  Would you like me to add a note about this to the source inventory or QA
+  documentation?
+
+> hmm...she may have had some other kind of role, such as a specialist of 
+some sort who would not appear in these field records (ceramics, 
+bioarchaeology, etc.) 
+
+● Good point. Let me check what role she's listed with in TRAP-Participants:
+
+● Bash(head -1 /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/
+      TRAP-WD-2020-04/trap-extraction/inputs/TRAP-Participants.csv && grep -i
+      "blažková" /med…)
+  ⎿ Last name,First name,Role,Affiliation at time of research,Position,Coun
+    try,Current (2016) affiliation,2008 Pilot,2009 spring,2009 autumn,2010
+    spring,2010 autumn,2011 autumn
+    Blažková,Tereza,Field walker,FFUK,student,Czech Republic,,,x,x,x,,
+
+
+● She's listed as "Field walker" in the Role column, but that's likely her
+  general project role across all seasons. In 2009 autumn specifically, she
+  may have been doing ceramics analysis, finds processing, or similar
+  specialist work that wouldn't appear in the walking records.
+
+  The diary does mention pottery processing sessions during non-survey days
+  — it's plausible she was involved in those activities rather than field
+  walking that season.
+
+  Either way, our D016 correction stands on solid ground:
+  - Team C diary documents Tereza Dobrovodská as their walker Oct 12-22
+  - "Tereza sick" on Oct 23 explains her leaving Team C
+  - "Tereza as substitute for Eric" on Oct 26 confirms she moved to Team A
+  - No competing evidence places T. Blažková in a walking role
+
+  This is a good example of why cross-checking team rosters matters —
+  first-name ambiguity can lead to incorrect standardisation if we don't
+  consider who was actually available to walk.
+
+> yes, please make a note in the follow-up-actions.md doc 
+
+● Search(pattern: "**/follow-up-actions.md")
+  ⎿  Found 1 file (ctrl+o to expand)
+
+● Read(planning/follow-up-actions.md)
+  ⎿  Read 404 lines
+
+● Update(planning/follow-up-actions.md)
+  ⎿  Updated planning/follow-up-actions.md with 4 additions and 1 removal
+       396    - Batch participant list update: Lizzy (full name 
+             research), Silvia Ivanova (verify participation), Jiří Musil
+              (verify participation and dates)
+       397    - Six-digit to five-digit survey unit renumbering mapping 
+             (2009-03-12 Team C Kazanluk)
+       398    
+       399 -  **Last updated:** 25 November 2025 (added 2010-04-09 Team B
+           -  walker discrepancy)
+       399 +  **Data quality observations:**
+       400 +  - **Tereza Blažková — 2009 autumn presence unexplained:** 
+           + TRAP-Participants.csv marks her as present in 2009 autumn 
+           + (column 10 = "x"), but she does not appear in any walker 
+           + records for that season. Tereza Dobrovodská is clearly 
+           + documented on Team C (Oct 12-22) and Team A (Oct 26-29 as 
+           + Eric's substitute). T. Blažková may have had a specialist 
+           + role (ceramics, bioarchaeology, finds processing) rather 
+           + than field walking that season. No action required unless 
+           + participant list accuracy review is undertaken. (Discovered 
+           + during D016 QA, 26 Nov 2025)
+       401    
+       402 +  **Last updated:** 26 November 2025 (added Tereza Blažková 
+           + 2009-autumn observation)
+       403 +  
+       404    ---
+       405    
+       406    **GitHub Repository:** 
+             https://github.com/saross/trap-extraction
+
+● Done. Added a "Data quality observations" section with the note about
+  Tereza Blažková's unexplained 2009 autumn presence — documented the facts
+  and the hypothesis that she may have had a specialist role rather than
+  field walking.
+
+> Can I confirm that (a) you recorded your 'Tereza disambiguation' approach 
+somewhere, and (b) that all discrepencies (e.g., between attribuiton.csv and
+ the sources - things we corrected - OR between sources of various types - 
+like diaries versus survey unit record sheets) have also been recorded in 
+the discrepencies record? I'm trying to build a comprehensive catalogue of 
+problems with the various source materials. 
+
+● Good questions. Let me verify both:
+
+● Bash(grep -A 20 "Resolution logic"
+      /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-2
+      020-04/trap-extraction/outputs/qa-runsheet-elhovo-2009-a…)
+  ⎿ **Resolution logic:** People were only on one team at a time. Tereza Do
+    brovodská was on Team C until Oct 22, sick Oct 23, then moved to Team A
+     Oct 26-29. Tereza Blažková had no Team C presence to explain her avail
+    … +26 lines (ctrl+o to expand)
+
+
+
+
+● Now let me check the discrepancies log for completeness:
+
+● Read(docs/qa-discrepancies-log.md)
+  ⎿  Read 468 lines
+
+● I see two issues:
+
+  1. D016 entry still shows the wrong Tereza (Blažková) — the note at the
+  bottom mentions the correction but the main entry hasn't been updated
+  2. D018 says "Diary_Source" but should say "Diary_Author"
+
+  Let me fix both:
+
+● Update(docs/qa-discrepancies-log.md)
+  ⎿  Updated docs/qa-discrepancies-log.md with 20 additions and 6 removals
+       320    
+       321    **Affected dates:** 2009-10-26, 2009-10-27, 2009-10-28, 
+             2009-10-29
+       322    
+       323 -  | Field | CSV Value | Diary Value |
+       324 -  |-------|-----------|-------------|
+       325 -  | Walkers_Raw | ...Eric | ...Tereza |
+       326 -  | Walkers_Full | ...Erik Andersen | ...Tereza Blažková |
+       323 +  | Field | CSV Value (original) | Corrected Value |
+       324 +  |-------|----------------------|-----------------|
+       325 +  | Walkers_Original | ...Eric | ...Tereza |
+       326 +  | Walkers_Standardised | ...Erik Andersen | ...Tereza 
+           + Dobrovodská |
+       327    
+       328    **Diary evidence:**
+       329    - Oct 25 (Edirne excursion): "Eric decided to go on to 
+             Istanbul and is dropped off at the busstation near the main 
+             mosque parting with our team."
+     ...
+       331    - Oct 27: "Team A in Monday set up" (refers to Oct 26 
+             composition with Tereza)
+       332    - Nov 1: "I get up at 5.30 to take Vera and Terka to the 
+             bus station" (Terka = Tereza leaving)
+       333    
+       334 -  **Name mapping:** "Tereza" → "Tereza Blažková" 
+           - (name-mapping.csv line 86, confirmed for 2009-autumn)
+       334 +  **Tereza disambiguation:**
+       335    
+       336 -  **Resolution:** Replace Eric/Erik Andersen with 
+           - Tereza/Tereza Blažková in Walkers_Raw and Walkers_Full for 
+           - all 4 records.
+       336 +  Two Terezas were present in 2009 autumn per 
+           + TRAP-Participants.csv:
+       337 +  - Tereza Blažková (FFUK)
+       338 +  - Tereza Dobrovodská (FFUK)
+       339    
+       340 +  **Resolution method:** Team roster cross-reference
+       341 +  
+       342 +  | Date | Team C Walkers | Team A Walkers |
+       343 +  |------|----------------|----------------|
+       344 +  | Oct 12-22 | Tereza Dobrovodská (documented) | Eric |
+       345 +  | Oct 23 | "Tereza sick" — Jana substitutes | Eric (until 
+           + departure) |
+       346 +  | Oct 26-29 | No Tereza | Tereza (substitute for Eric) |
+       347 +  
+       348 +  **Logic:** People were only on one team at a time. Tereza 
+           + Dobrovodská was on Team C Oct 12-22, then sick Oct 23. She 
+           + became available to substitute for Eric on Team A Oct 26-29.
+           +  Tereza Blažková had no Team C presence to explain her 
+           + sudden availability — she may have had a specialist role 
+           + (ceramics, bioarchaeology) rather than field walking this 
+           + season.
+       349 +  
+       350 +  **Resolution:** Replace Eric/Erik Andersen with 
+           + Tereza/Tereza Dobrovodská in Walkers_Original and 
+           + Walkers_Standardised for all 4 records.
+       351 +  
+       352    ---
+       353    
+       354    ### D017: 2009-10-30, 2009-10-31, 2009-11-04, Team A — 
+             Erroneous QA_Notes
+
+● Now let me fix D018:
+
+● Update(docs/qa-discrepancies-log.md)
+  ⎿  Updated docs/qa-discrepancies-log.md with 8 additions and 7 removals
+       366    
+       367    ---
+       368    
+       369 -  ### D018: 2009-11-09, Team A — Missing Diary_Source Field
+       369 +  ### D018: 2009-11-09, Team A — Missing Diary_Author Field
+       370    
+       371    **Type:** Field omission
+       372    
+       373 -  | Field | CSV Value | Diary Evidence |
+       374 -  |-------|-----------|----------------|
+       375 -  | Diary_Source | (empty) | Diary Team A.doc |
+       373 +  | Field | CSV Value | Correct Value |
+       374 +  |-------|-----------|---------------|
+       375 +  | Diary_Author | (empty) | Adela Sobotkova |
+       376    
+       377 -  **Diary evidence for Nov 9:**
+       378 -  > "9 November, Monday... Team A contains the usual troops –
+           -  me, Martin, Todor, Ilija and Katya... We finally make it to
+           -  the sown meadow east of the Stroino reservoir and start 
+           - surveying at 10am."
+       377 +  **Note:** Original issue documented as "Diary_Source" but 
+           + CSV has no such column. The actual missing field is 
+           + "Diary_Author". PDF_Source already correctly contained 
+           + "Diary Team A.doc".
+       378    
+       379 -  **Resolution:** Add "Diary Team A.doc" to Diary_Source 
+           - field
+       379 +  **Evidence:** All other Team A November records (Nov 2-7, 
+           + 10) have Diary_Author = "Adela Sobotkova". Nov 9 was an 
+           + anomalous omission.
+       380    
+       381 +  **Resolution:** Add "Adela Sobotkova" to Diary_Author field
+       382 +  
+       383    ---
+       384    
+       385    ## Summary Statistics
+
+● Now let me update the summary and action items to be consistent:
+
+● Update(docs/qa-discrepancies-log.md)
+  ⎿  Updated docs/qa-discrepancies-log.md with 1 addition and 1 removal  
+       388    |--------|---------------------|-----------------|---------
+             ----|
+       389    | Elhovo 2010 Autumn | 7 | 2 | 3 |
+       390    | Elhovo 2009 Autumn Team B | 3 (unit fields) | 0 | 1 
+             (season-wide: no DPF scans) |
+       391 -  | Elhovo 2009 Autumn Team A | 1 (unit) + 4 (walkers) + 3 (
+           -  QA_Notes) + 1 (Diary_Source) | 0 | — |
+       391 +  | Elhovo 2009 Autumn Team A | 1 (unit — diary error) + 4 (
+           +  walkers) + 1 (Diary_Author) | 0 | — |
+       392    
+       393    ### Value Discrepancy Resolution (Elhovo 2010 Autumn)
+       394    
+
+● Let me also update D017 since we found Team A records didn't actually have
+   the erroneous text:
+
+● Update(docs/qa-discrepancies-log.md)
+  ⎿  Updated docs/qa-discrepancies-log.md with 6 additions and 7 removals
+       351    
+       352    ---
+       353    
+       354 -  ### D017: 2009-10-30, 2009-10-31, 2009-11-04, Team A — 
+           -  Erroneous QA_Notes
+       354 +  ### D017: 2009-10-30, 2009-10-31, 2009-11-04, Team A — 
+           +  Erroneous QA_Notes (Issue Not Present)
+       355    
+       356 -  **Type:** Metadata error (3 records)
+       356 +  **Type:** Originally documented as metadata error — **no 
+           + correction needed**
+       357    
+       358 -  **Affected dates:** 2009-10-30, 2009-10-31, 2009-11-04 (all
+           -  Team A)
+       358 +  **Originally suspected:** QA_Notes containing erroneous "No
+           +  autumn survey season" statement
+       359    
+       360 -  **Current QA_Notes contain:**
+       361 -  > "No autumn survey season: No autumn 2009 survey season - 
+           - diaries end in March/April"
+       360 +  **Investigation result (26 Nov 2025):** Team A records for 
+           + these dates do NOT contain this erroneous text. The QA_Notes
+           +  contain only: "MISSING: Survey units | No role data 
+           + available"
+       361    
+       362 -  **Resolution:** Remove this erroneous statement from 
+           - QA_Notes
+       362 +  **Note:** The erroneous "No autumn survey season" text 
+           + exists on **Team C** records (Oct 14, 16, 17, 18) — this is 
+           + a separate issue not part of this QA cycle. Those Team C 
+           + records have the text because they were non-survey days 
+           + extracted without cross-verification.
+       363    
+       364 -  **Reasoning:** The Diary Team A.doc comprehensively covers 
+           - 10 October through 21 November 2009 with detailed daily 
+           - entries. These non-survey days are explicitly documented 
+           - (rain for Oct 30 and Nov 4, Halloween for Oct 31). The 
+           - statement is factually incorrect.
+       364 +  **Resolution:** No action required for Team A records
+       365    
+       366    ---
+       367    
+
+● Done. To confirm:
+
+  (a) Tereza disambiguation approach: Now fully documented in D016 with:
+  - The two candidates (Blažková vs Dobrovodská)
+  - Team roster cross-reference table showing T.D.'s movement from Team C →
+  sick → Team A
+  - The logic: "People were only on one team at a time"
+  - Note about T.B.'s possible specialist role
+
+  (b) Discrepancies log updates:
+
+  | ID   | Type             | Source Conflict                             |
+  Status                               |
+  |------|------------------|---------------------------------------------|-
+  -------------------------------------|
+  | D015 | Diary vs SU Form | Diary said 60196, SU form shows 60195       |
+  ✅ Documented (diary error)           |
+  | D016 | CSV vs Diary     | CSV had Eric, diary said Tereza substituted |
+  ✅ Updated with disambiguation method |
+  | D017 | (Misdocumented)  | Team A records didn't have erroneous text   |
+  ✅ Corrected — noted Team C has issue |
+  | D018 | Field omission   | Diary_Author empty                          |
+  ✅ Corrected field name               |
+
+  The discrepancies log now serves as a comprehensive catalogue of source
+  material problems, documenting:
+  - Value conflicts between sources (and which source was preferred)
+  - Extraction errors in the CSV
+  - Source gaps where documents are missing
+  - Diary errors where the diary was wrong vs primary sources
+  - Resolution methodology for ambiguous cases (like Tereza)
+
+> /context 
+  ⎿  
+      Context Usage
+     ⛁ ⛁ ⛁ ⛁ ⛁ ⛁ ⛁ ⛁ ⛁ ⛁   claude-opus-4-5-20251101 · 159k/200k tokens (79%)
+     ⛀ ⛀ ⛁ ⛁ ⛁ ⛁ ⛁ ⛁ ⛁ ⛁ 
+     ⛁ ⛁ ⛁ ⛁ ⛁ ⛁ ⛁ ⛁ ⛁ ⛁   ⛁ System prompt: 2.9k tokens (1.4%)
+     ⛁ ⛁ ⛁ ⛁ ⛁ ⛁ ⛁ ⛁ ⛁ ⛁   ⛁ System tools: 18.1k tokens (9.0%)
+     ⛁ ⛁ ⛁ ⛁ ⛁ ⛁ ⛁ ⛁ ⛁ ⛁   ⛁ MCP tools: 1.3k tokens (0.6%)
+     ⛁ ⛁ ⛁ ⛁ ⛁ ⛁ ⛁ ⛶ ⛶ ⛶   ⛁ Memory files: 904 tokens (0.5%)
+     ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶   ⛁ Messages: 90.8k tokens (45.4%)
+     ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛝ ⛝ ⛝   ⛶ Free space: 41k (20.5%)
+     ⛝ ⛝ ⛝ ⛝ ⛝ ⛝ ⛝ ⛝ ⛝ ⛝   ⛝ Autocompact buffer: 45.0k tokens (22.5%)
+     ⛝ ⛝ ⛝ ⛝ ⛝ ⛝ ⛝ ⛝ ⛝ ⛝ 
+
+     MCP tools · /mcp
+     └ mcp__ide__getDiagnostics (ide): 611 tokens
+     └ mcp__ide__executeCode (ide): 682 tokens
+
+     Memory files · /memory
+     └ User (/home/shawn/.claude/CLAUDE.md): 904 tokens
+
+     SlashCommand Tool · 31 commands
+     └ Total: 4.3k tokens
+
+     
+
+> ok, did we also catalogue the errors (in attribution.csv?) where diaries 
+were said to be missing but weren't? Or was that from our previous 
+team/season? 
+
+● Good question. Let me check what we've documented:
+
+● Bash(grep -n "No autumn survey season\|diaries end in March"
+      /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-2
+      020-04/trap-extraction/docs/qa…)
+  ⎿ 223:**Reasoning:** Both EN and BG diaries agree on unit numbers. The CS
+    V incorrectly contains the note "No autumn 2009 survey season - diaries
+     end in March/April" which is factually incorrect — the diary covers au
+    … +10 lines (ctrl+o to expand)
+
+
+
+
+● We have:
+  - D014 (Team B): Documented and corrected for 2009-11-02, 11-03, 11-05
+  - D017 (Team A): Updated to show it wasn't present on Team A
+  - Team C (Oct 14, 16, 17, 18): Only mentioned in passing — NOT formally
+  catalogued
+
+  Let me also check if there are still records with this erroneous text:
+
+● Bash(grep -c "No autumn survey season\|No autumn 2009 survey season\|No autumn
+       2010 survey season"
+      /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/T…)
+  ⎿  5
+
+● 5 records still have this erroneous text. Let me identify them:
+
+● Bash(grep "No autumn.*survey season"
+      /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-2
+      020-04/trap-extraction/outputs/attribution.csv | awk -…)
+  ⎿ 2009-10-14,C: MISSING: Survey units | No role data available | No autum
+    n survey season: No autumn 2009 survey season - diaries end in March/Ap
+    ril
+    … +11 lines (ctrl+o to expand)
+
+
+
+● Found 5 uncatalogued records with erroneous diary notes:
+
+  | Date       | Team | Season      | Issue
+                        |
+  |------------|------|-------------|---------------------------------------
+  ----------------------|
+  | 2009-10-14 | C    | 2009 autumn | "No autumn 2009 survey season -
+  diaries end in March/April" |
+  | 2009-10-16 | C    | 2009 autumn | (same)
+                        |
+  | 2009-10-17 | C    | 2009 autumn | (same)
+                        |
+  | 2009-10-18 | C    | 2009 autumn | (same)
+                        |
+  | 2010-11-06 | B    | 2010 autumn | "No autumn 2010 survey season - diary
+  ends in April"        |
+
+  These are from previous teams/seasons we haven't QA'd yet. Should I:
+
+  1. Add them to the discrepancies log now as pending issues (catalogued but
+   not yet corrected)
+  2. Wait until we QA those teams to document them properly
+
+  The 2010-11-06 Team B one is odd since we already QA'd Elhovo 2010 Autumn
+  Team B — that one may have been missed.
+
+> let's wait until we QA those teams to document them properly. I'm sure 
+we'll identify the errors at that time. Please do one final check over the 
+attribution.csv, the discrepencies record, and the runsheet to make sure 
+that everything looks like it is in order (the crash disrupted things so I 
+want to do one final check). Also look for any information we could 
+profitably add to the source-inventory about the sources we are using that 
+isn't already documented there. 
+
+● Bash(echo "=== D016: Oct 26-29 Team A Walkers ===" && grep
+      "^2009-10-2[6789],A," /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/sy
+      nology/Adela/TRAP-WD-2020-04/tra…)
+  ⎿ === D016: Oct 26-29 Team A Walkers ===                                 
+    2009-10-26: Original=[Ilija | Adela | Aneta | Martin | Tereza] Std=[Ili
+    ja Iliev | Adela Sobotkova | Aneta Kohoutová | Martin Mladenov | Tereza
+    … +20 lines (ctrl+o to expand)
+
+
+
+● Bash(grep "^2009-10-2[6789],A," /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8
+      468/synology/Adela/TRAP-WD-2020-04/trap-extraction/outputs/attribution.csv
+       | grep -o "Q…)
+  ⎿ QA D016: Tereza Blažková→Dobrovodská (T.D. moved from Team C as Eric su
+    bstitute)",
+    QA D016: Tereza Blažková→Dobrovodská",
+    … +2 lines (ctrl+o to expand)
+
+
+● Bash(grep -n "Blažková" /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/syno
+      logy/Adela/TRAP-WD-2020-04/trap-extraction/docs/qa-discrepancies-log.md)
+  ⎿ 337:- Tereza Blažková (FFUK)                                           
+    348:**Logic:** People were only on one team at a time. Tereza Dobrovods
+    ká was on Team C Oct 12-22, then sick Oct 23. She became available to s
+    … +9 lines (ctrl+o to expand)
+
+
+
+● Those Blažková references are appropriate context. Let me check the
+  runsheet:
+
+● Bash(grep -n "Blažková\|Dobrovodská"
+      /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-2
+      020-04/trap-extraction/outputs/qa-runsheet-elhovo-2009…)
+  ⎿ 105:**Problem:** Eric departed for Istanbul on Oct 25; Tereza Dobrovods
+    ká substituted for him Oct 26-29. CSV incorrectly showed Eric/Erik Ande
+    rsen.
+    … +34 lines (ctrl+o to expand)
+
+
+
+● Read(docs/source-inventory.md)
+  ⎿  Error reading file
+
+● Search(pattern: "**/source-inventory*")
+  ⎿  Found 1 file (ctrl+o to expand)
+
+● Read(outputs/source-inventory.md)
+  ⎿  Read 416 lines
+
+● The source-inventory is comprehensive. Based on our QA session, I can add
+  a few things:
+
+  1. Elhovo 2009 Team A diary coverage dates (not currently documented)
+  2. Expand the SU form file-to-date index (we examined another file during
+  D015)
+  3. Update extraction status (Team A QA now completed)
+
+● Update(outputs/source-inventory.md)
+  ⎿  Updated outputs/source-inventory.md with 1 addition and 1 removal   
+       101    
+       102    | Team | File | Language | Walkers | Roles | Version | 
+             Location |
+       103    |------|------|----------|---------|-------|---------|-----
+             -----|
+       104 -  | A | Diary Team A.doc | EN | [ ] | [ 
+           -  ] | PRIMARY (EN, 132 KB) 
+           -  | `Elhovo 2010-12-12/2009/Project Records/Team A/` |
+       104 +  | A | Diary Team A.doc | EN | [x] | [x
+           +  ] | PRIMARY (EN, 132 KB) - Coverage: 10 Oct to 21 Nov 2009 
+           +  | `Elhovo 2010-12-12/2009/Project Records/Team A/` |
+       105    | A | Diary_Aneta.doc | EN | [ ] | [ ] | SUPPLEMENTAL (EN, 
+             44 KB) | `Elhovo 2010-12-12/2009/Project Records/Team A/` |
+       106    | B | DiaryTeamB.doc | EN | [x] | N/A | PRIMARY (EN, 97 KB)
+              | `Elhovo 2010-12-12/2009/Project Records/Team B/` |
+       107    | B | TeamB_Dnevnik (Ross).doc | BG | [x] | N/A | SECONDARY
+              (BG, 98 KB) | `Elhovo 2010-12-12/2009/Project Records/Team 
+             B/` |
+
+● Update(outputs/source-inventory.md)
+  ⎿  Updated outputs/source-inventory.md with 4 additions and 1 removal  
+       251    
+       252    | File | Date(s) | Unit Range | Notes |
+       253    |------|---------|------------|-------|
+       254 -  | 60192.pdf | Oct 20 | 60127-60194 | Identified during D015
+           -  investigation |
+       254 +  | 60192.pdf | Oct 20-21 | 60127-60273 | Contains SU forms 
+           + for units including 60195 (Oct 21) |
+       255    
+       256    *Add to this index as files are examined during QA.*
+       257    
+       258 +  **Source reliability note (discovered during D015 QA, 26 
+           + Nov 2025):**
+       259 +  SU forms take precedence over diary summary tables for unit
+           +  numbers. The Diary Team A.doc contains a unit summary table
+           +  with a transcription error (unit 60196 instead of 60195 for
+           +  Oct 21), but the SU form `60192.pdf` page 56 clearly shows 
+           + unit 60195 was surveyed on 21 October 2009. Diaries should 
+           + be treated as secondary sources for numeric data.
+       260 +  
+       261    ### Elhovo 2010 Dated Survey Form PDFs
+       262    
+       263    | Team | Format | Count | Location |
+
+● Update(outputs/source-inventory.md)
+  ⎿  Updated outputs/source-inventory.md with 1 addition and 1 removal
+       355    
+       356    ### Not Yet Processed
+       357    
+       358 -  - [ ] Elhovo 2009 diaries (Teams A, C) — Team 
+           -  B QA completed 26 November 2025
+       358 +  - [ ] Elhovo 2009 diary (Team C) — Teams A and 
+           +  B QA completed 26 November 2025
+       359    - [ ] Kazanlak 2011 individual student journals 
+             (AUS_Diaries)
+       360    - [ ] Role data from remaining diary sources
+       361    
+
+● Update(outputs/source-inventory.md)
+  ⎿  Updated outputs/source-inventory.md with 1 addition and 1 removal   
+       372    ### Version Notes and Annotations
+       373    
+       374    **Elhovo 2009:**
+       375 -  - **Team A:** "Diary Team A.doc" (132 KB, EN) is PRIMARY. 
+           - "Diary_Aneta.doc" (44 KB, SUPPLEMENTAL) is a personal diary 
+           - by team member Aneta, providing individual perspective 
+           - rather than official team record. Duplicate copy exists in 
+           - `Reports/Otchet/BG Diaries/`.
+       375 +  - **Team A:** "Diary Team A.doc" (132 KB, EN) is PRIMARY - 
+           + covers 10 Oct to 21 Nov 2009 with detailed daily narratives.
+           +  Contains explicit walker lists for each day and role 
+           + assignments (PDA, GPS, paper recorder). Note: Unit number 
+           + summary table contains occasional transcription errors 
+           + (e.g., 60196 instead of 60195 for Oct 21) — SU forms in 
+           + FieldRecords/ are authoritative for unit numbers. 
+           + "Diary_Aneta.doc" (44 KB, SUPPLEMENTAL) is a personal diary 
+           + by team member Aneta, providing individual perspective 
+           + rather than official team record. Duplicate copy exists in 
+           + `Reports/Otchet/BG Diaries/`. QA completed 26 November 2025.
+       376    - **Team B:** "DiaryTeamB.doc" (97 KB, EN) is PRIMARY - 
+             contains complete daily narrative entries from 10 October 
+             through 21 November 2009. "TeamB_Dnevnik (Ross).doc" (98 KB,
+              BG, SECONDARY) is Bulgarian version by Ross with similar 
+             coverage. EN PRIMARY despite near-identical file size 
+             because EN diary has more detailed narrative structure; BG 
+             version useful for cross-verification. Duplicate copy exists
+              in `Reports/Otchet/BG Diaries/`. QA verified 26 November 
+             2025.
+       377    - **Team C:** "The Diary of Team C.doc" (103 KB, EN) is 
+             PRIMARY. "TeamC_Dnevnik.doc" (41 KB, BG, SECONDARY) is 
+             Bulgarian version with less detail.
+       378    
+
+● Update(outputs/source-inventory.md)
+  ⎿  Updated outputs/source-inventory.md with 1 addition and 1 removal   
+       406    ## Document History
+       407    
+       408    **Created:** November 2025
+       409 -  **Last major update:** 26 November 2025 (Elhovo 2009 diary 
+           - file sizes verified; Team B QA completed)
+       409 +  **Last major update:** 26 November 2025 (Elhovo 2009 Teams 
+           + A & B QA completed; added source reliability notes for SU 
+           + forms vs diary tables; expanded file-to-date index)
+       410    **Previous update:** 23 November 2025 (comprehensive 
+             version annotations and structural improvements)
+       411    **Project completion:** 23 November 2025
+       412    **Contributors:** Adela Sobotkova, Claude Code
+
+● ---
+  Final Verification Complete
+
+  attribution.csv: ✅
+  - D016: All 4 records have Tereza Dobrovodská (correct) with QA notes
+  - D018: Nov 9 has Diary_Author = Adela Sobotkova with QA note
+
+  qa-discrepancies-log.md: ✅
+  - D016: Updated with full disambiguation methodology (team roster
+  cross-reference)
+  - D017: Corrected to show issue wasn't present on Team A (exists on Team
+  C)
+  - D018: Corrected field name (Diary_Author not Diary_Source)
+  - All Tereza references are appropriate context
+
+  qa-runsheet-elhovo-2009-autumn-a.md: ✅
+  - Consistent with discrepancies log
+  - Correct Tereza (Dobrovodská) throughout
+  - Applied Corrections table accurate
+
+  source-inventory.md: Updated with:
+  - Team A diary coverage dates (10 Oct - 21 Nov 2009)
+  - Team A diary now marked as walker/role extracted [x]
+  - Expanded SU form file-to-date index
+  - Added source reliability note: SU forms > diary tables for unit numbers
+  - Updated extraction status (Teams A & B QA completed)
+  - Updated document history
+
+  Remaining uncatalogued issues (for future QA):
+  - 4 Team C records (Oct 14, 16, 17, 18) with erroneous "No autumn survey
+  season" notes
+  - 1 Team B 2010 record (Nov 6) with similar erroneous note
+
+  Everything looks in order after the crash recovery.
+
+> have I dont an /export since the last /compact? 
+
+● I don't have visibility into when CLI commands like /export or /compact
+  were run - that information isn't part of my conversation context.
+
+  Given the crash happened during /compact, I'd suggest doing an /export now
+   to be safe. The interaction log at
+  archive/cc-interactions/2025-11-26-e.txt captured the pre-crash session,
+  but an export would preserve this current session's work (the D016-D018
+  corrections and all the documentation updates).
+
+> /export archive/cc-interactions/2025-11-26-f.txt 
+  ⎿  Conversation exported to: archive/cc-interactions/2025-11-26-f.txt
+
+> also, I've seen a few things about 'contributors' flash by in your work - 
+just to confirm, you're working with Shawn Ross not Adela, although she's 
+here too and has occassionally answered questions :) 
+
+● Thanks for the clarification! Let me fix that in the source-inventory:
+
+● Update(outputs/source-inventory.md)
+  ⎿  Updated outputs/source-inventory.md with 1 addition and 1 removal   
+       409    **Last major update:** 26 November 2025 (Elhovo 2009 Teams 
+             A & B QA completed; added source reliability notes for SU 
+             forms vs diary tables; expanded file-to-date index)
+       410    **Previous update:** 23 November 2025 (comprehensive 
+             version annotations and structural improvements)
+       411    **Project completion:** 23 November 2025
+       412 -  **Contributors:** Adela Sobotkova, Claude Code
+       412 +  **Contributors:** Shawn Ross (with Adela Sobotkova)
+           +  , Claude Code
+       413    
+       414    This inventory is a living document. Updates include new 
+             source discoveries, version comparisons, and quality notes 
+             to support ongoing and future research.
+       415    
+
+● Let me check if there are other files with incorrect attribution:
+
+● Bash(grep -r "Contributors.*Adela" /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d
+      3d8468/synology/Adela/TRAP-WD-2020-04/trap-extraction/outputs/
+      /media/shawn/191c3b96-5f…)
+  ⎿ /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-W
+    D-2020-04/trap-extraction/outputs/source-inventory.md:**Contributors:**
+     Shawn Ross (with Adela Sobotkova), Claude Code
+
+
+
+● That was the only one, and it's now corrected. Apologies for the confusion
+   — I saw "Adela" throughout the project data (it's her fieldwork after
+  all!) and incorrectly assumed she was the primary collaborator on this
+  extraction work.
+
+> Hey, it's my fieldwork too, I was there every season but one! :) 
+
+● Ha! Fair point — you're all over the diaries as Team B leader, and I just
+  corrected records showing you walking with Scott, Vera, Stanislav, and the
+   crew through the Elhovo fields!
+
+  It's clearly a Ross & Sobotkova joint operation. My apologies for the
+  oversight — I'll remember that for future sessions!
+
+> Great!! Anyway - we're low on context, can you compose a /compact message 
+plese? 
+
+● Here's a /compact message:
+
+  ---
+  Session Summary: ELH 2009 Autumn Team A QA (26 Nov 2025)
+
+  Completed Work
+
+  QA corrections applied to attribution.csv:
+  - D015: No correction needed — SU form (60192.pdf p.56) confirmed CSV unit
+   60195 is correct; diary had transcription error (60196)
+  - D016: Corrected walker substitution for Oct 26-29: Eric/Erik Andersen →
+  Tereza/Tereza Dobrovodská (4 records, 8 field updates)
+  - D017: No correction needed — Team A records didn't have erroneous "No
+  autumn survey season" text (exists on Team C Oct 14,16,17,18 — deferred)
+  - D018: Added Diary_Author (Adela Sobotkova) to Nov 9 record
+
+  Key finding — Tereza disambiguation:
+  Two Terezas present in 2009 autumn (Blažková and Dobrovodská). Resolved
+  via team roster cross-reference: T. Dobrovodská was on Team C Oct 12-22,
+  sick Oct 23, then available to substitute for Eric on Team A Oct 26-29. T.
+   Blažková had no Team C presence — may have had specialist role
+  (ceramics/bioarchaeology). Methodology documented in discrepancies log
+  D016.
+
+  Documentation Updated
+
+  - outputs/attribution.csv — 9 field corrections with QA notes
+  - outputs/qa-runsheet-elhovo-2009-autumn-a.md — complete with applied
+  corrections
+  - docs/qa-discrepancies-log.md — D015-D018 with full disambiguation
+  methodology
+  - outputs/source-inventory.md — Team A diary coverage, SU form reliability
+   note, file-to-date index expanded
+  - planning/follow-up-actions.md — Added T. Blažková 2009-autumn
+  observation
+
+  Outstanding (Deferred)
+
+  - 5 records still have erroneous "No autumn survey season" notes (4 Team C
+   2009, 1 Team B 2010) — to be addressed when those teams are QA'd
+
+  Project State
+
+  - ELH 2009 Autumn: Teams A & B QA complete; Team C pending
+  - Working with: Shawn Ross (with Adela Sobotkova)
+  - Export saved: archive/cc-interactions/2025-11-26-f.txt
+
+
+

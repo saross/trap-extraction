@@ -1,7 +1,7 @@
 # TRAP Data Extraction - Source Inventory
 
 **Created:** November 2025
-**Last major update:** 23 November 2025
+**Last major update:** 26 November 2025
 **Extraction status:** ✅ **100% COMPLETE** (268/268 records with walker data)
 **Project completion:** 23 November 2025
 
@@ -101,12 +101,12 @@ Narrative records with walker names, roles (PDA, GPS, Forms), and daily activiti
 
 | Team | File | Language | Walkers | Roles | Version | Location |
 |------|------|----------|---------|-------|---------|----------|
-| A | Diary Team A.doc | EN | [ ] | [ ] | PRIMARY | `Elhovo 2010-12-12/2009/Project Records/Team A/` |
-| A | Diary_Aneta.doc | EN | [ ] | [ ] | SUPPLEMENTAL (29 KB) | `Elhovo 2010-12-12/2009/Project Records/Team A/` |
-| B | DiaryTeamB.doc | EN | [x] | N/A | PRIMARY | `Elhovo 2010-12-12/2009/Project Records/Team B/` |
-| B | TeamB_Dnevnik (Ross).doc | BG | [ ] | N/A | SECONDARY (55 KB) | `Elhovo 2010-12-12/2009/Project Records/Team B/` |
-| C | The Diary of Team C.doc | EN | [ ] | [ ] | PRIMARY | `Elhovo 2010-12-12/2009/Project Records/Team C/` |
-| C | TeamC_Dnevnik.doc | BG | [ ] | [ ] | SECONDARY | `Elhovo 2010-12-12/2009/Project Records/Team C/` |
+| A | Diary Team A.doc | EN | [x] | [x] | PRIMARY (EN, 132 KB) - Coverage: 10 Oct to 21 Nov 2009 | `Elhovo 2010-12-12/2009/Project Records/Team A/` |
+| A | Diary_Aneta.doc | EN | [ ] | [ ] | SUPPLEMENTAL (EN, 44 KB) | `Elhovo 2010-12-12/2009/Project Records/Team A/` |
+| B | DiaryTeamB.doc | EN | [x] | N/A | PRIMARY (EN, 97 KB) | `Elhovo 2010-12-12/2009/Project Records/Team B/` |
+| B | TeamB_Dnevnik (Ross).doc | BG | [x] | N/A | SECONDARY (BG, 98 KB) | `Elhovo 2010-12-12/2009/Project Records/Team B/` |
+| C | The Diary of Team C.doc | EN | [ ] | [ ] | PRIMARY (EN, 103 KB) | `Elhovo 2010-12-12/2009/Project Records/Team C/` |
+| C | TeamC_Dnevnik.doc | BG | [ ] | [ ] | SECONDARY (BG, 41 KB) | `Elhovo 2010-12-12/2009/Project Records/Team C/` |
 
 ### Elhovo 2010
 
@@ -232,9 +232,31 @@ Individual survey unit forms scanned to PDF. These complement the consolidated S
 
 | Team | Unit Range | Count | Location |
 |------|------------|-------|----------|
-| A | 60126-61344 | 13 files | `Elhovo 2010-12-12/2009/Project Records/Team A/Field Records/` |
-| B | 70122-71463 | 14 files | `Elhovo 2010-12-12/2009/Project Records/Team B/Field Records/` |
-| C | 80103-81008 | 12 files | `Elhovo 2010-12-12/2009/Project Records/Team C/Field Records/` |
+| A | 60126-61344 | 13 files | `Elhovo 2010-12-12/2009/Project Records/Team A/FieldRecords/` |
+| B | 70122-71463 | 14 files | `Elhovo 2010-12-12/2009/Project Records/Team B/FieldRecords/` |
+| C | 80103-81008 | 12 files | `Elhovo 2010-12-12/2009/Project Records/Team C/FieldRecords/` |
+
+**⚠️ File Naming Warning (ELH 2009):**
+
+File naming convention is **unclear** — filenames appear to be unit numbers (e.g., `60192.pdf`) but do not reliably indicate the date range or unit range contained within. Manual identification required.
+
+**For QA investigations:**
+
+1. Filenames do **not** follow date convention (unlike ELH 2010)
+2. Page numbers are **season-continuous** (not per-file), so page counts are unreliable
+3. Must manually read forms to identify date coverage before investigating specific units
+4. See `qa-guidance.md` → "Protocol: Investigating Unit Gaps/Overlaps with SU Forms"
+
+**Partial file-to-date index (Team A):**
+
+| File | Date(s) | Unit Range | Notes |
+|------|---------|------------|-------|
+| 60192.pdf | Oct 20-21 | 60127-60273 | Contains SU forms for units including 60195 (Oct 21) |
+
+*Add to this index as files are examined during QA.*
+
+**Source reliability note (discovered during D015 QA, 26 Nov 2025):**
+SU forms take precedence over diary summary tables for unit numbers. The Diary Team A.doc contains a unit summary table with a transcription error (unit 60196 instead of 60195 for Oct 21), but the SU form `60192.pdf` page 56 clearly shows unit 60195 was surveyed on 21 October 2009. Diaries should be treated as secondary sources for numeric data.
 
 ### Elhovo 2010 Dated Survey Form PDFs
 
@@ -333,7 +355,7 @@ All seasons have SurveySummary files. ✓
 
 ### Not Yet Processed
 
-- [ ] Elhovo 2009 diaries (Teams A, B, C)
+- [ ] Elhovo 2009 diary (Team C) — Teams A and B QA completed 26 November 2025
 - [ ] Kazanlak 2011 individual student journals (AUS_Diaries)
 - [ ] Role data from remaining diary sources
 
@@ -350,8 +372,9 @@ All seasons have SurveySummary files. ✓
 ### Version Notes and Annotations
 
 **Elhovo 2009:**
-- **Team A:** "Diary Team A.doc" is PRIMARY. "Diary_Aneta.doc" (29 KB, SUPPLEMENTAL) is a personal diary by team member Aneta, providing individual perspective rather than official team record. Duplicate copy exists in `Reports/Otchet/BG Diaries/`.
-- **Team B:** "DiaryTeamB.doc" (EN) is PRIMARY. "TeamB_Dnevnik (Ross).doc" (55 KB BG, SECONDARY) is Bulgarian version by Ross. Duplicate copy exists in `Reports/Otchet/BG Diaries/`.
+- **Team A:** "Diary Team A.doc" (132 KB, EN) is PRIMARY - covers 10 Oct to 21 Nov 2009 with detailed daily narratives. Contains explicit walker lists for each day and role assignments (PDA, GPS, paper recorder). Note: Unit number summary table contains occasional transcription errors (e.g., 60196 instead of 60195 for Oct 21) — SU forms in FieldRecords/ are authoritative for unit numbers. "Diary_Aneta.doc" (44 KB, SUPPLEMENTAL) is a personal diary by team member Aneta, providing individual perspective rather than official team record. Duplicate copy exists in `Reports/Otchet/BG Diaries/`. QA completed 26 November 2025.
+- **Team B:** "DiaryTeamB.doc" (97 KB, EN) is PRIMARY - contains complete daily narrative entries from 10 October through 21 November 2009. "TeamB_Dnevnik (Ross).doc" (98 KB, BG, SECONDARY) is Bulgarian version by Ross with similar coverage. EN PRIMARY despite near-identical file size because EN diary has more detailed narrative structure; BG version useful for cross-verification. Duplicate copy exists in `Reports/Otchet/BG Diaries/`. QA verified 26 November 2025.
+- **Team C:** "The Diary of Team C.doc" (103 KB, EN) is PRIMARY. "TeamC_Dnevnik.doc" (41 KB, BG, SECONDARY) is Bulgarian version with less detail.
 
 **Elhovo 2010:**
 - **Team B versions:** Four diary files exist for Team B 2010. File comparison analysis (23 November 2025) determined that "Team B Diary new.docx" (26 KB, March 2011) is PRIMARY as it contains critical post-season data quality corrections including: corrected object numbers, annotations flagging data errors (e.g., "no such artefact brought to base"), and added missing object records. The December 2010 versions represent the original field recordings. "Diary" vs "Journal" naming is meaningless - these are duplicate files with different names. Initial data extraction was performed from "Team B Diary.docx" (SECONDARY); attribution CSV updated on 23 November 2025 to use PRIMARY version data for all affected records.
@@ -383,9 +406,10 @@ All seasons have SurveySummary files. ✓
 ## Document History
 
 **Created:** November 2025
-**Last major update:** 23 November 2025 (comprehensive version annotations and structural improvements)
+**Last major update:** 26 November 2025 (Elhovo 2009 Teams A & B QA completed; added source reliability notes for SU forms vs diary tables; expanded file-to-date index)
+**Previous update:** 23 November 2025 (comprehensive version annotations and structural improvements)
 **Project completion:** 23 November 2025
-**Contributors:** Adela Sobotkova, Claude Code
+**Contributors:** Shawn Ross (with Adela Sobotkova), Claude Code
 
 This inventory is a living document. Updates include new source discoveries, version comparisons, and quality notes to support ongoing and future research.
 

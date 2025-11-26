@@ -206,11 +206,188 @@ Records where one or more expected sources are missing.
 
 ---
 
+## Elhovo 2009 Autumn
+
+### D011: 2009-11-02, Team B — Missing Unit Numbers
+
+**Type:** CSV field missing (extraction error)
+
+| Source | Value |
+|--------|-------|
+| EN Diary (DiaryTeamB.doc) | Start: 70926, End: 70962 |
+| BG Diary (TeamB_Dnevnik Ross.doc) | Start: 70926, End: 70962 |
+| CSV (current) | Start: (empty), End: (empty) |
+
+**Resolution:** Add Start Unit 70926, End Unit 70962
+
+**Reasoning:** Both EN and BG diaries agree on unit numbers. The CSV incorrectly contains the note "No autumn 2009 survey season - diaries end in March/April" which is factually incorrect — the diary covers autumn 2009 through mid-November. Unit continuity confirms: 70926 follows Oct 29 end unit (70925) + 1.
+
+---
+
+### D012: 2009-11-03, Team B — Missing Unit Numbers
+
+**Type:** CSV field missing (extraction error)
+
+| Source | Value |
+|--------|-------|
+| EN Diary (DiaryTeamB.doc) | Start: 70963, End: 71062 |
+| BG Diary (TeamB_Dnevnik Ross.doc) | Start: 70963, End: 71062 |
+| CSV (current) | Start: (empty), End: (empty) |
+
+**Resolution:** Add Start Unit 70963, End Unit 71062
+
+**Reasoning:** Both EN and BG diaries agree on unit numbers. Unit continuity confirms: 70963 follows Nov 2 end unit (70962) + 1.
+
+---
+
+### D013: 2009-11-05, Team B — Missing Unit Numbers
+
+**Type:** CSV field missing (extraction error)
+
+| Source | Value |
+|--------|-------|
+| EN Diary (DiaryTeamB.doc) | Start: 71063, End: 71142 |
+| BG Diary (TeamB_Dnevnik Ross.doc) | Start: 71063, End: 71142 |
+| CSV (current) | Start: (empty), End: (empty) |
+
+**Resolution:** Add Start Unit 71063, End Unit 71142
+
+**Reasoning:** Both EN and BG diaries agree on unit numbers. Unit continuity confirms: 71063 follows Nov 3 end unit (71062) + 1.
+
+---
+
+### D014: Erroneous QA_Notes — Incorrect Diary Coverage Statement
+
+**Type:** Metadata error
+
+**Affected records:** 2009-11-02 B, 2009-11-03 B, 2009-11-05 B
+
+**Current QA_Notes contain:**
+> "No autumn survey season: No autumn 2009 survey season - diaries end in March/April"
+
+**Resolution:** Remove this erroneous note
+
+**Reasoning:** The DiaryTeamB.doc covers 10 October 2009 through 21 November 2009 with detailed daily entries. The statement is factually incorrect and caused the extraction errors documented in D011-D013.
+
+---
+
+### S004: Elhovo 2009 — No DPF Scans for Season
+
+**Type:** Source gap (entire season)
+
+| Source | Status |
+|--------|--------|
+| DPF scans | ✗ **None exist for ELH 2009** |
+| EN Diaries | ✓ Present for all teams |
+| BG Diaries | ✓ Present for Teams B and C |
+
+**Notes:** No Daily Progress Form scans exist for Elhovo 2009 Autumn. All 62 records (Teams A, B, C) rely on diary-only verification. This limits cross-verification confidence but does not affect data completeness where diaries are thorough (as with Team B).
+
+---
+
+### D015: 2009-10-21, Team A — Diary Transcription Error (No Correction Needed)
+
+**Type:** Diary error — CSV is correct
+
+| Source | Value | Status |
+|--------|-------|--------|
+| SU Form (FieldRecords, p.56) | Start: **60195** | ✓ PRIMARY |
+| CSV (current) | Start: 60195, End: 60273 | ✓ CORRECT |
+| Diary (Diary Team A.doc) | Start: 60196, End: 60273 | ✗ ERROR |
+
+**Resolution:** No correction needed — CSV value is correct
+
+**SU Form Evidence:**
+The SU form for unit 60195 clearly shows:
+
+- **Date:** 21 October 2009
+- **Survey unit:** 60.195
+- **Walk interval:** 10m
+- **Walkers:** Martin, [unclear], Adela, [unclear], Eric
+
+This definitively proves unit 60195 was surveyed on 21 October, not skipped.
+
+**Diary Error Analysis:**
+The diary's "First unit: 60196" is a transcription error made when compiling the unit summary table after fieldwork. The SU form, completed in the field at the time of survey, is the authoritative primary source.
+
+**Lesson:** SU forms take precedence over diary summary tables for unit numbers.
+
+---
+
+### D016: 2009-10-26 to 2009-10-29, Team A — Walker Substitution Not Reflected
+
+**Type:** Personnel error (4 records)
+
+**Affected dates:** 2009-10-26, 2009-10-27, 2009-10-28, 2009-10-29
+
+| Field | CSV Value (original) | Corrected Value |
+|-------|----------------------|-----------------|
+| Walkers_Original | ...Eric | ...Tereza |
+| Walkers_Standardised | ...Erik Andersen | ...Tereza Dobrovodská |
+
+**Diary evidence:**
+- Oct 25 (Edirne excursion): "Eric decided to go on to Istanbul and is dropped off at the busstation near the main mosque parting with our team."
+- Oct 26: "Team A comprises Adela, Ilija, Aneta, Martin and **Tereza as a substitute for Eric**."
+- Oct 27: "Team A in Monday set up" (refers to Oct 26 composition with Tereza)
+- Nov 1: "I get up at 5.30 to take Vera and Terka to the bus station" (Terka = Tereza leaving)
+
+**Tereza disambiguation:**
+
+Two Terezas were present in 2009 autumn per TRAP-Participants.csv:
+- Tereza Blažková (FFUK)
+- Tereza Dobrovodská (FFUK)
+
+**Resolution method:** Team roster cross-reference
+
+| Date | Team C Walkers | Team A Walkers |
+|------|----------------|----------------|
+| Oct 12-22 | Tereza Dobrovodská (documented) | Eric |
+| Oct 23 | "Tereza sick" — Jana substitutes | Eric (until departure) |
+| Oct 26-29 | No Tereza | Tereza (substitute for Eric) |
+
+**Logic:** People were only on one team at a time. Tereza Dobrovodská was on Team C Oct 12-22, then sick Oct 23. She became available to substitute for Eric on Team A Oct 26-29. Tereza Blažková had no Team C presence to explain her sudden availability — she may have had a specialist role (ceramics, bioarchaeology) rather than field walking this season.
+
+**Resolution:** Replace Eric/Erik Andersen with Tereza/Tereza Dobrovodská in Walkers_Original and Walkers_Standardised for all 4 records.
+
+---
+
+### D017: 2009-10-30, 2009-10-31, 2009-11-04, Team A — Erroneous QA_Notes (Issue Not Present)
+
+**Type:** Originally documented as metadata error — **no correction needed**
+
+**Originally suspected:** QA_Notes containing erroneous "No autumn survey season" statement
+
+**Investigation result (26 Nov 2025):** Team A records for these dates do NOT contain this erroneous text. The QA_Notes contain only: "MISSING: Survey units | No role data available"
+
+**Note:** The erroneous "No autumn survey season" text exists on **Team C** records (Oct 14, 16, 17, 18) — this is a separate issue not part of this QA cycle. Those Team C records have the text because they were non-survey days extracted without cross-verification.
+
+**Resolution:** No action required for Team A records
+
+---
+
+### D018: 2009-11-09, Team A — Missing Diary_Author Field
+
+**Type:** Field omission
+
+| Field | CSV Value | Correct Value |
+|-------|-----------|---------------|
+| Diary_Author | (empty) | Adela Sobotkova |
+
+**Note:** Original issue documented as "Diary_Source" but CSV has no such column. The actual missing field is "Diary_Author". PDF_Source already correctly contained "Diary Team A.doc".
+
+**Evidence:** All other Team A November records (Nov 2-7, 10) have Diary_Author = "Adela Sobotkova". Nov 9 was an anomalous omission.
+
+**Resolution:** Add "Adela Sobotkova" to Diary_Author field
+
+---
+
 ## Summary Statistics
 
 | Season | Value Discrepancies | Missing Records | Source Gaps |
 |--------|---------------------|-----------------|-------------|
 | Elhovo 2010 Autumn | 7 | 2 | 3 |
+| Elhovo 2009 Autumn Team B | 3 (unit fields) | 0 | 1 (season-wide: no DPF scans) |
+| Elhovo 2009 Autumn Team A | 1 (unit — diary error) + 4 (walkers) + 1 (Diary_Author) | 0 | — |
 
 ### Value Discrepancy Resolution (Elhovo 2010 Autumn)
 
@@ -259,6 +436,8 @@ All unit gaps explained by missing records. No unexplained discontinuities.
 
 ## Action Items
 
+### Elhovo 2010 Autumn (Complete)
+
 | ID | Action | Priority |
 |----|--------|----------|
 | D005 | ✅ Corrected Start Unit 71245→71525 | Done |
@@ -266,6 +445,29 @@ All unit gaps explained by missing records. No unexplained discontinuities.
 | D007 | ✅ Added missing units 71713/71760 | Done |
 | D008 | ✅ Added missing record 2010-11-07 B | Done |
 | D009 | ✅ Added missing record 2010-11-10 B | Done |
+
+### Elhovo 2009 Autumn Team B (Complete)
+
+| ID | Action | Priority |
+|----|--------|----------|
+| D011 | ✅ Added units 70926/70962 to 2009-11-02 B | Done |
+| D012 | ✅ Added units 70963/71062 to 2009-11-03 B | Done |
+| D013 | ✅ Added units 71063/71142 to 2009-11-05 B | Done |
+| D014 | ✅ Removed erroneous QA_Notes from 3 records | Done |
+
+### Elhovo 2009 Autumn Team A (Complete — 26 Nov 2025)
+
+| ID | Action | Status |
+|----|--------|--------|
+| D015 | ✅ No correction needed — SU form confirms CSV is correct (diary error) | Resolved |
+| D016 | ✅ Eric→Tereza + Erik Andersen→Tereza Dobrovodská for 2009-10-26 A | Done |
+| D016 | ✅ Eric→Tereza + Erik Andersen→Tereza Dobrovodská for 2009-10-27 A | Done |
+| D016 | ✅ Eric→Tereza + Erik Andersen→Tereza Dobrovodská for 2009-10-28 A | Done |
+| D016 | ✅ Eric→Tereza + Erik Andersen→Tereza Dobrovodská for 2009-10-29 A | Done |
+| D017 | ✅ No correction needed — Team A records didn't have erroneous text | Resolved |
+| D018 | ✅ Added Diary_Author (Adela Sobotkova) to 2009-11-09 A | Done |
+
+**D016 Note:** Original CSV had Eric/Erik Andersen. A crashed session partially applied corrections using wrong Tereza (Blažková). This session identified the correct Tereza via team membership analysis: T. Dobrovodská was on Team C until Oct 22, sick Oct 23, then available to substitute for Eric on Team A Oct 26-29.
 
 ---
 

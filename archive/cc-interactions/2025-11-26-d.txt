@@ -1,0 +1,929 @@
+
+ ▐▛███▜▌   Claude Code v2.0.53
+▝▜█████▛▘  Opus 4.5 · Claude Max
+  ▘▘ ▝▝    /…/synology/Adela/TRAP-WD-2020-04/trap-extraction
+══════════════════ Conversation compacted · ctrl+o for history ═════════════════
+  ⎿  Referenced file outputs/attribution.csv
+  ⎿  Referenced file outputs/qa-runsheet-elhovo-2009-autumn-b.md
+  ⎿  Read docs/qa-discrepancies-log.md (371 lines)
+  ⎿  Referenced file archive/cc-interactions/2025-11-26-b.txt
+  ⎿  Read docs/qa-guidance.md (445 lines)
+  ⎿  Todo list read (4 items)
+
+● Continuing with the task to update source-inventory.md with correct ELH
+  2009 diary listings. Let me first read the current file to see what needs
+  to be updated.
+
+● Read(outputs/source-inventory.md)
+  ⎿  Read 395 lines
+
+● Now I can see the current source-inventory.md. I need to update the Elhovo
+   2009 section with the correct file sizes. The current listing shows
+  incorrect sizes (e.g., "55 KB" for TeamB_Dnevnik when actual is 98 KB).
+  Let me update this section with accurate information.
+
+● Update(outputs/source-inventory.md)
+  ⎿  Updated outputs/source-inventory.md with 6 additions and 6 removals 
+       101    
+       102    | Team | File | Language | Walkers | Roles | Version | 
+             Location |
+       103    |------|------|----------|---------|-------|---------|-----
+             -----|
+       104 -  | A | Diary Team A.doc | EN | [ ] | [ ] | PRIMARY 
+           -  | `Elhovo 2010-12-12/2009/Project Records/Team A/` |
+       105 -  | A | Diary_Aneta.doc | EN | [ ] | [ ] | SUPPLEMENTAL (29
+           -   KB) | `Elhovo 2010-12-12/2009/Project Records/Team A/` |
+       106 -  | B | DiaryTeamB.doc | EN | [x] | N/A | PRIMARY 
+           -  | `Elhovo 2010-12-12/2009/Project Records/Team B/` |
+       107 -  | B | TeamB_Dnevnik (Ross).doc | BG | [ 
+           -  ] | N/A | SECONDARY (55
+           -   KB) | `Elhovo 2010-12-12/2009/Project Records/Team B/` |
+       108 -  | C | The Diary of Team C.doc | EN | [ ] | [ ] | PRIMARY 
+           -  | `Elhovo 2010-12-12/2009/Project Records/Team C/` |
+       109 -  | C | TeamC_Dnevnik.doc | BG | [ ] | [ ] | SECONDARY 
+           -  | `Elhovo 2010-12-12/2009/Project Records/Team C/` |
+       104 +  | A | Diary Team A.doc | EN | [ ] | [ ] | PRIMARY (132 KB) 
+           +  | `Elhovo 2010-12-12/2009/Project Records/Team A/` |
+       105 +  | A | Diary_Aneta.doc | EN | [ ] | [ ] | SUPPLEMENTAL (44
+           +   KB) | `Elhovo 2010-12-12/2009/Project Records/Team A/` |
+       106 +  | B | DiaryTeamB.doc | EN | [x] | N/A | PRIMARY (97 KB) 
+           +  | `Elhovo 2010-12-12/2009/Project Records/Team B/` |
+       107 +  | B | TeamB_Dnevnik (Ross).doc | BG | [x
+           +  ] | N/A | SECONDARY (98
+           +   KB) | `Elhovo 2010-12-12/2009/Project Records/Team B/` |
+       108 +  | C | The Diary of Team C.doc | EN | [ ] | [ ] | PRIMARY 
+           +  (103 KB) 
+           +  | `Elhovo 2010-12-12/2009/Project Records/Team C/` |
+       109 +  | C | TeamC_Dnevnik.doc | BG | [ ] | [ ] | SECONDARY 
+           +  (41 KB) 
+           +  | `Elhovo 2010-12-12/2009/Project Records/Team C/` |
+       110    
+       111    ### Elhovo 2010
+       112    
+
+● Now I need to update the Version Notes section which also has the
+  incorrect file sizes:
+
+● Update(outputs/source-inventory.md)
+  ⎿  Updated outputs/source-inventory.md with 3 additions and 2 removals 
+       350    ### Version Notes and Annotations
+       351    
+       352    **Elhovo 2009:**
+       353 -  - **Team A:** "Diary Team A.doc" 
+           -  is PRIMARY. "Diary_Aneta.doc" (29
+           -   KB, SUPPLEMENTAL) is a personal diary by team member 
+           -  Aneta, providing individual perspective rather than 
+           -  official team record. Duplicate copy exists in 
+           -  `Reports/Otchet/BG Diaries/`.
+       354 -  - **Team B:** "DiaryTeamB.doc" (EN) is PRIMARY. 
+           - "TeamB_Dnevnik (Ross).doc" (55 KB BG, SECONDARY) is 
+           - Bulgarian version by Ross. Duplicate copy exists in 
+           - `Reports/Otchet/BG Diaries/`.
+       353 +  - **Team A:** "Diary Team A.doc" (132 KB, EN) 
+           +  is PRIMARY. "Diary_Aneta.doc" (44
+           +   KB, SUPPLEMENTAL) is a personal diary by team member 
+           +  Aneta, providing individual perspective rather than 
+           +  official team record. Duplicate copy exists in 
+           +  `Reports/Otchet/BG Diaries/`.
+       354 +  - **Team B:** "DiaryTeamB.doc" (97 KB, EN) is PRIMARY - 
+           + contains complete daily narrative entries from 10 October 
+           + through 21 November 2009. "TeamB_Dnevnik (Ross).doc" (98 KB,
+           +  BG, SECONDARY) is Bulgarian version by Ross with similar 
+           + coverage. EN PRIMARY despite near-identical file size 
+           + because EN diary has more detailed narrative structure; BG 
+           + version useful for cross-verification. Duplicate copy exists
+           +  in `Reports/Otchet/BG Diaries/`. QA verified 26 November 
+           + 2025.
+       355 +  - **Team C:** "The Diary of Team C.doc" (103 KB, EN) is 
+           + PRIMARY. "TeamC_Dnevnik.doc" (41 KB, BG, SECONDARY) is 
+           + Bulgarian version with less detail.
+       356    
+       357    **Elhovo 2010:**
+       358    - **Team B versions:** Four diary files exist for Team B 
+             2010. File comparison analysis (23 November 2025) determined
+              that "Team B Diary new.docx" (26 KB, March 2011) is PRIMARY
+              as it contains critical post-season data quality 
+             corrections including: corrected object numbers, annotations
+              flagging data errors (e.g., "no such artefact brought to 
+             base"), and added missing object records. The December 2010 
+             versions represent the original field recordings. "Diary" vs
+              "Journal" naming is meaningless - these are duplicate files
+              with different names. Initial data extraction was performed
+              from "Team B Diary.docx" (SECONDARY); attribution CSV 
+             updated on 23 November 2025 to use PRIMARY version data for 
+             all affected records.
+
+● Now let me update the Extraction Status section to reflect that Elhovo
+  2009 Team B has been verified:
+
+● Update(outputs/source-inventory.md)
+  ⎿  Updated outputs/source-inventory.md with 1 addition and 1 removal
+       333    
+       334    ### Not Yet Processed
+       335    
+       336 -  - [ ] Elhovo 2009 diaries (Teams A, B, C)
+       336 +  - [ ] Elhovo 2009 diaries (Teams A, C)
+           +   — Team B QA completed 26 November 2025
+       337    - [ ] Kazanlak 2011 individual student journals 
+             (AUS_Diaries)
+       338    - [ ] Role data from remaining diary sources
+       339    
+
+● Let me also update the document date and history to reflect this update:
+
+● Update(outputs/source-inventory.md)
+  ⎿  Error editing file
+
+● Update(outputs/source-inventory.md)
+  ⎿  Updated outputs/source-inventory.md with 2 additions and 2 removals 
+       1    # TRAP Data Extraction - Source Inventory
+       2    
+       3    **Created:** November 2025
+       4 -  **Last major update:** 23 November 2025
+       4 +  **Last major update:** 26 November 2025
+       5    **Extraction status:** ✅ **100% COMPLETE** (268/268 records 
+           with walker data)
+       6    **Project completion:** 23 November 2025
+       7    
+     ...
+       384    ## Document History
+       385    
+       386    **Created:** November 2025
+       387 -  **Last major update:** 23
+           -   November 2025 (comprehensive version annotations and 
+           -  structural improvements)
+       387 +  **Last major update:** 26
+           +   November 2025 (comprehensive version annotations and 
+           +  structural improvements)
+       388    **Project completion:** 23 November 2025
+       389    **Contributors:** Adela Sobotkova, Claude Code
+       390    
+
+● Now let me update the document history section to record this update:
+
+● Update(outputs/source-inventory.md)
+  ⎿  Updated outputs/source-inventory.md with 2 additions and 1 removal  
+       384    ## Document History
+       385    
+       386    **Created:** November 2025
+       387 -  **Last major update:** 26 November 2025 (comprehensive 
+           - version annotations and structural improvements)
+       387 +  **Last major update:** 26 November 2025 (Elhovo 2009 diary 
+           + file sizes verified; Team B QA completed)
+       388 +  **Previous update:** 23 November 2025 (comprehensive 
+           + version annotations and structural improvements)
+       389    **Project completion:** 23 November 2025
+       390    **Contributors:** Adela Sobotkova, Claude Code
+       391    
+
+● Now let me update the discrepancies log to mark D011-D014 as complete:
+
+● Read(docs/qa-discrepancies-log.md)
+  ⎿  Read 30 lines
+
+● Update(docs/qa-discrepancies-log.md)
+  ⎿  Updated docs/qa-discrepancies-log.md with 5 additions and 5 removals 
+       349    | D008 | ✅ Added missing record 2010-11-07 B | Done |
+       350    | D009 | ✅ Added missing record 2010-11-10 B | Done |
+       351    
+       352 -  ### Elhovo 2009 Autumn (Pending User Approval)
+       352 +  ### Elhovo 2009 Autumn (Complete)
+       353    
+       354    | ID | Action | Priority |
+       355    |----|--------|----------|
+       356 -  | D011 | Add units 70926/70962 to 2009-11-02 B | Pending |
+       357 -  | D012 | Add units 70963/71062 to 2009-11-03 B | Pending |
+       358 -  | D013 | Add units 71063/71142 to 2009-11-05 B | Pending |
+       359 -  | D014 | Remove erroneous QA_Notes from 3 records | Pending
+           -   |
+       356 +  | D011 | ✅ Added units 70926/70962 to 2009-11-02 B | Done |
+       357 +  | D012 | ✅ Added units 70963/71062 to 2009-11-03 B | Done |
+       358 +  | D013 | ✅ Added units 71063/71142 to 2009-11-05 B | Done |
+       359 +  | D014 | ✅ Removed erroneous QA_Notes from 3 records | Done
+           +   |
+       360    
+       361    ---
+       362    
+
+● Now let me update the todo list to reflect the completed work:
+
+● All tasks from the previous session have been completed:
+
+  Summary of Completed Work
+
+  1. CSV Corrections Applied (D011-D014)
+
+  Applied the approved corrections to attribution.csv:
+  - D011: Added units 70926/70962 to 2009-11-02 Team B
+  - D012: Added units 70963/71062 to 2009-11-03 Team B
+  - D013: Added units 71063/71142 to 2009-11-05 Team B
+  - D014: Removed erroneous QA_Notes from all 3 records
+
+  2. Source Inventory Updated (outputs/source-inventory.md)
+
+  Updated Elhovo 2009 diary listings with verified file sizes:
+
+  | Team | File                     | Size   | Version        |
+  |------|--------------------------|--------|----------------|
+  | A    | Diary Team A.doc         | 132 KB | PRIMARY        |
+  | A    | Diary_Aneta.doc          | 44 KB  | SUPPLEMENTAL   |
+  | B    | DiaryTeamB.doc           | 97 KB  | PRIMARY (EN)   |
+  | B    | TeamB_Dnevnik (Ross).doc | 98 KB  | SECONDARY (BG) |
+  | C    | The Diary of Team C.doc  | 103 KB | PRIMARY        |
+  | C    | TeamC_Dnevnik.doc        | 41 KB  | SECONDARY      |
+
+  Also updated:
+  - Version Notes section with detailed Team B, C annotations
+  - Extraction Status section noting Team B QA completed
+  - Document history with today's date
+
+  3. Discrepancies Log Updated (docs/qa-discrepancies-log.md)
+
+  Marked D011-D014 as ✅ Done in the Action Items section.
+
+  All documentation is now consistent with the QA work completed for Elhovo
+  2009 Autumn Team B.
+
+> with the diaries, plese be consistent marking them with (EN) and (BG), 
+that's helpful. Out of an excess of caution, can I also confirm that you've 
+written all discrepencies found in the target file (attribution.csv) and 
+discrepencies between sources? There may not be any of the latter, since the
+ DPFs are missing... 
+
+● Good points. Let me first fix the consistency issue in
+  source-inventory.md, then verify the CSV corrections and confirm all
+  discrepancies are documented.
+
+● Update(outputs/source-inventory.md)
+  ⎿  Updated outputs/source-inventory.md with 6 additions and 6 removals 
+       101    
+       102    | Team | File | Language | Walkers | Roles | Version | 
+             Location |
+       103    |------|------|----------|---------|-------|---------|-----
+             -----|
+       104 -  | A | Diary Team A.doc | EN | [ ] | [ ] | PRIMARY (
+           -  132 KB) | `Elhovo 2010-12-12/2009/Project Records/Team A/` 
+           -  |
+       105 -  | A | Diary_Aneta.doc | EN | [ ] | [ ] | SUPPLEMENTAL (
+           -  44 KB) | `Elhovo 2010-12-12/2009/Project Records/Team A/` |
+       106 -  | B | DiaryTeamB.doc | EN | [x] | N/A | PRIMARY (
+           -  97 KB) | `Elhovo 2010-12-12/2009/Project Records/Team B/` |
+       107 -  | B | TeamB_Dnevnik (Ross).doc | BG | [x] | N/A | SECONDARY
+           -   (
+           -  98 KB) | `Elhovo 2010-12-12/2009/Project Records/Team B/` |
+       108 -  | C | The Diary of Team C.doc | EN | [ ] | [ ] | PRIMARY (
+           -  103 KB) | `Elhovo 2010-12-12/2009/Project Records/Team C/` 
+           -  |
+       109 -  | C | TeamC_Dnevnik.doc | BG | [ ] | [ ] | SECONDARY (
+           -  41 KB) | `Elhovo 2010-12-12/2009/Project Records/Team C/` |
+       104 +  | A | Diary Team A.doc | EN | [ ] | [ ] | PRIMARY (EN, 
+           +  132 KB) | `Elhovo 2010-12-12/2009/Project Records/Team A/` 
+           +  |
+       105 +  | A | Diary_Aneta.doc | EN | [ ] | [ ] | SUPPLEMENTAL (EN, 
+           +  44 KB) | `Elhovo 2010-12-12/2009/Project Records/Team A/` |
+       106 +  | B | DiaryTeamB.doc | EN | [x] | N/A | PRIMARY (EN, 
+           +  97 KB) | `Elhovo 2010-12-12/2009/Project Records/Team B/` |
+       107 +  | B | TeamB_Dnevnik (Ross).doc | BG | [x] | N/A | SECONDARY
+           +   (BG, 
+           +  98 KB) | `Elhovo 2010-12-12/2009/Project Records/Team B/` |
+       108 +  | C | The Diary of Team C.doc | EN | [ ] | [ ] | PRIMARY (
+           +  EN, 
+           +  103 KB) | `Elhovo 2010-12-12/2009/Project Records/Team C/` 
+           +  |
+       109 +  | C | TeamC_Dnevnik.doc | BG | [ ] | [ ] | SECONDARY (BG, 
+           +  41 KB) | `Elhovo 2010-12-12/2009/Project Records/Team C/` |
+       110    
+       111    ### Elhovo 2010
+       112    
+
+● Now let me verify the CSV corrections were actually applied by checking
+  the relevant records:
+
+● Bash(grep -E "^2009-11-0[235],B"
+      /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-2
+      020-04/trap-extraction/outputs/attribution.csv)
+  ⎿ 2009-11-02,B,70926,70962,Shawn Ross,Scott | Dasha | Shawn | Stanislav,S
+    cott Jackson | Dagmar Winklerová | Shawn Ross | Stanislav Marchovski,,,
+    ,,,Shawn Ross,,ELH09 SurveySummary.xls,DiaryTeamB.doc,Extracted from El
+    … +12 lines (ctrl+o to expand)
+
+
+
+
+● CSV corrections confirmed. Now let me check the QA runsheet to verify all
+  discrepancies between sources (EN vs BG diary) are documented:
+
+● Read(outputs/qa-runsheet-elhovo-2009-autumn-b.md)
+  ⎿  Read 324 lines
+
+● Verification Complete
+
+  1. CSV Corrections Confirmed ✓
+
+  All three records now have the correct unit numbers:
+
+  | Date       | Start Unit | End Unit | QA_Notes
+            |
+  |------------|------------|----------|------------------------------------
+  ----------|
+  | 2009-11-02 | 70926      | 70962    | QA 2025-11-26: Units added from
+  diary (D011) |
+  | 2009-11-03 | 70963      | 71062    | QA 2025-11-26: Units added from
+  diary (D012) |
+  | 2009-11-05 | 71063      | 71142    | QA 2025-11-26: Units added from
+  diary (D013) |
+
+  2. Source-to-Source Discrepancies
+
+  You're correct — since there are no DPF scans for ELH 2009, the only
+  cross-source verification was EN diary vs BG diary.
+
+  Finding: NO discrepancies between EN and BG diaries. Both sources agreed
+  on all unit values:
+
+  | Date       | EN Diary    | BG Diary    | Agreement |
+  |------------|-------------|-------------|-----------|
+  | 2009-11-02 | 70926-70962 | 70926-70962 | ✓ Perfect |
+  | 2009-11-03 | 70963-71062 | 70963-71062 | ✓ Perfect |
+  | 2009-11-05 | 71063-71142 | 71063-71142 | ✓ Perfect |
+
+  All 20 records showed EN/BG agreement on walker names and unit numbers.
+
+  3. What Was Documented
+
+  | Type      | Description                               | Location
+                            |
+  |-----------|-------------------------------------------|-----------------
+  --------------------------|
+  | D011-D014 | CSV extraction errors (missing unit data) |
+  qa-discrepancies-log.md                   |
+  | S004      | Season-wide source gap (no DPF scans)     |
+  qa-discrepancies-log.md                   |
+  | Issue #5  | UNMAPPED: Lizzy                           | QA runsheet
+  (already in name-mapping.csv) |
+
+  Summary
+
+  The discrepancies found were all CSV vs source errors (data not
+  extracted), not source vs source conflicts. The EN and BG diaries were
+  fully consistent, which gives high confidence in the diary-derived values
+  despite the absence of DPF scans.
+
+> ok, I think I'd like to do an experiment to see if it's worthwhile to look
+ at the survey unit record sheets. I've avoided doing so because they are 
+hard to read, and generally unnecessary when the daily summary is present - 
+but since it isn't present here, perhaps it's worth it. First, can you tell 
+me how complete you judge these records to be, that will help us decide if 
+looking at the SU sheets is worthwhile? 
+
+● Good question. Let me assess the completeness of the Elhovo 2009 Team B
+  records to help you decide.
+
+● Bash(ls -la "/media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/
+      TRAP-WD-2020-04/Elhovo 2010-12-12/2009/Project Records/Team B/Field
+      Records/")
+  ⎿  Error: Exit code 2
+     ls: cannot access '/media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synolog
+     y/Adela/TRAP-WD-2020-04/Elhovo 2010-12-12/2009/Project Records/Team B/Field 
+     Records/': No such file or directory
+
+● Bash(find "/media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TR
+      AP-WD-2020-04/Elhovo 2010-12-12/2009/Project Records/Team B" -name "*.pdf"
+       2>/dev/null…)
+  ⎿ /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-W
+    D-2020-04/Elhovo 2010-12-12/2009/Project Records/Team B/FieldRecords/71
+    257.pdf
+    … +45 lines (ctrl+o to expand)
+
+
+
+● Bash(ls "/media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP
+      -WD-2020-04/Elhovo 2010-12-12/2009/Project Records/Team B/FieldRecords/" |
+       sort -n)
+  ⎿  70122.pdf                     
+     70239.pdf
+     70240.pdf
+     … +11 lines (ctrl+o to expand)
+
+● Now let me assess the completeness of the current ELH 2009 Team B records:
+
+● Bash(grep "^2009-.*,B," /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/syno
+      logy/Adela/TRAP-WD-2020-04/trap-extraction/outputs/attribution.csv | awk
+      -F',' '{
+        dat…)
+  ⎿  Error: Exit code 1
+     awk: cmd. line:5:   has_units = (start \!= "" && end \!= "") ? "✓" : "✗";
+     awk: cmd. line:5:                      ^ backslash not last character on 
+     line
+
+● Bash(grep "^2009-.*,B," /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/syno
+      logy/Adela/TRAP-WD-2020-04/trap-extraction/outputs/attribution.csv | cut
+      -d',' -f1,3,4,…)
+  ⎿  2009-03-03,20001,20024,Adela Sobotkova,Adela | Bryan | Simon | Magda |
+     Vera | Martin,,,,
+     2009-03-06,20025,20097,Adela Sobotkova,Adela | Bryan | Simon | Magda |
+     … +63 lines (ctrl+o to expand)
+
+● Now I can give you a completeness assessment:
+
+  Elhovo 2009 Team B — Completeness Assessment
+
+  Core Fields (Autumn 2009: 20 records)
+
+  | Field           | Complete? | Coverage                            |
+  |-----------------|-----------|-------------------------------------|
+  | Date            | ✓         | 20/20 (100%)                        |
+  | Start/End Units | ✓         | 20/20 (100%) — after QA corrections |
+  | Leader          | ✓         | 20/20 (100%) — Shawn Ross           |
+  | Walkers         | ✓         | 20/20 (100%)                        |
+
+  Role Fields (the gap area)
+
+  | Field          | Records with Data | Coverage                          |
+  |----------------|-------------------|-----------------------------------|
+  | Paper_Recorder | 15/20             | 75% — but 4 are "UNMAPPED: Lizzy" |
+  | PDA_Operator   | 2/20              | 10% (Oct 22, Oct 26 only)         |
+  | GPS_Operator   | 1/20              | 5% (Nov 7 only)                   |
+  | Photographer   | 1/20              | 5% (Nov 7 only)                   |
+
+  Role Data Gaps by Date
+
+  | Date Range | Paper_Recorder        | PDA       | GPS     | Photo |
+  |------------|-----------------------|-----------|---------|-------|
+  | Oct 12-29  | ✓ Vera (11 records)   | 2 records | ✗       | ✗     |
+  | Nov 2-6    | ✗ Missing (5 records) | ✗         | ✗       | ✗     |
+  | Nov 7      | ✓ Dasha               | ✗         | ✓ Scott | ✗     |
+  | Nov 9-13   | ? Lizzy (unmapped)    | ✗         | ✗       | ✗     |
+
+  SU Form PDFs Available
+
+  14 PDFs exist, corresponding to these survey dates:
+
+  | PDF Unit     | Date   | Could help with roles?      |
+  |--------------|--------|-----------------------------|
+  | 70970, 71062 | Nov 3  | ✓ Yes — role gap            |
+  | 71199        | Nov 6  | ✓ Yes — role gap            |
+  | 71257        | Nov 7  | Partial (already have some) |
+  | 71370        | Nov 10 | Could verify Lizzy          |
+  | 71463        | Nov 13 | Could verify Lizzy          |
+
+  Missing SU forms: Nov 2, Nov 5, Nov 9, Nov 12
+
+  Verdict
+
+  Core data is 100% complete. The gaps are in role assignments (PDA, GPS,
+  Paper Recorder), particularly for Nov 2-6.
+
+  The SU forms might help fill 2-3 role gaps (Nov 3, 6, 7) and possibly
+  verify "Lizzy" — but they won't fill Nov 2, Nov 5, Nov 9, Nov 12 since no
+  PDFs exist for those units.
+
+  Worth looking at? Marginal benefit. You'd gain at most 3-4 role data
+  points. If the SU forms are hard to read and the diary didn't record
+  roles, the forms may not either. Want me to sample one (e.g., 70970.pdf
+  for Nov 3) to see what information it actually contains?
+
+> Why don't we try one just to see what we learn. 70970.pdf is a good place 
+to start. Can you use your vision engine and tell me what you see, then I'll
+ give you additional guidance. For orientation, these forms are printed 
+four-to-a-page. You're interested (usually) in the *bottom* form, which is 
+the *first* form on the sheet, as fieldwalkers found it more intuitive to 
+work their way *up* the page as they walked forward. This bottom record 
+should contain the names or initials of the field walkers, which you can 
+cross-check with the diary since they are often hard to read. The date is 
+also written into this form (here abbreviated to just '29', assuming month 
+and year). Many forms have marginal notes that may also be useful, e.g., 
+stating roles or expanding initials. Why don't you have a look and see what 
+you can interpret, and I'll be here to help. 
+
+● Let me take a look at that survey unit form:
+
+● Read(/media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-
+      2020-04/Elhovo 2010-12-12/2009/Project Records/Team
+      B/FieldRecords/70970.pdf)
+  ⎿  Read PDF (2.5MB)
+
+● This is very informative! Let me describe what I see:
+
+  Document Structure
+
+  - 34 pages, each with 4 forms arranged vertically
+  - Mix of INTENSIVE SURVEY (15m intervals) and EXTENSIVE SURVEY (20m
+  intervals) forms
+  - Covers units from approximately 70940 to 71062 (late October through
+  November 3, 2009)
+  - Header shows "ELHOVO 2009"
+
+  Bottom Form Analysis (Page 1 - Unit 70940, Date: 29 October)
+
+  Walker Position Box (bottom left):
+  1. Stamosh (Stanislav)
+  2. Shawn
+  3. Vera
+  4. Scott
+  5. [possibly empty or initial]
+
+  Notes field: "Start time: 8:23" and "Frag = 4 walkers"
+
+  Cross-check with diary (Oct 29): Diary says "Scott, Vera, Shawn, Stanislav
+   (4)" — matches! ✓
+
+  Other Observations
+
+  Marginal notes (handwritten in brown ink):
+  - "end of the field" markers between forms
+  - Page 1 has: "mostly Roman material including brick, tiles, also ceramic 
+  medieval and others..."
+  - These are archaeological observation notes, not role assignments
+
+  What the forms provide:
+  - ✓ Walker names/initials (in numbered position boxes)
+  - ✓ Date (abbreviated, e.g., "29" for Oct 29, "H.3" for Nov 3)
+  - ✓ Unit numbers
+  - ✓ Walk interval
+
+  What the forms DON'T provide:
+  - ✗ No role fields (PDA, GPS, Paper Recorder not recorded on these forms)
+  - ✗ No "Author" field like the DPF daily summary forms have
+
+  Verdict for Role Data
+
+  The SU forms are useful for confirming walker names but won't help fill 
+  role gaps — the forms simply don't have fields for recording who operated
+  the PDA, GPS, or did paper recording. That information was only tracked
+  (when it was tracked) in the diaries.
+
+  Do you want me to check a November form (when Dasha replaced Vera) to
+  verify the walker change, or shall we conclude the experiment here?
+
+> Yes, that's good. Some other visual queues: an 'X' through one or more 
+boxes indicates an area that was not surveyed for one reason or another - so
+ if an entire 'column' is Xed out, only expect four walkers (sometimes even 
+more columns will be Xed out - and sometimes *extra* columns will be hand 
+drawn in; the number of columns not Xed out indicates the expected number of
+ walkers). On this particular form, the marginal notes are archaeological 
+(expect those) but I have recently seen forms with role assignments (not 
+consistently though) - just be primed to examine marginal notes and look for
+ relevant information if it's there. Uses for these forms include: 
+confirming walkers and confirming dates. If you use it in this way, please 
+indicate so. 
+
+● Thank you for the additional guidance. Let me summarise what we've learned
+   from this experiment:
+
+  SU Form Interpretation Guide
+
+  Visual cues for walker count:
+  - X through column(s) = area not surveyed → fewer walkers than 5
+  - Hand-drawn extra columns = more than 5 walkers
+  - Count non-Xed columns = actual walker count for that unit
+
+  Marginal notes:
+  - Often archaeological (material descriptions, site observations)
+  - Occasionally contain role assignments — worth examining but not
+  systematic
+  - Look for keywords like "PDA", "GPS", "forms", "recorder", names with
+  role annotations
+
+  Value of SU Forms for QA
+
+  | Use                     | Reliability
+                |
+  |-------------------------|-----------------------------------------------
+  --------------|
+  | Confirming walker names | ✓ Good — names in position boxes
+                |
+  | Confirming dates        | ✓ Good — date field on each form
+                |
+  | Confirming walker count | ✓ Good — count non-Xed columns
+                |
+  | Role assignments        | ✗ Poor — no dedicated field; occasional
+  marginal notes only |
+
+  Conclusion
+
+  For Elhovo 2009 Team B, the SU forms are not worth systematically 
+  reviewing for our current QA purposes because:
+  1. Walker names are already confirmed via EN/BG diary agreement
+  2. Dates are already confirmed
+  3. Role data (our main gap) isn't reliably recorded on these forms
+
+  The forms would be valuable if we had conflicting walker information
+  between sources, or if diary entries were missing — they could serve as a
+  third verification source. For now, the diary-only verification is
+  sufficient given the EN/BG agreement.
+
+  Should I note this finding in the QA guidance document for future
+  reference?
+
+> ah, and *confirming unit numbers*! 
+
+● Yes, of course! That's actually one of the most direct uses — the unit
+  number is written right on each form. Updated:
+
+  Value of SU Forms for QA
+
+  | Use                     | Reliability
+                |
+  |-------------------------|-----------------------------------------------
+  --------------|
+  | Confirming unit numbers | ✓ Direct — unit number field on each form
+                |
+  | Confirming walker names | ✓ Good — names in position boxes
+                |
+  | Confirming walker count | ✓ Good — count non-Xed columns
+                |
+  | Confirming dates        | ✓ Good — date field on each form
+                |
+  | Role assignments        | ✗ Poor — no dedicated field; occasional
+  marginal notes only |
+
+  This is particularly valuable for ELH 2009 where no DPF scans exist — the
+  SU forms become the only primary source to cross-verify unit numbers
+  against diary entries. If we ever doubted the diary's unit numbers (e.g.,
+  suspected a transcription error), the SU forms would be the definitive
+  source since the unit number is recorded in the field at the time of
+  survey.
+
+  Should I add this to the QA guidance document under a new section for
+  "Tier 4 Sources (SU Forms)" with notes on when they're useful?
+
+> Yes, please add - if the information extracted from the diaries is 
+*coherent* (e.g., no unexpected changes of walkers - like a single walker 
+being different on one day - continuous unit numbers, dates match between 
+the attribution CSV and the diaries, etc.), then I don't think it's 
+necessary to fall back to the diaries, which are admittedly high-effort to 
+interpret. BUT if anything looks suspicious, we should fall back to the 
+diaries.\
+\
+One other question - would it be possible to set up a dedicated scan of the 
+diaries to look for the (uncommon but extant) statement of roles? We won't 
+do that now, but we could do it later as a dedicated task. 
+
+● Good points. Let me add this to the QA guidance document.
+
+● Read(docs/qa-guidance.md)
+  ⎿  Read 46 lines
+
+● Update(docs/qa-guidance.md)
+  ⎿  Updated docs/qa-guidance.md with 59 additions                       
+       430    
+       431    ---
+       432    
+       433 +  ## Tier 4 Sources: Survey Unit (SU) Forms
+       434 +  
+       435 +  Individual survey unit forms (scanned PDFs) provide 
+           + field-level data recorded at the time of survey. These are a
+           +  fallback verification source when primary sources (DPF 
+           + scans, diaries) are unavailable or suspicious.
+       436 +  
+       437 +  ### When to Use SU Forms
+       438 +  
+       439 +  **Use SU forms when diary data looks suspicious:**
+       440 +  
+       441 +  - Unexpected walker changes (single day differs from 
+           + surrounding days)
+       442 +  - Unit number gaps or discontinuities
+       443 +  - Date mismatches between CSV and diary
+       444 +  - Walker count inconsistencies
+       445 +  
+       446 +  **Do NOT routinely check SU forms if diary data is 
+           + coherent:**
+       447 +  
+       448 +  - Continuous unit numbers across days
+       449 +  - Consistent walker composition (expected team stability)
+       450 +  - Dates match between sources
+       451 +  - No unexplained anomalies
+       452 +  
+       453 +  SU forms are **high-effort to interpret** (handwritten, 4 
+           + forms per page, variable legibility). Only use when needed.
+       454 +  
+       455 +  ### What SU Forms Provide
+       456 +  
+       457 +  | Data | Reliability | Location on Form |
+       458 +  |------|-------------|------------------|
+       459 +  | Unit numbers | ✓ Direct | "Survey unit:" field |
+       460 +  | Walker names | ✓ Good | Bottom-left position boxes (1-5) 
+           + |
+       461 +  | Walker count | ✓ Good | Count non-Xed columns |
+       462 +  | Dates | ✓ Good | "Date:" field (often abbreviated) |
+       463 +  | Role assignments | ✗ Poor | Occasional marginal notes 
+           + only |
+       464 +  
+       465 +  ### Reading SU Forms
+       466 +  
+       467 +  **Form layout:**
+       468 +  - 4 forms per page, arranged vertically
+       469 +  - **Bottom form = first unit** (fieldwalkers work upward on
+           +  the page)
+       470 +  - Walker names in numbered position boxes (bottom-left 
+           + corner)
+       471 +  
+       472 +  **Visual cues:**
+       473 +  - **X through column(s):** Area not surveyed → fewer 
+           + walkers
+       474 +  - **Hand-drawn extra columns:** More than 5 walkers
+       475 +  - **Count non-Xed columns:** Actual walker count
+       476 +  
+       477 +  **Marginal notes:**
+       478 +  - Often archaeological observations (materials found, site 
+           + conditions)
+       479 +  - Occasionally contain role assignments — examine but don't
+           +  rely on
+       480 +  - Look for keywords: "PDA", "GPS", "forms", "recorder"
+       481 +  
+       482 +  ### SU Forms for Seasons Without DPF Scans
+       483 +  
+       484 +  For seasons like **Elhovo 2009** where no DPF scans exist, 
+           + SU forms become the **only primary field source** to 
+           + cross-verify unit numbers against diary entries. The unit 
+           + number on each SU form is recorded in the field at the time 
+           + of survey, making it definitive.
+       485 +  
+       486 +  ---
+       487 +  
+       488    ## Future Additions
+       489    
+       490 +  ### Potential Future Tasks
+       491 +  
+       492 +  1. **Dedicated SU form scan for role data:** Systematically
+           +  review SU form marginal notes across all available PDFs to 
+           + extract occasional role assignments. High effort but could 
+           + yield some role data for records currently missing this 
+           + information.
+       493 +  
+       494    *Add new rules, heuristics, or observations here as QA 
+             progresses*
+       495    
+       496    ---
+
+● Done. Now to your question about a dedicated scan for role statements:
+
+  Feasibility: Dedicated SU Form Scan for Roles
+
+  Yes, this is possible. Here's how it could work:
+
+  Approach
+
+  1. Scope: Review all SU form PDFs page by page (14 files for Team B alone,
+   ~30+ pages each)
+  2. Target: Marginal notes containing role-related keywords:
+    - "PDA", "GPS", "forms", "recorder", "paper"
+    - Names followed by role indicators
+    - Any annotations near the walker position boxes
+  3. Output: A supplementary table of role assignments extracted from SU
+  forms, with:
+    - Date, Unit range, Role, Person, Source (PDF filename + page)
+
+  Effort Estimate
+
+  | Season/Team        | PDF Count | Est. Pages | Effort   |
+  |--------------------|-----------|------------|----------|
+  | ELH 2009 Team B    | 14        | ~400       | High     |
+  | ELH 2009 Teams A+C | ~25       | ~700       | High     |
+  | Other seasons      | Variable  | Variable   | Variable |
+
+  Trade-offs
+
+  Pros:
+  - Could recover some role data otherwise lost
+  - Vision-based scanning is now feasible (as we just demonstrated)
+  - One-time effort with permanent benefit
+
+  Cons:
+  - Role notes are uncommon — yield may be low
+  - Time-intensive manual review
+  - Handwriting legibility varies
+
+  Recommendation
+
+  Add to the backlog as a low-priority enhancement task — worth doing
+  eventually, but not critical given that role data is "bonus" information
+  rather than core attribution data.
+
+  Would you like me to create a task specification document for this future
+  work?
+
+> Since you have recent experience looking at the scans, and we've discussed
+ it in this session, yes, while it's in context please write up a 
+preliminary plan for a 'Dedicated SU Form Scan for Roles' 
+
+● Write(docs/plan-su-form-role-scan.md)
+  ⎿  Wrote 282 lines to docs/plan-su-form-role-scan.md
+     # Plan: Dedicated SU Form Scan for Role Data
+     **Created:** 26 November 2025
+     **Status:** Draft — awaiting prioritisation
+     **Priority:** Low (enhancement task)
+     **Estimated effort:** High (multi-session task)
+     ---
+     ## Objective
+     … +272 lines (ctrl+o to expand)
+
+● Done. Created docs/plan-su-form-role-scan.md with:
+
+  Plan Summary
+
+  Objective: Extract role assignments from SU form marginal notes
+
+  Recommended approach: Phased execution
+  1. Pilot (2-3 hours): ELH 2009 Team B, November dates only — assess yield
+  2. Expansion (12-15 hours): If pilot yield >20%, extend to all ELH 2009
+  teams
+  3. Full scan (+5-10 hours): Add ELH 2010 if expansion successful
+
+  Key methodology points:
+  - Review page by page using vision capability
+  - Look for marginal notes with role indicators (PDA, GPS, Forms, etc.)
+  - Record findings with source location and confidence level
+  - Cross-reference against existing diary data before updating CSV
+
+  Success criterion: >20% yield rate in pilot to justify expansion
+
+  Outputs:
+  - su-form-role-extractions.csv with structured findings
+  - Updated attribution.csv with validated role data
+  - Extraction log documenting effort and yield
+
+  The plan captures what we learned from today's experiment and provides a
+  framework for executing the task whenever it gets prioritised. Ready to
+  pick up when you want to tackle it.
+
+> /export archive/cc-interactions/2025-11-26-d.txt 
+  ⎿ Failed to export conversation: ENOENT: no such file or directory, open 
+    '/media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-20
+    20-04/Elhovo 2010-12-12/2009/Project Records/Master 
+    Records/archive/cc-interactions/2025-11-26-d.txt'
+
+> can you reset your working directory to trap-extracton so I can export our
+ conversation? 
+
+● Bash(cd /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-
+      WD-2020-04/trap-extraction && pwd)
+  ⎿ /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-W
+    D-2020-04/trap-extraction
+
+
+● Done — now in /trap-extraction. Try the export again.
+
+> /export archive/cc-interactions/2025-11-26-d.txt 
+  ⎿  Conversation exported to: archive/cc-interactions/2025-11-26-d.txt
+
+> thanks - I'd like to continue the manual QA check of the season we're 
+working on in the next session, but we're low on context, can you write a 
+/compact message? 
+
+● Session Summary for /compact
+
+  Session focus: Completed QA for Elhovo 2009 Autumn Team B (20 records) and
+   explored SU form utility.
+
+  Completed This Session
+
+  1. Applied CSV corrections (D011-D014):
+    - Added unit numbers to 2009-11-02, 2009-11-03, 2009-11-05 Team B
+    - Removed erroneous QA_Notes claiming "no autumn survey season"
+    - Updated discrepancies log marking all as ✅ Done
+  2. Updated source-inventory.md:
+    - Corrected ELH 2009 diary file sizes (Team A: 132KB, Team B EN:
+  97KB/BG: 98KB, Team C: 103KB/41KB)
+    - Added (EN)/(BG) language markers consistently
+    - Noted Team B QA completed
+  3. SU Form Experiment:
+    - Examined 70970.pdf to assess utility for role data extraction
+    - Findings: SU forms confirm walker names, dates, unit numbers; do NOT
+  have role fields
+    - Marginal notes occasionally contain role info but not systematic
+    - Added "Tier 4 Sources: Survey Unit (SU) Forms" section to
+  qa-guidance.md
+  4. Created plan document:
+    - docs/plan-su-form-role-scan.md — detailed plan for future dedicated
+  role extraction from SU forms
+    - Phased approach: pilot (2-3 hrs) → expansion if yield >20%
+
+  QA Status
+
+  | Season          | Team | Records | Status     |
+  |-----------------|------|---------|------------|
+  | ELH 2010 Autumn | A    | 6       | ✅ Complete |
+  | ELH 2010 Autumn | B    | 10      | ✅ Complete |
+  | ELH 2009 Autumn | B    | 20      | ✅ Complete |
+  | ELH 2009 Autumn | A    | ~20     | ⏳ Next     |
+  | ELH 2009 Autumn | C    | ~20     | Pending    |
+
+  Next Session: Continue ELH 2009 QA
+
+  Recommended next step: QA Elhovo 2009 Autumn Team A (~20 records)
+
+  Key files:
+  - outputs/attribution.csv — main data file
+  - docs/qa-guidance.md — QA protocol with SU form guidance
+  - docs/qa-discrepancies-log.md — discrepancy tracking
+  - outputs/source-inventory.md — source locations
+
+  ELH 2009 sources (no DPF scans exist):
+  - Team A diary: Diary Team A.doc (132KB, EN, PRIMARY)
+  - Team A supplemental: Diary_Aneta.doc (44KB, EN, SUPPLEMENTAL)
+  - Location: Elhovo 2010-12-12/2009/Project Records/Team A/
+
+
+
