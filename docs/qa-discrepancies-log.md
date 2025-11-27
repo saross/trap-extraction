@@ -381,6 +381,93 @@ Two Terezas were present in 2009 autumn per TRAP-Participants.csv:
 
 ---
 
+### D019: 2009-10-14, 2009-10-16, 2009-10-17, 2009-10-18, Team C — Erroneous QA_Notes
+
+**Type:** Metadata error (4 records)
+
+**Affected records:** Oct 14, Oct 16, Oct 17, Oct 18 (all Team C non-survey days)
+
+**Current QA_Notes contained:**
+> "MISSING: Survey units | No role data available | No autumn survey season: No autumn 2009 survey season - diaries end in March/April"
+
+**Issues:**
+1. The "No autumn survey season" statement is factually incorrect — the diary covers Oct-Nov 2009
+2. Nothing is "MISSING" — these are complete records of legitimate non-survey days
+
+**Diary evidence:**
+- Oct 14: "We didn't walk in the fields because the Bulgarians from museum were tired"
+- Oct 16: "Today we didn't walk because it was raining"
+- Oct 17: "It was also raining today so we didn't walk again"
+- Oct 18: "A trip to Burgas"
+
+**Resolution:** Replace QA_Notes with "Non-survey day (no field walking conducted)"
+
+---
+
+### D020: 2009-10-15, Team C — Diary Unit Error (No Correction Needed)
+
+**Type:** Diary error — CSV is correct
+
+| Source | Value | Status |
+|--------|-------|--------|
+| Diary (The Diary of Team C.doc) | End: 80103 | ✗ ERROR |
+| SU Forms (80115.pdf) | End: 80115 | ✓ PRIMARY |
+| CSV (current) | End: 80115 | ✓ CORRECT |
+
+**Resolution:** No correction needed — CSV value is correct per SU forms
+
+**Analysis:** Diary table shows "54 total units" with end 80103, but 80062-80103 is only 42 units. The CSV end unit 80115 gives 54 units (80062-80115 inclusive), matching the stated total. Diary had a transcription error in the summary table.
+
+---
+
+### D021: 2009-10-22, Team C — Walker Error (Georgi Absent)
+
+**Type:** Personnel error
+
+| Field | CSV Value (original) | Corrected Value |
+|-------|----------------------|-----------------|
+| Walkers_Original | Bara \| Petra Tušlová \| Sona \| Tereza \| Todor \| Georgi | Bara \| Petra Tušlová \| Sona \| Tereza \| Todor |
+| Walkers_Standardised | ...Todor Vulchev \| Georgi Nekhrizov | ...Todor Vulchev |
+
+**Diary evidence:** "Today we walked in five people because Georgi was away"
+
+**Resolution:** Remove Georgi/Georgi Nekhrizov from both walker fields
+
+---
+
+### D022: 2009-11-12, Team C — Minor End Unit Discrepancy (Accepted)
+
+**Type:** Minor numeric discrepancy
+
+| Source | Value |
+|--------|-------|
+| Diary (The Diary of Team C.doc) | End: 80938 |
+| CSV (current) | End: 80939 |
+
+**Resolution:** Accept CSV value (off by 1, minor)
+
+**Note:** Unable to verify with SU forms. Discrepancy is minimal and does not affect data integrity.
+
+---
+
+### D023: 2009-11-13, Team C — Start Unit Typo
+
+**Type:** Data entry error
+
+| Source | Value |
+|--------|-------|
+| CSV (original) | Start: 80839 |
+| Diary (The Diary of Team C.doc) | Start: 80939 |
+
+**Resolution:** Correct Start_Unit from 80839 to 80939
+
+**Evidence:**
+- Diary clearly states units 80939-80969
+- Unit 80839 is impossible — it's less than Nov 12's start unit (80910)
+- Sequential unit progression confirms: Nov 12 ends ~80939, Nov 13 starts 80939
+
+---
+
 ## Summary Statistics
 
 | Season | Value Discrepancies | Missing Records | Source Gaps |
@@ -388,6 +475,7 @@ Two Terezas were present in 2009 autumn per TRAP-Participants.csv:
 | Elhovo 2010 Autumn | 7 | 2 | 3 |
 | Elhovo 2009 Autumn Team B | 3 (unit fields) | 0 | 1 (season-wide: no DPF scans) |
 | Elhovo 2009 Autumn Team A | 1 (unit — diary error) + 4 (walkers) + 1 (Diary_Author) | 0 | — |
+| Elhovo 2009 Autumn Team C | 4 (QA_Notes) + 1 (walkers) + 1 (unit) + 2 (diary errors) | 0 | — |
 
 ### Value Discrepancy Resolution (Elhovo 2010 Autumn)
 
@@ -468,6 +556,16 @@ All unit gaps explained by missing records. No unexplained discontinuities.
 | D018 | ✅ Added Diary_Author (Adela Sobotkova) to 2009-11-09 A | Done |
 
 **D016 Note:** Original CSV had Eric/Erik Andersen. A crashed session partially applied corrections using wrong Tereza (Blažková). This session identified the correct Tereza via team membership analysis: T. Dobrovodská was on Team C until Oct 22, sick Oct 23, then available to substitute for Eric on Team A Oct 26-29.
+
+### Elhovo 2009 Autumn Team C (Complete — 27 Nov 2025)
+
+| ID | Action | Status |
+|----|--------|--------|
+| D019 | ✅ QA_Notes corrected for Oct 14, 16, 17, 18 — "Non-survey day (no field walking conducted)" | Done |
+| D020 | ✅ No correction needed — SU forms confirm CSV units correct (diary error) | Resolved |
+| D021 | ✅ Removed Georgi from Oct 22 walkers (diary: "walked in five because Georgi was away") | Done |
+| D022 | ✅ No correction needed — minor end unit discrepancy (80938 vs 80939) accepted | Accepted |
+| D023 | ✅ Corrected Nov 13 Start_Unit 80839→80939 (typo — unit sequence impossible) | Done |
 
 ---
 

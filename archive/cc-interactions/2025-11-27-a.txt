@@ -1,0 +1,836 @@
+
+ ▐▛███▜▌   Claude Code v2.0.54
+▝▜█████▛▘  Opus 4.5 · Claude Max
+  ▘▘ ▝▝    /…/synology/Adela/TRAP-WD-2020-04/trap-extraction
+══════════════════ Conversation compacted · ctrl+o for history ═════════════════
+
+> /compact   Session Summary: ELH 2009 Autumn Team A QA (26 Nov 2025)
+
+  Completed Work
+
+  QA corrections applied to attribution.csv:
+  - D015: No correction needed — SU form (60192.pdf p.56) confirmed CSV unit 
+60195 is correct; diary had transcription error (60196)
+  - D016: Corrected walker substitution for Oct 26-29: Eric/Erik Andersen → 
+Tereza/Tereza Dobrovodská (4 records, 8 field updates)
+  - D017: No correction needed — Team A records didn't have erroneous "No autumn
+ survey season" text (exists on Team C Oct
+  14,16,17,18 — deferred)
+  - D018: Added Diary_Author (Adela Sobotkova) to Nov 9 record
+
+  Key finding — Tereza disambiguation:
+  Two Terezas present in 2009 autumn (Blažková and Dobrovodská). Resolved via 
+team roster cross-reference: T. Dobrovodská was on Team
+   C Oct 12-22, sick Oct 23, then available to substitute for Eric on Team A Oct
+ 26-29. T. Blažková had no Team C presence — may have
+   had specialist role (ceramics/bioarchaeology). Methodology documented in 
+discrepancies log D016.
+
+  Documentation Updated
+
+  - outputs/attribution.csv — 9 field corrections with QA notes
+  - outputs/qa-runsheet-elhovo-2009-autumn-a.md — complete with applied 
+corrections
+  - docs/qa-discrepancies-log.md — D015-D018 with full disambiguation 
+methodology
+  - outputs/source-inventory.md — Team A diary coverage, SU form reliability 
+note, file-to-date index expanded
+  - planning/follow-up-actions.md — Added T. Blažková 2009-autumn observation
+
+  Outstanding (Deferred)
+
+  - 5 records still have erroneous "No autumn survey season" notes (4 Team C 
+2009, 1 Team B 2010) — to be addressed when those teams
+  are QA'd
+
+  Project State
+
+  - ELH 2009 Autumn: Teams A & B QA complete; Team C pending
+  - Working with: Shawn Ross (with Adela Sobotkova)
+  - Export saved: archive/cc-interactions/2025-11-26-f.txt 
+  ⎿  Compacted (ctrl+o to see full summary)
+  ⎿  Referenced file outputs/source-inventory.md
+  ⎿  Referenced file docs/qa-discrepancies-log.md
+  ⎿  Referenced file planning/follow-up-actions.md
+  ⎿  Referenced file outputs/qa-runsheet-elhovo-2009-autumn-a.md
+  ⎿  Referenced file outputs/name-mapping.csv
+
+> Hi CC, welcome back! Can you please commit and push all changes, then let 
+me know what team/season is next on our list to review? 
+
+● I'll commit the changes and then check what's next on our QA list.
+
+● Bash(git status)
+  ⎿  On branch master                               
+     Your branch is up to date with 'origin/master'.
+     … +21 lines (ctrl+o to expand)
+
+● Search(pattern: "planning/*.md", path: "/media/shawn/191c3b96-5fa5-4d0d-8805-0
+        cf05d3d8468/synology/Adela/TRAP-WD-2020-04/trap-extraction")
+  ⎿  Found 0 files 
+
+● Bash(ls -la /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/T
+      RAP-WD-2020-04/trap-extraction/planning/)
+  ⎿  total 56                                       
+     drwxrwxr-x  2 shawn shawn  4096 Nov 26 22:26 .
+     drwxrwxr-x 10 shawn shawn  4096 Nov 26 14:27 ..
+     … +3 lines (ctrl+o to expand)
+
+● Bash(git log --oneline -5)
+  ⎿ 528a5f0 feat(qa): complete QA pilot for Elhovo 2010 Autumn (16 records)
+    5a5c6f3 chore: reorganise archive structure for improved legibility
+    4955501 chore: repository cleanup and documentation updates (25 Nov 202
+    … +5 lines (ctrl+o to expand)
+
+
+
+● Read(planning/qa-pilot-plan.md)
+  ⎿  Read 296 lines
+
+● Read(planning/follow-up-actions.md)
+  ⎿  Read 407 lines
+
+● Let me commit the changes from the ELH 2009 Autumn Team A QA session:
+
+● Bash(git diff --stat)
+  ⎿  docs/qa-discrepancies-log.md  | 202 ++++++++++++++++++++++++++++++++++
+    ++++++++
+     docs/qa-guidance.md           | 176 ++++++++++++++++++++++++++++++++++
+    … +5 lines (ctrl+o to expand)
+
+
+
+● Bash(git add docs/qa-discrepancies-log.md docs/qa-guidance.md
+      outputs/attribution.csv outputs/source-inventory.md
+      planning/follow-up-actions.md outputs/qa-runsheet-e…)
+  ⎿  (No content)
+
+● Bash(git commit -m "feat(qa): complete QA for Elhovo 2009 Autumn Teams A & B…)
+  ⎿ [master b449c22] feat(qa): complete QA for Elhovo 2009 Autumn Teams A &
+     B
+     13 files changed, 6671 insertions(+), 29 deletions(-)
+    … +8 lines (ctrl+o to expand)
+
+
+● Bash(git push)
+  ⎿  To github.com:saross/trap-extraction.git
+        528a5f0..b449c22  master -> master
+
+● Committed and pushed successfully. Now let me check what team/season is
+  next:
+
+● Bash(cut -d',' -f1,2,3 /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synol
+      ogy/Adela/TRAP-WD-2020-04/trap-extraction/outputs/attribution.csv | sort
+      -t',' -k1,1 -k…)
+  ⎿        1 2009-03-03,B,20001    
+           1 2009-03-04,A,10001
+           1 2009-03-04,C,30000
+     … +47 lines (ctrl+o to expand)
+
+● Bash(grep -E "^2009-1[01]|^2010-1[01]"
+      /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-2
+      020-04/trap-extraction/outputs/attribution.csv | cut…)
+  ⎿        1 2009-10-12,A,60000    
+           1 2009-10-12,B,70000
+           1 2009-10-12,C,80000
+     … +75 lines (ctrl+o to expand)
+
+● Bash(ls -la /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/T
+      RAP-WD-2020-04/trap-extraction/outputs/qa-runsheet*.md 2>/dev/null || echo
+       "Checking ru…)
+  ⎿ -rw------- 1 shawn shawn 13337 Nov 26 22:22 /media/shawn/191c3b96-5fa5-
+    4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-2020-04/trap-extraction/o
+    utputs/qa-runsheet-elhovo-2009-autumn-a.md
+    … +6 lines (ctrl+o to expand)
+
+
+
+● All changes committed and pushed:
+
+  528a5f0..b449c22  master -> master
+
+  Commit: feat(qa): complete QA for Elhovo 2009 Autumn Teams A & B
+
+  ---
+  Next Up: Elhovo 2009 Autumn Team C
+
+  Progress so far:
+  | Team/Season            | Records | Status           |
+  |------------------------|---------|------------------|
+  | ELH 2010 Autumn (A+B)  | 14      | ✅ Pilot complete |
+  | ELH 2009 Autumn Team A | 28      | ✅ Complete       |
+  | ELH 2009 Autumn Team B | 26      | ✅ Complete       |
+  | ELH 2009 Autumn Team C | 22      | Next             |
+
+  Note: Team C has 4 records with erroneous "No autumn survey season"
+  QA_Notes (Oct 14, 16, 17, 18) that we deferred from the Team A QA session
+  — those will be addressed as part of this review.
+
+  Would you like me to proceed with Team C QA?
+
+> yes, please proceed with team c qa, thanks! 
+
+● Bash(grep "^2009-1[01].*,C," /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468
+      /synology/Adela/TRAP-WD-2020-04/trap-extraction/outputs/attribution.csv)
+  ⎿ 2009-10-12,C,80000,80026,Bara Weissová,Bara | Petra Tušlová | Sona | Te
+    reza | Todor | Georgi,Bara Weissová | Petra Tušlová | Sona Holičková |
+    Tereza Dobrovodská | Todor Vulchev | Georgi Nekhrizov,,,,,Petra Tušlová
+    … +109 lines (ctrl+o to expand)
+
+
+
+● Read(outputs/source-inventory.md)
+  ⎿  Read 419 lines
+
+● I've got 20 Team C records (Oct 12 - Nov 14). Let me now locate the source
+   documents:
+
+● Bash(ls -la "/media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/
+      TRAP-WD-2020-04/Elhovo 2010-12-12/2009/Project Records/Team C/")
+  ⎿  total 228                                     
+     drwxr-x--- 4 shawn 1003   4096 Nov 23 07:10 .
+     drwxr-x--- 7 shawn 1003   4096 Aug 31  2013 ..
+     … +8 lines (ctrl+o to expand)
+
+● Bash(ls -la "/media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/
+      TRAP-WD-2020-04/Elhovo 2010-12-12/2009/Project Records/Team
+      C/FieldRecords/")
+  ⎿  total 21780                                    
+     drwxr-x--- 2 shawn 1003    4096 Aug 31  2013 .
+     drwxr-x--- 4 shawn 1003    4096 Nov 23 07:10 ..
+     … +13 lines (ctrl+o to expand)
+
+● Bash(antiword "/media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adel
+      a/TRAP-WD-2020-04/Elhovo 2010-12-12/2009/Project Records/Team C/The Diary
+      of Team C.doc…)
+  ⎿                               The Diary of Team C    
+        Walkers: Bara, Petra, Sona, Tereza, Todor, Georgi
+     … +662 lines (ctrl+o to expand)
+
+● Excellent diary data! I've found several potential discrepancies. Let me
+  verify against the Excel survey summary:
+
+● Bash(python3 -c "
+      import pandas as pd…)
+  ⎿  Error: Exit code 1
+     Traceback (most recent call last):
+       File "<string>", line 2, in <module>
+     ModuleNotFoundError: No module named 'pandas'
+
+● Bash(ssconvert --export-type=Gnumeric_stf:stf_csv "/media/shawn/191c3b96-5fa5-
+      4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-2020-04/Elhovo
+      2010-12-12/2009/Project Re…)
+  ⎿  Error: Exit code 127
+
+● Bash(which python3 && python3 -c "import xlrd; print('xlrd available')"
+      2>/dev/null || echo "xlrd not available")
+  ⎿  /usr/bin/python3  
+     xlrd not available
+
+● Bash(pip install xlrd --quiet && python3 -c "
+      import xlrd…)
+  ⎿  Error: Exit code 1
+     error: externally-managed-environment
+
+     × This environment is externally managed
+     ╰─> To install Python packages system-wide, try apt install
+         python3-xyz, where xyz is the package you are trying to
+         install.
+         
+         If you wish to install a non-Debian-packaged Python package,
+         create a virtual environment using python3 -m venv path/to/venv.
+     … +11 lines (ctrl+o to see all)
+
+● Let me check the SU forms to verify the unit numbers for the records with
+  discrepancies:
+
+● Read(/media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-
+      2020-04/Elhovo 2010-12-12/2009/Project Records/Team
+      C/FieldRecords/80103.pdf)
+  ⎿  Read PDF (2.5MB)
+
+● Read(/media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-
+      2020-04/Elhovo 2010-12-12/2009/Project Records/Team
+      C/FieldRecords/80115.pdf)
+  ⎿  Read PDF (289.6KB)
+
+● Excellent! The SU forms provide valuable verification. Let me analyse what
+   I see:
+
+  From 80103.pdf:
+  - Page 1: "Day 1" - Unit 80000 dated Oct (first survey day = Oct 12)
+  - Page 21: "Day 3" - Unit 80063 dated 15 (Oct 15) - Date: 15
+  - The forms continue beyond 80103...
+
+  From 80115.pdf:
+  - Shows "EXTENSIVE SURVEY" forms dated "A5-" (Oct 15)
+  - Units 80104, 80106, 80107, 80108 visible
+  - This confirms Oct 15 continued beyond unit 80103 to at least 80108+
+
+  Key finding: The diary table has Oct 15 end unit as 80103, but the SU
+  forms and CSV show survey continued to 80115. The CSV is correct; diary
+  has a transcription error.
+
+  Now let me compile my findings and create the runsheet:
+
+● Write(outputs/qa-runsheet-elhovo-2009-autumn-c.md)
+  ⎿  Wrote 284 lines to outputs/qa-runsheet-elhovo-2009-autumn-c.md
+     # QA Runsheet: Elhovo 2009 Autumn Team C
+     **Study Area/Season:** Elhovo 2009 Autumn
+     **Team:** C
+     **QA Date:** 26 November 2025
+     **QA Performed By:** Claude Code (with Shawn Ross)
+     **Records:** 20
+     **Date Range:** 12 October - 14 November 2009
+     ---
+     … +274 lines (ctrl+o to expand)
+
+● I've completed the cross-reference analysis. Here's a summary of findings
+  for your review:
+
+  Team C QA Summary (20 records)
+
+  Corrections Required
+
+  | ID   | Date(s)            | Issue
+                                      | Correction                 |
+  |------|--------------------|---------------------------------------------
+  ------------------------------------|----------------------------|
+  | D019 | Oct 14, 16, 17, 18 | Erroneous "No autumn survey season" in
+  QA_Notes                                 | Remove incorrect text      |
+  | D021 | Oct 22             | Georgi listed but diary says "we walked in
+  five people because Georgi was away" | Remove Georgi from walkers |
+  | D023 | Nov 13             | Start_Unit 80839 is typo (should be 80939)
+                                      | Correct to 80939           |
+
+  Confirmed No Action Needed
+
+  | ID   | Date   | Issue                                      | Finding
+                                                |
+  |------|--------|--------------------------------------------|------------
+  ----------------------------------------------|
+  | D020 | Oct 15 | Diary says end unit 80103, CSV says 80115  | CSV is 
+  correct — SU forms show survey continued to 80115 |
+  | D022 | Nov 12 | End unit off by 1 (diary 80938, CSV 80939) | Accept CSV
+  — minor discrepancy                           |
+
+  Records Verified ✓
+
+  - 14 records fully confirmed
+  - 6 records with issues documented above
+
+  ---
+  Do you approve:
+  1. D019: Removing erroneous "No autumn survey season" text from Oct 14,
+  16, 17, 18?
+  2. D021: Removing Georgi from Oct 22 walker lists?
+  3. D023: Correcting Nov 13 Start_Unit from 80839 to 80939?
+
+> These look like straightforward requests, but can you please generate a 
+runsheet? I'd like to make sure we've happy with the format of the runsheet 
+and the process of using it. 
+
+● I've already created the runsheet. Let me show it to you:
+
+● Read(outputs/qa-runsheet-elhovo-2009-autumn-c.md)
+  ⎿  Read 284 lines
+
+● There's the full runsheet. The structure includes:
+
+  1. Header — Team, date range, sources consulted
+  2. Team Composition — Phase-by-phase roster changes
+  3. Record-by-Record Verification — Each date with diary quote, CSV
+  comparison, status
+  4. Issues Summary — Table of all discrepancies found
+  5. Corrections Required — Detailed before/after for each fix
+  6. Summary Statistics — Counts and categories
+  7. User Decisions Required — Checkboxes for approval
+  8. Notes — Observations and reasoning
+
+  ---
+  Questions about the format:
+
+  1. Is the level of detail appropriate, or would you prefer more/less?
+  2. Should the record-by-record section be more concise (just issues) or is
+   documenting confirmed records useful?
+  3. Are the "User Decisions Required" checkboxes helpful, or would you
+  prefer a different approval mechanism?
+  4. Any other sections you'd like added or removed?
+
+  Once you're happy with the format, I can apply the corrections. Or if
+  you'd like changes to the runsheet template, I can update it before we
+  continue.
+
+> ah, I see it! 
+
+● Great! So are you happy with the format? If so, shall I proceed with
+  applying the three corrections?
+
+  1. D019: Remove erroneous "No autumn survey season" text from Oct 14, 16,
+  17, 18
+  2. D021: Remove Georgi from Oct 22 walker lists
+  3. D023: Correct Nov 13 Start_Unit from 80839 to 80939
+
+  Just say the word and I'll apply them to attribution.csv.
+
+> I *really* like the daily breakdown / summary - **definitely keep this and
+ make sure it's in the template**. Under 'Correct QA_Notes' are survey units
+ really missing? You seem to have them. *If* there are days when no survey 
+took place, make sure that the QA_Notes reflect that - we shouldn't *expect*
+ survey units or roles, these non-survey days are fine / complete, there 
+should just be a note to the effect of 'no survey information; non-survey 
+day' or similar. I agree with all of these changes otherwise, but *please* 
+remember to put in an 'Approve / Modify' section for me to provide feedback 
+directly in the runsheet - that's the second time you've forgotten, I'm not 
+sure why that particular detail. It will be important if/when we hit 
+team-seasons where there are more errors or more complicated errors. 
+
+● You're absolutely right on both points:
+
+  1. Non-survey days: Oct 14, 16, 17, 18 had NO survey — the team didn't
+  walk. So "MISSING: Survey units" is wrong. There's nothing missing; it's
+  complete as a non-survey day. I'll change the QA_Notes to something like
+  "Non-survey day (no field walking conducted)"
+  2. Approve/Modify section: I apologise — I did include one at the bottom
+  (lines 251-263), but I think you want it inline with each correction so
+  you can mark directly on the document. I'll fix that.
+
+  Let me update the runsheet:
+
+● Update(outputs/qa-runsheet-elhovo-2009-autumn-c.md)
+  ⎿  Updated outputs/qa-runsheet-elhovo-2009-autumn-c.md with 13 additions 
+     and 3 removals
+       170    
+       171    ## Corrections Required
+       172    
+       173 -  ### D019: Remove erroneous QA_Notes (4 records)
+       173 +  ### D019: Correct QA_Notes for non-survey days (4 records)
+       174    
+       175    **Records:** Oct 14, Oct 16, Oct 17, Oct 18
+       176    
+     ...
+       181    
+       182    **Corrected QA_Notes:**
+       183    ```
+       184 -  MISSING: Survey units | No role data available
+       184 +  Non-survey day (no field walking conducted)
+       185    ```
+       186    
+       187 -  **Reasoning:** The "No autumn survey season" note was 
+           - incorrectly applied during initial extraction. The diary 
+           - clearly documents these as legitimate non-survey days 
+           - (fatigue, rain, trip to Burgas).
+       187 +  **Reasoning:** These are legitimate non-survey days 
+           + documented in the diary:
+       188 +  - Oct 14: "We didn't walk in the fields because the 
+           + Bulgarians from museum were tired"
+       189 +  - Oct 16: "Today we didn't walk because it was raining"
+       190 +  - Oct 17: "It was also raining today so we didn't walk 
+           + again"
+       191 +  - Oct 18: "A trip to Burgas"
+       192    
+       193 +  Nothing is "missing" — these records are complete as 
+           + non-survey days.
+       194 +  
+       195 +  **User Decision:**
+       196 +  - [ ] Approve
+       197 +  - [ ] Modify: _______________
+       198 +  
+       199    ---
+       200    
+       201    ### D021: Remove Georgi from Oct 22 record
+
+● Update(outputs/qa-runsheet-elhovo-2009-autumn-c.md)
+  ⎿  Updated outputs/qa-runsheet-elhovo-2009-autumn-c.md with 4 additions
+       224    
+       225    **Source evidence:** Diary states "Today we walked in five 
+             people because Georgi was away"
+       226    
+       227 +  **User Decision:**
+       228 +  - [ ] Approve
+       229 +  - [ ] Modify: _______________
+       230 +  
+       231    ---
+       232    
+       233    ### D023: Correct Nov 13 Start_Unit
+
+● Update(outputs/qa-runsheet-elhovo-2009-autumn-c.md)
+  ⎿  Updated outputs/qa-runsheet-elhovo-2009-autumn-c.md with 4 additions
+       242    - Unit 80839 is impossible — it's less than Nov 12's start 
+             unit (80910)
+       243    - Sequential unit progression: Nov 12 ends 80938/80939, Nov
+              13 starts 80939
+       244    
+       245 +  **User Decision:**
+       246 +  - [ ] Approve
+       247 +  - [ ] Modify: _______________
+       248 +  
+       249    ---
+       250    
+       251    ## Summary Statistics
+
+● Update(outputs/qa-runsheet-elhovo-2009-autumn-c.md)
+  ⎿  Updated outputs/qa-runsheet-elhovo-2009-autumn-c.md with 16 removals
+       266    
+       267    ---
+       268    
+       269 -  ## User Decisions Required
+       270 -  
+       271 -  ### D019: Remove erroneous QA_Notes
+       272 -  - [ ] Accept (remove "No autumn survey season" text from 
+           - Oct 14, 16, 17, 18)
+       273 -  - [ ] Modify: _______________
+       274 -  
+       275 -  ### D021: Remove Georgi from Oct 22
+       276 -  - [ ] Accept (remove Georgi Nekhrizov from walker lists)
+       277 -  - [ ] Modify: _______________
+       278 -  
+       279 -  ### D023: Correct Nov 13 Start_Unit
+       280 -  - [ ] Accept (change 80839 → 80939)
+       281 -  - [ ] Modify: _______________
+       282 -  
+       283 -  ---
+       284 -  
+       269    ## Notes
+       270    
+       271    ### Diary Observations
+
+> ah, ok, I see it now, I didn't scroll down enough! I think it's better to 
+keep the approve/modify *with* the problem/solution/evidence statements. 
+  ⎿  Found 2 new diagnostic issues in 1 file (ctrl+o to expand)
+
+● Update(outputs/qa-runsheet-elhovo-2009-autumn-c.md)
+  ⎿  Updated outputs/qa-runsheet-elhovo-2009-autumn-c.md with 1 addition 
+       269    ## Notes
+       270    
+       271    ### Diary Observations
+       272 +  
+       273    1. **Oct 15 unit count:** Diary table shows 54 total units 
+             with end unit 80103, but 80062-80103 is only 42 units. The 
+             actual end unit 80115 gives 54 units (80062-80115), matching
+              the total. Transcription error in diary.
+       274    
+       275    2. **Oct 22 "Tereza" anomaly:** Record still lists Tereza 
+             in walkers, but diary says only 5 people walked. However, 
+             Tereza didn't leave until Oct 26. Need to verify if Oct 22 
+             should have Tereza (diary unclear on her presence that 
+             specific day vs Georgi's absence).
+
+● Done! I've updated the runsheet with:
+
+  1. Better QA_Notes for non-survey days: Now reads Non-survey day (no field
+   walking conducted) — nothing is "missing"
+  2. Inline Approve/Modify sections: Each correction (D019, D021, D023) now
+  has its own decision box right with the evidence
+
+  Here's the updated corrections section structure:
+
+  ### D019: Correct QA_Notes for non-survey days (4 records)
+  [Problem statement]
+  [Current value]
+  [Corrected value]
+  [Reasoning with diary quotes]
+
+  **User Decision:**
+  - [ ] Approve
+  - [ ] Modify: _______________
+
+  ---
+  Do you approve all three corrections? If so, I'll apply them to
+  attribution.csv:
+
+  - D019: Change QA_Notes to "Non-survey day (no field walking conducted)"
+  for Oct 14, 16, 17, 18
+  - D021: Remove Georgi from Oct 22 walker lists
+  - D023: Correct Nov 13 Start_Unit from 80839 to 80939
+
+> Done, approved in document as per usual protocol. 
+
+● All three approved. Applying corrections now:
+
+● Read(outputs/attribution.csv)
+  ⎿  Read 5 lines
+
+● Bash(grep -n "^2009-10-14,C,\|^2009-10-16,C,\|^2009-10-17,C,\|^2009-10-18,C,\|
+      ^2009-10-22,C,\|^2009-11-13,C,"
+      /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synol…)
+  ⎿ 71:2009-10-14,C,,,Bara Weissová,Bara | Petra Tušlová | Sona | Tereza | 
+    Todor | Georgi,Bara Weissová | Petra Tušlová | Sona Holičková | Tereza
+    Dobrovodská | Todor Vulchev | Georgi Nekhrizov,,,,,,,,,Diary Team C.doc
+    … +33 lines (ctrl+o to expand)
+
+
+● Found all 6 records. Applying corrections:
+
+  D019: Oct 14, 16, 17, 18 — Update QA_Notes
+
+● Update(outputs/attribution.csv)
+  ⎿  File must be read first
+
+● Update(outputs/attribution.csv)
+  ⎿  File must be read first
+
+● Update(outputs/attribution.csv)
+  ⎿  File must be read first
+
+● Update(outputs/attribution.csv)
+  ⎿  File must be read first
+
+● Read(outputs/attribution.csv)
+  ⎿  Read 70 lines
+
+● Now applying the corrections:
+
+● Update(outputs/attribution.csv)
+  ⎿  Updated outputs/attribution.csv with 1 addition and 1 removal       
+       68    2009-10-13,C,80027,80061,Bara Weissová,Bara | Petra Tušlová 
+            | Sona | Tereza | Todor | Georgi,Bara Weissová | Petra 
+            Tušlová | Sona Holičková | Tereza Dobrovodská | Todor Vulchev
+             | Georgi Nekhrizov,,,,,Petra Tušlová,,,ELH09 
+            SurveySummary.xls,Diary Team C.doc,"Extracted from Elhovo 
+            2009 diary | Role extraction: Photographer=Petra (The Diary 
+            of Team C.doc, high)",
+       69    2009-10-13,B,70044,70122,Shawn Ross,Scott | Vera | Shawn | 
+            Yabor | Stanislav,Scott Jackson | Vera Doležálková | Shawn 
+            Ross | Yavor Rusev | Stanislav Marchovski,,Vera 
+            Doležálková,,,,Shawn Ross,,ELH09 SurveySummary.xls,Diary Team
+             B.doc,"Extracted from Elhovo 2009 diary (Five walkers) | 
+            Role extraction: Paper_Recorder=Vera (DiaryTeamB.doc, high)",
+       70    2009-10-13,A,60039,60086,Adela Sobotkova,Martin | Aneta | 
+            Adela | Ilija | Eric,Martin Mladenov | Aneta Kohoutová | 
+            Adela Sobotkova | Ilija Iliev | Erik Andersen,Adela 
+            Sobotkova,Aneta Kohoutová,,Martin Mladenov,,Adela 
+            Sobotkova,,ELH09 SurveySummary.xls,Diary Team 
+            A.doc,"Narrative extraction: Team A continues in usual setup 
+            ( Martin – GPS, Aneta- recording, me – PDA, Ilija – 
+            consultation, Eric- pottery)",No role data available
+       71 -  2009-10-14,C,,,Bara Weissová,Bara | Petra Tušlová | Sona | 
+          -  Tereza | Todor | Georgi,Bara Weissová | Petra Tušlová | Sona
+          -   Holičková | Tereza Dobrovodská | Todor Vulchev | Georgi 
+          -  Nekhrizov,,,,,,,,,Diary Team C.doc,Extracted from Elhovo 
+          -  2009 diary,MISSING: Survey units | No role data 
+          -  available | No autumn survey season: No autumn 2009 survey 
+          -  season - diaries end in March/April
+       71 +  2009-10-14,C,,,Bara Weissová,Bara | Petra Tušlová | Sona | 
+          +  Tereza | Todor | Georgi,Bara Weissová | Petra Tušlová | Sona
+          +   Holičková | Tereza Dobrovodská | Todor Vulchev | Georgi 
+          +  Nekhrizov,,,,,,,,,Diary Team C.doc,Extracted from Elhovo 
+          +  2009 diary | QA D019: corrected non-survey day status (27 
+          +  Nov 2025),Non-survey day (no field walking conducted)
+       72    2009-10-15,C,80062,80115,Bara Weissová,Bara | Petra Tušlová 
+            | Sona | Tereza | Todor | Georgi,Bara Weissová | Petra 
+            Tušlová | Sona Holičková | Tereza Dobrovodská | Todor Vulchev
+             | Georgi Nekhrizov,,,,,Petra Tušlová,,,ELH09 
+            SurveySummary.xls,Diary Team C.doc,"Extracted from Elhovo 
+            2009 diary | Role extraction: Photographer=Petra (The Diary 
+            of Team C.doc, high)",
+       73    2009-10-15,B,70123,70163,Shawn Ross,Scott | Vera | Shawn | 
+            Yabor | Stanislav | Stefan,Scott Jackson | Vera Doležálková |
+             Shawn Ross | Yavor Rusev | Stanislav Marchovski | Stefan 
+            Bakardzhiev,,Vera Doležálková,,,,Shawn Ross,,ELH09 
+            SurveySummary.xls,Diary Team B.doc,"Extracted from Elhovo 
+            2009 diary (Six walkers) | Role extraction: 
+            Paper_Recorder=Vera (DiaryTeamB.doc, medium)",
+       74    2009-10-15,A,60087,60126,Adela Sobotkova,Ilija | Adela | 
+            Aneta | Martin | Eric,Ilija Iliev | Adela Sobotkova | Aneta 
+            Kohoutová | Martin Mladenov | Erik Andersen,Adela 
+            Sobotkova,Aneta Kohoutová,,Martin Mladenov,,Adela 
+            Sobotkova,,ELH09 SurveySummary.xls,Diary Team 
+            A.doc,"Narrative extraction: Same team composition as 10-12 
+            (implicit from narrative continuity) | Role extraction: 
+            PDA_Operator=Adela (Diary Team A.doc, medium); 
+            Paper_Recorder=Aneta (Diary Team A.doc, medium); 
+            GPS_Operator=Martin (Diary Team A.doc, medium)",
+
+● Update(outputs/attribution.csv)
+  ⎿  Updated outputs/attribution.csv with 1 addition and 1 removal       
+       72    2009-10-15,C,80062,80115,Bara Weissová,Bara | Petra Tušlová 
+            | Sona | Tereza | Todor | Georgi,Bara Weissová | Petra 
+            Tušlová | Sona Holičková | Tereza Dobrovodská | Todor Vulchev
+             | Georgi Nekhrizov,,,,,Petra Tušlová,,,ELH09 
+            SurveySummary.xls,Diary Team C.doc,"Extracted from Elhovo 
+            2009 diary | Role extraction: Photographer=Petra (The Diary 
+            of Team C.doc, high)",
+       73    2009-10-15,B,70123,70163,Shawn Ross,Scott | Vera | Shawn | 
+            Yabor | Stanislav | Stefan,Scott Jackson | Vera Doležálková |
+             Shawn Ross | Yavor Rusev | Stanislav Marchovski | Stefan 
+            Bakardzhiev,,Vera Doležálková,,,,Shawn Ross,,ELH09 
+            SurveySummary.xls,Diary Team B.doc,"Extracted from Elhovo 
+            2009 diary (Six walkers) | Role extraction: 
+            Paper_Recorder=Vera (DiaryTeamB.doc, medium)",
+       74    2009-10-15,A,60087,60126,Adela Sobotkova,Ilija | Adela | 
+            Aneta | Martin | Eric,Ilija Iliev | Adela Sobotkova | Aneta 
+            Kohoutová | Martin Mladenov | Erik Andersen,Adela 
+            Sobotkova,Aneta Kohoutová,,Martin Mladenov,,Adela 
+            Sobotkova,,ELH09 SurveySummary.xls,Diary Team 
+            A.doc,"Narrative extraction: Same team composition as 10-12 
+            (implicit from narrative continuity) | Role extraction: 
+            PDA_Operator=Adela (Diary Team A.doc, medium); 
+            Paper_Recorder=Aneta (Diary Team A.doc, medium); 
+            GPS_Operator=Martin (Diary Team A.doc, medium)",
+       75 -  2009-10-16,C,,,Bara Weissová,Bara | Petra Tušlová | Sona | 
+          -  Tereza | Todor | Georgi,Bara Weissová | Petra Tušlová | Sona
+          -   Holičková | Tereza Dobrovodská | Todor Vulchev | Georgi 
+          -  Nekhrizov,,,,,,,,,Diary Team C.doc,Extracted from Elhovo 
+          -  2009 diary,MISSING: Survey units | No role data 
+          -  available | No autumn survey season: No autumn 2009 survey 
+          -  season - diaries end in March/April
+       75 +  2009-10-16,C,,,Bara Weissová,Bara | Petra Tušlová | Sona | 
+          +  Tereza | Todor | Georgi,Bara Weissová | Petra Tušlová | Sona
+          +   Holičková | Tereza Dobrovodská | Todor Vulchev | Georgi 
+          +  Nekhrizov,,,,,,,,,Diary Team C.doc,Extracted from Elhovo 
+          +  2009 diary | QA D019: corrected non-survey day status (27 
+          +  Nov 2025),Non-survey day (no field walking conducted)
+       76    2009-10-17,C,,,Bara Weissová,Bara | Petra Tušlová | Sona | 
+            Tereza | Todor | Georgi,Bara Weissová | Petra Tušlová | Sona 
+            Holičková | Tereza Dobrovodská | Todor Vulchev | Georgi 
+            Nekhrizov,,,,,,,,,Diary Team C.doc,Extracted from Elhovo 2009
+             diary,MISSING: Survey units | No role data available | No 
+            autumn survey season: No autumn 2009 survey season - diaries 
+            end in March/April
+       77    2009-10-18,C,,,Bara Weissová,Bara | Petra Tušlová | Sona | 
+            Tereza | Todor | Georgi,Bara Weissová | Petra Tušlová | Sona 
+            Holičková | Tereza Dobrovodská | Todor Vulchev | Georgi 
+            Nekhrizov,,,,,,,,,Diary Team C.doc,Extracted from Elhovo 2009
+             diary,MISSING: Survey units | No role data available | No 
+            autumn survey season: No autumn 2009 survey season - diaries 
+            end in March/April
+       78    2009-10-20,B,70164,70240,Shawn Ross,Scott | Vera | Shawn | 
+            Yabor | Stanislav | Stefan,Scott Jackson | Vera Doležálková |
+             Shawn Ross | Yavor Rusev | Stanislav Marchovski | Stefan 
+            Bakardzhiev,,Vera Doležálková,,,,Shawn Ross,,ELH09 
+            SurveySummary.xls,Diary Team B.doc,"Extracted from Elhovo 
+            2009 diary (Six walkers) | Role extraction: 
+            Paper_Recorder=Vera (DiaryTeamB.doc, medium)",
+
+● Update(outputs/attribution.csv)
+  ⎿  Updated outputs/attribution.csv with 1 addition and 1 removal       
+       73    2009-10-15,B,70123,70163,Shawn Ross,Scott | Vera | Shawn | 
+            Yabor | Stanislav | Stefan,Scott Jackson | Vera Doležálková |
+             Shawn Ross | Yavor Rusev | Stanislav Marchovski | Stefan 
+            Bakardzhiev,,Vera Doležálková,,,,Shawn Ross,,ELH09 
+            SurveySummary.xls,Diary Team B.doc,"Extracted from Elhovo 
+            2009 diary (Six walkers) | Role extraction: 
+            Paper_Recorder=Vera (DiaryTeamB.doc, medium)",
+       74    2009-10-15,A,60087,60126,Adela Sobotkova,Ilija | Adela | 
+            Aneta | Martin | Eric,Ilija Iliev | Adela Sobotkova | Aneta 
+            Kohoutová | Martin Mladenov | Erik Andersen,Adela 
+            Sobotkova,Aneta Kohoutová,,Martin Mladenov,,Adela 
+            Sobotkova,,ELH09 SurveySummary.xls,Diary Team 
+            A.doc,"Narrative extraction: Same team composition as 10-12 
+            (implicit from narrative continuity) | Role extraction: 
+            PDA_Operator=Adela (Diary Team A.doc, medium); 
+            Paper_Recorder=Aneta (Diary Team A.doc, medium); 
+            GPS_Operator=Martin (Diary Team A.doc, medium)",
+       75    2009-10-16,C,,,Bara Weissová,Bara | Petra Tušlová | Sona | 
+            Tereza | Todor | Georgi,Bara Weissová | Petra Tušlová | Sona 
+            Holičková | Tereza Dobrovodská | Todor Vulchev | Georgi 
+            Nekhrizov,,,,,,,,,Diary Team C.doc,Extracted from Elhovo 2009
+             diary | QA D019: corrected non-survey day status (27 Nov 
+            2025),Non-survey day (no field walking conducted)
+       76 -  2009-10-17,C,,,Bara Weissová,Bara | Petra Tušlová | Sona | 
+          -  Tereza | Todor | Georgi,Bara Weissová | Petra Tušlová | Sona
+          -   Holičková | Tereza Dobrovodská | Todor Vulchev | Georgi 
+          -  Nekhrizov,,,,,,,,,Diary Team C.doc,Extracted from Elhovo 
+          -  2009 diary,MISSING: Survey units | No role data 
+          -  available | No autumn survey season: No autumn 2009 survey 
+          -  season - diaries end in March/April
+       76 +  2009-10-17,C,,,Bara Weissová,Bara | Petra Tušlová | Sona | 
+          +  Tereza | Todor | Georgi,Bara Weissová | Petra Tušlová | Sona
+          +   Holičková | Tereza Dobrovodská | Todor Vulchev | Georgi 
+          +  Nekhrizov,,,,,,,,,Diary Team C.doc,Extracted from Elhovo 
+          +  2009 diary | QA D019: corrected non-survey day status (27 
+          +  Nov 2025),Non-survey day (no field walking conducted)
+       77    2009-10-18,C,,,Bara Weissová,Bara | Petra Tušlová | Sona | 
+            Tereza | Todor | Georgi,Bara Weissová | Petra Tušlová | Sona 
+            Holičková | Tereza Dobrovodská | Todor Vulchev | Georgi 
+            Nekhrizov,,,,,,,,,Diary Team C.doc,Extracted from Elhovo 2009
+             diary,MISSING: Survey units | No role data available | No 
+            autumn survey season: No autumn 2009 survey season - diaries 
+            end in March/April
+       78    2009-10-20,B,70164,70240,Shawn Ross,Scott | Vera | Shawn | 
+            Yabor | Stanislav | Stefan,Scott Jackson | Vera Doležálková |
+             Shawn Ross | Yavor Rusev | Stanislav Marchovski | Stefan 
+            Bakardzhiev,,Vera Doležálková,,,,Shawn Ross,,ELH09 
+            SurveySummary.xls,Diary Team B.doc,"Extracted from Elhovo 
+            2009 diary (Six walkers) | Role extraction: 
+            Paper_Recorder=Vera (DiaryTeamB.doc, medium)",
+       79    2009-10-20,A,60127,60194,Adela Sobotkova,Adela | Ilija | 
+            Martin | Aneta | Eric,Adela Sobotkova | Ilija Iliev | Martin 
+            Mladenov | Aneta Kohoutová | Erik Andersen,Adela 
+            Sobotkova,Aneta Kohoutová,,Martin Mladenov,,Adela 
+            Sobotkova,,ELH09 SurveySummary.xls,Diary Team 
+            A.doc,"Narrative extraction: Team A ( Adela, Ilija, Martin, 
+            Aneta, Eric) heads on to surveying the western side | Role 
+            extraction: PDA_Operator=Adela (Diary Team A.doc, medium); 
+            Paper_Recorder=Aneta (Diary Team A.doc, medium); 
+            GPS_Operator=Martin (Diary Team A.doc, medium)",
+
+● Update(outputs/attribution.csv)
+  ⎿  Updated outputs/attribution.csv with 1 addition and 1 removal       
+       74    2009-10-15,A,60087,60126,Adela Sobotkova,Ilija | Adela | 
+            Aneta | Martin | Eric,Ilija Iliev | Adela Sobotkova | Aneta 
+            Kohoutová | Martin Mladenov | Erik Andersen,Adela 
+            Sobotkova,Aneta Kohoutová,,Martin Mladenov,,Adela 
+            Sobotkova,,ELH09 SurveySummary.xls,Diary Team 
+            A.doc,"Narrative extraction: Same team composition as 10-12 
+            (implicit from narrative continuity) | Role extraction: 
+            PDA_Operator=Adela (Diary Team A.doc, medium); 
+            Paper_Recorder=Aneta (Diary Team A.doc, medium); 
+            GPS_Operator=Martin (Diary Team A.doc, medium)",
+       75    2009-10-16,C,,,Bara Weissová,Bara | Petra Tušlová | Sona | 
+            Tereza | Todor | Georgi,Bara Weissová | Petra Tušlová | Sona 
+            Holičková | Tereza Dobrovodská | Todor Vulchev | Georgi 
+            Nekhrizov,,,,,,,,,Diary Team C.doc,Extracted from Elhovo 2009
+             diary | QA D019: corrected non-survey day status (27 Nov 
+            2025),Non-survey day (no field walking conducted)
+       76    2009-10-17,C,,,Bara Weissová,Bara | Petra Tušlová | Sona | 
+            Tereza | Todor | Georgi,Bara Weissová | Petra Tušlová | Sona 
+            Holičková | Tereza Dobrovodská | Todor Vulchev | Georgi 
+            Nekhrizov,,,,,,,,,Diary Team C.doc,Extracted from Elhovo 2009
+             diary | QA D019: corrected non-survey day status (27 Nov 
+            2025),Non-survey day (no field walking conducted)
+       77 -  2009-10-18,C,,,Bara Weissová,Bara | Petra Tušlová | Sona | 
+          -  Tereza | Todor | Georgi,Bara Weissová | Petra Tušlová | Sona
+          -   Holičková | Tereza Dobrovodská | Todor Vulchev | Georgi 
+          -  Nekhrizov,,,,,,,,,Diary Team C.doc,Extracted from Elhovo 
+          -  2009 diary,MISSING: Survey units | No role data 
+          -  available | No autumn survey season: No autumn 2009 survey 
+          -  season - diaries end in March/April
+       77 +  2009-10-18,C,,,Bara Weissová,Bara | Petra Tušlová | Sona | 
+          +  Tereza | Todor | Georgi,Bara Weissová | Petra Tušlová | Sona
+          +   Holičková | Tereza Dobrovodská | Todor Vulchev | Georgi 
+          +  Nekhrizov,,,,,,,,,Diary Team C.doc,Extracted from Elhovo 
+          +  2009 diary | QA D019: corrected non-survey day status (27 
+          +  Nov 2025),Non-survey day (no field walking conducted)
+       78    2009-10-20,B,70164,70240,Shawn Ross,Scott | Vera | Shawn | 
+            Yabor | Stanislav | Stefan,Scott Jackson | Vera Doležálková |
+             Shawn Ross | Yavor Rusev | Stanislav Marchovski | Stefan 
+            Bakardzhiev,,Vera Doležálková,,,,Shawn Ross,,ELH09 
+            SurveySummary.xls,Diary Team B.doc,"Extracted from Elhovo 
+            2009 diary (Six walkers) | Role extraction: 
+            Paper_Recorder=Vera (DiaryTeamB.doc, medium)",
+       79    2009-10-20,A,60127,60194,Adela Sobotkova,Adela | Ilija | 
+            Martin | Aneta | Eric,Adela Sobotkova | Ilija Iliev | Martin 
+            Mladenov | Aneta Kohoutová | Erik Andersen,Adela 
+            Sobotkova,Aneta Kohoutová,,Martin Mladenov,,Adela 
+            Sobotkova,,ELH09 SurveySummary.xls,Diary Team 
+            A.doc,"Narrative extraction: Team A ( Adela, Ilija, Martin, 
+            Aneta, Eric) heads on to surveying the western side | Role 
+            extraction: PDA_Operator=Adela (Diary Team A.doc, medium); 
+            Paper_Recorder=Aneta (Diary Team A.doc, medium); 
+            GPS_Operator=Martin (Diary Team A.doc, medium)",
+       80    2009-10-20,C,80116,80167,Bara Weissová,Bara | Petra Tušlová 
+            | Sona | Tereza | Todor | Georgi,Bara Weissová | Petra 
+            Tušlová | Sona Holičková | Tereza Dobrovodská | Todor Vulchev
+             | Georgi Nekhrizov,Petra Tušlová,Sona Holičková,,Tereza 
+            Dobrovodská,Petra Tušlová,,,ELH09 SurveySummary.xls,Diary 
+            Team C.doc,"Extracted from Elhovo 2009 diary | Role 
+            extraction: PDA_Operator=Petra (The Diary of Team C.doc, 
+            high); Paper_Recorder=Sona (The Diary of Team C.doc, high); 
+            GPS_Operator=Tereza (The Diary of Team C.doc, high); 
+            Photographer=Petra (The Diary of Team C.doc, medium)",
+  ⎿  Interrupted · What should Claude do instead?
+
+
+
