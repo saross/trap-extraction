@@ -105,8 +105,8 @@ Narrative records with walker names, roles (PDA, GPS, Forms), and daily activiti
 | A | Diary_Aneta.doc | EN | [ ] | [ ] | SUPPLEMENTAL (EN, 44 KB) | `Elhovo 2010-12-12/2009/Project Records/Team A/` |
 | B | DiaryTeamB.doc | EN | [x] | N/A | PRIMARY (EN, 97 KB) | `Elhovo 2010-12-12/2009/Project Records/Team B/` |
 | B | TeamB_Dnevnik (Ross).doc | BG | [x] | N/A | SECONDARY (BG, 98 KB) | `Elhovo 2010-12-12/2009/Project Records/Team B/` |
-| C | The Diary of Team C.doc | EN | [ ] | [ ] | PRIMARY (EN, 103 KB) | `Elhovo 2010-12-12/2009/Project Records/Team C/` |
-| C | TeamC_Dnevnik.doc | BG | [ ] | [ ] | SECONDARY (BG, 41 KB) | `Elhovo 2010-12-12/2009/Project Records/Team C/` |
+| C | The Diary of Team C.doc | EN | [x] | [x] | PRIMARY (EN, 103 KB) | `Elhovo 2010-12-12/2009/Project Records/Team C/` |
+| C | TeamC_Dnevnik.doc | BG | [x] | [ ] | SECONDARY (BG, 41 KB) | `Elhovo 2010-12-12/2009/Project Records/Team C/` |
 
 ### Elhovo 2010
 
@@ -355,7 +355,7 @@ All seasons have SurveySummary files. ✓
 
 ### Not Yet Processed
 
-- [ ] Elhovo 2009 diary (Team C) — Teams A and B QA completed 26 November 2025
+- [x] Elhovo 2009 diaries (Teams A, B, C) — QA completed 27 November 2025
 - [ ] Kazanlak 2011 individual student journals (AUS_Diaries)
 - [ ] Role data from remaining diary sources
 
@@ -374,7 +374,7 @@ All seasons have SurveySummary files. ✓
 **Elhovo 2009:**
 - **Team A:** "Diary Team A.doc" (132 KB, EN) is PRIMARY - covers 10 Oct to 21 Nov 2009 with detailed daily narratives. Contains explicit walker lists for each day and role assignments (PDA, GPS, paper recorder). Note: Unit number summary table contains occasional transcription errors (e.g., 60196 instead of 60195 for Oct 21) — SU forms in FieldRecords/ are authoritative for unit numbers. "Diary_Aneta.doc" (44 KB, SUPPLEMENTAL) is a personal diary by team member Aneta, providing individual perspective rather than official team record. Duplicate copy exists in `Reports/Otchet/BG Diaries/`. QA completed 26 November 2025.
 - **Team B:** "DiaryTeamB.doc" (97 KB, EN) is PRIMARY - contains complete daily narrative entries from 10 October through 21 November 2009. "TeamB_Dnevnik (Ross).doc" (98 KB, BG, SECONDARY) is Bulgarian version by Ross with similar coverage. EN PRIMARY despite near-identical file size because EN diary has more detailed narrative structure; BG version useful for cross-verification. Duplicate copy exists in `Reports/Otchet/BG Diaries/`. QA verified 26 November 2025.
-- **Team C:** "The Diary of Team C.doc" (103 KB, EN) is PRIMARY. "TeamC_Dnevnik.doc" (41 KB, BG, SECONDARY) is Bulgarian version with less detail.
+- **Team C:** "The Diary of Team C.doc" (103 KB, EN) is PRIMARY - covers 12 Oct to 14 Nov 2009 with detailed daily narratives including walker lists and role assignments. "TeamC_Dnevnik.doc" (41 KB, BG, SECONDARY) is Bulgarian version with less detail. QA completed 27 November 2025.
 
 **Elhovo 2010:**
 - **Team B versions:** Four diary files exist for Team B 2010. File comparison analysis (23 November 2025) determined that "Team B Diary new.docx" (26 KB, March 2011) is PRIMARY as it contains critical post-season data quality corrections including: corrected object numbers, annotations flagging data errors (e.g., "no such artefact brought to base"), and added missing object records. The December 2010 versions represent the original field recordings. "Diary" vs "Journal" naming is meaningless - these are duplicate files with different names. Initial data extraction was performed from "Team B Diary.docx" (SECONDARY); attribution CSV updated on 23 November 2025 to use PRIMARY version data for all affected records.
@@ -406,7 +406,7 @@ All seasons have SurveySummary files. ✓
 ## Document History
 
 **Created:** November 2025
-**Last major update:** 26 November 2025 (Elhovo 2009 Teams A & B QA completed; added source reliability notes for SU forms vs diary tables; expanded file-to-date index)
+**Last major update:** 27 November 2025 (Elhovo 2009 Teams A, B, C QA completed)
 **Previous update:** 23 November 2025 (comprehensive version annotations and structural improvements)
 **Project completion:** 23 November 2025
 **Contributors:** Shawn Ross (with Adela Sobotkova), Claude Code

@@ -1,7 +1,7 @@
 # QA Guidance: Attribution Data Verification
 
 **Created:** 26 November 2025
-**Updated:** 26 November 2025
+**Updated:** 27 November 2025
 **Purpose:** Complete protocol for cross-source verification of attribution.csv, including rules, heuristics, workflow, and documentation requirements
 
 ## Document Contents
@@ -10,9 +10,11 @@
 2. [Error Severity Classification](#error-severity-classification) — MAJOR vs minor errors
 3. [Rules (Must Be True)](#rules-must-be-true) — Logical constraints for validation
 4. [Heuristics (Usually True)](#heuristics-usually-true) — Patterns for disambiguation
-5. [Observations](#observations-discovered-during-qa) — Discovered patterns
-6. [QA Protocol: Complete Workflow](#qa-protocol-complete-workflow) — Step-by-step verification process
-7. [Checklist: What to Record](#checklist-what-to-record) — Ensuring completeness
+5. [Non-Survey Day Convention](#non-survey-day-convention) — Handling days without fieldwork
+6. [QA Citation Format](#qa-citation-format) — Documenting corrections
+7. [Observations](#observations-discovered-during-qa) — Discovered patterns
+8. [QA Protocol: Complete Workflow](#qa-protocol-complete-workflow) — Step-by-step verification process
+9. [Checklist: What to Record](#checklist-what-to-record) — Ensuring completeness
 
 ---
 
@@ -88,6 +90,59 @@ These errors affect supporting information but not core data submission:
 
 ---
 
+## Non-Survey Day Convention
+
+When a record represents a day where no field survey was conducted (due to weather, rest days, excursions, etc.), use the following convention:
+
+### QA_Notes Field
+
+**Correct:** `Non-survey day (no field walking conducted)`
+
+**Incorrect:**
+- `MISSING: Survey units` — Nothing is actually missing; the record is complete
+- `No autumn survey season: ...` — Erroneous text from automated processing
+
+### What Constitutes a Non-Survey Day
+
+- **Weather:** Rain, adverse conditions preventing fieldwork
+- **Rest days:** Scheduled or unscheduled breaks
+- **Excursions:** Site visits, museum trips, cultural activities
+- **Logistics:** Equipment issues, travel days, team reorganisation
+
+### Documentation
+
+In the runsheet, document the reason from the diary:
+- "Oct 14: 'We didn't walk in the fields because the Bulgarians from museum were tired'"
+- "Oct 16: 'Today we didn't walk because it was raining'"
+- "Oct 18: 'A trip to Burgas'"
+
+These records are **complete** — they document that no survey occurred and why.
+
+---
+
+## QA Citation Format
+
+When documenting corrections in the Source_Notes or Extraction_Notes fields, use this format:
+
+```text
+QA D###: [description] (YYYY-MM-DD)
+```
+
+### Examples
+
+- `QA D021: Removed Georgi - diary states 'walked in five' (2025-11-27)`
+- `QA D023: Corrected Start_Unit 80839→80939 (2025-11-27)`
+- `QA D019: Non-survey day (2025-11-27)`
+
+### Guidelines
+
+- **D###** references the discrepancy ID from qa-discrepancies-log.md
+- **Description** should be brief but informative
+- **Date** is the QA correction date in ISO 8601 format (YYYY-MM-DD)
+- Multiple QA citations can be appended, separated by ` | `
+
+---
+
 ## Rules (Must Be True)
 
 These are logical constraints that must hold for valid data. Violations indicate errors.
@@ -119,6 +174,7 @@ These are patterns discovered during verification that inform methodology.
 | **O1** | DPF scan more reliable for unit numbers | Diary entry for 2010-10-24 shows "Last unit: 61349" (typo); DPF scan shows correct value 61549. Similar discrepancies in other records. | Always prefer DPF scan for Start Unit / End Unit values |
 | **O2** | Diary Author ≠ DPF Author | The person who wrote the diary entry (narrative) is often different from the person who filled out the DPF. These are distinct roles. | Split into separate fields: `Diary_Author` and `DPF_Author` |
 | **O3** | DPF Author ≠ Paper Recorder | Tested hypothesis that DPF "Author" = Paper Recorder. Team B data showed only 2/6 matches between diary-assigned "Paper Records" role and DPF Author. | Cannot reliably infer Paper_Recorder from DPF Author; these appear to be different tasks |
+| **O4** | Name disambiguation via team roster cross-reference | Team C D016 case: disambiguated "Tereza" by checking team rosters on adjacent days. Person cannot be on two teams on the same day (H2). | When a name is ambiguous (multiple people with same first name), use team membership constraints across dates to disambiguate |
 
 ---
 
@@ -334,17 +390,31 @@ Document source availability for all records:
 
 A complete QA run must produce:
 
-#### 4.1: QA Runsheet (`outputs/qa-runsheet-[area]-[season].md`)
+#### 4.1: QA Runsheet (`outputs/qa-runsheet-[area]-[season]-[team].md`)
 
 Required sections:
 
-1. **Header:** Date, scope (record count), status
-2. **Source Documents Consulted:** Table of files used
-3. **Per-Record Verification Results:** Comparison tables
-4. **QA Issues:** All discrepancies with full issue format
-5. **Source Coverage Matrix:** Complete source availability
-6. **Unit Continuity Check:** Full continuity table
-7. **Summary:** Counts by category, corrections applied
+1. **Header:** Date, scope (record count, team, date range), QA performer
+2. **Sources Consulted:** Table of files with type, location, and role (PRIMARY/SECONDARY)
+3. **Team Composition:** Roster with phases documenting personnel changes
+4. **Record-by-Record Verification:** Daily breakdown with diary quote/summary, CSV values, status (CONFIRMED/DISCREPANCY)
+5. **Issues Summary:** Table with ID, date, field, issue, action
+6. **Corrections Required:** Each correction with:
+   - Record identification (date, team)
+   - Current vs corrected values
+   - Source evidence (diary quote)
+   - Reasoning
+   - **Inline User Decision checkbox** (`[ ] Approve` / `[ ] Modify`)
+   - **Status field** (`Pending` / `✅ APPLIED (YYYY-MM-DD)`)
+7. **Summary Statistics:** Records checked, confirmed, issues found, corrections required
+
+**Format notes:**
+- Daily breakdown is **required** — each record must have explicit verification entry
+- User Decision checkboxes appear **with each correction**, not batched at end
+- Mark status as `✅ APPLIED (YYYY-MM-DD)` immediately after applying corrections
+- Non-survey days: Use `Non-survey day (no field walking conducted)` notation
+
+See `outputs/qa-runsheet-elhovo-2009-autumn-c.md` for exemplar format.
 
 #### 4.2: Discrepancies Log (`docs/qa-discrepancies-log.md`)
 
@@ -612,5 +682,7 @@ The diary stated "First unit: 60196" but the CSV had 60195. Initial QA assumed t
 - `docs/qa-discrepancies-log.md` — Record of source conflicts and resolutions
 - `outputs/source-inventory.md` — Source document locations and reliability notes
 - `outputs/name-mapping.csv` — Name standardisation reference
-- `outputs/qa-runsheet-elhovo-2010-autumn.md` — Detailed verification findings (ELH 2010)
+- `outputs/qa-runsheet-elhovo-2010-autumn.md` — Detailed verification findings (ELH 2010 Team B pilot)
 - `outputs/qa-runsheet-elhovo-2009-autumn-a.md` — Detailed verification findings (ELH 2009 Team A)
+- `outputs/qa-runsheet-elhovo-2009-autumn-b.md` — Detailed verification findings (ELH 2009 Team B)
+- `outputs/qa-runsheet-elhovo-2009-autumn-c.md` — **Exemplar runsheet format** (ELH 2009 Team C)
