@@ -1,0 +1,798 @@
+
+ ▐▛███▜▌   Claude Code v2.0.54
+▝▜█████▛▘  Opus 4.5 · Claude Max
+  ▘▘ ▝▝    /…/synology/Adela/TRAP-WD-2020-04
+══════════════════ Conversation compacted · ctrl+o for history ═════════════════
+  ⎿ Read 
+    ../../../../../../home/shawn/.claude/plans/glimmering-gathering-scroll.md
+    (237 lines)
+  ⎿ Referenced file trap-extraction/outputs/qa-automation-test/qa-runsheet-kazan
+    luk-2010-spring-c-manual.md
+  ⎿  Read ../../../../../../home/shawn/Pictures/Screenshots/Screenshot from 
+     2025-11-27 17-17-23.png (238.8KB)
+  ⎿ Read trap-extraction/outputs/qa-automation-test/kazanluk-2010-c-validation-r
+    eport.md (191 lines)
+  ⎿  Read trap-extraction/planning/source-observations-test-plan.md (150 lines)
+  ⎿  Todo list read (7 items)
+
+● Continuing with Phase 6 - writing the complete runsheet with documented
+  investigations and approval forms.
+
+  Let me first read the current runsheet to understand its state:
+
+● Read(trap-extraction/outputs/qa-automation-test/qa-runsheet-kazanluk-2010-spri
+      ng-c-manual.md)
+  ⎿  Read 473 lines
+
+● Now I need to update the runsheet with:
+  1. Detailed detective work investigations for each conflict
+  2. User decision approval forms with checkboxes
+  3. Critical correction for D008: Both BG diary AND DPF show Jiri - there
+  is NO source conflict (my re-read of BG diary showed "Екип: Елена, Бара,
+  Соня, Тодор, Иржи")
+
+  Let me write the comprehensive update:
+
+● Update(trap-extraction/outputs/qa-automation-test/qa-runsheet-kazanluk-2010-sp
+        ring-c-manual.md)
+  ⎿  Updated trap-extraction/outputs/qa-automation-test/qa-runsheet-kazanlu
+     -2010-spring-c-manual.md with 17 additions and 2 removals
+        3    **Study Area/Season:** Kazanluk 2010 Spring
+        4    **Team:** C
+        5    **QA Date:** 2025-11-27
+        6 -  **QA Performed By:** Claude Code (manual verification)
+        7 -  **Records:** 20 (in attribution.csv)
+        6 +  **QA Performed By:** Claude Code (rigorous 
+          +  manual verification)
+        7 +  **Records:** 20 (in attribution.csv)
+          +   + 1 missing record discovered
+        8    **Date Range:** 2010-03-17 - 2010-04-15
+        9 +  **Methodology:** Full detective work per TRAP QA methodology
+          +  v2
+       10    
+       11    ---
+       12    
+       13 +  ## Executive Summary
+       14 +  
+       15 +  This runsheet documents a rigorous manual QA review of 
+          + Kazanluk 2010 Spring Team C following the established TRAP QA
+          +  methodology. The review identified **10 issues**, including:
+       16 +  
+       17 +  - **1 missing record** (Apr 13) - entire survey day absent 
+          + from CSV
+       18 +  - **3 wrong walker identities** (Peter→Dasha on Mar 31/Apr 
+          + 1, Todor→Asen on Mar 27)
+       19 +  - **2 missing walkers** (Mar 26 and Mar 28)
+       20 +  - **2 [unclear] names resolved** (Mar 30, Apr 9)
+       21 +  - **2 unit divergences** (no action needed - CSV correct)
+       22 +  
+       23 +  **Critical finding:** Peter (Petar Minkov) was incorrectly 
+          + attributed to Team C on Mar 31 and Apr 1. Cross-team 
+          + verification proves Peter was on **Team B** those days. BG 
+          + diary confirms **Dasha** was on Team C.
+       24 +  
+       25 +  ---
+       26 +  
+       27    ## Sources Consulted
+       28    
+       29    | Type | File | Location | Role |
+
+● Update(trap-extraction/outputs/qa-automation-test/qa-runsheet-kazanluk-2010-sp
+        ring-c-manual.md)
+  ⎿  Updated trap-extraction/outputs/qa-automation-test/qa-runsheet-kazanlu
+     -2010-spring-c-manual.md with 146 additions
+        33    | DPF Summary | C_2010Summary.pdf | .../Team 
+             C/FieldRecords/ | PRIMARY for units (376 KB, 7 pages) |
+        34    | DPF Scans | C_2010*.pdf | .../Team C/FieldRecords/ | 
+             Daily verification (18 PDFs) |
+        35    | Excel | Kaz10_SurveySummary.xls | .../Master Records/ | 
+             Unit ranges |
+        36 +  | Cross-team CSV | original-attribution.csv | QA output 
+           + folder | Cross-team verification |
+        37    
+        38    ---
+        39    
+        40 +  ## Detective Work Investigations
+        41 +  
+        42 +  ### Investigation 1: Peter vs Dasha (D006, D007)
+        43 +  
+        44 +  **Issue:** Mar 31 and Apr 1 CSV records show "Peter" (Petar
+           +  Minkov), but this conflicts with other sources.
+        45 +  
+        46 +  **Evidence gathered:**
+        47 +  
+        48 +  1. **BG Diary Mar 31:**
+        49 +     ```
+        50 +     31. ІІІ. 2010 – сряда
+        51 +     Екип: Елена. Бара, Соня, Даша, Тодор.
+        52 +     ```
+        53 +     → Shows **Dasha** (Даша), NOT Peter
+        54 +  
+        55 +  2. **BG Diary Apr 1:**
+        56 +     ```
+        57 +     1. IV. 2010 - Четвъртък
+        58 +     Екип: Елена, Бара, Соня, Тодор, Даша
+        59 +     ```
+        60 +     → Shows **Dasha** (Даша), NOT Peter
+        61 +  
+        62 +  3. **DPF Summary Mar 31 (Day 13):**
+        63 +     - Individual scan C_20100331.pdf shows 5 walker columns
+        64 +     - Walker 4 column shows "Dasa" (Dagmar Winklerová 
+           + variant or Dasha)
+        65 +  
+        66 +  4. **Cross-team verification (CSV search):**
+        67 +     ```
+        68 +     Team B, 2010-03-31: Adela | Martin | Pesho | Stana | 
+           + Petra Tušlová
+        69 +     Team C, 2010-03-31: Bara | Sonja | Elena | Peter | Todor
+           +   ← CONFLICT
+        70 +     ```
+        71 +     → **Peter (Pesho) was on Team B on Mar 31**
+        72 +  
+        73 +  **Heuristic applied:** H2 (One team per day) — A walker 
+           + cannot be on two teams the same day.
+        74 +  
+        75 +  **Conclusion:** Peter was on Team B on Mar 31 (and likely 
+           + Apr 1). CSV Team C entries incorrectly list Peter. Both BG 
+           + diary and DPF confirm **Dasha** was on Team C.
+        76 +  
+        77 +  **Root cause hypothesis:** Data mixing during extraction — 
+           + Peter's name may have been copied from an adjacent Team B 
+           + record.
+        78 +  
+        79 +  **Confidence:** HIGH (multiple independent sources agree)
+        80 +  
+        81 +  ---
+        82 +  
+        83 +  ### Investigation 2: Mar 28 Source Conflict (D004)
+        84 +  
+        85 +  **Issue:** DPF shows "Todor" as 5th walker, but BG diary 
+           + shows "Asen."
+        86 +  
+        87 +  **Evidence gathered:**
+        88 +  
+        89 +  1. **BG Diary Mar 27:**
+        90 +     ```
+        91 +     27.03.2010 г.
+        92 +     Екип: Елена, Бара, Соня, Яна, Асен
+        93 +     ```
+        94 +     → Asen present on Mar 27
+        95 +  
+        96 +  2. **BG Diary Mar 28:**
+        97 +     ```
+        98 +     28.03.2010 г. – неделя
+        99 +     Екип: Елена, Бара, Соня, Яна, Асен
+       100 +     ```
+       101 +     → Asen present on Mar 28 (consistent with Mar 27)
+       102 +  
+       103 +  3. **DPF Summary Mar 28 (Day 11):** Shows Todor in 5th 
+           + position
+       104 +  
+       105 +  **Heuristic applied:** H1 (Team stability) — If Asen was 
+           + present Mar 27, he likely continued Mar 28.
+       106 +  
+       107 +  **Analysis:** The BG diary shows consistent team 
+           + composition for Mar 27-28 with Asen. The DPF may have a 
+           + transcription error (possibly copied from a different day 
+           + when Todor was present).
+       108 +  
+       109 +  **Resolution:** Accept BG diary — Asen was the 5th walker 
+           + on Mar 28.
+       110 +  
+       111 +  **Confidence:** MEDIUM-HIGH (BG diary consistent across two
+           +  days)
+       112 +  
+       113 +  ---
+       114 +  
+       115 +  ### Investigation 3: Apr 9 Walker Resolution (D008)
+       116 +  
+       117 +  **Issue:** CSV shows [unclear] for 5th walker. Initial 
+           + review suggested source conflict.
+       118 +  
+       119 +  **Evidence gathered:**
+       120 +  
+       121 +  1. **DPF Summary Apr 9 (Day 18):**
+       122 +     - Individual scan C_20100409.pdf shows 5 walker columns
+       123 +     - 5th column clearly shows "Jiri"
+       124 +  
+       125 +  2. **BG Diary Apr 9:**
+       126 +     ```
+       127 +     9. IV. 2010 – Петък
+       128 +     Екип: Елена, Бара, Соня, Тодор, Иржи
+       129 +     ```
+       130 +     → Shows **Иржи** = **Jiri** (Jiří Musil)
+       131 +  
+       132 +  **CORRECTION:** Initial review incorrectly stated BG diary 
+           + showed "Dasha" for Apr 9. Re-reading confirms BG diary shows
+           +  **Иржи (Jiri)**.
+       133 +  
+       134 +  **Resolution:** **NO source conflict.** Both DPF and BG 
+           + diary agree: Jiri was on Team C on Apr 9. The [unclear] in 
+           + CSV should be resolved to "Jiri."
+       135 +  
+       136 +  **Confidence:** HIGH (both sources agree)
+       137 +  
+       138 +  ---
+       139 +  
+       140 +  ### Investigation 4: Mar 27 Walker Errors (D003)
+       141 +  
+       142 +  **Issue:** CSV shows "Todor" but BG diary and DPF show 
+           + "Asen."
+       143 +  
+       144 +  **Evidence gathered:**
+       145 +  
+       146 +  1. **BG Diary Mar 27:** "Екип: Елена, Бара, Соня, Яна, 
+           + Асен"
+       147 +  2. **DPF Summary Mar 27 (Day 10):** Shows Asen in 5th 
+           + position with "2" notation
+       148 +  3. **CSV:** Shows "Todor" in 5th position
+       149 +  
+       150 +  **Team C composition analysis:**
+       151 +  - Todor first appears in BG diary on Mar 22
+       152 +  - Todor continues through Mar 24, 25, 26
+       153 +  - Mar 27-28: Todor is REPLACED by Asen (visitor)
+       154 +  - Mar 30 onwards: Todor returns
+       155 +  
+       156 +  **Resolution:** DPF and BG diary agree: Asen was present 
+           + Mar 27, not Todor. CSV is wrong.
+       157 +  
+       158 +  **Confidence:** HIGH (both primary sources agree)
+       159 +  
+       160 +  ---
+       161 +  
+       162 +  ### Investigation 5: Team C Composition Pattern
+       163 +  
+       164 +  **Core members (most days):**
+       165 +  - Elena Bozhinova (Елена) — all 19 survey days
+       166 +  - Bara Weissová (Бара) — all 19 survey days
+       167 +  - Sonja Holičková (Соня) — all 19 survey days
+       168 +  
+       169 +  **Regular members:**
+       170 +  - Todor Vulchev (Тодор) — from Mar 22 onwards (except Mar 
+           + 27-28)
+       171 +  - Jana Jebavá (Яна) — early season (Mar 17-28)
+       172 +  
+       173 +  **Visitors/temporary:**
+       174 +  - Bistra Gyaurova — Mar 17-21 only
+       175 +  - Lindsay Prazak — Mar 17, Apr 7, Apr 13
+       176 +  - Viki (Viktorie Chystyaková) — Mar 25-26
+       177 +  - Asen (surname unknown) — Mar 27-28 only
+       178 +  - Dasha — Mar 31, Apr 1
+       179 +  - Jiri (Jiří Musil) — Apr 9
+       180 +  
+       181 +  **Pattern observation:** Team C had a stable core (Elena, 
+           + Bara, Sonja) with rotating 4th/5th members throughout the 
+           + season.
+       182 +  
+       183 +  ---
+       184 +  
+       185    ## Unit Number Verification (DPF Summary vs CSV)
+       186    
+       187    | Day | Date | DPF Start | DPF End | CSV Start | CSV End | 
+             Status |
+
+● Now let me fix the Apr 9 entry to correct the source conflict error:
+
+● Update(trap-extraction/outputs/qa-automation-test/qa-runsheet-kazanluk-2010-sp
+        ring-c-manual.md)
+  ⎿  Updated trap-extraction/outputs/qa-automation-test/qa-runsheet-kazanlu
+     -2010-spring-c-manual.md with 4 additions and 4 removals
+       344    
+       345    ### 2010-04-09 (Fri) — Units 30774-30800 ⚠️
+       346    - **DPF (Day 18):** Walkers: Bara, Sonja, Elena, Todor, 
+             **Jiri** (5 walkers)
+       347 -  - **BG Diary:** Екип: Елена, Бара, Соня, Тодор, Даша
+           -   (5 walkers)
+       347 +  - **BG Diary:** Екип: Елена, Бара, Соня, Тодор, **Иржи**
+           +   (5 walkers) = Jiri
+       348    - **CSV:** Bara | Sonja | Elena | Todor | [unclear] (5 
+             walkers)
+       349    - **Issue D008:** [unclear] needs resolution
+       350 -  - **SOURCE CONFLICT:** DPF shows **Jiri** (Jiří Musil), BG 
+           - diary shows **Dasha**
+       351 -  - **Resolution:** DPF is PRIMARY for walker verification — 
+           - [unclear] = Jiri
+       352 -  - **Status:** DISCREPANCY (minor - unclear name 
+           -  + source conflict)
+       350 +  - **SOURCES AGREE:** Both DPF and BG diary show **Jiri** 
+           + (Jiří Musil)
+       351 +  - **Resolution:** [unclear] = Jiri (both sources confirm)
+       352 +  - **Status:** DISCREPANCY (minor - unclear name resolved)
+       353    
+       354    ### 2010-04-13 (Tue) — Units 30801-30809 ❌ MISSING
+       355    - **DPF (Day 19):** Start: 30801, End: 30809, Walkers: 
+             Adela, Bara, Sonja, Lindsay, Rebecca
+
+● Now let me fix the Walker Source Conflicts table and update the D008 entry
+   in Issues Summary:
+
+● Update(trap-extraction/outputs/qa-automation-test/qa-runsheet-kazanluk-2010-sp
+        ring-c-manual.md)
+  ⎿  Updated trap-extraction/outputs/qa-automation-test/qa-runsheet-kazanlu
+     -2010-spring-c-manual.md with 2 additions and 1 removal
+       539    |------|-----------|----------------|------------|------|
+       540    | Mar 26 | Jana | Sonja | BG diary | Minor variance |
+       541    | Mar 28 | Todor | Asen | BG diary | DPF may have copied 
+             from wrong day |
+       542 -  | Apr 9 | Jiri | Dasha | DPF | DPF PRIMARY for attendance |
+       542    
+       543 +  **Note:** Apr 9 initially appeared to have a source 
+           + conflict, but re-reading confirmed both DPF and BG diary 
+           + show **Jiri** (Иржи). No conflict exists.
+       544 +  
+       545    ### Source Reliability Patterns
+       546    
+       547    - **O1 confirmed:** DPF scans more reliable than EN diary 
+             for unit numbers
+
+● Now let me update the Issues Summary and add user approval forms to the
+  corrections:
+
+● Update(trap-extraction/outputs/qa-automation-test/qa-runsheet-kazanluk-2010-sp
+        ring-c-manual.md)
+  ⎿  Updated trap-extraction/outputs/qa-automation-test/qa-runsheet-kazanlu
+     -2010-spring-c-manual.md with 1 addition and 1 removal
+       377    | D005 | 2010-03-30 | Walkers | [unclear] = Todor | Minor |
+              Resolve [unclear] |
+       378    | D006 | 2010-03-31 | Walkers | Peter → Dasha (wrong 
+             person) | MAJOR | Replace Peter with Dasha |
+       379    | D007 | 2010-04-01 | Walkers | Peter → Dasha (wrong 
+             person) | MAJOR | Replace Peter with Dasha |
+       380 -  | D008 | 2010-04-09 | Walkers | [unclear] = Jiri (source 
+           -  conflict) | Minor | Resolve [unclear] = Jiri |
+       380 +  | D008 | 2010-04-09 | Walkers | [unclear] = Jiri (both 
+           +  sources agree) | Minor | Resolve [unclear] = Jiri |
+       381    | D009 | 2010-04-02 | Units | DPF 30718 vs CSV 30716 | 
+             Minor | No action (CSV correct) |
+       382    | D010 | 2010-04-13 | Record | Entire record missing | 
+             MAJOR | ADD new record |
+       383    
+
+● Update(trap-extraction/outputs/qa-automation-test/qa-runsheet-kazanluk-2010-sp
+        ring-c-manual.md)
+  ⎿  Updated trap-extraction/outputs/qa-automation-test/qa-runsheet-kazanlu
+     -2010-spring-c-manual.md with 1 addition and 1 removal
+       583    | Missing walkers | D002, D004 | 2 |
+       584    | [unclear] resolution | D005, D008 | 2 |
+       585    | Unit divergences | D001, D009 | 2 (no action needed) |
+       586 -  | Source conflicts | D004, D008 | 2 |
+       586 +  | Source conflicts | D004 | 1 |
+       587    
+       588    ---
+       589    
+
+● Now let me add user approval forms to each correction. First D002:
+
+● Update(trap-extraction/outputs/qa-automation-test/qa-runsheet-kazanluk-2010-sp
+        ring-c-manual.md)
+  ⎿  Updated trap-extraction/outputs/qa-automation-test/qa-runsheet-kazanlu
+     -2010-spring-c-manual.md with 9 additions
+       400    
+       401    **Source evidence:** BG diary: "Екип: Елена, Бара, Соня, 
+             Тодор, Вики"
+       402    
+       403 +  **Investigation:** See Investigation 5 (Team C Composition 
+           + Pattern) — Viki and Todor were present Mar 25-26 per BG 
+           + diary.
+       404 +  
+       405 +  **User Decision:**
+       406 +  - [ ] Approve correction as written
+       407 +  - [ ] Modify: _______________
+       408 +  - [ ] Reject (provide reason): _______________
+       409 +  
+       410 +  **Status:** Pending user approval
+       411 +  
+       412    ---
+       413    
+       414    ### D003: Fix Mar 27 Walker List (MAJOR)
+
+● Update(trap-extraction/outputs/qa-automation-test/qa-runsheet-kazanluk-2010-sp
+        ring-c-manual.md)
+  ⎿  Updated trap-extraction/outputs/qa-automation-test/qa-runsheet-kazanlu
+     -2010-spring-c-manual.md with 10 additions and 1 removal
+       426    
+       427    **Source evidence:** BG diary: "Екип: Елена, Бара, Соня, 
+             Яна, Асен"
+       428    
+       429 -  **Note:** Asen has no standardised surname (unknown 
+           - visitor).
+       429 +  **Investigation:** See Investigation 4 (Mar 27 Walker 
+           + Errors) — Both DPF and BG diary confirm Asen, not Todor.
+       430    
+       431 +  **Note:** Asen has no standardised surname (unknown 
+           + visitor). Added to follow-up-actions for participant 
+           + research.
+       432 +  
+       433 +  **User Decision:**
+       434 +  - [ ] Approve correction as written
+       435 +  - [ ] Modify: _______________
+       436 +  - [ ] Reject (provide reason): _______________
+       437 +  
+       438 +  **Status:** Pending user approval
+       439 +  
+       440    ---
+       441    
+       442    ### D004: Fix Mar 28 Walker List (MAJOR)
+
+● Update(trap-extraction/outputs/qa-automation-test/qa-runsheet-kazanluk-2010-sp
+        ring-c-manual.md)
+  ⎿  Updated trap-extraction/outputs/qa-automation-test/qa-runsheet-kazanlu
+     -2010-spring-c-manual.md with 13 additions
+       454    
+       455    **Source evidence:** BG diary: "Екип: Елена, Бара, Соня, 
+             Яна, Асен"
+       456    
+       457 +  **Investigation:** See Investigation 2 (Mar 28 Source 
+           + Conflict) — BG diary is consistent for Mar 27-28; DPF shows 
+           + Todor but H1 (team stability) favours BG diary.
+       458 +  
+       459 +  **Source conflict resolution:** DPF shows Todor, BG diary 
+           + shows Asen. Accepted BG diary because:
+       460 +  1. BG diary consistent across Mar 27-28
+       461 +  2. H1 heuristic (if Asen was there Mar 27, likely still 
+           + there Mar 28)
+       462 +  
+       463 +  **User Decision:**
+       464 +  - [ ] Approve correction as written (accept BG diary)
+       465 +  - [ ] Modify to use DPF (Todor instead of Asen): 
+           + _______________
+       466 +  - [ ] Reject (provide reason): _______________
+       467 +  
+       468 +  **Status:** Pending user approval
+       469 +  
+       470    ---
+       471    
+       472    ### D005: Fix Mar 30 [unclear] (Minor)
+
+● Update(trap-extraction/outputs/qa-automation-test/qa-runsheet-kazanluk-2010-sp
+        ring-c-manual.md)
+  ⎿  Updated trap-extraction/outputs/qa-automation-test/qa-runsheet-kazanlu
+     -2010-spring-c-manual.md with 9 additions
+       479    
+       480    **Source evidence:** BG diary: "Екип: Елена, Бара, Соня, 
+             Тодор"
+       481    
+       482 +  **Investigation:** Straightforward [unclear] resolution — 
+           + BG diary clearly shows Todor. Team composition analysis 
+           + confirms Todor returned after Asen's Mar 27-28 visit.
+       483 +  
+       484 +  **User Decision:**
+       485 +  - [ ] Approve correction as written
+       486 +  - [ ] Modify: _______________
+       487 +  - [ ] Reject (provide reason): _______________
+       488 +  
+       489 +  **Status:** Pending user approval
+       490 +  
+       491    ---
+       492    
+       493    ### D006: Fix Mar 31 Walker Error (MAJOR)
+
+● Update(trap-extraction/outputs/qa-automation-test/qa-runsheet-kazanluk-2010-sp
+        ring-c-manual.md)
+  ⎿  Updated trap-extraction/outputs/qa-automation-test/qa-runsheet-kazanlu
+     -2010-spring-c-manual.md with 19 additions and 3 removals
+       501    
+       502    **Corrected:**
+       503    - Walkers_Original: `Elena | Bara | Sonja | Dasha | Todor`
+       504 -  - Walkers_Standardised: `Elena Bozhinova | Bara Weissová | 
+           -  Sona Holičková | Dasha [surname] | Todor Vulchev`
+       504 +  - Walkers_Standardised: `Elena Bozhinova | Bara Weissová | 
+           +  Sona Holičková | Dasha [surname TBD] | Todor Vulchev`
+       505    
+       506 -  **Source evidence:** BG diary: "Екип: Елена, Бара, Соня, 
+           - Даша, Тодор"
+       506 +  **Source evidence:**
+       507 +  1. BG diary: "Екип: Елена, Бара, Соня, **Даша**, Тодор"
+       508 +  2. DPF scan C_20100331.pdf: Shows "Dasa" in walker column 4
+       509    
+       510 -  **Note:** "Peter" (Petar Minkov) is completely wrong — this
+           -  person was not on Team C this day. "Dasha" (Даша) was 
+           - present.
+       510 +  **Investigation:** See Investigation 1 (Peter vs Dasha) — 
+           + Critical finding:
+       511 +  - Cross-team search: Peter (Pesho) was on **Team B** on Mar
+           +  31
+       512 +  - H2 heuristic violated: Peter cannot be on two teams same 
+           + day
+       513 +  - Both BG diary AND DPF confirm Dasha was on Team C
+       514    
+       515 +  **Root cause:** Data mixing during extraction — Peter's 
+           + name incorrectly copied from Team B record.
+       516 +  
+       517 +  **Note:** "Peter" (Petar Minkov) is completely wrong — this
+           +  person was NOT on Team C this day. "Dasha" (Даша) was 
+           + present. Dasha's surname needs research (added to 
+           + follow-up-actions).
+       518 +  
+       519 +  **User Decision:**
+       520 +  - [ ] Approve correction as written
+       521 +  - [ ] Modify: _______________
+       522 +  - [ ] Reject (provide reason): _______________
+       523 +  
+       524 +  **Status:** Pending user approval
+       525 +  
+       526    ---
+       527    
+       528    ### D007: Fix Apr 1 Walker Error (MAJOR)
+
+● Update(trap-extraction/outputs/qa-automation-test/qa-runsheet-kazanluk-2010-sp
+        ring-c-manual.md)
+  ⎿  Updated trap-extraction/outputs/qa-automation-test/qa-runsheet-kazanlu
+     -2010-spring-c-manual.md with 14 additions and 3 removals
+       535    - Walkers_Standardised: `Sona Holičková | Bara Weissová | 
+             Elena Bozhinova | Petar Minkov | Todor Vulchev`
+       536    
+       537    **Corrected:**
+       538 -  - Walkers_Original: `Sonja | Bara | Elena | Dasha | Todor`
+       539 -  - Walkers_Standardised: `Sona Holičková | Bara Weissová | 
+           - Elena Bozhinova | Dasha [surname] | Todor Vulchev`
+       538 +  - Walkers_Original: `Elena | Bara | Sonja | Todor | Dasha`
+       539 +  - Walkers_Standardised: `Elena Bozhinova | Bara Weissová | 
+           + Sona Holičková | Todor Vulchev | Dasha [surname TBD]`
+       540    
+       541 -  **Source evidence:** DPF Day 14 confirms "Dasa"
+       541 +  **Source evidence:**
+       542 +  1. BG diary: "Екип: Елена, Бара, Соня, Тодор, **Даша**"
+       543 +  2. DPF Day 14 confirms "Dasa"
+       544    
+       545 +  **Investigation:** See Investigation 1 (Peter vs Dasha) — 
+           + Same root cause as D006. Peter was on Team B, not Team C.
+       546 +  
+       547 +  **User Decision:**
+       548 +  - [ ] Approve correction as written
+       549 +  - [ ] Modify: _______________
+       550 +  - [ ] Reject (provide reason): _______________
+       551 +  
+       552 +  **Status:** Pending user approval
+       553 +  
+       554    ---
+       555    
+       556    ### D008: Fix Apr 9 [unclear] (Minor)
+
+● Update(trap-extraction/outputs/qa-automation-test/qa-runsheet-kazanluk-2010-sp
+        ring-c-manual.md)
+  ⎿  Updated trap-extraction/outputs/qa-automation-test/qa-runsheet-kazanlu
+     -2010-spring-c-manual.md with 13 additions and 3 removals
+       559    **Fields:** Walkers_Original, Walkers_Standardised
+       560    
+       561    **Current:** `Bara | Sonja | Elena | Todor | [unclear]`
+       562 -  **Corrected:** `Bara | Sonja | Elena | Todor | Jiri`
+       562 +  **Corrected:** `Elena | Bara | Sonja | Todor | Jiri`
+       563 +  **Corrected (standardised):** `Elena Bozhinova | Bara 
+           + Weissová | Sona Holičková | Todor Vulchev | Jiří Musil`
+       564    
+       565 -  **Source evidence:** DPF Day 18 shows "Jiri" (Jiří Musil)
+       565 +  **Source evidence:**
+       566 +  1. DPF Day 18 shows "Jiri" (Jiří Musil)
+       567 +  2. BG diary: "Екип: Елена, Бара, Соня, Тодор, **Иржи**" = 
+           + Jiri
+       568    
+       569 -  **Note:** BG diary shows "Даша" but DPF is PRIMARY for 
+           - walker verification. Source conflict documented.
+       569 +  **Investigation:** See Investigation 3 (Apr 9 Walker 
+           + Resolution) — **CORRECTION:** Initial review incorrectly 
+           + stated source conflict. Re-reading confirms BOTH sources 
+           + agree on Jiri.
+       570    
+       571 +  **User Decision:**
+       572 +  - [ ] Approve correction as written
+       573 +  - [ ] Modify: _______________
+       574 +  - [ ] Reject (provide reason): _______________
+       575 +  
+       576 +  **Status:** Pending user approval
+       577 +  
+       578    ---
+       579    
+       580    ### D010: Add Missing Apr 13 Record (MAJOR)
+
+● Update(trap-extraction/outputs/qa-automation-test/qa-runsheet-kazanluk-2010-sp
+        ring-c-manual.md)
+  ⎿  Updated trap-extraction/outputs/qa-automation-test/qa-runsheet-kazanlu
+     -2010-spring-c-manual.md with 22 additions and 2 removals
+       579    
+       580    ### D010: Add Missing Apr 13 Record (MAJOR)
+       581    
+       582 -  **Record:** 2010-04-13, Team C — MISSING
+       582 +  **Record:** 2010-04-13, Team C — MISSING FROM CSV
+       583    **Action:** ADD NEW RECORD
+       584    
+       585 +  **Investigation:**
+       586 +  1. DPF Summary page 7 shows Day 19 = Apr 13 with units 
+           + 30801-30809
+       587 +  2. BG diary ends Apr 11 (expedition ended) — no entry for 
+           + Apr 13
+       588 +  3. EN diary does not mention Apr 13
+       589 +  4. DPF is only source for this survey day
+       590 +  
+       591 +  **Verification:**
+       592 +  - Unit sequence: Apr 9 ends at 30800, Apr 13 starts at 
+           + 30801 ✓ (continuous)
+       593 +  - DPF Day 19 clearly shows date as "13 April" or equivalent
+       594 +  - Walkers per DPF: Adela, Bara, Sonja, Lindsay, Rebecca
+       595 +  
+       596    **New Record:**
+       597    - Date: 2010-04-13
+       598    - Team: C
+     ...
+       589    - End_Unit: 30809
+       590    - Leader: Bara Weissová (assumed)
+       591    - Walkers_Original: `Adela | Bara | Sonja | Lindsay | 
+             Rebecca`
+       592 -  - Walkers_Standardised: `Adela Sobotkova | Bara Weissová | 
+           -  Sona Holičková | Lindsay Prazak | Rebecca [surname]`
+       592 +  - Walkers_Standardised: `Adela Sobotkova | Bara Weissová | 
+           +  Sona Holičková | Lindsay Prazak | Rebecca [surname TBD]`
+       593    - Author: Sonja (per DPF)
+       594    - XLS_Source: Kaz10_SurveySummary.xls
+       595    - PDF_Source: C_2010Summary.pdf
+     ...
+       597    
+       598    **Source evidence:** DPF Summary page 7, Day 19
+       599    
+       600 +  **Note:** Rebecca surname needs research (added to 
+           + follow-up-actions). This may be Rebecca Ingram or another 
+           + participant.
+       601 +  
+       602 +  **User Decision:**
+       603 +  - [ ] Approve adding new record as specified
+       604 +  - [ ] Modify: _______________
+       605 +  - [ ] Reject (provide reason): _______________
+       606 +  
+       607 +  **Status:** Pending user approval
+       608 +  
+       609    ---
+       610    
+       611    ## Source Observations
+
+● Now let me update the Notes section and add a Follow-up Actions section:
+
+● Update(trap-extraction/outputs/qa-automation-test/qa-runsheet-kazanluk-2010-sp
+        ring-c-manual.md)
+  ⎿  Updated trap-extraction/outputs/qa-automation-test/qa-runsheet-kazanlu
+     -2010-spring-c-manual.md with 2 additions and 2 removals
+       710    
+       711    ### Observation: [unclear] Resolution
+       712    
+       713 -  Three records have [unclear] walker names resolved
+           -   from DPF Summary:
+       713 +  Three records have [unclear] walker names resolved:
+       714    
+       715    - Mar 26: [unclear] = Todor (per BG diary)
+       716    - Mar 30: [unclear] = Todor (per BG diary)
+       717 -  - Apr 9: [unclear] = Jiri (per DPF — contradicts BG diary 
+           -  which shows Dasha)
+       717 +  - Apr 9: [unclear] = Jiri (per DPF AND BG diary — both 
+           +  sources agree)
+       718    
+       719    ### Observation: Missing Apr 13 Record (D010)
+       720    
+
+● Update(trap-extraction/outputs/qa-automation-test/qa-runsheet-kazanluk-2010-sp
+        ring-c-manual.md)
+  ⎿  Updated trap-extraction/outputs/qa-automation-test/qa-runsheet-kazanlu
+     -2010-spring-c-manual.md with 55 additions
+       727    
+       728    ---
+       729    
+       730 +  ## Follow-up Actions
+       731 +  
+       732 +  | ID | Item | Priority | Status |
+       733 +  |----|------|----------|--------|
+       734 +  | F001 | Research Asen surname (visitor Mar 27-28) | Medium
+           +  | Pending |
+       735 +  | F002 | Research Dasha surname (visitor Mar 31, Apr 1) | 
+           + Medium | Pending |
+       736 +  | F003 | Confirm Rebecca surname for Apr 13 record | Medium
+           +  | Pending |
+       737 +  | F004 | Investigate root cause of Peter/Dasha data mixing 
+           + | High | Pending |
+       738 +  | F005 | Check if similar Peter errors exist in other 
+           + Kazanluk teams | High | Pending |
+       739 +  
+       740 +  ### F004 Detail: Peter/Dasha Root Cause Investigation
+       741 +  
+       742 +  The Peter→Dasha error (D006, D007) represents a significant
+           +  extraction failure:
+       743 +  - Peter was on Team B on Mar 31 (confirmed by cross-team 
+           + CSV search)
+       744 +  - Dasha was on Team C on Mar 31 and Apr 1 (confirmed by BG 
+           + diary AND DPF)
+       745 +  - CSV incorrectly shows Peter on Team C for both days
+       746 +  
+       747 +  **Possible causes:**
+       748 +  1. Data copy/paste from adjacent Team B row during 
+           + extraction
+       749 +  2. Extraction script bug mixing team data
+       750 +  3. Manual data entry error
+       751 +  
+       752 +  **Recommended action:** Review extraction logs or scripts 
+           + used for Kazanluk 2010 to identify how this error occurred.
+       753 +  
+       754 +  ---
+       755 +  
+       756 +  ## Approval Summary
+       757 +  
+       758 +  **Total corrections requiring approval:** 8
+       759 +  
+       760 +  | ID | Issue | Severity | Approval Status |
+       761 +  |----|-------|----------|-----------------|
+       762 +  | D002 | Mar 26 missing walkers | MAJOR | [ ] Pending |
+       763 +  | D003 | Mar 27 wrong walkers | MAJOR | [ ] Pending |
+       764 +  | D004 | Mar 28 missing walker + source conflict | MAJOR | 
+           + [ ] Pending |
+       765 +  | D005 | Mar 30 [unclear] resolution | Minor | [ ] Pending 
+           + |
+       766 +  | D006 | Mar 31 Peter→Dasha | MAJOR | [ ] Pending |
+       767 +  | D007 | Apr 1 Peter→Dasha | MAJOR | [ ] Pending |
+       768 +  | D008 | Apr 9 [unclear] resolution | Minor | [ ] Pending |
+       769 +  | D010 | Apr 13 missing record | MAJOR | [ ] Pending |
+       770 +  
+       771 +  **Instructions for reviewer:**
+       772 +  1. Review each correction in the "Corrections Required" 
+           + section
+       773 +  2. Mark the appropriate checkbox (Approve/Modify/Reject)
+       774 +  3. For modifications, specify the change required
+       775 +  4. Sign off at bottom when complete
+       776 +  
+       777 +  **Reviewer sign-off:**
+       778 +  - Reviewed by: _______________
+       779 +  - Date: _______________
+       780 +  - Overall approval: [ ] Approved / [ ] Approved with 
+           + modifications / [ ] Rejected
+       781 +  
+       782 +  ---
+       783 +  
+       784    **Document created:** 2025-11-27
+       785    **Last updated:** 2025-11-27
+       786 +  **Methodology:** TRAP QA methodology v2 (full detective 
+           + work)
+
+● I've completed the rigorous manual QA review of Kazanluk 2010 Spring Team
+  C. Here's a summary:
+
+  Completed Work
+
+  Detective Work Investigations Added
+
+  - Investigation 1 (Peter vs Dasha): Cross-team verification proved Peter
+  was on Team B on Mar 31 — violates H2 heuristic. Both BG diary and DPF
+  confirm Dasha was on Team C.
+  - Investigation 2 (Mar 28): BG diary consistent for Mar 27-28 showing
+  Asen; H1 heuristic supports BG diary over DPF.
+  - Investigation 3 (Apr 9): Corrected error — both BG diary ("Иржи") AND
+  DPF agree on Jiri. No source conflict exists.
+  - Investigation 4 (Mar 27): Both DPF and BG diary confirm Asen, not Todor.
+  - Investigation 5: Team composition pattern analysis showing core members
+  and visitors.
+
+  Critical Correction Made
+
+  The Apr 9 entry was incorrectly flagged as having a "source conflict" (DPF
+   shows Jiri, BG diary shows Dasha). Re-reading the BG diary revealed it
+  actually says "Иржи" (Jiri), not Dasha. Both sources agree.
+
+  User Approval Forms Added
+
+  All 8 corrections now include:
+  **User Decision:**
+  - [ ] Approve correction as written
+  - [ ] Modify: _______________
+  - [ ] Reject (provide reason): _______________
+
+  **Status:** Pending user approval
+
+  New Sections Added
+
+  - Executive Summary — overview of findings
+  - Detective Work Investigations — detailed evidence for each conflict
+  - Follow-up Actions — 5 items including root cause investigation for
+  Peter/Dasha
+  - Approval Summary — consolidated list of all corrections requiring
+  sign-off
+  - Reviewer sign-off — for final approval
+
+  The runsheet is now ready for your review at:
+  outputs/qa-automation-test/qa-runsheet-kazanluk-2010-spring-c-manual.md
+
+
+

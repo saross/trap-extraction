@@ -113,9 +113,37 @@ Replace all `{PARAMETER}` placeholders with actual values.
 
 ---
 
+## Source Observations
+
+### Source Divergences
+
+{Document cases where primary sources disagree with each other, regardless of CSV correctness}
+
+| Date | Field | DPF Value | Diary Value | CSV Value | Resolution | Note |
+|------|-------|-----------|-------------|-----------|------------|------|
+| {DATE} | {FIELD} | {DPF_VAL} | {DIARY_VAL} | {CSV_VAL} | {WHICH_CORRECT} | {EXPLANATION} |
+
+{If no divergences found, state: "No source divergences observed."}
+
+### Source Reliability Patterns
+
+{Document any patterns that confirm or refine source priority rules}
+
+- **O1 confirmed/refuted:** DPF reliability for unit numbers (N cases observed)
+- **New pattern:** {description if any}
+
+### Implications for Future QA
+
+{Document any refinements to methodology or patterns to watch for}
+
+- {Any refinements to source priority rules}
+- {Patterns to watch for in similar team-seasons}
+
+---
+
 ## Notes
 
-{Optional section for observations, diary anomalies, methodology notes}
+{Optional section for additional observations, diary anomalies, methodology notes}
 
 ---
 

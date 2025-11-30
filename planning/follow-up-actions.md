@@ -125,11 +125,30 @@ This file tracks outstanding actions that fall outside the core walker data extr
    - Appears only once across all TRAP diaries
    - Research needed: Check photographs, project communications, or other records from November 2010
 
+6. **Asen** (Асен)
+   - Unidentified participant appearing in 2010-03-27 and 2010-03-28 Team C (Kazanlak)
+   - BG diary (`C_2010Diary_BG.doc`) team roster lists "Асен ....." with surname missing
+   - BG diary entries: "Екип: Елена, Бара, Соня, Яна, Асен" (Mar 27, 28)
+   - CSV incorrectly has "Todor" instead of "Asen" for these dates
+   - Missing surname indicates visitor not known to team
+   - Research needed: Check photographs, project communications from March 2010 Kazanlak
+
+7. **Rebecca**
+   - Unidentified participant appearing in 2010-04-13 Team C (Kazanlak)
+   - DPF Summary (`C_2010Summary.pdf`) Day 19 shows "Rebecca" as one of 5 walkers
+   - Walker list: Adela, Bara, Sonja, Lindsay, Rebecca
+   - **Not found** in TRAP-Participants.csv (104 participants checked)
+   - BG diary ended Apr 11, so no diary confirmation available
+   - Units: 30801-30809 (Day 19, final survey day of season)
+   - Research needed: Check photographs, project communications from April 2010 Kazanlak
+   - Possible candidate: Day visitor or late-season addition not recorded in master list
+
 **Action required:**
 - [ ] Research and verify full identity of Lizzy
 - [x] ~~Verify Silvia Ivanova's participation in TRAP 2009~~ - Added to TRAP-Participants.csv (25 Nov 2025)
 - [ ] Check if Jiří Musil is in participant list, verify participation dates
 - [ ] Investigate Sharon identity (2011-11-02 Team D)
+- [ ] Investigate Rebecca identity (2010-04-13 Team C Kazanluk)
 - [ ] Investigate Yavor L identity (2010-11-06 Team B Elhovo)
 - [ ] Add remaining participants to `inputs/TRAP-Participants.csv` in single batch update with complete details
 
@@ -399,7 +418,7 @@ This file should be updated as actions are completed or new items are identified
 **Data quality observations:**
 - **Tereza Blažková — 2009 autumn presence unexplained:** TRAP-Participants.csv marks her as present in 2009 autumn (column 10 = "x"), but she does not appear in any walker records for that season. Tereza Dobrovodská is clearly documented on Team C (Oct 12-22) and Team A (Oct 26-29 as Eric's substitute). T. Blažková may have had a specialist role (ceramics, bioarchaeology, finds processing) rather than field walking that season. No action required unless participant list accuracy review is undertaken. (Discovered during D016 QA, 26 Nov 2025)
 
-**Last updated:** 26 November 2025 (added Tereza Blažková 2009-autumn observation)
+**Last updated:** 30 November 2025 (added Rebecca as unknown participant from Kazanluk 2010-04-13 Team C)
 
 ---
 

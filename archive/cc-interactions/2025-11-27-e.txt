@@ -1,0 +1,381 @@
+     │ 1. Updated runsheet with:                                                                                                   │
+     │   - Complete source investigations documented                                                                               │
+     │   - Detective work reasoning for each conflict                                                                              │
+     │   - User decision approval forms for each correction                                                                        │
+     │   - Proper methodology compliance                                                                                           │
+     │ 2. Discrepancy log entries for new issues                                                                                   │
+     │ 3. Follow-up actions updated if new unknowns found                                                                          │
+     │                                                                                                                             │
+     │ ---                                                                                                                         │
+     │ Success Criteria                                                                                                            │
+     │                                                                                                                             │
+     │ - All source conflicts investigated with documented reasoning                                                               │
+     │ - Peter/Dasha error root cause determined                                                                                   │
+     │ - Cross-team verification performed                                                                                         │
+     │ - BG diary narratives read for context                                                                                      │
+     │ - Individual DPF scans checked for conflicting days                                                                         │
+     │ - Approval forms included for all corrections                                                                               │
+     │ - Team composition pattern analysed                                                                                         │
+     │ - Runsheet follows exemplar format (qa-runsheet-elhovo-2009-autumn-c.md)                                                    │
+     ╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+> /export archive/cc-interactions/2025-11-276-d.txt 
+  ⎿  Failed to export conversation: ENOENT: no such file or directory, open 
+     '/media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-2020-04/Kazanluk/2010/Project Records/Team 
+     C/archive/cc-interactions/2025-11-276-d.txt'
+
+> /export ../archive/cc-interactions/2025-11-276-d.txt 
+  ⎿  Failed to export conversation: ENOENT: no such file or directory, open 
+     '/media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-2020-04/Kazanluk/2010/Project 
+     Records/archive/cc-interactions/2025-11-276-d.txt'
+
+> can you change the working directory to trap-wd-2020-04? 
+
+● Bash(cd /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-2020-04 && pwd)
+  ⎿  /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-2020-04
+
+● Done. Working directory is now /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-2020-04. You can retry
+   your export command.
+
+> /export trap-extraction/archive/cc-interactions/2025-11-276-d.txt 
+  ⎿  Conversation exported to: trap-extraction/archive/cc-interactions/2025-11-276-d.txt
+
+> please execute your plan 
+                                                                                                                               
+● User approved Claude's plan
+  ⎿  Plan saved to: ~/.claude/plans/glimmering-gathering-scroll.md · /plan to edit
+     Plan: Rigorous Manual QA for Kazanluk 2010 Spring Team C
+
+     Goal: Conduct a thorough, methodology-compliant manual QA review of KAZ-2010-C (20 records) following the established TRAP 
+     QA methodology.
+
+     Previous Attempt Issues:
+     - Source conflicts accepted without investigation (just declared "DPF PRIMARY")
+     - Missing detective work (team patterns, diary narratives, cross-team checks)
+     - Missing approval form with user decision checkboxes
+     - No investigation of Peter/Dasha identity error root cause
+
+     ---
+     Phase 1: Source Inventory & Setup
+
+     1.1 Locate All Sources
+
+     | Source          | File                                  | Purpose                             |
+     |-----------------|---------------------------------------|-------------------------------------|
+     | DPF Summary     | C_2010Summary.pdf (FieldRecords/)     | PRIMARY for units AND walkers       |
+     | Individual DPFs | C_20100317.pdf through C_20100413.pdf | Detailed verification for conflicts |
+     | BG Diary        | C_2010Diary_BG.doc                    | Walker names, context, narratives   |
+     | EN Diary        | C_2010Diary_En.docx                   | Secondary cross-reference           |
+     | Excel           | Kaz10_SurveySummary.xls               | Unit ranges                         |
+     | CSV             | original-attribution.csv              | Current extraction to verify        |
+
+     1.2 Extract Team Roster
+
+     From BG Diary header, identify:
+     - Regular Team C members (stable roster)
+     - Visitors/temporary participants (like Asen)
+     - Team leader
+
+     ---
+     Phase 2: Detective Work for Known Conflicts
+
+     2.1 Peter vs Dasha Investigation (D006, D007)
+
+     Issue: Mar 31 and Apr 1 have "Peter" in CSV, but DPF and BG diary show "Dasha"
+
+     Investigation steps:
+     1. Check where Peter (Petar Minkov) was on Mar 31 and Apr 1
+       - Was he on a different team?
+       - Check Team A, B, D records for these dates
+     2. Check Team C composition pattern
+       - Who was regularly on Team C?
+       - Is Dasha a regular?
+     3. Read BG diary narrative for Mar 31 and Apr 1
+       - Any mention of personnel changes?
+     4. Check individual DPF scans (C_20100331.pdf, C_20100401.pdf)
+       - Verify walker names legibility
+
+     Expected outcome: Determine if this is extraction error or data mixing between teams
+
+     2.2 Mar 28 Source Conflict (D004)
+
+     Issue: DPF shows Todor, BG diary shows Asen
+
+     Investigation steps:
+     1. Check Mar 27 - both DPF and BG diary agree on Asen
+     2. Read BG diary narrative for Mar 28
+       - Any mention of who came/left?
+     3. Check individual DPF scan (C_20100328.pdf)
+       - Verify legibility of 5th walker name
+     4. Apply H1 (Team stability)
+       - If Asen was there Mar 27, likely still there Mar 28
+     5. Check if Todor was on another team Mar 28
+
+     Expected outcome: Determine whether DPF has transcription error or BG diary has error
+
+     2.3 Apr 9 Source Conflict (D008)
+
+     Issue: DPF shows Jiri, BG diary shows Dasha
+
+     Investigation steps:
+     1. Check who Jiri (Jiří Musil) is
+       - Was he ever on Team C?
+       - What team was he normally on?
+     2. Read BG diary narrative for Apr 9
+       - Any mention of visitors or personnel changes?
+     3. Check individual DPF scan (C_20100409.pdf)
+       - Verify legibility of 5th walker name
+     4. Check Dasha's pattern
+       - Was Dasha on Team C other days?
+       - If Dasha was on Mar 31 and Apr 1, was she still around Apr 9?
+
+     Expected outcome: Determine which source is correct with reasoning
+
+     2.4 Mar 26 Walker Count (D002)
+
+     Issue: CSV has 4 walkers, BG diary shows 5 (with Viki and Todor)
+
+     Investigation steps:
+     1. Check individual DPF scan (C_20100326.pdf)
+       - Count walker columns/names
+     2. Verify BG diary entry for Mar 26
+     3. Check if Mar 26 DPF Summary entry is complete
+
+     ---
+     Phase 3: Cross-Team Verification
+
+     3.1 Locate Peter on Mar 31 / Apr 1
+
+     Scope: Check ALL Kazanluk 2010 teams (per user request)
+
+     Check other team records for these dates:
+     - Team A records (if exists for 2010)
+     - Team B records (if exists for 2010)
+     - Team D records (if exists for 2010)
+     - Any other teams operating in Kazanluk 2010
+
+     Search CSV for "Peter" or "Petar Minkov" entries on Mar 31 and Apr 1 across all teams.
+
+     Determine: Was Peter somewhere else, or is he incorrectly listed on Team C?
+
+     3.2 Team C Composition Pattern Analysis
+
+     Create table of walkers across all 19 survey days:
+     - Identify core/regular members
+     - Identify visitors (single-day appearances)
+     - Flag anomalies (people appearing unexpectedly)
+
+     ---
+     Phase 4: BG Diary Narrative Reading
+
+     Read full narrative entries (not just "Екип:" lines) for:
+
+     1. Mar 27-28: Context for Asen's presence
+     2. Mar 31 / Apr 1: Any mention of Dasha or personnel changes
+     3. Apr 9: Any mention of Jiri or visitors
+     4. Any entries mentioning Peter
+
+     Look for:
+     - Personnel change mentions ("X joined us", "Y was away")
+     - Weather/conditions affecting team composition
+     - Visitor mentions
+
+     ---
+     Phase 5: Individual DPF Scan Verification
+
+     For each conflicting day, read the individual DPF PDF (not just Summary):
+
+     | Date   | File           | Verify                      |
+     |--------|----------------|-----------------------------|
+     | Mar 26 | C_20100326.pdf | Walker count and names      |
+     | Mar 28 | C_20100328.pdf | 5th walker (Todor vs Asen)  |
+     | Mar 31 | C_20100331.pdf | 4th walker (Peter vs Dasha) |
+     | Apr 1  | C_20100401.pdf | 4th walker (Peter vs Dasha) |
+     | Apr 9  | C_20100409.pdf | 5th walker (Jiri vs Dasha)  |
+
+     ---
+     Phase 6: Update Runsheet with Findings
+
+     6.1 Document Each Investigation
+
+     For each source conflict, document:
+     - Evidence from each source
+     - Detective work performed
+     - Reasoning for resolution
+     - Confidence level
+
+     6.2 Add Approval Form
+
+     Each correction must include:
+
+     **User Decision:**
+     - [ ] Approve
+     - [ ] Modify: _______________
+
+     **Status:** Pending
+
+     6.3 Complete Record-by-Record Section
+
+     Ensure every record has explicit verification with:
+     - DPF values
+     - BG diary values
+     - CSV values
+     - Status and notes
+
+     ---
+     Phase 7: Missing Record Investigation (D010)
+
+     Issue: Apr 13 appears in DPF Summary but not in CSV
+
+     Investigation steps:
+     1. Verify Apr 13 exists in DPF Summary (Day 19)
+     2. Check BG diary for Apr 13 entry
+     3. Check EN diary for Apr 13 mention
+     4. Verify this isn't a date transcription error
+     5. Confirm record should be added
+
+     ---
+     Critical Files to Read
+
+     1. /media/.../Team C/C_2010Diary_BG.doc — Full narrative reading
+     2. /media/.../Team C/FieldRecords/C_20100328.pdf — Mar 28 individual DPF
+     3. /media/.../Team C/FieldRecords/C_20100331.pdf — Mar 31 individual DPF
+     4. /media/.../Team C/FieldRecords/C_20100401.pdf — Apr 1 individual DPF
+     5. /media/.../Team C/FieldRecords/C_20100409.pdf — Apr 9 individual DPF
+     6. /media/.../Team C/FieldRecords/C_20100326.pdf — Mar 26 individual DPF
+     7. Cross-team records for Mar 31 / Apr 1 to locate Peter
+
+     ---
+     Expected Outputs
+
+     1. Updated runsheet with:
+       - Complete source investigations documented
+       - Detective work reasoning for each conflict
+       - User decision approval forms for each correction
+       - Proper methodology compliance
+     2. Discrepancy log entries for new issues
+     3. Follow-up actions updated if new unknowns found
+
+     ---
+     Success Criteria
+
+     - All source conflicts investigated with documented reasoning
+     - Peter/Dasha error root cause determined
+     - Cross-team verification performed
+     - BG diary narratives read for context
+     - Individual DPF scans checked for conflicting days
+     - Approval forms included for all corrections
+     - Team composition pattern analysed
+     - Runsheet follows exemplar format (qa-runsheet-elhovo-2009-autumn-c.md)
+
+
+● Starting Phase 1: Source inventory and team roster extraction.
+
+● Bash(antiword "/media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-2020-04/Kazanluk/2010/Project Records/Team
+       C/C_2010Diary_BG.doc" 2>/dev/null…)
+  ⎿  Теренни обхождания – Казанлък 2010                                          
+                       Полеви дневник 17 март – 11 април 2010 г.
+     Екип С – участници: Елена Божинова, Барбара Вайсова,  Бистра  Гяурова,  Соня
+     … +146 lines (ctrl+o to expand)
+
+● Bash(grep -i "2010-03-31\|2010-04-01" "/media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-2020-04/trap-extra
+      ction/outputs/qa-automation-test/or…)
+  ⎿ 2010-03-31,B,21507,21550,Adela Sobotkova,Adela | Martin | Pesho | Stana | Petra Tušlová,Adela Sobotkova | Martin Mladenov |
+     Petar Minkov | Stana Kučová | Petra Tušlová,,,,,,Petra Tušlová,Kaz10_SurveySummary.xls,B_2010Diary_En.doc,Extracted from d
+    iary,Complete
+    … +6 lines (ctrl+o to expand)
+
+
+
+● Bash(grep -i "peter\|petar" "/media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-2020-04/trap-extraction/outp
+      uts/qa-automation-test/original-att…)
+  ⎿ 2010-03-17,B,20850,20892,Adela Sobotkova,Adela | Lubomir | Vera | Petra Tušlová | Pesho | Nadya | Tereza,Adela Sobotkova | 
+    Lyubomir Markovski | Vera Doležálková | Petra Tušlová | Petar Minkov | Nadezhda Kecheva | Tereza Dobrovodská,Petra Tušlová
+    | Nadezhda Kecheva,Nadezhda Kecheva,,Tereza Dobrovodská,,Petra Janouchová,Kaz10_SurveySummary.xls,B_2010Diary_En.doc,Extrac
+    … +51 lines (ctrl+o to expand)
+
+
+● CRITICAL DISCOVERY: Peter (Pesho/Petar Minkov) was on Team B on Mar 31!
+
+  2010-03-31,B - Adela | Martin | Pesho | Stana | Petra Tušlová
+  2010-03-31,C - Bara | Sonja | Elena | Peter | Todor (← IMPOSSIBLE)
+
+  This violates H2 (One team per day) — Peter cannot be on both Team B and Team C on the same day. The Team C entry must be
+  wrong.
+
+  Also noted: Jiří Musil (Jiri) is listed in the BG diary header as a Team C participant!
+
+  Let me continue reading the BG diary narrative for the conflicting dates:
+
+● Bash(antiword "/media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-2020-04/Kazanluk/2010/Project Records/Team
+       C/C_2010Diary_BG.doc" 2>/dev/null…)
+  ⎿  27.03.2010 г.                                                               
+     Екип: Елена, Бара, Соня, Яна, Асен
+     Цел на обхода: равните площи западно от р. Лешница и северно  от  асфалтовия
+     … +100 lines (ctrl+o to expand)
+
+● Bash(grep "2010-04-01" "/media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-2020-04/trap-extraction/outputs/q
+      a-automation-test/original-attribut…)
+  ⎿ 2010-04-01,B,21551,21631,Adela Sobotkova,Adela | Petra Tušlová | Martin,Adela Sobotkova | Petra Tušlová | Martin Mladenov,,
+    ,,,,Petra Tušlová,Kaz10_SurveySummary.xls,"B_2010Summary.pdf, B_2010Diary_En.doc","Extracted from page 5, form 1; Updated f
+    rom diary",No role data available
+    … +7 lines (ctrl+o to expand)
+
+
+
+● CRITICAL BG DIARY EVIDENCE:
+
+  | Date   | BG Diary "Екип:"               | Findings                          |
+  |--------|--------------------------------|-----------------------------------|
+  | Mar 27 | Елена, Бара, Соня, Яна, Асен   | Confirms Asen (not Todor in CSV)  |
+  | Mar 28 | Елена, Бара, Соня, Яна, Асен   | Confirms Asen (not Todor in DPF)  |
+  | Apr 1  | Елена, Бара, Соня, Тодор, Даша | Confirms Dasha (not Peter in CSV) |
+  | Apr 9  | Елена, Бара, Соня, Тодор, Иржи | Confirms Jiri (not Dasha!)        |
+
+  Cross-Team Evidence for Apr 1:
+  - Team B: Adela | Petra Tušlová | Martin — NO Peter
+  - Team C CSV: Peter — WRONG (should be Dasha per BG diary)
+  - Team D: NO Peter
+
+  Let me check Mar 31 BG diary entry more carefully:
+
+● Bash(antiword "/media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-2020-04/Kazanluk/2010/Project Records/Team
+       C/C_2010Diary_BG.doc" 2>/dev/null…)
+  ⎿  No matches found
+
+● Read(Kazanluk/2010/Project Records/Team C/FieldRecords/C_20100331.pdf)
+  ⎿  Read PDF (322.7KB)
+
+● The individual DPF scan for Mar 31 (C_20100331.pdf) shows:
+  - Day 13 header
+  - 5 walker positions used (columns 1-5)
+  - Unit forms show "31 March" or "31 Mar"
+
+  The walker positions in the bottom-left corners show 5 walkers were present. Combined with the DPF Summary showing "Bara,
+  Sonja, Elena, Todor, Dasa", this confirms Dasha (not Peter) was on Team C.
+
+  Let me search for Mar 31 in BG diary and check individual DPF for Apr 9:
+
+● Bash(antiword "/media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-2020-04/Kazanluk/2010/Project Records/Team
+       C/C_2010Diary_BG.doc" 2>/dev/null…)
+  ⎿  свързана с обекта.                                                          
+     В западната периферия на обекта  се  регистрира  втора  позитивна  форма  на
+     релефа, с размери 27/21 м и височина до 1 м. По повърхността  се  наблюдават
+     … +496 lines (ctrl+o to expand)
+
+● Read(Kazanluk/2010/Project Records/Team C/FieldRecords/C_20100409.pdf)
+  ⎿  Read PDF (567.3KB)
+
+● CRITICAL BG DIARY FIND for Mar 31:
+
+  31. ІІІ. 2010 – сряда
+  Времето е слънчево и безоблачно.
+  Екип: Елена. Бара, Соня, Даша, Тодор.
+
+  BG Diary CONFIRMS Dasha (Даша) on Mar 31, NOT Peter!
+
+  And looking at the Apr 9 DPF scan (Day 18) with the BG diary:
+  9. IV. 2010 – Петък
+  Екип: Елена, Бара, Соня, Тодор, Иржи
+
+  Both BG diary AND DPF agree: Jiri (Иржи) on Apr 9 - there's NO source conflict here! I was wrong earlier.

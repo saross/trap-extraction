@@ -1,0 +1,750 @@
+{
+  "manifest_version": "2.0",
+  "created": "2025-11-30",
+  "description": "Comprehensive corrections manifest covering all QA runsheets. Enables transformation from original attribution.csv to corrected version.",
+  "target_file": "attribution.csv",
+  "approved_by": "Shawn Ross",
+  "runsheets": [
+    {
+      "id": "RS001",
+      "file": "qa-runsheet-elhovo-2009-autumn-a.md",
+      "study_area": "Elhovo",
+      "season": "2009 Autumn",
+      "team": "A",
+      "status": "APPLIED",
+      "applied_date": "2025-11-26"
+    },
+    {
+      "id": "RS002",
+      "file": "qa-runsheet-elhovo-2009-autumn-b.md",
+      "study_area": "Elhovo",
+      "season": "2009 Autumn",
+      "team": "B",
+      "status": "APPLIED",
+      "applied_date": "2025-11-26"
+    },
+    {
+      "id": "RS003",
+      "file": "qa-runsheet-elhovo-2009-autumn-c.md",
+      "study_area": "Elhovo",
+      "season": "2009 Autumn",
+      "team": "C",
+      "status": "APPLIED",
+      "applied_date": "2025-11-27"
+    },
+    {
+      "id": "RS004",
+      "file": "qa-runsheet-elhovo-2010-autumn.md",
+      "study_area": "Elhovo",
+      "season": "2010 Autumn",
+      "team": "A, B",
+      "status": "APPLIED",
+      "applied_date": "2025-11-25"
+    },
+    {
+      "id": "RS005",
+      "file": "qa-automation-test/qa-runsheet-kazanluk-2010-spring-c-manual.md",
+      "study_area": "Kazanluk",
+      "season": "2010 Spring",
+      "team": "C",
+      "status": "APPLIED",
+      "approved_date": "2025-11-30",
+      "applied_date": "2025-11-30"
+    }
+  ],
+  "corrections": [
+    {
+      "runsheet": "RS001",
+      "id": "ELH09A-D015",
+      "type": "VERIFY_NO_CHANGE",
+      "date": "2009-10-21",
+      "team": "A",
+      "severity": "INFO",
+      "description": "Diary transcription error - CSV Start_Unit 60195 confirmed correct via SU form",
+      "fields": {
+        "Start_Unit": {
+          "csv_value": "60195",
+          "diary_value": "60196",
+          "su_form_value": "60195",
+          "action": "NO_CHANGE"
+        }
+      },
+      "source_evidence": "SU form 60192.pdf p.56 confirms unit 60195 surveyed 21 Oct 2009",
+      "status": "VERIFIED"
+    },
+    {
+      "runsheet": "RS001",
+      "id": "ELH09A-D016",
+      "type": "CORRECTION",
+      "dates": ["2009-10-26", "2009-10-27", "2009-10-28", "2009-10-29"],
+      "team": "A",
+      "severity": "MAJOR",
+      "description": "Walker substitution - Eric departed Oct 25, Tereza Dobrovodská substituted Oct 26-29",
+      "fields": {
+        "Walkers_Original": {
+          "find": "Eric",
+          "replace": "Tereza",
+          "action": "REPLACE_IN_STRING"
+        },
+        "Walkers_Standardised": {
+          "find": "Erik Andersen",
+          "replace": "Tereza Dobrovodská",
+          "action": "REPLACE_IN_STRING"
+        }
+      },
+      "source_evidence": "Diary Team A.doc Oct 25: 'Eric decided to go on to Istanbul'; Oct 26: 'Tereza as a substitute for Eric'",
+      "investigation": "Cross-team analysis: Tereza Dobrovodská was on Team C until Oct 22, sick Oct 23, moved to Team A Oct 26-29",
+      "status": "APPLIED",
+      "applied_date": "2025-11-26"
+    },
+    {
+      "runsheet": "RS001",
+      "id": "ELH09A-D017",
+      "type": "VERIFY_NO_CHANGE",
+      "dates": ["2009-10-30", "2009-10-31", "2009-11-04"],
+      "team": "A",
+      "severity": "INFO",
+      "description": "Erroneous QA_Notes check - Team A records did not contain the erroneous text",
+      "action": "NO_CHANGE",
+      "status": "VERIFIED"
+    },
+    {
+      "runsheet": "RS001",
+      "id": "ELH09A-D018",
+      "type": "CORRECTION",
+      "date": "2009-11-09",
+      "team": "A",
+      "severity": "Minor",
+      "description": "Missing Diary_Author field",
+      "fields": {
+        "Diary_Author": {
+          "current": "",
+          "corrected": "Adela Sobotkova",
+          "action": "SET"
+        }
+      },
+      "source_evidence": "All other Team A November records have Diary_Author = 'Adela Sobotkova'",
+      "status": "APPLIED",
+      "applied_date": "2025-11-26"
+    },
+    {
+      "runsheet": "RS002",
+      "id": "ELH09B-D011",
+      "type": "CORRECTION",
+      "date": "2009-11-02",
+      "team": "B",
+      "severity": "MAJOR",
+      "description": "Missing unit numbers - data available in diary",
+      "fields": {
+        "Start_Unit": {
+          "current": "",
+          "corrected": "70926",
+          "action": "SET"
+        },
+        "End_Unit": {
+          "current": "",
+          "corrected": "70962",
+          "action": "SET"
+        },
+        "QA_Notes": {
+          "action": "REPLACE",
+          "corrected": "QA 2025-11-26: Units added from diary"
+        }
+      },
+      "source_evidence": "EN Diary: 'First unit: 70926 / Last unit: 70962'; BG Diary confirms same values",
+      "status": "APPLIED",
+      "applied_date": "2025-11-26"
+    },
+    {
+      "runsheet": "RS002",
+      "id": "ELH09B-D012",
+      "type": "CORRECTION",
+      "date": "2009-11-03",
+      "team": "B",
+      "severity": "MAJOR",
+      "description": "Missing unit numbers - data available in diary",
+      "fields": {
+        "Start_Unit": {
+          "current": "",
+          "corrected": "70963",
+          "action": "SET"
+        },
+        "End_Unit": {
+          "current": "",
+          "corrected": "71062",
+          "action": "SET"
+        },
+        "QA_Notes": {
+          "action": "REPLACE",
+          "corrected": "QA 2025-11-26: Units added from diary"
+        }
+      },
+      "source_evidence": "EN Diary: 'First unit: 70963 / Last unit: 71062'; BG Diary confirms same values",
+      "status": "APPLIED",
+      "applied_date": "2025-11-26"
+    },
+    {
+      "runsheet": "RS002",
+      "id": "ELH09B-D013",
+      "type": "CORRECTION",
+      "date": "2009-11-05",
+      "team": "B",
+      "severity": "MAJOR",
+      "description": "Missing unit numbers - data available in diary",
+      "fields": {
+        "Start_Unit": {
+          "current": "",
+          "corrected": "71063",
+          "action": "SET"
+        },
+        "End_Unit": {
+          "current": "",
+          "corrected": "71142",
+          "action": "SET"
+        },
+        "QA_Notes": {
+          "action": "REPLACE",
+          "corrected": "QA 2025-11-26: Units added from diary"
+        }
+      },
+      "source_evidence": "EN Diary: 'First unit: 71063 / Last unit: 71142'; BG Diary confirms same values",
+      "status": "APPLIED",
+      "applied_date": "2025-11-26"
+    },
+    {
+      "runsheet": "RS002",
+      "id": "ELH09B-D014",
+      "type": "FLAG_ONLY",
+      "dates": ["2009-11-09", "2009-11-10", "2009-11-12", "2009-11-13"],
+      "team": "B",
+      "severity": "Minor",
+      "description": "Unmapped walker 'Lizzy' - full name unknown",
+      "action": "NO_CHANGE",
+      "notes": "Added to follow-up-actions.md for future research",
+      "status": "FLAGGED"
+    },
+    {
+      "runsheet": "RS003",
+      "id": "ELH09C-D019",
+      "type": "CORRECTION",
+      "dates": ["2009-10-14", "2009-10-16", "2009-10-17", "2009-10-18"],
+      "team": "C",
+      "severity": "Minor",
+      "description": "Erroneous QA_Notes - remove incorrect 'No autumn survey season' text",
+      "fields": {
+        "QA_Notes": {
+          "find": "MISSING: Survey units | No role data available | No autumn survey season: No autumn 2009 survey season - diaries end in March/April",
+          "replace": "Non-survey day (no field walking conducted)",
+          "action": "REPLACE"
+        }
+      },
+      "source_evidence": "Diary confirms these were legitimate non-survey days",
+      "status": "APPLIED",
+      "applied_date": "2025-11-27"
+    },
+    {
+      "runsheet": "RS003",
+      "id": "ELH09C-D020",
+      "type": "VERIFY_NO_CHANGE",
+      "date": "2009-10-15",
+      "team": "C",
+      "severity": "INFO",
+      "description": "Diary End_Unit 80103 is transcription error - CSV 80115 confirmed correct via SU forms",
+      "fields": {
+        "End_Unit": {
+          "csv_value": "80115",
+          "diary_value": "80103",
+          "su_form_value": "80115",
+          "action": "NO_CHANGE"
+        }
+      },
+      "status": "VERIFIED"
+    },
+    {
+      "runsheet": "RS003",
+      "id": "ELH09C-D021",
+      "type": "CORRECTION",
+      "date": "2009-10-22",
+      "team": "C",
+      "severity": "MAJOR",
+      "description": "Remove Georgi from walker list - diary says he was away",
+      "fields": {
+        "Walkers_Original": {
+          "current": "Bara | Petra Tušlová | Sona | Tereza | Todor | Georgi",
+          "corrected": "Bara | Petra Tušlová | Sona | Tereza | Todor",
+          "action": "REPLACE"
+        },
+        "Walkers_Standardised": {
+          "current": "Bara Weissová | Petra Tušlová | Sona Holičková | Tereza Dobrovodská | Todor Vulchev | Georgi Nekhrizov",
+          "corrected": "Bara Weissová | Petra Tušlová | Sona Holičková | Tereza Dobrovodská | Todor Vulchev",
+          "action": "REPLACE"
+        }
+      },
+      "source_evidence": "Diary: 'Today we walked in five people because Georgi was away'",
+      "status": "APPLIED",
+      "applied_date": "2025-11-27"
+    },
+    {
+      "runsheet": "RS003",
+      "id": "ELH09C-D022",
+      "type": "VERIFY_NO_CHANGE",
+      "date": "2009-11-12",
+      "team": "C",
+      "severity": "Minor",
+      "description": "End_Unit off by 1 (diary 80938, CSV 80939) - accepted CSV value",
+      "action": "NO_CHANGE",
+      "status": "VERIFIED"
+    },
+    {
+      "runsheet": "RS003",
+      "id": "ELH09C-D023",
+      "type": "CORRECTION",
+      "date": "2009-11-13",
+      "team": "C",
+      "severity": "MAJOR",
+      "description": "Start_Unit typo - 80839 should be 80939",
+      "fields": {
+        "Start_Unit": {
+          "current": "80839",
+          "corrected": "80939",
+          "action": "REPLACE"
+        }
+      },
+      "source_evidence": "Diary shows 80939-80969; 80839 < Nov 12 start (80910) which is impossible",
+      "status": "APPLIED",
+      "applied_date": "2025-11-27"
+    },
+    {
+      "runsheet": "RS004",
+      "id": "ELH10-DEDUP",
+      "type": "CORRECTION",
+      "dates": "ALL_TEAM_A",
+      "team": "A",
+      "severity": "Minor",
+      "description": "Walker de-duplication - leader appearing twice in Walkers_Standardised",
+      "fields": {
+        "Walkers_Standardised": {
+          "action": "DEDUPLICATE"
+        }
+      },
+      "source_evidence": "All 5 Team A records had leader name appearing twice",
+      "notes": "Systematic extraction bug - leader appended even when already present",
+      "records_affected": 5,
+      "status": "APPLIED",
+      "applied_date": "2025-11-25"
+    },
+    {
+      "runsheet": "RS004",
+      "id": "ELH10B-D006",
+      "type": "CORRECTION",
+      "date": "2010-11-03",
+      "team": "B",
+      "severity": "MAJOR",
+      "description": "Start_Unit error - 71245 should be 71525",
+      "fields": {
+        "Start_Unit": {
+          "current": "71245",
+          "corrected": "71525",
+          "action": "REPLACE"
+        }
+      },
+      "source_evidence": "PDF Day_02.pdf Form 2: Start Unit 71525; Diary confirms same",
+      "status": "APPLIED",
+      "applied_date": "2025-11-25"
+    },
+    {
+      "runsheet": "RS004",
+      "id": "ELH10B-D007",
+      "type": "CORRECTION",
+      "date": "2010-11-04",
+      "team": "B",
+      "severity": "MAJOR",
+      "description": "End_Unit error - 71650 should be 71649",
+      "fields": {
+        "End_Unit": {
+          "current": "71650",
+          "corrected": "71649",
+          "action": "REPLACE"
+        }
+      },
+      "source_evidence": "PDF Day_04.pdf Form 1: End Unit 71649; PDF takes precedence",
+      "status": "APPLIED",
+      "applied_date": "2025-11-25"
+    },
+    {
+      "runsheet": "RS004",
+      "id": "ELH10B-D008",
+      "type": "CORRECTION",
+      "date": "2010-11-06",
+      "team": "B",
+      "severity": "MAJOR",
+      "description": "Missing unit numbers - data available in PDF and diary",
+      "fields": {
+        "Start_Unit": {
+          "current": "",
+          "corrected": "71713",
+          "action": "SET"
+        },
+        "End_Unit": {
+          "current": "",
+          "corrected": "71760",
+          "action": "SET"
+        }
+      },
+      "source_evidence": "PDF Day_06.pdf Form 1: Start 71713, End 71760; Diary confirms same",
+      "status": "APPLIED",
+      "applied_date": "2025-11-25"
+    },
+    {
+      "runsheet": "RS004",
+      "id": "ELH10B-D009",
+      "type": "ADD_RECORD",
+      "date": "2010-11-07",
+      "team": "B",
+      "severity": "MAJOR",
+      "description": "Entire record missing from CSV",
+      "new_record": {
+        "Date": "2010-11-07",
+        "Team": "B",
+        "Start_Unit": "71761",
+        "End_Unit": "71800",
+        "Leader": "Shawn Ross | Royce Lawrence",
+        "Walkers_Original": "Shawn | Kimberley | Royce | Alina | Julia",
+        "Walkers_Standardised": "Shawn Ross | Kimberley Lowe | Royce Lawrence | Alina Petanec | Julia Paulová"
+      },
+      "source_evidence": "PDF Day_06.pdf Form 2; Diary 7 November 2010 entry",
+      "status": "APPLIED",
+      "applied_date": "2025-11-25"
+    },
+    {
+      "runsheet": "RS004",
+      "id": "ELH10B-D010",
+      "type": "ADD_RECORD",
+      "date": "2010-11-10",
+      "team": "B",
+      "severity": "MAJOR",
+      "description": "Entire record missing from CSV",
+      "new_record": {
+        "Date": "2010-11-10",
+        "Team": "B",
+        "Start_Unit": "71801",
+        "End_Unit": "71833",
+        "Leader": "Royce Lawrence",
+        "Walkers_Original": "Kimberley | Emma | Royce | Julia | Ashley | Drago",
+        "Walkers_Standardised": "Kimberley Lowe | Emma Jakobsson | Royce Lawrence | Julia Paulová | Ashley Chee-Quee | Dragomir Garbov"
+      },
+      "source_evidence": "PDF Day_08.pdf Form 1; Diary 10 November 2010 entry",
+      "status": "APPLIED",
+      "applied_date": "2025-11-25"
+    },
+    {
+      "runsheet": "RS005",
+      "id": "KAZ10C-D001",
+      "type": "VERIFY_NO_CHANGE",
+      "date": "2010-03-21",
+      "team": "C",
+      "severity": "MAJOR",
+      "description": "Unit divergence - CSV confirmed correct via continuity analysis",
+      "fields": {
+        "Start_Unit": {
+          "csv_value": "30389",
+          "en_diary_value": "30386",
+          "action": "NO_CHANGE"
+        },
+        "End_Unit": {
+          "csv_value": "30416",
+          "en_diary_value": "30417",
+          "action": "NO_CHANGE"
+        }
+      },
+      "source_evidence": "Mar 20 ends 30388, Mar 22 starts 30417 - CSV values maintain perfect continuity",
+      "investigation": "Investigation 6: EN diary has transcription errors on both start and end",
+      "status": "VERIFIED",
+      "applied_date": "2025-11-30"
+    },
+    {
+      "runsheet": "RS005",
+      "id": "KAZ10C-D002",
+      "type": "CORRECTION",
+      "date": "2010-03-26",
+      "team": "C",
+      "severity": "MAJOR",
+      "description": "Missing walkers Viki and Todor; [unclear] resolved",
+      "fields": {
+        "Walkers_Original": {
+          "current": "Bara | Sonja | Elena | [unclear]",
+          "corrected": "Elena | Bara | Sonja | Todor | Viki",
+          "action": "REPLACE"
+        },
+        "Walkers_Standardised": {
+          "current": "Bara Weissová | Sona Holičková | Elena Bozhinova",
+          "corrected": "Elena Bozhinova | Bara Weissová | Sona Holičková | Todor Vulchev | Viktorie Chystyaková",
+          "action": "REPLACE"
+        }
+      },
+      "source_evidence": "BG diary: Екип: Елена, Бара, Соня, Тодор, Вики",
+      "status": "APPLIED",
+      "applied_date": "2025-11-30"
+    },
+    {
+      "runsheet": "RS005",
+      "id": "KAZ10C-D003",
+      "type": "CORRECTION",
+      "date": "2010-03-27",
+      "team": "C",
+      "severity": "MAJOR",
+      "description": "Wrong walkers - Todor should be Asen; [unclear] should be Jana",
+      "fields": {
+        "Walkers_Original": {
+          "current": "Bara | Sonja | Elena | [unclear] | Todor",
+          "corrected": "Elena | Bara | Sonja | Jana | Asen",
+          "action": "REPLACE"
+        },
+        "Walkers_Standardised": {
+          "current": "Bara Weissová | Sona Holičková | Elena Bozhinova | Todor Vulchev",
+          "corrected": "Elena Bozhinova | Bara Weissová | Sona Holičková | Jana Jebavá | Asen",
+          "action": "REPLACE"
+        }
+      },
+      "source_evidence": "BG diary: Екип: Елена, Бара, Соня, Яна, Асен",
+      "notes": "Asen has no standardised surname (unknown visitor)",
+      "status": "APPLIED",
+      "applied_date": "2025-11-30"
+    },
+    {
+      "runsheet": "RS005",
+      "id": "KAZ10C-D004",
+      "type": "CORRECTION",
+      "date": "2010-03-28",
+      "team": "C",
+      "severity": "MAJOR",
+      "description": "Missing 5th walker - should be Asen (source conflict resolved in favour of BG diary)",
+      "fields": {
+        "Walkers_Original": {
+          "current": "Bara | Sonja | Elena | Yana Jebavá",
+          "corrected": "Elena | Bara | Sonja | Jana | Asen",
+          "action": "REPLACE"
+        },
+        "Walkers_Standardised": {
+          "current": "Bara Weissová | Sona Holičková | Elena Bozhinova | Jana Jebavá",
+          "corrected": "Elena Bozhinova | Bara Weissová | Sona Holičková | Jana Jebavá | Asen",
+          "action": "REPLACE"
+        }
+      },
+      "source_evidence": "BG diary: Екип: Елена, Бара, Соня, Яна, Асен",
+      "source_conflict": {
+        "DPF": "Todor",
+        "BG_diary": "Asen",
+        "resolution": "BG diary (consistent across two days)"
+      },
+      "status": "APPLIED",
+      "applied_date": "2025-11-30"
+    },
+    {
+      "runsheet": "RS005",
+      "id": "KAZ10C-D005",
+      "type": "CORRECTION",
+      "date": "2010-03-30",
+      "team": "C",
+      "severity": "Minor",
+      "description": "[unclear] resolved to Todor",
+      "fields": {
+        "Walkers_Original": {
+          "current": "Bara | Sonja | Elena | [unclear]",
+          "corrected": "Elena | Bara | Sonja | Todor",
+          "action": "REPLACE"
+        },
+        "Walkers_Standardised": {
+          "current": "Bara Weissová | Sona Holičková | Elena Bozhinova",
+          "corrected": "Elena Bozhinova | Bara Weissová | Sona Holičková | Todor Vulchev",
+          "action": "REPLACE"
+        }
+      },
+      "source_evidence": "BG diary: Екип: Елена, Бара, Соня, Тодор",
+      "status": "APPLIED",
+      "applied_date": "2025-11-30"
+    },
+    {
+      "runsheet": "RS005",
+      "id": "KAZ10C-D006",
+      "type": "CORRECTION",
+      "date": "2010-03-31",
+      "team": "C",
+      "severity": "MAJOR",
+      "description": "Wrong walker identity - Peter should be Dasha (Dagmar Winklerová)",
+      "fields": {
+        "Walkers_Original": {
+          "current": "Bara | Sonja | Elena | Peter | Todor",
+          "corrected": "Elena | Bara | Sonja | Dasha | Todor",
+          "action": "REPLACE"
+        },
+        "Walkers_Standardised": {
+          "current": "Bara Weissová | Sona Holičková | Elena Bozhinova | Petar Minkov | Todor Vulchev",
+          "corrected": "Elena Bozhinova | Bara Weissová | Sona Holičková | Dagmar Winklerová | Todor Vulchev",
+          "action": "REPLACE"
+        }
+      },
+      "source_evidence": "BG diary: Екип: Елена, Бара, Соня, Даша, Тодор; DPF shows 'Dasa'",
+      "investigation": "Investigation 1: Peter was on Team B same day (H2 violated). Dasha = Dagmar Winklerová confirmed.",
+      "root_cause": "Data mixing during extraction",
+      "status": "APPLIED",
+      "applied_date": "2025-11-30"
+    },
+    {
+      "runsheet": "RS005",
+      "id": "KAZ10C-D007",
+      "type": "CORRECTION",
+      "date": "2010-04-01",
+      "team": "C",
+      "severity": "MAJOR",
+      "description": "Wrong walker identity - Peter should be Dasha (Dagmar Winklerová)",
+      "fields": {
+        "Walkers_Original": {
+          "current": "Sonja | Bara | Elena | Peter | Todor",
+          "corrected": "Elena | Bara | Sonja | Todor | Dasha",
+          "action": "REPLACE"
+        },
+        "Walkers_Standardised": {
+          "current": "Sona Holičková | Bara Weissová | Elena Bozhinova | Petar Minkov | Todor Vulchev",
+          "corrected": "Elena Bozhinova | Bara Weissová | Sona Holičková | Todor Vulchev | Dagmar Winklerová",
+          "action": "REPLACE"
+        }
+      },
+      "source_evidence": "BG diary: Екип: Елена, Бара, Соня, Тодор, Даша; DPF confirms 'Dasa'",
+      "investigation": "Same root cause as D006",
+      "status": "APPLIED",
+      "applied_date": "2025-11-30"
+    },
+    {
+      "runsheet": "RS005",
+      "id": "KAZ10C-D008",
+      "type": "CORRECTION",
+      "date": "2010-04-09",
+      "team": "C",
+      "severity": "Minor",
+      "description": "[unclear] resolved to Jiri (Jiří Musil)",
+      "fields": {
+        "Walkers_Original": {
+          "current": "Bara | Sonja | Elena | Todor | [unclear]",
+          "corrected": "Elena | Bara | Sonja | Todor | Jiri",
+          "action": "REPLACE"
+        },
+        "Walkers_Standardised": {
+          "current": "Bara Weissová | Sona Holičková | Elena Bozhinova | Todor Vulchev",
+          "corrected": "Elena Bozhinova | Bara Weissová | Sona Holičková | Todor Vulchev | Jiří Musil",
+          "action": "REPLACE"
+        }
+      },
+      "source_evidence": "DPF Day 18 shows 'Jiri'; BG diary: Екип: Елена, Бара, Соня, Тодор, Иржи",
+      "status": "APPLIED",
+      "applied_date": "2025-11-30"
+    },
+    {
+      "runsheet": "RS005",
+      "id": "KAZ10C-D009",
+      "type": "VERIFY_NO_CHANGE",
+      "date": "2010-04-02",
+      "team": "C",
+      "severity": "MAJOR",
+      "description": "Unit divergence - CSV confirmed correct via continuity analysis",
+      "fields": {
+        "End_Unit": {
+          "csv_value": "30716",
+          "dpf_value": "30718",
+          "action": "NO_CHANGE"
+        }
+      },
+      "source_evidence": "Apr 1 ends 30686, Apr 7 starts 30717 - CSV value 30716 maintains continuity",
+      "investigation": "Investigation 7: DPF has handwriting transcription error (6/8 confusion)",
+      "status": "APPLIED",
+      "applied_date": "2025-11-30"
+    },
+    {
+      "runsheet": "RS005",
+      "id": "KAZ10C-D010",
+      "type": "ADD_RECORD",
+      "date": "2010-04-13",
+      "team": "C",
+      "severity": "MAJOR",
+      "description": "Entire record missing from CSV",
+      "new_record": {
+        "Date": "2010-04-13",
+        "Team": "C",
+        "Start_Unit": "30801",
+        "End_Unit": "30809",
+        "Leader": "Bara Weissová",
+        "Walkers_Original": "Adela | Bara | Sonja | Lindsay | Rebecca",
+        "Walkers_Standardised": "Adela Sobotkova | Bara Weissová | Sona Holičková | Lindsay Prazak | Rebecca",
+        "PDA_Operator": "",
+        "Paper_Recorder": "",
+        "Data_Editor": "",
+        "GPS_Operator": "",
+        "Photographer": "",
+        "Diary_Author": "",
+        "DPF_Author": "Sona Holičková",
+        "XLS_Source": "Kaz10_SurveySummary.xls",
+        "PDF_Source": "C_2010Summary.pdf",
+        "Extraction_Notes": "Added from DPF Summary Day 19; missed in original extraction",
+        "QA_Notes": "QA correction D010: Record discovered missing during manual QA review"
+      },
+      "source_evidence": "DPF Summary page 7, Day 19",
+      "notes": "Rebecca surname unknown - added to follow-up-actions.md",
+      "status": "APPLIED",
+      "applied_date": "2025-11-30"
+    }
+  ],
+  "summary": {
+    "total_corrections": 29,
+    "by_status": {
+      "APPLIED": 29,
+      "PENDING": 0,
+      "VERIFIED": 0,
+      "FLAGGED": 0
+    },
+    "by_type": {
+      "CORRECTION": 18,
+      "ADD_RECORD": 3,
+      "VERIFY_NO_CHANGE": 7,
+      "FLAG_ONLY": 1
+    },
+    "by_severity": {
+      "MAJOR": 18,
+      "Minor": 7,
+      "INFO": 4
+    },
+    "records_modified": 25,
+    "records_added": 3,
+    "records_verified_no_change": 6
+  },
+  "follow_up_actions": [
+    {
+      "id": "F001",
+      "item": "Research Asen surname (visitor Mar 27-28 Kazanluk 2010)",
+      "priority": "Medium",
+      "status": "Pending"
+    },
+    {
+      "id": "F002",
+      "item": "Research Lizzy full name (Nov 2009 Elhovo Team B)",
+      "priority": "Medium",
+      "status": "Pending"
+    },
+    {
+      "id": "F003",
+      "item": "Research Rebecca surname (Apr 13 Kazanluk 2010)",
+      "priority": "Medium",
+      "status": "Pending"
+    },
+    {
+      "id": "F004",
+      "item": "Investigate Peter/Dasha data mixing root cause",
+      "priority": "High",
+      "status": "Pending"
+    }
+  ],
+  "audit_trail": {
+    "original_csv_records": 268,
+    "records_after_corrections": 271,
+    "transformation_notes": "Original CSV had 268 records. Added 3 missing records (2 Elhovo 2010 B, 1 Kazanluk 2010 C). Corrected walker data in 25 records. De-duplicated walker lists globally."
+  }
+}

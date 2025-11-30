@@ -1,0 +1,286 @@
+{
+  "manifest_version": "1.0",
+  "created": "2025-11-30",
+  "runsheet": "qa-runsheet-kazanluk-2010-spring-c-manual.md",
+  "approved_by": "Shawn Ross",
+  "approval_date": "2025-11-30",
+  "target_file": "attribution.csv",
+  "study_area": "Kazanluk",
+  "season": "2010 Spring",
+  "team": "C",
+  "corrections": [
+    {
+      "id": "D001",
+      "type": "VERIFY_NO_CHANGE",
+      "date": "2010-03-21",
+      "severity": "MAJOR",
+      "description": "Unit divergence - CSV confirmed correct via continuity analysis",
+      "fields": {
+        "Start Unit": {
+          "current": "30389",
+          "verified": "30389",
+          "action": "NO_CHANGE"
+        },
+        "End Unit": {
+          "current": "30416",
+          "verified": "30416",
+          "action": "NO_CHANGE"
+        }
+      },
+      "investigation": "Investigation 6: Continuity analysis proves CSV correct. EN diary (30386-30417) has transcription errors.",
+      "source_evidence": "Mar 20 ends 30388, Mar 22 starts 30417 - CSV values maintain perfect continuity"
+    },
+    {
+      "id": "D002",
+      "type": "CORRECTION",
+      "date": "2010-03-26",
+      "severity": "MAJOR",
+      "description": "Missing walkers Viki and Todor; [unclear] resolved",
+      "fields": {
+        "Walkers_Original": {
+          "current": "Bara | Sonja | Elena | [unclear]",
+          "corrected": "Elena | Bara | Sonja | Todor | Viki",
+          "action": "REPLACE"
+        },
+        "Walkers_Standardised": {
+          "current": "Bara Weissová | Sona Holičková | Elena Bozhinova",
+          "corrected": "Elena Bozhinova | Bara Weissová | Sona Holičková | Todor Vulchev | Viktorie Chystyaková",
+          "action": "REPLACE"
+        }
+      },
+      "investigation": "Investigation 5: Team C Composition Pattern - Viki and Todor present Mar 25-26 per BG diary",
+      "source_evidence": "BG diary: Екип: Елена, Бара, Соня, Тодор, Вики"
+    },
+    {
+      "id": "D003",
+      "type": "CORRECTION",
+      "date": "2010-03-27",
+      "severity": "MAJOR",
+      "description": "Wrong walkers - Todor should be Asen; [unclear] should be Jana",
+      "fields": {
+        "Walkers_Original": {
+          "current": "Bara | Sonja | Elena | [unclear] | Todor",
+          "corrected": "Elena | Bara | Sonja | Jana | Asen",
+          "action": "REPLACE"
+        },
+        "Walkers_Standardised": {
+          "current": "Bara Weissová | Sona Holičková | Elena Bozhinova | Todor Vulchev",
+          "corrected": "Elena Bozhinova | Bara Weissová | Sona Holičková | Jana Jebavá | Asen",
+          "action": "REPLACE"
+        }
+      },
+      "investigation": "Investigation 4: Both DPF and BG diary confirm Asen, not Todor",
+      "source_evidence": "BG diary: Екип: Елена, Бара, Соня, Яна, Асен",
+      "notes": "Asen has no standardised surname (unknown visitor)"
+    },
+    {
+      "id": "D004",
+      "type": "CORRECTION",
+      "date": "2010-03-28",
+      "severity": "MAJOR",
+      "description": "Missing 5th walker - should be Asen (source conflict resolved in favour of BG diary)",
+      "fields": {
+        "Walkers_Original": {
+          "current": "Bara | Sonja | Elena | Yana Jebavá",
+          "corrected": "Elena | Bara | Sonja | Jana | Asen",
+          "action": "REPLACE"
+        },
+        "Walkers_Standardised": {
+          "current": "Bara Weissová | Sona Holičková | Elena Bozhinova | Jana Jebavá",
+          "corrected": "Elena Bozhinova | Bara Weissová | Sona Holičková | Jana Jebavá | Asen",
+          "action": "REPLACE"
+        }
+      },
+      "investigation": "Investigation 2: BG diary consistent for Mar 27-28; H1 heuristic (team stability) favours BG diary over DPF",
+      "source_evidence": "BG diary: Екип: Елена, Бара, Соня, Яна, Асен",
+      "source_conflict": {
+        "DPF": "Todor",
+        "BG_diary": "Asen",
+        "resolution": "BG diary (consistent across two days)"
+      }
+    },
+    {
+      "id": "D005",
+      "type": "CORRECTION",
+      "date": "2010-03-30",
+      "severity": "Minor",
+      "description": "[unclear] resolved to Todor",
+      "fields": {
+        "Walkers_Original": {
+          "current": "Bara | Sonja | Elena | [unclear]",
+          "corrected": "Elena | Bara | Sonja | Todor",
+          "action": "REPLACE"
+        },
+        "Walkers_Standardised": {
+          "current": "Bara Weissová | Sona Holičková | Elena Bozhinova",
+          "corrected": "Elena Bozhinova | Bara Weissová | Sona Holičková | Todor Vulchev",
+          "action": "REPLACE"
+        }
+      },
+      "investigation": "Straightforward resolution - BG diary clearly shows Todor returned after Asen's Mar 27-28 visit",
+      "source_evidence": "BG diary: Екип: Елена, Бара, Соня, Тодор"
+    },
+    {
+      "id": "D006",
+      "type": "CORRECTION",
+      "date": "2010-03-31",
+      "severity": "MAJOR",
+      "description": "Wrong walker identity - Peter should be Dasha",
+      "fields": {
+        "Walkers_Original": {
+          "current": "Bara | Sonja | Elena | Peter | Todor",
+          "corrected": "Elena | Bara | Sonja | Dasha | Todor",
+          "action": "REPLACE"
+        },
+        "Walkers_Standardised": {
+          "current": "Bara Weissová | Sona Holičková | Elena Bozhinova | Petar Minkov | Todor Vulchev",
+          "corrected": "Elena Bozhinova | Bara Weissová | Sona Holičková | Dagmar Winklerová | Todor Vulchev",
+          "action": "REPLACE"
+        }
+      },
+      "investigation": "Investigation 1: Cross-team verification proves Peter (Pesho) was on Team B on Mar 31. H2 violated (cannot be on two teams same day). Both BG diary AND DPF confirm Dasha.",
+      "source_evidence": "BG diary: Екип: Елена, Бара, Соня, Даша, Тодор; DPF scan C_20100331.pdf shows 'Dasa'",
+      "root_cause": "Data mixing during extraction - Peter's name incorrectly copied from Team B record",
+      "notes": "Dasha = Dagmar Winklerová (confirmed from name-mapping.csv and TRAP-Participants.csv)"
+    },
+    {
+      "id": "D007",
+      "type": "CORRECTION",
+      "date": "2010-04-01",
+      "severity": "MAJOR",
+      "description": "Wrong walker identity - Peter should be Dasha",
+      "fields": {
+        "Walkers_Original": {
+          "current": "Sonja | Bara | Elena | Peter | Todor",
+          "corrected": "Elena | Bara | Sonja | Todor | Dasha",
+          "action": "REPLACE"
+        },
+        "Walkers_Standardised": {
+          "current": "Sona Holičková | Bara Weissová | Elena Bozhinova | Petar Minkov | Todor Vulchev",
+          "corrected": "Elena Bozhinova | Bara Weissová | Sona Holičková | Todor Vulchev | Dagmar Winklerová",
+          "action": "REPLACE"
+        }
+      },
+      "investigation": "Investigation 1: Same root cause as D006. Peter was on Team B, not Team C.",
+      "source_evidence": "BG diary: Екип: Елена, Бара, Соня, Тодор, Даша; DPF Day 14 confirms 'Dasa'"
+    },
+    {
+      "id": "D008",
+      "type": "CORRECTION",
+      "date": "2010-04-09",
+      "severity": "Minor",
+      "description": "[unclear] resolved to Jiri",
+      "fields": {
+        "Walkers_Original": {
+          "current": "Bara | Sonja | Elena | Todor | [unclear]",
+          "corrected": "Elena | Bara | Sonja | Todor | Jiri",
+          "action": "REPLACE"
+        },
+        "Walkers_Standardised": {
+          "current": "Bara Weissová | Sona Holičková | Elena Bozhinova | Todor Vulchev",
+          "corrected": "Elena Bozhinova | Bara Weissová | Sona Holičková | Todor Vulchev | Jiří Musil",
+          "action": "REPLACE"
+        }
+      },
+      "investigation": "Investigation 3: Both DPF and BG diary agree on Jiri (Иржи). No source conflict.",
+      "source_evidence": "DPF Day 18 shows 'Jiri'; BG diary: Екип: Елена, Бара, Соня, Тодор, Иржи"
+    },
+    {
+      "id": "D009",
+      "type": "VERIFY_NO_CHANGE",
+      "date": "2010-04-02",
+      "severity": "MAJOR",
+      "description": "Unit divergence - CSV confirmed correct via continuity analysis",
+      "fields": {
+        "End Unit": {
+          "current": "30716",
+          "verified": "30716",
+          "action": "NO_CHANGE"
+        }
+      },
+      "investigation": "Investigation 7: Continuity analysis proves CSV correct. DPF (30718) would create overlap with Apr 7 start (30717).",
+      "source_evidence": "Apr 1 ends 30686, Apr 2 CSV ends 30716, Apr 7 starts 30717 - perfect continuity",
+      "root_cause": "DPF handwriting transcription error (6/8 confusion)"
+    },
+    {
+      "id": "D010",
+      "type": "ADD_RECORD",
+      "date": "2010-04-13",
+      "severity": "MAJOR",
+      "description": "Entire record missing from CSV",
+      "new_record": {
+        "Date": "2010-04-13",
+        "Team": "C",
+        "Start Unit": "30801",
+        "End Unit": "30809",
+        "Leader": "Bara Weissová",
+        "Walkers_Original": "Adela | Bara | Sonja | Lindsay | Rebecca",
+        "Walkers_Standardised": "Adela Sobotkova | Bara Weissová | Sona Holičková | Lindsay Prazak | Rebecca",
+        "PDA_Operator": "",
+        "Paper_Recorder": "",
+        "Data_Editor": "",
+        "GPS_Operator": "",
+        "Photographer": "",
+        "Diary_Author": "",
+        "DPF_Author": "Sona Holičková",
+        "XLS_Source": "Kaz10_SurveySummary.xls",
+        "PDF_Source": "C_2010Summary.pdf",
+        "Extraction_Notes": "Added from DPF Summary Day 19; missed in original extraction",
+        "QA_Notes": "QA correction D010: Record discovered missing during manual QA review"
+      },
+      "investigation": "DPF Summary page 7 shows Day 19 = Apr 13 with units 30801-30809. Unit sequence continuous (Apr 9 ends 30800).",
+      "source_evidence": "DPF Summary page 7, Day 19",
+      "notes": "Rebecca surname needs research (follow-up F003). BG diary ended Apr 11."
+    }
+  ],
+  "summary": {
+    "total_issues": 10,
+    "corrections_to_apply": 7,
+    "verifications_no_change": 2,
+    "new_records_to_add": 1,
+    "records_affected": [
+      "2010-03-26",
+      "2010-03-27",
+      "2010-03-28",
+      "2010-03-30",
+      "2010-03-31",
+      "2010-04-01",
+      "2010-04-09"
+    ],
+    "records_verified": [
+      "2010-03-21",
+      "2010-04-02"
+    ],
+    "records_to_add": [
+      "2010-04-13"
+    ]
+  },
+  "follow_up_actions": [
+    {
+      "id": "F001",
+      "item": "Research Asen surname (visitor Mar 27-28)",
+      "priority": "Medium"
+    },
+    {
+      "id": "F002",
+      "item": "Dasha surname RESOLVED: Dagmar Winklerová",
+      "priority": "COMPLETED",
+      "resolution": "Confirmed via name-mapping.csv and TRAP-Participants.csv (2010-spring)"
+    },
+    {
+      "id": "F003",
+      "item": "Confirm Rebecca surname for Apr 13 record",
+      "priority": "Medium"
+    },
+    {
+      "id": "F004",
+      "item": "Investigate root cause of Peter/Dasha data mixing",
+      "priority": "High"
+    },
+    {
+      "id": "F005",
+      "item": "Check if similar Peter errors exist in other Kazanluk teams",
+      "priority": "High"
+    }
+  ]
+}

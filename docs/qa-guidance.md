@@ -406,7 +406,11 @@ Required sections:
    - Reasoning
    - **Inline User Decision checkbox** (`[ ] Approve` / `[ ] Modify`)
    - **Status field** (`Pending` / `✅ APPLIED (YYYY-MM-DD)`)
-7. **Summary Statistics:** Records checked, confirmed, issues found, corrections required
+7. **Source Observations:** Document source-vs-source divergences:
+   - **Source Divergences table:** Date, field, DPF value, diary value, CSV value, resolution, note
+   - **Source Reliability Patterns:** Confirm/refine O-series observations (e.g., O1: DPF > diary for units)
+   - **Implications for Future QA:** Patterns to watch for, methodology refinements
+8. **Summary Statistics:** Records checked, confirmed, issues found, corrections required
 
 **Format notes:**
 - Daily breakdown is **required** — each record must have explicit verification entry

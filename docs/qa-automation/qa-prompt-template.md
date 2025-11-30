@@ -167,6 +167,7 @@ After verifying individual records:
    - Record-by-record verification (REQUIRED)
    - Issues summary table
    - Corrections with inline User Decision checkboxes
+   - **Source Observations section** (REQUIRED)
    - Summary statistics
 
 2. **For each discrepancy:**
@@ -180,6 +181,12 @@ After verifying individual records:
    - Issues found
    - Corrections required
 
+4. **Document source observations:**
+   - Record ALL cases where sources disagree (even if CSV is correct)
+   - Note which source was correct and why
+   - Identify patterns that confirm or refine source priority rules
+   - Document implications for future QA
+
 ---
 
 ## Output Requirements
@@ -192,6 +199,35 @@ Follow the template in `docs/qa-automation/qa-runsheet-template.md`:
 - **User Decision checkboxes** appear with each correction (inline)
 - **Status field** for each correction (Pending initially)
 - **Non-survey days:** Use standard notation
+- **Source Observations section is REQUIRED** — document source divergences
+
+### Source Observations Format
+
+Include in every runsheet:
+
+```markdown
+## Source Observations
+
+### Source Divergences
+
+| Date | Field | DPF Value | Diary Value | CSV Value | Resolution | Note |
+|------|-------|-----------|-------------|-----------|------------|------|
+| Nov 2 | End_Unit | 71524 | 61524 | 71524 | DPF correct | Diary digit transposition |
+
+{If no divergences: "No source divergences observed."}
+
+### Source Reliability Patterns
+
+- **O1 confirmed:** DPF more reliable than diary for unit numbers (N cases)
+- **New pattern:** [if any observed]
+
+### Implications for Future QA
+
+- [Refinements to source priority rules]
+- [Patterns to watch for]
+```
+
+**Important:** Document source divergences even when CSV is already correct. This builds institutional knowledge about source reliability.
 
 ### Corrections JSON Format
 
@@ -308,6 +344,7 @@ Before finishing, verify:
 - [ ] Discrepancies added to qa-discrepancies-log.md
 - [ ] Summary statistics calculated
 - [ ] Sources consulted documented
+- [ ] Source Observations section completed (divergences, patterns, implications)
 
 ---
 

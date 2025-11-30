@@ -1,0 +1,1825 @@
+
+ ▐▛███▜▌   Claude Code v2.0.54
+▝▜█████▛▘  Opus 4.5 · Claude Max
+  ▘▘ ▝▝    /…/synology/Adela/TRAP-WD-2020-04/trap-extraction
+══════════════════ Conversation compacted · ctrl+o for history ═════════════════
+  ⎿  Referenced file outputs/attribution.csv
+  ⎿  Read outputs/qa-runsheet-elhovo-2009-autumn-c.md (287 lines)
+  ⎿  Referenced file outputs/source-inventory.md
+  ⎿  Referenced file planning/follow-up-actions.md
+  ⎿  Referenced file outputs/qa-runsheet-elhovo-2009-autumn-a.md
+  ⎿  Todo list read (5 items)
+
+● Continuing with the remaining corrections. Let me read the relevant lines
+  from attribution.csv to apply D021 and D023.
+
+● Read(outputs/attribution.csv)
+  ⎿  Read 50 lines
+
+● Found the lines. Now applying the remaining corrections:
+
+  D021 (Line 84): Removing Georgi from Oct 22 walkers
+  D023 (Line 124): Correcting Nov 13 Start_Unit from 80839 to 80939
+
+● Update(outputs/attribution.csv)
+  ⎿  Updated outputs/attribution.csv with 1 addition and 1 removal       
+       81    2009-10-21,A,60195,60273,Adela Sobotkova,Adela | Ilija | 
+            Eric | Aneta | Martin,Adela Sobotkova | Ilija Iliev | Erik 
+            Andersen | Aneta Kohoutová | Martin Mladenov,Adela 
+            Sobotkova,Aneta Kohoutová,,Martin Mladenov,,Adela 
+            Sobotkova,,ELH09 SurveySummary.xls,Diary Team 
+            A.doc,"Narrative extraction: Same as Monday - Our people 
+            drive to the quarry... Martin drops me off | Role extraction:
+             PDA_Operator=Adela (Diary Team A.doc, medium); 
+            Paper_Recorder=Aneta (Diary Team A.doc, medium); 
+            GPS_Operator=Martin (Diary Team A.doc, medium)",
+       82    2009-10-21,B,70241,70342,Shawn Ross,Scott | Vera | Shawn | 
+            Yabor | Stanislav | Stefan,Scott Jackson | Vera Doležálková |
+             Shawn Ross | Yavor Rusev | Stanislav Marchovski | Stefan 
+            Bakardzhiev,,Vera Doležálková,,,,Shawn Ross,,ELH09 
+            SurveySummary.xls,Diary Team B.doc,"Extracted from Elhovo 
+            2009 diary (Six walkers) | Role extraction: 
+            Paper_Recorder=Vera (DiaryTeamB.doc, high)",
+       83    2009-10-21,C,80168,80305,Bara Weissová,Bara | Petra Tušlová 
+            | Sona | Tereza | Todor | Georgi,Bara Weissová | Petra 
+            Tušlová | Sona Holičková | Tereza Dobrovodská | Todor Vulchev
+             | Georgi Nekhrizov,,,,,Petra Tušlová,,,ELH09 
+            SurveySummary.xls,Diary Team C.doc,"Extracted from Elhovo 
+            2009 diary | Role extraction: Photographer=Petra (The Diary 
+            of Team C.doc, medium)",
+       84 -  2009-10-22,C,80306,80404,Bara Weissová,Bara | Petra Tušlová 
+          -  | Sona | Tereza | Todor | Georgi
+          -  ,Bara Weissová | Petra Tušlová | Sona Holičková | Tereza 
+          -  Dobrovodská | Todor Vulchev | Georgi Nekhrizov
+          -  ,,,,,Petra Tušlová,,,ELH09 SurveySummary.xls,Diary Team 
+          -  C.doc,"Extracted from Elhovo 2009 diary | Role extraction: 
+          -  Photographer=Petra (The Diary of Team C.doc, high)",
+       84 +  2009-10-22,C,80306,80404,Bara Weissová,Bara | Petra Tušlová 
+          +  | Sona | Tereza | Todor
+          +  ,Bara Weissová | Petra Tušlová | Sona Holičková | Tereza 
+          +  Dobrovodská | Todor Vulchev
+          +  ,,,,,Petra Tušlová,,,ELH09 SurveySummary.xls,Diary Team 
+          +  C.doc,"Extracted from Elhovo 2009 diary | Role extraction: 
+          +  Photographer=Petra (The Diary of Team C.doc, high)
+          +   | QA D021: Removed Georgi - diary states 'walked in five 
+          +  people because Georgi was away' (27 Nov 2025)",
+       85    2009-10-22,B,70343,70477,Shawn Ross,Scott | Vera | Shawn | 
+            Yabor | Stanislav | Stefan,Scott Jackson | Vera Doležálková |
+             Shawn Ross | Yavor Rusev | Stanislav Marchovski | Stefan 
+            Bakardzhiev,Scott Jackson,Vera Doležálková,,,,Shawn 
+            Ross,,ELH09 SurveySummary.xls,Diary Team B.doc,"Extracted 
+            from Elhovo 2009 diary (Six walkers) | Role extraction: 
+            PDA_Operator=Scott (DiaryTeamB.doc, high); 
+            Paper_Recorder=Vera (DiaryTeamB.doc, medium)",
+       86    2009-10-22,A,60274,60376,Adela Sobotkova,Adela | Ilija | 
+            Eric | Aneta | Martin,Adela Sobotkova | Ilija Iliev | Erik 
+            Andersen | Aneta Kohoutová | Martin Mladenov,Adela 
+            Sobotkova,Aneta Kohoutová,,Martin Mladenov,,Adela 
+            Sobotkova,,ELH09 SurveySummary.xls,Diary Team 
+            A.doc,"Extracted from Elhovo 2009 diary | Role extraction: 
+            PDA_Operator=Adela (Diary Team A.doc, medium); 
+            Paper_Recorder=Aneta (Diary Team A.doc, medium); 
+            GPS_Operator=Martin (Diary Team A.doc, medium)",
+       87    2009-10-23,C,80405,80494,Bara Weissová,Bara | Petra | Sona |
+             Jana | Todor | Georgi,Bara Weissová | Petra Tušlová | Sona 
+            Holičková | Jana Ryšavková | Todor Vulchev | Georgi 
+            Nekhrizov,,,,,,Petra Tušlová,,ELH09 SurveySummary.xls,The 
+            Diary of Team C.doc,"Extracted from diary narrative - Tereza 
+            sick, replaced by Jana | Diary states: ""Today we were 
+            walking without Tereza because she was sick, but we had Jana 
+            instead"" | Role extraction: Author=Petra (The Diary of Team 
+            C.doc, high)",
+
+● Update(outputs/attribution.csv)
+  ⎿  Updated outputs/attribution.csv with 1 addition and 1 removal       
+       121    2009-11-12,B,71371,71405,Shawn Ross,Shawn | Martin | Todor 
+             | Katerina | Lizzy,Shawn Ross | Martin Mladenov | Todor 
+             Vulchev | Katarina Čuláková | UNMAPPED: Lizzy,,UNMAPPED: 
+             Lizzy,,,,Shawn Ross,,ELH09 SurveySummary.xls,Diary Team 
+             B.doc,"Extracted from Elhovo 2009 diary (Five walkers) | 
+             Role extraction: Paper_Recorder=Lizzy (DiaryTeamB.doc, 
+             medium)",
+       122    2009-11-12,C,80910,80939,Scott Jackson,Scott | Stanislav | 
+             Jarka | Radko | Jana,Scott Jackson | Stanislav Marchovski | 
+             Jarmila Švédová | Radko Sedláček | Jana Ryšavková,,Jarmila 
+             Švédová,,,,Petra Tušlová,,ELH09 SurveySummary.xls,Diary Team
+              C.doc,"Extracted from Elhovo 2009 diary | Role extraction: 
+             Paper_Recorder=Jarka (The Diary of Team C.doc, medium)",
+       123    2009-11-13,B,71406,71463,Shawn Ross,Shawn | Martin | Todor 
+             | Dasha | Lizzy,Shawn Ross | Martin Mladenov | Todor Vulchev
+              | Dagmar Winklerová | UNMAPPED: Lizzy,,UNMAPPED: 
+             Lizzy,,,,Shawn Ross,,ELH09 SurveySummary.xls,Diary Team 
+             B.doc,"Extracted from Elhovo 2009 diary (Five walkers) | 
+             Role extraction: Paper_Recorder=Lizzy (DiaryTeamB.doc, 
+             medium)",
+       124 -  2009-11-13,C,80839
+           -  ,80969,Scott Jackson,Scott | Stanislav | Jarka | Radko | 
+           -  Jana,Scott Jackson | Stanislav Marchovski | Jarmila Švédová
+           -   | Radko Sedláček | Jana Ryšavková,,Jarmila 
+           -  Švédová,,,,Petra Tušlová,,ELH09 SurveySummary.xls,Diary 
+           -  Team C.doc,"Extracted from Elhovo 2009 diary | Role 
+           -  extraction: Paper_Recorder=Jarka (The Diary of Team C.doc, 
+           -  medium)",
+       124 +  2009-11-13,C,80939
+           +  ,80969,Scott Jackson,Scott | Stanislav | Jarka | Radko | 
+           +  Jana,Scott Jackson | Stanislav Marchovski | Jarmila Švédová
+           +   | Radko Sedláček | Jana Ryšavková,,Jarmila 
+           +  Švédová,,,,Petra Tušlová,,ELH09 SurveySummary.xls,Diary 
+           +  Team C.doc,"Extracted from Elhovo 2009 diary | Role 
+           +  extraction: Paper_Recorder=Jarka (The Diary of Team C.doc, 
+           +  medium) | QA D023: Corrected Start_Unit 80839→80939 - typo 
+           +  confirmed by sequential unit logic (27 Nov 2025)",
+       125    2009-11-14,C,80970,81002,Scott Jackson,Scott | Stanislav | 
+             Lizzy | Radko,Scott Jackson | Stanislav Marchovski | 
+             UNMAPPED: Lizzy | Radko Sedláček,,,,,,Petra Tušlová,,ELH09 
+             SurveySummary.xls,Diary Team C.doc,Extracted from Elhovo 
+             2009 diary,No role data available
+       126    2009-11-14,A,61340,61344,Adela Sobotkova,Adela | Katya | 
+             Marto,Adela Sobotkova | Katarina Čuláková | Martin 
+             Mladenov,,,,,,,,ELH09 SurveySummary.xls,Diary Team 
+             A.doc,"Manual extraction: Non-survey day - total collections
+              at sites by Robovo, Slamino and Karavelovo | One transect 
+             (61340-344) surveyed when new scatter discovered | Diary: 
+             ""Team A heads out (Adela, Katya and Marto) to do total pick
+              ups at the sites""",NON-SURVEY DAY: Total collections 
+             activity | No role data available
+       127    2010-03-17,C,30200,30223,Bara Weissová,Elena | Bistra | 
+             Bara | Jana | Sonja | Lindsay,Elena Bozhinova | Bistra 
+             Gyaurova | Bara Weissová | Jana Ryšavková | Sona Holičková |
+              Lindsay Prazak,,,,,,Jana 
+             Ryšavková,,Kaz10_SurveySummary.xls,"C_2010Summary.pdf, 
+             C_2010Diary_BG.doc","Extracted from page 1, form 1 (Day 1); 
+             Updated from diary",No role data available
+
+● Both corrections applied successfully. Now updating the runsheet to mark
+  all corrections as "Applied" and then adding to the discrepancies log.
+
+● Read(outputs/qa-runsheet-elhovo-2009-autumn-c.md)
+  ⎿  Read 118 lines
+
+● Read(planning/qa-discrepancies-log.md)
+  ⎿  Error reading file
+
+● Let me check for the discrepancies log location:
+
+● Search(pattern: "**/*discrepanc*.md")
+  ⎿  Found 2 files (ctrl+o to expand)
+
+● Read(docs/qa-discrepancies-log.md)
+  ⎿  Read 482 lines
+
+● Now I'll update the runsheet with "Applied" status and add entries to the
+  discrepancies log:
+
+● Update(outputs/qa-runsheet-elhovo-2009-autumn-c.md)
+  ⎿  Updated outputs/qa-runsheet-elhovo-2009-autumn-c.md with 2 additions
+       196    - [X] Approve
+       197    - [ ] Modify: _______________
+       198    
+       199 +  **Status:** ✅ APPLIED (27 Nov 2025)
+       200 +  
+       201    ---
+       202    
+       203    ### D021: Remove Georgi from Oct 22 record
+
+● Update(outputs/qa-runsheet-elhovo-2009-autumn-c.md)
+  ⎿  Updated outputs/qa-runsheet-elhovo-2009-autumn-c.md with 2 additions
+       230    - [X] Approve
+       231    - [ ] Modify: _______________
+       232    
+       233 +  **Status:** ✅ APPLIED (27 Nov 2025)
+       234 +  
+       235    ---
+       236    
+       237    ### D023: Correct Nov 13 Start_Unit
+
+● Update(outputs/qa-runsheet-elhovo-2009-autumn-c.md)
+  ⎿  Updated outputs/qa-runsheet-elhovo-2009-autumn-c.md with 2 additions
+       250    - [X] Approve
+       251    - [ ] Modify: _______________
+       252    
+       253 +  **Status:** ✅ APPLIED (27 Nov 2025)
+       254 +  
+       255    ---
+       256    
+       257    ## Summary Statistics
+
+● Update(outputs/qa-runsheet-elhovo-2009-autumn-c.md)
+  ⎿  Updated outputs/qa-runsheet-elhovo-2009-autumn-c.md with 1 addition an
+      1 removal
+       289    ---
+       290    
+       291    **Document created:** 26 November 2025
+       292 -  **Last updated:** 26 November 2025
+       292 +  **Last updated:** 27 November 2025
+
+● Now adding Team C entries to the discrepancies log:
+
+● Update(docs/qa-discrepancies-log.md)
+  ⎿  Updated docs/qa-discrepancies-log.md with 10 additions              
+       469    
+       470    **D016 Note:** Original CSV had Eric/Erik Andersen. A 
+             crashed session partially applied corrections using wrong 
+             Tereza (Blažková). This session identified the correct 
+             Tereza via team membership analysis: T. Dobrovodská was on 
+             Team C until Oct 22, sick Oct 23, then available to 
+             substitute for Eric on Team A Oct 26-29.
+       471    
+       472 +  ### Elhovo 2009 Autumn Team C (Complete — 27 Nov 2025)
+       473 +  
+       474 +  | ID | Action | Status |
+       475 +  |----|--------|--------|
+       476 +  | D019 | ✅ QA_Notes corrected for Oct 14, 16, 17, 18 — 
+           + "Non-survey day (no field walking conducted)" | Done |
+       477 +  | D020 | ✅ No correction needed — SU forms confirm CSV 
+           + units correct (diary error) | Resolved |
+       478 +  | D021 | ✅ Removed Georgi from Oct 22 walkers (diary: 
+           + "walked in five because Georgi was away") | Done |
+       479 +  | D022 | ✅ No correction needed — minor end unit 
+           + discrepancy (80938 vs 80939) accepted | Accepted |
+       480 +  | D023 | ✅ Corrected Nov 13 Start_Unit 80839→80939 (typo —
+           +  unit sequence impossible) | Done |
+       481 +  
+       482    ---
+       483    
+       484    ## Notes
+
+● Team C QA corrections complete. All approved corrections have been
+  applied:
+
+  | ID   | Correction
+                 | Status    |
+  |------|------------------------------------------------------------------
+  ---------------|-----------|
+  | D019 | QA_Notes for Oct 14, 16, 17, 18 → "Non-survey day (no field
+  walking conducted)" | ✅ Applied |
+  | D021 | Removed Georgi from Oct 22 walkers
+                 | ✅ Applied |
+  | D023 | Nov 13 Start_Unit 80839 → 80939
+                 | ✅ Applied |
+
+  Files updated:
+  - outputs/attribution.csv — 6 field corrections across 6 records
+  - outputs/qa-runsheet-elhovo-2009-autumn-c.md — marked all corrections as
+  "APPLIED"
+  - docs/qa-discrepancies-log.md — added Team C section
+
+  Elhovo 2009 Autumn QA is now complete (Teams A, B, and C all verified).
+  Would you like me to commit these changes and identify the next study
+  area/season for QA?
+
+> since we bridged a /compact event, can you double-check consistency across
+ the discrecpency record, the run sheet, and the attribtuion CSV? After you 
+do that and correct any errors / omissions you find, you can commit and push
+ all files 
+
+● Good idea. Let me cross-check all three files for Team C corrections.
+
+● Read(outputs/qa-runsheet-elhovo-2009-autumn-c.md)
+  ⎿  Read 293 lines
+
+● Read(docs/qa-discrepancies-log.md)
+  ⎿  Read 33 lines
+
+● Search(pattern: "2009-10-1[4678],C", path: "outputs/attribution.csv",
+        output_mode: "content")
+  ⎿  Found 4 lines (ctrl+o to expand)
+
+● Search(pattern: "2009-10-22,C", path: "outputs/attribution.csv", output_mode:
+        "content")
+  ⎿  Found 1 line (ctrl+o to expand)
+
+● Search(pattern: "2009-11-13,C", path: "outputs/attribution.csv", output_mode:
+        "content")
+  ⎿  Found 1 line (ctrl+o to expand)
+
+● Cross-check results:
+
+  | Issue                           | Runsheet              | Discrepancies
+  Log | CSV                                             | Status     |
+  |---------------------------------|-----------------------|---------------
+  ----|-------------------------------------------------|------------|
+  | D019 (Oct 14,16,17,18 QA_Notes) | ✅ Documented, APPLIED | ✅ Documented
+        | ✅ "Non-survey day (no field walking conducted)" | Consistent |
+  | D020 (Oct 15 units)             | ✅ No action needed    | ✅ Resolved
+        | N/A                                             | Consistent |
+  | D021 (Oct 22 Georgi)            | ✅ Documented, APPLIED | ✅ Done
+        | ✅ Georgi removed, Source_Notes updated          | Consistent |
+  | D022 (Nov 12 end unit)          | ✅ Accepted            | ✅ Accepted
+        | N/A                                             | Consistent |
+  | D023 (Nov 13 start unit)        | ✅ Documented, APPLIED | ✅ Done
+        | ✅ 80939 (was 80839), Source_Notes updated       | Consistent |
+
+  Found one minor inconsistency in runsheet:
+
+  Line 58 says "retain 'MISSING: Survey units | No role data available'" but
+   the actual correction (per user feedback) was to replace it entirely. The
+   Corrections Required section (lines 177-185) correctly shows the
+  before/after. Let me fix that inconsistency:
+
+● Update(outputs/qa-runsheet-elhovo-2009-autumn-c.md)
+  ⎿  Updated outputs/qa-runsheet-elhovo-2009-autumn-c.md with 1 addition an
+      1 removal
+       55    - **Diary:** "We didn't walk in the fields because the 
+            Bulgarians from museum were tired"
+       56    - **CSV:** No units (correct), but has walkers listed and 
+            erroneous QA_Note
+       57    - **Issue D019:** QA_Notes contains "No autumn survey 
+            season: No autumn 2009 survey season - diaries end in 
+            March/April" — INCORRECT
+       58 -  - **Action:** Remove erroneous QA_Note text; retain 
+          - "MISSING: Survey units | No role data available"
+       58 +  - **Action:** Replace with "Non-survey day (no field walking
+          +  conducted)"
+       59    
+       60    ### Oct 15 (Thu) — Units 80062-80115 ⚠️
+       61    - **Diary:** Units 80062-80103 (54 units total per diary 
+            table)
+
+● Update(outputs/qa-runsheet-elhovo-2009-autumn-c.md)
+  ⎿  Updated outputs/qa-runsheet-elhovo-2009-autumn-c.md with 3 additions  
+     and 3 removals
+       69    - **Diary:** "Today we didn't walk because it was raining"
+       70    - **CSV:** No units (correct), but has erroneous QA_Note
+       71    - **Issue D019:** Same erroneous QA_Note as Oct 14
+       72 -  - **Action:** Remove erroneous QA_Note text
+       72 +  - **Action:** Replace with "Non-survey day (no field walking
+          +  conducted)"
+       73    
+       74    ### Oct 17 (Sat) — No survey ⚠️
+       75    - **Diary:** "It was also raining today so we didn't walk 
+            again"
+       76    - **CSV:** No units (correct), but has erroneous QA_Note
+       77    - **Issue D019:** Same erroneous QA_Note as Oct 14
+       78 -  - **Action:** Remove erroneous QA_Note text
+       78 +  - **Action:** Replace with "Non-survey day (no field walking
+          +  conducted)"
+       79    
+       80    ### Oct 18 (Sun) — No survey ⚠️
+       81    - **Diary:** "A trip to Burgas"
+       82    - **CSV:** No units (correct), but has erroneous QA_Note
+       83    - **Issue D019:** Same erroneous QA_Note as Oct 14
+       84 -  - **Action:** Remove erroneous QA_Note text
+       84 +  - **Action:** Replace with "Non-survey day (no field walking
+          +  conducted)"
+       85    
+       86    ### Oct 20 (Tue) — Units 80116-80167 ✓
+       87    - **Diary:** Units 80116-80167 | Roles: Petra=PDA training, 
+            Sona=paper, Tereza=GPS
+
+● Now let me check if the discrepancies log needs the detailed entries for
+  D019, D021, D023 (like D011-D018 have):
+
+● Read(docs/qa-discrepancies-log.md)
+  ⎿  Read 50 lines
+
+● I need to add detailed entries for D019, D021, D023 and update the summary
+   statistics. Let me add these:
+
+● Update(docs/qa-discrepancies-log.md)
+  ⎿  Updated docs/qa-discrepancies-log.md with 87 additions              
+       381    
+       382    ---
+       383    
+       384 +  ### D019: 2009-10-14, 2009-10-16, 2009-10-17, 2009-10-18, 
+           + Team C — Erroneous QA_Notes
+       385 +  
+       386 +  **Type:** Metadata error (4 records)
+       387 +  
+       388 +  **Affected records:** Oct 14, Oct 16, Oct 17, Oct 18 (all 
+           + Team C non-survey days)
+       389 +  
+       390 +  **Current QA_Notes contained:**
+       391 +  > "MISSING: Survey units | No role data available | No 
+           + autumn survey season: No autumn 2009 survey season - diaries
+           +  end in March/April"
+       392 +  
+       393 +  **Issues:**
+       394 +  1. The "No autumn survey season" statement is factually 
+           + incorrect — the diary covers Oct-Nov 2009
+       395 +  2. Nothing is "MISSING" — these are complete records of 
+           + legitimate non-survey days
+       396 +  
+       397 +  **Diary evidence:**
+       398 +  - Oct 14: "We didn't walk in the fields because the 
+           + Bulgarians from museum were tired"
+       399 +  - Oct 16: "Today we didn't walk because it was raining"
+       400 +  - Oct 17: "It was also raining today so we didn't walk 
+           + again"
+       401 +  - Oct 18: "A trip to Burgas"
+       402 +  
+       403 +  **Resolution:** Replace QA_Notes with "Non-survey day (no 
+           + field walking conducted)"
+       404 +  
+       405 +  ---
+       406 +  
+       407 +  ### D020: 2009-10-15, Team C — Diary Unit Error (No 
+           + Correction Needed)
+       408 +  
+       409 +  **Type:** Diary error — CSV is correct
+       410 +  
+       411 +  | Source | Value | Status |
+       412 +  |--------|-------|--------|
+       413 +  | Diary (The Diary of Team C.doc) | End: 80103 | ✗ ERROR |
+       414 +  | SU Forms (80115.pdf) | End: 80115 | ✓ PRIMARY |
+       415 +  | CSV (current) | End: 80115 | ✓ CORRECT |
+       416 +  
+       417 +  **Resolution:** No correction needed — CSV value is correct
+           +  per SU forms
+       418 +  
+       419 +  **Analysis:** Diary table shows "54 total units" with end 
+           + 80103, but 80062-80103 is only 42 units. The CSV end unit 
+           + 80115 gives 54 units (80062-80115 inclusive), matching the 
+           + stated total. Diary had a transcription error in the summary
+           +  table.
+       420 +  
+       421 +  ---
+       422 +  
+       423 +  ### D021: 2009-10-22, Team C — Walker Error (Georgi Absent)
+       424 +  
+       425 +  **Type:** Personnel error
+       426 +  
+       427 +  | Field | CSV Value (original) | Corrected Value |
+       428 +  |-------|----------------------|-----------------|
+       429 +  | Walkers_Original | Bara \| Petra Tušlová \| Sona \| 
+           + Tereza \| Todor \| Georgi | Bara \| Petra Tušlová \| Sona \|
+           +  Tereza \| Todor |
+       430 +  | Walkers_Standardised | ...Todor Vulchev \| Georgi 
+           + Nekhrizov | ...Todor Vulchev |
+       431 +  
+       432 +  **Diary evidence:** "Today we walked in five people because
+           +  Georgi was away"
+       433 +  
+       434 +  **Resolution:** Remove Georgi/Georgi Nekhrizov from both 
+           + walker fields
+       435 +  
+       436 +  ---
+       437 +  
+       438 +  ### D022: 2009-11-12, Team C — Minor End Unit Discrepancy 
+           + (Accepted)
+       439 +  
+       440 +  **Type:** Minor numeric discrepancy
+       441 +  
+       442 +  | Source | Value |
+       443 +  |--------|-------|
+       444 +  | Diary (The Diary of Team C.doc) | End: 80938 |
+       445 +  | CSV (current) | End: 80939 |
+       446 +  
+       447 +  **Resolution:** Accept CSV value (off by 1, minor)
+       448 +  
+       449 +  **Note:** Unable to verify with SU forms. Discrepancy is 
+           + minimal and does not affect data integrity.
+       450 +  
+       451 +  ---
+       452 +  
+       453 +  ### D023: 2009-11-13, Team C — Start Unit Typo
+       454 +  
+       455 +  **Type:** Data entry error
+       456 +  
+       457 +  | Source | Value |
+       458 +  |--------|-------|
+       459 +  | CSV (original) | Start: 80839 |
+       460 +  | Diary (The Diary of Team C.doc) | Start: 80939 |
+       461 +  
+       462 +  **Resolution:** Correct Start_Unit from 80839 to 80939
+       463 +  
+       464 +  **Evidence:**
+       465 +  - Diary clearly states units 80939-80969
+       466 +  - Unit 80839 is impossible — it's less than Nov 12's start 
+           + unit (80910)
+       467 +  - Sequential unit progression confirms: Nov 12 ends ~80939,
+           +  Nov 13 starts 80939
+       468 +  
+       469 +  ---
+       470 +  
+       471    ## Summary Statistics
+       472    
+       473    | Season | Value Discrepancies | Missing Records | Source 
+             Gaps |
+
+● Now update the Summary Statistics table to include Team C:
+
+● Update(docs/qa-discrepancies-log.md)
+  ⎿  Updated docs/qa-discrepancies-log.md with 1 addition                
+       475    | Elhovo 2010 Autumn | 7 | 2 | 3 |
+       476    | Elhovo 2009 Autumn Team B | 3 (unit fields) | 0 | 1 
+             (season-wide: no DPF scans) |
+       477    | Elhovo 2009 Autumn Team A | 1 (unit — diary error) + 4 
+             (walkers) + 1 (Diary_Author) | 0 | — |
+       478 +  | Elhovo 2009 Autumn Team C | 4 (QA_Notes) + 1 (walkers) + 
+           + 1 (unit) + 2 (diary errors) | 0 | — |
+       479    
+       480    ### Value Discrepancy Resolution (Elhovo 2010 Autumn)
+       481    
+
+● All files are now consistent. Let me commit and push:
+
+● Bash(git status)
+  ⎿  On branch master                               
+     Your branch is up to date with 'origin/master'.
+     … +12 lines (ctrl+o to expand)
+
+● Bash(git diff --stat docs/qa-discrepancies-log.md outputs/attribution.csv)
+  ⎿  docs/qa-discrepancies-log.md | 98 ++++++++++++++++++++++++++++++++++++
+    ++++++++
+     outputs/attribution.csv      | 12 +++---
+     2 files changed, 104 insertions(+), 6 deletions(-)
+
+
+● Bash(git log -3 --oneline)
+  ⎿ b449c22 feat(qa): complete QA for Elhovo 2009 Autumn Teams A & B       
+    528a5f0 feat(qa): complete QA pilot for Elhovo 2010 Autumn (16 records)
+    5a5c6f3 chore: reorganise archive structure for improved legibility
+
+
+● Bash(git add docs/qa-discrepancies-log.md outputs/attribution.csv
+      outputs/qa-runsheet-elhovo-2009-autumn-c.md
+      archive/cc-interactions/2025-11-27-a.txt && git commit…)
+  ⎿ [master aaecba9] feat(qa): complete QA for Elhovo 2009 Autumn Team C (2
+    0 records)
+     4 files changed, 1232 insertions(+), 6 deletions(-)
+    … +2 lines (ctrl+o to expand)
+
+
+● Bash(git push)
+  ⎿  To github.com:saross/trap-extraction.git
+        b449c22..aaecba9  master -> master
+
+● Consistency check complete. Found and fixed one minor inconsistency in
+  runsheet (action description for D019 records).
+
+  Committed and pushed:
+  - outputs/qa-runsheet-elhovo-2009-autumn-c.md (new - 293 lines)
+  - outputs/attribution.csv (6 field corrections across 6 records)
+  - docs/qa-discrepancies-log.md (+98 lines: detailed D019-D023 entries +
+  summary stats)
+  - archive/cc-interactions/2025-11-27-a.txt
+
+  Elhovo 2009 Autumn QA is now complete — all three teams (A, B, C) verified
+   against source documents.
+
+> wonderful. Are you satisfied enough with the way these reviews are going 
+that we could automate them a bit more? I don't think we need to go too far 
+with automation, there aren't that many batches, but for reproducibility I 
+think it would be useful to carefully craft a prompt that refers to the 
+appropriate source inventory, guidelines, and templates and that can take 
+*all* necessary actions to find and assess available sources, combine them 
+to *thoroughly* check attribution.csv, and then produce the discrepency 
+report (problems with attribution.csv *and* problems or discrepencies within
+ / between sources). Basically everything we've been doing together (review 
+recent conversations in archive/cc-interactions/ if necessary to 
+reconstruct). The goal here is to be able to run one prompt to produce 
+outcomes like what you just produced, and have it work with you or Gemini so
+ that I can also run QA on another model if that seems beneficial. We need 
+to plan carefully, so I've put on planning mode. Also, as a stage 0 of this 
+plan we should make sure that all recent learnings are captured in 
+source-inventory and QA guidelines (observations, heuristics, rules, etc.). 
+
+● This is a great idea - the process has stabilized enough that automation
+  makes sense. Let me explore what we have and what needs to be captured.
+
+● 2 Explore agents finished (ctrl+o to expand)
+   ├─ Explore QA docs and templates · 18 tool uses · 67.2k tokens
+   │  ⎿ Done
+   └─ Review recent QA interactions · 7 tool uses · 64.6k tokens
+      ⎿ Done
+
+● Excellent exploration results. Now let me read the current qa-guidance.md
+  and source-inventory.md to identify gaps in documented learnings:
+
+● Read(docs/qa-guidance.md)
+  ⎿  Read 617 lines
+
+● Read(outputs/source-inventory.md)
+  ⎿  Read 419 lines
+
+● I now have a comprehensive view. Let me identify what's missing from the
+  documentation based on recent work:
+
+  Gaps in qa-guidance.md:
+  1. Non-survey day convention: "Non-survey day (no field walking
+  conducted)" - not "MISSING"
+  2. QA citation format in Source_Notes: "QA D###: [description] (DD Mon
+  YYYY)"
+  3. Daily breakdown is required in runsheets (user emphasised this)
+  4. Inline Approve/Modify sections (must be with each correction)
+  5. Name disambiguation methodology (Tereza analysis, Lisi=Lizzy pattern)
+
+  Gaps in source-inventory.md:
+  1. Team C QA status needs updating
+  2. Team C SU form file-to-date index not populated
+
+  Before I proceed to planning the automation approach, I have some
+  clarifying questions:
+                                                                           
+● User answered Claude's questions:
+  ⎿  · For the automated QA prompt, what level of human involvement do you 
+     want during execution? → Fully autonomous
+     · Should the prompt handle CSV corrections directly, or stop at 
+     producing the runsheet? → I would suggest: produces runsheet, waits for
+      approval, then adds to a 'corrections' document that can be used to 
+     update the attributions CSV after all team-seasons have been assessed.
+
+     · What granularity should each QA run cover? → One team
+
+● Excellent - clear requirements. Let me now launch planning agents to think
+   through the prompt design from different angles:
+
+● 2 Plan agents finished (ctrl+o to expand)
+   ├─ Plan prompt structure · 17 tool uses · 87.2k tokens
+   │  ⎿ Done
+   └─ Plan corrections document format · 13 tool uses · 73.0k tokens
+      ⎿ Done
+
+● Excellent planning responses. Let me ask one clarifying question about the
+   corrections format, then I'll write up the final plan:
+                                                                           
+● User answered Claude's questions:
+  ⎿  · For the corrections document format, which approach do you prefer? → 
+     YAML-in-Markdown
+
+
+● Now I have all the information needed. Let me write the final plan:
+
+● Updated plan
+  ⎿  /plan to preview · ~/.claude/plans/glimmering-gathering-scroll.md
+
+● Plan created. Here's a summary:
+
+  Stage 0: Capture Learnings
+  - Update qa-guidance.md with non-survey day convention, QA citation
+  format, runsheet requirements, and name disambiguation methodology
+  - Update source-inventory.md with Team C completion status
+
+  Stage 1: Create QA Automation Infrastructure
+  - qa-reference-rules.md — Condensed quick-reference (~500 words)
+  - qa-runsheet-template.md — Based on Team C runsheet (best example)
+  - qa-corrections.md — YAML-in-Markdown accumulating corrections
+  - qa-prompt-template.md — Main parameterised prompt (~3000 words)
+
+  Key Design Decisions:
+  - Fully autonomous execution (runs to completion)
+  - One team per run
+  - Produces runsheet → user approves → corrections added to accumulating
+  document
+  - YAML-in-Markdown for corrections (machine-parseable + human-readable)
+  - Model-agnostic (works with Claude or Gemini)
+
+  Implementation Order: Stage 0 first (document learnings), then create the
+  four automation files, commit, and test on ELH 2010 Team A.
+  ⎿  User rejected Claude's plan:
+     ╭─────────────────────────────────────────────────────────────────────────╮
+     │ Plan: QA Automation System                                              │
+     │                                                                         │
+     │ Goal: Create a reusable QA prompt that can run autonomously to verify   │
+     │ attribution.csv records against source documents, produce runsheets, and│
+     │  accumulate corrections for batch application.                          │
+     │                                                                         │
+     │ Model-agnostic: Designed to work with Claude or Gemini.                 │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Stage 0: Capture Recent Learnings                                       │
+     │                                                                         │
+     │ Before creating automation, update existing documentation with learnings│
+     │  from recent QA sessions.                                               │
+     │                                                                         │
+     │ 0.1 Update docs/qa-guidance.md                                          │
+     │                                                                         │
+     │ Add these missing items discovered during ELH 2009 Teams A, B, C QA:    │
+     │                                                                         │
+     │ 1. Non-survey day convention (new section after "Error Severity"):      │
+     │   - QA_Notes should read: "Non-survey day (no field walking conducted)" │
+     │   - NOT "MISSING: Survey units" — nothing is missing, record is complete│
+     │   - Document the reason from diary (rain, rest day, excursion, etc.)    │
+     │ 2. QA citation format in Source_Notes:                                  │
+     │   - Format: QA D###: [description] (DD Mon YYYY)                        │
+     │   - Example: QA D021: Removed Georgi - diary states 'walked in five' (27│
+     │  Nov 2025)                                                              │
+     │ 3. Runsheet format requirements (update Phase 4):                       │
+     │   - Daily breakdown is required (record-by-record verification section) │
+     │   - Inline Approve/Modify checkboxes with each correction (not at end)  │
+     │   - Include "Status: ✅ APPLIED" after corrections are made             │
+     │ 4. New observation O4 (add to Observations section):                    │
+     │   - O4: Name disambiguation via team roster cross-reference             │
+     │   - Evidence: Tereza disambiguation (D016) - checked who was on which   │
+     │ team on which days                                                      │
+     │   - Implication: When multiple people share a name, use team membership │
+     │ constraints                                                             │
+     │ 5. Add reference to Team C runsheet in References section               │
+     │                                                                         │
+     │ 0.2 Update outputs/source-inventory.md                                  │
+     │                                                                         │
+     │ 1. Update extraction status:                                            │
+     │   - Change [ ] Elhovo 2009 diary (Team C) to [x] Elhovo 2009 diaries    │
+     │ (Teams A, B, C) — QA completed 27 November 2025                         │
+     │ 2. Add Team C SU form index entries discovered during QA:               │
+     │   - File 80103.pdf, 80115.pdf mappings if identified                    │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Stage 1: Create QA Automation Infrastructure                            │
+     │                                                                         │
+     │ 1.1 File Structure                                                      │
+     │                                                                         │
+     │ docs/qa-automation/                                                     │
+     │     qa-prompt-template.md       # Main parameterised prompt             │
+     │     qa-reference-rules.md       # Condensed rules (embed in prompt)     │
+     │     qa-runsheet-template.md     # Output structure template             │
+     │     qa-corrections.md           # Accumulating corrections document     │
+     │                                                                         │
+     │ 1.2 Create qa-reference-rules.md (~500 words)                           │
+     │                                                                         │
+     │ Condensed quick-reference extracted from qa-guidance.md:                │
+     │                                                                         │
+     │ # QA Reference Rules (Quick Reference)                                  │
+     │                                                                         │
+     │ ## Source Priority                                                      │
+     │ | Data Type | PRIMARY | SECONDARY |                                     │
+     │ |-----------|---------|-----------|                                     │
+     │ | Unit numbers | DPF scan / SU forms | Diary |                          │
+     │ | Walker names | Diary | DPF scan |                                     │
+     │ | Roles | Diary only | — |                                              │
+     │                                                                         │
+     │ ## Rules (Must Be True)                                                 │
+     │ - **R1:** All role holders must appear in Walkers list                  │
+     │ - **R2:** Leader must appear in Walkers list                            │
+     │ - **C1:** Start Unit should follow previous day's End Unit (±1)         │
+     │                                                                         │
+     │ ## Heuristics (Usually True)                                            │
+     │ - **H1:** Teams stable within season                                    │
+     │ - **H2:** One person on one team per day                                │
+     │                                                                         │
+     │ ## Observations                                                         │
+     │ - **O1:** DPF more reliable than diary for unit numbers                 │
+     │ - **O2:** Diary_Author ≠ DPF_Author                                     │
+     │ - **O3:** DPF Author ≠ Paper_Recorder                                   │
+     │ - **O4:** Use team roster cross-reference for name disambiguation       │
+     │                                                                         │
+     │ ## Non-Survey Day Convention                                            │
+     │ - QA_Notes: "Non-survey day (no field walking conducted)"               │
+     │ - NOT "MISSING: Survey units"                                           │
+     │                                                                         │
+     │ ## Red Flags                                                            │
+     │ - Unit gap > 1 → check for missing records                              │
+     │ - Walker count mismatch → verify list                                   │
+     │ - Role holder not in walkers → R1 violation                             │
+     │                                                                         │
+     │ 1.3 Create qa-runsheet-template.md                                      │
+     │                                                                         │
+     │ Based on qa-runsheet-elhovo-2009-autumn-c.md (best example):            │
+     │                                                                         │
+     │ # QA Runsheet: {Study_Area} {Year} {Season} Team {Team}                 │
+     │                                                                         │
+     │ **Study Area/Season:** {Study_Area} {Year} {Season}                     │
+     │ **Team:** {Team}                                                        │
+     │ **QA Date:** {Date}                                                     │
+     │ **QA Performed By:** {Model} (with {User})                              │
+     │ **Records:** {Count}                                                    │
+     │ **Date Range:** {Start_Date} - {End_Date}                               │
+     │                                                                         │
+     │ ---                                                                     │
+     │                                                                         │
+     │ ## Sources Consulted                                                    │
+     │                                                                         │
+     │ | Type | File | Location | Role |                                       │
+     │ |------|------|----------|------|                                       │
+     │ | Diary | {name} | {path} | PRIMARY/SECONDARY |                         │
+     │ | DPF scan | {name} | {path} | (if available) |                         │
+     │ | SU Forms | {pattern} | {path} | Verification |                        │
+     │                                                                         │
+     │ ---                                                                     │
+     │                                                                         │
+     │ ## Team Composition                                                     │
+     │                                                                         │
+     │ ### Phase 1: {Date range}                                               │
+     │ - **Leader:** {name}                                                    │
+     │ - **Walkers:** {list}                                                   │
+     │                                                                         │
+     │ {Document roster changes across phases}                                 │
+     │                                                                         │
+     │ ---                                                                     │
+     │                                                                         │
+     │ ## Record-by-Record Verification                                        │
+     │                                                                         │
+     │ ### {Date} ({Day}) — Units {Start}-{End} {Status_Icon}                  │
+     │ - **Diary:** {quote or summary}                                         │
+     │ - **CSV:** {current values}                                             │
+     │ - **Issue {ID}:** {if applicable}                                       │
+     │ - **Status:** CONFIRMED / DISCREPANCY                                   │
+     │                                                                         │
+     │ {Repeat for each record}                                                │
+     │                                                                         │
+     │ ---                                                                     │
+     │                                                                         │
+     │ ## Issues Summary                                                       │
+     │                                                                         │
+     │ | ID | Date | Field | Issue | Action |                                  │
+     │ |----|------|-------|-------|--------|                                  │
+     │                                                                         │
+     │ ---                                                                     │
+     │                                                                         │
+     │ ## Corrections Required                                                 │
+     │                                                                         │
+     │ ### {ID}: {Description}                                                 │
+     │                                                                         │
+     │ **Record:** {date}, Team {team}                                         │
+     │ **Field:** {field_name}                                                 │
+     │ **Current:** {value}                                                    │
+     │ **Corrected:** {value}                                                  │
+     │ **Source evidence:** {quote}                                            │
+     │ **Reasoning:** {explanation}                                            │
+     │                                                                         │
+     │ **User Decision:**                                                      │
+     │ - [ ] Approve                                                           │
+     │ - [ ] Modify: _______________                                           │
+     │                                                                         │
+     │ **Status:** {Pending / ✅ APPLIED (date)}                               │
+     │                                                                         │
+     │ ---                                                                     │
+     │                                                                         │
+     │ ## Summary Statistics                                                   │
+     │                                                                         │
+     │ | Metric | Count |                                                      │
+     │ |--------|-------|                                                      │
+     │ | Records checked | |                                                   │
+     │ | Records confirmed | |                                                 │
+     │ | Issues found | |                                                      │
+     │ | Corrections required | |                                              │
+     │                                                                         │
+     │ ---                                                                     │
+     │                                                                         │
+     │ **Document created:** {date}                                            │
+     │ **Last updated:** {date}                                                │
+     │                                                                         │
+     │ 1.4 Create qa-corrections.md                                            │
+     │                                                                         │
+     │ YAML-in-Markdown format for accumulating corrections:                   │
+     │                                                                         │
+     │ # QA Corrections Document                                               │
+     │                                                                         │
+     │ **Created:** {date}                                                     │
+     │ **Purpose:** Accumulate approved corrections from QA runsheets for batch│
+     │  application                                                            │
+     │ **Format Version:** 1.0                                                 │
+     │                                                                         │
+     │ ---                                                                     │
+     │                                                                         │
+     │ ## Pending Corrections                                                  │
+     │                                                                         │
+     │ ### {QA Run ID} — {Scope}                                               │
+     │                                                                         │
+     │ **QA Run:** qa-runsheet-{area}-{year}-{season}-{team}.md                │
+     │ **Date:** {date}                                                        │
+     │                                                                         │
+     │ ```yaml                                                                 │
+     │ corrections:                                                            │
+     │   - id: "C001"                                                          │
+     │     discrepancy_ref: "D024"                                             │
+     │     type: "field_update"  # field_update | walker_remove | walker_add | │
+     │ unit_update | qa_notes_update                                           │
+     │     record:                                                             │
+     │       date: "YYYY-MM-DD"                                                │
+     │       team: "X"                                                         │
+     │     changes:                                                            │
+     │       - field: "Field_Name"                                             │
+     │         old_value: "current"                                            │
+     │         new_value: "corrected"                                          │
+     │     extraction_notes_append: "QA D024: description (DD Mon YYYY)"       │
+     │     sources:                                                            │
+     │       - "source file, entry"                                            │
+     │     reasoning: "explanation"                                            │
+     │     severity: "MAJOR"  # MAJOR | Minor                                  │
+     │     status: "pending"  # pending | approved | rejected | applied        │
+     │                                                                         │
+     │ User Decision:                                                          │
+     │                                                                         │
+     │ | ID   | Status  | Decision                 | Reviewer |                │
+     │ |------|---------|--------------------------|----------|                │
+     │ | C001 | pending | [ ] Approve / [ ] Reject |          |                │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Applied Corrections                                                     │
+     │                                                                         │
+     │ {Move approved+applied corrections here with applied_date}              │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Document History                                                        │
+     │                                                                         │
+     │ | Date | Action | QA Run | Corrections |                                │
+     │ |------|--------|--------|-------------|                                │
+     │                                                                         │
+     │                                                                         │
+     │ ### 1.5 Create `qa-prompt-template.md`                                  │
+     │                                                                         │
+     │ Main prompt (~3000 words) with parameters:                              │
+     │                                                                         │
+     │ ```markdown                                                             │
+     │ # QA Verification Prompt                                                │
+     │                                                                         │
+     │ ## Mission                                                              │
+     │                                                                         │
+     │ You are performing Quality Assurance verification on TRAP walker        │
+     │ attribution records.                                                    │
+     │                                                                         │
+     │ **Scope:** {STUDY_AREA} {YEAR} {SEASON} Team {TEAM}                     │
+     │ **Records:** {RECORD_COUNT} records                                     │
+     │ **Date Range:** {DATE_START} to {DATE_END}                              │
+     │                                                                         │
+     │ **Outputs:**                                                            │
+     │ 1. QA runsheet: `outputs/qa-runsheet-{area}-{year}-{season}-{team}.md`  │
+     │ 2. Corrections added to: `docs/qa-automation/qa-corrections.md`         │
+     │ 3. Discrepancy entries added to: `docs/qa-discrepancies-log.md`         │
+     │                                                                         │
+     │ ---                                                                     │
+     │                                                                         │
+     │ ## Reference Documents                                                  │
+     │                                                                         │
+     │ **Read and follow:**                                                    │
+     │ 1. `docs/qa-guidance.md` — Full protocol (rules, heuristics, workflow)  │
+     │ 2. `outputs/source-inventory.md` — Source locations and reliability     │
+     │ 3. `docs/qa-automation/qa-reference-rules.md` — Quick reference         │
+     │ 4. `docs/qa-automation/qa-runsheet-template.md` — Output template       │
+     │                                                                         │
+     │ ---                                                                     │
+     │                                                                         │
+     │ ## Source Documents for This Run                                        │
+     │                                                                         │
+     │ | Type | File | Path |                                                  │
+     │ |------|------|------|                                                  │
+     │ | Primary Diary | {DIARY_PRIMARY} | {PATH} |                            │
+     │ | Secondary Diary | {DIARY_SECONDARY} | {PATH} |                        │
+     │ | DPF Scans | {DPF_FILES} | {PATH} |                                    │
+     │ | SU Forms | {SU_PATTERN} | {PATH} |                                    │
+     │                                                                         │
+     │ ---                                                                     │
+     │                                                                         │
+     │ ## Records to Verify                                                    │
+     │                                                                         │
+     │ {CSV_DATA: filtered records for this team/season}                       │
+     │                                                                         │
+     │ ---                                                                     │
+     │                                                                         │
+     │ ## Workflow                                                             │
+     │                                                                         │
+     │ Execute these phases in order:                                          │
+     │                                                                         │
+     │ ### Phase 1: Source Discovery                                           │
+     │ 1. Read source-inventory.md to confirm file locations                   │
+     │ 2. Read primary diary for this team                                     │
+     │ 3. If DPF scans exist, identify which files cover which dates           │
+     │ 4. Document sources consulted in runsheet                               │
+     │                                                                         │
+     │ ### Phase 2: Per-Record Verification                                    │
+     │ For each record:                                                        │
+     │ 1. Locate diary entry for this date                                     │
+     │ 2. Extract: date, walkers, units, leader, roles                         │
+     │ 3. Compare CSV values against diary                                     │
+     │ 4. Apply rule checks: R1 (roles⊆walkers), R2 (leader∈walkers)           │
+     │ 5. Document: CONFIRMED or DISCREPANCY with evidence                     │
+     │                                                                         │
+     │ ### Phase 3: Cross-Record Checks                                        │
+     │ 1. Unit continuity: verify Start_Unit follows previous End_Unit         │
+     │ 2. Walker consistency: no duplicates, consistent standardisation        │
+     │ 3. Flag any gaps or anomalies                                           │
+     │                                                                         │
+     │ ### Phase 4: Documentation                                              │
+     │ 1. Create runsheet using template                                       │
+     │ 2. For each discrepancy:                                                │
+     │    - Add detailed entry to runsheet with User Decision checkbox         │
+     │    - Add entry to qa-discrepancies-log.md                               │
+     │    - Add YAML correction block to qa-corrections.md                     │
+     │ 3. Calculate summary statistics                                         │
+     │                                                                         │
+     │ ### Phase 5: Output                                                     │
+     │ 1. Write runsheet file                                                  │
+     │ 2. Append corrections to qa-corrections.md                              │
+     │ 3. Append discrepancies to qa-discrepancies-log.md                      │
+     │ 4. Report completion summary                                            │
+     │                                                                         │
+     │ ---                                                                     │
+     │                                                                         │
+     │ ## Output Requirements                                                  │
+     │                                                                         │
+     │ ### Runsheet Format                                                     │
+     │ - Use template from qa-runsheet-template.md                             │
+     │ - Include daily breakdown for ALL records                               │
+     │ - Inline Approve/Modify checkbox with each correction                   │
+     │ - Non-survey days: "Non-survey day (no field walking conducted)"        │
+     │                                                                         │
+     │ ### Corrections Format                                                  │
+     │ - YAML blocks in qa-corrections.md                                      │
+     │ - Each correction has unique ID (C001, C002, ...)                       │
+     │ - Links to discrepancy ID (D024, D025, ...)                             │
+     │ - Status: "pending" (user will approve/reject)                          │
+     │                                                                         │
+     │ ### Discrepancy Log Format                                              │
+     │ - Follow existing format in qa-discrepancies-log.md                     │
+     │ - Include source values table, resolution, reasoning                    │
+     │ - Use next available D### number                                        │
+     │                                                                         │
+     │ ---                                                                     │
+     │                                                                         │
+     │ ## Special Cases                                                        │
+     │                                                                         │
+     │ ### Non-Survey Days                                                     │
+     │ - If diary indicates no survey (rain, rest, excursion):                 │
+     │ - QA_Notes = "Non-survey day (no field walking conducted)"              │
+     │ - These records are COMPLETE, not "missing"                             │
+     │                                                                         │
+     │ ### Seasons Without DPF Scans                                           │
+     │ - Elhovo 2009 has NO DPF scans                                          │
+     │ - Use SU forms (Tier 4) for unit verification if diary data suspicious  │
+     │ - Diary is primary source for all other fields                          │
+     │                                                                         │
+     │ ### Name Disambiguation                                                 │
+     │ - If name unclear, check team roster on adjacent days (H1)              │
+     │ - Verify person not on another team same day (H2)                       │
+     │ - Use TRAP-Participants.csv to confirm who was present that season      │
+     │                                                                         │
+     │ ---                                                                     │
+     │                                                                         │
+     │ ## Completion Checklist                                                 │
+     │                                                                         │
+     │ - [ ] All {RECORD_COUNT} records verified                               │
+     │ - [ ] Runsheet created with all sections                                │
+     │ - [ ] Each issue has User Decision checkbox                             │
+     │ - [ ] Corrections added to qa-corrections.md                            │
+     │ - [ ] Discrepancies added to qa-discrepancies-log.md                    │
+     │ - [ ] Summary statistics calculated                                     │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Stage 2: Usage Workflow                                                 │
+     │                                                                         │
+     │ Running QA                                                              │
+     │                                                                         │
+     │ 1. Prepare prompt: Fill parameters in qa-prompt-template.md:            │
+     │   - STUDY_AREA, YEAR, SEASON, TEAM                                      │
+     │   - Source file paths from source-inventory.md                          │
+     │   - CSV data for target records                                         │
+     │ 2. Execute: Run prompt with Claude or Gemini                            │
+     │ 3. Review: Check runsheet, mark User Decisions                          │
+     │ 4. Apply: After all teams reviewed, apply corrections from              │
+     │ qa-corrections.md                                                       │
+     │                                                                         │
+     │ Remaining Teams to QA                                                   │
+     │                                                                         │
+     │ | Study Area | Year | Season | Team | Status  |                         │
+     │ |------------|------|--------|------|---------|                         │
+     │ | Elhovo     | 2010 | Autumn | A    | Pending |                         │
+     │ | Kazanlak   | 2009 | Spring | A-E  | Pending |                         │
+     │ | Kazanlak   | 2010 | Spring | A-D  | Pending |                         │
+     │ | Kazanlak   | 2011 | Spring | A-D  | Pending |                         │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Files to Create/Modify                                                  │
+     │                                                                         │
+     │ | File                                       | Action                   │
+     │      |                                                                  │
+     │ |--------------------------------------------|--------------------------│
+     │ -----|                                                                  │
+     │ | docs/qa-guidance.md                        | Update with Stage 0      │
+     │ learnings |                                                             │
+     │ | outputs/source-inventory.md                | Update Team C QA status  │
+     │      |                                                                  │
+     │ | docs/qa-automation/qa-reference-rules.md   | Create                   │
+     │      |                                                                  │
+     │ | docs/qa-automation/qa-runsheet-template.md | Create                   │
+     │      |                                                                  │
+     │ | docs/qa-automation/qa-corrections.md       | Create                   │
+     │      |                                                                  │
+     │ | docs/qa-automation/qa-prompt-template.md   | Create                   │
+     │      |                                                                  │
+     │                                                                         │
+     │ ---                                                                     │
+     │ Implementation Order                                                    │
+     │                                                                         │
+     │ 1. Stage 0.1: Update qa-guidance.md with learnings                      │
+     │ 2. Stage 0.2: Update source-inventory.md status                         │
+     │ 3. Stage 1.2: Create qa-reference-rules.md                              │
+     │ 4. Stage 1.3: Create qa-runsheet-template.md                            │
+     │ 5. Stage 1.4: Create qa-corrections.md                                  │
+     │ 6. Stage 1.5: Create qa-prompt-template.md                              │
+     │ 7. Commit all changes                                                   │
+     │ 8. Test: Run prompt on one remaining team (e.g., ELH 2010 Team A)       │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     │                                                                         │
+     ╰─────────────────────────────────────────────────────────────────────────╯
+
+> A few suggestions / questions: (a) please use ISO date format YYYY-MM-DD 
+throughout, (b) I'm ok with yaml-in-markdown, but why not JSON?, (c) please 
+assess for me the trade-offs between embedding shortened version of, e.g., 
+qa-guidelines in the prompt rather than having a leaner prompt that 
+references guidelines, templates, etc. - all should be short enough to fit 
+in context since we're taking records in relatively small chunks, (d) should
+ we have a yaml queue with a list of seasons to check and perhaps pointers 
+to where the data is located (or do we just reference source-inventory for 
+data location)? 
+
+● Good questions. Let me address each:
+
+  (a) ISO dates — Agreed, will update throughout. YYYY-MM-DD everywhere.
+
+  (b) YAML vs JSON — Both are machine-parseable. Trade-offs:
+
+  | Aspect             | YAML                        | JSON
+      |
+  |--------------------|-----------------------------|----------------------
+  ----|
+  | Human readability  | Better (no quotes, cleaner) | Verbose (quotes,
+  braces) |
+  | Multi-line strings | Native (pipe `              | or>`)
+      |
+  | Comments           | Supported (#)               | Not supported
+      |
+  | Parsing            | Python yaml library         | Native Python json
+      |
+  | Error-prone        | Indentation-sensitive       | Bracket matching
+      |
+
+  My recommendation: JSON is safer (less ambiguity, no indentation issues)
+  and more universally supported. YAML's readability advantage is minor in a
+   markdown doc where we already have prose context. I'd lean JSON if you
+  prefer.
+
+  (c) Embed shortened vs reference full docs — Key trade-off:
+
+  | Approach            | Pros
+                                    | Cons
+                                                 |
+  |---------------------|---------------------------------------------------
+  ----------------------------------|---------------------------------------
+  -----------------------------------------------|
+  | Embed shortened     | Self-contained prompt; no file reads needed;
+  guaranteed the LLM sees critical rules | Duplicates content; drift risk if
+   guidance updates; longer prompt                    |
+  | Reference full docs | Single source of truth; prompt stays lean; always
+  current                           | Requires file reads; LLM might skim or
+   miss sections; more tokens for source reading |
+
+  Analysis: With ~20 records per team and full diaries being read anyway,
+  context isn't the constraint. The bigger risk is the LLM missing a
+  critical rule buried in 617 lines.
+
+  My recommendation: Hybrid approach:
+  - Embed the critical rules (R1, R2, C1, source priority, non-survey
+  convention) — ~300 words
+  - Reference full docs for edge cases and detailed protocols
+  - This ensures essentials are seen while avoiding duplication
+
+  (d) Queue file for seasons — Good idea. Trade-offs:
+
+  | Approach              | Pros
+   | Cons                      |
+  |-----------------------|-------------------------------------------------
+  -|---------------------------|
+  | Queue file            | Clear tracking; batch automation; shows progress
+   | Another file to maintain  |
+  | Source-inventory only | Single source of truth for locations
+   | Status tracking scattered |
+
+  My recommendation: Yes, create a queue. It could be simple:
+
+  # docs/qa-automation/qa-queue.yaml
+  queue:
+    - id: "ELH-2010-A"
+      study_area: "Elhovo"
+      year: 2010
+      season: "autumn"
+      team: "A"
+      status: "pending"  # pending | in_progress | complete
+      sources:
+        diary_primary: "Elhovo 2010-12-12/2010/Project Records/Team 
+  A/A_Diary.docx"
+        dpf_scans: "Elhovo 2010-12-12/2010/Project Records/Team A/Field 
+  Records/"
+      record_count: 5
+      date_range: ["2010-10-21", "2010-11-14"]
+
+  This serves as both queue AND source pointer, reducing lookups to
+  source-inventory during execution.
+                                                                           
+● User answered Claude's questions:
+  ⎿  · For the corrections format, which do you prefer now that we've 
+     discussed trade-offs? → JSON
+     · For the queue file approach, does this make sense? → Yes, queue file
+
+● Let me update the plan with these decisions:
+
+● Updated plan
+  ⎿  /plan to preview · ~/.claude/plans/glimmering-gathering-scroll.md
+
+● Updated plan
+  ⎿  /plan to preview · ~/.claude/plans/glimmering-gathering-scroll.md
+
+● Updated plan
+  ⎿  /plan to preview · ~/.claude/plans/glimmering-gathering-scroll.md
+
+● Updated plan
+  ⎿  /plan to preview · ~/.claude/plans/glimmering-gathering-scroll.md
+
+● Now let me update the prompt template section to show the embedded
+  critical rules approach, and fix the files list at the end:
+
+● Updated plan
+  ⎿  /plan to preview · ~/.claude/plans/glimmering-gathering-scroll.md
+
+● Now let me update the files list and implementation order at the end:
+
+● Updated plan
+  ⎿  /plan to preview · ~/.claude/plans/glimmering-gathering-scroll.md
+
+● Plan updated with all decisions:
+
+  Summary of changes:
+  - ISO dates (YYYY-MM-DD) throughout
+  - JSON-in-Markdown for corrections (safer parsing)
+  - Hybrid prompt strategy: critical rules embedded (~300 words), full docs
+  referenced
+  - Queue file (qa-queue.yaml) with source paths and status tracking
+  - Removed separate qa-reference-rules.md (rules now embedded in prompt)
+
+  Files to create:
+  1. docs/qa-automation/qa-queue.yaml — All teams with source paths
+  2. docs/qa-automation/qa-runsheet-template.md — Based on Team C runsheet
+  3. docs/qa-automation/qa-corrections.md — Empty JSON template
+  4. docs/qa-automation/qa-prompt-template.md — Main prompt with embedded
+  rules
+
+  Ready to proceed?
+                                                                           
+● User approved Claude's plan
+  ⎿  Plan saved to: ~/.claude/plans/glimmering-gathering-scroll.md · /plan 
+     to edit
+     Plan: QA Automation System
+
+     Goal: Create a reusable QA prompt that can run autonomously to verify 
+     attribution.csv records against source documents, produce runsheets, 
+     and accumulate corrections for batch application.
+
+     Model-agnostic: Designed to work with Claude or Gemini.
+
+     Key Design Decisions:
+     - Date format: ISO 8601 (YYYY-MM-DD) throughout
+     - Corrections format: JSON-in-Markdown (safer parsing, universal 
+     support)
+     - Prompt strategy: Hybrid — embed critical rules (~300 words), 
+     reference full docs for detail
+     - Queue file: Yes — qa-queue.yaml with source paths and status tracking
+
+     ---
+     Stage 0: Capture Recent Learnings
+
+     Before creating automation, update existing documentation with 
+     learnings from recent QA sessions.
+
+     0.1 Update docs/qa-guidance.md
+
+     Add these missing items discovered during ELH 2009 Teams A, B, C QA:
+
+     1. Non-survey day convention (new section after "Error Severity"):
+       - QA_Notes should read: "Non-survey day (no field walking conducted)"
+       - NOT "MISSING: Survey units" — nothing is missing, record is 
+     complete
+       - Document the reason from diary (rain, rest day, excursion, etc.)
+     2. QA citation format in Source_Notes:
+       - Format: QA D###: [description] (DD Mon YYYY)
+       - Example: QA D021: Removed Georgi - diary states 'walked in five' 
+     (27 Nov 2025)
+     3. Runsheet format requirements (update Phase 4):
+       - Daily breakdown is required (record-by-record verification section)
+       - Inline Approve/Modify checkboxes with each correction (not at end)
+       - Include "Status: ✅ APPLIED" after corrections are made
+     4. New observation O4 (add to Observations section):
+       - O4: Name disambiguation via team roster cross-reference
+       - Evidence: Tereza disambiguation (D016) - checked who was on which 
+     team on which days
+       - Implication: When multiple people share a name, use team membership
+      constraints
+     5. Add reference to Team C runsheet in References section
+
+     0.2 Update outputs/source-inventory.md
+
+     1. Update extraction status:
+       - Change [ ] Elhovo 2009 diary (Team C) to [x] Elhovo 2009 diaries 
+     (Teams A, B, C) — QA completed 27 November 2025
+     2. Add Team C SU form index entries discovered during QA:
+       - File 80103.pdf, 80115.pdf mappings if identified
+
+     ---
+     Stage 1: Create QA Automation Infrastructure
+
+     1.1 File Structure
+
+     docs/qa-automation/
+         qa-prompt-template.md       # Main parameterised prompt
+         qa-runsheet-template.md     # Output structure template
+         qa-corrections.md           # Accumulating corrections document 
+     (JSON blocks)
+         qa-queue.yaml               # Queue of teams to QA with source 
+     paths
+
+     Note: Critical rules (~300 words) embedded directly in prompt; no 
+     separate qa-reference-rules.md needed.
+
+     1.2 Create qa-queue.yaml
+
+     Queue file with all teams to QA, source paths, and status:
+
+     # QA Queue - Teams pending verification
+     # Status: pending | in_progress | complete | skipped
+
+     queue:
+       # Elhovo 2010 Autumn (partially complete)
+       - id: "ELH-2010-A"
+         study_area: "Elhovo"
+         year: 2010
+         season: "autumn"
+         team: "A"
+         status: "pending"
+         record_count: 5
+         date_range: ["2010-10-21", "2010-11-14"]
+         sources:
+           diary_primary: "Elhovo 2010-12-12/2010/Project Records/Team 
+     A/A_Diary.docx"
+           dpf_scans: "Elhovo 2010-12-12/2010/Project Records/Team A/Field 
+     Records/"
+           su_forms: null
+         notes: "Team B already QA'd as part of pilot"
+
+       # Kazanlak 2009 Spring
+       - id: "KAZ-2009-A"
+         study_area: "Kazanlak"
+         year: 2009
+         season: "spring"
+         team: "A"
+         status: "pending"
+         sources:
+           diary_primary: "Kazanluk/2009/Project 
+     Records/TeamA/A_Diary_BG.doc"
+           diary_secondary: "Kazanluk/2009/Project 
+     Records/TeamA/A_Diary_En.doc"
+           dpf_scans: "Kazanluk/2009/Project Records/TeamA/"
+           su_forms: null
+
+       # ... (continue for all remaining teams)
+
+     completed:
+       - id: "ELH-2010-B"
+         completed_date: "2025-11-26"
+         runsheet: "outputs/qa-runsheet-elhovo-2010-autumn.md"
+       - id: "ELH-2009-A"
+         completed_date: "2025-11-26"
+         runsheet: "outputs/qa-runsheet-elhovo-2009-autumn-a.md"
+       - id: "ELH-2009-B"
+         completed_date: "2025-11-26"
+         runsheet: "outputs/qa-runsheet-elhovo-2009-autumn-b.md"
+       - id: "ELH-2009-C"
+         completed_date: "2025-11-27"
+         runsheet: "outputs/qa-runsheet-elhovo-2009-autumn-c.md"
+
+     1.3 Create qa-runsheet-template.md
+
+     Based on qa-runsheet-elhovo-2009-autumn-c.md (best example):
+
+     # QA Runsheet: {Study_Area} {Year} {Season} Team {Team}
+
+     **Study Area/Season:** {Study_Area} {Year} {Season}
+     **Team:** {Team}
+     **QA Date:** {Date}
+     **QA Performed By:** {Model} (with {User})
+     **Records:** {Count}
+     **Date Range:** {Start_Date} - {End_Date}
+
+     ---
+
+     ## Sources Consulted
+
+     | Type | File | Location | Role |
+     |------|------|----------|------|
+     | Diary | {name} | {path} | PRIMARY/SECONDARY |
+     | DPF scan | {name} | {path} | (if available) |
+     | SU Forms | {pattern} | {path} | Verification |
+
+     ---
+
+     ## Team Composition
+
+     ### Phase 1: {Date range}
+     - **Leader:** {name}
+     - **Walkers:** {list}
+
+     {Document roster changes across phases}
+
+     ---
+
+     ## Record-by-Record Verification
+
+     ### {Date} ({Day}) — Units {Start}-{End} {Status_Icon}
+     - **Diary:** {quote or summary}
+     - **CSV:** {current values}
+     - **Issue {ID}:** {if applicable}
+     - **Status:** CONFIRMED / DISCREPANCY
+
+     {Repeat for each record}
+
+     ---
+
+     ## Issues Summary
+
+     | ID | Date | Field | Issue | Action |
+     |----|------|-------|-------|--------|
+
+     ---
+
+     ## Corrections Required
+
+     ### {ID}: {Description}
+
+     **Record:** {date}, Team {team}
+     **Field:** {field_name}
+     **Current:** {value}
+     **Corrected:** {value}
+     **Source evidence:** {quote}
+     **Reasoning:** {explanation}
+
+     **User Decision:**
+     - [ ] Approve
+     - [ ] Modify: _______________
+
+     **Status:** {Pending / ✅ APPLIED (date)}
+
+     ---
+
+     ## Summary Statistics
+
+     | Metric | Count |
+     |--------|-------|
+     | Records checked | |
+     | Records confirmed | |
+     | Issues found | |
+     | Corrections required | |
+
+     ---
+
+     **Document created:** {date}
+     **Last updated:** {date}
+
+     1.4 Create qa-corrections.md
+
+     JSON-in-Markdown format for accumulating corrections:
+
+     # QA Corrections Document
+
+     **Created:** 2025-11-27
+     **Purpose:** Accumulate approved corrections from QA runsheets for 
+     batch application
+     **Format Version:** 1.0
+
+     ---
+
+     ## Pending Corrections
+
+     ### ELH-2010-A — Elhovo 2010 Autumn Team A
+
+     **QA Run:** qa-runsheet-elhovo-2010-autumn-a.md
+     **Date:** 2025-11-28
+
+     ```json
+     {
+       "corrections": [
+         {
+           "id": "C001",
+           "discrepancy_ref": "D024",
+           "type": "field_update",
+           "record": {
+             "date": "2010-10-22",
+             "team": "A"
+           },
+           "changes": [
+             {
+               "field": "Start_Unit",
+               "old_value": "61424",
+               "new_value": "61425"
+             }
+           ],
+           "extraction_notes_append": "QA D024: Corrected start unit 
+     (2025-11-28)",
+           "sources": ["A_Diary.docx, Oct 22 entry"],
+           "reasoning": "Diary shows 61425; DPF unclear",
+           "severity": "MAJOR",
+           "status": "pending"
+         }
+       ]
+     }
+
+     User Decision:
+
+     | ID   | Status  | Decision                 | Reviewer |
+     |------|---------|--------------------------|----------|
+     | C001 | pending | [ ] Approve / [ ] Reject |          |
+
+     ---
+     Applied Corrections
+
+     {Move approved+applied corrections here with applied_date field added}
+
+     ---
+     Document History
+
+     | Date       | Action  | QA Run | Corrections |
+     |------------|---------|--------|-------------|
+     | 2025-11-27 | Created | —      | —           |
+
+
+     ### 1.5 Create `qa-prompt-template.md`
+
+     Main prompt (~3000 words) with parameters:
+
+     ```markdown
+     # QA Verification Prompt
+
+     ## Mission
+
+     You are performing Quality Assurance verification on TRAP walker 
+     attribution records.
+
+     **Scope:** {STUDY_AREA} {YEAR} {SEASON} Team {TEAM}
+     **Records:** {RECORD_COUNT} records
+     **Date Range:** {DATE_START} to {DATE_END}
+
+     **Outputs:**
+     1. QA runsheet: `outputs/qa-runsheet-{area}-{year}-{season}-{team}.md`
+     2. Corrections added to: `docs/qa-automation/qa-corrections.md`
+     3. Discrepancy entries added to: `docs/qa-discrepancies-log.md`
+
+     ---
+
+     ## Critical Rules (Embedded)
+
+     **Source Priority:**
+     | Data Type | PRIMARY | SECONDARY |
+     |-----------|---------|-----------|
+     | Unit numbers | DPF scan / SU forms | Diary |
+     | Walker names | Diary | DPF scan |
+     | Roles | Diary only | — |
+
+     **Rules (Must Be True):**
+     - **R1:** All role holders must appear in Walkers list
+     - **R2:** Leader must appear in Walkers list
+     - **C1:** Start Unit should follow previous day's End Unit (±1)
+
+     **Heuristics:**
+     - **H1:** Teams stable within season (check nearby days for illegible 
+     names)
+     - **H2:** One person on one team per day
+
+     **Non-Survey Day Convention:**
+     - QA_Notes: "Non-survey day (no field walking conducted)"
+     - NOT "MISSING: Survey units" — nothing is missing
+
+     **QA Citation Format:**
+     - In Source_Notes: `QA D###: [description] (YYYY-MM-DD)`
+
+     ---
+
+     ## Reference Documents (Read as Needed)
+
+     1. `docs/qa-guidance.md` — Full protocol for edge cases
+     2. `outputs/source-inventory.md` — Source locations and reliability 
+     notes
+     3. `docs/qa-automation/qa-runsheet-template.md` — Output template
+
+     ---
+
+     ## Source Documents for This Run
+
+     | Type | File | Path |
+     |------|------|------|
+     | Primary Diary | {DIARY_PRIMARY} | {PATH} |
+     | Secondary Diary | {DIARY_SECONDARY} | {PATH} |
+     | DPF Scans | {DPF_FILES} | {PATH} |
+     | SU Forms | {SU_PATTERN} | {PATH} |
+
+     ---
+
+     ## Records to Verify
+
+     {CSV_DATA: filtered records for this team/season}
+
+     ---
+
+     ## Workflow
+
+     Execute these phases in order:
+
+     ### Phase 1: Source Discovery
+     1. Read source-inventory.md to confirm file locations
+     2. Read primary diary for this team
+     3. If DPF scans exist, identify which files cover which dates
+     4. Document sources consulted in runsheet
+
+     ### Phase 2: Per-Record Verification
+     For each record:
+     1. Locate diary entry for this date
+     2. Extract: date, walkers, units, leader, roles
+     3. Compare CSV values against diary
+     4. Apply rule checks: R1 (roles⊆walkers), R2 (leader∈walkers)
+     5. Document: CONFIRMED or DISCREPANCY with evidence
+
+     ### Phase 3: Cross-Record Checks
+     1. Unit continuity: verify Start_Unit follows previous End_Unit
+     2. Walker consistency: no duplicates, consistent standardisation
+     3. Flag any gaps or anomalies
+
+     ### Phase 4: Documentation
+     1. Create runsheet using template
+     2. For each discrepancy:
+        - Add detailed entry to runsheet with User Decision checkbox
+        - Add entry to qa-discrepancies-log.md
+        - Add YAML correction block to qa-corrections.md
+     3. Calculate summary statistics
+
+     ### Phase 5: Output
+     1. Write runsheet file
+     2. Append corrections to qa-corrections.md
+     3. Append discrepancies to qa-discrepancies-log.md
+     4. Report completion summary
+
+     ---
+
+     ## Output Requirements
+
+     ### Runsheet Format
+     - Use template from qa-runsheet-template.md
+     - Include daily breakdown for ALL records
+     - Inline Approve/Modify checkbox with each correction
+     - Non-survey days: "Non-survey day (no field walking conducted)"
+
+     ### Corrections Format
+     - YAML blocks in qa-corrections.md
+     - Each correction has unique ID (C001, C002, ...)
+     - Links to discrepancy ID (D024, D025, ...)
+     - Status: "pending" (user will approve/reject)
+
+     ### Discrepancy Log Format
+     - Follow existing format in qa-discrepancies-log.md
+     - Include source values table, resolution, reasoning
+     - Use next available D### number
+
+     ---
+
+     ## Special Cases
+
+     ### Non-Survey Days
+     - If diary indicates no survey (rain, rest, excursion):
+     - QA_Notes = "Non-survey day (no field walking conducted)"
+     - These records are COMPLETE, not "missing"
+
+     ### Seasons Without DPF Scans
+     - Elhovo 2009 has NO DPF scans
+     - Use SU forms (Tier 4) for unit verification if diary data suspicious
+     - Diary is primary source for all other fields
+
+     ### Name Disambiguation
+     - If name unclear, check team roster on adjacent days (H1)
+     - Verify person not on another team same day (H2)
+     - Use TRAP-Participants.csv to confirm who was present that season
+
+     ---
+
+     ## Completion Checklist
+
+     - [ ] All {RECORD_COUNT} records verified
+     - [ ] Runsheet created with all sections
+     - [ ] Each issue has User Decision checkbox
+     - [ ] Corrections added to qa-corrections.md
+     - [ ] Discrepancies added to qa-discrepancies-log.md
+     - [ ] Summary statistics calculated
+
+     ---
+     Stage 2: Usage Workflow
+
+     Running QA
+
+     1. Prepare prompt: Fill parameters in qa-prompt-template.md:
+       - STUDY_AREA, YEAR, SEASON, TEAM
+       - Source file paths from source-inventory.md
+       - CSV data for target records
+     2. Execute: Run prompt with Claude or Gemini
+     3. Review: Check runsheet, mark User Decisions
+     4. Apply: After all teams reviewed, apply corrections from 
+     qa-corrections.md
+
+     Remaining Teams to QA
+
+     | Study Area | Year | Season | Team | Status  |
+     |------------|------|--------|------|---------|
+     | Elhovo     | 2010 | Autumn | A    | Pending |
+     | Kazanlak   | 2009 | Spring | A-E  | Pending |
+     | Kazanlak   | 2010 | Spring | A-D  | Pending |
+     | Kazanlak   | 2011 | Spring | A-D  | Pending |
+
+     ---
+     Files to Create/Modify
+
+     | File                                       | Action                  
+                   |
+     |--------------------------------------------|-------------------------
+     --------------|
+     | docs/qa-guidance.md                        | Update with Stage 0 
+     learnings         |
+     | outputs/source-inventory.md                | Update Team C QA status 
+                   |
+     | docs/qa-automation/qa-queue.yaml           | Create (populate all 
+     remaining teams) |
+     | docs/qa-automation/qa-runsheet-template.md | Create                  
+                   |
+     | docs/qa-automation/qa-corrections.md       | Create (empty, ready for
+      first run)   |
+     | docs/qa-automation/qa-prompt-template.md   | Create (with embedded 
+     critical rules) |
+
+     ---
+     Implementation Order
+
+     1. Stage 0.1: Update qa-guidance.md with learnings
+     2. Stage 0.2: Update source-inventory.md status
+     3. Stage 1.2: Create qa-queue.yaml with all remaining teams
+     4. Stage 1.3: Create qa-runsheet-template.md
+     5. Stage 1.4: Create qa-corrections.md (empty template)
+     6. Stage 1.5: Create qa-prompt-template.md
+     7. Commit all changes
+     8. Test: Run prompt on ELH-2010-A (next in queue)
+
+
+
+
+
+
+
+● Excellent! Let me start implementing. First, I'll set up a todo list and
+  begin with Stage 0.
+  ⎿  Interrupted · What should Claude do instead?
+
+> /export archive/cc-interactions/2025-11-27-b.txt 
+  ⎿  Conversation exported to: archive/cc-interactions/2025-11-27-b.txt
+
+> let's /compact before undertaking this large piece of work, can you (a) 
+write the plan out ot a markdown file, and (b) compose a /compact message? 
+
+● Write(planning/qa-automation-plan.md)
+  ⎿  Wrote 341 lines to planning/qa-automation-plan.md                     
+     # Plan: QA Automation System
+     **Created:** 2025-11-27
+     **Status:** Approved, ready for implementation
+     **Goal:** Create a reusable QA prompt that can run autonomously to
+     verify attribution.csv records against source documents, produce
+     runsheets, and accumulate corrections for batch application.
+     **Model-agnostic:** Designed to work with Claude or Gemini.
+     **Key Design Decisions:**
+     … +331 lines (ctrl+o to expand)
+
+● Plan saved to planning/qa-automation-plan.md. Here's your /compact
+  message:
+
+  ---
+  Compact summary for continuation:
+
+  Implementing QA automation system per approved plan in
+  planning/qa-automation-plan.md
+
+  CONTEXT:
+  - Just completed QA for Elhovo 2009 Autumn (Teams A, B, C) - 88 records
+  verified
+  - Runsheets created: outputs/qa-runsheet-elhovo-2009-autumn-{a,b,c}.md
+  - Discrepancies documented in docs/qa-discrepancies-log.md (D001-D023)
+
+  TASK: Implement QA automation infrastructure (approved plan)
+
+  Stage 0 - Capture learnings:
+  - [ ] Update docs/qa-guidance.md (non-survey day convention, QA citation
+  format, O4 observation)
+  - [ ] Update outputs/source-inventory.md (Team C status)
+
+  Stage 1 - Create automation files in docs/qa-automation/:
+  - [ ] qa-queue.yaml (all remaining teams with source paths)
+  - [ ] qa-runsheet-template.md (based on Team C runsheet)
+  - [ ] qa-corrections.md (empty JSON-in-Markdown template)
+  - [ ] qa-prompt-template.md (main prompt with embedded critical rules)
+
+  KEY DECISIONS:
+  - ISO dates (YYYY-MM-DD)
+  - JSON-in-Markdown for corrections
+  - Hybrid prompt: embed critical rules, reference full docs
+  - One team per QA run, fully autonomous execution
+
+  Start with Stage 0.1: Update qa-guidance.md
+
+
+
