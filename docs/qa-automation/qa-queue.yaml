@@ -7,22 +7,7 @@
 # Last updated: 2025-11-30
 
 queue:
-  # Kazanlak 2009 Spring - Teams B-E
-  - id: "KAZ-2009-B"
-    study_area: "Kazanlak"
-    year: 2009
-    season: "spring"
-    team: "B"
-    status: "pending"
-    record_count: null
-    date_range: null
-    sources:
-      diary_primary: "Kazanluk/2009/Project Records/TeamB/B_Diary_BG.doc"
-      diary_secondary: "Kazanluk/2009/Project Records/TeamB/B_Diary_En.docx"
-      dpf_scans: "Kazanluk/2009/Project Records/TeamB/Finalized/"
-      su_forms: null
-    notes: "BG diary is PRIMARY (152 KB); use Finalized/ for DPF scans"
-
+  # Kazanlak 2009 Spring - Teams C-E
   - id: "KAZ-2009-C"
     study_area: "Kazanlak"
     year: 2009
@@ -211,11 +196,16 @@ completed:
     runsheet: "outputs/qa-runsheet-kazanlak-2009-spring-a.md"
     notes: "16 records, 4 unit range discrepancies (D001-D004); EN diary only covers Mar 15-27"
 
+  - id: "KAZ-2009-B"
+    completed_date: "2025-11-30"
+    runsheet: "outputs/qa-runsheet-kazanlak-2009-spring-b.md"
+    notes: "15 records in CSV, 16 in DPF; 1 missing record (Mar 08), 4 unit discrepancies, 1 date discrepancy"
+
 # Summary statistics
-# Total teams: 18 (8 completed, 10 pending)
+# Total teams: 18 (9 completed, 9 pending)
 # By study area:
 #   - Elhovo 2009: 3 complete (Teams A, B, C)
 #   - Elhovo 2010: 2 complete (Teams A, B)
-#   - Kazanlak 2009: 1 complete (Team A), 4 pending (Teams B-E)
+#   - Kazanlak 2009: 2 complete (Teams A, B), 3 pending (Teams C-E)
 #   - Kazanlak 2010: 1 complete (Team C), 3 pending (Teams A, B, D)
 #   - Kazanlak 2011: 4 pending (Teams A-D)
