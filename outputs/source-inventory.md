@@ -1,7 +1,7 @@
 # TRAP Data Extraction - Source Inventory
 
 **Created:** November 2025
-**Last major update:** 26 November 2025
+**Last major update:** 30 November 2025
 **Extraction status:** ✅ **100% COMPLETE** (268/268 records with walker data)
 **Project completion:** 23 November 2025
 
@@ -213,20 +213,34 @@ Handwritten forms scanned to PDF. Quality varies; OCR prone to errors.
 | B | B_2011Summary.pdf | `Kazanluk/2011-11-30/Project Records/Team B/FieldRecords/` |
 | C | C_2011Summary.pdf | `Kazanluk/2011-11-30/Project Records/Team C/FieldRecords/` |
 
-### Elhovo 2010 (PDFs)
+### Elhovo 2010 (DPF Scans)
 
-Daily field records by date (YYYYMMDD format):
+Daily Progress Form (DPF) scans — small files (~300KB) suitable for QA verification.
 
-| Team | Files | Location |
-|------|-------|----------|
-| A | Day_03.pdf, Day_05.pdf, 20101022.pdf, etc. | `Elhovo 2010-12-12/2010/Project Records/Team A/Field Records/` |
-| B | Day_02.pdf, Day_04.pdf, ..., Day_12.pdf, 20101102.pdf, etc. | `Elhovo 2010-12-12/2010/Project Records/Team B/Field Records/` |
+**Team A:**
+
+| File | Size | Dates Covered | Unit Range | Notes |
+|------|------|---------------|------------|-------|
+| Day_03.pdf | 282 KB | 22, 23, 24 Oct 2010 | 61400-61549 | 3 DPFs; Leader: Adela D |
+| Day_05.pdf | 327 KB | 2, 3 Nov 2010 | 61549-61643 | 2 DPFs; Leaders: Petra T (Nov 2), Petra (Nov 3) |
+
+Location: `Elhovo 2010-12-12/2010/Project Records/Team A/Field Records/`
+
+**Team B:**
+
+| File | Dates Covered | Notes |
+|------|---------------|-------|
+| Day_02.pdf, Day_04.pdf, ..., Day_12.pdf | Multiple | DPF scans covering Team B survey dates |
+
+Location: `Elhovo 2010-12-12/2010/Project Records/Team B/Field Records/`
+
+**⚠️ File Naming Note:** DPF scan filenames (Day_XX.pdf) do not correspond to survey day numbers. Each file contains multiple dates. Consult the table above for date coverage.
 
 ---
 
-## Tier 4: Individual Survey Form PDFs
+## Tier 4: Individual Survey Unit Form PDFs
 
-Individual survey unit forms scanned to PDF. These complement the consolidated Summary PDFs in Tier 3.
+Individual survey unit (SU) forms scanned to PDF. **Large files (3-11 MB)** — use only for investigating specific unit discrepancies, not routine QA.
 
 ### Elhovo 2009 Survey Unit PDFs
 
@@ -406,7 +420,8 @@ All seasons have SurveySummary files. ✓
 ## Document History
 
 **Created:** November 2025
-**Last major update:** 27 November 2025 (Elhovo 2009 Teams A, B, C QA completed)
+**Last major update:** 30 November 2025 (Elhovo 2010 DPF scan date coverage documented)
+**Previous update:** 27 November 2025 (Elhovo 2009 Teams A, B, C QA completed)
 **Previous update:** 23 November 2025 (comprehensive version annotations and structural improvements)
 **Project completion:** 23 November 2025
 **Contributors:** Shawn Ross (with Adela Sobotkova), Claude Code

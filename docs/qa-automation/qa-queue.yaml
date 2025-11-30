@@ -4,25 +4,9 @@
 # Source paths relative to: /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-2020-04/
 #
 # Created: 2025-11-27
-# Last updated: 2025-11-27
+# Last updated: 2025-11-30
 
 queue:
-  # Elhovo 2010 Autumn - Team A pending
-  - id: "ELH-2010-A"
-    study_area: "Elhovo"
-    year: 2010
-    season: "autumn"
-    team: "A"
-    status: "pending"
-    record_count: 5
-    date_range: ["2010-10-21", "2010-11-14"]
-    sources:
-      diary_primary: "Elhovo 2010-12-12/2010/Project Records/Team A/A_Diary.docx"
-      diary_secondary: null
-      dpf_scans: "Elhovo 2010-12-12/2010/Project Records/Team A/Field Records/"
-      su_forms: null
-    notes: "Team B already QA'd as part of pilot (qa-runsheet-elhovo-2010-autumn.md)"
-
   # Kazanlak 2009 Spring - Teams A-E
   - id: "KAZ-2009-A"
     study_area: "Kazanlak"
@@ -130,21 +114,6 @@ queue:
       su_forms: null
     notes: "EN diary is PRIMARY (108 KB) - unusual pattern"
 
-  - id: "KAZ-2010-C"
-    study_area: "Kazanlak"
-    year: 2010
-    season: "spring"
-    team: "C"
-    status: "pending"
-    record_count: null
-    date_range: null
-    sources:
-      diary_primary: "Kazanluk/2010/Project Records/Team C/C_2010Diary_BG.doc"
-      diary_secondary: "Kazanluk/2010/Project Records/Team C/C_2010Diary_En.docx"
-      dpf_scans: "Kazanluk/2010/Project Records/Team C/FieldRecords/"
-      su_forms: null
-    notes: "BG diary is PRIMARY (214 KB)"
-
   - id: "KAZ-2010-D"
     study_area: "Kazanlak"
     year: 2010
@@ -242,11 +211,21 @@ completed:
     runsheet: "outputs/qa-runsheet-elhovo-2009-autumn-c.md"
     notes: "Exemplar runsheet format; 20 records, 5 issues found (D019-D023)"
 
+  - id: "KAZ-2010-C"
+    completed_date: "2025-11-30"
+    runsheet: "outputs/qa-automation-test/qa-runsheet-kazanluk-2010-spring-c-manual.md"
+    notes: "Manual QA; 8 records, 7 updates + 1 new record added"
+
+  - id: "ELH-2010-A"
+    completed_date: "2025-11-30"
+    runsheet: "outputs/qa-runsheet-elhovo-2010-autumn-a.md"
+    notes: "5 records, 0 issues; source divergences documented (diary vs DPF unit ranges)"
+
 # Summary statistics
-# Total teams: 18 (4 completed, 14 pending)
+# Total teams: 18 (7 completed, 11 pending)
 # By study area:
-#   - Elhovo 2009: 3 complete
-#   - Elhovo 2010: 1 complete, 1 pending (Team A)
+#   - Elhovo 2009: 3 complete (Teams A, B, C)
+#   - Elhovo 2010: 2 complete (Teams A, B)
 #   - Kazanlak 2009: 5 pending (Teams A-E)
-#   - Kazanlak 2010: 4 pending (Teams A-D)
+#   - Kazanlak 2010: 1 complete (Team C), 3 pending (Teams A, B, D)
 #   - Kazanlak 2011: 4 pending (Teams A-D)

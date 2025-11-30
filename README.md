@@ -247,6 +247,28 @@ pip install -r requirements.txt
 python -c "import pandas; print('Dependencies installed successfully')"
 ```
 
+### Accessing Source Data
+
+The source documents (diaries, scanned forms, Excel files) are stored externally and referenced via a symlink. **All paths are machine-specific** and will need adjustment for your environment.
+
+**Current configuration:**
+
+```bash
+# Symlink in repository root (not committed to git)
+data-external -> /media/shawn/.../TRAP-WD-2020-04/
+
+# Canonical path referenced in documentation
+/media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-2020-04/
+```
+
+**To set up on your machine:**
+
+1. Mount or locate the TRAP source data directory
+2. Create symlink: `ln -s /path/to/your/TRAP-WD-2020-04 data-external`
+3. The symlink is already in `.gitignore`
+
+See [outputs/source-inventory.md](outputs/source-inventory.md) for complete source file paths.
+
 ### Running Scripts
 
 ```bash
@@ -433,6 +455,6 @@ See [planning/akb-submission-todo.md](planning/akb-submission-todo.md) for AKB s
 
 ---
 
-**Last Updated:** 25 November 2025
+**Last Updated:** 30 November 2025
 **Version:** 1.0.0
 **Status:** ✅ Complete - 100% walker data coverage achieved, names standardised

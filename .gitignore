@@ -39,3 +39,4 @@ Thumbs.db
 # Claude Code exports (keep in archive/cc-interactions/ only)
 # Uncomment if you don't want to track new conversation exports:
 # *.txt
+data-external
