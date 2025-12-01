@@ -24,20 +24,6 @@ queue:
     notes: "BG diary only - no English translation; no DPF scans available"
 
 
-  - id: "KAZ-2011-C"
-    study_area: "Kazanlak"
-    year: 2011
-    season: "spring"
-    team: "C"
-    status: "pending"
-    record_count: null
-    date_range: null
-    sources:
-      diary_primary: "Kazanluk/2011-11-30/Project Records/Team C/C_2011Diary_En.docx"
-      diary_secondary: "Kazanluk/2011-11-30/Project Records/Team C/C_2011Diary_BG.docx"
-      dpf_scans: "Kazanluk/2011-11-30/Project Records/Team C/FieldRecords/"
-      su_forms: null
-    notes: "EN diary is PRIMARY (70 KB)"
 
   - id: "KAZ-2011-D"
     study_area: "Kazanlak"
@@ -130,11 +116,16 @@ completed:
     runsheet: "outputs/qa-runsheet-kazanlak-2011-autumn-b.md"
     notes: "17 records; 1 CRITICAL error (Nov 16 wrong source - Yambol data instead of Kazanlak)"
 
+  - id: "KAZ-2011-C"
+    completed_date: "2025-12-01"
+    runsheet: "outputs/qa-runsheet-kazanlak-2011-autumn-c.md"
+    notes: "18 records (17 survey + 1 non-survey); 1 error (Nov 18 unit overlap with Nov 17)"
+
 # Summary statistics
-# Total teams: 18 (15 completed, 3 pending)
+# Total teams: 18 (16 completed, 2 pending)
 # By study area:
 #   - Elhovo 2009: 3 complete (Teams A, B, C)
 #   - Elhovo 2010: 2 complete (Teams A, B)
 #   - Kazanlak 2009: 5 complete (Teams A-E)
 #   - Kazanlak 2010: 4 complete (Teams A-D) ✓ COMPLETE
-#   - Kazanlak 2011: 1 complete (Team B), 3 pending (A, C, D) - note: A & D have BG diary only, no DPF
+#   - Kazanlak 2011: 2 complete (Teams B, C), 2 pending (A, D) - note: A & D have BG diary only, no DPF
