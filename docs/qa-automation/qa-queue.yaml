@@ -7,22 +7,6 @@
 # Last updated: 2025-12-01
 
 queue:
-  # Kazanlak 2010 Spring - Team D
-  - id: "KAZ-2010-D"
-    study_area: "Kazanlak"
-    year: 2010
-    season: "spring"
-    team: "D"
-    status: "pending"
-    record_count: null
-    date_range: null
-    sources:
-      diary_primary: "Kazanluk/2010/Project Records/Team D/D_2010Diary_BG.doc"
-      diary_secondary: "Kazanluk/2010/Project Records/Team D/D_2010Diary_En.docx"
-      dpf_scans: "Kazanluk/2010/Project Records/Team D/FieldRecords/"
-      su_forms: null
-    notes: "BG diary is PRIMARY (127 KB)"
-
   # Kazanlak 2011 Spring - Teams A-D
   - id: "KAZ-2011-A"
     study_area: "Kazanlak"
@@ -150,11 +134,16 @@ completed:
     runsheet: "outputs/qa-runsheet-kazanlak-2010-spring-b.md"
     notes: "20 records (17 survey + 3 non-survey); 100% match rate - no issues found"
 
+  - id: "KAZ-2010-D"
+    completed_date: "2025-12-01"
+    runsheet: "outputs/qa-runsheet-kazanlak-2010-spring-d.md"
+    notes: "14 records (13 survey + 1 rain day); 1 error (Mar 26 start unit); Mar 20-21 overlap verified"
+
 # Summary statistics
 # Total teams: 18 (14 completed, 4 pending)
 # By study area:
 #   - Elhovo 2009: 3 complete (Teams A, B, C)
 #   - Elhovo 2010: 2 complete (Teams A, B)
 #   - Kazanlak 2009: 5 complete (Teams A-E)
-#   - Kazanlak 2010: 3 complete (Teams A, B, C), 1 pending (Team D)
-#   - Kazanlak 2011: 4 pending (Teams A-D)
+#   - Kazanlak 2010: 4 complete (Teams A-D) ✓ COMPLETE
+#   - Kazanlak 2011: 4 pending (Teams A-D) - note: A & D have BG diary only, no DPF
