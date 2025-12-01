@@ -4,25 +4,9 @@
 # Source paths relative to: /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-2020-04/
 #
 # Created: 2025-11-27
-# Last updated: 2025-11-30
+# Last updated: 2025-12-01
 
 queue:
-  # Kazanlak 2009 Spring - Team E
-  - id: "KAZ-2009-E"
-    study_area: "Kazanlak"
-    year: 2009
-    season: "spring"
-    team: "E"
-    status: "pending"
-    record_count: null
-    date_range: null
-    sources:
-      diary_primary: "Kazanluk/2009/Project Records/TeamE/E Diary_BG.doc"
-      diary_secondary: null
-      dpf_scans: "Kazanluk/2009/Project Records/TeamE/"
-      su_forms: null
-    notes: "BG diary only - no English translation exists"
-
   # Kazanlak 2010 Spring - Teams A-D
   - id: "KAZ-2010-A"
     study_area: "Kazanlak"
@@ -181,11 +165,16 @@ completed:
     runsheet: "outputs/qa-runsheet-kazanlak-2009-spring-d.md"
     notes: "10 records; severe CSV unit errors - 4 major discrepancies with DPF (overlapping CSV ranges)"
 
+  - id: "KAZ-2009-E"
+    completed_date: "2025-12-01"
+    runsheet: "outputs/qa-runsheet-kazanlak-2009-spring-e.md"
+    notes: "7 records; 1 missing record (Mar 24), Mar 20 major unit error, Apr 03 miscategorised, Mar 31 questionable"
+
 # Summary statistics
-# Total teams: 18 (11 completed, 7 pending)
+# Total teams: 18 (12 completed, 6 pending)
 # By study area:
 #   - Elhovo 2009: 3 complete (Teams A, B, C)
 #   - Elhovo 2010: 2 complete (Teams A, B)
-#   - Kazanlak 2009: 4 complete (Teams A-D), 1 pending (Team E)
+#   - Kazanlak 2009: 5 complete (Teams A-E)
 #   - Kazanlak 2010: 1 complete (Team C), 3 pending (Teams A, B, D)
 #   - Kazanlak 2011: 4 pending (Teams A-D)
