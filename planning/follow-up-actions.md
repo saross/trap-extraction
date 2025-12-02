@@ -384,7 +384,35 @@ These should be recorded as SEPARATE lines in attribution.csv until reconciled.
 
 ---
 
-#### Unit Number Overlaps (9 total - 1 confirmed error, 1 resolved, 7 under investigation)
+##### ✓ KAZ10D-OV1: Kazanlak D Units 40424-40432 (RESOLVED - DPF ERROR)
+
+**Status:** RESOLVED - CSV corrected (2 December 2025)
+
+| Field | Value |
+|-------|-------|
+| Season | Kazanlak 2010 |
+| Team | D |
+| Apparent overlap | 40424-40432 (9 units) |
+| Date 1 | 2010-03-20 (DPF showed end unit 40432) |
+| Date 2 | 2010-03-21 (start unit 40424) |
+
+**Investigation findings:**
+- DPF (D_2010Summary.pdf) showed Mar 20 ending at 40432
+- CSV matched DPF, so QA runsheet marked as "not an error - both sources agree"
+- **Individual SU forms verified (definitive):**
+  - Mar 20 last unit = **40423**
+  - Mar 21 first unit = **40424**
+
+**Root cause:** DPF form error - Mar 20 end unit was written as 40432 instead of 40423 (+9 error)
+
+**Correction applied:**
+- Mar 20 End Unit: 40432 → **40423**
+
+**Result:** Overlap resolved - sequence is now continuous (40423 → 40424).
+
+---
+
+#### Unit Number Overlaps (9 total - 1 confirmed error, 2 resolved, 6 under investigation)
 
 These overlaps may indicate resurveys, site-focused work, or data errors:
 
@@ -398,7 +426,7 @@ These overlaps may indicate resurveys, site-focused work, or data errors:
 | Kazanlak C | 2009-03-26 | 30029 | 2009-03-06 | 30025 | 30025-30029 | 5 units | Date ordering issue? |
 | Kazanlak C | 2011-11-17 | 31335 | 2011-11-18 | 31335 | 31335 | 1 unit | Possible resurvey |
 | Kazanlak D | 2009-03-25 | 40214 | 2009-03-26 | 40212 | 40212-40214 | 3 units | Site-focused work (noted in QA runsheet) |
-| Kazanlak D | 2010-03-20 | 40432 | 2010-03-21 | 40424 | 40424-40432 | 9 units | Largest overlap - investigate |
+| Kazanlak D | 2010-03-20 | 40432 | 2010-03-21 | 40424 | 40424-40432 | 9 units | **RESOLVED** - DPF error, see KAZ10D-OV1 |
 
 ---
 
