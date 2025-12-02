@@ -110,36 +110,87 @@
 ## Corrections Required
 
 ### D001: Mar 04 End Unit (MAJOR)
-- **Current:** End Unit = 40066
-- **DPF shows:** End Unit = 40023
-- **Recommendation:** Update to 40023
-- [ ] User Decision Required
+
+**Record:** 2009-03-04, Team D
+**Field:** End_Unit
+**Current:** 40066
+**Corrected:** 40023
+**Source evidence:** DPF (D_Summary.pdf, page 1) clearly shows Start Unit: 40001, End Unit: 40023, Total Units: 23. Author: Magda B.
+**Reasoning:** CSV End Unit 40066 is 43 units too high. DPF shows only 23 units surveyed on first training day. The erroneous 40066 value overlaps with units not surveyed until Mar 15+.
+
+**User Decision:**
+- [X] Approve correction to 40023
+- [ ] Modify: _______________
+
+**Status:** Pending
+
+---
 
 ### D002: Mar 19 Unit Range (MAJOR)
-- **Current:** Start Unit = 40048, End Unit = 40073
-- **DPF shows:** Start Unit = 40069, End Unit = 40074
-- **Analysis:** CSV range overlaps with Mar 15 (40039-40065). DPF range follows Mar 15 properly.
-- **Recommendation:** Update to 40069-40074
-- [ ] User Decision Required
+
+**Record:** 2009-03-19, Team D
+**Field:** Start_Unit, End_Unit
+**Current:** 40048, 40073
+**Corrected:** 40069, 40074
+**Source evidence:** DPF (D_Summary.pdf, page 5) shows Start Unit: 40069, End Unit: 40074, Total Units: 5. Author: Barbara Klara Olujic.
+**Reasoning:** CSV range 40048-40073 overlaps with Mar 15 range (40039-40065). DPF value 40069 follows Mar 15 end (40065) with expected gap for non-survey days. CSV values are completely wrong.
+
+**User Decision:**
+- [ ] Approve correction to 40069-40074
+- [X] Modify: The corrected numbers for this day are OK, BUT there are NO gaps for non-survey days, we should record all gaps and investigate to try to find the missing units. 
+
+**Status:** Pending
+
+---
 
 ### D003: Mar 20 End Unit
-- **Current:** End Unit = 40082
-- **DPF shows:** End Unit = 40095
-- **Recommendation:** Update to 40095
-- [ ] User Decision Required
+
+**Record:** 2009-03-20, Team D
+**Field:** End_Unit
+**Current:** 40082
+**Corrected:** 40095
+**Source evidence:** DPF (D_Summary.pdf, page 6) shows Start Unit: 40075, End Unit: 40095, Total Units: 20. Author: Barbara Klara Olujic.
+**Reasoning:** CSV End Unit 40082 is 13 units too low. DPF shows 20 units surveyed. The corrected value 40095 provides continuity with Mar 23 DPF start (40096).
+
+**User Decision:**
+- [X] Approve correction to 40095
+- [ ] Modify: _______________
+
+**Status:** Pending
+
+---
 
 ### D004: Mar 23 Unit Range (MAJOR)
-- **Current:** Start Unit = 40069, End Unit = 40094
-- **DPF shows:** Start Unit = 40096, End Unit = 40104 (approximately)
-- **Analysis:** CSV range 40069-40094 overlaps with CSV Mar 19 and Mar 20. DPF range follows Mar 20 DPF end (40095).
-- **Recommendation:** Update to 40096-40104
-- [ ] User Decision Required
+
+**Record:** 2009-03-23, Team D
+**Field:** Start_Unit, End_Unit
+**Current:** 40069, 40094
+**Corrected:** 40096, 40104
+**Source evidence:** DPF (D_Summary.pdf, page 7) shows Start Unit: 40096, End Unit: 40104, Total Units: 14. Author: Barbara Klara Olujic.
+**Reasoning:** CSV range 40069-40094 overlaps with corrected Mar 19 and Mar 20 ranges. DPF value 40096 follows corrected Mar 20 end (40095) continuously. CSV values are completely wrong.
+
+**User Decision:**
+- [X] Approve correction to 40096-40104
+- [ ] Modify: _______________
+
+**Status:** Pending
+
+---
 
 ### D005: Mar 25 End Unit (MINOR)
-- **Current:** End Unit = 40211
-- **DPF shows:** End Unit = 40214
-- **Recommendation:** Update to 40214
-- [ ] User Decision Required
+
+**Record:** 2009-03-25, Team D
+**Field:** End_Unit
+**Current:** 40211
+**Corrected:** 40214
+**Source evidence:** DPF (D_Summary.pdf, page 9) shows Start Unit: 40125, End Unit: 40214, Total Units: 46. Note: "40194-40198 = SHRT SITE" (short site).
+**Reasoning:** CSV End Unit 40211 is 3 units too low. DPF shows 46 units surveyed. The corrected value 40214 matches Mar 26 overlap pattern (both sources show Mar 26 starting at 40212).
+
+**User Decision:**
+- [X] Approve correction to 40214
+- [ ] Modify: _______________
+
+**Status:** Pending
 
 ---
 

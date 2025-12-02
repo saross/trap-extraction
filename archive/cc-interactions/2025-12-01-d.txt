@@ -1,0 +1,332 @@
+╭─── Claude Code v2.0.55 ───────────────────────────────────────────────────────────────────────────────────────────────────╮
+│                            │ Tips for getting started                                                                     │
+│     Welcome back Shawn!    │ Run /init to create a CLAUDE.md file with instructions for Claude                            │
+│                            │ ─────────────────────────────────────────────────────────────────                            │
+│           ▐▛███▜▌          │ Recent activity                                                                              │
+│          ▝▜█████▛▘         │ No recent activity                                                                           │
+│            ▘▘ ▝▝           │                                                                                              │
+│                            │                                                                                              │
+│   Opus 4.5 · Claude Max    │                                                                                              │
+│   ~/Code/trap-extraction   │                                                                                              │
+╰───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+════════════════════════════════════════ Conversation compacted · ctrl+o for history ════════════════════════════════════════
+
+> /compact ● Session Summary for /compact
+
+  QA Automation Progress: 14/18 teams complete (78%)
+
+  Completed This Session (2025-12-01)
+
+  - KAZ-2009-E: 7 records, 6 issues (missing Mar 24, Mar 20 major error, Apr 03 miscategorised)
+  - KAZ-2010-A: 9 records, 1 issue (Apr 07 end unit)
+  - KAZ-2010-B: 20 records, 0 issues (100% match - cleanest team)
+  - KAZ-2010-D: 14 records, 1 issue (Mar 26 start unit)
+
+  Remaining Queue (4 teams - all Kazanlak 2011)
+
+  | ID         | DPF Available | Diary      | Notes                |
+  |------------|---------------|------------|----------------------|
+  | KAZ-2011-A | ❌ No          | BG only    | Limited verification |
+  | KAZ-2011-B | ✓ Yes         | EN primary | Full QA possible     |
+  | KAZ-2011-C | ✓ Yes         | EN primary | Full QA possible     |
+  | KAZ-2011-D | ❌ No          | BG only    | Limited verification |
+
+  Recommended order: KAZ-2011-B → KAZ-2011-C (both have DPF scans)
+
+  Key Files
+
+  - Queue: docs/qa-automation/qa-queue.yaml
+  - Runsheets: outputs/qa-runsheet-*.md
+  - CSV: outputs/attribution.csv
+  - Source base: /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-2020-04/
+
+  Workflow
+
+  1. Get CSV records: grep "2011-" attribution.csv | grep ",B,"
+  2. Read DPF summary: Kazanluk/2011-11-30/Project Records/Team B/FieldRecords/
+  3. Compare unit ranges, generate runsheet
+  4. Update queue, commit
+
+  Critical Context
+
+  - DPF scans authoritative for unit numbers
+  - Document corrections only - don't apply to CSV
+  - User reviews all runsheets at end before corrections applied
+  - UK spelling in all outputs
+
+  Todos
+  ☒ QA KAZ-2010-B: Complete
+  ☒ QA KAZ-2010-D: Get CSV records
+  ☒ QA KAZ-2010-D: Read DPF scans
+  ☐ QA KAZ-2010-D: Compare and generate runsheet
+  ☐ QA KAZ-2010-D: Update queue and commit 
+  ⎿  Compacted (ctrl+o to see full summary)
+  ⎿  Read docs/qa-automation/qa-queue.yaml (150 lines)
+  ⎿  Read outputs/qa-runsheet-kazanlak-2010-spring-d.md (150 lines)
+  ⎿  Read outputs/qa-runsheet-kazanlak-2010-spring-b.md (142 lines)
+  ⎿  Read outputs/qa-runsheet-kazanlak-2010-spring-a.md (206 lines)
+  ⎿  Read outputs/qa-runsheet-kazanlak-2009-spring-e.md (233 lines)
+  ⎿  Todo list read (5 items)
+
+> can you please continue with QA? Finish what you are working on now, then proceed to the next team. Monitor context and
+ stop before compact, or after completed an additional two team-seasons, whichever comes firt. 
+
+● Looking at the files I just read, KAZ-2010-D is already complete (runsheet exists, queue updated). The todo list is
+  stale from the compact. Let me update it and proceed with the next team: KAZ-2011-B.
+
+● Bash(grep "2011-" /home/shawn/Code/trap-extraction/outputs/attribution.csv | grep ",B,")
+  ⎿ 2011-11-03,B,21840,21855,Petra Tušlová,Petra | Bethan | Joel | Hamish | Oscar,Petra Tušlová | Bethan Donnelly | Joel
+     Sercombe | Hamish Sinclair | Oscar Warren,Petra Tušlová,,,,Hamish Sinclair,Bethan Donnelly,,Kaz11_SurveySummary.xls
+    x,B_2011Summary.pdf,"Extracted from page 1, form 1 | Role extraction: Photographer=Hamish (B_2011Diary_En.docx, high
+    … +55 lines (ctrl+o to expand)
+
+
+
+
+● Bash(ls -la "/media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-2020-04/Kazanluk/2011-11-30/Project
+      Records/Team B/")
+  ⎿  total 160                                    
+     drwxr-x--- 4 shawn 1003  4096 Nov 23 21:56 .
+     drwxr-x--- 9 shawn 1003  4096 Oct  4  2016 ..
+     … +10 lines (ctrl+o to expand)
+
+● Found 17 CSV records. Let me check the FieldRecords directory for the DPF summary:
+
+● Bash(ls -la "/media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-2020-04/Kazanluk/2011-11-30/Project
+      Records/Team B/FieldRecords/")
+  ⎿  total 43552                                    
+     drwxr-x--- 2 shawn 1003    4096 Nov 20 15:16 .
+     drwxr-x--- 4 shawn 1003    4096 Nov 23 21:56 ..
+     … +29 lines (ctrl+o to expand)
+
+● Found B_2011Summary.pdf (694 KB). Let me read it:
+
+● Read(/media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-2020-04/Kazanluk/2011-11-30/Project
+      Records/Team B/FieldRecords/B_2011Summary.pdf)
+  ⎿  Read PDF (677.5KB)
+
+● I've reviewed the DPF summary (8 pages, 16 forms). Let me compile the comparison:
+
+  | Date   | CSV Range   | DPF Range       | Status         |
+  |--------|-------------|-----------------|----------------|
+  | Nov 03 | 21840-21855 | 21840-21855     | ✓              |
+  | Nov 05 | 21856-21900 | 21856-21900     | ✓              |
+  | Nov 06 | 21901-21965 | 21901-21965     | ✓              |
+  | Nov 07 | 21966-22016 | 21966-22016     | ✓              |
+  | Nov 08 | 22017-22086 | 22017-22086     | ✓              |
+  | Nov 09 | 22087-22123 | 22087-22123     | ✓              |
+  | Nov 10 | 22124-22198 | 22124-22198     | ✓              |
+  | Nov 12 | 22206-22243 | 22206-22243     | ✓              |
+  | Nov 13 | 22244-22268 | 22244-22268     | ✓              |
+  | Nov 15 | 22269-22282 | 22269-22282     | ✓              |
+  | Nov 16 | 72088-72206 | 22283-22320     | ❌ MAJOR ERROR  |
+  | Nov 17 | 22321-22367 | 22321-22367     | ✓              |
+  | Nov 18 | 22368-22407 | 22368-22407     | ✓              |
+  | Nov 20 | 22408-22462 | 22408-22462     | ✓              |
+  | Nov 21 | 22463-22508 | 22463-22508     | ✓              |
+  | Nov 22 | 22509-22542 | 22509-22542     | ✓              |
+  | Nov 29 | 22600-22613 | (separate file) | Need to verify |
+
+  Critical finding: Nov 16 CSV shows units 72088-72206 from "Yam10_SurveySummary.xls" - wrong source! The DPF clearly
+  shows 22283-22320.
+
+  Let me verify Nov 29 (not in summary):
+
+● Read(/media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-2020-04/Kazanluk/2011-11-30/Project
+      Records/Team B/FieldRecords/B_20111129.pdf)
+  ⎿  Read PDF (634.9KB)
+
+● Nov 29 DPF confirms units 22600-22613 (14 units) - matches CSV.
+
+  Now I'll generate the runsheet:
+
+● Write(outputs/qa-runsheet-kazanlak-2011-autumn-b.md)
+  ⎿  Wrote 156 lines to outputs/qa-runsheet-kazanlak-2011-autumn-b.md
+     # QA Runsheet: Kazanlak 2011 Autumn Team B
+     **Study Area/Season:** Kazanlak (Seuthopolis) 2011 Autumn
+     **Team:** B
+     **QA Date:** 2025-12-01
+     **QA Performed By:** Claude Code (with Shawn Ross)
+     **Records in CSV:** 17
+     **Date Range:** 2011-11-03 to 2011-11-29
+     ---
+     … +146 lines (ctrl+o to expand)
+
+● Now let me update the queue and commit:
+
+● Read(docs/qa-automation/qa-queue.yaml)
+  ⎿  Read 150 lines
+
+● Update(docs/qa-automation/qa-queue.yaml)
+  ⎿  Updated docs/qa-automation/qa-queue.yaml with 14 removals                                      
+       23          su_forms: null
+       24        notes: "BG diary only - no English translation; no DPF scans available"
+       25    
+       26 -    - id: "KAZ-2011-B"
+       27 -      study_area: "Kazanlak"
+       28 -      year: 2011
+       29 -      season: "spring"
+       30 -      team: "B"
+       31 -      status: "pending"
+       32 -      record_count: null
+       33 -      date_range: null
+       34 -      sources:
+       35 -        diary_primary: "Kazanluk/2011-11-30/Project Records/Team B/B_2011Diary_En.docx"
+       36 -        diary_secondary: "Kazanluk/2011-11-30/Project Records/Team B/B_2011Diary_BG.docx"
+       37 -        dpf_scans: "Kazanluk/2011-11-30/Project Records/Team B/FieldRecords/"
+       38 -        su_forms: null
+       39 -      notes: "EN diary is PRIMARY (63 KB)"
+       26    
+       27      - id: "KAZ-2011-C"
+       28        study_area: "Kazanlak"
+
+● Update(docs/qa-automation/qa-queue.yaml)
+  ⎿  Updated docs/qa-automation/qa-queue.yaml with 5 additions                                                 
+       125        runsheet: "outputs/qa-runsheet-kazanlak-2010-spring-d.md"
+       126        notes: "14 records (13 survey + 1 rain day); 1 error (Mar 26 start unit); Mar 20-21 overlap 
+             verified"
+       127    
+       128 +    - id: "KAZ-2011-B"
+       129 +      completed_date: "2025-12-01"
+       130 +      runsheet: "outputs/qa-runsheet-kazanlak-2011-autumn-b.md"
+       131 +      notes: "17 records; 1 CRITICAL error (Nov 16 wrong source - Yambol data instead of Kazanlak)"
+       132 +  
+       133    # Summary statistics
+       134    # Total teams: 18 (14 completed, 4 pending)
+       135    # By study area:
+
+● Update(docs/qa-automation/qa-queue.yaml)
+  ⎿  Updated docs/qa-automation/qa-queue.yaml with 2 additions and 2 removals                                       
+       131        notes: "17 records; 1 CRITICAL error (Nov 16 wrong source - Yambol data instead of Kazanlak)"
+       132    
+       133    # Summary statistics
+       134 -  # Total teams: 18 (14 completed, 4 pending)
+       134 +  # Total teams: 18 (15 completed, 3 pending)
+       135    # By study area:
+       136    #   - Elhovo 2009: 3 complete (Teams A, B, C)
+       137    #   - Elhovo 2010: 2 complete (Teams A, B)
+       138    #   - Kazanlak 2009: 5 complete (Teams A-E)
+       139    #   - Kazanlak 2010: 4 complete (Teams A-D) ✓ COMPLETE
+       140 -  #   - Kazanlak 2011: 4 pending (Teams A-D) - note: A & D have BG diary only, no DPF
+       140 +  #   - Kazanlak 2011: 1 complete (Team B), 3 pending (A, C, D) - note: A & D have BG diary only, no DPF
+
+● Bash(git add outputs/qa-runsheet-kazanlak-2011-autumn-b.md docs/qa-automation/qa-queue.yaml && git status)
+  ⎿  On branch master                                     
+     Your branch is ahead of 'origin/master' by 9 commits.
+       (use "git push" to publish your local commits)
+     … +10 lines (ctrl+o to expand)
+
+● Bash(git commit -m "feat(qa): complete QA for Kazanlak 2011 Autumn Team B…)
+  ⎿  [master a49efd5] feat(qa): complete QA for Kazanlak 2011 Autumn Team B
+      2 files changed, 162 insertions(+), 16 deletions(-)
+      create mode 100644 outputs/qa-runsheet-kazanlak-2011-autumn-b.md
+
+● KAZ-2011-B complete. Now proceeding to KAZ-2011-C:
+
+● Bash(grep "2011-" /home/shawn/Code/trap-extraction/outputs/attribution.csv | grep ",C,")
+  ⎿ 2011-11-02,C,30821,30880,Shawn Ross,Shawn R | Corinne | Jodie | Georgia | Eva,Shawn Ross | Corinne Softley | Jodie M
+    cClintock | Georgia Burnett | Eva Tonkova,,,,,,Corinne Softley,,Kaz11_SurveySummary.xlsx,C_2011Summary.pdf,"Extracte
+    d from page 1, form 1",No role data available
+    … +49 lines (ctrl+o to expand)
+
+
+
+● Bash(ls -la "/media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-2020-04/Kazanluk/2011-11-30/Project
+      Records/Team C/")
+  ⎿  total 172                                    
+     drwxr-x--- 4 shawn 1003  4096 Jul 11  2020 .
+     drwxr-x--- 9 shawn 1003  4096 Oct  4  2016 ..
+     … +8 lines (ctrl+o to expand)
+
+● Found 18 CSV records for Team C. Let me check FieldRecords:
+
+● Bash(ls -la "/media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-2020-04/Kazanluk/2011-11-30/Project
+      Records/Team C/FieldRecords/")
+  ⎿  total 130764                                    
+     drwxr-x--- 2 shawn 1003     4096 Oct  4  2016 .
+     drwxr-x--- 4 shawn 1003     4096 Jul 11  2020 ..
+     … +29 lines (ctrl+o to expand)
+
+● Found C_2011Summary.pdf (3.4 MB). Let me read it:
+
+● Read(/media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-2020-04/Kazanluk/2011-11-30/Project
+      Records/Team C/FieldRecords/C_2011Summary.pdf)
+  ⎿  Read PDF (3.3MB)
+
+● I've reviewed the DPF summary (9 pages). Let me compile the comparison:
+
+  | Date   | CSV Range   | DPF Range         | Status           |
+  |--------|-------------|-------------------|------------------|
+  | Nov 02 | 30821-30880 | 30821-30880       | ✓                |
+  | Nov 03 | 30881-30949 | 30881-30949       | ✓                |
+  | Nov 05 | 30950-30971 | 30950-30971       | ✓                |
+  | Nov 06 | 30972-31020 | 30972-31020       | ✓                |
+  | Nov 07 | 31021-31105 | 31021-31105       | ✓                |
+  | Nov 08 | 31106-31180 | 31106-31180       | ✓                |
+  | Nov 09 | 31181-31245 | 31181-31245       | ✓                |
+  | Nov 12 | (none)      | (mound recording) | ✓ Non-survey     |
+  | Nov 13 | 31246-31250 | 31246-31250       | ✓                |
+  | Nov 15 | 31251-31284 | 31251-31284       | ✓                |
+  | Nov 16 | 31285-31302 | 31285-31302       | ✓                |
+  | Nov 17 | 31303-31335 | 31303-31335       | ✓                |
+  | Nov 18 | 31335-31342 | 31336-31343       | ⚠️ OVERLAP ERROR |
+  | Nov 20 | 31344-31355 | 31344-31355       | ✓                |
+  | Nov 21 | 31356-31376 | 31356-31376       | ✓                |
+  | Nov 22 | 31377-31395 | 31377-31395       | ✓                |
+  | Nov 23 | 31396-31439 | 31396-31439       | ✓                |
+  | Nov 24 | 31440-31450 | 31440-31450       | ✓                |
+
+  Key finding: Nov 18 CSV Start Unit 31335 overlaps with Nov 17 End Unit 31335. DPF shows Nov 18 should be 31336-31343.
+
+  Now generating the runsheet:
+
+● Write(outputs/qa-runsheet-kazanlak-2011-autumn-c.md)
+  ⎿  Wrote 167 lines to outputs/qa-runsheet-kazanlak-2011-autumn-c.md
+     # QA Runsheet: Kazanlak 2011 Autumn Team C
+     **Study Area/Season:** Kazanlak (Seuthopolis) 2011 Autumn
+     **Team:** C
+     **QA Date:** 2025-12-01
+     **QA Performed By:** Claude Code (with Shawn Ross)
+     **Records in CSV:** 18 (17 survey days + 1 non-survey day)
+     **Date Range:** 2011-11-02 to 2011-11-24
+     ---
+     … +157 lines (ctrl+o to expand)
+
+● Now updating the queue and committing:
+
+● Update(docs/qa-automation/qa-queue.yaml)
+  ⎿  Updated docs/qa-automation/qa-queue.yaml with 14 removals                                      
+       24        notes: "BG diary only - no English translation; no DPF scans available"
+       25    
+       26    
+       27 -    - id: "KAZ-2011-C"
+       28 -      study_area: "Kazanlak"
+       29 -      year: 2011
+       30 -      season: "spring"
+       31 -      team: "C"
+       32 -      status: "pending"
+       33 -      record_count: null
+       34 -      date_range: null
+       35 -      sources:
+       36 -        diary_primary: "Kazanluk/2011-11-30/Project Records/Team C/C_2011Diary_En.docx"
+       37 -        diary_secondary: "Kazanluk/2011-11-30/Project Records/Team C/C_2011Diary_BG.docx"
+       38 -        dpf_scans: "Kazanluk/2011-11-30/Project Records/Team C/FieldRecords/"
+       39 -        su_forms: null
+       40 -      notes: "EN diary is PRIMARY (70 KB)"
+       27    
+       28      - id: "KAZ-2011-D"
+       29        study_area: "Kazanlak"
+
+● Update(docs/qa-automation/qa-queue.yaml)
+  ⎿  Updated docs/qa-automation/qa-queue.yaml with 5 additions                                                 
+       116        runsheet: "outputs/qa-runsheet-kazanlak-2011-autumn-b.md"
+       117        notes: "17 records; 1 CRITICAL error (Nov 16 wrong source - Yambol data instead of Kazanlak)"
+       118    
+       119 +    - id: "KAZ-2011-C"
+       120 +      completed_date: "2025-12-01"
+       121 +      runsheet: "outputs/qa-runsheet-kazanlak-2011-autumn-c.md"
+       122 +      notes: "18 records (17 survey + 1 non-survey); 1 error (Nov 18 unit overlap with Nov 17)"
+       123 +  
+       124    # Summary statistics
+       125    # Total teams: 18 (15 completed, 3 pending)
+       126    # By study area:

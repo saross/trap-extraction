@@ -149,40 +149,124 @@ Team C conducted a mix of **intensive survey** (unit-based) and **non-standard s
 
 | ID | Date | Field | Issue | Action |
 |----|------|-------|-------|--------|
-| D001 | Mar 20 | End Unit | DPF unclear - could be 30033 or 30133 | [ ] Verify against original |
-| D002 | Mar 23 | Unit Range | CSV: 30012-30170, DPF: 30065-30097 (intensive only) | [ ] Update to 30065-30097 |
-| D003 | Mar 25 | Unit Range | CSV: no units, DPF: 30132-30170 | [ ] Add units 30132-30170 |
-| — | Mar 8, 9 | QA_Notes | CSV says "Team not working" but team was doing mound work | [ ] Update notes |
+| D001 | Mar 20 | Unit Range | Six-digit mountain survey (300030-300033) misread as five-digit | [X] Correct to 300030-300033 |
+| D002a | Mar 23 | Unit Range | CSV: 30012-30170, DPF: 30065-30097 (intensive) | [X] Update to 30065-30097 |
+| D002b | Mar 23 | New Record | Mountain survey 300012-300020 needs separate line | [X] Add new record |
+| D003 | Mar 25 | Unit Range | CSV: no units, DPF: 30132-30170 | [X] Add units 30132-30170 |
+| D004 | Mar 6 | New Record | Mountain survey 300000-300002 needs separate line | [X] Add new record |
+| — | Mar 8, 9 | QA_Notes | CSV says "Team not working" but team was doing mound work | [X] Update notes |
 
 ---
 
 ## Corrections Required
 
-### D001: Mar 20 End Unit (NEEDS VERIFICATION)
-- **Current:** End Unit = 30133
-- **DPF shows:** End Unit field difficult to read (300,033 or similar)
-- **Recommendation:** Verify against original DPF or other source
-- [ ] User Decision Required
+### D001: Mar 20 Unit Range (SIX-DIGIT MOUNTAIN SURVEY)
 
-### D002: Mar 23 Unit Range (MAJOR ERROR)
-- **Current:** Start Unit = 30012, End Unit = 30170
-- **DPF shows:** Start Unit = 30065, End Unit = 30097 (intensive survey only)
-- **Analysis:** CSV appears to have combined mountain survey units (30012-30020) with intensive units (30065-30097) AND extended into Mar 24-25 range
-- **Recommendation:** Update to 30065-30097
-- [ ] User Decision Required
+**Record:** 2009-03-20, Team C
+**Field:** Start_Unit, End_Unit
+**Current CSV:** 30080-30133 (incorrect five-digit interpretation)
+**Corrected:** 300030-300033 (six-digit mountain polygon numbers)
+**Source evidence:** DPF (C_2009Summary.pdf, page 3) shows six-digit mountain polygon numbers: Start Unit: 300030, End Unit: 300033. This was mountain polygon work, not intensive survey.
+**Reasoning:** The numbers on the DPF are six-digit "old format" mountain survey units (300xxx), not five-digit intensive survey units (30xxx). These six-digit numbers were supposed to be retroactively converted to five-digit format, but the mapping is unknown. Preserve the six-digit numbers until the official mapping is found.
+
+**User Decision:**
+- [X] Approve correction to 300030-300033 (preserve six-digit format)
+- [ ] Modify: _______________
+
+**Status:** Pending (six-digit number - see planning/follow-up-actions.md)
+
+---
+
+### D002: Mar 23 Unit Range (TWO CORRECTIONS REQUIRED)
+
+**Record:** 2009-03-23, Team C
+**Field:** Start_Unit, End_Unit
+**Current CSV:** 30012-30170 (erroneous combination of mountain and intensive numbers)
+
+**Correction A - Update existing record to intensive survey:**
+- **Corrected:** 30065-30097
+- **Source evidence:** DPF Form 1 (C_2009Summary.pdf, page 4): Leader: CB/Elena, Start Unit: 30065, End Unit: 30097, Total Units: 33, Author: CB
+
+**Correction B - ADD NEW RECORD for mountain survey:**
+- **New record:** 2009-03-23, Team C (Mountain Survey)
+- **Units:** 300012-300020 (six-digit format, preserve as-is)
+- **Source evidence:** DPF Form 2 (C_2009Summary.pdf, page 4): Leader: E, Start Unit: 300012, End Unit: 300020, Total: 9
+
+**Reasoning:** The CSV erroneously combined mountain polygon start (300012 → misread as 30012) with Mar 25 end unit (30170). Mar 23 had TWO separate survey activities requiring TWO separate CSV lines:
+1. Intensive survey: 30065-30097 (five-digit, normal)
+2. Mountain survey: 300012-300020 (six-digit, pending mapping)
+
+**User Decision:**
+- [X] Approve correction A (update to 30065-30097)
+- [X] Approve correction B (add new record for 300012-300020)
+- [ ] Modify: _______________
+
+**Status:** Pending
+
+---
 
 ### D003: Mar 25 Missing Units
-- **Current:** No units recorded (marked as "Non-standard survey")
-- **DPF shows:** Start Unit = 30132, End Unit = 30170, Total = 38 units
-- **Analysis:** This was a normal intensive survey day, incorrectly categorised
-- **Recommendation:** Add units 30132-30170, remove non-standard flag
-- [ ] User Decision Required
 
-### Note Corrections (Mar 8, 9)
-- **Current notes:** "Team not working: No diary entry for this date"
-- **Diary shows:** Team WAS working (mound documentation)
-- **Recommendation:** Update QA_Notes to indicate mound documentation work
-- [ ] User Decision Required
+**Record:** 2009-03-25, Team C
+**Field:** Start_Unit, End_Unit, QA_Notes
+**Current:** No units recorded (marked as "Non-standard survey: Systematic transect survey")
+**Corrected:** Start_Unit=30132, End_Unit=30170, remove non-standard flag
+**Source evidence:** DPF (C_2009Summary.pdf, page 4, bottom-left form) clearly shows:
+  - Date: 25 March 2009
+  - Leader: Elena
+  - Walkers: Helena, Peter, Maggie, Bryan
+  - Start Unit: 30132
+  - End Unit: 30170
+  - Total Units: 35+
+  - Author: Bryan Zlatos
+**Reasoning:** This was a normal intensive survey day with units 30132-30170, incorrectly categorised in CSV as non-standard survey. The DPF clearly shows intensive survey units, not mountain polygons or mound documentation. The unit sequence confirms: Mar 24 ends at 30131, Mar 25 starts at 30132 (continuous).
+
+**User Decision:**
+- [X] Approve adding units 30132-30170
+- [ ] Modify: _______________
+
+**Status:** Pending
+
+---
+
+### D004: Mar 6 Missing Mountain Survey Record (ADD NEW RECORD)
+
+**Record:** 2009-03-06, Team C (Mountain Survey) - NEW RECORD
+**Field:** All fields (new record)
+**Current CSV:** Only intensive survey record exists (30025-30034)
+**New record to add:**
+- **Date:** 2009-03-06
+- **Team:** C
+- **Start_Unit:** 300000
+- **End_Unit:** 300002
+- **Survey type:** Mountain polygons (six-digit format)
+**Source evidence:** DPF (C_2009Summary.pdf, page 1) Comments section: "MOUNTAIN POLYGONS 300,000-002"
+**Reasoning:** Mar 6 had both intensive survey (30025-30034, already in CSV) and mountain polygon work (300000-300002). The mountain work needs a separate CSV line.
+
+**User Decision:**
+- [X] Approve adding new record for 300000-300002
+- [ ] Modify: _______________
+
+**Status:** Pending (six-digit number - see planning/follow-up-actions.md)
+
+---
+
+### Note Corrections (Mar 8, 9) - MINOR
+
+**Records:** 2009-03-08 and 2009-03-09, Team C
+**Field:** QA_Notes
+**Current:** "Team not working: No diary entry for this date"
+**Corrected:** Update to indicate mound documentation work
+**Source evidence:**
+  - Mar 8: DPF (page 2) shows team working with GPS Points 3043-48; Diary confirms mound documentation (tumuli 3043-3048)
+  - Mar 9: DPF (page 2) shows team working with GPS Points 3014-20; Diary confirms feature documentation (features 3015-3020)
+**Reasoning:** The team WAS working on both days doing mound/feature documentation (non-intensive survey). The QA_Notes incorrectly state "Team not working" when the diary and DPF show otherwise.
+
+**User Decision:**
+- [X] Approve note corrections
+- [ ] Modify: _______________
+
+**Status:** Pending (minor - documentation only)
 
 ---
 
@@ -233,23 +317,30 @@ Team C conducted a mix of **intensive survey** (unit-based) and **non-standard s
 | Metric | Count |
 |--------|-------|
 | Records in CSV | 15 |
-| Intensive survey days | 7 (Mar 4, 6, 19, 20, 23, 24, 25) |
-| Non-standard survey days | 8 |
-| Records confirmed | 11 |
-| Unit discrepancies | 2 (D001, D002) |
-| Missing data | 1 (D003) |
-| Note errors | 2 (Mar 8, 9) |
-| Corrections required | 3-5 |
+| Intensive survey days | 6 (Mar 4, 6, 19, 23, 24, 25) |
+| Mountain survey days | 4 (Mar 6, 12, 20, 23) |
+| Non-standard survey days | 5 (Mar 7, 8, 9, 11, 27) |
+| Records confirmed | 10 |
+| Unit corrections | 3 (D001, D002a, D003) |
+| New records to add | 2 (D002b, D004) |
+| Note corrections | 2 (Mar 8, 9) |
+| Corrections required | 7 |
 
 ### Issues by Category
-- Missing units: 1 (D003 - Mar 25)
-- Unit range errors: 1 (D002 - Mar 23)
-- Unclear data: 1 (D001 - Mar 20)
-- QA_Notes errors: 2 (Mar 8, 9)
+- Six-digit mountain survey corrections: 3 (D001, D002b, D004)
+- Five-digit unit corrections: 2 (D002a - Mar 23 intensive, D003 - Mar 25)
+- QA_Notes errors: 2 (Mar 8, 9) - minor
 - Walker errors: 0
 - Role errors: 0
+
+### Six-Digit Mountain Survey Numbers (Pending Mapping)
+See `planning/follow-up-actions.md` for full documentation. These six-digit numbers (300xxx) need to be preserved until the official mapping to five-digit (30xxx) format is found:
+- Mar 6: 300000-300002 (new record)
+- Mar 12: 300003-300009 (already documented separately)
+- Mar 20: 300030-300033 (correction to existing record)
+- Mar 23: 300012-300020 (new record)
 
 ---
 
 **Document created:** 2025-11-30
-**Last updated:** 2025-11-30
+**Last updated:** 2025-12-02

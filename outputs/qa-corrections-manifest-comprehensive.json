@@ -50,6 +50,83 @@
       "status": "APPLIED",
       "approved_date": "2025-11-30",
       "applied_date": "2025-11-30"
+    },
+    {
+      "id": "RS006",
+      "file": "qa-runsheet-kazanlak-2009-spring-a.md",
+      "study_area": "Kazanlak",
+      "season": "2009 Spring",
+      "team": "A",
+      "status": "APPROVED",
+      "approved_date": "2025-12-01",
+      "corrections_count": 4,
+      "notes": "4 unit range corrections (D001-D004)"
+    },
+    {
+      "id": "RS007",
+      "file": "qa-runsheet-kazanlak-2011-autumn-a.md",
+      "study_area": "Kazanlak",
+      "season": "2011 Autumn",
+      "team": "A",
+      "status": "APPROVED",
+      "approved_date": "2025-12-01",
+      "corrections_count": 5,
+      "notes": "5 walker corrections (A001-A005); diary-only QA"
+    },
+    {
+      "id": "RS008",
+      "file": "qa-runsheet-kazanlak-2011-autumn-d.md",
+      "study_area": "Kazanlak",
+      "season": "2011 Autumn",
+      "team": "D",
+      "status": "APPROVED",
+      "approved_date": "2025-12-01",
+      "corrections_count": 10,
+      "notes": "10 walker corrections (D001-D010); diary-only QA"
+    },
+    {
+      "id": "RS009",
+      "file": "qa-runsheet-kazanlak-2009-spring-b.md",
+      "study_area": "Kazanlak",
+      "season": "2009 Spring",
+      "team": "B",
+      "status": "APPROVED",
+      "approved_date": "2025-12-02",
+      "corrections_count": 6,
+      "notes": "6 corrections including 1 missing record (D001-D006)"
+    },
+    {
+      "id": "RS010",
+      "file": "qa-runsheet-kazanlak-2009-spring-c.md",
+      "study_area": "Kazanlak",
+      "season": "2009 Spring",
+      "team": "C",
+      "status": "APPROVED",
+      "approved_date": "2025-12-02",
+      "corrections_count": 7,
+      "notes": "7 corrections including 2 new records for six-digit mountain survey; see follow-up-actions.md"
+    },
+    {
+      "id": "RS011",
+      "file": "qa-runsheet-kazanlak-2009-spring-d.md",
+      "study_area": "Kazanlak",
+      "season": "2009 Spring",
+      "team": "D",
+      "status": "APPROVED",
+      "approved_date": "2025-12-02",
+      "corrections_count": 5,
+      "notes": "5 unit range corrections (D001-D005)"
+    },
+    {
+      "id": "RS012",
+      "file": "qa-runsheet-kazanlak-2010-spring-d.md",
+      "study_area": "Kazanlak",
+      "season": "2010 Spring",
+      "team": "D",
+      "status": "APPROVED",
+      "approved_date": "2025-12-02",
+      "corrections_count": 1,
+      "notes": "1 unit correction (D001)"
     }
   ],
   "corrections": [
@@ -691,30 +768,722 @@
       "notes": "Rebecca surname unknown - added to follow-up-actions.md",
       "status": "APPLIED",
       "applied_date": "2025-11-30"
+    },
+    {
+      "runsheet": "RS006",
+      "id": "KAZ09A-D001",
+      "type": "CORRECTION",
+      "date": "2009-03-06",
+      "team": "A",
+      "severity": "MAJOR",
+      "description": "Unit range error - CSV shows placeholder 10000-10000 instead of actual 10018-10053",
+      "fields": {
+        "Start_Unit": {
+          "current": "10000",
+          "corrected": "10018",
+          "action": "REPLACE"
+        },
+        "End_Unit": {
+          "current": "10000",
+          "corrected": "10053",
+          "action": "REPLACE"
+        }
+      },
+      "source_evidence": "DPF shows Start Unit: A10018, End Unit: A10053, Total Units: 35",
+      "status": "PENDING"
+    },
+    {
+      "runsheet": "RS006",
+      "id": "KAZ09A-D002",
+      "type": "CORRECTION",
+      "date": "2009-03-08",
+      "team": "A",
+      "severity": "MAJOR",
+      "description": "Unit range error - CSV range too small (8 units vs 36 in DPF)",
+      "fields": {
+        "Start_Unit": {
+          "current": "10104",
+          "corrected": "10088",
+          "action": "REPLACE"
+        },
+        "End_Unit": {
+          "current": "10111",
+          "corrected": "10123",
+          "action": "REPLACE"
+        }
+      },
+      "source_evidence": "DPF shows Start Unit: A10088, End Unit: A10123, Total Units: 37. Original QA misread end unit due to difficult handwriting.",
+      "status": "PENDING"
+    },
+    {
+      "runsheet": "RS006",
+      "id": "KAZ09A-D003",
+      "type": "CORRECTION",
+      "date": "2009-03-09",
+      "team": "A",
+      "severity": "MAJOR",
+      "description": "Unit range error - CSV shows single unit 10197 instead of 10124-10174 (50 units)",
+      "fields": {
+        "Start_Unit": {
+          "current": "10197",
+          "corrected": "10124",
+          "action": "REPLACE"
+        },
+        "End_Unit": {
+          "current": "10197",
+          "corrected": "10174",
+          "action": "REPLACE"
+        }
+      },
+      "source_evidence": "DPF shows Start Unit: A10124, End Unit: A10174, Total Units: 50",
+      "status": "PENDING"
+    },
+    {
+      "runsheet": "RS006",
+      "id": "KAZ09A-D004",
+      "type": "CORRECTION",
+      "date": "2009-03-23",
+      "team": "A",
+      "severity": "MAJOR",
+      "description": "Start unit error - CSV 10410 should be 10445",
+      "fields": {
+        "Start_Unit": {
+          "current": "10410",
+          "corrected": "10445",
+          "action": "REPLACE"
+        }
+      },
+      "source_evidence": "DPF shows Start Unit: 10445, End Unit: 10503. Diary confirms 'Units completed 10445-10503'",
+      "status": "PENDING"
+    },
+    {
+      "runsheet": "RS007",
+      "id": "KAZ11A-A001",
+      "type": "CORRECTION",
+      "date": "2011-10-29",
+      "team": "A",
+      "severity": "MAJOR",
+      "description": "Walker list incorrect - CSV shows wrong team (Phase 2), should be Phase 3 team",
+      "fields": {
+        "Walkers_Transliterated": {
+          "current": "Julia Tzvetkova | Yulia Dimitrova | Veronika Gencheva | Georgi Mihailov | Aleksandar Riskov | Tsoni Tsonev",
+          "corrected": "Julia Tzvetkova | Aleksandar Riskov | Eva Tonkova | Anani Antonov | Georgi Mihailov",
+          "action": "REPLACE"
+        }
+      },
+      "source_evidence": "BG Diary: 'Група от пет човека в състав: ЮЦ, Ал. Р, ЕТ, АА и ГМ'",
+      "status": "PENDING"
+    },
+    {
+      "runsheet": "RS007",
+      "id": "KAZ11A-A002",
+      "type": "CORRECTION",
+      "date": "2011-10-30",
+      "team": "A",
+      "severity": "MAJOR",
+      "description": "Walker list incorrect - CSV shows wrong team composition",
+      "fields": {
+        "Walkers_Transliterated": {
+          "current": "Yulia Dimitrova | Veronika Gencheva | Georgi Mihailov | Aleksandar Riskov | Tsoni Tsonev",
+          "corrected": "Aleksandar Riskov | Anani Antonov | Eva Tonkova | Tsoni Tsonev | Georgi Mihailov",
+          "action": "REPLACE"
+        }
+      },
+      "source_evidence": "BG Diary: 'Група от пет човека в състав: АлР, АА, ЕТ, ЦЦ и ГМ'",
+      "status": "PENDING"
+    },
+    {
+      "runsheet": "RS007",
+      "id": "KAZ11A-A003",
+      "type": "CORRECTION",
+      "date": "2011-10-31",
+      "team": "A",
+      "severity": "MAJOR",
+      "description": "Walker list incorrect - CSV shows wrong team (5 people), should be 4 core walkers",
+      "fields": {
+        "Walkers_Transliterated": {
+          "current": "Yulia Dimitrova | Veronika Gencheva | Georgi Mihailov | Aleksandar Riskov | Tsoni Tsonev",
+          "corrected": "Anani Antonov | Eva Tonkova | Tsoni Tsonev | Georgi Mihailov",
+          "action": "REPLACE"
+        }
+      },
+      "source_evidence": "BG Diary: 'Група от 4 човека в състав: АА, ЕТ, ЦЦ и ГМ'",
+      "status": "PENDING"
+    },
+    {
+      "runsheet": "RS007",
+      "id": "KAZ11A-A004",
+      "type": "CORRECTION",
+      "date": "2011-11-01",
+      "team": "A",
+      "severity": "MAJOR",
+      "description": "Walker list incorrect - should show foreign student team",
+      "fields": {
+        "Walkers_Transliterated": {
+          "current": "Yulia Dimitrova | Veronika Gencheva | Georgi Mihailov | Aleksandar Riskov | Tsoni Tsonev",
+          "corrected": "Georgi Mihailov | Eva Tonkova | Bethan Donnelly | Corinne Softley | Hamish Sinclair | Elaine Lin",
+          "action": "REPLACE"
+        }
+      },
+      "source_evidence": "BG Diary: 'Екип от шест човека в състав: ГМ, ЕТ, Bethan Donnelly, Corinne Softley, Hamish Sinclair, Elaine Lin'",
+      "status": "PENDING"
+    },
+    {
+      "runsheet": "RS007",
+      "id": "KAZ11A-A005",
+      "type": "CORRECTION",
+      "date": "2011-11-02",
+      "team": "A",
+      "severity": "MAJOR",
+      "description": "Walker list incorrect - should show foreign student team",
+      "fields": {
+        "Walkers_Transliterated": {
+          "current": "Yulia Dimitrova | Veronika Gencheva | Georgi Mihailov | Aleksandar Riskov | Tsoni Tsonev",
+          "corrected": "Georgi Mihailov | Elaine Lin | Zac Spielvogel | Hamish Sinclair | Cecilia Choi",
+          "action": "REPLACE"
+        }
+      },
+      "source_evidence": "BG Diary: 'Екип от 5 човека в състав: ГМ, EL, ZS, HS и Cecilia Choi'",
+      "status": "PENDING"
+    },
+    {
+      "runsheet": "RS008",
+      "id": "KAZ11D-D001",
+      "type": "CORRECTION",
+      "date": "2011-10-15",
+      "team": "D",
+      "severity": "Minor",
+      "description": "Missing walker - Hristina Pavkova not in CSV",
+      "fields": {
+        "Walkers_Transliterated": {
+          "current": "Nadezhda Kecheva | Yulia Dimitrova | Veronika Gencheva | Georgi Mihailov | Emil Dakashev | Aleksandar Riskov",
+          "corrected": "Nadezhda Kecheva | Yulia Dimitrova | Veronika Gencheva | Georgi Mihailov | Emil Dakashev | Aleksandar Riskov | Hristina Pavkova",
+          "action": "REPLACE"
+        }
+      },
+      "source_evidence": "BG Diary: 'Екип: Н. Кечева, Ю. Димитрова, В. Генчева, Г. Михайлов, Е. Дакашев, А. Рисков, Х. Павкова'",
+      "status": "PENDING"
+    },
+    {
+      "runsheet": "RS008",
+      "id": "KAZ11D-D002",
+      "type": "CORRECTION",
+      "date": "2011-10-16",
+      "team": "D",
+      "severity": "Minor",
+      "description": "Missing walker - Hristina Pavkova not in CSV",
+      "fields": {
+        "Walkers_Transliterated": {
+          "current": "Nadezhda Kecheva | Veronika Gencheva | Emil Dakashev",
+          "corrected": "Nadezhda Kecheva | Veronika Gencheva | Emil Dakashev | Hristina Pavkova",
+          "action": "REPLACE"
+        }
+      },
+      "source_evidence": "BG Diary: 'Екип: Н. Кечева, В. Генчева, Е. Дакашев, Х. Павкова'",
+      "status": "PENDING"
+    },
+    {
+      "runsheet": "RS008",
+      "id": "KAZ11D-D003",
+      "type": "CORRECTION",
+      "date": "2011-10-19",
+      "team": "D",
+      "severity": "Minor",
+      "description": "Missing walker - Anani Antonov not in CSV",
+      "fields": {
+        "Walkers_Transliterated": {
+          "current": "Nadezhda Kecheva | Veronika Gencheva | Emil Dakashev | Eva Tonkova",
+          "corrected": "Nadezhda Kecheva | Veronika Gencheva | Emil Dakashev | Eva Tonkova | Anani Antonov",
+          "action": "REPLACE"
+        }
+      },
+      "source_evidence": "BG Diary: 'Екип: Н. Кечева, В. Генчева, Е. Дакашев, Е. Тонкова, А. Антонов'",
+      "status": "PENDING"
+    },
+    {
+      "runsheet": "RS008",
+      "id": "KAZ11D-D004",
+      "type": "CORRECTION",
+      "date": "2011-10-20",
+      "team": "D",
+      "severity": "Minor",
+      "description": "Missing walker - Anani Antonov not in CSV",
+      "fields": {
+        "Walkers_Transliterated": {
+          "current": "Nadezhda Kecheva | Veronika Gencheva | Emil Dakashev | Eva Tonkova",
+          "corrected": "Nadezhda Kecheva | Veronika Gencheva | Emil Dakashev | Eva Tonkova | Anani Antonov",
+          "action": "REPLACE"
+        }
+      },
+      "source_evidence": "BG Diary: 'Екип: Н. Кечева, В. Генчева, Е. Дакашев, Е. Тонкова, А. Антонов'",
+      "status": "PENDING"
+    },
+    {
+      "runsheet": "RS008",
+      "id": "KAZ11D-D005",
+      "type": "CORRECTION",
+      "date": "2011-10-22",
+      "team": "D",
+      "severity": "Minor",
+      "description": "Missing walker - Anani Antonov not in CSV",
+      "fields": {
+        "Walkers_Transliterated": {
+          "current": "Nadezhda Kecheva | Veronika Gencheva | Emil Dakashev | Eva Tonkova",
+          "corrected": "Nadezhda Kecheva | Veronika Gencheva | Emil Dakashev | Eva Tonkova | Anani Antonov",
+          "action": "REPLACE"
+        }
+      },
+      "source_evidence": "BG Diary Day 9: 'Екип: Н. Кечева, В. Генчева, Е. Дакашев, Е. Тонкова, А. Антонов'",
+      "status": "PENDING"
+    },
+    {
+      "runsheet": "RS008",
+      "id": "KAZ11D-D006",
+      "type": "CORRECTION",
+      "date": "2011-10-23",
+      "team": "D",
+      "severity": "Minor",
+      "description": "Missing walker - Anani Antonov not in CSV",
+      "fields": {
+        "Walkers_Transliterated": {
+          "current": "Georgi Nekhrizov | Nadezhda Kecheva | Veronika Gencheva | Emil Dakashev | Eva Tonkova",
+          "corrected": "Georgi Nekhrizov | Nadezhda Kecheva | Veronika Gencheva | Emil Dakashev | Eva Tonkova | Anani Antonov",
+          "action": "REPLACE"
+        }
+      },
+      "source_evidence": "BG Diary Day 10: 'Екип: Г. Нехризов, Н. Кечева, В. Генчева, Е. Дакашев, Е. Тонкова, А. Антонов'",
+      "status": "PENDING"
+    },
+    {
+      "runsheet": "RS008",
+      "id": "KAZ11D-D007",
+      "type": "CORRECTION",
+      "date": "2011-10-25",
+      "team": "D",
+      "severity": "Minor",
+      "description": "Missing walker - Anani Antonov not in CSV",
+      "fields": {
+        "Walkers_Transliterated": {
+          "current": "Georgi Nekhrizov | Nadezhda Kecheva | Veronika Gencheva | Emil Dakashev | Eva Tonkova",
+          "corrected": "Georgi Nekhrizov | Nadezhda Kecheva | Veronika Gencheva | Emil Dakashev | Eva Tonkova | Anani Antonov",
+          "action": "REPLACE"
+        }
+      },
+      "source_evidence": "BG Diary Day 12: 'Екип: Г. Нехризов, Н. Кечева, В. Генчева, Е. Дакашев, Е. Тонкова, А. Антонов'",
+      "status": "PENDING"
+    },
+    {
+      "runsheet": "RS008",
+      "id": "KAZ11D-D008",
+      "type": "CORRECTION",
+      "date": "2011-10-26",
+      "team": "D",
+      "severity": "Minor",
+      "description": "Missing walker - Anani Antonov not in CSV",
+      "fields": {
+        "Walkers_Transliterated": {
+          "current": "Nadezhda Kecheva | Emil Dakashev | Eva Tonkova",
+          "corrected": "Nadezhda Kecheva | Emil Dakashev | Eva Tonkova | Anani Antonov",
+          "action": "REPLACE"
+        }
+      },
+      "source_evidence": "BG Diary: 'Екип: Н. Кечева, Е. Дакашев, Е. Тонкова, А. Антонов'",
+      "status": "PENDING"
+    },
+    {
+      "runsheet": "RS008",
+      "id": "KAZ11D-D009",
+      "type": "CORRECTION",
+      "date": "2011-10-27",
+      "team": "D",
+      "severity": "Minor",
+      "description": "Missing walker - Anani Antonov not in CSV",
+      "fields": {
+        "Walkers_Transliterated": {
+          "current": "Nadezhda Kecheva | Emil Dakashev | Eva Tonkova",
+          "corrected": "Nadezhda Kecheva | Emil Dakashev | Eva Tonkova | Anani Antonov",
+          "action": "REPLACE"
+        }
+      },
+      "source_evidence": "BG Diary: 'Екип: Н. Кечева, Е. Дакашев, Е. Тонкова, А. Антонов'",
+      "status": "PENDING"
+    },
+    {
+      "runsheet": "RS008",
+      "id": "KAZ11D-D010",
+      "type": "CORRECTION",
+      "date": "2011-10-28",
+      "team": "D",
+      "severity": "Minor",
+      "description": "Missing walker - Anani Antonov not in CSV",
+      "fields": {
+        "Walkers_Transliterated": {
+          "current": "Nadezhda Kecheva | Emil Dakashev | Eva Tonkova",
+          "corrected": "Nadezhda Kecheva | Emil Dakashev | Eva Tonkova | Anani Antonov",
+          "action": "REPLACE"
+        }
+      },
+      "source_evidence": "BG Diary: 'Екип: Н. Кечева, Е. Дакашев, Е. Тонкова, А. Антонов'",
+      "status": "PENDING"
+    },
+    {
+      "runsheet": "RS009",
+      "id": "KAZ09B-D001",
+      "type": "CORRECTION",
+      "date": "2009-03-04",
+      "team": "B",
+      "severity": "Minor",
+      "description": "Date correction - record incorrectly dated as Mar 03",
+      "fields": {
+        "Date": {
+          "current": "2009-03-03",
+          "corrected": "2009-03-04",
+          "action": "REPLACE"
+        }
+      },
+      "source_evidence": "DPF (B_2009Summary.pdf, page 1) clearly shows date 4.3.09 (European format)",
+      "status": "PENDING"
+    },
+    {
+      "runsheet": "RS009",
+      "id": "KAZ09B-D002",
+      "type": "ADD_RECORD",
+      "date": "2009-03-08",
+      "team": "B",
+      "severity": "MAJOR",
+      "description": "Missing record - entire day missing from CSV",
+      "new_record": {
+        "Date": "2009-03-08",
+        "Team": "B",
+        "Start_Unit": "20139",
+        "End_Unit": "20230",
+        "Leader": "Adela Sobotkova"
+      },
+      "source_evidence": "DPF (B_2009Summary.pdf, page 4) shows Team B, Leader: Adela, Units: 20139-20230",
+      "status": "PENDING"
+    },
+    {
+      "runsheet": "RS009",
+      "id": "KAZ09B-D003",
+      "type": "CORRECTION",
+      "date": "2009-03-16",
+      "team": "B",
+      "severity": "Minor",
+      "description": "Start Unit error - off by 1",
+      "fields": {
+        "Start_Unit": {
+          "current": "20461",
+          "corrected": "20462",
+          "action": "REPLACE"
+        }
+      },
+      "source_evidence": "DPF (B_2009Summary.pdf) shows Start Unit: 20462",
+      "status": "PENDING"
+    },
+    {
+      "runsheet": "RS009",
+      "id": "KAZ09B-D004",
+      "type": "CORRECTION",
+      "date": "2009-03-19",
+      "team": "B",
+      "severity": "Minor",
+      "description": "End Unit error - off by 1",
+      "fields": {
+        "End_Unit": {
+          "current": "20615",
+          "corrected": "20614",
+          "action": "REPLACE"
+        }
+      },
+      "source_evidence": "DPF (B_2009Summary.pdf) shows End Unit: 20614",
+      "status": "PENDING"
+    },
+    {
+      "runsheet": "RS009",
+      "id": "KAZ09B-D005",
+      "type": "CORRECTION",
+      "date": "2009-03-25",
+      "team": "B",
+      "severity": "MAJOR",
+      "description": "Start Unit error - significant difference (14 units)",
+      "fields": {
+        "Start_Unit": {
+          "current": "20709",
+          "corrected": "20723",
+          "action": "REPLACE"
+        }
+      },
+      "source_evidence": "DPF (B_2009Summary.pdf) shows Start Unit: 20723; Mar 24 ends at 20722, so 20723 is continuous",
+      "status": "PENDING"
+    },
+    {
+      "runsheet": "RS009",
+      "id": "KAZ09B-D006",
+      "type": "CORRECTION",
+      "date": "2009-03-26",
+      "team": "B",
+      "severity": "Minor",
+      "description": "Start Unit error - off by 4",
+      "fields": {
+        "Start_Unit": {
+          "current": "20729",
+          "corrected": "20733",
+          "action": "REPLACE"
+        }
+      },
+      "source_evidence": "DPF (B_2009Summary.pdf) shows Start Unit: 20733",
+      "status": "PENDING"
+    },
+    {
+      "runsheet": "RS010",
+      "id": "KAZ09C-D001",
+      "type": "CORRECTION",
+      "date": "2009-03-20",
+      "team": "C",
+      "severity": "MAJOR",
+      "description": "Six-digit mountain survey - misread as five-digit",
+      "fields": {
+        "Start_Unit": {
+          "current": "30080",
+          "corrected": "300030",
+          "action": "REPLACE"
+        },
+        "End_Unit": {
+          "current": "30133",
+          "corrected": "300033",
+          "action": "REPLACE"
+        }
+      },
+      "source_evidence": "DPF (C_2009Summary.pdf, page 3) shows six-digit mountain polygon numbers: 300030-300033",
+      "notes": "Six-digit format - pending mapping to five-digit. See follow-up-actions.md",
+      "status": "PENDING"
+    },
+    {
+      "runsheet": "RS010",
+      "id": "KAZ09C-D002a",
+      "type": "CORRECTION",
+      "date": "2009-03-23",
+      "team": "C",
+      "severity": "MAJOR",
+      "description": "Unit range correction for intensive survey",
+      "fields": {
+        "Start_Unit": {
+          "current": "30012",
+          "corrected": "30065",
+          "action": "REPLACE"
+        },
+        "End_Unit": {
+          "current": "30170",
+          "corrected": "30097",
+          "action": "REPLACE"
+        }
+      },
+      "source_evidence": "DPF Form 1 (C_2009Summary.pdf, page 4): Intensive survey 30065-30097",
+      "status": "PENDING"
+    },
+    {
+      "runsheet": "RS010",
+      "id": "KAZ09C-D002b",
+      "type": "ADD_RECORD",
+      "date": "2009-03-23",
+      "team": "C",
+      "severity": "MAJOR",
+      "description": "Add separate record for mountain survey",
+      "new_record": {
+        "Date": "2009-03-23",
+        "Team": "C",
+        "Start_Unit": "300012",
+        "End_Unit": "300020",
+        "Survey_Type": "Mountain polygons"
+      },
+      "source_evidence": "DPF Form 2 (C_2009Summary.pdf, page 4): Mountain survey 300012-300020",
+      "notes": "Six-digit format - pending mapping to five-digit. See follow-up-actions.md",
+      "status": "PENDING"
+    },
+    {
+      "runsheet": "RS010",
+      "id": "KAZ09C-D003",
+      "type": "CORRECTION",
+      "date": "2009-03-25",
+      "team": "C",
+      "severity": "MAJOR",
+      "description": "Missing units - incorrectly marked as non-standard survey",
+      "fields": {
+        "Start_Unit": {
+          "current": "",
+          "corrected": "30132",
+          "action": "SET"
+        },
+        "End_Unit": {
+          "current": "",
+          "corrected": "30170",
+          "action": "SET"
+        }
+      },
+      "source_evidence": "DPF (C_2009Summary.pdf, page 4) shows intensive survey: 30132-30170",
+      "status": "PENDING"
+    },
+    {
+      "runsheet": "RS010",
+      "id": "KAZ09C-D004",
+      "type": "ADD_RECORD",
+      "date": "2009-03-06",
+      "team": "C",
+      "severity": "MAJOR",
+      "description": "Add separate record for mountain survey",
+      "new_record": {
+        "Date": "2009-03-06",
+        "Team": "C",
+        "Start_Unit": "300000",
+        "End_Unit": "300002",
+        "Survey_Type": "Mountain polygons"
+      },
+      "source_evidence": "DPF (C_2009Summary.pdf, page 1) Comments: 'MOUNTAIN POLYGONS 300,000-002'",
+      "notes": "Six-digit format - pending mapping to five-digit. See follow-up-actions.md",
+      "status": "PENDING"
+    },
+    {
+      "runsheet": "RS011",
+      "id": "KAZ09D-D001",
+      "type": "CORRECTION",
+      "date": "2009-03-04",
+      "team": "D",
+      "severity": "MAJOR",
+      "description": "End Unit error - 43 unit difference",
+      "fields": {
+        "End_Unit": {
+          "current": "40066",
+          "corrected": "40023",
+          "action": "REPLACE"
+        }
+      },
+      "source_evidence": "DPF (D_Summary.pdf, page 1) shows End Unit: 40023, Total Units: 23",
+      "status": "PENDING"
+    },
+    {
+      "runsheet": "RS011",
+      "id": "KAZ09D-D002",
+      "type": "CORRECTION",
+      "date": "2009-03-19",
+      "team": "D",
+      "severity": "MAJOR",
+      "description": "Unit range completely wrong",
+      "fields": {
+        "Start_Unit": {
+          "current": "40048",
+          "corrected": "40069",
+          "action": "REPLACE"
+        },
+        "End_Unit": {
+          "current": "40073",
+          "corrected": "40074",
+          "action": "REPLACE"
+        }
+      },
+      "source_evidence": "DPF (D_Summary.pdf, page 5) shows Start Unit: 40069, End Unit: 40074",
+      "status": "PENDING"
+    },
+    {
+      "runsheet": "RS011",
+      "id": "KAZ09D-D003",
+      "type": "CORRECTION",
+      "date": "2009-03-20",
+      "team": "D",
+      "severity": "MAJOR",
+      "description": "End Unit error - 13 unit difference",
+      "fields": {
+        "End_Unit": {
+          "current": "40082",
+          "corrected": "40095",
+          "action": "REPLACE"
+        }
+      },
+      "source_evidence": "DPF (D_Summary.pdf, page 6) shows End Unit: 40095, Total Units: 20",
+      "status": "PENDING"
+    },
+    {
+      "runsheet": "RS011",
+      "id": "KAZ09D-D004",
+      "type": "CORRECTION",
+      "date": "2009-03-23",
+      "team": "D",
+      "severity": "MAJOR",
+      "description": "Unit range completely wrong",
+      "fields": {
+        "Start_Unit": {
+          "current": "40069",
+          "corrected": "40096",
+          "action": "REPLACE"
+        },
+        "End_Unit": {
+          "current": "40094",
+          "corrected": "40104",
+          "action": "REPLACE"
+        }
+      },
+      "source_evidence": "DPF (D_Summary.pdf, page 7) shows Start Unit: 40096, End Unit: 40104",
+      "status": "PENDING"
+    },
+    {
+      "runsheet": "RS011",
+      "id": "KAZ09D-D005",
+      "type": "CORRECTION",
+      "date": "2009-03-25",
+      "team": "D",
+      "severity": "Minor",
+      "description": "End Unit error - 3 unit difference",
+      "fields": {
+        "End_Unit": {
+          "current": "40211",
+          "corrected": "40214",
+          "action": "REPLACE"
+        }
+      },
+      "source_evidence": "DPF (D_Summary.pdf, page 9) shows End Unit: 40214",
+      "status": "PENDING"
+    },
+    {
+      "runsheet": "RS012",
+      "id": "KAZ10D-D001",
+      "type": "CORRECTION",
+      "date": "2010-03-26",
+      "team": "D",
+      "severity": "Minor",
+      "description": "Start Unit error - transcription error (6 misread as 7)",
+      "fields": {
+        "Start_Unit": {
+          "current": "40667",
+          "corrected": "40677",
+          "action": "REPLACE"
+        }
+      },
+      "source_evidence": "DPF (D_2010Summary.pdf, page 3) shows Start Unit: 40677; continuous with Mar 25 End Unit (40676)",
+      "status": "PENDING"
     }
   ],
   "summary": {
-    "total_corrections": 29,
+    "total_corrections": 65,
     "by_status": {
       "APPLIED": 29,
-      "PENDING": 0,
+      "PENDING": 36,
       "VERIFIED": 0,
       "FLAGGED": 0
     },
     "by_type": {
-      "CORRECTION": 18,
-      "ADD_RECORD": 3,
+      "CORRECTION": 51,
+      "ADD_RECORD": 6,
       "VERIFY_NO_CHANGE": 7,
       "FLAG_ONLY": 1
     },
     "by_severity": {
-      "MAJOR": 18,
-      "Minor": 7,
+      "MAJOR": 38,
+      "Minor": 23,
       "INFO": 4
     },
-    "records_modified": 25,
-    "records_added": 3,
-    "records_verified_no_change": 6
+    "records_modified": 39,
+    "records_added": 6,
+    "records_verified_no_change": 6,
+    "pending_modifications": 36
   },
   "follow_up_actions": [
     {
@@ -740,11 +1509,19 @@
       "item": "Investigate Peter/Dasha data mixing root cause",
       "priority": "High",
       "status": "Pending"
+    },
+    {
+      "id": "F005",
+      "item": "Map six-digit mountain survey numbers (300xxx) to five-digit format (Kazanlak 2009 Team C)",
+      "priority": "Medium",
+      "status": "Pending",
+      "notes": "Affects Mar 6, 12, 20, 23. See planning/follow-up-actions.md for full documentation."
     }
   ],
   "audit_trail": {
     "original_csv_records": 268,
-    "records_after_corrections": 271,
-    "transformation_notes": "Original CSV had 268 records. Added 3 missing records (2 Elhovo 2010 B, 1 Kazanluk 2010 C). Corrected walker data in 25 records. De-duplicated walker lists globally."
-  }
+    "records_after_corrections": 274,
+    "transformation_notes": "Original CSV had 268 records. Added 6 missing records (2 Elhovo 2010 B, 1 Kazanluk 2010 C, 1 Kazanlak 2009 B, 2 Kazanlak 2009 C mountain survey). Corrected unit data in multiple Kazanlak 2009 records. De-duplicated walker lists globally. Note: 3 records have six-digit mountain survey numbers (300xxx) pending mapping to five-digit format."
+  },
+  "last_updated": "2025-12-02"
 }

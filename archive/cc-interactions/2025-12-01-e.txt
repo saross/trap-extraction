@@ -1,0 +1,256 @@
+
+╭─── Claude Code v2.0.55 ──────────────────────────────────────────────────────╮
+│                            │ Tips for getting started                        │
+│     Welcome back Shawn!    │ Run /init to create a CLAUDE.md file with inst… │
+│                            │ ─────────────────────────────────────────────── │
+│           ▐▛███▜▌          │ Recent activity                                 │
+│          ▝▜█████▛▘         │ No recent activity                              │
+│            ▘▘ ▝▝           │                                                 │
+│                            │                                                 │
+│   Opus 4.5 · Claude Max    │                                                 │
+│   ~/Code/trap-extraction   │                                                 │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+> Hi CC, VS Code crashed, can you look at 
+archive/cc-interactions/2025-12-01-d.txt to see where we left off? 
+
+● Read(archive/cc-interactions/2025-12-01-d.txt)
+  ⎿  Read 332 lines
+
+● Looking at the transcript, you were doing QA automation for archaeological
+   survey data. The session had completed KAZ-2011-B and was partway through
+   KAZ-2011-C when it crashed.
+
+  Let me check the actual state to see what was committed:
+
+● Bash(git log --oneline -5)
+  ⎿  386a040 feat(qa): complete QA for Kazanlak 2011 Autumn Team C
+     a49efd5 feat(qa): complete QA for Kazanlak 2011 Autumn Team B
+     81c1dd8 feat(qa): complete QA for Kazanlak 2010 Spring Team D
+     … +2 lines (ctrl+o to expand)
+
+● Search(pattern: "outputs/qa-runsheet-kazanlak-2011-autumn-*.md")
+  ⎿  Found 2 files (ctrl+o to expand)
+
+● Good news - both KAZ-2011-B and KAZ-2011-C were committed before the
+  crash. Let me check the current queue status:
+
+● Read(docs/qa-automation/qa-queue.yaml)
+  ⎿  Read 132 lines
+
+● Session recovered successfully. Both KAZ-2011-B and KAZ-2011-C were
+  committed before the crash.
+
+  Current Status: 16/18 teams complete (89%)
+
+  Last completed:
+  - KAZ-2011-B: 17 records, 1 CRITICAL error (Nov 16 wrong source - Yambol
+  data)
+  - KAZ-2011-C: 18 records, 1 error (Nov 18 unit overlap)
+
+  Remaining (2 teams):
+  | ID         | DPF Scans | Diary   | Notes                |
+  |------------|-----------|---------|----------------------|
+  | KAZ-2011-A | ❌ No      | BG only | Limited verification |
+  | KAZ-2011-D | ❌ No      | BG only | Limited verification |
+
+  Both remaining teams have Bulgarian diaries only with no English
+  translation and no DPF scans available - meaning full verification against
+   authoritative sources isn't possible.
+
+  Would you like me to:
+  1. Attempt limited QA on KAZ-2011-A and KAZ-2011-D (CSV consistency checks
+   only)
+  2. Mark them as "skipped" with documented rationale
+  3. Something else?
+
+> I want you to attempt them; please develop a plan. Whenever problems can 
+be resolved with confidence from the diaries, please do so that way. If you 
+encounter problems that can't be solved from the diaries, utilise the survey
+ unit record PDFs for (especially) unit numbers surveyed each day and (in a 
+push) walker names (should appear as initials in the bottommost of the four 
+forms on each sheet). 
+
+● I'll develop a plan for QA'ing KAZ-2011-A and KAZ-2011-D using Bulgarian
+  diaries as primary source and survey unit record PDFs as fallback. Let me
+  first explore what sources are available.
+
+● Explore(Explore KAZ-2011 A&D sources)
+  ⎿  Done (14 tool uses · 31.7k tokens · 29s)                              
+
+● Excellent news! The exploration revealed that both teams DO have 
+  individual day PDF scans - they just lack the summary PDFs. This means
+  full verification IS possible.
+
+  Revised source availability:
+  | Team       | CSV Records | BG Diary | Individual Day PDFs     |
+  |------------|-------------|----------|-------------------------|
+  | KAZ-2011-A | 17 records  | ✓ 108KB  | ✓ 16 PDFs               |
+  | KAZ-2011-D | 14 records  | ✓ 137KB  | ✓ 12 PDFs (+1 combined) |
+
+  This is a straightforward QA task following the established pattern. Let
+  me write the plan:
+
+● Updated plan
+  ⎿  /plan to preview · ~/.claude/plans/delegated-swimming-lemur.md
+
+● The plan is complete. This follows the established QA workflow we've used
+  for 16 teams, with one key difference: reading individual day PDFs instead
+   of a summary PDF.
+
+  Key points:
+  - Both teams have full PDF coverage (contrary to what the queue noted)
+  - Unit numbers from PDFs are authoritative (numeric, no translation
+  needed)
+  - Bulgarian diaries available for context/problem resolution
+  - Will complete the final 2 teams, reaching 100% QA coverage
+
+  The workflow is well-established from previous sessions. No ambiguities to
+   clarify.
+                                                                           
+● User approved Claude's plan
+  ⎿  Plan saved to: ~/.claude/plans/delegated-swimming-lemur.md · /plan to 
+     edit
+     QA Plan: Kazanlak 2011 Teams A and D
+
+     Summary
+
+     Complete QA verification for the final 2 teams (KAZ-2011-A and 
+     KAZ-2011-D) using individual day PDF scans as the authoritative source 
+     for unit numbers, with Bulgarian diaries for supplementary context.
+
+     Key Discovery
+
+     The queue incorrectly stated "no DPF scans available" - both teams have
+      individual day PDFs (not summary PDFs). Full verification is possible.
+
+     | Team       | CSV Records | Date Range               | Day PDFs 
+     Available    |
+     |------------|-------------|--------------------------|----------------
+     -------|
+     | KAZ-2011-A | 17          | 2011-10-16 to 2011-11-03 | 16 PDFs        
+            |
+     | KAZ-2011-D | 14          | 2011-10-14 to 2011-11-02 | 12 PDFs (+1 
+     combined) |
+
+     Workflow Per Team
+
+     Step 1: Extract CSV Records
+
+     grep "2011-" outputs/attribution.csv | grep ",A,"  # or ",D,"
+
+     Step 2: Read Individual Day PDFs
+
+     For each date in CSV, read corresponding PDF:
+     - Team A: /media/shawn/.../Team A/FieldRecords/A_YYYYMMDD.pdf
+     - Team D: /media/shawn/.../Team D/FieldRecords/D_YYYYMMDD.pdf
+
+     Extract from each PDF:
+     - Start and end unit numbers (from form headers)
+     - Walker initials (from bottommost form section if needed)
+
+     Step 3: Compare and Document
+
+     Create comparison table:
+     | Date | CSV Range | PDF Range | Status |
+
+     Step 4: Consult Bulgarian Diary (if needed)
+
+     Read diary only for:
+     - Resolving ambiguous dates
+     - Understanding non-survey days
+     - Clarifying personnel when walker initials unclear
+
+     Step 5: Generate Runsheet
+
+     Follow established format from previous runsheets (e.g., 
+     qa-runsheet-kazanlak-2011-autumn-b.md)
+
+     Step 6: Update Queue and Commit
+
+     - Move team from pending to completed
+     - Update summary statistics (will reach 18/18 = 100%)
+
+     Source Files
+
+     Team A
+
+     - CSV filter: grep "2011-" attribution.csv | grep ",A,"
+     - Day PDFs: Kazanluk/2011-11-30/Project Records/Team 
+     A/FieldRecords/A_2011*.pdf
+     - BG Diary: Team A/A_2011Diary_BG.doc
+
+     Team D
+
+     - CSV filter: grep "2011-" attribution.csv | grep ",D,"
+     - Day PDFs: Kazanluk/2011-11-30/Project Records/Team 
+     D/FieldRecords/D_2011*.pdf
+     - BG Diary: Team D/D_2011Diary_BG.doc
+     - Note: Nov 1-2 combined in single PDF D_20111101-02.pdf
+
+     Output Files
+
+     - outputs/qa-runsheet-kazanlak-2011-autumn-a.md
+     - outputs/qa-runsheet-kazanlak-2011-autumn-d.md
+     - docs/qa-automation/qa-queue.yaml (update completed section)
+
+     Execution Order
+
+     1. KAZ-2011-A first (17 records, 16 PDFs - good coverage)
+     2. KAZ-2011-D second (14 records, 12 PDFs - note combined day file)
+
+     Expected Completion
+
+     Upon completion: 18/18 teams QA'd (100%)
+
+
+
+
+● Plan approved. Let me set up tracking and begin execution.
+
+● Bash(grep "2011-" /home/shawn/Code/trap-extraction/outputs/attribution.csv |
+      grep ",A,")
+  ⎿ 2011-10-16,A,11206,11224,Julia Tzvetkova,JTs | YuTs | TsTs | YuD | G. M
+    ikhaylov,Julia Tzvetkova | Tsoni Tsonev | Yulia Dimitrova | Georgi Miha
+    ilov,,,,,,,,Kaz11_SurveySummary.xlsx,A_2011Diary_BG.doc,Extracted from
+    … +72 lines (ctrl+o to expand)
+
+
+
+● Got 17 CSV records (16 survey days + 1 rain day on Oct 24). Now let me
+  read the day PDFs to verify unit ranges. I'll read them in batches:
+
+● Read(/media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-
+      2020-04/Kazanluk/2011-11-30/Project Records/Team
+      A/FieldRecords/A_20111016.pdf)
+  ⎿  Read PDF (2.2MB)
+
+● Read(/media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-
+      2020-04/Kazanluk/2011-11-30/Project Records/Team
+      A/FieldRecords/A_20111019.pdf)
+  ⎿  Read PDF (9.8MB)
+
+● Read(/media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-
+      2020-04/Kazanluk/2011-11-30/Project Records/Team
+      A/FieldRecords/A_20111020.pdf)
+  ⎿  Read PDF (7.6MB)
+
+● Read(/media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-
+      2020-04/Kazanluk/2011-11-30/Project Records/Team
+      A/FieldRecords/A_20111021.pdf)
+  ⎿  Read PDF (5.9MB)
+  ⎿ API Error: 413 {"error":{"type":"request_too_large","message":"Request 
+    exceeds the maximum size"}}
+
+> ah, it looks like we really don't have the DPFs, I apologise, I 
+misunderstood. The survey unit forms are very heavy and tend to exceed 
+maximium size. Please revise your plan so that you solve all problems that 
+can confidently be solved with the diaries using the diaries, and fall back 
+to daily PDF forms only where absolutely necessary. If that becomes the 
+case, I will split the PDFs so they are managable, or I will look up 
+specific pieces of information fo you. 
+  ⎿ API Error: 413 {"error":{"type":"request_too_large","message":"Request 
+    exceeds the maximum size"}}
+
+
+

@@ -148,43 +148,104 @@
 ## Corrections Required
 
 ### D001: Date Discrepancy (Mar 03 vs Mar 04)
-- **Current:** Date = 2009-03-03
-- **DPF shows:** "4.3.09" (European format = March 4)
-- **Recommendation:** Verify against other sources; training day may be Mar 4 not Mar 3
-- [ ] User Decision Required
+
+**Record:** 2009-03-03, Team B
+**Field:** Date
+**Current:** 2009-03-03
+**Corrected:** 2009-03-04
+**Source evidence:** DPF (B_2009Summary.pdf, page 1) clearly shows "4.3.09" (European date format = 4 March 2009). The form is labelled "1st day - training".
+**Reasoning:** The CSV date of March 3 is incorrect. The DPF unambiguously shows the first training day was March 4, 2009.
+
+**User Decision:**
+- [X] Approve correction to 2009-03-04
+- [ ] Modify: _______________
+
+**Status:** Pending
+
+---
 
 ### D002: Missing Record (Mar 08)
-- **Current:** No record exists
-- **DPF shows:** Team B, Leader: Adela, Units: 20139-20230, Total: 91 units, Author: Vera
-- **Recommendation:** Add new record for 2009-03-08
-- [ ] User Decision Required
+
+**Record:** 2009-03-08, Team B (NEW RECORD)
+**Field:** All fields (new record)
+**Current:** No record exists in CSV
+**Corrected:** Add new record with: Date=2009-03-08, Team=B, Leader=Adela Sobotkova, Start_Unit=20139, End_Unit=20230
+**Source evidence:** DPF (B_2009Summary.pdf, page 4) shows Team B team, Leader: Adela, Units: 20139-20230 (Start Unit: 139, End Unit: 230), Total: 91 units, Author: Vera. Comments: "3 stones, no finds, 20170"
+**Reasoning:** The unit sequence confirms this: Mar 7 ends at 20138, Mar 8 DPF shows 20139-20230, Mar 9 starts at 20231. The gap in CSV (20138 → 20231) indicates a missing record. 91 survey units were completed but not recorded in CSV.
+
+**User Decision:**
+- [X] Approve adding new record
+- [ ] Modify: _______________
+
+**Status:** Pending
+
+---
 
 ### D003: Mar 16 Start Unit
-- **Current:** Start Unit = 20461
-- **DPF shows:** Start Unit = 20462
-- **Recommendation:** Update to 20462
-- [ ] User Decision Required
+
+**Record:** 2009-03-16, Team B
+**Field:** Start_Unit
+**Current:** 20461
+**Corrected:** 20462
+**Source evidence:** DPF (B_2009Summary.pdf, page 8) shows Start Unit: 20462, End Unit: 20536. Author: Tereza.
+**Reasoning:** CSV value 20461 is off by 1. Mar 12 ends at 20461, so Mar 16 should start at 20462 (continuous). The 1-unit error suggests a transcription mistake.
+
+**User Decision:**
+- [X] Approve correction to 20462
+- [ ] Modify: _______________
+
+**Status:** Pending
+
+---
 
 ### D004: Mar 19 End Unit
-- **Current:** End Unit = 20615
-- **DPF shows:** End Unit = 20614
-- **Note:** Mar 20 starts at 20615, so DPF value creates no gap
-- **Recommendation:** Update to 20614
-- [ ] User Decision Required
+
+**Record:** 2009-03-19, Team B
+**Field:** End_Unit
+**Current:** 20615
+**Corrected:** 20614
+**Source evidence:** DPF (B_2009Summary.pdf, page 9) shows Start Unit: 20537, End Unit: 20614, Total Units: 77. Author: Ivana Klimova.
+**Reasoning:** CSV value 20615 is off by 1. Mar 20 DPF starts at 20615, confirming Mar 19 should end at 20614 (continuous). CSV value creates a 1-unit overlap.
+
+**User Decision:**
+- [X] Approve correction to 20614
+- [ ] Modify: _______________
+
+**Status:** Pending
+
+---
 
 ### D005: Mar 25 Start Unit (SIGNIFICANT)
-- **Current:** Start Unit = 20709
-- **DPF shows:** Start Unit = 20723
-- **Gap analysis:** Mar 24 ends at 20722, Mar 25 DPF starts at 20723 (continuous). CSV value 20709 overlaps with Mar 24 range.
-- **Recommendation:** Update to 20723
-- [ ] User Decision Required
+
+**Record:** 2009-03-25, Team B
+**Field:** Start_Unit
+**Current:** 20709
+**Corrected:** 20723
+**Source evidence:** DPF (B_2009Summary.pdf, page 13) shows Start Unit: 20723, End Unit: 20732. Author: Ivana Klimova.
+**Reasoning:** CSV value 20709 is 14 units too low and overlaps with Mar 24 range (20674-20722). DPF value 20723 follows Mar 24 end (20722) continuously. This is a significant extraction error.
+
+**User Decision:**
+- [X] Approve correction to 20723
+- [ ] Modify: _______________
+
+**Status:** Pending
+
+---
 
 ### D006: Mar 26 Start Unit
-- **Current:** Start Unit = 20729
-- **DPF shows:** Start Unit = 20733
-- **Gap analysis:** Mar 25 DPF ends at 20732, Mar 26 DPF starts at 20733 (continuous). CSV value 20729 overlaps with Mar 25.
-- **Recommendation:** Update to 20733
-- [ ] User Decision Required
+
+**Record:** 2009-03-26, Team B
+**Field:** Start_Unit
+**Current:** 20729
+**Corrected:** 20733
+**Source evidence:** DPF (B_2009Summary.pdf, page 14) shows Start Unit: 20733, End Unit: 20783. Author: Ivana Klimova.
+**Reasoning:** CSV value 20729 is 4 units too low and overlaps with corrected Mar 25 range (20723-20732). DPF value 20733 follows Mar 25 end (20732) continuously.
+
+**User Decision:**
+- [X] Approve correction to 20733
+- [ ] Modify: _______________
+
+**Status:** Pending
 
 ---
 

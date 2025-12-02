@@ -1,0 +1,514 @@
+
+╭─── Claude Code v2.0.55 ──────────────────────────────────────────────────────╮
+│                            │ Tips for getting started                        │
+│     Welcome back Shawn!    │ Run /init to create a CLAUDE.md file with inst… │
+│                            │ ─────────────────────────────────────────────── │
+│           ▐▛███▜▌          │ Recent activity                                 │
+│          ▝▜█████▛▘         │ No recent activity                              │
+│            ▘▘ ▝▝           │                                                 │
+│                            │                                                 │
+│   Opus 4.5 · Claude Max    │                                                 │
+│   ~/Code/trap-extraction   │                                                 │
+╰──────────────────────────────────────────────────────────────────────────────╯
+══════════════════ Conversation compacted · ctrl+o for history ═════════════════
+  ⎿  Read docs/qa-automation/qa-queue.yaml (222 lines)
+  ⎿  Referenced file outputs/qa-runsheet-kazanlak-2009-spring-a.md
+  ⎿  Read outputs/qa-runsheet-elhovo-2010-autumn-a.md (147 lines)
+  ⎿  Read ../../.claude/plans/fluttering-puzzling-bengio.md (108 lines)
+  ⎿  Referenced file outputs/source-inventory.md
+  ⎿  Todo list read (4 items)
+
+● Continuing with the KAZ-2009-B runsheet generation. Let me first re-read
+  the CSV data to ensure I have all the details correct for the runsheet.
+
+● Bash(grep -E "^(Date|.*Kazanlak.*2009.*spring.*,B,)"
+      /home/shawn/Code/trap-extraction/outputs/attribution.csv | head -50)
+  ⎿ Date,Team,Start Unit,End Unit,Leader,Walkers_Original,Walkers_Standardi
+    sed,PDA_Operator,Paper_Recorder,Data_Editor,GPS_Operator,Photographer,D
+    iary_Author,DPF_Author,XLS_Source,PDF_Source,Extraction_Notes,QA_Notes
+
+
+
+● Bash(awk -F',' '$2=="Kazanlak" && $3==2009 && $4=="spring" && $5=="B" {print
+      NR": "$0}' /home/shawn/Code/trap-extraction/outputs/attribution.csv)
+  ⎿  (No content)
+
+● Bash(head -1 /home/shawn/Code/trap-extraction/outputs/attribution.csv && grep
+      "Kazanlak,2009,spring,B"
+      /home/shawn/Code/trap-extraction/outputs/attribution.csv)
+  ⎿ Date,Team,Start Unit,End Unit,Leader,Walkers_Original,Walkers_Standardi
+    sed,PDA_Operator,Paper_Recorder,Data_Editor,GPS_Operator,Photographer,D
+    iary_Author,DPF_Author,XLS_Source,PDF_Source,Extraction_Notes,QA_Notes
+
+
+
+● Bash(head -3 /home/shawn/Code/trap-extraction/outputs/attribution.csv)
+  ⎿ Date,Team,Start Unit,End Unit,Leader,Walkers_Original,Walkers_Standardi
+    sed,PDA_Operator,Paper_Recorder,Data_Editor,GPS_Operator,Photographer,D
+    iary_Author,DPF_Author,XLS_Source,PDF_Source,Extraction_Notes,QA_Notes
+    … +8 lines (ctrl+o to expand)
+
+
+
+● Bash(grep "^2009-0[34].*,B,"
+      /home/shawn/Code/trap-extraction/outputs/attribution.csv)
+  ⎿ 2009-03-03,B,20001,20024,Adela Sobotkova,Adela | Bryan | Simon | Magda 
+    | Vera | Martin,Adela Sobotkova | Bryan Zlatos | Simon Connor | Magda B
+    olečková | Vera Doležálková | Martin Mladenov,,,,,,Vera Doležálková,,,B
+    … +63 lines (ctrl+o to expand)
+
+
+
+● Let me re-read the DPF summary to verify the discrepancies I identified:
+
+● Read(/media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-
+      2020-04/Kazanluk/2009/Project Records/TeamB/Finalized/B_2009Summary.pdf)
+  ⎿  Read PDF (665.5KB)
+
+● Now I have all the DPF data. Let me compile the verification findings and
+  create the runsheet. I can see from the DPF scans:
+
+  Key findings from DPF B_2009Summary.pdf:
+  - Page 1: Mar 4 training day (20001-20024) - but CSV has Mar 3
+  - Page 2: Mar 6 (20025-20097) ✓
+  - Page 3: Mar 7 (20098-20138) ✓
+  - Page 4: Mar 8 (20139-20230) - MISSING from CSV
+  - Page 5: Mar 9 (20231-20296) ✓
+  - Page 6: Mar 11 (20297-20344) ✓
+  - Page 7: Mar 12 (20345-20461) ✓
+  - Page 8: Mar 16 (20462-20536) - CSV has 20461 start
+  - Page 9: Mar 19 (20537-20614) - CSV has 20615 end
+  - Page 10: Mar 20 (20615-20638) ✓
+  - Page 11: Mar 23 (20639-20673) ✓
+  - Page 12: Mar 24 (20674-20722) ✓
+  - Page 13: Mar 25 (20723-20732) - CSV has 20709 start
+  - Page 14: Mar 26 (20733-20783) - CSV has 20729 start
+  - Page 15: Mar 27 (20784-20808) ✓
+  - Page 16: Apr 5 (20808-20812) ✓ (but form has unit/time fields swapped)
+
+  Now let me create the runsheet:
+
+● Write(outputs/qa-runsheet-kazanlak-2009-spring-b.md)
+  ⎿  Wrote 251 lines to outputs/qa-runsheet-kazanlak-2009-spring-b.md
+     # QA Runsheet: Kazanlak 2009 Spring Team B
+     **Study Area/Season:** Kazanlak (Seuthopolis) 2009 Spring
+     **Team:** B
+     **QA Date:** 2025-11-30
+     **QA Performed By:** Claude Code (with Shawn Ross)
+     **Records in CSV:** 15
+     **Date Range:** 2009-03-03 to 2009-04-05
+     ---
+     … +241 lines (ctrl+o to expand)
+
+● Now let me update the queue and commit:
+
+● Read(docs/qa-automation/qa-queue.yaml)
+  ⎿  Read 222 lines
+
+● Update(docs/qa-automation/qa-queue.yaml)
+  ⎿  Updated docs/qa-automation/qa-queue.yaml with 1 addition and 16       
+     removals
+        7    # Last updated: 2025-11-30
+        8    
+        9    queue:
+       10 -    # Kazanlak 2009 Spring - Teams B-E
+       11 -    - id: "KAZ-2009-B"
+       12 -      study_area: "Kazanlak"
+       13 -      year: 2009
+       14 -      season: "spring"
+       15 -      team: "B"
+       16 -      status: "pending"
+       17 -      record_count: null
+       18 -      date_range: null
+       19 -      sources:
+       20 -        diary_primary: "Kazanluk/2009/Project 
+          - Records/TeamB/B_Diary_BG.doc"
+       21 -        diary_secondary: "Kazanluk/2009/Project 
+          - Records/TeamB/B_Diary_En.docx"
+       22 -        dpf_scans: "Kazanluk/2009/Project 
+          - Records/TeamB/Finalized/"
+       23 -        su_forms: null
+       24 -      notes: "BG diary is PRIMARY (152 KB); use Finalized/ for
+          -  DPF scans"
+       25 -  
+       10 +    # Kazanlak 2009 Spring - Teams C-E
+       11      - id: "KAZ-2009-C"
+       12        study_area: "Kazanlak"
+       13        year: 2009
+
+● Update(docs/qa-automation/qa-queue.yaml)
+  ⎿  Updated docs/qa-automation/qa-queue.yaml with 6 additions and 1 remova
+
+       196        runsheet: 
+             "outputs/qa-runsheet-kazanlak-2009-spring-a.md"
+       197        notes: "16 records, 4 unit range discrepancies 
+             (D001-D004); EN diary only covers Mar 15-27"
+       198    
+       199 +    - id: "KAZ-2009-B"
+       200 +      completed_date: "2025-11-30"
+       201 +      runsheet: 
+           + "outputs/qa-runsheet-kazanlak-2009-spring-b.md"
+       202 +      notes: "15 records in CSV, 16 in DPF; 1 missing record 
+           + (Mar 08), 4 unit discrepancies, 1 date discrepancy"
+       203 +  
+       204    # Summary statistics
+       205 -  # Total teams: 18 (8 completed, 10 pending)
+       205 +  # Total teams: 18 (9 completed, 9 pending)
+       206    # By study area:
+       207    #   - Elhovo 2009: 3 complete (Teams A, B, C)
+       208    #   - Elhovo 2010: 2 complete (Teams A, B)
+
+● Update(docs/qa-automation/qa-queue.yaml)
+  ⎿  Updated docs/qa-automation/qa-queue.yaml with 1 addition and 1 removal
+       206    # By study area:
+       207    #   - Elhovo 2009: 3 complete (Teams A, B, C)
+       208    #   - Elhovo 2010: 2 complete (Teams A, B)
+       209 -  #   - Kazanlak 2009: 1 complete (Team A), 4 pending (Teams 
+           -  B-E)
+       209 +  #   - Kazanlak 2009: 2 complete (Teams A, B), 3
+           +   pending (Teams C-E)
+       210    #   - Kazanlak 2010: 1 complete (Team C), 3 pending (Teams 
+             A, B, D)
+       211    #   - Kazanlak 2011: 4 pending (Teams A-D)
+
+● Now let me commit the changes:
+
+● Bash(git add outputs/qa-runsheet-kazanlak-2009-spring-b.md
+      docs/qa-automation/qa-queue.yaml && git status)
+  ⎿  On branch master                                     
+     Your branch is ahead of 'origin/master' by 2 commits.
+       (use "git push" to publish your local commits)
+     … +5 lines (ctrl+o to expand)
+
+● Bash(git commit -m "feat(qa): complete QA for Kazanlak 2009 Spring Team B
+      (15+1 records)…)
+  ⎿  [master f29cfb2] feat(qa): complete QA for Kazanlak 2009 Spring Team B
+     (15+1 records)
+      2 files changed, 258 insertions(+), 18 deletions(-)
+      create mode 100644 outputs/qa-runsheet-kazanlak-2009-spring-b.md
+
+● KAZ-2009-B complete! Now proceeding to KAZ-2009-C. Let me get the CSV
+  records:
+
+● Bash(grep "^2009-0[34].*,C,"
+      /home/shawn/Code/trap-extraction/outputs/attribution.csv)
+  ⎿ 2009-03-04,C,30000,30024,Elena Bozhinova,Helena | SR | CB,Elena Bozhino
+    va | Shawn Ross | Charlotte Devereux Byron,,,,,,Adela Sobotkova,,,C_200
+    9Summary.pdf,,
+    … +54 lines (ctrl+o to expand)
+
+
+
+● Team C has complex data - many non-standard survey entries and
+  inconsistent unit ranges. Let me check the DPF source files:
+
+● Bash(ls -la "/media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/
+      TRAP-WD-2020-04/Kazanluk/2009/Project Records/TeamC/")
+  ⎿  total 5732                                      
+     drwxr-x---  3 shawn 1003    4096 Nov 23 06:32 .
+     drwxr-x--- 12 shawn 1003    4096 Nov 24 20:36 ..
+     … +18 lines (ctrl+o to expand)
+
+● Let me read the consolidated summary (smallest file):
+
+● Read(/media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-
+      2020-04/Kazanluk/2009/Project Records/TeamC/C_2009Summary.pdf)
+  ⎿  Read PDF (338.5KB)
+
+● I can see the DPF data. Team C has very complex data with many
+  non-standard survey days (mound reconnaissance, object recording). Let me
+  also read the English diary for verification:
+
+● Bash(cd "/media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP
+      -WD-2020-04/Kazanluk/2009/Project Records/TeamC" && unzip -p
+      C_Journal_En.docx word/doc…)
+  ⎿ Team CLeader: HelenaTRAP Daily JournalMarch 2009 SeasonMarch 8th, 2009-
+    04-04 Author CBThe weather was sunny during the earlier part of the day
+    , gradually turning showery in the afternoon. Visibility was consistent
+    … +110 lines (ctrl+o to expand)
+
+
+
+  ⎿  Shell cwd was reset to /home/shawn/Code/trap-extraction
+
+● Now I have all the data. Let me create the runsheet for Team C:
+
+● Write(outputs/qa-runsheet-kazanlak-2009-spring-c.md)
+  ⎿  Wrote 256 lines to outputs/qa-runsheet-kazanlak-2009-spring-c.md
+     # QA Runsheet: Kazanlak 2009 Spring Team C
+     **Study Area/Season:** Kazanlak (Seuthopolis) 2009 Spring
+     **Team:** C
+     **QA Date:** 2025-11-30
+     **QA Performed By:** Claude Code (with Shawn Ross)
+     **Records in CSV:** 15
+     **Date Range:** 2009-03-04 to 2009-03-27
+     ---
+     … +246 lines (ctrl+o to expand)
+
+● Now let me update the queue and commit:
+
+● Update(docs/qa-automation/qa-queue.yaml)
+  ⎿  Updated docs/qa-automation/qa-queue.yaml with 1 addition and 16       
+     removals
+        7    # Last updated: 2025-11-30
+        8    
+        9    queue:
+       10 -    # Kazanlak 2009 Spring - Teams C-E
+       11 -    - id: "KAZ-2009-C"
+       12 -      study_area: "Kazanlak"
+       13 -      year: 2009
+       14 -      season: "spring"
+       15 -      team: "C"
+       16 -      status: "pending"
+       17 -      record_count: null
+       18 -      date_range: null
+       19 -      sources:
+       20 -        diary_primary: "Kazanluk/2009/Project 
+          - Records/TeamC/C_Diary_BG.doc"
+       21 -        diary_secondary: "Kazanluk/2009/Project 
+          - Records/TeamC/C_Journal_En.docx"
+       22 -        dpf_scans: "Kazanluk/2009/Project Records/TeamC/"
+       23 -        su_forms: null
+       24 -      notes: "BG diary is PRIMARY (215 KB)"
+       25 -  
+       10 +    # Kazanlak 2009 Spring - Teams D-E
+       11      - id: "KAZ-2009-D"
+       12        study_area: "Kazanlak"
+       13        year: 2009
+
+● Update(docs/qa-automation/qa-queue.yaml)
+  ⎿  Updated docs/qa-automation/qa-queue.yaml with 7 additions and 2       
+     removals
+       186        runsheet: 
+             "outputs/qa-runsheet-kazanlak-2009-spring-b.md"
+       187        notes: "15 records in CSV, 16 in DPF; 1 missing record 
+             (Mar 08), 4 unit discrepancies, 1 date discrepancy"
+       188    
+       189 +    - id: "KAZ-2009-C"
+       190 +      completed_date: "2025-11-30"
+       191 +      runsheet: 
+           + "outputs/qa-runsheet-kazanlak-2009-spring-c.md"
+       192 +      notes: "15 records; complex mixed survey (intensive + 
+           + mound recon); Mar 23 major unit error, Mar 25 missing units"
+       193 +  
+       194    # Summary statistics
+       195 -  # Total teams: 18 (9 completed, 9 pending)
+       195 +  # Total teams: 18 (10 completed, 8 pending)
+       196    # By study area:
+       197    #   - Elhovo 2009: 3 complete (Teams A, B, C)
+       198    #   - Elhovo 2010: 2 complete (Teams A, B)
+       199 -  #   - Kazanlak 2009: 2 complete (Teams A, B), 3
+           -   pending (Teams C-E)
+       199 +  #   - Kazanlak 2009: 3 complete (Teams A, B, C), 2
+           +   pending (Teams D-E)
+       200    #   - Kazanlak 2010: 1 complete (Team C), 3 pending (Teams 
+             A, B, D)
+       201    #   - Kazanlak 2011: 4 pending (Teams A-D)
+
+● Bash(git add outputs/qa-runsheet-kazanlak-2009-spring-c.md
+      docs/qa-automation/qa-queue.yaml && git commit -m "feat(qa): complete QA
+      for Kazanlak 2009 Spring Team C (…)
+  ⎿  [master 530a2c9] feat(qa): complete QA for Kazanlak 2009 Spring Team C
+     (15 records)
+      2 files changed, 263 insertions(+), 18 deletions(-)
+      create mode 100644 outputs/qa-runsheet-kazanlak-2009-spring-c.md
+
+● KAZ-2009-C complete! Progress: 10/18 teams (56%). Now proceeding to
+  KAZ-2009-D:
+
+● Bash(grep "^2009-0[34].*,D,"
+      /home/shawn/Code/trap-extraction/outputs/attribution.csv)
+  ⎿ 2009-03-04,D,40001,40066,Georgi Nekhrizov,Georgi Nehrizov | Georgi N. |
+     Nadezhda | Lubomir M. | Magda B.,Georgi Nekhrizov | Nadezhda Kecheva |
+     Lyubomir Markovski | Magda Bolečková,,,,,,Magda Bolečková,,,D_Summary.
+    … +30 lines (ctrl+o to expand)
+
+
+
+
+● Bash(ls -la "/media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/
+      TRAP-WD-2020-04/Kazanluk/2009/Project Records/TeamD/")
+  ⎿  total 344                                      
+     drwxr-x---  4 shawn 1003   4096 Nov 23 06:32 .
+     drwxr-x--- 12 shawn 1003   4096 Nov 24 20:36 ..
+     … +5 lines (ctrl+o to expand)
+
+● Bash(ls -la "/media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/
+      TRAP-WD-2020-04/Kazanluk/2009/Project Records/TeamD/FInalized/")
+  ⎿  total 5576                                     
+     drwxr-x--- 2 shawn 1003    4096 Oct  4  2016 .
+     drwxr-x--- 4 shawn 1003    4096 Nov 23 06:32 ..
+     … +6 lines (ctrl+o to expand)
+
+● Read(/media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/Adela/TRAP-WD-
+      2020-04/Kazanluk/2009/Project Records/TeamD/FInalized/D_Summary.pdf)
+  ⎿  Read PDF (279.8KB)
+
+● Excellent data from Team D. I can see significant discrepancies between
+  CSV and DPF. Let me compile the runsheet:
+
+● Write(outputs/qa-runsheet-kazanlak-2009-spring-d.md)
+  ⎿  Wrote 223 lines to outputs/qa-runsheet-kazanlak-2009-spring-d.md
+     # QA Runsheet: Kazanlak 2009 Spring Team D
+     **Study Area/Season:** Kazanlak (Seuthopolis) 2009 Spring
+     **Team:** D
+     **QA Date:** 2025-11-30
+     **QA Performed By:** Claude Code (with Shawn Ross)
+     **Records in CSV:** 10
+     **Date Range:** 2009-03-04 to 2009-03-27
+     ---
+     … +213 lines (ctrl+o to expand)
+
+● Update(docs/qa-automation/qa-queue.yaml)
+  ⎿  Updated docs/qa-automation/qa-queue.yaml with 1 addition and 16       
+     removals
+        7    # Last updated: 2025-11-30
+        8    
+        9    queue:
+       10 -    # Kazanlak 2009 Spring - Teams D-E
+       11 -    - id: "KAZ-2009-D"
+       12 -      study_area: "Kazanlak"
+       13 -      year: 2009
+       14 -      season: "spring"
+       15 -      team: "D"
+       16 -      status: "pending"
+       17 -      record_count: null
+       18 -      date_range: null
+       19 -      sources:
+       20 -        diary_primary: "Kazanluk/2009/Project Records/TeamD/D 
+          - Diary_BG.doc"
+       21 -        diary_secondary: "Kazanluk/2009/Project 
+          - Records/TeamD/D_Diary_En.docx"
+       22 -        dpf_scans: "Kazanluk/2009/Project 
+          - Records/TeamD/FInalized/"
+       23 -        su_forms: null
+       24 -      notes: "BG diary is PRIMARY (222 KB); use FInalized/ for
+          -  DPF scans"
+       25 -  
+       10 +    # Kazanlak 2009 Spring - Team E
+       11      - id: "KAZ-2009-E"
+       12        study_area: "Kazanlak"
+       13        year: 2009
+
+● Update(docs/qa-automation/qa-queue.yaml)
+  ⎿  Updated docs/qa-automation/qa-queue.yaml with 7 additions and 2       
+     removals
+       176        runsheet: 
+             "outputs/qa-runsheet-kazanlak-2009-spring-c.md"
+       177        notes: "15 records; complex mixed survey (intensive + 
+             mound recon); Mar 23 major unit error, Mar 25 missing units"
+       178    
+       179 +    - id: "KAZ-2009-D"
+       180 +      completed_date: "2025-11-30"
+       181 +      runsheet: 
+           + "outputs/qa-runsheet-kazanlak-2009-spring-d.md"
+       182 +      notes: "10 records; severe CSV unit errors - 4 major 
+           + discrepancies with DPF (overlapping CSV ranges)"
+       183 +  
+       184    # Summary statistics
+       185 -  # Total teams: 18 (10 completed, 8 pending)
+       185 +  # Total teams: 18 (11 completed, 7 pending)
+       186    # By study area:
+       187    #   - Elhovo 2009: 3 complete (Teams A, B, C)
+       188    #   - Elhovo 2010: 2 complete (Teams A, B)
+       189 -  #   - Kazanlak 2009: 3 complete (Teams A, B, C), 2
+           -   pending (Teams D-E)
+       189 +  #   - Kazanlak 2009: 4 complete (Teams A-D), 1 pending (
+           +  Team E)
+       190    #   - Kazanlak 2010: 1 complete (Team C), 3 pending (Teams 
+             A, B, D)
+       191    #   - Kazanlak 2011: 4 pending (Teams A-D)
+
+● Bash(git add outputs/qa-runsheet-kazanlak-2009-spring-d.md
+      docs/qa-automation/qa-queue.yaml && git commit -m "feat(qa): complete QA
+      for Kazanlak 2009 Spring Team D (…)
+  ⎿  [master d9bf085] feat(qa): complete QA for Kazanlak 2009 Spring Team D
+     (10 records)
+      2 files changed, 230 insertions(+), 18 deletions(-)
+      create mode 100644 outputs/qa-runsheet-kazanlak-2009-spring-d.md
+
+● Session complete! I've completed QA for 4 teams in this session:
+
+  Summary of Completed QA
+
+  | Team       | Records         | Issues | Key Findings
+                                          |
+  |------------|-----------------|--------|---------------------------------
+  ----------------------------------------|
+  | KAZ-2009-B | 15 (+1 missing) | 6      | 1 missing record (Mar 08), 4
+  unit discrepancies, 1 date discrepancy     |
+  | KAZ-2009-C | 15              | 5      | Complex mixed survey; Mar 23
+  major unit error, Mar 25 missing units     |
+  | KAZ-2009-D | 10              | 5      | Severe CSV errors - 4 major unit
+   discrepancies (overlapping CSV ranges) |
+
+  Progress
+
+  11/18 teams complete (61%)
+
+  Remaining in queue:
+  - KAZ-2009-E (1 team)
+  - KAZ-2010-A, B, D (3 teams)
+  - KAZ-2011-A, B, C, D (4 teams)
+
+  Key Observations
+
+  1. Team D has the worst CSV data - multiple major errors where CSV ranges
+  overlap each other, indicating systematic extraction problems
+  2. Team C had complex mixed survey - combination of intensive survey and
+  mound reconnaissance made verification challenging
+  3. Team B had a missing record - March 8 exists in DPF but was never
+  extracted to CSV
+
+  All runsheets are in outputs/ and the queue has been updated. You can
+  review them when ready.
+
+> /export archive/cc-interactions/2025-12-01-a.txt 
+  ⎿  Conversation exported to: archive/cc-interactions/2025-12-01-a.txt
+
+> ok, we're a little low on context, can you write a /compact message so 
+that we can pick up smoothly next session? 
+
+● Session Summary for /compact
+
+  QA Automation Progress: 11/18 teams complete (61%)
+
+  Completed This Session (2025-12-01)
+
+  - KAZ-2009-B: 15 records, 6 issues (1 missing Mar 08 record, 4 unit
+  discrepancies, 1 date discrepancy)
+  - KAZ-2009-C: 15 records, 5 issues (mixed survey type; Mar 23 major unit
+  error, Mar 25 missing units)
+  - KAZ-2009-D: 10 records, 5 issues (severe CSV errors - overlapping ranges
+   indicate extraction problems)
+
+  Remaining Queue (7 teams)
+
+  - KAZ-2009-E (BG diary only - no EN translation)
+  - KAZ-2010-A, B, D
+  - KAZ-2011-A, B, C, D (A & D have BG diary only, no DPF scans)
+
+  Key Files
+
+  - Queue: docs/qa-automation/qa-queue.yaml
+  - Runsheets: outputs/qa-runsheet-*.md
+  - Source base: /media/shawn/191c3b96-5fa5-4d0d-8805-0cf05d3d8468/synology/
+  Adela/TRAP-WD-2020-04/
+
+  Workflow
+
+  1. Get CSV records for team (grep attribution.csv)
+  2. Read DPF summary PDF (use Tier 3 ~300KB files, avoid Tier 4 3-11MB SU
+  forms)
+  3. Compare unit ranges, walkers, leaders against DPF
+  4. Generate runsheet with discrepancies documented (not applied to CSV)
+  5. Update queue and commit
+
+  Critical Context
+
+  - DPF scans are authoritative for unit numbers
+  - Document corrections only - don't apply to CSV yet
+  - User will review all runsheets at the end before corrections are applied
+
+
+

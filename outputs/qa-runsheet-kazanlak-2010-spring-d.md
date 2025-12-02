@@ -69,11 +69,19 @@
 ## Corrections Required
 
 ### D001: Mar 26 Start Unit
-- **Current:** Start Unit = 40667
-- **DPF shows:** Start Unit = 40677
-- **Gap analysis:** Mar 25 DPF ends at 40676; Mar 26 DPF starts at 40677 (continuous). CSV value 40667 overlaps with Mar 25 range.
-- **Recommendation:** Update to 40677
-- [ ] User Decision Required
+
+**Record:** 2010-03-26, Team D
+**Field:** Start_Unit
+**Current:** 40667
+**Corrected:** 40677
+**Source evidence:** DPF (D_2010Summary.pdf, page 3) clearly shows Start Unit: 40677, End Unit: 40737, Total Units: 60. Author: Vera.
+**Reasoning:** CSV value 40667 overlaps with Mar 25 range (40641-40676). DPF value 40677 is continuous with Mar 25 End Unit (40676). This is a simple transcription error (6 misread as 7).
+
+**User Decision:**
+- [X] Approve correction to 40677
+- [ ] Modify: _______________
+
+**Status:** Pending
 
 ---
 

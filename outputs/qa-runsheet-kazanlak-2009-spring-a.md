@@ -64,9 +64,9 @@
 - **Status:** CONFIRMED
 
 ### 2009-03-08 (Sunday) — Units 10104-10111 ⚠️
-- **DPF:** Team A, Leader: Julia, Author: Tereza A, Walkers: Petra, Tereza, Stacey, Yulia (4+leader=5), Units: 10088-10113
+- **DPF:** Team A, Leader: Julia, Author: Tereza A, Walkers: Petra, Tereza, Stacey, Yulia (4+leader=5), Units: 10088-10123
 - **CSV:** Leader: Julia Tzvetkova, Units: 10104-10111, Walkers: 5 (Julia Tzvetkova, Petra Janouchová, Tereza Dobrovodská, Stacey Brorup, Yulia Dimitrova)
-- **Issue D002:** CSV unit range 10104-10111 does not match DPF 10088-10113
+- **Issue D002:** CSV unit range 10104-10111 does not match DPF 10088-10123
 - **Status:** DISCREPANCY
 
 ### 2009-03-09 (Monday) — Units 10197-10197 ⚠️
@@ -156,7 +156,7 @@
 | ID | Date | Field | Issue | Action |
 |----|------|-------|-------|--------|
 | D001 | 2009-03-06 | Start/End Unit | CSV: 10000-10000, DPF: 10018-10053 | Verify against Excel |
-| D002 | 2009-03-08 | Start/End Unit | CSV: 10104-10111, DPF: 10088-10113 | Verify against Excel |
+| D002 | 2009-03-08 | Start/End Unit | CSV: 10104-10111, DPF: 10088-10123 | Verify against Excel |
 | D003 | 2009-03-09 | Start/End Unit | CSV: 10197-10197, DPF: 10124-10174 | Verify against Excel |
 | D004 | 2009-03-23 | Start Unit | CSV: 10410, DPF/Diary: 10445 | Verify against Excel |
 
@@ -172,7 +172,7 @@
 **Reasoning:** CSV shows single unit 10000 which appears to be placeholder/error. DPF clearly shows 35 units surveyed.
 
 **User Decision:**
-- [ ] Approve correction to 10018-10053
+- [X] Approve correction to 10018-10053
 - [ ] Modify: _______________
 
 **Status:** Pending
@@ -181,11 +181,11 @@
 **Record:** 2009-03-08, Team A
 **Field:** Start_Unit, End_Unit
 **Current:** 10104, 10111
-**Source evidence:** DPF shows Start Unit: A10088, End Unit: A10113
-**Reasoning:** CSV range (8 units) much smaller than DPF range (26 units)
+**Source evidence:** DPF shows Start Unit: A10088, End Unit: A10123, Total Units: 37
+**Reasoning:** CSV range (8 units) much smaller than DPF range (36 units). Original QA misread end unit as 10113 due to difficult handwriting.
 
 **User Decision:**
-- [ ] Approve correction to 10088-10113
+- [X] Approve correction to 10088-10123
 - [ ] Modify: _______________
 
 **Status:** Pending
@@ -198,7 +198,7 @@
 **Reasoning:** CSV shows single unit which cannot be correct for a full survey day. DPF shows 50 units.
 
 **User Decision:**
-- [ ] Approve correction to 10124-10174
+- [X] Approve correction to 10124-10174
 - [ ] Modify: _______________
 
 **Status:** Pending
@@ -211,7 +211,7 @@
 **Reasoning:** CSV start unit 10410 does not match both DPF and diary which agree on 10445
 
 **User Decision:**
-- [ ] Approve correction to 10445
+- [X] Approve correction to 10445
 - [ ] Modify: _______________
 
 **Status:** Pending
@@ -249,6 +249,12 @@
 - **Timea/Evtimka:** DPF shows "Timea" for Mar 9, CSV has "Evtimka Dimitrova" - these are the same person (diminutive form)
 - **Sub-teams:** On Mar 15, team split into A1 and A2 sub-teams for training purposes
 - **Notable finds:** Roman coin of Nerva found Mar 15 (unit 10286); various settlement sites documented
+
+---
+
+## Follow-up Actions
+
+*None - unit sequence is continuous after corrections.*
 
 ---
 

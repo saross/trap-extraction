@@ -5,40 +5,10 @@
 #
 # Created: 2025-11-27
 # Last updated: 2025-12-01
+# STATUS: 100% COMPLETE (18/18 teams QA'd)
 
-queue:
-  # Kazanlak 2011 Spring - Teams A-D
-  - id: "KAZ-2011-A"
-    study_area: "Kazanlak"
-    year: 2011
-    season: "spring"
-    team: "A"
-    status: "pending"
-    record_count: null
-    date_range: null
-    sources:
-      diary_primary: "Kazanluk/2011-11-30/Project Records/Team A/A_2011Diary_BG.doc"
-      diary_secondary: null
-      dpf_scans: null
-      su_forms: null
-    notes: "BG diary only - no English translation; no DPF scans available"
-
-
-
-  - id: "KAZ-2011-D"
-    study_area: "Kazanlak"
-    year: 2011
-    season: "spring"
-    team: "D"
-    status: "pending"
-    record_count: null
-    date_range: null
-    sources:
-      diary_primary: "Kazanluk/2011-11-30/Project Records/Team D/D_2011Diary_BG.doc"
-      diary_secondary: null
-      dpf_scans: null
-      su_forms: null
-    notes: "BG diary only - no English translation; no DPF scans available"
+queue: []
+  # All teams complete - queue empty
 
 completed:
   - id: "ELH-2010-B"
@@ -121,11 +91,21 @@ completed:
     runsheet: "outputs/qa-runsheet-kazanlak-2011-autumn-c.md"
     notes: "18 records (17 survey + 1 non-survey); 1 error (Nov 18 unit overlap with Nov 17)"
 
+  - id: "KAZ-2011-A"
+    completed_date: "2025-12-01"
+    runsheet: "outputs/qa-runsheet-kazanlak-2011-autumn-a.md"
+    notes: "17 records; diary-only QA (BG); 5 walker discrepancies (Oct 29-Nov 2); all unit ranges correct"
+
+  - id: "KAZ-2011-D"
+    completed_date: "2025-12-01"
+    runsheet: "outputs/qa-runsheet-kazanlak-2011-autumn-d.md"
+    notes: "14 records; diary-only QA (BG); 10 walker discrepancies (missing Anani Antonov, Hristina Pavkova); all unit ranges correct"
+
 # Summary statistics
-# Total teams: 18 (16 completed, 2 pending)
+# Total teams: 18 (18 completed, 0 pending) ✓ 100% COMPLETE
 # By study area:
-#   - Elhovo 2009: 3 complete (Teams A, B, C)
-#   - Elhovo 2010: 2 complete (Teams A, B)
-#   - Kazanlak 2009: 5 complete (Teams A-E)
-#   - Kazanlak 2010: 4 complete (Teams A-D) ✓ COMPLETE
-#   - Kazanlak 2011: 2 complete (Teams B, C), 2 pending (A, D) - note: A & D have BG diary only, no DPF
+#   - Elhovo 2009: 3 complete (Teams A, B, C) ✓
+#   - Elhovo 2010: 2 complete (Teams A, B) ✓
+#   - Kazanlak 2009: 5 complete (Teams A-E) ✓
+#   - Kazanlak 2010: 4 complete (Teams A-D) ✓
+#   - Kazanlak 2011: 4 complete (Teams A-D) ✓ ALL COMPLETE

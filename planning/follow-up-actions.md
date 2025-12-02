@@ -227,50 +227,90 @@ This file tracks outstanding actions that fall outside the core walker data extr
 
 ## Medium Priority
 
-### 1. Map Six-Digit to Five-Digit Survey Unit Numbers (2009-03-12 Team C)
+### 1. Map Six-Digit to Five-Digit Survey Unit Numbers (Kazanlak 2009 Team C - Multiple Dates)
 
 **Status:** Pending investigation
 
-**Context:** During final investigation of ambiguous survey unit dates (24 November 2025), old six-digit survey unit numbers were discovered that were later retroactively renumbered to five-digit format. No simple mapping exists between the old and new numbering systems.
+**Context:** During QA of Kazanlak 2009 Team C records (24 November 2025, expanded 2 December 2025), old six-digit survey unit numbers were discovered that were later retroactively renumbered to five-digit format. No simple mapping exists between the old and new numbering systems.
 
 **Study area:** Kazanluk
 **Season:** 2009 spring (March)
 **Team:** Team C
-**Date:** 2009-03-12 (Thursday)
-**Day:** Day 9 of survey season
-
-**Survey unit numbers found:**
-- **Old format (six-digit):** 300003-300009 (with 300008 skipped - 6 units total)
-- **New format (five-digit):** Unknown - requires mapping investigation
-
-**Source documentation:**
-- Daily Progress Form: C_2009Summary.pdf page 3 shows six-digit unit numbers
-- Bulgarian diary: C_Diary_BG.doc (12.03.2009 г.) describes ridge survey work and mound documentation (Vid 009, GCh 051/Vid 010)
-- Investigation runsheet: `outputs/ambiguous-dates-investigation-runsheet.md`
-- Tracking file: `outputs/missing-survey-units-extracted.csv` line 23
 
 **Problem:**
-Team C initially used a six-digit numbering system (300xxx) that was later retroactively changed to five-digit (30xxx) to match the project-wide convention (Team A: 10xxx, Team B: 20xxx, Team C: 30xxx, Team D: 40xxx, Team E: 50xxx). The mapping between old six-digit and new five-digit numbers is not documented in readily accessible sources.
+Team C initially used a **six-digit "mountain survey" numbering system (300xxx)** for extended transect/polygon survey work in mountainous terrain. This was separate from the **five-digit intensive survey units (30xxx)** used for standard field walking. At some point, the six-digit numbers were supposed to be retroactively converted to five-digit format to match the project-wide convention (Team A: 10xxx, Team B: 20xxx, Team C: 30xxx, Team D: 40xxx, Team E: 50xxx), but the mapping is not documented.
 
-**Action required:**
+**CRITICAL:** Do NOT guess at five-digit equivalents. Preserve the original six-digit numbers until the official mapping is found.
+
+---
+
+#### Affected Dates and Six-Digit Numbers
+
+| Date | DPF Page | Six-Digit Range | Total | Work Type | Notes |
+|------|----------|-----------------|-------|-----------|-------|
+| 2009-03-06 | 1 | 300000-300002 | 3 | Mountain polygons | In Comments section; needs separate CSV line |
+| 2009-03-12 | 2 | 300003-300009 (skip 300008) | 6 | Mountain polygons | In Comments: "MOUNTAIN POLYS" |
+| 2009-03-20 | 3 | 300030-300033 | 4 | Mountain polygons | Mountain survey only (no intensive units this day) |
+| 2009-03-23 | 4 | 300012-300020 | 9 | Mountain survey | Separate DPF form; needs separate CSV line |
+
+**Note on Mar 23:** This date has TWO separate DPF forms:
+1. **Intensive survey:** 30065-30097 (33 units) - five-digit, normal format ✓
+2. **Mountain survey:** 300012-300020 (9 units) - six-digit, requires mapping
+
+These should be recorded as SEPARATE lines in attribution.csv until reconciled.
+
+---
+
+#### Source Documentation
+
+| Date | Source | Evidence |
+|------|--------|----------|
+| Mar 6 | C_2009Summary.pdf p.1 | Comments: "MOUNTAIN POLYGONS 300,000-002" |
+| Mar 12 | C_2009Summary.pdf p.2 | Comments: "MOUNTAIN POLYS - 300,003-7, 300,009" |
+| Mar 20 | C_2009Summary.pdf p.3 | Start Unit: 300030, End Unit: 300033 (mountain polygons only) |
+| Mar 23 | C_2009Summary.pdf p.4 | Separate form labelled "MOUNTAIN SURVEY" with 300012-300020 |
+| All | C_Diary_BG.doc | Bulgarian diary describes mountain polygon methodology |
+
+---
+
+#### Action Required
+
 - [ ] Investigate project records for six-digit to five-digit unit renumbering documentation
 - [ ] Potential sources to check:
   - GIS databases (may contain both old and new unit numbers)
   - Project metadata or conversion tables
   - Unit card files (may show both numbering systems)
   - Survey leader notes or correspondence about the renumbering
-- [ ] Once mapping is found, convert 300003-300009 (skip 300008) to correct five-digit numbers
-- [ ] Update `outputs/missing-survey-units-extracted.csv` with converted units
-- [ ] Apply converted units to `outputs/attribution.csv` for 2009-03-12 Team C
-- [ ] Run `scripts/verify-survey-unit-coverage.py` to confirm final coverage
+  - Elena Bozhinova (Team C leader) may have records of the conversion
+- [ ] Once mapping is found:
+  - [ ] Convert all six-digit numbers to their five-digit equivalents
+  - [ ] Update attribution.csv with converted units
+  - [ ] Merge mountain survey lines with intensive survey lines where appropriate
+- [ ] If mapping cannot be found:
+  - [ ] Document as known limitation
+  - [ ] Keep six-digit numbers in a separate "Legacy_Units" column
+  - [ ] Exclude from unit coverage statistics
+
+---
+
+#### Current Workaround
+
+1. **For attribution.csv:**
+   - Preserve original six-digit numbers in records
+   - Do NOT convert to five-digit guesses
+   - For dates with both intensive and mountain survey (e.g., Mar 23), maintain separate lines
+
+2. **For QA runsheets:**
+   - Flag six-digit numbers as "Pending renumbering investigation"
+   - Do not mark as errors - these are valid historical data
+
+3. **For coverage statistics:**
+   - Records with six-digit numbers count as "explained" but not "with units" until mapping is resolved
 
 **Impact:**
-- Current coverage: 239/268 (89.18%)
-- With this record: 240/268 (89.55%) - final coverage for survey unit extraction
-- This is the last remaining unresolved survey unit record from the original 83 missing records
-
-**Current workaround:**
-Record is documented in `missing-survey-units-extracted.csv` with status "Pending renumbering investigation" and contains the old six-digit unit numbers for reference.
+- Multiple Team C records affected (at least 4 dates)
+- Coverage statistics may be affected once fully mapped
+- This is a systematic issue, not individual record errors
 
 ---
 
@@ -418,7 +458,7 @@ This file should be updated as actions are completed or new items are identified
 **Data quality observations:**
 - **Tereza Blažková — 2009 autumn presence unexplained:** TRAP-Participants.csv marks her as present in 2009 autumn (column 10 = "x"), but she does not appear in any walker records for that season. Tereza Dobrovodská is clearly documented on Team C (Oct 12-22) and Team A (Oct 26-29 as Eric's substitute). T. Blažková may have had a specialist role (ceramics, bioarchaeology, finds processing) rather than field walking that season. No action required unless participant list accuracy review is undertaken. (Discovered during D016 QA, 26 Nov 2025)
 
-**Last updated:** 30 November 2025 (added Rebecca as unknown participant from Kazanluk 2010-04-13 Team C)
+**Last updated:** 2 December 2025 (expanded six-digit mountain survey documentation for Team C 2009; added Mar 6, 20, 23 to affected dates)
 
 ---
 
