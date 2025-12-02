@@ -252,6 +252,7 @@ Team C initially used a **six-digit "mountain survey" numbering system (300xxx)*
 | 2009-03-12 | 2 | 300003-300009 (skip 300008) | 6 | Mountain polygons | In Comments: "MOUNTAIN POLYS" |
 | 2009-03-20 | 3 | 300030-300033 | 4 | Mountain polygons | Mountain survey only (no intensive units this day) |
 | 2009-03-23 | 4 | 300012-300020 | 9 | Mountain survey | Separate DPF form; needs separate CSV line |
+| 2009-03-26 | 5 | 300021-300029 | 9 | Tumuli documentation | Mountain survey only (no intensive units this day) |
 
 **Note on Mar 23:** This date has TWO separate DPF forms:
 1. **Intensive survey:** 30065-30097 (33 units) - five-digit, normal format ✓
@@ -269,6 +270,7 @@ These should be recorded as SEPARATE lines in attribution.csv until reconciled.
 | Mar 12 | C_2009Summary.pdf p.2 | Comments: "MOUNTAIN POLYS - 300,003-7, 300,009" |
 | Mar 20 | C_2009Summary.pdf p.3 | Start Unit: 300030, End Unit: 300033 (mountain polygons only) |
 | Mar 23 | C_2009Summary.pdf p.4 | Separate form labelled "MOUNTAIN SURVEY" with 300012-300020 |
+| Mar 26 | C_2009Summary.pdf p.5 | Start Unit: 300021, End Unit: 300029 (tumuli documentation) |
 | All | C_Diary_BG.doc | Bulgarian diary describes mountain polygon methodology |
 
 ---
@@ -475,7 +477,35 @@ These should be recorded as SEPARATE lines in attribution.csv until reconciled.
 
 ---
 
-#### Unit Number Overlaps (9 total - 1 confirmed error, 4 resolved, 4 under investigation)
+##### ✓ KAZ09C-OV1: Kazanlak C Units 30021-30029 (RESOLVED - MISREAD 6-DIGIT)
+
+**Status:** RESOLVED - CSV corrected (2 December 2025)
+
+| Field | Value |
+|-------|-------|
+| Season | Kazanlak 2009 |
+| Team | C |
+| Apparent overlap | 30021-30029 overlapping with Mar 4 (30000-30024) and Mar 6 (30025-30034) |
+| Date | 2009-03-26 |
+
+**Investigation findings:**
+- User reviewed DPF and found Mar 26 units were actually **300021-300029** (six-digit mountain survey)
+- QA process misread six-digit mountain survey units as five-digit intensive survey units
+- Mar 26 had no intensive survey units — only tumuli documentation work
+
+**Root cause:** Six-digit mountain survey units (300021-300029) were incorrectly transcribed as five-digit (30021-30029)
+
+**Correction applied:**
+- Removed unit numbers from Mar 26 record
+- Added note: "Mountain survey only: six-digit units 300021-300029 (tumuli documentation)"
+
+**Result:** Both apparent overlaps resolved — Team C 2009 sequence is now continuous: 30000 → 30170
+
+**Six-digit units to document:** 300021-300029 (added to mountain survey units list below)
+
+---
+
+#### Unit Number Overlaps (9 total - 1 confirmed error, 6 resolved, 2 under investigation)
 
 These overlaps may indicate resurveys, site-focused work, or data errors:
 
@@ -485,8 +515,8 @@ These overlaps may indicate resurveys, site-focused work, or data errors:
 | Elhovo C | 2009-11-12 | 80939 | 2009-11-13 | 80939 | 80939 | 1 unit | **RESOLVED** - CSV error, see ELH09C-OV1 |
 | Kazanlak A | 2009-03-19 | 10385 | 2009-03-20 | 10386 | — | — | **RESOLVED** - QA error, see KAZ09A-OV1 |
 | Kazanlak B | 2009-04-03 | 20808 | 2009-04-05 | 20809 | — | — | **RESOLVED** - date + unit error, see KAZ09B-OV1 |
-| Kazanlak C | 2009-03-04 | 30024 | 2009-03-26 | 30021 | 30021-30024 | 4 units | |
-| Kazanlak C | 2009-03-26 | 30029 | 2009-03-06 | 30025 | 30025-30029 | 5 units | Date ordering issue? |
+| Kazanlak C | 2009-03-04 | 30024 | 2009-03-06 | 30025 | — | — | **RESOLVED** - Mar 26 was 6-digit, see KAZ09C-OV1 |
+| Kazanlak C | 2009-03-25 | 30170 | 2009-03-26 | — | — | — | **RESOLVED** - Mar 26 was mountain survey only |
 | Kazanlak C | 2011-11-17 | 31335 | 2011-11-18 | 31335 | 31335 | 1 unit | Possible resurvey |
 | Kazanlak D | 2009-03-25 | 40214 | 2009-03-26 | 40212 | 40212-40214 | 3 units | Site-focused work (noted in QA runsheet) |
 | Kazanlak D | 2010-03-20 | 40432 | 2010-03-21 | 40424 | 40424-40432 | 9 units | **RESOLVED** - DPF error, see KAZ10D-OV1 |
