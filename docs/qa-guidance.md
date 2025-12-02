@@ -1,7 +1,7 @@
 # QA Guidance: Attribution Data Verification
 
 **Created:** 26 November 2025
-**Updated:** 27 November 2025
+**Updated:** 2 December 2025
 **Purpose:** Complete protocol for cross-source verification of attribution.csv, including rules, heuristics, workflow, and documentation requirements
 
 ## Document Contents
@@ -22,22 +22,51 @@
 
 **Note:** "DPF scan" = Daily Progress Form scan (the scanned PDF of the handwritten daily summary forms completed in the field).
 
-### For Basic Information (Walkers, Units, Dates)
+### Default Source Priority
 
-1. **DPF scans** — PRIMARY source; more accurate for numeric/factual data
-2. **Diaries** — Cross-reference for name interpretation and context
-3. **Both together** — Required for high confidence
+**For unit numbers and walker names:** DPF scans supersede diaries by default.
 
-### For Role Information (PDA, GPS, Paper Recorder, etc.)
+**For role information (PDA, GPS, Paper Recorder, etc.):** Diaries are PRIMARY and often the ONLY source. DPF scans do NOT reliably indicate roles (see O3 below).
 
-1. **Diaries** — PRIMARY and often ONLY source for role assignments
-2. **DPF scans** — Do NOT reliably indicate Paper Recorder (see O3 below)
+### When DPF Priority Does NOT Apply
 
-### Conflict Resolution
+DPF values should NOT be automatically preferred when they produce **unexpected results** with no explanation in the diary:
 
-- DPF scans take precedence for basic info when conflicting with diaries
-- Document all conflicts in discrepancies log with reasoning
-- Flag genuinely ambiguous cases for user decision
+1. **Unit discontinuity:** DPF value creates a gap or overlap with adjacent days
+2. **Unexpected walker:** DPF walker list differs from previous/succeeding days or "usual" team composition without explanation
+3. **Disallowed placement:** DPF would place the same person on two teams on the same day
+
+### Conflict Resolution Decision Tree
+
+When DPF and diary conflict for unit numbers or walker names:
+
+```text
+1. Does the DPF value produce continuity AND expected walkers?
+   YES → Use DPF value (default priority applies)
+   NO  → Continue to step 2
+
+2. Does the diary value produce continuity AND expected walkers?
+   YES → Use diary value (DPF likely has recording error)
+   NO  → Continue to step 3
+
+3. Can EITHER source's value be reconciled with context?
+   - Check if diary explains an unusual situation
+   - Check adjacent days for patterns
+   - Check if one value is a plausible transcription error
+   YES → Use the reconcilable value with documented reasoning
+   NO  → Continue to step 4
+
+4. ESCALATE: Present evidence to user for SU form verification
+   - Document both source values
+   - Note why neither produces a satisfactory result
+   - Request user review of individual survey unit forms
+```
+
+### Documentation Requirements
+
+- **All conflicts** must be documented in the discrepancies log with reasoning
+- **Source attribution** required: note which source the final value came from
+- **Escalated cases** must include specific evidence (file, page, values from each source)
 
 ### Source Gap Tracking
 
@@ -53,11 +82,12 @@ When a primary diary entry is missing, check secondary diaries (e.g., "Team B Di
 
 **Rule C1:** The Start Unit of day N should equal or follow the End Unit of day N-1.
 
-Use this to validate source priority:
+Use continuity as a validation check:
 
-- If DPF scan creates a gap/overlap with adjacent days but diary doesn't → evidence to prefer diary
-- If diary creates a gap/overlap but DPF scan doesn't → confirms DPF scan as PRIMARY
-- Document all continuity anomalies in discrepancies log
+- **Both sources agree:** Confirm the value
+- **Sources conflict, one maintains continuity:** Prefer the source that maintains continuity
+- **Sources conflict, both break continuity:** Escalate for SU form verification
+- **Document all continuity anomalies** in discrepancies log
 
 ---
 
@@ -171,7 +201,7 @@ These are patterns discovered during verification that inform methodology.
 
 | ID | Observation | Evidence | Implication |
 |----|-------------|----------|-------------|
-| **O1** | DPF scan more reliable for unit numbers | Diary entry for 2010-10-24 shows "Last unit: 61349" (typo); DPF scan shows correct value 61549. Similar discrepancies in other records. | Always prefer DPF scan for Start Unit / End Unit values |
+| **O1** | DPF scan more reliable for unit numbers (with exceptions) | Diary entry for 2010-10-24 shows "Last unit: 61349" (typo); DPF scan shows correct value 61549. However, KAZ09A Mar 19 shows diary had 10387 (creating overlap) while DPF had 10385 (maintaining continuity). | DPF supersedes diary for unit numbers BY DEFAULT, but use the decision tree when DPF creates discontinuity or unexpected results |
 | **O2** | Diary Author ≠ DPF Author | The person who wrote the diary entry (narrative) is often different from the person who filled out the DPF. These are distinct roles. | Split into separate fields: `Diary_Author` and `DPF_Author` |
 | **O3** | DPF Author ≠ Paper Recorder | Tested hypothesis that DPF "Author" = Paper Recorder. Team B data showed only 2/6 matches between diary-assigned "Paper Records" role and DPF Author. | Cannot reliably infer Paper_Recorder from DPF Author; these appear to be different tasks |
 | **O4** | Name disambiguation via team roster cross-reference | Team C D016 case: disambiguated "Tereza" by checking team rosters on adjacent days. Person cannot be on two teams on the same day (H2). | When a name is ambiguous (multiple people with same first name), use team membership constraints across dates to disambiguate |

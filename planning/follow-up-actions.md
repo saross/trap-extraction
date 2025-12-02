@@ -667,8 +667,8 @@ The runsheet noted this as "minor DPF/diary unit divergence" with status CONFIRM
 4. **Require explicit source attribution:** Each corrected value should note which source it came from (e.g., "End Unit: 10385 (from DPF; diary had 10387)")
 
 **Action items:**
-- [ ] Update qa-guidance.md with clearer mandatory language
-- [ ] Add decision tree for DPF/diary conflicts
+- [x] Update qa-guidance.md with clearer mandatory language (2 December 2025)
+- [x] Add decision tree for DPF/diary conflicts (2 December 2025)
 - [ ] Review other QA runsheets for similar "minor divergence" cases that should have been corrections
 
 ---
