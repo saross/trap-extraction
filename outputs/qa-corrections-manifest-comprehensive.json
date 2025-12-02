@@ -134,6 +134,30 @@
       "applied_date": "2025-12-02",
       "corrections_count": 1,
       "notes": "1 unit correction (D001)"
+    },
+    {
+      "id": "RS013",
+      "file": "dpf-review-kazanlak-2009-spring-d.md",
+      "study_area": "Kazanlak",
+      "season": "2009 Spring",
+      "team": "D",
+      "status": "APPLIED",
+      "approved_date": "2025-12-02",
+      "corrections_count": 8,
+      "notes": "DPF review via Gemini vision model - 6 corrections + 2 new records; reverts incorrect D005 from RS011; documents duplicate 40100 and missing 40218",
+      "applied_date": "2025-12-02"
+    },
+    {
+      "id": "RS014",
+      "file": "dpf-review-kazanlak-2011-autumn-c.md",
+      "study_area": "Kazanlak",
+      "season": "2011 Autumn",
+      "team": "C",
+      "status": "APPLIED",
+      "approved_date": "2025-12-02",
+      "corrections_count": 1,
+      "notes": "OCR correction - Nov 18 Start Unit 31335\u219231336 (resolves last overlap)",
+      "applied_date": "2025-12-02"
     }
   ],
   "corrections": [
@@ -160,10 +184,15 @@
       "runsheet": "RS001",
       "id": "ELH09A-D016",
       "type": "CORRECTION",
-      "dates": ["2009-10-26", "2009-10-27", "2009-10-28", "2009-10-29"],
+      "dates": [
+        "2009-10-26",
+        "2009-10-27",
+        "2009-10-28",
+        "2009-10-29"
+      ],
       "team": "A",
       "severity": "MAJOR",
-      "description": "Walker substitution - Eric departed Oct 25, Tereza Dobrovodská substituted Oct 26-29",
+      "description": "Walker substitution - Eric departed Oct 25, Tereza Dobrovodsk\u00e1 substituted Oct 26-29",
       "fields": {
         "Walkers_Original": {
           "find": "Eric",
@@ -172,12 +201,12 @@
         },
         "Walkers_Standardised": {
           "find": "Erik Andersen",
-          "replace": "Tereza Dobrovodská",
+          "replace": "Tereza Dobrovodsk\u00e1",
           "action": "REPLACE_IN_STRING"
         }
       },
       "source_evidence": "Diary Team A.doc Oct 25: 'Eric decided to go on to Istanbul'; Oct 26: 'Tereza as a substitute for Eric'",
-      "investigation": "Cross-team analysis: Tereza Dobrovodská was on Team C until Oct 22, sick Oct 23, moved to Team A Oct 26-29",
+      "investigation": "Cross-team analysis: Tereza Dobrovodsk\u00e1 was on Team C until Oct 22, sick Oct 23, moved to Team A Oct 26-29",
       "status": "APPLIED",
       "applied_date": "2025-11-26"
     },
@@ -185,7 +214,11 @@
       "runsheet": "RS001",
       "id": "ELH09A-D017",
       "type": "VERIFY_NO_CHANGE",
-      "dates": ["2009-10-30", "2009-10-31", "2009-11-04"],
+      "dates": [
+        "2009-10-30",
+        "2009-10-31",
+        "2009-11-04"
+      ],
       "team": "A",
       "severity": "INFO",
       "description": "Erroneous QA_Notes check - Team A records did not contain the erroneous text",
@@ -299,7 +332,12 @@
       "runsheet": "RS002",
       "id": "ELH09B-D014",
       "type": "FLAG_ONLY",
-      "dates": ["2009-11-09", "2009-11-10", "2009-11-12", "2009-11-13"],
+      "dates": [
+        "2009-11-09",
+        "2009-11-10",
+        "2009-11-12",
+        "2009-11-13"
+      ],
       "team": "B",
       "severity": "Minor",
       "description": "Unmapped walker 'Lizzy' - full name unknown",
@@ -311,7 +349,12 @@
       "runsheet": "RS003",
       "id": "ELH09C-D019",
       "type": "CORRECTION",
-      "dates": ["2009-10-14", "2009-10-16", "2009-10-17", "2009-10-18"],
+      "dates": [
+        "2009-10-14",
+        "2009-10-16",
+        "2009-10-17",
+        "2009-10-18"
+      ],
       "team": "C",
       "severity": "Minor",
       "description": "Erroneous QA_Notes - remove incorrect 'No autumn survey season' text",
@@ -354,13 +397,13 @@
       "description": "Remove Georgi from walker list - diary says he was away",
       "fields": {
         "Walkers_Original": {
-          "current": "Bara | Petra Tušlová | Sona | Tereza | Todor | Georgi",
-          "corrected": "Bara | Petra Tušlová | Sona | Tereza | Todor",
+          "current": "Bara | Petra Tu\u0161lov\u00e1 | Sona | Tereza | Todor | Georgi",
+          "corrected": "Bara | Petra Tu\u0161lov\u00e1 | Sona | Tereza | Todor",
           "action": "REPLACE"
         },
         "Walkers_Standardised": {
-          "current": "Bara Weissová | Petra Tušlová | Sona Holičková | Tereza Dobrovodská | Todor Vulchev | Georgi Nekhrizov",
-          "corrected": "Bara Weissová | Petra Tušlová | Sona Holičková | Tereza Dobrovodská | Todor Vulchev",
+          "current": "Bara Weissov\u00e1 | Petra Tu\u0161lov\u00e1 | Sona Holi\u010dkov\u00e1 | Tereza Dobrovodsk\u00e1 | Todor Vulchev | Georgi Nekhrizov",
+          "corrected": "Bara Weissov\u00e1 | Petra Tu\u0161lov\u00e1 | Sona Holi\u010dkov\u00e1 | Tereza Dobrovodsk\u00e1 | Todor Vulchev",
           "action": "REPLACE"
         }
       },
@@ -494,7 +537,7 @@
         "End_Unit": "71800",
         "Leader": "Shawn Ross | Royce Lawrence",
         "Walkers_Original": "Shawn | Kimberley | Royce | Alina | Julia",
-        "Walkers_Standardised": "Shawn Ross | Kimberley Lowe | Royce Lawrence | Alina Petanec | Julia Paulová"
+        "Walkers_Standardised": "Shawn Ross | Kimberley Lowe | Royce Lawrence | Alina Petanec | Julia Paulov\u00e1"
       },
       "source_evidence": "PDF Day_06.pdf Form 2; Diary 7 November 2010 entry",
       "status": "APPLIED",
@@ -515,7 +558,7 @@
         "End_Unit": "71833",
         "Leader": "Royce Lawrence",
         "Walkers_Original": "Kimberley | Emma | Royce | Julia | Ashley | Drago",
-        "Walkers_Standardised": "Kimberley Lowe | Emma Jakobsson | Royce Lawrence | Julia Paulová | Ashley Chee-Quee | Dragomir Garbov"
+        "Walkers_Standardised": "Kimberley Lowe | Emma Jakobsson | Royce Lawrence | Julia Paulov\u00e1 | Ashley Chee-Quee | Dragomir Garbov"
       },
       "source_evidence": "PDF Day_08.pdf Form 1; Diary 10 November 2010 entry",
       "status": "APPLIED",
@@ -561,12 +604,12 @@
           "action": "REPLACE"
         },
         "Walkers_Standardised": {
-          "current": "Bara Weissová | Sona Holičková | Elena Bozhinova",
-          "corrected": "Elena Bozhinova | Bara Weissová | Sona Holičková | Todor Vulchev | Viktorie Chystyaková",
+          "current": "Bara Weissov\u00e1 | Sona Holi\u010dkov\u00e1 | Elena Bozhinova",
+          "corrected": "Elena Bozhinova | Bara Weissov\u00e1 | Sona Holi\u010dkov\u00e1 | Todor Vulchev | Viktorie Chystyakov\u00e1",
           "action": "REPLACE"
         }
       },
-      "source_evidence": "BG diary: Екип: Елена, Бара, Соня, Тодор, Вики",
+      "source_evidence": "BG diary: \u0415\u043a\u0438\u043f: \u0415\u043b\u0435\u043d\u0430, \u0411\u0430\u0440\u0430, \u0421\u043e\u043d\u044f, \u0422\u043e\u0434\u043e\u0440, \u0412\u0438\u043a\u0438",
       "status": "APPLIED",
       "applied_date": "2025-11-30"
     },
@@ -585,12 +628,12 @@
           "action": "REPLACE"
         },
         "Walkers_Standardised": {
-          "current": "Bara Weissová | Sona Holičková | Elena Bozhinova | Todor Vulchev",
-          "corrected": "Elena Bozhinova | Bara Weissová | Sona Holičková | Jana Jebavá | Asen",
+          "current": "Bara Weissov\u00e1 | Sona Holi\u010dkov\u00e1 | Elena Bozhinova | Todor Vulchev",
+          "corrected": "Elena Bozhinova | Bara Weissov\u00e1 | Sona Holi\u010dkov\u00e1 | Jana Jebav\u00e1 | Asen",
           "action": "REPLACE"
         }
       },
-      "source_evidence": "BG diary: Екип: Елена, Бара, Соня, Яна, Асен",
+      "source_evidence": "BG diary: \u0415\u043a\u0438\u043f: \u0415\u043b\u0435\u043d\u0430, \u0411\u0430\u0440\u0430, \u0421\u043e\u043d\u044f, \u042f\u043d\u0430, \u0410\u0441\u0435\u043d",
       "notes": "Asen has no standardised surname (unknown visitor)",
       "status": "APPLIED",
       "applied_date": "2025-11-30"
@@ -605,17 +648,17 @@
       "description": "Missing 5th walker - should be Asen (source conflict resolved in favour of BG diary)",
       "fields": {
         "Walkers_Original": {
-          "current": "Bara | Sonja | Elena | Yana Jebavá",
+          "current": "Bara | Sonja | Elena | Yana Jebav\u00e1",
           "corrected": "Elena | Bara | Sonja | Jana | Asen",
           "action": "REPLACE"
         },
         "Walkers_Standardised": {
-          "current": "Bara Weissová | Sona Holičková | Elena Bozhinova | Jana Jebavá",
-          "corrected": "Elena Bozhinova | Bara Weissová | Sona Holičková | Jana Jebavá | Asen",
+          "current": "Bara Weissov\u00e1 | Sona Holi\u010dkov\u00e1 | Elena Bozhinova | Jana Jebav\u00e1",
+          "corrected": "Elena Bozhinova | Bara Weissov\u00e1 | Sona Holi\u010dkov\u00e1 | Jana Jebav\u00e1 | Asen",
           "action": "REPLACE"
         }
       },
-      "source_evidence": "BG diary: Екип: Елена, Бара, Соня, Яна, Асен",
+      "source_evidence": "BG diary: \u0415\u043a\u0438\u043f: \u0415\u043b\u0435\u043d\u0430, \u0411\u0430\u0440\u0430, \u0421\u043e\u043d\u044f, \u042f\u043d\u0430, \u0410\u0441\u0435\u043d",
       "source_conflict": {
         "DPF": "Todor",
         "BG_diary": "Asen",
@@ -639,12 +682,12 @@
           "action": "REPLACE"
         },
         "Walkers_Standardised": {
-          "current": "Bara Weissová | Sona Holičková | Elena Bozhinova",
-          "corrected": "Elena Bozhinova | Bara Weissová | Sona Holičková | Todor Vulchev",
+          "current": "Bara Weissov\u00e1 | Sona Holi\u010dkov\u00e1 | Elena Bozhinova",
+          "corrected": "Elena Bozhinova | Bara Weissov\u00e1 | Sona Holi\u010dkov\u00e1 | Todor Vulchev",
           "action": "REPLACE"
         }
       },
-      "source_evidence": "BG diary: Екип: Елена, Бара, Соня, Тодор",
+      "source_evidence": "BG diary: \u0415\u043a\u0438\u043f: \u0415\u043b\u0435\u043d\u0430, \u0411\u0430\u0440\u0430, \u0421\u043e\u043d\u044f, \u0422\u043e\u0434\u043e\u0440",
       "status": "APPLIED",
       "applied_date": "2025-11-30"
     },
@@ -655,7 +698,7 @@
       "date": "2010-03-31",
       "team": "C",
       "severity": "MAJOR",
-      "description": "Wrong walker identity - Peter should be Dasha (Dagmar Winklerová)",
+      "description": "Wrong walker identity - Peter should be Dasha (Dagmar Winklerov\u00e1)",
       "fields": {
         "Walkers_Original": {
           "current": "Bara | Sonja | Elena | Peter | Todor",
@@ -663,13 +706,13 @@
           "action": "REPLACE"
         },
         "Walkers_Standardised": {
-          "current": "Bara Weissová | Sona Holičková | Elena Bozhinova | Petar Minkov | Todor Vulchev",
-          "corrected": "Elena Bozhinova | Bara Weissová | Sona Holičková | Dagmar Winklerová | Todor Vulchev",
+          "current": "Bara Weissov\u00e1 | Sona Holi\u010dkov\u00e1 | Elena Bozhinova | Petar Minkov | Todor Vulchev",
+          "corrected": "Elena Bozhinova | Bara Weissov\u00e1 | Sona Holi\u010dkov\u00e1 | Dagmar Winklerov\u00e1 | Todor Vulchev",
           "action": "REPLACE"
         }
       },
-      "source_evidence": "BG diary: Екип: Елена, Бара, Соня, Даша, Тодор; DPF shows 'Dasa'",
-      "investigation": "Investigation 1: Peter was on Team B same day (H2 violated). Dasha = Dagmar Winklerová confirmed.",
+      "source_evidence": "BG diary: \u0415\u043a\u0438\u043f: \u0415\u043b\u0435\u043d\u0430, \u0411\u0430\u0440\u0430, \u0421\u043e\u043d\u044f, \u0414\u0430\u0448\u0430, \u0422\u043e\u0434\u043e\u0440; DPF shows 'Dasa'",
+      "investigation": "Investigation 1: Peter was on Team B same day (H2 violated). Dasha = Dagmar Winklerov\u00e1 confirmed.",
       "root_cause": "Data mixing during extraction",
       "status": "APPLIED",
       "applied_date": "2025-11-30"
@@ -681,7 +724,7 @@
       "date": "2010-04-01",
       "team": "C",
       "severity": "MAJOR",
-      "description": "Wrong walker identity - Peter should be Dasha (Dagmar Winklerová)",
+      "description": "Wrong walker identity - Peter should be Dasha (Dagmar Winklerov\u00e1)",
       "fields": {
         "Walkers_Original": {
           "current": "Sonja | Bara | Elena | Peter | Todor",
@@ -689,12 +732,12 @@
           "action": "REPLACE"
         },
         "Walkers_Standardised": {
-          "current": "Sona Holičková | Bara Weissová | Elena Bozhinova | Petar Minkov | Todor Vulchev",
-          "corrected": "Elena Bozhinova | Bara Weissová | Sona Holičková | Todor Vulchev | Dagmar Winklerová",
+          "current": "Sona Holi\u010dkov\u00e1 | Bara Weissov\u00e1 | Elena Bozhinova | Petar Minkov | Todor Vulchev",
+          "corrected": "Elena Bozhinova | Bara Weissov\u00e1 | Sona Holi\u010dkov\u00e1 | Todor Vulchev | Dagmar Winklerov\u00e1",
           "action": "REPLACE"
         }
       },
-      "source_evidence": "BG diary: Екип: Елена, Бара, Соня, Тодор, Даша; DPF confirms 'Dasa'",
+      "source_evidence": "BG diary: \u0415\u043a\u0438\u043f: \u0415\u043b\u0435\u043d\u0430, \u0411\u0430\u0440\u0430, \u0421\u043e\u043d\u044f, \u0422\u043e\u0434\u043e\u0440, \u0414\u0430\u0448\u0430; DPF confirms 'Dasa'",
       "investigation": "Same root cause as D006",
       "status": "APPLIED",
       "applied_date": "2025-11-30"
@@ -706,7 +749,7 @@
       "date": "2010-04-09",
       "team": "C",
       "severity": "Minor",
-      "description": "[unclear] resolved to Jiri (Jiří Musil)",
+      "description": "[unclear] resolved to Jiri (Ji\u0159\u00ed Musil)",
       "fields": {
         "Walkers_Original": {
           "current": "Bara | Sonja | Elena | Todor | [unclear]",
@@ -714,12 +757,12 @@
           "action": "REPLACE"
         },
         "Walkers_Standardised": {
-          "current": "Bara Weissová | Sona Holičková | Elena Bozhinova | Todor Vulchev",
-          "corrected": "Elena Bozhinova | Bara Weissová | Sona Holičková | Todor Vulchev | Jiří Musil",
+          "current": "Bara Weissov\u00e1 | Sona Holi\u010dkov\u00e1 | Elena Bozhinova | Todor Vulchev",
+          "corrected": "Elena Bozhinova | Bara Weissov\u00e1 | Sona Holi\u010dkov\u00e1 | Todor Vulchev | Ji\u0159\u00ed Musil",
           "action": "REPLACE"
         }
       },
-      "source_evidence": "DPF Day 18 shows 'Jiri'; BG diary: Екип: Елена, Бара, Соня, Тодор, Иржи",
+      "source_evidence": "DPF Day 18 shows 'Jiri'; BG diary: \u0415\u043a\u0438\u043f: \u0415\u043b\u0435\u043d\u0430, \u0411\u0430\u0440\u0430, \u0421\u043e\u043d\u044f, \u0422\u043e\u0434\u043e\u0440, \u0418\u0440\u0436\u0438",
       "status": "APPLIED",
       "applied_date": "2025-11-30"
     },
@@ -756,16 +799,16 @@
         "Team": "C",
         "Start_Unit": "30801",
         "End_Unit": "30809",
-        "Leader": "Bara Weissová",
+        "Leader": "Bara Weissov\u00e1",
         "Walkers_Original": "Adela | Bara | Sonja | Lindsay | Rebecca",
-        "Walkers_Standardised": "Adela Sobotkova | Bara Weissová | Sona Holičková | Lindsay Prazak | Rebecca",
+        "Walkers_Standardised": "Adela Sobotkova | Bara Weissov\u00e1 | Sona Holi\u010dkov\u00e1 | Lindsay Prazak | Rebecca",
         "PDA_Operator": "",
         "Paper_Recorder": "",
         "Data_Editor": "",
         "GPS_Operator": "",
         "Photographer": "",
         "Diary_Author": "",
-        "DPF_Author": "Sona Holičková",
+        "DPF_Author": "Sona Holi\u010dkov\u00e1",
         "XLS_Source": "Kaz10_SurveySummary.xls",
         "PDF_Source": "C_2010Summary.pdf",
         "Extraction_Notes": "Added from DPF Summary Day 19; missed in original extraction",
@@ -882,7 +925,7 @@
           "action": "REPLACE"
         }
       },
-      "source_evidence": "BG Diary: 'Група от пет човека в състав: ЮЦ, Ал. Р, ЕТ, АА и ГМ'",
+      "source_evidence": "BG Diary: '\u0413\u0440\u0443\u043f\u0430 \u043e\u0442 \u043f\u0435\u0442 \u0447\u043e\u0432\u0435\u043a\u0430 \u0432 \u0441\u044a\u0441\u0442\u0430\u0432: \u042e\u0426, \u0410\u043b. \u0420, \u0415\u0422, \u0410\u0410 \u0438 \u0413\u041c'",
       "status": "APPLIED",
       "applied_date": "2025-12-02"
     },
@@ -901,7 +944,7 @@
           "action": "REPLACE"
         }
       },
-      "source_evidence": "BG Diary: 'Група от пет човека в състав: АлР, АА, ЕТ, ЦЦ и ГМ'",
+      "source_evidence": "BG Diary: '\u0413\u0440\u0443\u043f\u0430 \u043e\u0442 \u043f\u0435\u0442 \u0447\u043e\u0432\u0435\u043a\u0430 \u0432 \u0441\u044a\u0441\u0442\u0430\u0432: \u0410\u043b\u0420, \u0410\u0410, \u0415\u0422, \u0426\u0426 \u0438 \u0413\u041c'",
       "status": "APPLIED",
       "applied_date": "2025-12-02"
     },
@@ -920,7 +963,7 @@
           "action": "REPLACE"
         }
       },
-      "source_evidence": "BG Diary: 'Група от 4 човека в състав: АА, ЕТ, ЦЦ и ГМ'",
+      "source_evidence": "BG Diary: '\u0413\u0440\u0443\u043f\u0430 \u043e\u0442 4 \u0447\u043e\u0432\u0435\u043a\u0430 \u0432 \u0441\u044a\u0441\u0442\u0430\u0432: \u0410\u0410, \u0415\u0422, \u0426\u0426 \u0438 \u0413\u041c'",
       "status": "APPLIED",
       "applied_date": "2025-12-02"
     },
@@ -939,7 +982,7 @@
           "action": "REPLACE"
         }
       },
-      "source_evidence": "BG Diary: 'Екип от шест човека в състав: ГМ, ЕТ, Bethan Donnelly, Corinne Softley, Hamish Sinclair, Elaine Lin'",
+      "source_evidence": "BG Diary: '\u0415\u043a\u0438\u043f \u043e\u0442 \u0448\u0435\u0441\u0442 \u0447\u043e\u0432\u0435\u043a\u0430 \u0432 \u0441\u044a\u0441\u0442\u0430\u0432: \u0413\u041c, \u0415\u0422, Bethan Donnelly, Corinne Softley, Hamish Sinclair, Elaine Lin'",
       "status": "APPLIED",
       "applied_date": "2025-12-02"
     },
@@ -958,7 +1001,7 @@
           "action": "REPLACE"
         }
       },
-      "source_evidence": "BG Diary: 'Екип от 5 човека в състав: ГМ, EL, ZS, HS и Cecilia Choi'",
+      "source_evidence": "BG Diary: '\u0415\u043a\u0438\u043f \u043e\u0442 5 \u0447\u043e\u0432\u0435\u043a\u0430 \u0432 \u0441\u044a\u0441\u0442\u0430\u0432: \u0413\u041c, EL, ZS, HS \u0438 Cecilia Choi'",
       "status": "APPLIED",
       "applied_date": "2025-12-02"
     },
@@ -977,7 +1020,7 @@
           "action": "REPLACE"
         }
       },
-      "source_evidence": "BG Diary: 'Екип: Н. Кечева, Ю. Димитрова, В. Генчева, Г. Михайлов, Е. Дакашев, А. Рисков, Х. Павкова'",
+      "source_evidence": "BG Diary: '\u0415\u043a\u0438\u043f: \u041d. \u041a\u0435\u0447\u0435\u0432\u0430, \u042e. \u0414\u0438\u043c\u0438\u0442\u0440\u043e\u0432\u0430, \u0412. \u0413\u0435\u043d\u0447\u0435\u0432\u0430, \u0413. \u041c\u0438\u0445\u0430\u0439\u043b\u043e\u0432, \u0415. \u0414\u0430\u043a\u0430\u0448\u0435\u0432, \u0410. \u0420\u0438\u0441\u043a\u043e\u0432, \u0425. \u041f\u0430\u0432\u043a\u043e\u0432\u0430'",
       "status": "APPLIED",
       "applied_date": "2025-12-02"
     },
@@ -996,7 +1039,7 @@
           "action": "REPLACE"
         }
       },
-      "source_evidence": "BG Diary: 'Екип: Н. Кечева, В. Генчева, Е. Дакашев, Х. Павкова'",
+      "source_evidence": "BG Diary: '\u0415\u043a\u0438\u043f: \u041d. \u041a\u0435\u0447\u0435\u0432\u0430, \u0412. \u0413\u0435\u043d\u0447\u0435\u0432\u0430, \u0415. \u0414\u0430\u043a\u0430\u0448\u0435\u0432, \u0425. \u041f\u0430\u0432\u043a\u043e\u0432\u0430'",
       "status": "APPLIED",
       "applied_date": "2025-12-02"
     },
@@ -1015,7 +1058,7 @@
           "action": "REPLACE"
         }
       },
-      "source_evidence": "BG Diary: 'Екип: Н. Кечева, В. Генчева, Е. Дакашев, Е. Тонкова, А. Антонов'",
+      "source_evidence": "BG Diary: '\u0415\u043a\u0438\u043f: \u041d. \u041a\u0435\u0447\u0435\u0432\u0430, \u0412. \u0413\u0435\u043d\u0447\u0435\u0432\u0430, \u0415. \u0414\u0430\u043a\u0430\u0448\u0435\u0432, \u0415. \u0422\u043e\u043d\u043a\u043e\u0432\u0430, \u0410. \u0410\u043d\u0442\u043e\u043d\u043e\u0432'",
       "status": "APPLIED",
       "applied_date": "2025-12-02"
     },
@@ -1034,7 +1077,7 @@
           "action": "REPLACE"
         }
       },
-      "source_evidence": "BG Diary: 'Екип: Н. Кечева, В. Генчева, Е. Дакашев, Е. Тонкова, А. Антонов'",
+      "source_evidence": "BG Diary: '\u0415\u043a\u0438\u043f: \u041d. \u041a\u0435\u0447\u0435\u0432\u0430, \u0412. \u0413\u0435\u043d\u0447\u0435\u0432\u0430, \u0415. \u0414\u0430\u043a\u0430\u0448\u0435\u0432, \u0415. \u0422\u043e\u043d\u043a\u043e\u0432\u0430, \u0410. \u0410\u043d\u0442\u043e\u043d\u043e\u0432'",
       "status": "APPLIED",
       "applied_date": "2025-12-02"
     },
@@ -1053,7 +1096,7 @@
           "action": "REPLACE"
         }
       },
-      "source_evidence": "BG Diary Day 9: 'Екип: Н. Кечева, В. Генчева, Е. Дакашев, Е. Тонкова, А. Антонов'",
+      "source_evidence": "BG Diary Day 9: '\u0415\u043a\u0438\u043f: \u041d. \u041a\u0435\u0447\u0435\u0432\u0430, \u0412. \u0413\u0435\u043d\u0447\u0435\u0432\u0430, \u0415. \u0414\u0430\u043a\u0430\u0448\u0435\u0432, \u0415. \u0422\u043e\u043d\u043a\u043e\u0432\u0430, \u0410. \u0410\u043d\u0442\u043e\u043d\u043e\u0432'",
       "status": "APPLIED",
       "applied_date": "2025-12-02"
     },
@@ -1072,7 +1115,7 @@
           "action": "REPLACE"
         }
       },
-      "source_evidence": "BG Diary Day 10: 'Екип: Г. Нехризов, Н. Кечева, В. Генчева, Е. Дакашев, Е. Тонкова, А. Антонов'",
+      "source_evidence": "BG Diary Day 10: '\u0415\u043a\u0438\u043f: \u0413. \u041d\u0435\u0445\u0440\u0438\u0437\u043e\u0432, \u041d. \u041a\u0435\u0447\u0435\u0432\u0430, \u0412. \u0413\u0435\u043d\u0447\u0435\u0432\u0430, \u0415. \u0414\u0430\u043a\u0430\u0448\u0435\u0432, \u0415. \u0422\u043e\u043d\u043a\u043e\u0432\u0430, \u0410. \u0410\u043d\u0442\u043e\u043d\u043e\u0432'",
       "status": "APPLIED",
       "applied_date": "2025-12-02"
     },
@@ -1091,7 +1134,7 @@
           "action": "REPLACE"
         }
       },
-      "source_evidence": "BG Diary Day 12: 'Екип: Г. Нехризов, Н. Кечева, В. Генчева, Е. Дакашев, Е. Тонкова, А. Антонов'",
+      "source_evidence": "BG Diary Day 12: '\u0415\u043a\u0438\u043f: \u0413. \u041d\u0435\u0445\u0440\u0438\u0437\u043e\u0432, \u041d. \u041a\u0435\u0447\u0435\u0432\u0430, \u0412. \u0413\u0435\u043d\u0447\u0435\u0432\u0430, \u0415. \u0414\u0430\u043a\u0430\u0448\u0435\u0432, \u0415. \u0422\u043e\u043d\u043a\u043e\u0432\u0430, \u0410. \u0410\u043d\u0442\u043e\u043d\u043e\u0432'",
       "status": "APPLIED",
       "applied_date": "2025-12-02"
     },
@@ -1110,7 +1153,7 @@
           "action": "REPLACE"
         }
       },
-      "source_evidence": "BG Diary: 'Екип: Н. Кечева, Е. Дакашев, Е. Тонкова, А. Антонов'",
+      "source_evidence": "BG Diary: '\u0415\u043a\u0438\u043f: \u041d. \u041a\u0435\u0447\u0435\u0432\u0430, \u0415. \u0414\u0430\u043a\u0430\u0448\u0435\u0432, \u0415. \u0422\u043e\u043d\u043a\u043e\u0432\u0430, \u0410. \u0410\u043d\u0442\u043e\u043d\u043e\u0432'",
       "status": "APPLIED",
       "applied_date": "2025-12-02"
     },
@@ -1129,7 +1172,7 @@
           "action": "REPLACE"
         }
       },
-      "source_evidence": "BG Diary: 'Екип: Н. Кечева, Е. Дакашев, Е. Тонкова, А. Антонов'",
+      "source_evidence": "BG Diary: '\u0415\u043a\u0438\u043f: \u041d. \u041a\u0435\u0447\u0435\u0432\u0430, \u0415. \u0414\u0430\u043a\u0430\u0448\u0435\u0432, \u0415. \u0422\u043e\u043d\u043a\u043e\u0432\u0430, \u0410. \u0410\u043d\u0442\u043e\u043d\u043e\u0432'",
       "status": "APPLIED",
       "applied_date": "2025-12-02"
     },
@@ -1148,7 +1191,7 @@
           "action": "REPLACE"
         }
       },
-      "source_evidence": "BG Diary: 'Екип: Н. Кечева, Е. Дакашев, Е. Тонкова, А. Антонов'",
+      "source_evidence": "BG Diary: '\u0415\u043a\u0438\u043f: \u041d. \u041a\u0435\u0447\u0435\u0432\u0430, \u0415. \u0414\u0430\u043a\u0430\u0448\u0435\u0432, \u0415. \u0422\u043e\u043d\u043a\u043e\u0432\u0430, \u0410. \u0410\u043d\u0442\u043e\u043d\u043e\u0432'",
       "status": "APPLIED",
       "applied_date": "2025-12-02"
     },
@@ -1504,34 +1547,225 @@
       "source_evidence": "DPF (D_2010Summary.pdf, page 3) shows Start Unit: 40677; continuous with Mar 25 End Unit (40676)",
       "status": "APPLIED",
       "applied_date": "2025-12-02"
+    },
+    {
+      "runsheet": "RS013",
+      "id": "KAZ09D-V001",
+      "type": "CORRECTION",
+      "date": "2009-03-07",
+      "team": "D",
+      "severity": "MAJOR",
+      "description": "Unit range completely wrong - CSV shows 40031-40032, DPF shows 40024-40030",
+      "fields": {
+        "Start_Unit": {
+          "current": "40031",
+          "corrected": "40024",
+          "action": "REPLACE"
+        },
+        "End_Unit": {
+          "current": "40032",
+          "corrected": "40030",
+          "action": "REPLACE"
+        }
+      },
+      "source_evidence": "DPF review via Gemini: Mar 7 = 40024-40030 (continuous)",
+      "status": "APPLIED",
+      "applied_date": "2025-12-02"
+    },
+    {
+      "runsheet": "RS013",
+      "id": "KAZ09D-V002",
+      "type": "ADD_RECORD",
+      "date": "2009-03-08",
+      "team": "D",
+      "severity": "MAJOR",
+      "description": "Missing record - entire day missing from CSV",
+      "new_record": {
+        "Date": "2009-03-08",
+        "Team": "D",
+        "Start_Unit": "40031",
+        "End_Unit": "40033",
+        "Leader": "Georgi Nekhrizov"
+      },
+      "source_evidence": "DPF review via Gemini: Mar 8 = 40031-40033 (continuous with Mar 7 ending at 40030)",
+      "status": "APPLIED",
+      "applied_date": "2025-12-02"
+    },
+    {
+      "runsheet": "RS013",
+      "id": "KAZ09D-V003",
+      "type": "CORRECTION",
+      "date": "2009-03-15",
+      "team": "D",
+      "severity": "MAJOR",
+      "description": "Unit range errors - CSV shows 40039-40065, DPF shows 40034-40064",
+      "fields": {
+        "Start_Unit": {
+          "current": "40039",
+          "corrected": "40034",
+          "action": "REPLACE"
+        },
+        "End_Unit": {
+          "current": "40065",
+          "corrected": "40064",
+          "action": "REPLACE"
+        }
+      },
+      "source_evidence": "DPF review via Gemini: Mar 15 = 40034-40064 (continuous with Mar 8 ending at 40033)",
+      "status": "APPLIED",
+      "applied_date": "2025-12-02"
+    },
+    {
+      "runsheet": "RS013",
+      "id": "KAZ09D-V004",
+      "type": "ADD_RECORD",
+      "date": "2009-03-16",
+      "team": "D",
+      "severity": "MAJOR",
+      "description": "Missing record - entire day missing from CSV",
+      "new_record": {
+        "Date": "2009-03-16",
+        "Team": "D",
+        "Start_Unit": "40065",
+        "End_Unit": "40068",
+        "Leader": "Georgi Nekhrizov"
+      },
+      "source_evidence": "DPF review via Gemini: Mar 16 = 40065-40068 (continuous with Mar 15 ending at 40064)",
+      "status": "APPLIED",
+      "applied_date": "2025-12-02"
+    },
+    {
+      "runsheet": "RS013",
+      "id": "KAZ09D-V005",
+      "type": "CORRECTION",
+      "date": "2009-03-23",
+      "team": "D",
+      "severity": "MAJOR",
+      "description": "End Unit error - CSV shows 40104, DPF shows 40111 (mountain/polygon survey extended range)",
+      "fields": {
+        "End_Unit": {
+          "current": "40104",
+          "corrected": "40111",
+          "action": "REPLACE"
+        }
+      },
+      "source_evidence": "DPF review via Gemini: Mar 23 = 40096-40111 (mountain/polygon survey); includes duplicate unit 40100 (two distinct forms)",
+      "anomalies": {
+        "duplicate_unit": "40100",
+        "duplicate_note": "Two distinct forms for unit 40100 on Mar 23: one depicts 'Near the village', other depicts 'Pine trees'"
+      },
+      "status": "APPLIED",
+      "applied_date": "2025-12-02"
+    },
+    {
+      "runsheet": "RS013",
+      "id": "KAZ09D-V006",
+      "type": "CORRECTION",
+      "date": "2009-03-25",
+      "team": "D",
+      "severity": "MAJOR",
+      "description": "End Unit error - REVERTS RS011 KAZ09D-D005 which incorrectly changed 40211 to 40214. DPF confirms End Unit should be 40211.",
+      "fields": {
+        "End_Unit": {
+          "current": "40214",
+          "corrected": "40211",
+          "action": "REPLACE"
+        }
+      },
+      "source_evidence": "DPF review via Gemini: Mar 25 = 40125-40211 (continuous). Previous D005 correction was based on misread DPF.",
+      "reverts": "KAZ09D-D005",
+      "status": "APPLIED",
+      "applied_date": "2025-12-02"
+    },
+    {
+      "runsheet": "RS013",
+      "id": "KAZ09D-V007",
+      "type": "CORRECTION",
+      "date": "2009-03-26",
+      "team": "D",
+      "severity": "Minor",
+      "description": "End Unit error - CSV shows 40214, DPF shows 40217",
+      "fields": {
+        "End_Unit": {
+          "current": "40214",
+          "corrected": "40217",
+          "action": "REPLACE"
+        }
+      },
+      "source_evidence": "DPF review via Gemini: Mar 26 = 40212-40217 (continuous with Mar 25 ending at 40211)",
+      "status": "APPLIED",
+      "applied_date": "2025-12-02"
+    },
+    {
+      "runsheet": "RS013",
+      "id": "KAZ09D-V008",
+      "type": "CORRECTION",
+      "date": "2009-03-27",
+      "team": "D",
+      "severity": "Minor",
+      "description": "Start Unit error - CSV shows 40218, DPF shows 40219 (unit 40218 is genuinely missing from field records)",
+      "fields": {
+        "Start_Unit": {
+          "current": "40218",
+          "corrected": "40219",
+          "action": "REPLACE"
+        }
+      },
+      "source_evidence": "DPF review via Gemini: Mar 27 = 40219-40250. Unit 40218 is MISSING from sequence (gap in field records).",
+      "anomalies": {
+        "missing_unit": "40218",
+        "missing_note": "Unit 40218 is genuinely absent from the SU form sequence - records end at 40217 on Mar 26 and resume at 40219 on Mar 27"
+      },
+      "status": "APPLIED",
+      "applied_date": "2025-12-02"
+    },
+    {
+      "runsheet": "RS014",
+      "id": "KAZ11C-V001",
+      "type": "CORRECTION",
+      "date": "2011-11-18",
+      "team": "C",
+      "severity": "Minor",
+      "description": "Start Unit OCR error - '6' written over incorrect '5' was misread as 31335 instead of 31336",
+      "fields": {
+        "Start_Unit": {
+          "current": "31335",
+          "corrected": "31336",
+          "action": "REPLACE"
+        }
+      },
+      "source_evidence": "DPF review: Nov 17 ends at 31335, Nov 18 starts at 31336. The '6' was written over an incorrect '5' causing OCR misread.",
+      "status": "APPLIED",
+      "applied_date": "2025-12-02"
     }
   ],
   "summary": {
-    "total_corrections": 65,
+    "total_corrections": 74,
     "by_status": {
-      "APPLIED": 63,
+      "APPLIED": 72,
       "PENDING": 0,
       "BLOCKED": 2,
       "VERIFIED": 0,
       "FLAGGED": 0
     },
     "by_type": {
-      "CORRECTION": 51,
-      "ADD_RECORD": 6,
+      "CORRECTION": 58,
+      "ADD_RECORD": 8,
       "VERIFY_NO_CHANGE": 7,
       "FLAG_ONLY": 1
     },
     "by_severity": {
-      "MAJOR": 38,
-      "Minor": 23,
+      "MAJOR": 44,
+      "Minor": 26,
       "INFO": 4
     },
-    "records_modified": 39,
-    "records_added": 6,
+    "records_modified": 46,
+    "records_added": 8,
     "records_verified_no_change": 6,
     "pending_modifications": 0,
+    "pending_additions": 0,
     "blocked_modifications": 2,
-    "notes": "2 ADD_RECORD corrections blocked due to CSV structure (date+team unique key). Mountain survey data for 2009-03-06 and 2009-03-23 Team C cannot be stored as separate records."
+    "notes": "2 ADD_RECORD corrections blocked due to CSV structure (date+team unique key). All 72 non-blocked corrections applied. All overlaps resolved."
   },
   "follow_up_actions": [
     {
@@ -1564,6 +1798,20 @@
       "priority": "Medium",
       "status": "Pending",
       "notes": "Affects Mar 6, 12, 20, 23. See planning/follow-up-actions.md for full documentation."
+    },
+    {
+      "id": "F006",
+      "item": "Investigate duplicate unit 40100 (Kazanlak 2009 Team D, Mar 23)",
+      "priority": "Low",
+      "status": "Pending",
+      "notes": "Two distinct SU forms exist for unit 40100: one depicts 'Near the village', other depicts 'Pine trees'. Both are valid mountain/polygon survey forms. May represent field recording error or intentional resurvey."
+    },
+    {
+      "id": "F007",
+      "item": "Document missing unit 40218 (Kazanlak 2009 Team D)",
+      "priority": "Low",
+      "status": "Pending",
+      "notes": "Unit 40218 is genuinely absent from field records. Sequence ends at 40217 on Mar 26 and resumes at 40219 on Mar 27. May be field numbering skip or lost form."
     }
   ],
   "audit_trail": {
