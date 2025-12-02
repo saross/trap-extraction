@@ -452,23 +452,25 @@ These should be recorded as SEPARATE lines in attribution.csv until reconciled.
 | Date 2 | 2009-04-05 (start unit was 20808) |
 
 **Investigation findings:**
-- User examined DPF (B_Summary25Mar-05Apr.pdf) with Gemini vision model
-- DPF pages show: 26-Mar, **4-Apr**, 5-Apr — no 27-Mar form exists
-- QA runsheet incorrectly read p.15 date as "27-Mar" when it was actually "4-Apr"
+- User examined DPF and SU forms (B_20090403.pdf) with Gemini vision model
+- DPF date written as "04 03 09" (American format) = April 3rd
+- QA runsheet incorrectly read p.15 date as "27-Mar" when it was actually "3-Apr"
 - SU form analysis revealed unit 20784 was pre-filled on Mar 26 form but survey ended at 20783
-- Apr 4 correctly started at 20784, Apr 5 started at 20809 (not 20808)
+- Apr 3 correctly started at 20784 and ended at 20808
+- Apr 4 was Object/Feature recording only (no 20000-series units; some 50000-series work)
+- Apr 5 started at 20809 (not 20808)
 
 **Root cause:** Two errors compounded:
-1. QA misread DPF date "4.4.09" as "27.3.09" (April vs March)
+1. QA misread DPF date "04 03 09" as "27.3.09" (April 3 vs March 27)
 2. CSV had Apr 5 Start Unit as 20808 instead of 20809
 
 **Corrections applied:**
-- Date: 2009-03-27 → **2009-04-04**
+- Date: 2009-03-27 → **2009-04-03**
 - Apr 5 Start Unit: 20808 → **20809**
 
 **Result:** Overlap resolved - sequence is now continuous:
 - Mar 26: 20733-20783
-- Apr 4: 20784-20808
+- Apr 3: 20784-20808
 - Apr 5: 20809-20812
 
 ---
@@ -482,7 +484,7 @@ These overlaps may indicate resurveys, site-focused work, or data errors:
 | Elhovo A | 2010-10-24 | 61549 | 2010-11-02 | 61549 | 61549 | 1 unit | **CONFIRMED ERROR** - see above |
 | Elhovo C | 2009-11-12 | 80939 | 2009-11-13 | 80939 | 80939 | 1 unit | **RESOLVED** - CSV error, see ELH09C-OV1 |
 | Kazanlak A | 2009-03-19 | 10385 | 2009-03-20 | 10386 | — | — | **RESOLVED** - QA error, see KAZ09A-OV1 |
-| Kazanlak B | 2009-04-04 | 20808 | 2009-04-05 | 20809 | — | — | **RESOLVED** - date + unit error, see KAZ09B-OV1 |
+| Kazanlak B | 2009-04-03 | 20808 | 2009-04-05 | 20809 | — | — | **RESOLVED** - date + unit error, see KAZ09B-OV1 |
 | Kazanlak C | 2009-03-04 | 30024 | 2009-03-26 | 30021 | 30021-30024 | 4 units | |
 | Kazanlak C | 2009-03-26 | 30029 | 2009-03-06 | 30025 | 30025-30029 | 5 units | Date ordering issue? |
 | Kazanlak C | 2011-11-17 | 31335 | 2011-11-18 | 31335 | 31335 | 1 unit | Possible resurvey |
