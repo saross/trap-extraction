@@ -322,14 +322,76 @@ These should be recorded as SEPARATE lines in attribution.csv until reconciled.
 
 ---
 
-#### Unit Number Overlaps (9 total)
+#### Confirmed Unit Number Errors
+
+##### ⚠️ ELH10A-OV1: Elhovo A Unit 61549 (CONFIRMED ERROR)
+
+**Status:** CONFIRMED duplicate unit number (2 December 2025)
+
+| Field | Value |
+|-------|-------|
+| Season | Elhovo 2010 |
+| Team | A |
+| Overlap unit | **61549** |
+| Date 1 | 2010-10-24 (end unit) |
+| Date 2 | 2010-11-02 (start unit) |
+
+**Investigation findings:**
+- DPF Day_03.pdf shows Oct 24 ending at 61549
+- DPF Day_05.pdf shows Nov 2 starting at 61549
+- Diary Nov 2 says "First unit: 61553" but lists 61549 in unit samples
+- **Individual SU forms verified:** Unit 61549 appears on forms for BOTH Oct 24 AND Nov 2
+
+**Conclusion:** This is a genuine field recording error where the same unit number was used twice. The unit was likely surveyed once but recorded on two different DPFs.
+
+**Impact:** Unit 61549 attribution is ambiguous (could be Oct 24 or Nov 2 team composition).
+
+**Action required:**
+- [ ] Decide which date to assign unit 61549 to (recommend Oct 24 as it appears at end of continuous sequence)
+- [ ] Update attribution.csv: change Nov 2 Start Unit from 61549 to 61550
+- [ ] Document decision in QA_Notes field
+
+---
+
+##### ✓ ELH09C-OV1: Elhovo C Unit 80939 (RESOLVED - CSV ERROR)
+
+**Status:** RESOLVED - CSV corrected (2 December 2025)
+
+| Field | Value |
+|-------|-------|
+| Season | Elhovo 2009 |
+| Team | C |
+| Apparent overlap unit | 80939 |
+| Date 1 | 2009-11-12 (end unit in CSV was 80939) |
+| Date 2 | 2009-11-13 (start unit) |
+
+**Investigation findings:**
+- Diary said Nov 12 ended at 80938, but CSV had 80939
+- QA D022 had flagged discrepancy but accepted CSV value
+- **Individual SU forms verified (definitive):**
+  - Unit 80938 = Nov 12 (last unit of the day)
+  - Unit 80939 = Nov 13 (first unit of the day)
+
+**Root cause:** CSV/Excel transcription error (80938 entered as 80939)
+
+**Corrections applied:**
+- Nov 12 End Unit: 80939 → **80938**
+- Nov 14 End Unit: 81002 → **81008** (also discovered during SU form review)
+
+**Anomaly noted:** Unit 80916 is dated Nov 11 on SU form but falls within Nov 12 sequence (80910-80938). Likely a form dating error - unit filed with Nov 12 batch.
+
+**Result:** Overlap resolved - sequence is now continuous.
+
+---
+
+#### Unit Number Overlaps (9 total - 1 confirmed error, 1 resolved, 7 under investigation)
 
 These overlaps may indicate resurveys, site-focused work, or data errors:
 
 | Team | Date 1 | End Unit | Date 2 | Start Unit | Overlap | Size | Notes |
 |------|--------|----------|--------|------------|---------|------|-------|
-| Elhovo A | 2010-10-24 | 61549 | 2010-11-02 | 61549 | 61549 | 1 unit | Possible resurvey |
-| Elhovo C | 2009-11-12 | 80939 | 2009-11-13 | 80939 | 80939 | 1 unit | Possible resurvey |
+| Elhovo A | 2010-10-24 | 61549 | 2010-11-02 | 61549 | 61549 | 1 unit | **CONFIRMED ERROR** - see above |
+| Elhovo C | 2009-11-12 | 80939 | 2009-11-13 | 80939 | 80939 | 1 unit | **RESOLVED** - CSV error, see ELH09C-OV1 |
 | Kazanlak A | 2009-03-19 | 10387 | 2009-03-20 | 10386 | 10386-10387 | 2 units | |
 | Kazanlak B | 2009-03-27 | 20808 | 2009-04-05 | 20808 | 20808 | 1 unit | Season break |
 | Kazanlak C | 2009-03-04 | 30024 | 2009-03-26 | 30021 | 30021-30024 | 4 units | |
