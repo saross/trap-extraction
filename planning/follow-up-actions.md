@@ -314,7 +314,81 @@ These should be recorded as SEPARATE lines in attribution.csv until reconciled.
 
 ---
 
-### 2. Review Remaining Name Mappings
+### 2. Unit Number Overlaps and Discontinuities
+
+**Status:** Documented for reference (2 December 2025)
+
+**Context:** Analysis of attribution.csv revealed 9 unit number overlaps and 22 gaps. Some are expected (inter-season gaps, legitimate resurveys), while others may warrant investigation.
+
+---
+
+#### Unit Number Overlaps (9 total)
+
+These overlaps may indicate resurveys, site-focused work, or data errors:
+
+| Team | Date 1 | End Unit | Date 2 | Start Unit | Overlap | Size | Notes |
+|------|--------|----------|--------|------------|---------|------|-------|
+| Elhovo A | 2010-10-24 | 61549 | 2010-11-02 | 61549 | 61549 | 1 unit | Possible resurvey |
+| Elhovo C | 2009-11-12 | 80939 | 2009-11-13 | 80939 | 80939 | 1 unit | Possible resurvey |
+| Kazanlak A | 2009-03-19 | 10387 | 2009-03-20 | 10386 | 10386-10387 | 2 units | |
+| Kazanlak B | 2009-03-27 | 20808 | 2009-04-05 | 20808 | 20808 | 1 unit | Season break |
+| Kazanlak C | 2009-03-04 | 30024 | 2009-03-26 | 30021 | 30021-30024 | 4 units | |
+| Kazanlak C | 2009-03-26 | 30029 | 2009-03-06 | 30025 | 30025-30029 | 5 units | Date ordering issue? |
+| Kazanlak C | 2011-11-17 | 31335 | 2011-11-18 | 31335 | 31335 | 1 unit | Possible resurvey |
+| Kazanlak D | 2009-03-25 | 40214 | 2009-03-26 | 40212 | 40212-40214 | 3 units | Site-focused work (noted in QA runsheet) |
+| Kazanlak D | 2010-03-20 | 40432 | 2010-03-21 | 40424 | 40424-40432 | 9 units | Largest overlap - investigate |
+
+---
+
+#### Intra-Season Gaps (May Warrant Investigation)
+
+| Team | Date 1 | End | Date 2 | Start | Gap | Size | Notes |
+|------|--------|-----|--------|-------|-----|------|-------|
+| Elhovo C | 2009-10-29 | 80794 | 2009-11-09 | 80796 | 80795 | 1 unit | |
+| Kazanlak A | 2010-03-26 | 11035 | 2010-03-28 | 11037 | 11036 | 1 unit | |
+| Kazanlak A | 2010-04-07 | 11089 | 2010-04-08 | 11091 | 11090 | 1 unit | |
+| Kazanlak B | 2010-03-26 | 21407 | 2010-03-28 | 21410 | 21408-21409 | 2 units | |
+| Kazanlak B | 2011-11-10 | 22198 | 2011-11-12 | 22206 | 22199-22205 | 7 units | |
+| Kazanlak B | 2011-11-15 | 22282 | 2011-11-17 | 22321 | 22283-22320 | 38 units | Large gap |
+| Kazanlak B | 2011-11-22 | 22542 | 2011-11-29 | 22600 | 22543-22599 | 57 units | Large gap |
+| Kazanlak C | 2010-04-07 | 30740 | 2010-04-08 | 30742 | 30741 | 1 unit | |
+| Kazanlak C | 2011-11-18 | 31342 | 2011-11-20 | 31344 | 31343 | 1 unit | |
+| Kazanlak D | 2009-03-04 | 40023 | 2009-03-07 | 40031 | 40024-40030 | 7 units | Documented in QA runsheet |
+| Kazanlak D | 2009-03-07 | 40032 | 2009-03-15 | 40039 | 40033-40038 | 6 units | Documented in QA runsheet |
+| Kazanlak D | 2009-03-15 | 40065 | 2009-03-19 | 40069 | 40066-40068 | 3 units | Documented in QA runsheet |
+| Kazanlak D | 2009-03-23 | 40104 | 2009-03-24 | 40112 | 40105-40111 | 7 units | Documented in QA runsheet |
+| Kazanlak D | 2009-03-26 | 40214 | 2009-03-27 | 40218 | 40215-40217 | 3 units | |
+
+---
+
+#### Inter-Season Gaps (Expected)
+
+These gaps occur between survey seasons and are normal:
+
+| Team | Gap Range | Size | Between |
+|------|-----------|------|---------|
+| Elhovo A | 61345-61399 | 55 units | 2009 → 2010 |
+| Elhovo B | 71464-71469 | 6 units | 2009 → 2010 |
+| Kazanlak A | 10743-10749 | 7 units | 2009 → 2010 |
+| Kazanlak A | 11204-11205 | 2 units | 2010 → 2011 |
+| Kazanlak B | 20813-20849 | 37 units | 2009 → 2010 |
+| Kazanlak C | 30171-30199 | 29 units | 2009 → 2010 |
+| Kazanlak C | 30810-30820 | 11 units | 2010 → 2011 |
+
+---
+
+#### Action Required
+
+- [ ] Investigate Kazanlak D 2010-03-20/21 overlap (9 units) - largest overlap in dataset
+- [ ] Review Kazanlak C overlaps (dates appear out of order in some cases)
+- [ ] Investigate large Kazanlak B gaps in November 2011 (38 and 57 units)
+- [ ] Document any overlaps confirmed as legitimate resurveys
+
+**Note:** Kazanlak D 2009 gaps are documented in the QA runsheet as reflecting actual non-contiguous survey areas per the DPF records.
+
+---
+
+### 3. Review Remaining Name Mappings
 
 **Status:** ✅ COMPLETED (22 November 2025)
 
@@ -458,7 +532,7 @@ This file should be updated as actions are completed or new items are identified
 **Data quality observations:**
 - **Tereza Blažková — 2009 autumn presence unexplained:** TRAP-Participants.csv marks her as present in 2009 autumn (column 10 = "x"), but she does not appear in any walker records for that season. Tereza Dobrovodská is clearly documented on Team C (Oct 12-22) and Team A (Oct 26-29 as Eric's substitute). T. Blažková may have had a specialist role (ceramics, bioarchaeology, finds processing) rather than field walking that season. No action required unless participant list accuracy review is undertaken. (Discovered during D016 QA, 26 Nov 2025)
 
-**Last updated:** 2 December 2025 (expanded six-digit mountain survey documentation for Team C 2009; added Mar 6, 20, 23 to affected dates)
+**Last updated:** 2 December 2025 (added unit number overlaps and discontinuities documentation)
 
 ---
 
