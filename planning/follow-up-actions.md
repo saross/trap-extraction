@@ -616,6 +616,63 @@ These gaps occur between survey seasons and are normal:
 
 ---
 
+## QA Process Lessons Learned
+
+### Issue: DPF vs Diary Source Priority Not Consistently Applied
+
+**Discovered:** 2 December 2025 during overlap investigation
+
+**Case study: KAZ09A-OV1 (Kazanlak A, 2009-03-19)**
+
+The QA runsheet documented a source divergence:
+- DPF: End Unit = 10385
+- Diary: End Unit = 10387
+- CSV followed diary value (10387)
+
+The runsheet noted this as "minor DPF/diary unit divergence" with status CONFIRMED, but did **not** flag it as a correction.
+
+**What went wrong:**
+
+1. The guidelines (qa-guidance.md) clearly state:
+   - Line 27: "DPF scans — PRIMARY source; more accurate for numeric/factual data"
+   - Line 38: "DPF scans take precedence for basic info when conflicting with diaries"
+   - Line 174 (O1): "Always prefer DPF scan for Start Unit / End Unit values"
+
+2. The Cross-Check rule (lines 56-60) states: "If diary creates a gap/overlap but DPF scan doesn't → confirms DPF scan as PRIMARY"
+
+3. In this case:
+   - DPF value (10385) creates continuity: Mar 19 ends at 10385 → Mar 20 starts at 10386 ✓
+   - Diary value (10387) creates overlap: Mar 19 ends at 10387 but Mar 20 starts at 10386 ✗
+
+4. The Cross-Check rule should have confirmed DPF as correct, but instead the diary value was kept.
+
+**Root cause:** QA process treated DPF/diary divergences as "minor" informational notes rather than applying the mandatory source priority rule.
+
+**Recommended guideline updates:**
+
+1. **Make source priority mandatory, not advisory:** Change wording from "DPF scans take precedence" to "DPF scans **must** be used for unit numbers when they conflict with diaries"
+
+2. **Flag divergences as issues:** Any DPF/diary divergence for Start/End Units should generate a QA issue requiring resolution, not just a note in the Source Divergences table
+
+3. **Add explicit decision tree:**
+   ```
+   For Start_Unit / End_Unit conflicts:
+   1. Check if DPF value maintains unit continuity with adjacent days
+   2. Check if diary value maintains unit continuity
+   3. If DPF maintains continuity and diary doesn't → USE DPF (mandatory)
+   4. If both maintain continuity → USE DPF (per source priority)
+   5. If neither maintains continuity → FLAG for SU form verification
+   ```
+
+4. **Require explicit source attribution:** Each corrected value should note which source it came from (e.g., "End Unit: 10385 (from DPF; diary had 10387)")
+
+**Action items:**
+- [ ] Update qa-guidance.md with clearer mandatory language
+- [ ] Add decision tree for DPF/diary conflicts
+- [ ] Review other QA runsheets for similar "minor divergence" cases that should have been corrections
+
+---
+
 ## Completed Actions
 
 - [x] Extract Kazanlak 2009 team compositions from diaries
