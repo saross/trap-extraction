@@ -412,7 +412,34 @@ These should be recorded as SEPARATE lines in attribution.csv until reconciled.
 
 ---
 
-#### Unit Number Overlaps (9 total - 1 confirmed error, 2 resolved, 6 under investigation)
+##### ✓ KAZ09A-OV1: Kazanlak A Units 10386-10387 (RESOLVED - QA ERROR)
+
+**Status:** RESOLVED - CSV corrected (2 December 2025)
+
+| Field | Value |
+|-------|-------|
+| Season | Kazanlak 2009 |
+| Team | A |
+| Apparent overlap | 10386-10387 (2 units) |
+| Date 1 | 2009-03-19 (CSV had end unit 10387) |
+| Date 2 | 2009-03-20 (start unit 10386) |
+
+**Investigation findings:**
+- DPF (A_2009Summary.pdf) clearly showed Mar 19: 10370-10385, Mar 20: 10386-10444
+- Diary had Mar 19 ending at 10387
+- QA runsheet (D006) noted the discrepancy but chose diary value over DPF
+- **DPF confirmed as correct** - continuous sequence with no overlap
+
+**Root cause:** QA process incorrectly followed diary over DPF for unit numbers. Guidelines should specify that DPF supersedes diary for unit range data.
+
+**Correction applied:**
+- Mar 19 End Unit: 10387 → **10385**
+
+**Result:** Overlap resolved - sequence is now continuous (10385 → 10386).
+
+---
+
+#### Unit Number Overlaps (9 total - 1 confirmed error, 3 resolved, 5 under investigation)
 
 These overlaps may indicate resurveys, site-focused work, or data errors:
 
@@ -420,7 +447,7 @@ These overlaps may indicate resurveys, site-focused work, or data errors:
 |------|--------|----------|--------|------------|---------|------|-------|
 | Elhovo A | 2010-10-24 | 61549 | 2010-11-02 | 61549 | 61549 | 1 unit | **CONFIRMED ERROR** - see above |
 | Elhovo C | 2009-11-12 | 80939 | 2009-11-13 | 80939 | 80939 | 1 unit | **RESOLVED** - CSV error, see ELH09C-OV1 |
-| Kazanlak A | 2009-03-19 | 10387 | 2009-03-20 | 10386 | 10386-10387 | 2 units | |
+| Kazanlak A | 2009-03-19 | 10385 | 2009-03-20 | 10386 | — | — | **RESOLVED** - QA error, see KAZ09A-OV1 |
 | Kazanlak B | 2009-03-27 | 20808 | 2009-04-05 | 20808 | 20808 | 1 unit | Season break |
 | Kazanlak C | 2009-03-04 | 30024 | 2009-03-26 | 30021 | 30021-30024 | 4 units | |
 | Kazanlak C | 2009-03-26 | 30029 | 2009-03-06 | 30025 | 30025-30029 | 5 units | Date ordering issue? |
