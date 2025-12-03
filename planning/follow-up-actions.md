@@ -113,12 +113,21 @@ These gaps have been verified as genuine field numbering gaps - the units were n
 
 ## 3. Records Missing Team Leader
 
-**Status:** To be verified
+**Status:** ✅ VERIFIED (3 December 2025)
 
-**Action required:**
-- [ ] Query attribution.csv for records where Leader field is empty
-- [ ] Cross-reference with diaries/DPFs to identify leaders
-- [ ] Update records with verified leader names
+**Investigation results:**
+
+| Date | Team | Units | Leader Status | Resolution |
+|------|------|-------|---------------|------------|
+| 2009-03-27 | D | 40219-40250 | **No leader designated** | Diary explicitly shows "/" for leader. Nekhrizov (usual leader) absent. Documented in QA_Notes. |
+| 2010-04-06 | B | (none) | **N/A - Non-survey day** | Rainy day, no fieldwalking. Already marked as NON-SURVEY DAY. |
+
+**Conclusion:** Both records with empty Leader field have been verified. Neither represents missing data - one was a day without a designated leader (Nekhrizov absent), the other was a non-survey day.
+
+**Action completed:**
+- [x] Query attribution.csv for records where Leader field is empty (3 Dec 2025)
+- [x] Cross-reference with diaries/DPFs to identify leaders (3 Dec 2025)
+- [x] Document findings in QA_Notes (3 Dec 2025)
 
 ---
 
@@ -253,7 +262,7 @@ READMEs needed for `archive/investigation-runsheets/` and `archive/reports/surve
 **Data quality observations:**
 - **Tereza Blažková — 2009 autumn presence unexplained:** TRAP-Participants.csv marks her as present in 2009 autumn, but she does not appear in any walker records. May have had specialist role rather than field walking.
 
-**Last updated:** 3 December 2025 (ELH10A-OV1 documented as pending project discussion)
+**Last updated:** 3 December 2025 (Missing leader investigation completed)
 
 ---
 
