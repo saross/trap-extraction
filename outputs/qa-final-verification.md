@@ -111,6 +111,63 @@ None. All validation checks passed.
 
 ---
 
+## Kazanlak 2011 Autumn
+
+**Verified:** 2025-12-03
+**Records:** 66 total (A: 17, B: 17, C: 18, D: 14)
+**Known corrections:** 19
+
+### Summary by Team
+
+| Team | Records | Corrections | Units | Walkers | Leader | R1/R2 | Status |
+|------|---------|-------------|-------|---------|--------|-------|--------|
+| A | 17 | 5/5 ✓ | ✓* | ✓ | ✓ | ✓ | **VERIFIED** |
+| B | 17 | 1/1 ✓ | ✓** | ✓ | ✓ | ⚠️ | **VERIFIED** |
+| C | 18 | 2/2 ✓ | ✓* | ✓ | ✓ | ✓ | **VERIFIED** |
+| D | 14 | 11/11 ✓ | ✓ | ✓ | ✓ | ✓ | **VERIFIED** |
+
+### Notes
+
+**Empty unit records (2 total) - all documented:**
+- Oct 24 Team A: Rainy day (GPS coordinate collection at burial mounds)
+- Nov 12 Team C: Non-survey activity (remote sensing supervision)
+
+**Team A (*)**
+- No unit gaps found
+
+**Team B (**)**
+- Unit gaps documented as F010 and F011:
+  - Nov 10→12: gap of 8 (22198→22206) - field numbering error
+  - Nov 22→29: gap of 58 (22542→22600) - week-long break
+
+**Team C (*)**
+- No unit gaps found
+
+**R1/R2 Issues (⚠️ Team B):**
+1. **Nov 5:** GPS_Operator 'Cecilia Choi' not in walker list
+   - Minor: Role holder not walking that day (valid edge case)
+2. **Nov 12:** Leader 'Petra Tušlová' not in walker list
+   - Minor: Solo walker record (Petra Janouchová), leader provided oversight
+
+### Role Coverage
+
+| Team | PDA | Paper | GPS | Photo | Editor |
+|------|-----|-------|-----|-------|--------|
+| A | 0/17 | 0/17 | 0/17 | 0/17 | 0/17 |
+| B | 1/17 | 1/17 | 1/17 | 2/17 | 3/17 |
+| C | 0/18 | 0/18 | 0/18 | 0/18 | 0/18 |
+| D | 0/14 | 0/14 | 0/14 | 0/14 | 0/14 |
+
+**Note:** Minimal role coverage. Teams A and D have BG-only diaries. Teams B and C have EN diaries but limited role extraction.
+
+### New Issues Found
+
+Two minor R1/R2 issues documented (see above) - do not require correction:
+- Role holder and leader not always in walker list for edge cases
+- Consistent with valid operational scenarios (oversight without walking)
+
+---
+
 ## Verification Checklist
 
 - [x] All known corrections verified as applied

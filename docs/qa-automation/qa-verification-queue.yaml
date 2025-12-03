@@ -34,6 +34,7 @@ queue:
     notes: "Teams A(5), B(11); corrections A:2, B:5; includes unit 61549 duplicate flag"
     date_range: "2010-10-22 to 2010-11-10"
 
+completed:
   - id: "KAZ-2011"
     study_area: Kazanlak
     year: 2011
@@ -41,11 +42,12 @@ queue:
     teams: [A, B, C, D]
     records: 66
     known_corrections: 19
-    status: pending
-    notes: "Teams A(17), B(17), C(18), D(14); corrections A:5, B:1, C:2, D:11"
+    status: complete
+    completed_date: "2025-12-03"
+    verification_file: "outputs/qa-final-verification.md"
+    notes: "Teams A(17), B(17), C(18), D(14); corrections A:5, B:1, C:2, D:11; 2 minor R1/R2 edge cases documented"
     date_range: "2011-10-14 to 2011-11-29"
 
-completed:
   - id: "KAZ-2010"
     study_area: Kazanlak
     year: 2010
@@ -75,8 +77,8 @@ completed:
 # Summary
 # -------
 # Total seasons: 5
-# Pending: 3 (Elhovo 2009, Elhovo 2010, Kazanlak 2011)
-# Complete: 2 (Kazanlak 2009, Kazanlak 2010)
+# Pending: 2 (Elhovo 2009, Elhovo 2010)
+# Complete: 3 (Kazanlak 2009, Kazanlak 2010, Kazanlak 2011)
 #
 # Total records: 274
 # Total known corrections: 89 (as of 2025-12-03)
