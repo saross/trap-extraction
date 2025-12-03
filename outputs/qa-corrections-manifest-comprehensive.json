@@ -155,9 +155,69 @@
       "team": "C",
       "status": "APPLIED",
       "approved_date": "2025-12-02",
-      "corrections_count": 1,
-      "notes": "OCR correction - Nov 18 Start Unit 31335\u219231336 (resolves last overlap)",
+      "corrections_count": 2,
+      "notes": "OCR/handwriting corrections - Nov 18 Start Unit 31335\u219231336, End Unit 31342\u219231343",
       "applied_date": "2025-12-02"
+    },
+    {
+      "id": "RS015",
+      "file": "su-form-review-elhovo-2009-autumn-c.md",
+      "study_area": "Elhovo",
+      "season": "2009 Autumn",
+      "team": "C",
+      "status": "APPLIED",
+      "approved_date": "2025-12-03",
+      "corrections_count": 1,
+      "notes": "SU form review - Nov 9 Start Unit 80796\u219280795 (resolves apparent gap)",
+      "applied_date": "2025-12-03"
+    },
+    {
+      "id": "RS016",
+      "file": "su-form-review-kazanlak-2010-spring-a.md",
+      "study_area": "Kazanlak",
+      "season": "2010 Spring",
+      "team": "A",
+      "status": "APPLIED",
+      "approved_date": "2025-12-03",
+      "corrections_count": 1,
+      "notes": "SU form review - Mar 28 Start Unit 11037\u219211036 (mountain survey forms, resolves gap)",
+      "applied_date": "2025-12-03"
+    },
+    {
+      "id": "RS017",
+      "file": "su-form-review-kazanlak-2010-spring-c.md",
+      "study_area": "Kazanlak",
+      "season": "2010 Spring",
+      "team": "C",
+      "status": "APPLIED",
+      "approved_date": "2025-12-03",
+      "corrections_count": 1,
+      "notes": "SU form review - Apr 7 End Unit 30740\u219230741 (resolves gap)",
+      "applied_date": "2025-12-03"
+    },
+    {
+      "id": "RS018",
+      "file": "su-form-review-kazanlak-2010-spring-b.md",
+      "study_area": "Kazanlak",
+      "season": "2010 Spring",
+      "team": "B",
+      "status": "APPLIED",
+      "approved_date": "2025-12-03",
+      "corrections_count": 1,
+      "notes": "SU form review - Mar 26 End Unit 21407\u219221409 (resolves gap)",
+      "applied_date": "2025-12-03"
+    },
+    {
+      "id": "RS019",
+      "file": "dpf-review-kazanlak-2011-autumn-b.md",
+      "study_area": "Kazanlak",
+      "season": "2011 Autumn",
+      "team": "B",
+      "status": "APPLIED",
+      "approved_date": "2025-12-03",
+      "corrections_count": 1,
+      "notes": "DPF review - Nov 16 units 72088-72206\u219222283-22320 (data mixing error, Elhovo units in Kazanlak record)",
+      "applied_date": "2025-12-03"
     }
   ],
   "corrections": [
@@ -1737,35 +1797,154 @@
       "source_evidence": "DPF review: Nov 17 ends at 31335, Nov 18 starts at 31336. The '6' was written over an incorrect '5' causing OCR misread.",
       "status": "APPLIED",
       "applied_date": "2025-12-02"
+    },
+    {
+      "runsheet": "RS015",
+      "id": "ELH09C-V001",
+      "type": "CORRECTION",
+      "date": "2009-11-09",
+      "team": "C",
+      "severity": "Minor",
+      "description": "Start Unit error - CSV shows 80796, SU form 80795 clearly shows unit number (date hard to read but unit confirmed)",
+      "fields": {
+        "Start_Unit": {
+          "current": "80796",
+          "corrected": "80795",
+          "action": "REPLACE"
+        }
+      },
+      "source_evidence": "SU form review: Unit 80795 is clearly marked on the form. Oct 29 ends at 80794, so 80795 should be the Nov 9 start unit.",
+      "status": "APPLIED",
+      "applied_date": "2025-12-03"
+    },
+    {
+      "runsheet": "RS016",
+      "id": "KAZ10A-V001",
+      "type": "CORRECTION",
+      "date": "2010-03-28",
+      "team": "A",
+      "severity": "Minor",
+      "description": "Start Unit error - CSV shows 11037, SU forms show 11036. Units 11036-11037 were voided on grid forms and reused on mountain survey polygon forms.",
+      "fields": {
+        "Start_Unit": {
+          "current": "11037",
+          "corrected": "11036",
+          "action": "REPLACE"
+        }
+      },
+      "source_evidence": "SU form review (A_20100326_28.pdf): Mar 28 mountain survey polygon forms show units 11036-11039. Grid form units 11036-11037 were crossed out/voided, replaced by polygon forms.",
+      "status": "APPLIED",
+      "applied_date": "2025-12-03"
+    },
+    {
+      "runsheet": "RS017",
+      "id": "KAZ10C-V001",
+      "type": "CORRECTION",
+      "date": "2010-04-07",
+      "team": "C",
+      "severity": "Minor",
+      "description": "End Unit error - CSV shows 30740, SU form shows 30741. The '1' was written over a '0', causing misread.",
+      "fields": {
+        "End_Unit": {
+          "current": "30740",
+          "corrected": "30741",
+          "action": "REPLACE"
+        }
+      },
+      "source_evidence": "SU form review: Apr 7 ends at 30741, Apr 8 starts at 30742. The '1' was overwritten on a '0'.",
+      "status": "APPLIED",
+      "applied_date": "2025-12-03"
+    },
+    {
+      "runsheet": "RS014",
+      "id": "KAZ11C-V002",
+      "type": "CORRECTION",
+      "date": "2011-11-18",
+      "team": "C",
+      "severity": "Minor",
+      "description": "End Unit error - CSV shows 31342, SU form shows 31343. Wide gap between '3134' and '3' caused misread.",
+      "fields": {
+        "End_Unit": {
+          "current": "31342",
+          "corrected": "31343",
+          "action": "REPLACE"
+        }
+      },
+      "source_evidence": "SU form review: Nov 18 ends at 31343, Nov 20 starts at 31344. Wide spacing in handwriting caused misread.",
+      "status": "APPLIED",
+      "applied_date": "2025-12-03"
+    },
+    {
+      "runsheet": "RS018",
+      "id": "KAZ10B-V001",
+      "type": "CORRECTION",
+      "date": "2010-03-26",
+      "team": "B",
+      "severity": "Minor",
+      "description": "End Unit error - CSV shows 21407, SU forms show sequence ends at 21409. Unit 21410 was blank/unused on Mar 26, became valid start of Mar 28.",
+      "fields": {
+        "End_Unit": {
+          "current": "21407",
+          "corrected": "21409",
+          "action": "REPLACE"
+        }
+      },
+      "source_evidence": "SU form review: Mar 26 = 21343-21409 (continuous), Mar 28 = 21410-21439 (continuous). Perfect continuity confirmed.",
+      "status": "APPLIED",
+      "applied_date": "2025-12-03"
+    },
+    {
+      "runsheet": "RS019",
+      "id": "KAZ11B-V001",
+      "type": "CORRECTION",
+      "date": "2011-11-16",
+      "team": "B",
+      "severity": "MAJOR",
+      "description": "Unit range data mixing error - CSV shows 72088-72206 (Elhovo B units), DPF shows 22283-22320 (correct Kazanlak B units)",
+      "fields": {
+        "Start_Unit": {
+          "current": "72088",
+          "corrected": "22283",
+          "action": "REPLACE"
+        },
+        "End_Unit": {
+          "current": "72206",
+          "corrected": "22320",
+          "action": "REPLACE"
+        }
+      },
+      "source_evidence": "DPF (B_2011Summary.pdf): Team B, Date 16 Nov 2011, Start Unit 22283, End Unit 22320, Total Units 47. CSV had Elhovo B units (7xxxx) incorrectly assigned.",
+      "status": "APPLIED",
+      "applied_date": "2025-12-03"
     }
   ],
   "summary": {
-    "total_corrections": 74,
+    "total_corrections": 80,
     "by_status": {
-      "APPLIED": 72,
+      "APPLIED": 78,
       "PENDING": 0,
       "BLOCKED": 2,
       "VERIFIED": 0,
       "FLAGGED": 0
     },
     "by_type": {
-      "CORRECTION": 58,
+      "CORRECTION": 64,
       "ADD_RECORD": 8,
       "VERIFY_NO_CHANGE": 7,
       "FLAG_ONLY": 1
     },
     "by_severity": {
-      "MAJOR": 44,
-      "Minor": 26,
+      "MAJOR": 45,
+      "Minor": 31,
       "INFO": 4
     },
-    "records_modified": 46,
+    "records_modified": 52,
     "records_added": 8,
     "records_verified_no_change": 6,
     "pending_modifications": 0,
     "pending_additions": 0,
     "blocked_modifications": 2,
-    "notes": "2 ADD_RECORD corrections blocked due to CSV structure (date+team unique key). All 72 non-blocked corrections applied. All overlaps resolved."
+    "notes": "2 ADD_RECORD corrections blocked due to CSV structure (date+team unique key). All 78 non-blocked corrections applied. All within-season gaps resolved or documented as field gaps."
   },
   "follow_up_actions": [
     {
@@ -1812,6 +1991,34 @@
       "priority": "Low",
       "status": "Pending",
       "notes": "Unit 40218 is genuinely absent from field records. Sequence ends at 40217 on Mar 26 and resumes at 40219 on Mar 27. May be field numbering skip or lost form."
+    },
+    {
+      "id": "F008",
+      "item": "Document missing unit 11090 (Kazanlak 2010 Team A)",
+      "priority": "Low",
+      "status": "Documented",
+      "notes": "Unit 11090 is genuinely absent from field records. Apr 7 ends at 11089, Apr 8 starts at 11091. Confirmed via SU form review (A_20100407.pdf, A_20100408.pdf)."
+    },
+    {
+      "id": "F009",
+      "item": "Investigate duplicate unit 11142 (Kazanlak 2010 Team A, Apr 8)",
+      "priority": "Low",
+      "status": "Documented",
+      "notes": "Two distinct SU forms exist for unit 11142: Duplicate #1 at top of Page 13, Duplicate #2 at bottom of Page 14. May represent field recording error or intentional resurvey."
+    },
+    {
+      "id": "F010",
+      "item": "Document missing units 22199-22205 (Kazanlak 2011 Team B)",
+      "priority": "Low",
+      "status": "Documented",
+      "notes": "Units 22199-22205 (7 units) are genuinely absent from field records. Nov 10 ends at 22198, Nov 12 starts at 22206. Confirmed as field numbering error via SU form review."
+    },
+    {
+      "id": "F011",
+      "item": "Document missing units 22543-22599 (Kazanlak 2011 Team B)",
+      "priority": "Low",
+      "status": "Documented",
+      "notes": "Units 22543-22599 (57 units) are genuinely absent from field records. Nov 22 ends at 22542, Nov 29 starts at 22600. Gap corresponds to week-long break between survey days."
     }
   ],
   "audit_trail": {
@@ -1819,5 +2026,5 @@
     "records_after_corrections": 274,
     "transformation_notes": "Original CSV had 268 records. Added 6 missing records (2 Elhovo 2010 B, 1 Kazanluk 2010 C, 1 Kazanlak 2009 B, 2 Kazanlak 2009 C mountain survey). Corrected unit data in multiple Kazanlak 2009 records. De-duplicated walker lists globally. Note: 3 records have six-digit mountain survey numbers (300xxx) pending mapping to five-digit format."
   },
-  "last_updated": "2025-12-02"
+  "last_updated": "2025-12-03"
 }
