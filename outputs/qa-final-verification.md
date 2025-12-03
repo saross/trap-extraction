@@ -168,6 +168,57 @@ Two minor R1/R2 issues documented (see above) - do not require correction:
 
 ---
 
+## Elhovo 2009 Autumn
+
+**Verified:** 2025-12-03
+**Records:** 62 total (A: 22, B: 20, C: 20)
+**Known corrections:** 14
+
+### Summary by Team
+
+| Team | Records | Corrections | Units | Walkers | Leader | R1/R2 | Status |
+|------|---------|-------------|-------|---------|--------|-------|--------|
+| A | 22 | 4/4 ✓ | ✓* | ✓ | ✓ | ✓ | **VERIFIED** |
+| B | 20 | 4/4 ✓ | ✓ | ✓ | ✓ | ✓ | **VERIFIED** |
+| C | 20 | 6/6 ✓ | ✓* | ✓ | ✓ | ✓ | **VERIFIED** |
+
+### Notes
+
+**Empty unit records (7 total) - all documented:**
+- Oct 14, 16, 17, 18 Team C: Non-survey days (no field walking conducted)
+- Oct 30 Team A: Rainy/muddy day (indoor pottery processing)
+- Oct 31 Team A: Photography work (non-field)
+- Nov 4 Team A: GIS work (non-field)
+
+**Team A (*)**
+- No unit continuity gaps
+- Walker substitution (ELH09A-D016): Eric departed Oct 25, Tereza Dobrovodská joined from Oct 26
+
+**Team B:**
+- Known FLAG_ONLY issue (ELH09B-D014): Walker 'Lizzy' unmapped - full name unknown
+- Unit corrections (ELH09B-D011 to D013) for Nov 2, 3, 5: All unit numbers now populated
+
+**Team C (*)**
+- No unit continuity gaps
+- Oct 22: Georgi removed from walker list per diary (ELH09C-D021)
+- Unit corrections applied for Nov 9, 13
+
+### Role Coverage
+
+| Team | PDA | Paper | GPS | Photo | Editor |
+|------|-----|-------|-----|-------|--------|
+| A | 11/22 | 11/22 | 10/22 | 1/22 | 0/22 |
+| B | 2/20 | 16/20 | 1/20 | 0/20 | 0/20 |
+| C | 1/20 | 5/20 | 1/20 | 8/20 | 0/20 |
+
+**Note:** Good role coverage for Elhovo 2009. Team A and B have Paper_Recorder data. Team A has best PDA/GPS coverage. Team C has Photographer data.
+
+### New Issues Found
+
+None. All validation checks passed.
+
+---
+
 ## Verification Checklist
 
 - [x] All known corrections verified as applied

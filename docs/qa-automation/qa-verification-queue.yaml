@@ -12,17 +12,6 @@
 # Output: outputs/qa-final-verification.md (cumulative summary)
 
 queue:
-  - id: "ELH-2009"
-    study_area: Elhovo
-    year: 2009
-    season: autumn
-    teams: [A, B, C]
-    records: 62
-    known_corrections: 14
-    status: pending
-    notes: "Teams A(22), B(20), C(20); corrections A:4, B:4, C:6"
-    date_range: "2009-10-14 to 2009-11-13"
-
   - id: "ELH-2010"
     study_area: Elhovo
     year: 2010
@@ -35,6 +24,19 @@ queue:
     date_range: "2010-10-22 to 2010-11-10"
 
 completed:
+  - id: "ELH-2009"
+    study_area: Elhovo
+    year: 2009
+    season: autumn
+    teams: [A, B, C]
+    records: 62
+    known_corrections: 14
+    status: complete
+    completed_date: "2025-12-03"
+    verification_file: "outputs/qa-final-verification.md"
+    notes: "Teams A(22), B(20), C(20); corrections A:4, B:4, C:6; no new issues found"
+    date_range: "2009-10-14 to 2009-11-13"
+
   - id: "KAZ-2011"
     study_area: Kazanlak
     year: 2011
@@ -77,8 +79,8 @@ completed:
 # Summary
 # -------
 # Total seasons: 5
-# Pending: 2 (Elhovo 2009, Elhovo 2010)
-# Complete: 3 (Kazanlak 2009, Kazanlak 2010, Kazanlak 2011)
+# Pending: 1 (Elhovo 2010)
+# Complete: 4 (Elhovo 2009, Kazanlak 2009, Kazanlak 2010, Kazanlak 2011)
 #
 # Total records: 274
 # Total known corrections: 89 (as of 2025-12-03)
