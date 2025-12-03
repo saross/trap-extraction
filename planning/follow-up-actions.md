@@ -57,42 +57,17 @@ These items require resolution before data submission.
 
 ---
 
-### ⚠️ OVERLAPS / DUPLICATES (Require Action)
+### Documented Duplicates (Pending Project Discussion)
 
-#### ELH10A-OV1: Elhovo A Unit 61549 (CONFIRMED DUPLICATE)
+These are genuine field recording anomalies where the same unit number was used twice. Resolution requires project-level discussion with other leaders.
 
-**Status:** ⚠️ REQUIRES DECISION
+| ID | Team | Season | Unit(s) | Dates | Notes |
+|----|------|--------|---------|-------|-------|
+| ELH10A-OV1 | Elhovo A | 2010 | 61549 | Oct 24 (end) / Nov 2 (start) | Verified in DPF and SU forms - same unit on both dates |
+| F006 | Kazanlak D | 2009 Spring | 40100 | Mar 23 | Two distinct SU forms ("Near village" vs "Pine trees") |
+| F009 | Kazanlak A | 2010 Spring | 11142 | Apr 8 | Two forms (Page 13 top, Page 14 bottom) |
 
-| Field | Value |
-|-------|-------|
-| Season | Elhovo 2010 |
-| Team | A |
-| Duplicate unit | **61549** |
-| Date 1 | 2010-10-24 (end unit) |
-| Date 2 | 2010-11-02 (start unit) |
-
-**Investigation findings:**
-- DPF Day_03.pdf shows Oct 24 ending at 61549
-- DPF Day_05.pdf shows Nov 2 starting at 61549
-- **Individual SU forms verified:** Unit 61549 appears on forms for BOTH dates
-
-**Conclusion:** Genuine field recording error - same unit number used twice.
-
-**Action required:**
-- [ ] Decide which date to assign unit 61549 to (recommend Oct 24 as it appears at end of continuous sequence)
-- [ ] Update attribution.csv: change Nov 2 Start Unit from 61549 to 61550
-- [ ] Document decision in QA_Notes field
-
----
-
-#### Documented Duplicates (For Reference)
-
-| ID | Team | Season | Unit(s) | Notes |
-|----|------|--------|---------|-------|
-| F006 | Kazanlak D | 2009 Spring | 40100 | Two distinct SU forms on Mar 23 ("Near village" vs "Pine trees") |
-| F009 | Kazanlak A | 2010 Spring | 11142 | Two forms on Apr 8 (Page 13 top, Page 14 bottom) |
-
-These are documented field anomalies - no CSV correction needed, but noted for data quality.
+**Status:** Documented in attribution.csv QA_Notes. No CSV correction applied - awaiting project-level decision on duplicate resolution strategy.
 
 ---
 
@@ -278,7 +253,7 @@ READMEs needed for `archive/investigation-runsheets/` and `archive/reports/surve
 **Data quality observations:**
 - **Tereza Blažková — 2009 autumn presence unexplained:** TRAP-Participants.csv marks her as present in 2009 autumn, but she does not appear in any walker records. May have had specialist role rather than field walking.
 
-**Last updated:** 3 December 2025
+**Last updated:** 3 December 2025 (ELH10A-OV1 documented as pending project discussion)
 
 ---
 
