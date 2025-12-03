@@ -145,12 +145,12 @@ This file tracks outstanding actions that fall outside the core walker data extr
 
 **Action required:**
 - [ ] Research and verify full identity of Lizzy
-- [x] ~~Verify Silvia Ivanova's participation in TRAP 2009~~ - Added to TRAP-Participants.csv (25 Nov 2025)
+- [ ] Verify Silvia Ivanova's participation in TRAP 2009 (do NOT modify original TRAP-Participants.csv - it is a historical artefact; new participant list will be generated after all corrections complete)
 - [ ] Check if Jiří Musil is in participant list, verify participation dates
 - [ ] Investigate Sharon identity (2011-11-02 Team D)
 - [ ] Investigate Rebecca identity (2010-04-13 Team C Kazanluk)
 - [ ] Investigate Yavor L identity (2010-11-06 Team B Elhovo)
-- [ ] Add remaining participants to `inputs/TRAP-Participants.csv` in single batch update with complete details
+- [ ] Generate new participant list after all corrections complete (original TRAP-Participants.csv is a historical artefact - do not modify)
 
 ---
 
