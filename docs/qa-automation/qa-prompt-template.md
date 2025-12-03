@@ -1,6 +1,7 @@
 # QA Verification Prompt Template
 
 **Created:** 2025-11-27
+**Updated:** 2025-12-03 (added Known Corrections Reference section)
 **Purpose:** Parameterised prompt for autonomous QA verification of TRAP attribution records
 **Model-agnostic:** Designed for Claude or Gemini
 
@@ -87,6 +88,32 @@ Example: `QA D021: Removed Georgi - diary states 'walked in five' (2025-11-27)`
 
 - **MAJOR:** Affects core data (unit numbers, walker names, missing records)
 - **Minor:** Affects metadata (author fields, source references)
+
+---
+
+## Known Corrections Reference (CRITICAL)
+
+**BEFORE flagging any issue**, check `docs/qa-automation/known-corrections-reference.md` to see if it has already been investigated and resolved.
+
+The reference contains 88 documented corrections organised by team-season:
+
+| Type | Action |
+|------|--------|
+| **VERIFY_NO_CHANGE** | Do NOT re-flag. CSV is confirmed correct despite apparent discrepancy with diary/DPF. |
+| **CORRECTION** | Do NOT re-flag. Issue has been fixed. Verify current CSV value matches documented correction. |
+| **ADD_RECORD** | Do NOT flag as missing. Record has been added. Verify it exists with correct data. |
+| **FLAG_ONLY** | Known unresolvable issue. Do not attempt to fix. |
+
+**How to use:**
+1. Before flagging a discrepancy for date X, team Y, check the reference for that team-season
+2. If an entry exists for that date, read the resolution
+3. Only flag NEW issues not already documented
+
+**Common resolved issues include:**
+- Unit numbers where diary/DPF disagree but CSV was verified correct via SU forms
+- Walker data for records added during QA (walkers populated from diary investigation)
+- Date corrections where Excel source had data entry errors
+- Duplicate unit documentation (field recording errors pending project discussion)
 
 ---
 
@@ -330,6 +357,7 @@ Read these as needed for edge cases:
 3. `docs/qa-automation/qa-runsheet-template.md` — Output structure template
 4. `outputs/qa-runsheet-elhovo-2009-autumn-c.md` — Exemplar completed runsheet
 5. `outputs/name-mapping.csv` — Name standardisation reference
+6. `docs/qa-automation/known-corrections-reference.md` — **CRITICAL:** Previously resolved issues (check BEFORE flagging)
 
 ---
 
@@ -337,6 +365,7 @@ Read these as needed for edge cases:
 
 Before finishing, verify:
 
+- [ ] Known corrections reference checked (no re-flagging of resolved issues)
 - [ ] All {RECORD_COUNT} records verified (daily breakdown complete)
 - [ ] Runsheet created with all required sections
 - [ ] Each correction has User Decision checkbox
