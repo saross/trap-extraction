@@ -8,12 +8,12 @@
 
 ## Summary
 
-**Total corrections:** 88
+**Total corrections:** 89
 
 | Type | Count | QA Action |
 |------|-------|-----------|
 | VERIFY_NO_CHANGE | 7 | Do not re-flag - CSV confirmed correct despite source discrepancy |
-| CORRECTION | 71 | Do not re-flag - already applied to CSV |
+| CORRECTION | 72 | Do not re-flag - already applied to CSV |
 | ADD_RECORD | 8 | Do not flag as missing - record already added |
 | FLAG_ONLY | 2 | Known unresolvable issue |
 
@@ -122,6 +122,12 @@
 | 2009-03-26 | KAZ09D-V007 | CORRECTION | End Unit error - CSV shows 40214, DPF shows 40217 | Applied |
 | 2009-03-27 | KAZ09D-V008 | CORRECTION | Start Unit error - CSV shows 40218, DPF shows 40219 ... | Applied |
 | 2009-03-27 | KAZ09D-LEADER | VERIFY_NO_CHANGE | Missing leader investigation - diary explicitly show... | CSV confirmed correct |
+
+## Kazanlak 2009 Spring Team E (1 corrections)
+
+| Date | ID | Type | Description | Resolution |
+|------|-----|------|-------------|------------|
+| 2009-03-25 | KAZ09E-V001 | CORRECTION | End Unit error - CSV 50249 should be 50246 per DPF | Applied |
 
 ## Kazanlak 2010 Spring Team A (1 corrections)
 
