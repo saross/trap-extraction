@@ -1,0 +1,90 @@
+# QA Final Verification Queue
+# Purpose: Track season-level verification passes over attribution.csv
+# Status: pending | in_progress | complete
+#
+# Process: For each season, verify:
+#   (a) Unit presence and continuity
+#   (b) Walker names and leader presence
+#   (c) Role coverage (check for extractable roles not yet captured)
+#   (d) Known corrections applied correctly
+#
+# Created: 2025-12-03
+# Output: outputs/qa-final-verification.md (cumulative summary)
+
+queue:
+  - id: "ELH-2009"
+    study_area: Elhovo
+    year: 2009
+    season: autumn
+    teams: [A, B, C]
+    records: 62
+    known_corrections: 14
+    status: pending
+    notes: "Teams A(22), B(20), C(20); corrections A:4, B:4, C:6"
+    date_range: "2009-10-14 to 2009-11-13"
+
+  - id: "ELH-2010"
+    study_area: Elhovo
+    year: 2010
+    season: autumn
+    teams: [A, B]
+    records: 16
+    known_corrections: 7
+    status: pending
+    notes: "Teams A(5), B(11); corrections A:2, B:5; includes unit 61549 duplicate flag"
+    date_range: "2010-10-22 to 2010-11-10"
+
+  - id: "KAZ-2010"
+    study_area: Kazanlak
+    year: 2010
+    season: spring
+    teams: [A, B, C, D]
+    records: 64
+    known_corrections: 15
+    status: pending
+    notes: "Teams A(9), B(20), C(21), D(14); corrections A:1, B:1, C:12, D:1"
+    date_range: "2010-03-19 to 2010-04-13"
+
+  - id: "KAZ-2011"
+    study_area: Kazanlak
+    year: 2011
+    season: autumn
+    teams: [A, B, C, D]
+    records: 66
+    known_corrections: 19
+    status: pending
+    notes: "Teams A(17), B(17), C(18), D(14); corrections A:5, B:1, C:2, D:11"
+    date_range: "2011-10-14 to 2011-11-29"
+
+completed:
+  - id: "KAZ-2009"
+    study_area: Kazanlak
+    year: 2009
+    season: spring
+    teams: [A, B, C, D, E]
+    records: 66
+    known_corrections: 33
+    status: complete
+    completed_date: "2025-12-03"
+    verification_file: "outputs/qa-final-verification.md"
+    notes: "Teams A(16), B(16), C(15), D(12), E(7); corrections A:4, B:7, C:5, D:16, E:1; 1 new issue found and resolved (KAZ09E-V001)"
+    date_range: "2009-03-04 to 2009-03-31"
+
+# Summary
+# -------
+# Total seasons: 5
+# Pending: 4 (Elhovo 2009, Elhovo 2010, Kazanlak 2010, Kazanlak 2011)
+# Complete: 1 (Kazanlak 2009)
+#
+# Total records: 274
+# Total known corrections: 89 (as of 2025-12-03)
+#
+# Verification checks per season:
+#   1. Unit presence - Start_Unit and End_Unit populated (or documented non-survey)
+#   2. Unit continuity - Start follows previous End (+/-1), gaps flagged
+#   3. Walker presence - Walkers_Standardised populated
+#   4. Leader presence - Leader field populated
+#   5. R1 validation - All role holders in Walkers list
+#   6. R2 validation - Leader in Walkers list
+#   7. Role coverage - Check PDA, Paper, GPS, Photo, Editor fields
+#   8. Known corrections - Verify applied correctly per known-corrections-reference.md
