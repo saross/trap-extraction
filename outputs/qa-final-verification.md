@@ -62,6 +62,55 @@
 
 ---
 
+## Kazanlak 2010 Spring
+
+**Verified:** 2025-12-03
+**Records:** 64 total (A: 9, B: 20, C: 21, D: 14)
+**Known corrections:** 15
+
+### Summary by Team
+
+| Team | Records | Corrections | Units | Walkers | Leader | R1/R2 | Status |
+|------|---------|-------------|-------|---------|--------|-------|--------|
+| A | 9 | 1/1 ✓ | ✓* | ✓ | ✓ | ✓ | **VERIFIED** |
+| B | 20 | 1/1 ✓ | ✓ | ✓ | ✓ | ✓ | **VERIFIED** |
+| C | 21 | 12/12 ✓ | ✓ | ✓ | ✓ | ✓ | **VERIFIED** |
+| D | 14 | 1/1 ✓ | ✓ | ✓ | ✓ | ✓ | **VERIFIED** |
+
+### Notes
+
+**Empty unit records (7 total) - all documented:**
+- Mar 23 Team D: Weather cancellation (rain)
+- Mar 27 Teams A, B: Non-survey day (base cleanup/moving)
+- Mar 29 Teams B, C: Rain day
+- Apr 6 Team B: Rainy day (documentation only)
+- Apr 15 Team C: End of expedition
+
+**Team A (*)**
+- Unit gap: Apr 7→8 gap of 2 (11089→11091)
+- **Status:** Documented as F008 - Unit 11090 genuinely absent from field records
+
+**Mar 27 Team A:**
+- QA_Notes shows "In Excel but units field empty - requires verification"
+- Reviewed: This is a non-survey day (base cleanup) - no action needed
+
+### Role Coverage
+
+| Team | PDA | Paper | GPS | Photo | Editor |
+|------|-----|-------|-----|-------|--------|
+| A | 8/9 | 0/9 | 8/9 | 0/9 | 1/9 |
+| B | 4/20 | 1/20 | 4/20 | 3/20 | 1/20 |
+| C | 0/21 | 0/21 | 0/21 | 0/21 | 0/21 |
+| D | 4/14 | 0/14 | 0/14 | 0/14 | 0/14 |
+
+**Note:** Partial role coverage. Team A has best coverage (EN diary covers April). Team C has BG-only diary - roles not extracted.
+
+### New Issues Found
+
+None. All validation checks passed.
+
+---
+
 ## Verification Checklist
 
 - [x] All known corrections verified as applied
