@@ -3,11 +3,11 @@
 [![License](https://img.shields.io/badge/License-Apache%202.0%20%2F%20CC--BY%204.0-blue.svg)](LICENSE)
 [![FAIR Compliance](https://img.shields.io/badge/FAIR-Compliant-green.svg)](STANDARDS-COMPLIANCE.md)
 
-Extraction and curation of field walker attribution data from the Tundzha Regional Archaeological Project (TRAP) survey records covering the 2009, 2010, and 2011 Kazanluk field seasons.
+Extraction and curation of field walker attribution data from the Tundzha Regional Archaeological Project (TRAP) survey records covering 2009-2011 field seasons (Kazanlak and Elhovo study areas).
 
-**Project Status:** ✅ **COMPLETE** - 100% walker data coverage achieved (268/268 records), 89.18% survey unit coverage (239/268 records)
+**Project Status:** ✅ **COMPLETE** - 100% walker data coverage achieved (274/274 records), QA verification complete
 
-**Completion Date:** 23 November 2025 (walker data), 24 November 2025 (survey units)
+**Completion Date:** 23 November 2025 (walker data), 4 December 2025 (QA verification)
 
 **GitHub Repository:** https://github.com/saross/trap-extraction
 
@@ -26,18 +26,18 @@ Extraction and curation of field walker attribution data from the Tundzha Region
 
 ## Project Summary
 
-This project systematically extracted field walker (team member) attribution data from heterogeneous archaeological field documentation to enable proper credit for survey participants. Through automated diary extraction, manual narrative analysis, and rigorous quality assurance, we achieved **100% walker data coverage** across all 268 survey records.
+This project systematically extracted field walker (team member) attribution data from heterogeneous archaeological field documentation to enable proper credit for survey participants. Through automated diary extraction, manual narrative analysis, and rigorous quality assurance, we achieved **100% walker data coverage** across all 274 survey records.
 
 ### Final Results
 
 | Metric | Value | Notes |
 |--------|-------|-------|
-| **Total survey day records** | **268** | Across 3 field seasons (2009, 2010, 2011) |
-| **Walker data coverage** | **268/268 (100%)** | ✅ Complete |
-| **Leader coverage** | **268/268 (100%)** | All team leaders documented |
-| **Non-survey days** | **3** | Flagged with activities |
+| **Total survey day records** | **274** | Across 5 field seasons (2009-2011) |
+| **Walker data coverage** | **274/274 (100%)** | ✅ Complete |
+| **Leader coverage** | **274/274 (100%)** | All team leaders documented |
+| **QA corrections applied** | **89** | All verified and applied |
 | **Data sources processed** | **15+ diaries** | English and Bulgarian |
-| **Python scripts created** | **51 total** | 6 key extraction/QA scripts |
+| **Python scripts created** | **51 total** | 8 core scripts retained |
 | **Date corrections applied** | **2** | Errors identified and fixed |
 
 ### Coverage Improvement
@@ -46,7 +46,7 @@ This project systematically extracted field walker (team member) attribution dat
 |-------|----------------|----------|
 | Initial extraction | 202/269 (75.1%) | Baseline |
 | After date error corrections | 204/268 (76.1%) | +1.0% |
-| After diary extraction & QA | **268/268 (100%)** | **+23.9%** ✅ |
+| After diary extraction & QA | **274/274 (100%)** | **Complete** ✅ |
 
 ---
 
@@ -127,20 +127,22 @@ See [DATA-DICTIONARY.md](DATA-DICTIONARY.md) for complete column definitions, co
 
 ---
 
-## Key Extraction Scripts
+## Key Scripts
 
-Six core Python scripts perform extraction and quality assurance:
+Eight core Python scripts remain active for data processing and validation:
 
-1. **`extract_team_a_diary.py`** - Extract Team A walker data from English diaries
-2. **`extract_team_b_diary_new.py`** - Extract Team B walker data (2010-2011)
-3. **`update_team_a_attribution.py`** - Update attribution CSV with Team A data
-4. **`standardize_leader_as_walker.py`** - Ensure leaders included in walker lists (139 records updated)
-5. **`clean_stale_missing_walker_flags.py`** - Remove obsolete QA flags (11 cleaned)
-6. **`check_current_failed_extractions.py`** - Analyse extraction status
+1. **`consolidate_v2.py`** - Core data consolidation logic
+2. **`apply_qa_corrections.py`** - Apply QA corrections from manifest
+3. **`qa_validation.py`** - Comprehensive data validation checks
+4. **`data_cleanup.py`** - Reusable data cleanup utilities
+5. **`analyse_coverage.py`** - Coverage analysis tool
+6. **`verify-survey-unit-coverage.py`** - Survey unit verification
+7. **`run_extraction.py`** - Main extraction orchestration
+8. **`utils.py`** - Shared utility functions
 
-See [scripts/README.md](scripts/README.md) for installation instructions, usage examples, and troubleshooting.
+See [scripts/README.md](scripts/README.md) for usage instructions.
 
-**Note:** 39 additional utility scripts in `scripts/` directory support various data extraction and QA tasks.
+**Note:** ~40 one-off extraction scripts have been archived to `archive/scripts/` for provenance.
 
 ---
 
@@ -300,34 +302,37 @@ trap-extraction/
 ├── CONTRIBUTING.md                     # Contribution guidelines
 ├── requirements.txt                    # Python dependencies
 ├── codemeta.json                       # Software metadata
-├── scripts/
+├── scripts/                            # 8 core scripts
 │   ├── README.md                       # Script documentation
-│   ├── extract_team_a_diary.py         # Team A extraction
-│   ├── extract_team_b_diary_new.py     # Team B extraction
-│   ├── update_team_a_attribution.py    # CSV update script
-│   ├── standardize_leader_as_walker.py # Leader standardisation
-│   ├── clean_stale_missing_walker_flags.py  # QA flag cleanup
-│   ├── check_current_failed_extractions.py  # Status analysis
-│   └── [39 additional utility scripts]
-├── outputs/
-│   ├── attribution.csv                 # PRIMARY OUTPUT (268 records)
+│   ├── consolidate_v2.py               # Core consolidation
+│   ├── apply_qa_corrections.py         # QA corrections
+│   ├── qa_validation.py                # Data validation
+│   ├── data_cleanup.py                 # Cleanup utilities
+│   ├── analyse_coverage.py             # Coverage analysis
+│   ├── verify-survey-unit-coverage.py  # Unit verification
+│   ├── run_extraction.py               # Main orchestration
+│   └── utils.py                        # Shared utilities
+├── outputs/                            # Final outputs
+│   ├── attribution.csv                 # PRIMARY OUTPUT (274 records)
 │   ├── name-mapping.csv                # Canonical name mappings (698 entries)
-│   └── source-inventory.md             # Source documentation
+│   ├── source-inventory.md             # Source documentation
+│   ├── qa-final-report.md              # QA verification report
+│   ├── qa-final-verification.md        # Detailed verification
+│   └── qa-corrections-manifest-comprehensive.json
 ├── planning/
-│   ├── akb-submission-todo.md          # AKB submission checklist
 │   └── follow-up-actions.md            # Future work recommendations
-├── archive/
-│   ├── outputs/
-│   │   ├── backups/                    # 17 timestamped backups
-│   │   └── documentation/              # Historical docs
-│   ├── reports/
-│   │   ├── extraction/                 # 5 extraction reports
-│   │   └── final/                      # 2 comprehensive reports
+├── archive/                            # Completed work
+│   ├── README.md                       # Archive documentation
+│   ├── backups/                        # Attribution.csv backups
 │   ├── cc-interactions/                # Claude Code session transcripts
-│   ├── supersession-project/           # Source priority corrections
-│   ├── name-disambiguation/            # Name mapping work
-│   ├── diary-extraction/               # Extraction methodology
-│   └── project-summaries/              # Field season summaries
+│   ├── docs/                           # Archived working docs
+│   ├── extraction-reports/             # Older extraction reports
+│   ├── planning/                       # Completed planning docs
+│   ├── qa-automation/                  # QA templates and queues
+│   ├── qa-runsheets/                   # 17 team QA runsheets
+│   ├── reports/                        # Analysis reports
+│   ├── scripts/                        # ~40 one-off scripts
+│   └── [other archive folders]
 └── inputs/                             # Source diaries and forms
 ```
 
@@ -410,14 +415,13 @@ See [CHANGELOG.md](CHANGELOG.md) for detailed project timeline.
 Recommended enhancements documented in [planning/follow-up-actions.md](planning/follow-up-actions.md):
 
 1. ~~**Role data extraction:**~~ ✅ **Completed** - 76 role fields populated (24 Nov 2025)
-2. **Survey unit completion:** 29 records without survey units (28 explained, 1 pending renumbering investigation)
-3. ~~**Name standardisation:**~~ ✅ **Completed** - 698 name mappings applied to all personnel columns (25 Nov 2025)
+2. ~~**Name standardisation:**~~ ✅ **Completed** - 698 name mappings applied (25 Nov 2025)
+3. ~~**QA verification:**~~ ✅ **Completed** - 89 corrections verified (4 Dec 2025)
 4. **DOI registration:** Register persistent identifier via Zenodo for long-term citability
 5. **Publication links:** Add bibtex references to published TRAP papers
-6. **Secondary QA:** Independent quality review by another LLM (Gemini 3)
-7. **Participant research:** Identify remaining uncertain participants (Lizzy, Sharon, Yavor L)
+6. **FLAG_ONLY items:** 2 unresolved issues (Lizzy unmapped, unit 61549 duplicate)
 
-See [planning/akb-submission-todo.md](planning/akb-submission-todo.md) for AKB submission preparation checklist.
+See [outputs/qa-final-report.md](outputs/qa-final-report.md) for the complete QA verification report.
 
 ---
 
@@ -432,11 +436,12 @@ See [planning/akb-submission-todo.md](planning/akb-submission-todo.md) for AKB s
 | [CITATION.cff](CITATION.cff) | Structured citation metadata |
 | [LICENSE](LICENSE) | Dual licence text (Apache 2.0 / CC-BY 4.0) |
 | [CONTRIBUTING.md](CONTRIBUTING.md) | How to contribute improvements |
-| [scripts/README.md](scripts/README.md) | Script installation and usage |
+| [scripts/README.md](scripts/README.md) | Script documentation |
 | [outputs/source-inventory.md](outputs/source-inventory.md) | Source documentation |
+| [outputs/qa-final-report.md](outputs/qa-final-report.md) | QA verification report |
+| [outputs/qa-final-verification.md](outputs/qa-final-verification.md) | Detailed verification summary |
 | [planning/follow-up-actions.md](planning/follow-up-actions.md) | Future work recommendations |
-| [archive/reports/final/data-quality-summary.md](archive/reports/final/data-quality-summary.md) | Comprehensive quality report |
-| [archive/reports/final/failed-extractions-resolution-report.md](archive/reports/final/failed-extractions-resolution-report.md) | How 100% coverage was achieved |
+| [archive/README.md](archive/README.md) | Archive documentation |
 
 ---
 
@@ -455,6 +460,6 @@ See [planning/akb-submission-todo.md](planning/akb-submission-todo.md) for AKB s
 
 ---
 
-**Last Updated:** 30 November 2025
-**Version:** 1.0.0
-**Status:** ✅ Complete - 100% walker data coverage achieved, names standardised
+**Last Updated:** 4 December 2025
+**Version:** 1.1.0
+**Status:** ✅ Complete - 100% walker data coverage (274/274), QA verified
