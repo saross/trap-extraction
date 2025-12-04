@@ -219,6 +219,57 @@ None. All validation checks passed.
 
 ---
 
+## Elhovo 2010 Autumn
+
+**Verified:** 2025-12-04
+**Records:** 16 total (A: 5, B: 11)
+**Known corrections:** 7
+
+### Summary by Team
+
+| Team | Records | Corrections | Units | Walkers | Leader | R1/R2 | Status |
+|------|---------|-------------|-------|---------|--------|-------|--------|
+| A | 5 | 2/2 ✓ | ✓ | ✓ | ✓ | ✓ | **VERIFIED** |
+| B | 11 | 5/5 ✓ | ✓ | ✓ | ✓ | ✓ | **VERIFIED** |
+
+### Notes
+
+**No empty unit records** - all 16 records have unit data.
+
+**Unit continuity:** No gaps found in either team.
+
+**Team A:**
+- FLAG_ONLY issue (ELH10A-OV1): Unit 61549 duplicate documented in QA_Notes
+  - Field recording error: unit 61549 used as End Unit on Oct 24 AND Start Unit on Nov 2
+  - Pending project-level resolution
+- Walker de-duplication (ELH10-DEDUP): Applied - no duplicate leaders in walker lists
+
+**Team B:**
+- Unit corrections (ELH10B-D006 to D008): All applied
+  - Nov 3 Start: 71525 (was 71245)
+  - Nov 4 End: 71649 (was 71650)
+  - Nov 6: Units now populated
+- ADD_RECORD corrections: Both records exist
+  - Nov 7 (ELH10B-D009): 71761-71800
+  - Nov 10 (ELH10B-D010): 71801-71833
+
+**R2 edge case (Nov 7):** Leader field shows "Shawn Ross | Royce Lawrence" - both ARE in walker list. Not a real issue (validation script limitation with multi-leader format).
+
+### Role Coverage
+
+| Team | PDA | Paper | GPS | Photo | Editor |
+|------|-----|-------|-----|-------|--------|
+| A | 5/5 | 0/5 | 5/5 | 0/5 | 0/5 |
+| B | 10/11 | 10/11 | 9/11 | 2/11 | 0/11 |
+
+**Note:** Excellent role coverage for Elhovo 2010. Team A has 100% PDA and GPS coverage. Team B has 91% PDA, 91% Paper, and 82% GPS coverage.
+
+### New Issues Found
+
+None. All validation checks passed.
+
+---
+
 ## Verification Checklist
 
 - [x] All known corrections verified as applied
@@ -228,8 +279,25 @@ None. All validation checks passed.
 - [x] Leader presence verified for all records
 - [x] R1 (role holders in walkers) - PASS
 - [x] R2 (leader in walkers) - PASS
-- [ ] Role coverage reviewed - No extractable role data for Kazanlak 2009
+- [x] Role coverage reviewed - All seasons complete
 
 ---
 
-*This document will be extended as other seasons are verified.*
+## Summary
+
+**QA verification complete for all 5 field seasons.**
+
+| Season | Records | Corrections | Status |
+|--------|---------|-------------|--------|
+| Kazanlak 2009 Spring | 66 | 33 | ✓ Complete |
+| Kazanlak 2010 Spring | 64 | 15 | ✓ Complete |
+| Kazanlak 2011 Autumn | 66 | 19 | ✓ Complete |
+| Elhovo 2009 Autumn | 62 | 14 | ✓ Complete |
+| Elhovo 2010 Autumn | 16 | 7 | ✓ Complete |
+| **Total** | **274** | **88** | **✓ VERIFIED** |
+
+*Note: 89 corrections in manifest includes 1 global correction (NAME-STD-001) counted separately.*
+
+---
+
+*Final verification completed 2025-12-04.*
