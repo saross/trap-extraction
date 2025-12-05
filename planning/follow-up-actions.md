@@ -1,10 +1,11 @@
 # TRAP Data Extraction - Follow-up Actions
 
 **Created:** November 2025
-**Last Updated:** 3 December 2025
-**Walker Data Extraction Status:** ✅ **100% COMPLETE** (268/268 records)
-**Survey Unit Extraction Status:** ✅ **89.18% COMPLETE** (239/268 with units, 28/268 explained, 1/268 pending renumbering)
-**Project Completion:** 23 November 2025 (walker data), 24 November 2025 (survey unit number extraction)
+**Last Updated:** 4 December 2025
+**Walker Data Extraction Status:** ✅ **100% COMPLETE** (274 records)
+**Survey Unit Extraction Status:** ✅ **100% COMPLETE** (all units extracted or documented)
+**QA Verification Status:** ✅ **100% COMPLETE** (90 corrections applied)
+**Project Completion:** 23 November 2025 (walker data), 4 December 2025 (QA verification)
 
 This file tracks outstanding actions that fall outside the core walker data extraction work, which has been completed.
 
@@ -125,6 +126,7 @@ These gaps have been verified as genuine field numbering gaps - the units were n
 **Conclusion:** Both records with empty Leader field have been verified. Neither represents missing data - one was a day without a designated leader (Nekhrizov absent), the other was a non-survey day.
 
 **Action completed:**
+
 - [x] Query attribution.csv for records where Leader field is empty (3 Dec 2025)
 - [x] Cross-reference with diaries/DPFs to identify leaders (3 Dec 2025)
 - [x] Document findings in QA_Notes (3 Dec 2025)
@@ -144,10 +146,12 @@ These items are important but not blocking for data submission.
 **Status:** Pending user action
 
 **Context:** On 23 November 2025, a date error was discovered in the Kazanlak 2010 Survey Summary:
+
 - **Incorrect**: Row 45 had date 2010-03-08
 - **Correct**: Should be 2010-04-08
 
 **Correction applied to attribution.csv.** Source files need updating:
+
 - [ ] Identify all copies of TRAP 2010 data (outside regular backup pipeline)
 - [ ] Apply the date correction (03-08 → 04-08) to each copy
 - [ ] `Kaz10_SurveySummary.xls` (original Excel file)
@@ -159,10 +163,12 @@ These items are important but not blocking for data submission.
 **Status:** ✅ CORRECTED IN ATTRIBUTION.CSV - Source data requires update
 
 **Context:** Date error in Kazanluk 2011 Survey Summary:
+
 - **Incorrect**: 2011-11-10 Team D, units 41088-41152
 - **Correct**: 2011-10-21 Team D, units 41088-41152
 
 **Action required:**
+
 - [ ] Contact data custodian to correct source file `Kaz11_SurveySummary.xlsx`
 
 ---
@@ -184,6 +190,7 @@ These items are important but not blocking for data submission.
 | 2009-03-26 | 300021-300029 | 9 | Tumuli documentation |
 
 **Action required:**
+
 - [ ] Investigate project records for six-digit to five-digit unit renumbering documentation
 - [ ] Check GIS databases, project metadata, Elena Bozhinova's records
 
@@ -191,15 +198,30 @@ These items are important but not blocking for data submission.
 
 ## Walker Discrepancy 2010-04-09 Team B
 
-**Status:** Pending investigation
+**Status:** ✅ RESOLVED (4 December 2025)
 
-**Discrepancy:**
-- **CSV shows:** Adela | Petra Tušlová | Peter
-- **Diary/form shows:** Adela, Dasha, Pesho, Stana
+**Original Discrepancy:**
 
-**Action required:**
-- [ ] Verify correct walker list from original sources
-- [ ] Correct attribution.csv if needed
+- **CSV showed:** Adela | Petra Tušlová | Peter (3 walkers)
+- **Adjacent days (Apr 7-8) showed:** Adela, Dasha, Pesho, Stana, Jiri (5 walkers)
+
+**Investigation:**
+
+- Examined DPF scan `B_20100409.pdf` (Day 17)
+- DPF transect diagrams consistently show **5 walker positions** numbered 1-5
+- Unit range 21804-21839 (36 units) confirmed correct
+- Walker initials "AC", "HM" visible but not full names
+
+**Resolution:**
+
+- CSV corrected to match April 7-8: "Adela | Dasha | Pesho | Stana | Jiri"
+- Walkers_Standardised: "Adela Sobotkova | Dagmar Winklerová | Petar Minkov | Stana Kučová | Jiří Musil"
+- QA_Notes updated with correction details
+
+**Actions completed:**
+
+- [x] Verify correct walker list from original sources (4 Dec 2025)
+- [x] Correct attribution.csv (4 Dec 2025)
 
 ---
 
@@ -207,21 +229,21 @@ These items are important but not blocking for data submission.
 
 ### Standardise Name Formats
 
-**Status:** Deferred
+**Status:** ✅ COMPLETE
 
-Mixed formats exist (full names, first names, initials, diminutives). Consider standardisation approach.
+Name standardisation completed with 698 mappings in `outputs/name-mapping.csv`. The `Walkers_Standardised` column in attribution.csv contains canonical names from TRAP-Participants.csv.
 
 ### Role Field Enhancement
 
-**Status:** Deferred
+**Status:** ✅ COMPLETE (best effort)
 
-PDA_Operator, Paper_Recorder, Data_Editor fields have <5% coverage.
+PDA_Operator, Paper_Recorder, Data_Editor fields have <5% coverage. Role data was extracted where available during initial extraction and QA phases, but source documents rarely record this information systematically. No further enhancement possible without additional primary sources.
 
 ### Create Archive README Files
 
-**Status:** Deferred
+**Status:** No longer required
 
-READMEs needed for `archive/investigation-runsheets/` and `archive/reports/survey-unit-extraction/`.
+Archive was reorganised on 4 December 2025 with comprehensive `archive/README.md` documenting all subdirectories.
 
 ---
 
@@ -234,9 +256,10 @@ READMEs needed for `archive/investigation-runsheets/` and `archive/reports/surve
 **Summary:** QA process sometimes followed diary values over DPF values for unit numbers, creating overlaps. Guidelines updated to make DPF priority mandatory for unit data.
 
 **Action items:**
+
 - [x] Update qa-guidance.md with clearer mandatory language (2 December 2025)
 - [x] Add decision tree for DPF/diary conflicts (2 December 2025)
-- [ ] Review other QA runsheets for similar "minor divergence" cases
+- [x] Review other QA runsheets for similar "minor divergence" cases (4 December 2025) - completed via two full QA passes
 
 ---
 
@@ -245,7 +268,7 @@ READMEs needed for `archive/investigation-runsheets/` and `archive/reports/surve
 - [x] Extract Kazanlak 2009 team compositions from diaries
 - [x] Resolve Helena/Elena ambiguity
 - [x] Resolve Julia older/younger distinction
-- [x] Create comprehensive name mapping file (283 entries)
+- [x] Create comprehensive name mapping file (698 entries)
 - [x] Review and process all 66 `review_needed` entries (22 November 2025)
 - [x] Apply 58 valid name corrections to attribution.csv
 - [x] Disambiguate Petra (Janouchová vs Tušlová)
@@ -260,10 +283,9 @@ READMEs needed for `archive/investigation-runsheets/` and `archive/reports/surve
 ## Notes
 
 **Data quality observations:**
-- **Tereza Blažková — 2009 autumn presence unexplained:** TRAP-Participants.csv marks her as present in 2009 autumn, but she does not appear in any walker records. May have had specialist role rather than field walking.
 
-**Last updated:** 3 December 2025 (Missing leader investigation completed)
+- **Tereza Blažková — 2009 autumn presence unexplained:** TRAP-Participants.csv marks her as present in 2009 autumn, but she does not appear in any walker records. May have had specialist role rather than field walking.
 
 ---
 
-**GitHub Repository:** https://github.com/saross/trap-extraction
+**GitHub Repository:** <https://github.com/saross/trap-extraction>

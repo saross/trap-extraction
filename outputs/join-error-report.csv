@@ -1,0 +1,503 @@
+Flag,Region,GIS_SU,GIS_SU_Date,GIS_SU_Team,Attribution_Date,Attribution_Team,Attribution_Leader,Attribution_Range,Explanation
+DUPLICATE_GIS_SU,KAZ,10945,,A,,,,,GIS data issue: SUID 10945 appears 7 times in GeoJSON. Same unit number assigned to multiple polygons.
+DUPLICATE_GIS_SU,KAZ,11334,,A,,,,,GIS data issue: SUID 11334 appears 2 times in GeoJSON. Same unit number assigned to multiple polygons.
+DUPLICATE_GIS_SU,KAZ,30332,,C,,,,,GIS data issue: SUID 30332 appears 2 times in GeoJSON. Same unit number assigned to multiple polygons.
+DUPLICATE_GIS_SU,KAZ,30962,,C,,,,,GIS data issue: SUID 30962 appears 2 times in GeoJSON. Same unit number assigned to multiple polygons.
+DUPLICATE_GIS_SU,YAM,60479,,A,,,,,GIS data issue: SUID 60479 appears 2 times in GeoJSON. Same unit number assigned to multiple polygons.
+DUPLICATE_GIS_SU,YAM,61317,,A,,,,,GIS data issue: SUID 61317 appears 2 times in GeoJSON. Same unit number assigned to multiple polygons.
+DUPLICATE_GIS_SU,YAM,61549,,A,,,,,GIS data issue: SUID 61549 appears 2 times in GeoJSON. Same unit number assigned to multiple polygons.
+DUPLICATE_GIS_SU,YAM,70185,,B,,,,,GIS data issue: SUID 70185 appears 2 times in GeoJSON. Same unit number assigned to multiple polygons.
+DUPLICATE_GIS_SU,YAM,71029,,B,,,,,GIS data issue: SUID 71029 appears 2 times in GeoJSON. Same unit number assigned to multiple polygons.
+DUPLICATE_UNITS,YAM,61549,,A,2010-10-24,A,Adéla Dorňáková,61476-61549,"Unit 61549 appears in 2 attribution ranges: dates [2010-10-24, 2010-11-02], ranges [61476-61549, 61549-61586]"
+DUPLICATE_UNITS,YAM,61549,,A,2010-10-24,A,Adéla Dorňáková,61476-61549,"Unit 61549 appears in 2 attribution ranges: dates [2010-10-24, 2010-11-02], ranges [61476-61549, 61549-61586]"
+DUPLICATE_UNITS,KAZ,40100,,D,2009-03-23,D,Georgi Nekhrizov,40096-40111,"Same-day duplicate: Two distinct SU forms exist (""Near village"" vs ""Pine trees""). Documented in follow-up-actions.md (F006)."
+DUPLICATE_UNITS,KAZ,11142,,A,2010-04-08,A,Petra Tušlová,11091-11157,"Same-day duplicate: Two SU forms exist (Page 13 top and Page 14 bottom). Documented in follow-up-actions.md (F009)."
+LEADER_MISMATCH,KAZ,22244,2011-11-13,B,2011-11-13,B,Petra Tušlová,22244-22268,GeoJSON leader 'BW' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22245,2011-11-13,B,2011-11-13,B,Petra Tušlová,22244-22268,GeoJSON leader 'BW' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22246,2011-11-13,B,2011-11-13,B,Petra Tušlová,22244-22268,GeoJSON leader 'BW' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22247,2011-11-13,B,2011-11-13,B,Petra Tušlová,22244-22268,GeoJSON leader 'BW' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22248,2011-11-13,B,2011-11-13,B,Petra Tušlová,22244-22268,GeoJSON leader 'BW' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22249,2011-11-13,B,2011-11-13,B,Petra Tušlová,22244-22268,GeoJSON leader 'BW' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22250,2011-11-13,B,2011-11-13,B,Petra Tušlová,22244-22268,GeoJSON leader 'BW' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22251,2011-11-13,B,2011-11-13,B,Petra Tušlová,22244-22268,GeoJSON leader 'BW' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22252,2011-11-13,B,2011-11-13,B,Petra Tušlová,22244-22268,GeoJSON leader 'BW' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22253,2011-11-13,B,2011-11-13,B,Petra Tušlová,22244-22268,GeoJSON leader 'BW' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22254,2011-11-13,B,2011-11-13,B,Petra Tušlová,22244-22268,GeoJSON leader 'BW' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22255,2011-11-13,B,2011-11-13,B,Petra Tušlová,22244-22268,GeoJSON leader 'BW' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22256,2011-11-13,B,2011-11-13,B,Petra Tušlová,22244-22268,GeoJSON leader 'BW' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22257,2011-11-13,B,2011-11-13,B,Petra Tušlová,22244-22268,GeoJSON leader 'BW' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22258,2011-11-13,B,2011-11-13,B,Petra Tušlová,22244-22268,GeoJSON leader 'BW' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22259,2011-11-13,B,2011-11-13,B,Petra Tušlová,22244-22268,GeoJSON leader 'BW' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22260,2011-11-13,B,2011-11-13,B,Petra Tušlová,22244-22268,GeoJSON leader 'BW' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22261,2011-11-13,B,2011-11-13,B,Petra Tušlová,22244-22268,GeoJSON leader 'BW' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22262,2011-11-13,B,2011-11-13,B,Petra Tušlová,22244-22268,GeoJSON leader 'BW' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22263,2011-11-13,B,2011-11-13,B,Petra Tušlová,22244-22268,GeoJSON leader 'BW' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22264,2011-11-13,B,2011-11-13,B,Petra Tušlová,22244-22268,GeoJSON leader 'BW' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22265,2011-11-13,B,2011-11-13,B,Petra Tušlová,22244-22268,GeoJSON leader 'BW' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22266,2011-11-13,B,2011-11-13,B,Petra Tušlová,22244-22268,GeoJSON leader 'BW' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22267,2011-11-13,B,2011-11-13,B,Petra Tušlová,22244-22268,GeoJSON leader 'BW' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22268,2011-11-13,B,2011-11-13,B,Petra Tušlová,22244-22268,GeoJSON leader 'BW' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22269,2011-11-15,B,2011-11-15,B,Joel Sercombe,22269-22282,GeoJSON leader 'PJ' != attribution leader 'Joel Sercombe'
+LEADER_MISMATCH,KAZ,22270,2011-11-15,B,2011-11-15,B,Joel Sercombe,22269-22282,GeoJSON leader 'PJ' != attribution leader 'Joel Sercombe'
+LEADER_MISMATCH,KAZ,22271,2011-11-15,B,2011-11-15,B,Joel Sercombe,22269-22282,GeoJSON leader 'PJ' != attribution leader 'Joel Sercombe'
+LEADER_MISMATCH,KAZ,22272,2011-11-15,B,2011-11-15,B,Joel Sercombe,22269-22282,GeoJSON leader 'PJ' != attribution leader 'Joel Sercombe'
+LEADER_MISMATCH,KAZ,22273,2011-11-15,B,2011-11-15,B,Joel Sercombe,22269-22282,GeoJSON leader 'PJ' != attribution leader 'Joel Sercombe'
+LEADER_MISMATCH,KAZ,22274,2011-11-15,B,2011-11-15,B,Joel Sercombe,22269-22282,GeoJSON leader 'PJ' != attribution leader 'Joel Sercombe'
+LEADER_MISMATCH,KAZ,22275,2011-11-15,B,2011-11-15,B,Joel Sercombe,22269-22282,GeoJSON leader 'PJ' != attribution leader 'Joel Sercombe'
+LEADER_MISMATCH,KAZ,22276,2011-11-15,B,2011-11-15,B,Joel Sercombe,22269-22282,GeoJSON leader 'PJ' != attribution leader 'Joel Sercombe'
+LEADER_MISMATCH,KAZ,22277,2011-11-15,B,2011-11-15,B,Joel Sercombe,22269-22282,GeoJSON leader 'PJ' != attribution leader 'Joel Sercombe'
+LEADER_MISMATCH,KAZ,22278,2011-11-15,B,2011-11-15,B,Joel Sercombe,22269-22282,GeoJSON leader 'PJ' != attribution leader 'Joel Sercombe'
+LEADER_MISMATCH,KAZ,22279,2011-11-15,B,2011-11-15,B,Joel Sercombe,22269-22282,GeoJSON leader 'PJ' != attribution leader 'Joel Sercombe'
+LEADER_MISMATCH,KAZ,22280,2011-11-15,B,2011-11-15,B,Joel Sercombe,22269-22282,GeoJSON leader 'PJ' != attribution leader 'Joel Sercombe'
+LEADER_MISMATCH,KAZ,22281,2011-11-15,B,2011-11-15,B,Joel Sercombe,22269-22282,GeoJSON leader 'PJ' != attribution leader 'Joel Sercombe'
+LEADER_MISMATCH,KAZ,22282,2011-11-15,B,2011-11-15,B,Joel Sercombe,22269-22282,GeoJSON leader 'PJ' != attribution leader 'Joel Sercombe'
+LEADER_MISMATCH,KAZ,22283,2011-11-16,B,2011-11-16,B,Joel Sercombe,22283-22320,GeoJSON leader 'PJ' != attribution leader 'Joel Sercombe'
+LEADER_MISMATCH,KAZ,22284,2011-11-16,B,2011-11-16,B,Joel Sercombe,22283-22320,GeoJSON leader 'PJ' != attribution leader 'Joel Sercombe'
+LEADER_MISMATCH,KAZ,22285,2011-11-16,B,2011-11-16,B,Joel Sercombe,22283-22320,GeoJSON leader 'PJ' != attribution leader 'Joel Sercombe'
+LEADER_MISMATCH,KAZ,22286,2011-11-16,B,2011-11-16,B,Joel Sercombe,22283-22320,GeoJSON leader 'PJ' != attribution leader 'Joel Sercombe'
+LEADER_MISMATCH,KAZ,22287,2011-11-16,B,2011-11-16,B,Joel Sercombe,22283-22320,GeoJSON leader 'PJ' != attribution leader 'Joel Sercombe'
+LEADER_MISMATCH,KAZ,22288,2011-11-16,B,2011-11-16,B,Joel Sercombe,22283-22320,GeoJSON leader 'PJ' != attribution leader 'Joel Sercombe'
+LEADER_MISMATCH,KAZ,22289,2011-11-16,B,2011-11-16,B,Joel Sercombe,22283-22320,GeoJSON leader 'PJ' != attribution leader 'Joel Sercombe'
+LEADER_MISMATCH,KAZ,22290,2011-11-16,B,2011-11-16,B,Joel Sercombe,22283-22320,GeoJSON leader 'PJ' != attribution leader 'Joel Sercombe'
+LEADER_MISMATCH,KAZ,22291,2011-11-16,B,2011-11-16,B,Joel Sercombe,22283-22320,GeoJSON leader 'PJ' != attribution leader 'Joel Sercombe'
+LEADER_MISMATCH,KAZ,22292,2011-11-16,B,2011-11-16,B,Joel Sercombe,22283-22320,GeoJSON leader 'PJ' != attribution leader 'Joel Sercombe'
+LEADER_MISMATCH,KAZ,22293,2011-11-16,B,2011-11-16,B,Joel Sercombe,22283-22320,GeoJSON leader 'PJ' != attribution leader 'Joel Sercombe'
+LEADER_MISMATCH,KAZ,22294,2011-11-16,B,2011-11-16,B,Joel Sercombe,22283-22320,GeoJSON leader 'PJ' != attribution leader 'Joel Sercombe'
+LEADER_MISMATCH,KAZ,22295,2011-11-16,B,2011-11-16,B,Joel Sercombe,22283-22320,GeoJSON leader 'PJ' != attribution leader 'Joel Sercombe'
+LEADER_MISMATCH,KAZ,22296,2011-11-16,B,2011-11-16,B,Joel Sercombe,22283-22320,GeoJSON leader 'PJ' != attribution leader 'Joel Sercombe'
+LEADER_MISMATCH,KAZ,22297,2011-11-16,B,2011-11-16,B,Joel Sercombe,22283-22320,GeoJSON leader 'PJ' != attribution leader 'Joel Sercombe'
+LEADER_MISMATCH,KAZ,22298,2011-11-16,B,2011-11-16,B,Joel Sercombe,22283-22320,GeoJSON leader 'PJ' != attribution leader 'Joel Sercombe'
+LEADER_MISMATCH,KAZ,22299,2011-11-16,B,2011-11-16,B,Joel Sercombe,22283-22320,GeoJSON leader 'PJ' != attribution leader 'Joel Sercombe'
+LEADER_MISMATCH,KAZ,22300,2011-11-16,B,2011-11-16,B,Joel Sercombe,22283-22320,GeoJSON leader 'PJ' != attribution leader 'Joel Sercombe'
+LEADER_MISMATCH,KAZ,22301,2011-11-16,B,2011-11-16,B,Joel Sercombe,22283-22320,GeoJSON leader 'PJ' != attribution leader 'Joel Sercombe'
+LEADER_MISMATCH,KAZ,22302,2011-11-16,B,2011-11-16,B,Joel Sercombe,22283-22320,GeoJSON leader 'PJ' != attribution leader 'Joel Sercombe'
+LEADER_MISMATCH,KAZ,22303,2011-11-16,B,2011-11-16,B,Joel Sercombe,22283-22320,GeoJSON leader 'PJ' != attribution leader 'Joel Sercombe'
+LEADER_MISMATCH,KAZ,22304,2011-11-16,B,2011-11-16,B,Joel Sercombe,22283-22320,GeoJSON leader 'PJ' != attribution leader 'Joel Sercombe'
+LEADER_MISMATCH,KAZ,22305,2011-11-16,B,2011-11-16,B,Joel Sercombe,22283-22320,GeoJSON leader 'PJ' != attribution leader 'Joel Sercombe'
+LEADER_MISMATCH,KAZ,22306,2011-11-16,B,2011-11-16,B,Joel Sercombe,22283-22320,GeoJSON leader 'PJ' != attribution leader 'Joel Sercombe'
+LEADER_MISMATCH,KAZ,22307,2011-11-16,B,2011-11-16,B,Joel Sercombe,22283-22320,GeoJSON leader 'PJ' != attribution leader 'Joel Sercombe'
+LEADER_MISMATCH,KAZ,22308,2011-11-16,B,2011-11-16,B,Joel Sercombe,22283-22320,GeoJSON leader 'PJ' != attribution leader 'Joel Sercombe'
+LEADER_MISMATCH,KAZ,22309,2011-11-16,B,2011-11-16,B,Joel Sercombe,22283-22320,GeoJSON leader 'PJ' != attribution leader 'Joel Sercombe'
+LEADER_MISMATCH,KAZ,22310,2011-11-16,B,2011-11-16,B,Joel Sercombe,22283-22320,GeoJSON leader 'PJ' != attribution leader 'Joel Sercombe'
+LEADER_MISMATCH,KAZ,22311,2011-11-16,B,2011-11-16,B,Joel Sercombe,22283-22320,GeoJSON leader 'PJ' != attribution leader 'Joel Sercombe'
+LEADER_MISMATCH,KAZ,22312,2011-11-16,B,2011-11-16,B,Joel Sercombe,22283-22320,GeoJSON leader 'PJ' != attribution leader 'Joel Sercombe'
+LEADER_MISMATCH,KAZ,22313,2011-11-16,B,2011-11-16,B,Joel Sercombe,22283-22320,GeoJSON leader 'PJ' != attribution leader 'Joel Sercombe'
+LEADER_MISMATCH,KAZ,22314,2011-11-16,B,2011-11-16,B,Joel Sercombe,22283-22320,GeoJSON leader 'PJ' != attribution leader 'Joel Sercombe'
+LEADER_MISMATCH,KAZ,22315,2011-11-16,B,2011-11-16,B,Joel Sercombe,22283-22320,GeoJSON leader 'PJ' != attribution leader 'Joel Sercombe'
+LEADER_MISMATCH,KAZ,22316,2011-11-16,B,2011-11-16,B,Joel Sercombe,22283-22320,GeoJSON leader 'PJ' != attribution leader 'Joel Sercombe'
+LEADER_MISMATCH,KAZ,22317,2011-11-16,B,2011-11-16,B,Joel Sercombe,22283-22320,GeoJSON leader 'PJ' != attribution leader 'Joel Sercombe'
+LEADER_MISMATCH,KAZ,22318,2011-11-16,B,2011-11-16,B,Joel Sercombe,22283-22320,GeoJSON leader 'PJ' != attribution leader 'Joel Sercombe'
+LEADER_MISMATCH,KAZ,22319,2011-11-16,B,2011-11-16,B,Joel Sercombe,22283-22320,GeoJSON leader 'PJ' != attribution leader 'Joel Sercombe'
+LEADER_MISMATCH,KAZ,22320,2011-11-16,B,2011-11-16,B,Joel Sercombe,22283-22320,GeoJSON leader 'PJ' != attribution leader 'Joel Sercombe'
+LEADER_MISMATCH,KAZ,22321,2011-11-17,B,2011-11-17,B,Petra Tušlová,22321-22367,GeoJSON leader 'PJ' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22322,2011-11-17,B,2011-11-17,B,Petra Tušlová,22321-22367,GeoJSON leader 'PJ' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22323,2011-11-17,B,2011-11-17,B,Petra Tušlová,22321-22367,GeoJSON leader 'PJ' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22324,2011-11-17,B,2011-11-17,B,Petra Tušlová,22321-22367,GeoJSON leader 'PJ' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22325,2011-11-17,B,2011-11-17,B,Petra Tušlová,22321-22367,GeoJSON leader 'PJ' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22326,2011-11-17,B,2011-11-17,B,Petra Tušlová,22321-22367,GeoJSON leader 'PJ' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22327,2011-11-17,B,2011-11-17,B,Petra Tušlová,22321-22367,GeoJSON leader 'PJ' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22328,2011-11-17,B,2011-11-17,B,Petra Tušlová,22321-22367,GeoJSON leader 'PJ' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22329,2011-11-17,B,2011-11-17,B,Petra Tušlová,22321-22367,GeoJSON leader 'PJ' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22330,2011-11-17,B,2011-11-17,B,Petra Tušlová,22321-22367,GeoJSON leader 'PJ' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22331,2011-11-17,B,2011-11-17,B,Petra Tušlová,22321-22367,GeoJSON leader 'PJ' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22332,2011-11-17,B,2011-11-17,B,Petra Tušlová,22321-22367,GeoJSON leader 'PJ' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22333,2011-11-17,B,2011-11-17,B,Petra Tušlová,22321-22367,GeoJSON leader 'PJ' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22334,2011-11-17,B,2011-11-17,B,Petra Tušlová,22321-22367,GeoJSON leader 'PJ' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22335,2011-11-17,B,2011-11-17,B,Petra Tušlová,22321-22367,GeoJSON leader 'PJ' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22336,2011-11-17,B,2011-11-17,B,Petra Tušlová,22321-22367,GeoJSON leader 'PJ' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22337,2011-11-17,B,2011-11-17,B,Petra Tušlová,22321-22367,GeoJSON leader 'PJ' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22338,2011-11-17,B,2011-11-17,B,Petra Tušlová,22321-22367,GeoJSON leader 'PJ' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22339,2011-11-17,B,2011-11-17,B,Petra Tušlová,22321-22367,GeoJSON leader 'PJ' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22340,2011-11-17,B,2011-11-17,B,Petra Tušlová,22321-22367,GeoJSON leader 'PJ' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22341,2011-11-17,B,2011-11-17,B,Petra Tušlová,22321-22367,GeoJSON leader 'PJ' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22342,2011-11-17,B,2011-11-17,B,Petra Tušlová,22321-22367,GeoJSON leader 'PJ' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22343,2011-11-17,B,2011-11-17,B,Petra Tušlová,22321-22367,GeoJSON leader 'PJ' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22344,2011-11-17,B,2011-11-17,B,Petra Tušlová,22321-22367,GeoJSON leader 'PJ' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22345,2011-11-17,B,2011-11-17,B,Petra Tušlová,22321-22367,GeoJSON leader 'PJ' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22346,2011-11-17,B,2011-11-17,B,Petra Tušlová,22321-22367,GeoJSON leader 'PJ' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22347,2011-11-17,B,2011-11-17,B,Petra Tušlová,22321-22367,GeoJSON leader 'PJ' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22348,2011-11-17,B,2011-11-17,B,Petra Tušlová,22321-22367,GeoJSON leader 'PJ' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22349,2011-11-17,B,2011-11-17,B,Petra Tušlová,22321-22367,GeoJSON leader 'PJ' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22350,2011-11-17,B,2011-11-17,B,Petra Tušlová,22321-22367,GeoJSON leader 'PJ' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22351,2011-11-17,B,2011-11-17,B,Petra Tušlová,22321-22367,GeoJSON leader 'PJ' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22352,2011-11-17,B,2011-11-17,B,Petra Tušlová,22321-22367,GeoJSON leader 'PJ' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22353,2011-11-17,B,2011-11-17,B,Petra Tušlová,22321-22367,GeoJSON leader 'PJ' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22354,2011-11-17,B,2011-11-17,B,Petra Tušlová,22321-22367,GeoJSON leader 'PJ' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22355,2011-11-17,B,2011-11-17,B,Petra Tušlová,22321-22367,GeoJSON leader 'PJ' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22356,2011-11-17,B,2011-11-17,B,Petra Tušlová,22321-22367,GeoJSON leader 'PJ' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22357,2011-11-17,B,2011-11-17,B,Petra Tušlová,22321-22367,GeoJSON leader 'PJ' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22358,2011-11-17,B,2011-11-17,B,Petra Tušlová,22321-22367,GeoJSON leader 'PJ' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22359,2011-11-17,B,2011-11-17,B,Petra Tušlová,22321-22367,GeoJSON leader 'PJ' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22360,2011-11-17,B,2011-11-17,B,Petra Tušlová,22321-22367,GeoJSON leader 'PJ' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22361,2011-11-17,B,2011-11-17,B,Petra Tušlová,22321-22367,GeoJSON leader 'PJ' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22362,2011-11-17,B,2011-11-17,B,Petra Tušlová,22321-22367,GeoJSON leader 'PJ' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22363,2011-11-17,B,2011-11-17,B,Petra Tušlová,22321-22367,GeoJSON leader 'PJ' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22364,2011-11-17,B,2011-11-17,B,Petra Tušlová,22321-22367,GeoJSON leader 'PJ' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22365,2011-11-17,B,2011-11-17,B,Petra Tušlová,22321-22367,GeoJSON leader 'PJ' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22366,2011-11-17,B,2011-11-17,B,Petra Tušlová,22321-22367,GeoJSON leader 'PJ' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22367,2011-11-17,B,2011-11-17,B,Petra Tušlová,22321-22367,GeoJSON leader 'PJ' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22368,2011-11-18,B,2011-11-18,B,Petra Tušlová,22368-22407,GeoJSON leader 'PJ' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22369,2011-11-18,B,2011-11-18,B,Petra Tušlová,22368-22407,GeoJSON leader 'PJ' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22370,2011-11-18,B,2011-11-18,B,Petra Tušlová,22368-22407,GeoJSON leader 'PJ' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22371,2011-11-18,B,2011-11-18,B,Petra Tušlová,22368-22407,GeoJSON leader 'PJ' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22372,2011-11-18,B,2011-11-18,B,Petra Tušlová,22368-22407,GeoJSON leader 'PJ' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22373,2011-11-18,B,2011-11-18,B,Petra Tušlová,22368-22407,GeoJSON leader 'PJ' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22374,2011-11-18,B,2011-11-18,B,Petra Tušlová,22368-22407,GeoJSON leader 'PJ' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22375,2011-11-18,B,2011-11-18,B,Petra Tušlová,22368-22407,GeoJSON leader 'PJ' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22376,2011-11-18,B,2011-11-18,B,Petra Tušlová,22368-22407,GeoJSON leader 'PJ' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22377,2011-11-18,B,2011-11-18,B,Petra Tušlová,22368-22407,GeoJSON leader 'PJ' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22378,2011-11-18,B,2011-11-18,B,Petra Tušlová,22368-22407,GeoJSON leader 'PJ' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22379,2011-11-18,B,2011-11-18,B,Petra Tušlová,22368-22407,GeoJSON leader 'PJ' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22380,2011-11-18,B,2011-11-18,B,Petra Tušlová,22368-22407,GeoJSON leader 'PJ' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22381,2011-11-18,B,2011-11-18,B,Petra Tušlová,22368-22407,GeoJSON leader 'PJ' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22382,2011-11-18,B,2011-11-18,B,Petra Tušlová,22368-22407,GeoJSON leader 'PJ' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22383,2011-11-18,B,2011-11-18,B,Petra Tušlová,22368-22407,GeoJSON leader 'PJ' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22384,2011-11-18,B,2011-11-18,B,Petra Tušlová,22368-22407,GeoJSON leader 'PJ' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22385,2011-11-18,B,2011-11-18,B,Petra Tušlová,22368-22407,GeoJSON leader 'PJ' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22386,2011-11-18,B,2011-11-18,B,Petra Tušlová,22368-22407,GeoJSON leader 'PJ' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22387,2011-11-18,B,2011-11-18,B,Petra Tušlová,22368-22407,GeoJSON leader 'PJ' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22388,2011-11-18,B,2011-11-18,B,Petra Tušlová,22368-22407,GeoJSON leader 'PJ' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22389,2011-11-18,B,2011-11-18,B,Petra Tušlová,22368-22407,GeoJSON leader 'PJ' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22390,2011-11-18,B,2011-11-18,B,Petra Tušlová,22368-22407,GeoJSON leader 'PJ' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22391,2011-11-18,B,2011-11-18,B,Petra Tušlová,22368-22407,GeoJSON leader 'PJ' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22392,2011-11-18,B,2011-11-18,B,Petra Tušlová,22368-22407,GeoJSON leader 'PJ' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22393,2011-11-18,B,2011-11-18,B,Petra Tušlová,22368-22407,GeoJSON leader 'PJ' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22394,2011-11-18,B,2011-11-18,B,Petra Tušlová,22368-22407,GeoJSON leader 'PJ' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22395,2011-11-18,B,2011-11-18,B,Petra Tušlová,22368-22407,GeoJSON leader 'PJ' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22396,2011-11-18,B,2011-11-18,B,Petra Tušlová,22368-22407,GeoJSON leader 'PJ' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22397,2011-11-18,B,2011-11-18,B,Petra Tušlová,22368-22407,GeoJSON leader 'PJ' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22398,2011-11-18,B,2011-11-18,B,Petra Tušlová,22368-22407,GeoJSON leader 'PJ' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22399,2011-11-18,B,2011-11-18,B,Petra Tušlová,22368-22407,GeoJSON leader 'PJ' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22400,2011-11-18,B,2011-11-18,B,Petra Tušlová,22368-22407,GeoJSON leader 'PJ' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22401,2011-11-18,B,2011-11-18,B,Petra Tušlová,22368-22407,GeoJSON leader 'PJ' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22402,2011-11-18,B,2011-11-18,B,Petra Tušlová,22368-22407,GeoJSON leader 'PJ' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22403,2011-11-18,B,2011-11-18,B,Petra Tušlová,22368-22407,GeoJSON leader 'PJ' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22404,2011-11-18,B,2011-11-18,B,Petra Tušlová,22368-22407,GeoJSON leader 'PJ' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22405,2011-11-18,B,2011-11-18,B,Petra Tušlová,22368-22407,GeoJSON leader 'PJ' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22406,2011-11-18,B,2011-11-18,B,Petra Tušlová,22368-22407,GeoJSON leader 'PJ' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,22407,2011-11-18,B,2011-11-18,B,Petra Tušlová,22368-22407,GeoJSON leader 'PJ' != attribution leader 'Petra Tušlová'
+LEADER_MISMATCH,KAZ,31246,2011-11-13,C,2011-11-13,C,Bara Weissová,31246-31250,GeoJSON leader 'SAR' != attribution leader 'Bara Weissová'
+LEADER_MISMATCH,KAZ,31247,2011-11-13,C,2011-11-13,C,Bara Weissová,31246-31250,GeoJSON leader 'SAR' != attribution leader 'Bara Weissová'
+LEADER_MISMATCH,KAZ,31248,2011-11-13,C,2011-11-13,C,Bara Weissová,31246-31250,GeoJSON leader 'SAR' != attribution leader 'Bara Weissová'
+LEADER_MISMATCH,KAZ,31249,2011-11-13,C,2011-11-13,C,Bara Weissová,31246-31250,GeoJSON leader 'SAR' != attribution leader 'Bara Weissová'
+LEADER_MISMATCH,KAZ,31250,2011-11-13,C,2011-11-13,C,Bara Weissová,31246-31250,GeoJSON leader 'SAR' != attribution leader 'Bara Weissová'
+LEADER_MISMATCH,KAZ,31251,2011-11-15,C,2011-11-15,C,Cecilia Choi,31251-31284,GeoJSON leader 'BW' != attribution leader 'Cecilia Choi'
+LEADER_MISMATCH,KAZ,31252,2011-11-15,C,2011-11-15,C,Cecilia Choi,31251-31284,GeoJSON leader 'BW' != attribution leader 'Cecilia Choi'
+LEADER_MISMATCH,KAZ,31253,2011-11-15,C,2011-11-15,C,Cecilia Choi,31251-31284,GeoJSON leader 'BW' != attribution leader 'Cecilia Choi'
+LEADER_MISMATCH,KAZ,31254,2011-11-15,C,2011-11-15,C,Cecilia Choi,31251-31284,GeoJSON leader 'BW' != attribution leader 'Cecilia Choi'
+LEADER_MISMATCH,KAZ,31255,2011-11-15,C,2011-11-15,C,Cecilia Choi,31251-31284,GeoJSON leader 'BW' != attribution leader 'Cecilia Choi'
+LEADER_MISMATCH,KAZ,31256,2011-11-15,C,2011-11-15,C,Cecilia Choi,31251-31284,GeoJSON leader 'BW' != attribution leader 'Cecilia Choi'
+LEADER_MISMATCH,KAZ,31257,2011-11-15,C,2011-11-15,C,Cecilia Choi,31251-31284,GeoJSON leader 'BW' != attribution leader 'Cecilia Choi'
+LEADER_MISMATCH,KAZ,31258,2011-11-15,C,2011-11-15,C,Cecilia Choi,31251-31284,GeoJSON leader 'BW' != attribution leader 'Cecilia Choi'
+LEADER_MISMATCH,KAZ,31259,2011-11-15,C,2011-11-15,C,Cecilia Choi,31251-31284,GeoJSON leader 'BW' != attribution leader 'Cecilia Choi'
+LEADER_MISMATCH,KAZ,31260,2011-11-15,C,2011-11-15,C,Cecilia Choi,31251-31284,GeoJSON leader 'BW' != attribution leader 'Cecilia Choi'
+LEADER_MISMATCH,KAZ,31261,2011-11-15,C,2011-11-15,C,Cecilia Choi,31251-31284,GeoJSON leader 'BW' != attribution leader 'Cecilia Choi'
+LEADER_MISMATCH,KAZ,31262,2011-11-15,C,2011-11-15,C,Cecilia Choi,31251-31284,GeoJSON leader 'BW' != attribution leader 'Cecilia Choi'
+LEADER_MISMATCH,KAZ,31263,2011-11-15,C,2011-11-15,C,Cecilia Choi,31251-31284,GeoJSON leader 'BW' != attribution leader 'Cecilia Choi'
+LEADER_MISMATCH,KAZ,31264,2011-11-15,C,2011-11-15,C,Cecilia Choi,31251-31284,GeoJSON leader 'BW' != attribution leader 'Cecilia Choi'
+LEADER_MISMATCH,KAZ,31265,2011-11-15,C,2011-11-15,C,Cecilia Choi,31251-31284,GeoJSON leader 'BW' != attribution leader 'Cecilia Choi'
+LEADER_MISMATCH,KAZ,31266,2011-11-15,C,2011-11-15,C,Cecilia Choi,31251-31284,GeoJSON leader 'BW' != attribution leader 'Cecilia Choi'
+LEADER_MISMATCH,KAZ,31267,2011-11-15,C,2011-11-15,C,Cecilia Choi,31251-31284,GeoJSON leader 'BW' != attribution leader 'Cecilia Choi'
+LEADER_MISMATCH,KAZ,31268,2011-11-15,C,2011-11-15,C,Cecilia Choi,31251-31284,GeoJSON leader 'BW' != attribution leader 'Cecilia Choi'
+LEADER_MISMATCH,KAZ,31269,2011-11-15,C,2011-11-15,C,Cecilia Choi,31251-31284,GeoJSON leader 'BW' != attribution leader 'Cecilia Choi'
+LEADER_MISMATCH,KAZ,31270,2011-11-15,C,2011-11-15,C,Cecilia Choi,31251-31284,GeoJSON leader 'BW' != attribution leader 'Cecilia Choi'
+LEADER_MISMATCH,KAZ,31271,2011-11-15,C,2011-11-15,C,Cecilia Choi,31251-31284,GeoJSON leader 'BW' != attribution leader 'Cecilia Choi'
+LEADER_MISMATCH,KAZ,31272,2011-11-15,C,2011-11-15,C,Cecilia Choi,31251-31284,GeoJSON leader 'BW' != attribution leader 'Cecilia Choi'
+LEADER_MISMATCH,KAZ,31273,2011-11-15,C,2011-11-15,C,Cecilia Choi,31251-31284,GeoJSON leader 'BW' != attribution leader 'Cecilia Choi'
+LEADER_MISMATCH,KAZ,31274,2011-11-15,C,2011-11-15,C,Cecilia Choi,31251-31284,GeoJSON leader 'BW' != attribution leader 'Cecilia Choi'
+LEADER_MISMATCH,KAZ,31275,2011-11-15,C,2011-11-15,C,Cecilia Choi,31251-31284,GeoJSON leader 'BW' != attribution leader 'Cecilia Choi'
+LEADER_MISMATCH,KAZ,31276,2011-11-15,C,2011-11-15,C,Cecilia Choi,31251-31284,GeoJSON leader 'BW' != attribution leader 'Cecilia Choi'
+LEADER_MISMATCH,KAZ,31277,2011-11-15,C,2011-11-15,C,Cecilia Choi,31251-31284,GeoJSON leader 'BW' != attribution leader 'Cecilia Choi'
+LEADER_MISMATCH,KAZ,31278,2011-11-15,C,2011-11-15,C,Cecilia Choi,31251-31284,GeoJSON leader 'BW' != attribution leader 'Cecilia Choi'
+LEADER_MISMATCH,KAZ,31279,2011-11-15,C,2011-11-15,C,Cecilia Choi,31251-31284,GeoJSON leader 'BW' != attribution leader 'Cecilia Choi'
+LEADER_MISMATCH,KAZ,31280,2011-11-15,C,2011-11-15,C,Cecilia Choi,31251-31284,GeoJSON leader 'BW' != attribution leader 'Cecilia Choi'
+LEADER_MISMATCH,KAZ,31281,2011-11-15,C,2011-11-15,C,Cecilia Choi,31251-31284,GeoJSON leader 'BW' != attribution leader 'Cecilia Choi'
+LEADER_MISMATCH,KAZ,31282,2011-11-15,C,2011-11-15,C,Cecilia Choi,31251-31284,GeoJSON leader 'BW' != attribution leader 'Cecilia Choi'
+LEADER_MISMATCH,KAZ,31283,2011-11-15,C,2011-11-15,C,Cecilia Choi,31251-31284,GeoJSON leader 'BW' != attribution leader 'Cecilia Choi'
+LEADER_MISMATCH,KAZ,31284,2011-11-15,C,2011-11-15,C,Cecilia Choi,31251-31284,GeoJSON leader 'BW' != attribution leader 'Cecilia Choi'
+NO_MATCH,KAZ,10743,,A,,,,,Unit 10743 not found in any attribution range
+NO_MATCH,KAZ,10744,,A,,,,,Unit 10744 not found in any attribution range
+NO_MATCH,KAZ,10745,,A,,,,,Unit 10745 not found in any attribution range
+NO_MATCH,KAZ,10746,,A,,,,,Unit 10746 not found in any attribution range
+NO_MATCH,KAZ,10747,,A,,,,,Unit 10747 not found in any attribution range
+NO_MATCH,KAZ,10748,,A,,,,,Unit 10748 not found in any attribution range
+NO_MATCH,KAZ,11204,,A,,,,,Unit 11204 not found in any attribution range
+NO_MATCH,KAZ,11205,,A,,,,,Unit 11205 not found in any attribution range
+NO_MATCH,KAZ,22199,2011-11-09,B,,,,,Unit 22199 not found in any attribution range
+NO_MATCH,KAZ,22200,2011-11-09,B,,,,,Unit 22200 not found in any attribution range
+NO_MATCH,KAZ,22201,2011-11-09,B,,,,,Unit 22201 not found in any attribution range
+NO_MATCH,KAZ,22202,2011-11-09,B,,,,,Unit 22202 not found in any attribution range
+NO_MATCH,KAZ,22203,2011-11-09,B,,,,,Unit 22203 not found in any attribution range
+NO_MATCH,KAZ,22204,2011-11-09,B,,,,,Unit 22204 not found in any attribution range
+NO_MATCH,KAZ,22205,2011-11-09,B,,,,,Unit 22205 not found in any attribution range
+NO_MATCH,KAZ,22543,2011-11-03,B,,,,,Unit 22543 not found in any attribution range
+NO_MATCH,KAZ,22544,2011-11-03,B,,,,,Unit 22544 not found in any attribution range
+NO_MATCH,KAZ,30171,,C,,,,,Unit 30171 not found in any attribution range
+NO_MATCH,KAZ,30172,,C,,,,,Unit 30172 not found in any attribution range
+NO_MATCH,KAZ,30173,,C,,,,,Unit 30173 not found in any attribution range
+NO_MATCH,KAZ,30174,,C,,,,,Unit 30174 not found in any attribution range
+NO_MATCH,KAZ,30175,,C,,,,,Unit 30175 not found in any attribution range
+NO_MATCH,KAZ,30176,,C,,,,,Unit 30176 not found in any attribution range
+NO_MATCH,KAZ,30177,,C,,,,,Unit 30177 not found in any attribution range
+NO_MATCH,KAZ,30178,,C,,,,,Unit 30178 not found in any attribution range
+NO_MATCH,KAZ,30179,,C,,,,,Unit 30179 not found in any attribution range
+NO_MATCH,KAZ,30180,,C,,,,,Unit 30180 not found in any attribution range
+NO_MATCH,KAZ,30181,,C,,,,,Unit 30181 not found in any attribution range
+NO_MATCH,KAZ,30182,,C,,,,,Unit 30182 not found in any attribution range
+NO_MATCH,KAZ,30183,,C,,,,,Unit 30183 not found in any attribution range
+NO_MATCH,KAZ,30184,,C,,,,,Unit 30184 not found in any attribution range
+NO_MATCH,KAZ,30185,,C,,,,,Unit 30185 not found in any attribution range
+NO_MATCH,KAZ,30186,,C,,,,,Unit 30186 not found in any attribution range
+NO_MATCH,KAZ,30187,,C,,,,,Unit 30187 not found in any attribution range
+NO_MATCH,KAZ,30188,,C,,,,,Unit 30188 not found in any attribution range
+NO_MATCH,KAZ,30189,,C,,,,,Unit 30189 not found in any attribution range
+NO_MATCH,KAZ,30190,,C,,,,,Unit 30190 not found in any attribution range
+NO_MATCH,KAZ,30191,,C,,,,,Unit 30191 not found in any attribution range
+NO_MATCH,KAZ,30192,,C,,,,,Unit 30192 not found in any attribution range
+NO_MATCH,KAZ,30193,,C,,,,,Unit 30193 not found in any attribution range
+NO_MATCH,KAZ,30194,,C,,,,,Unit 30194 not found in any attribution range
+NO_MATCH,KAZ,30195,,C,,,,,Unit 30195 not found in any attribution range
+NO_MATCH,KAZ,30196,,C,,,,,Unit 30196 not found in any attribution range
+NO_MATCH,KAZ,30197,,C,,,,,Unit 30197 not found in any attribution range
+NO_MATCH,KAZ,30198,,C,,,,,Unit 30198 not found in any attribution range
+NO_MATCH,KAZ,30199,,C,,,,,Unit 30199 not found in any attribution range
+NO_MATCH,KAZ,30810,,C,,,,,Unit 30810 not found in any attribution range
+NO_MATCH,KAZ,30811,,C,,,,,Unit 30811 not found in any attribution range
+NO_MATCH,KAZ,30812,,C,,,,,Unit 30812 not found in any attribution range
+NO_MATCH,KAZ,30813,,C,,,,,Unit 30813 not found in any attribution range
+NO_MATCH,KAZ,30814,,C,,,,,Unit 30814 not found in any attribution range
+NO_MATCH,KAZ,30815,,C,,,,,Unit 30815 not found in any attribution range
+NO_MATCH,KAZ,30816,,C,,,,,Unit 30816 not found in any attribution range
+NO_MATCH,KAZ,30817,,C,,,,,Unit 30817 not found in any attribution range
+NO_MATCH,KAZ,30818,,C,,,,,Unit 30818 not found in any attribution range
+NO_MATCH,KAZ,30819,,C,,,,,Unit 30819 not found in any attribution range
+NO_MATCH,KAZ,30820,,C,,,,,Unit 30820 not found in any attribution range
+NO_MATCH,KAZ,40218,,D,,,,,Unit 40218 not found in any attribution range
+NO_MATCH,KAZ,50000,,E,,,,,Unit 50000 not found in any attribution range
+NO_MATCH,KAZ,50001,,E,,,,,Unit 50001 not found in any attribution range
+NO_MATCH,KAZ,50002,,E,,,,,Unit 50002 not found in any attribution range
+NO_MATCH,KAZ,50003,,E,,,,,Unit 50003 not found in any attribution range
+NO_MATCH,KAZ,50004,,E,,,,,Unit 50004 not found in any attribution range
+NO_MATCH,KAZ,50005,,E,,,,,Unit 50005 not found in any attribution range
+NO_MATCH,KAZ,50006,,E,,,,,Unit 50006 not found in any attribution range
+NO_MATCH,KAZ,50007,,E,,,,,Unit 50007 not found in any attribution range
+NO_MATCH,KAZ,50008,,E,,,,,Unit 50008 not found in any attribution range
+NO_MATCH,KAZ,50009,,E,,,,,Unit 50009 not found in any attribution range
+NO_MATCH,KAZ,50010,,E,,,,,Unit 50010 not found in any attribution range
+NO_MATCH,KAZ,50060,,E,,,,,Unit 50060 not found in any attribution range
+NO_MATCH,KAZ,50061,,E,,,,,Unit 50061 not found in any attribution range
+NO_MATCH,KAZ,50062,,E,,,,,Unit 50062 not found in any attribution range
+NO_MATCH,KAZ,50063,,E,,,,,Unit 50063 not found in any attribution range
+NO_MATCH,KAZ,50064,,E,,,,,Unit 50064 not found in any attribution range
+NO_MATCH,KAZ,50065,,E,,,,,Unit 50065 not found in any attribution range
+NO_MATCH,KAZ,50066,,E,,,,,Unit 50066 not found in any attribution range
+NO_MATCH,KAZ,50067,,E,,,,,Unit 50067 not found in any attribution range
+NO_MATCH,KAZ,50068,,E,,,,,Unit 50068 not found in any attribution range
+NO_MATCH,KAZ,50069,,E,,,,,Unit 50069 not found in any attribution range
+NO_MATCH,KAZ,50070,,E,,,,,Unit 50070 not found in any attribution range
+NO_MATCH,KAZ,50143,,E,,,,,Unit 50143 not found in any attribution range
+NO_MATCH,KAZ,50144,,E,,,,,Unit 50144 not found in any attribution range
+NO_MATCH,KAZ,50145,,E,,,,,Unit 50145 not found in any attribution range
+NO_MATCH,KAZ,50146,,E,,,,,Unit 50146 not found in any attribution range
+NO_MATCH,KAZ,50147,,E,,,,,Unit 50147 not found in any attribution range
+NO_MATCH,KAZ,50148,,E,,,,,Unit 50148 not found in any attribution range
+NO_MATCH,KAZ,50149,,E,,,,,Unit 50149 not found in any attribution range
+NO_MATCH,KAZ,50150,,E,,,,,Unit 50150 not found in any attribution range
+NO_MATCH,KAZ,50151,,E,,,,,Unit 50151 not found in any attribution range
+NO_MATCH,KAZ,50152,,E,,,,,Unit 50152 not found in any attribution range
+NO_MATCH,KAZ,50153,,E,,,,,Unit 50153 not found in any attribution range
+NO_MATCH,KAZ,50154,,E,,,,,Unit 50154 not found in any attribution range
+NO_MATCH,KAZ,50155,,E,,,,,Unit 50155 not found in any attribution range
+NO_MATCH,KAZ,50156,,E,,,,,Unit 50156 not found in any attribution range
+NO_MATCH,KAZ,50157,,E,,,,,Unit 50157 not found in any attribution range
+NO_MATCH,KAZ,50158,,E,,,,,Unit 50158 not found in any attribution range
+NO_MATCH,KAZ,50159,,E,,,,,Unit 50159 not found in any attribution range
+NO_MATCH,KAZ,50160,,E,,,,,Unit 50160 not found in any attribution range
+NO_MATCH,KAZ,50161,,E,,,,,Unit 50161 not found in any attribution range
+NO_MATCH,KAZ,50162,,E,,,,,Unit 50162 not found in any attribution range
+NO_MATCH,KAZ,50163,,E,,,,,Unit 50163 not found in any attribution range
+NO_MATCH,KAZ,50164,,E,,,,,Unit 50164 not found in any attribution range
+NO_MATCH,KAZ,50165,,E,,,,,Unit 50165 not found in any attribution range
+NO_MATCH,KAZ,50166,,E,,,,,Unit 50166 not found in any attribution range
+NO_MATCH,KAZ,50167,,E,,,,,Unit 50167 not found in any attribution range
+NO_MATCH,KAZ,50168,,E,,,,,Unit 50168 not found in any attribution range
+NO_MATCH,KAZ,50169,,E,,,,,Unit 50169 not found in any attribution range
+NO_MATCH,KAZ,50170,,E,,,,,Unit 50170 not found in any attribution range
+NO_MATCH,KAZ,50171,,E,,,,,Unit 50171 not found in any attribution range
+NO_MATCH,KAZ,50172,,E,,,,,Unit 50172 not found in any attribution range
+NO_MATCH,KAZ,50173,,E,,,,,Unit 50173 not found in any attribution range
+NO_MATCH,KAZ,50174,,E,,,,,Unit 50174 not found in any attribution range
+NO_MATCH,KAZ,50175,,E,,,,,Unit 50175 not found in any attribution range
+NO_MATCH,KAZ,50176,,E,,,,,Unit 50176 not found in any attribution range
+NO_MATCH,KAZ,50177,,E,,,,,Unit 50177 not found in any attribution range
+NO_MATCH,KAZ,50178,,E,,,,,Unit 50178 not found in any attribution range
+NO_MATCH,KAZ,50179,,E,,,,,Unit 50179 not found in any attribution range
+NO_MATCH,KAZ,50180,,E,,,,,Unit 50180 not found in any attribution range
+NO_MATCH,KAZ,50181,,E,,,,,Unit 50181 not found in any attribution range
+NO_MATCH,KAZ,50182,,E,,,,,Unit 50182 not found in any attribution range
+NO_MATCH,KAZ,50183,,E,,,,,Unit 50183 not found in any attribution range
+NO_MATCH,KAZ,50184,,E,,,,,Unit 50184 not found in any attribution range
+NO_MATCH,KAZ,50185,,E,,,,,Unit 50185 not found in any attribution range
+NO_MATCH,KAZ,50186,,E,,,,,Unit 50186 not found in any attribution range
+NO_MATCH,KAZ,50187,,E,,,,,Unit 50187 not found in any attribution range
+NO_MATCH,KAZ,50188,,E,,,,,Unit 50188 not found in any attribution range
+NO_MATCH,KAZ,50189,,E,,,,,Unit 50189 not found in any attribution range
+NO_MATCH,KAZ,50190,,E,,,,,Unit 50190 not found in any attribution range
+NO_MATCH,KAZ,50191,,E,,,,,Unit 50191 not found in any attribution range
+NO_MATCH,KAZ,50192,,E,,,,,Unit 50192 not found in any attribution range
+NO_MATCH,KAZ,50193,,E,,,,,Unit 50193 not found in any attribution range
+NO_MATCH,KAZ,50194,,E,,,,,Unit 50194 not found in any attribution range
+NO_MATCH,KAZ,50195,,E,,,,,Unit 50195 not found in any attribution range
+NO_MATCH,KAZ,50196,,E,,,,,Unit 50196 not found in any attribution range
+NO_MATCH,KAZ,50197,,E,,,,,Unit 50197 not found in any attribution range
+NO_MATCH,KAZ,50198,,E,,,,,Unit 50198 not found in any attribution range
+NO_MATCH,KAZ,50199,,E,,,,,Unit 50199 not found in any attribution range
+NO_MATCH,KAZ,50200,,E,,,,,Unit 50200 not found in any attribution range
+NO_MATCH,KAZ,50201,,E,,,,,Unit 50201 not found in any attribution range
+NO_MATCH,KAZ,50202,,E,,,,,Unit 50202 not found in any attribution range
+NO_MATCH,KAZ,50320,,E,,,,,Unit 50320 not found in any attribution range
+NO_MATCH,KAZ,50321,,E,,,,,Unit 50321 not found in any attribution range
+NO_MATCH,KAZ,50322,,E,,,,,Unit 50322 not found in any attribution range
+NO_MATCH,KAZ,50323,,E,,,,,Unit 50323 not found in any attribution range
+NO_MATCH,KAZ,50324,,E,,,,,Unit 50324 not found in any attribution range
+NO_MATCH,KAZ,50325,,E,,,,,Unit 50325 not found in any attribution range
+NO_MATCH,KAZ,50326,,E,,,,,Unit 50326 not found in any attribution range
+NO_MATCH,KAZ,50327,,E,,,,,Unit 50327 not found in any attribution range
+NO_MATCH,KAZ,50328,,E,,,,,Unit 50328 not found in any attribution range
+NO_MATCH,KAZ,50329,,E,,,,,Unit 50329 not found in any attribution range
+NO_MATCH,KAZ,50330,,E,,,,,Unit 50330 not found in any attribution range
+NO_MATCH,KAZ,50331,,E,,,,,Unit 50331 not found in any attribution range
+NO_MATCH,KAZ,50332,,E,,,,,Unit 50332 not found in any attribution range
+NO_MATCH,KAZ,50333,,E,,,,,Unit 50333 not found in any attribution range
+NO_MATCH,KAZ,50334,,E,,,,,Unit 50334 not found in any attribution range
+NO_MATCH,KAZ,50335,,E,,,,,Unit 50335 not found in any attribution range
+NO_MATCH,KAZ,50336,,E,,,,,Unit 50336 not found in any attribution range
+NO_MATCH,KAZ,50337,,E,,,,,Unit 50337 not found in any attribution range
+NO_MATCH,KAZ,50338,,E,,,,,Unit 50338 not found in any attribution range
+NO_MATCH,KAZ,50339,,E,,,,,Unit 50339 not found in any attribution range
+NO_MATCH,KAZ,50340,,E,,,,,Unit 50340 not found in any attribution range
+NO_MATCH,KAZ,50341,,E,,,,,Unit 50341 not found in any attribution range
+NO_MATCH,KAZ,50342,,E,,,,,Unit 50342 not found in any attribution range
+NO_MATCH,YAM,72088,,B,,,,,Unit 72088 not found in any attribution range
+NO_MATCH,YAM,72089,,B,,,,,Unit 72089 not found in any attribution range
+NO_MATCH,YAM,72090,,B,,,,,Unit 72090 not found in any attribution range
+NO_MATCH,YAM,72091,,B,,,,,Unit 72091 not found in any attribution range
+NO_MATCH,YAM,72092,,B,,,,,Unit 72092 not found in any attribution range
+NO_MATCH,YAM,72093,,B,,,,,Unit 72093 not found in any attribution range
+NO_MATCH,YAM,72094,,B,,,,,Unit 72094 not found in any attribution range
+NO_MATCH,YAM,72095,,B,,,,,Unit 72095 not found in any attribution range
+NO_MATCH,YAM,72096,,B,,,,,Unit 72096 not found in any attribution range
+NO_MATCH,YAM,72097,,B,,,,,Unit 72097 not found in any attribution range
+NO_MATCH,YAM,72098,,B,,,,,Unit 72098 not found in any attribution range
+NO_MATCH,YAM,72099,,B,,,,,Unit 72099 not found in any attribution range
+NO_MATCH,YAM,72100,,B,,,,,Unit 72100 not found in any attribution range
+NO_MATCH,YAM,72101,,B,,,,,Unit 72101 not found in any attribution range
+NO_MATCH,YAM,72102,,B,,,,,Unit 72102 not found in any attribution range
+NO_MATCH,YAM,72103,,B,,,,,Unit 72103 not found in any attribution range
+NO_MATCH,YAM,72104,,B,,,,,Unit 72104 not found in any attribution range
+NO_MATCH,YAM,72105,,B,,,,,Unit 72105 not found in any attribution range
+NO_MATCH,YAM,72106,,B,,,,,Unit 72106 not found in any attribution range
+NO_MATCH,YAM,72107,,B,,,,,Unit 72107 not found in any attribution range
+NO_MATCH,YAM,72108,,B,,,,,Unit 72108 not found in any attribution range
+NO_MATCH,YAM,72109,,B,,,,,Unit 72109 not found in any attribution range
+NO_MATCH,YAM,72110,,B,,,,,Unit 72110 not found in any attribution range
+NO_MATCH,YAM,72111,,B,,,,,Unit 72111 not found in any attribution range
+NO_MATCH,YAM,72112,,B,,,,,Unit 72112 not found in any attribution range
+NO_MATCH,YAM,72113,,B,,,,,Unit 72113 not found in any attribution range
+NO_MATCH,YAM,72114,,B,,,,,Unit 72114 not found in any attribution range
+NO_MATCH,YAM,72115,,B,,,,,Unit 72115 not found in any attribution range
+NO_MATCH,YAM,72116,,B,,,,,Unit 72116 not found in any attribution range
+NO_MATCH,YAM,72117,,B,,,,,Unit 72117 not found in any attribution range
+NO_MATCH,YAM,72118,,B,,,,,Unit 72118 not found in any attribution range
+NO_MATCH,YAM,72119,,B,,,,,Unit 72119 not found in any attribution range
+NO_MATCH,YAM,72120,,B,,,,,Unit 72120 not found in any attribution range
+NO_MATCH,YAM,72121,,B,,,,,Unit 72121 not found in any attribution range
+NO_MATCH,YAM,72122,,B,,,,,Unit 72122 not found in any attribution range
+NO_MATCH,YAM,72123,,B,,,,,Unit 72123 not found in any attribution range
+NO_MATCH,YAM,72124,,B,,,,,Unit 72124 not found in any attribution range
+NO_MATCH,YAM,72125,,B,,,,,Unit 72125 not found in any attribution range
+NO_MATCH,YAM,72126,,B,,,,,Unit 72126 not found in any attribution range
+NO_MATCH,YAM,72127,,B,,,,,Unit 72127 not found in any attribution range
+NO_MATCH,YAM,72128,,B,,,,,Unit 72128 not found in any attribution range
+NO_MATCH,YAM,72129,,B,,,,,Unit 72129 not found in any attribution range
+NO_MATCH,YAM,72130,,B,,,,,Unit 72130 not found in any attribution range
+NO_MATCH,YAM,72131,,B,,,,,Unit 72131 not found in any attribution range
+NO_MATCH,YAM,72132,,B,,,,,Unit 72132 not found in any attribution range
+NO_MATCH,YAM,72133,,B,,,,,Unit 72133 not found in any attribution range
+NO_MATCH,YAM,72134,,B,,,,,Unit 72134 not found in any attribution range
+NO_MATCH,YAM,72135,,B,,,,,Unit 72135 not found in any attribution range
+NO_MATCH,YAM,72136,,B,,,,,Unit 72136 not found in any attribution range
+NO_MATCH,YAM,72137,,B,,,,,Unit 72137 not found in any attribution range
+NO_MATCH,YAM,72138,,B,,,,,Unit 72138 not found in any attribution range
+NO_MATCH,YAM,72139,,B,,,,,Unit 72139 not found in any attribution range
+NO_MATCH,YAM,72140,,B,,,,,Unit 72140 not found in any attribution range
+NO_MATCH,YAM,72141,,B,,,,,Unit 72141 not found in any attribution range
+NO_MATCH,YAM,72142,,B,,,,,Unit 72142 not found in any attribution range
+NO_MATCH,YAM,72143,,B,,,,,Unit 72143 not found in any attribution range
+NO_MATCH,YAM,72144,,B,,,,,Unit 72144 not found in any attribution range
+NO_MATCH,YAM,72145,,B,,,,,Unit 72145 not found in any attribution range
+NO_MATCH,YAM,72146,,B,,,,,Unit 72146 not found in any attribution range
+NO_MATCH,YAM,72147,,B,,,,,Unit 72147 not found in any attribution range
+NO_MATCH,YAM,72148,,B,,,,,Unit 72148 not found in any attribution range
+NO_MATCH,YAM,72149,,B,,,,,Unit 72149 not found in any attribution range
+NO_MATCH,YAM,72150,,B,,,,,Unit 72150 not found in any attribution range
+NO_MATCH,YAM,72151,,B,,,,,Unit 72151 not found in any attribution range
+NO_MATCH,YAM,72152,,B,,,,,Unit 72152 not found in any attribution range
+NO_MATCH,YAM,72153,,B,,,,,Unit 72153 not found in any attribution range
+NO_MATCH,YAM,72154,,B,,,,,Unit 72154 not found in any attribution range
+NO_MATCH,YAM,72155,,B,,,,,Unit 72155 not found in any attribution range
+NO_MATCH,YAM,72156,,B,,,,,Unit 72156 not found in any attribution range
+NO_MATCH,YAM,72157,,B,,,,,Unit 72157 not found in any attribution range
+NO_MATCH,YAM,72158,,B,,,,,Unit 72158 not found in any attribution range
+NO_MATCH,YAM,72159,,B,,,,,Unit 72159 not found in any attribution range
+NO_MATCH,YAM,72160,,B,,,,,Unit 72160 not found in any attribution range
+NO_MATCH,YAM,72161,,B,,,,,Unit 72161 not found in any attribution range
+NO_MATCH,YAM,72162,,B,,,,,Unit 72162 not found in any attribution range
+NO_MATCH,YAM,72163,,B,,,,,Unit 72163 not found in any attribution range
+NO_MATCH,YAM,72164,,B,,,,,Unit 72164 not found in any attribution range
+NO_MATCH,YAM,72165,,B,,,,,Unit 72165 not found in any attribution range
+NO_MATCH,YAM,72166,,B,,,,,Unit 72166 not found in any attribution range
+NO_MATCH,YAM,72167,,B,,,,,Unit 72167 not found in any attribution range
+NO_MATCH,YAM,72168,,B,,,,,Unit 72168 not found in any attribution range
+NO_MATCH,YAM,72169,,B,,,,,Unit 72169 not found in any attribution range
+NO_MATCH,YAM,72170,,B,,,,,Unit 72170 not found in any attribution range
+NO_MATCH,YAM,72171,,B,,,,,Unit 72171 not found in any attribution range
+NO_MATCH,YAM,72172,,B,,,,,Unit 72172 not found in any attribution range
+NO_MATCH,YAM,72173,,B,,,,,Unit 72173 not found in any attribution range
+NO_MATCH,YAM,72174,,B,,,,,Unit 72174 not found in any attribution range
+NO_MATCH,YAM,72175,,B,,,,,Unit 72175 not found in any attribution range
+NO_MATCH,YAM,72176,,B,,,,,Unit 72176 not found in any attribution range
+NO_MATCH,YAM,72177,,B,,,,,Unit 72177 not found in any attribution range
+NO_MATCH,YAM,72178,,B,,,,,Unit 72178 not found in any attribution range
+NO_MATCH,YAM,72179,,B,,,,,Unit 72179 not found in any attribution range
+NO_MATCH,YAM,72180,,B,,,,,Unit 72180 not found in any attribution range
+NO_MATCH,YAM,72181,,B,,,,,Unit 72181 not found in any attribution range
+NO_MATCH,YAM,72182,,B,,,,,Unit 72182 not found in any attribution range
+NO_MATCH,YAM,72183,,B,,,,,Unit 72183 not found in any attribution range
+NO_MATCH,YAM,72184,,B,,,,,Unit 72184 not found in any attribution range
+NO_MATCH,YAM,72185,,B,,,,,Unit 72185 not found in any attribution range
+NO_MATCH,YAM,72186,,B,,,,,Unit 72186 not found in any attribution range
+NO_MATCH,YAM,72187,,B,,,,,Unit 72187 not found in any attribution range
+NO_MATCH,YAM,72188,,B,,,,,Unit 72188 not found in any attribution range
+NO_MATCH,YAM,72189,,B,,,,,Unit 72189 not found in any attribution range
+NO_MATCH,YAM,72190,,B,,,,,Unit 72190 not found in any attribution range
+NO_MATCH,YAM,72191,,B,,,,,Unit 72191 not found in any attribution range
+NO_MATCH,YAM,72192,,B,,,,,Unit 72192 not found in any attribution range
+NO_MATCH,YAM,72193,,B,,,,,Unit 72193 not found in any attribution range
+NO_MATCH,YAM,72194,,B,,,,,Unit 72194 not found in any attribution range
+NO_MATCH,YAM,72195,,B,,,,,Unit 72195 not found in any attribution range
+NO_MATCH,YAM,72196,,B,,,,,Unit 72196 not found in any attribution range
+NO_MATCH,YAM,72197,,B,,,,,Unit 72197 not found in any attribution range
+NO_MATCH,YAM,72198,,B,,,,,Unit 72198 not found in any attribution range
+NO_MATCH,YAM,72199,,B,,,,,Unit 72199 not found in any attribution range
+NO_MATCH,YAM,72200,,B,,,,,Unit 72200 not found in any attribution range
+NO_MATCH,YAM,72201,,B,,,,,Unit 72201 not found in any attribution range
+NO_MATCH,YAM,72202,,B,,,,,Unit 72202 not found in any attribution range
+NO_MATCH,YAM,72203,,B,,,,,Unit 72203 not found in any attribution range
+NO_MATCH,YAM,72204,,B,,,,,Unit 72204 not found in any attribution range
+NO_MATCH,YAM,72205,,B,,,,,Unit 72205 not found in any attribution range
+NO_MATCH,YAM,72206,,B,,,,,Unit 72206 not found in any attribution range
+ORPHAN_ATTRIBUTION,KAZ,,,,2009-03-31,E,Shawn Ross,50520-50542,Attribution range 50520-50542 (2009-03-31 Team E) has no matching GeoJSON polygons
+ORPHAN_ATTRIBUTION,KAZ,,,,2011-11-01,D,Anani Antonov,41454-41470,Attribution range 41454-41470 (2011-11-01 Team D) has no matching GeoJSON polygons
+ORPHAN_ATTRIBUTION,KAZ,,,,2011-11-02,D,Anani Antonov,41471-41477,Attribution range 41471-41477 (2011-11-02 Team D) has no matching GeoJSON polygons
+ORPHAN_ATTRIBUTION,KAZ,,,,2011-11-29,B,Adela Sobotkova,22600-22613,Attribution range 22600-22613 (2011-11-29 Team B) has no matching GeoJSON polygons
